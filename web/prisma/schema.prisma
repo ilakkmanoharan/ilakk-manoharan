@@ -1,0 +1,174 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Project {
+  id             String   @id @default(cuid())
+  slug           String   @unique
+  title          String
+  description    String
+  techStack      Json
+  role           String
+  status         String
+  githubUrl      String?
+  websiteUrl     String?
+  demoVideoUrl   String?
+  caseStudyUrl   String?
+  filterTags     Json
+  featured       Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Startup {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  name         String
+  tagline      String
+  description  String
+  problem      String
+  solution     String
+  targetUsers  String
+  status       String
+  websiteUrl   String?
+  githubUrl    String?
+  youtubeUrl   String?
+  pitchDeckUrl String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Hackathon {
+  id                    String   @id @default(cuid())
+  slug                  String   @unique
+  hackathonName         String
+  projectName           String
+  problemAddressed      String
+  solutionSummary       String
+  datasetUsed           String?
+  modelTech             String?
+  technicalContribution String
+  impact                String
+  githubUrl             String?
+  kaggleUrl             String?
+  demoVideo             String?
+  writeupLink           String?
+  statusResult          String
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+model FounderStudioItem {
+  id                   String   @id @default(cuid())
+  slug                 String   @unique
+  title                String
+  category             String
+  youtubeId            String?
+  summary              String
+  transcript           String
+  relatedProjectSlug   String?
+  relatedSkills        Json
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
+
+model Skill {
+  id              String            @id @default(cuid())
+  slug            String            @unique
+  name            String
+  category        String
+  overview        String
+  yearsExperience Int
+  tools           Json
+  examples        Json
+  videoUrls       Json
+  githubLinks     Json
+  experiences     SkillExperience[]
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+}
+
+model SkillExperience {
+  id           String @id @default(cuid())
+  skillId      String
+  skill        Skill  @relation(fields: [skillId], references: [id], onDelete: Cascade)
+  organization String
+  role         String
+  summary      String
+  startYear    Int?
+  endYear      Int?
+}
+
+model StartupInterestSubmission {
+  id                String   @id @default(cuid())
+  name              String
+  email             String
+  phone             String?
+  company           String?
+  role              String?
+  startupName       String
+  reason            String
+  comments          String?
+  preferredContact  String
+  createdAt         DateTime @default(now())
+}
+
+model RecruiterMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  company   String?
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  company   String?
+  subject   String
+  reason    String?
+  body      String
+  createdAt DateTime @default(now())
+}
+
+model MeetingRequest {
+  id            String   @id @default(cuid())
+  name          String
+  email         String
+  phone         String?
+  company       String?
+  role          String?
+  reason        String
+  preferredDate String
+  preferredTime String
+  message       String?
+  createdAt     DateTime @default(now())
+}
+
+model NewsletterLog {
+  id           String   @id @default(cuid())
+  sentAt       DateTime @default(now())
+  recipient    String
+  subject      String
+  bodySummary  String
+  success      Boolean
+  errorMessage String?
+}
+
+model PageAnalytics {
+  id           String   @id @default(cuid())
+  path         String
+  resourceType String
+  resourceSlug String
+  viewedAt     DateTime @default(now())
+
+  @@index([resourceType, resourceSlug])
+  @@index([viewedAt])
+}

@@ -10,7 +10,6 @@ Next.js 16 app for **Ilak Manoharan** — home, projects, startups, hackathons, 
 ## Setup
 
 ```bash
-cd web
 npm install
 cp .env.example .env
 ```

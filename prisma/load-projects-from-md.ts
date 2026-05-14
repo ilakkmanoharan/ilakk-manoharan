@@ -39,7 +39,7 @@ function parseSimpleYaml(block: string): Record<string, string> {
   return out;
 }
 
-/** Read `content/projects/*.md` from repo root (pass `process.cwd()` when running from `web/`). */
+/** Read `content/projects/*.md` relative to `cwd` (use `process.cwd()` from repo root). */
 export function loadProjectsFromMarkdown(cwd: string): ProjectSeed[] {
   const dir = path.join(cwd, "content", "projects");
   if (!fs.existsSync(dir)) {

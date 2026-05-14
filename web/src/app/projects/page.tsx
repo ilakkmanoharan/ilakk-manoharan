@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import fs from "node:fs";
+import path from "node:path";
 import { ProjectGrid } from "@/components/project-grid";
+import { ProjectProposalWriteups } from "@/components/project-proposal-writeups";
 import { ViewTracker } from "@/components/view-tracker";
+import { parseGrantProposals } from "@/lib/parse-grant-proposals";
 import { prisma } from "@/lib/prisma";
 
 export const metadata: Metadata = {
@@ -9,10 +13,26 @@ export const metadata: Metadata = {
     "Professional and technical projects across AI systems, backends, and full-stack product work.",
 };
 
+function loadGrantProposalsFromDisk() {
+  const file = path.join(
+    process.cwd(),
+    "content",
+    "projects",
+    "grant-proposals",
+    "proposals.md",
+  );
+  if (!fs.existsSync(file)) return [];
+  const raw = fs.readFileSync(file, "utf8");
+  return parseGrantProposals(raw);
+}
+
 export default async function ProjectsPage() {
-  const projects = await prisma.project.findMany({
-    orderBy: { updatedAt: "desc" },
-  });
+  const [projects, grantProposals] = await Promise.all([
+    prisma.project.findMany({
+      orderBy: { updatedAt: "desc" },
+    }),
+    Promise.resolve(loadGrantProposalsFromDisk()),
+  ]);
 
   return (
     <>
@@ -28,6 +48,7 @@ export default async function ProjectsPage() {
         <div className="mt-10">
           <ProjectGrid projects={projects} />
         </div>
+        <ProjectProposalWriteups proposals={grantProposals} />
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 import { Prisma, PrismaClient } from "../src/generated/prisma";
+import { loadProjectsFromMarkdown } from "./load-projects-from-md";
 
 const url = process.env.DATABASE_URL;
 if (!url) {
@@ -26,54 +27,27 @@ async function main() {
   await prisma.startup.deleteMany();
   await prisma.project.deleteMany();
 
+  const projectRows = loadProjectsFromMarkdown(process.cwd());
+  if (projectRows.length === 0) {
+    throw new Error(
+      "No projects found. Add markdown files with YAML frontmatter under content/projects/",
+    );
+  }
   await prisma.project.createMany({
-    data: [
-      {
-        slug: "scientific-ai-platform",
-        title: "Scientific AI Platform",
-        description:
-          "End-to-end pipelines for experiment tracking, model versioning, and reproducible research workflows.",
-        techStack: json(["Python", "FastAPI", "PostgreSQL", "Ray", "Docker", "AWS"]),
-        role: "Lead engineer — architecture, APIs, and ML infra",
-        status: "Active",
-        githubUrl: "https://github.com/ilakkmanoharan",
-        websiteUrl: null,
-        demoVideoUrl: null,
-        caseStudyUrl: null,
-        filterTags: json(["AI / ML", "Backend", "Cloud", "Scientific AI"]),
-        featured: true,
-      },
-      {
-        slug: "distributed-workflow-engine",
-        title: "Distributed Workflow Engine",
-        description:
-          "Reliable orchestration for long-running jobs with retries, idempotency, and observability.",
-        techStack: json(["Go", "Kafka", "Kubernetes", "gRPC", "OpenTelemetry"]),
-        role: "Core contributor — workers, scheduling, and monitoring",
-        status: "Shipped",
-        githubUrl: "https://github.com/ilakkmanoharan",
-        websiteUrl: null,
-        demoVideoUrl: null,
-        caseStudyUrl: null,
-        filterTags: json(["Backend", "Distributed Systems", "Cloud"]),
-        featured: true,
-      },
-      {
-        slug: "founder-os-mobile",
-        title: "Founder OS (Mobile)",
-        description:
-          "Mobile companion for founders: goals, investor updates, and lightweight CRM in one calm UI.",
-        techStack: json(["React Native", "TypeScript", "Expo", "Supabase"]),
-        role: "Solo builder — product and full stack",
-        status: "Prototype",
-        githubUrl: null,
-        websiteUrl: null,
-        demoVideoUrl: null,
-        caseStudyUrl: null,
-        filterTags: json(["Mobile", "Full Stack"]),
-        featured: false,
-      },
-    ],
+    data: projectRows.map((p) => ({
+      slug: p.slug,
+      title: p.title,
+      description: p.description,
+      techStack: json(p.techStack),
+      role: p.role,
+      status: p.status,
+      githubUrl: p.githubUrl,
+      websiteUrl: p.websiteUrl,
+      demoVideoUrl: p.demoVideoUrl,
+      caseStudyUrl: p.caseStudyUrl,
+      filterTags: json(p.filterTags),
+      featured: p.featured,
+    })),
   });
 
   await prisma.startup.createMany({

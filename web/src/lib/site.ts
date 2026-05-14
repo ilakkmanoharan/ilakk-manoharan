@@ -17,6 +17,12 @@ export const siteConfig = {
     medium: "https://medium.com/@ilakk2023",
     x: "https://x.com/ilakkManoharan",
   },
+  /** Federal R&D proposal narrative (Medium); linked from Projects page. */
+  federalGrantProposalsArticle: {
+    url: "https://medium.com/@ilakk2023/my-federal-grants-proposals-to-nasa-sbir-nsf-project-pitch-and-iss-nlra-2023-2024-5f19827d5109",
+    title:
+      "My federal grants proposals to NASA SBIR, NSF Project Pitch, and ISS NLRA (2023–2024)",
+  },
 } as const;
 
 export const navItems = [
@@ -25,6 +31,7 @@ export const navItems = [
   { href: "/startups", label: "Startup Catalog" },
   { href: "/hackathons", label: "Hackathons" },
   { href: "/founder-studio", label: "Founder Studio" },
+  { href: "/talks", label: "Talks" },
   { href: "/skills", label: "Skills" },
   { href: "/recruiter", label: "Recruiter Portal" },
   { href: "/schedule", label: "Schedule" },

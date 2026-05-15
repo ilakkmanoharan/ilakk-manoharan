@@ -48,7 +48,7 @@ export default async function RecruiterPage() {
           {siteConfig.resumeUrl ? (
             <a
               href={siteConfig.resumeUrl}
-              download
+              download="Ilak-Manoharan-resume.pdf"
               className={buttonVariants({ variant: "default" })}
             >
               <span className="inline-flex items-center gap-2">

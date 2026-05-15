@@ -23,6 +23,7 @@ const FILTERS = [
   "Scientific AI",
   "Open Source",
   "Distributed Systems",
+  "Patents",
 ] as const;
 
 export function ProjectGrid({ projects }: { projects: Project[] }) {
@@ -129,7 +130,9 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
                     rel="noreferrer"
                     className="text-primary hover:underline"
                   >
-                    Case study
+                    {p.caseStudyUrl.toLowerCase().endsWith(".pdf")
+                      ? "PDF"
+                      : "Case study"}
                   </a>
                 ) : null}
               </div>

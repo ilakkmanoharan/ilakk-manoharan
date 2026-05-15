@@ -1,5 +1,3 @@
-import { siteConfig } from "@/lib/site";
-
 /**
  * Conference talks, meetups, and invited sessions.
  * Edit this list to update the Talks page (no database required).
@@ -17,13 +15,24 @@ export type Talk = {
 
 export const talks: Talk[] = [
   {
-    title: "Your next talk title",
-    event: "Conference or meetup name",
-    location: "City (optional)",
-    date: "2026",
-    format: "Keynote",
+    title: "Quantum Dot Spin Qubits for Quantum Computing",
+    event: "ISSRDC 2023",
+    location: "Innovation Solutions Technical Session · Aug 2",
+    date: "2023",
+    format: "Presentation",
     description:
-      "Short abstract—what the audience learned and why it mattered. Replace this entry in src/lib/talks.ts with your real sessions.",
-    videoUrl: siteConfig.links.youtube,
+      "Technical session on quantum-dot spin qubits as a path toward scalable quantum computing, presented at the International Space Station Research and Development Conference.",
+    videoUrl: "https://www.youtube.com/watch?v=5RBXYNTZ_Y8",
+  },
+  {
+    title:
+      "Exploring Alternative Materials and Methods for Synthesizing Quantum Dots",
+    event: "ISSRDC 2023",
+    location: "Aug 3",
+    date: "2023",
+    format: "Presentation",
+    description:
+      "Presentation on synthesis routes and material choices for quantum dots, in the context of quantum information and sensing applications.",
+    videoUrl: "https://www.youtube.com/watch?v=g91iMmAEupI",
   },
 ];

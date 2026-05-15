@@ -53,36 +53,23 @@ async function main() {
   await prisma.startup.createMany({
     data: [
       {
-        slug: "research-copilot",
-        name: "Research Copilot",
-        tagline: "Turn papers and lab notes into actionable experiment plans.",
+        slug: "nature-foundation-models",
+        name: "Nature Foundation Models",
+        tagline:
+          "Building foundation models for natural systems—Phase 1: decision biology with information-theoretic AI for cellular decision-making under uncertainty.",
         description:
-          "A founder-led concept for teams running iterative science: ingest documents, propose hypotheses, and track validation.",
-        problem: "Research teams lose context across tools, PDFs, and spreadsheets.",
+          "Founder-led deck outlining a new category of foundation models trained on natural-system dynamics: multimodal scientific intelligence constrained by physics, chemistry, biology, and uncertainty—toward a programmable intelligence layer for science.",
+        problem:
+          "Natural systems remain hard to predict across biology, chemistry, physics, and environmental science; knowledge is fragmented across scales and modalities; discovery workflows are still slow, empirical, and trial-and-error; we lack foundational AI that learns, simulates, and reasons about governing dynamics of nature.",
         solution:
-          "Unified workspace with citations, experiment templates, and traceable decisions.",
-        targetUsers: "Biotech R&D, academic labs, climate science teams",
-        status: "Exploring design partners",
+          "A stack from natural data and scientific representations through temporal/dynamics models, simulation, scientific agents, and design/discovery systems—models that learn physical and biological dynamics, model adaptive systems, simulate under uncertainty, and unify reasoning across domains. Phase 1 focuses on cells as probabilistic decision systems governed by information flow, energy constraints, physical laws, and stochastic dynamics.",
+        targetUsers:
+          "Biotech R&D, academic labs, scientific computing teams, environmental and materials researchers, and partners building at the intersection of AI and natural sciences",
+        status: "Deck / early concept",
         websiteUrl: null,
         githubUrl: null,
         youtubeUrl: null,
-        pitchDeckUrl: null,
-      },
-      {
-        slug: "founder-intelligence",
-        name: "Founder Intelligence",
-        tagline: "Operational clarity for technical founders.",
-        description:
-          "Dashboards and lightweight automations that connect GitHub, calendar, and fundraising pipeline.",
-        problem: "Founders juggle too many signals without a single honest overview.",
-        solution:
-          "Opinionated defaults, weekly digest, and investor-ready snapshots from live data.",
-        targetUsers: "Pre-seed to Series A technical CEOs",
-        status: "MVP scoping",
-        websiteUrl: null,
-        githubUrl: null,
-        youtubeUrl: null,
-        pitchDeckUrl: null,
+        pitchDeckUrl: "/startup-catalog/Nature-Foundation-Models-v7.pdf",
       },
     ],
   });
@@ -124,15 +111,16 @@ async function main() {
         relatedSkills: json(["Distributed Systems", "Backend Engineering"]),
       },
       {
-        slug: "startup-idea-research-copilot",
-        title: "Pitch: Research Copilot",
+        slug: "startup-idea-nature-foundation-models",
+        title: "Pitch: Nature Foundation Models",
         category: "Startup Ideas",
         youtubeId: null,
-        summary: "How I would validate the idea with three lighthouse users.",
+        summary:
+          "Foundation models for natural systems—starting with decision biology and scaling toward a programmable intelligence layer for science.",
         transcript:
-          "Start with labs drowning in paper context. Ship a narrow ingestion + citation workflow before broader agent features.",
-        relatedProjectSlug: "research-copilot",
-        relatedSkills: json(["Scientific AI", "Startup Building"]),
+          "The deck frames nature as an information-processing system: signals, noise, constrained decisions, adaptation under uncertainty. The near-term wedge is cellular decision-making; the long-term bet is laws-aware world models that unify scientific reasoning across molecules, cells, organisms, ecosystems, materials, and environments.",
+        relatedProjectSlug: null,
+        relatedSkills: json(["Scientific AI", "AI / ML Systems", "Startup Building"]),
       },
     ],
   });

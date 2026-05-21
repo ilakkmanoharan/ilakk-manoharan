@@ -93,6 +93,29 @@ export default function ExceptionalAbilityPage() {
                     ))}
                   </p>
                 ) : null}
+                {section.appStoreScreenshots?.length ? (
+                  <div className="space-y-4 border-t border-border/60 pt-4">
+                    <p className="font-medium text-foreground">Apps on the App Store</p>
+                    <div className="grid gap-6 sm:grid-cols-2">
+                      {section.appStoreScreenshots.map((shot) => (
+                        <figure
+                          key={shot.src}
+                          className="overflow-hidden rounded-xl border border-border bg-muted/20"
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={shot.src}
+                            alt={shot.alt}
+                            className="h-auto w-full object-cover object-top"
+                          />
+                          <figcaption className="border-t border-border/60 px-3 py-2 text-xs text-muted-foreground">
+                            {shot.caption}
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
                 {section.links?.length ? (
                   <div className="flex flex-wrap gap-x-4 gap-y-2 border-t border-border/60 pt-4">
                     {section.links.map((link) =>

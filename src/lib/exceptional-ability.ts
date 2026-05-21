@@ -7,6 +7,12 @@ export type ExceptionalAbilityLink = {
   href: string;
 };
 
+export type AppStoreScreenshot = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
 export type ExceptionalAbilitySection = {
   number: number;
   title: string;
@@ -14,6 +20,7 @@ export type ExceptionalAbilitySection = {
   bullets?: string[];
   links?: ExceptionalAbilityLink[];
   hashtags?: string[];
+  appStoreScreenshots?: AppStoreScreenshot[];
 };
 
 export const exceptionalAbilityIntro =
@@ -60,7 +67,6 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
     paragraphs: [
       "I have filed a U.S. patent application for Smart Restaurant Powered by Cloud-Native IoT AIOS (Publication No. US 2024/0273653 A1, published August 15, 2024). The application describes a fully automated AI-driven smart restaurant ecosystem integrating cloud-native IoT infrastructure, intelligent kitchen orchestration, contactless food preparation, automated ordering and vending, inventory optimization, and real-time operational analytics.",
       "In addition, I developed multiple advanced scientific and engineering research proposals submitted to NASA SBIR, NSF SBIR/STTR, and ISS National Lab programs (2023–2024), covering areas such as quantum dots, spin qubits, spintronics, Physics-Informed Neural Networks (PINNs), computational fluid dynamics, quantum material synthesis, microgravity manufacturing, and AI-driven scientific modeling for aerospace and biomedical applications.",
-      "Demonstrated strong execution ability and work ethic by independently conceptualizing, architecting, designing, and implementing full-stack software products end-to-end across mobile, backend, infrastructure, and product layers. Recent examples include a magazine-style publishing platform and a productivity application for organizing and retrieving information using intelligent tagging workflows.",
     ],
     bullets: [
       "Quantum Dot Spin Qubits for Quantum Computing — ISSRDC 2023, Innovation Solutions Technical Session (Aug 2, 2023)",
@@ -84,6 +90,30 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
         href: "https://www.youtube.com/watch?v=g91iMmAEupI",
       },
       {
+        label: "Projects",
+        href: "/projects",
+      },
+      {
+        label: "Talks",
+        href: "/talks",
+      },
+    ],
+  },
+  {
+    number: 3,
+    title: "Full-stack product execution — web and App Store",
+    paragraphs: [
+      "Demonstrated strong execution ability and work ethic by independently conceptualizing, architecting, designing, and implementing full-stack software products end-to-end across mobile, backend, infrastructure, and product layers. Recent examples include a magazine-style publishing platform and a productivity application for organizing and retrieving information using intelligent tagging workflows.",
+      "Published multiple iOS apps on the App Store under my developer account—including productivity, social, lifestyle, and education titles—alongside shipped web products.",
+    ],
+    bullets: [
+      "TagScribe — productivity / smart bookmarking",
+      "Socically — social networking",
+      "Poll Hippo — lifestyle",
+      "nerding app, Sequenched, QuizzlyMath5-WholeNumbers — education",
+    ],
+    links: [
+      {
         label: "Publish Desk",
         href: "https://publish-desk.com/",
       },
@@ -95,9 +125,19 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
         label: "Projects",
         href: "/projects",
       },
+    ],
+    appStoreScreenshots: [
       {
-        label: "Talks",
-        href: "/talks",
+        src: "/images/app-store/developer-apps-productivity.png",
+        alt: "App Store developer page listing TagScribe, Socically, and Poll Hippo",
+        caption:
+          "App Store — productivity, social, and lifestyle apps (TagScribe, Socically, Poll Hippo)",
+      },
+      {
+        src: "/images/app-store/developer-apps-education.png",
+        alt: "App Store developer page listing nerding app, Sequenched, and QuizzlyMath5-WholeNumbers",
+        caption:
+          "App Store — education apps (nerding app, Sequenched, QuizzlyMath5-WholeNumbers)",
       },
     ],
   },

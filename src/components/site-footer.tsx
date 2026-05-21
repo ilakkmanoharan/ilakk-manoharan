@@ -14,6 +14,14 @@ export function SiteFooter() {
         <div className="flex flex-wrap items-center gap-4 text-sm">
           <a
             className="text-muted-foreground hover:text-foreground"
+            href={siteConfig.links.x}
+            target="_blank"
+            rel="noreferrer"
+          >
+            X
+          </a>
+          <a
+            className="text-muted-foreground hover:text-foreground"
             href={siteConfig.links.linkedin}
             target="_blank"
             rel="noreferrer"

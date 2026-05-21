@@ -5,7 +5,7 @@ description: "Agentic research MVP: ingest PDFs, notes, pages, and transcripts i
 role: "Creator — multi-agent orchestration in FastAPI, file-backed long-term memory, Next.js dashboard (ingest, search, generate, SEO, contradictions, Git)"
 status: Active
 featured: true
-githubUrl: ""
+githubUrl: "https://github.com/ilakkmanoharan/ResearchGraph-OS"
 websiteUrl: ""
 demoVideoUrl: ""
 caseStudyUrl: ""

@@ -5,7 +5,7 @@ description: "Multiplayer web chess on an infinite 2D grid of linked 8×8 boards
 role: "Creator — game design, real-time server, PixiJS rendering, and Firebase Auth for lobby"
 status: Active
 featured: true
-githubUrl: ""
+githubUrl: "https://github.com/ilakkmanoharan/the-chess-multiverse"
 websiteUrl: ""
 demoVideoUrl: ""
 caseStudyUrl: ""

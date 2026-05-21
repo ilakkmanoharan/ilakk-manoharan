@@ -5,7 +5,7 @@ description: "Multilingual fashion e-commerce: catalog and search, cart and Stri
 role: "Solo builder — Next.js monolith, Firebase, Stripe, and locale-driven shopper + admin UX"
 status: Shipped
 featured: false
-githubUrl: ""
+githubUrl: "https://github.com/ilakkmanoharan/apparel-online-store"
 websiteUrl: ""
 demoVideoUrl: ""
 caseStudyUrl: ""

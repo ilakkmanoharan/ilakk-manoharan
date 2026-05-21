@@ -71,6 +71,12 @@ export default async function RecruiterPage() {
           >
             Schedule a meeting
           </Link>
+          <Link
+            href="/exceptional-ability"
+            className={buttonVariants({ variant: "outline" })}
+          >
+            Evidence of exceptional ability
+          </Link>
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">

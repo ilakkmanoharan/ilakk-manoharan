@@ -36,19 +36,13 @@ export default function ExceptionalAbilityPage() {
         resourceSlug="exceptional-ability"
       />
       <div className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
-        <p className="font-heading text-sm font-medium tracking-wide text-primary">
-          Recruiter &amp; immigration context
-        </p>
-        <h1 className="mt-2 font-heading text-4xl font-semibold tracking-tight">
+        <h1 className="font-heading text-4xl font-semibold tracking-tight">
           Evidence of exceptional ability
         </h1>
         <p className="mt-3 max-w-3xl text-muted-foreground">
           {exceptionalAbilityIntro}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/recruiter" className={buttonVariants({ variant: "outline" })}>
-            Recruiter portal
-          </Link>
           <Link href="/projects" className={buttonVariants({ variant: "outline" })}>
             Projects
           </Link>

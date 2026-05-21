@@ -17,7 +17,7 @@ export type ExceptionalAbilitySection = {
 };
 
 export const exceptionalAbilityIntro =
-  "Selected evidence of exceptional ability in software engineering, scientific AI, invention, and end-to-end product execution—organized for immigration, recruiting, and technical review.";
+  "Selected evidence of exceptional ability in software engineering, scientific AI, invention, and end-to-end product execution.";
 
 export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
   {

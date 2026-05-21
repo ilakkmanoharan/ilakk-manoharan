@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { Project } from "@/generated/prisma";
 import { asStringArray } from "@/lib/json";
+import { DEFAULT_APP_STORE_BY_PROJECT_SLUG } from "@/lib/project-default-links";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -25,6 +26,14 @@ const FILTERS = [
   "Distributed Systems",
   "Patents",
 ] as const;
+
+function appStoreUrlFor(project: Project): string | null {
+  return (
+    project.appStoreUrl ??
+    DEFAULT_APP_STORE_BY_PROJECT_SLUG[project.slug] ??
+    null
+  );
+}
 
 export function ProjectGrid({ projects }: { projects: Project[] }) {
   const [active, setActive] = useState<string | null>(null);
@@ -60,7 +69,9 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
         ))}
       </div>
       <div className="grid gap-6 md:grid-cols-2">
-        {filtered.map((p) => (
+        {filtered.map((p) => {
+          const appStoreUrl = appStoreUrlFor(p);
+          return (
           <Card
             key={p.id}
             className="group border-border/80 transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg"
@@ -102,9 +113,9 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
                     GitHub
                   </a>
                 ) : null}
-                {p.appStoreUrl ? (
+                {appStoreUrl ? (
                   <a
-                    href={p.appStoreUrl}
+                    href={appStoreUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-1 text-primary hover:underline"
@@ -149,7 +160,8 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
               </div>
             </CardContent>
           </Card>
-        ))}
+          );
+        })}
       </div>
       {filtered.length === 0 ? (
         <p className="text-sm text-muted-foreground">

@@ -39,7 +39,9 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Production notes
 
-- Run `prisma generate` on deploy (handled by `postinstall` / `build` script).
+- Run `prisma generate` on deploy (handled by `postinstall`).
+- `npm run build` runs `prisma migrate deploy` and `prisma db seed` before `next build` so static pages can read SQLite during the Vercel build.
+- On Vercel, set `DATABASE_URL=file:./prisma/prod.db` (do not use `file:./dev.db` — that path is not created on the build machine).
 - Move `DATABASE_URL` to PostgreSQL when ready; keep using the Prisma adapter pattern for your provider.
 - Configure Vercel Cron (or another scheduler) to hit `/api/cron/daily-summary` daily with the bearer token.
 - Next.js 16 may deprecate `middleware.ts` in favor of `proxy`; follow upstream guidance when upgrading.

@@ -17,6 +17,7 @@ model Project {
   status         String
   githubUrl      String?
   websiteUrl     String?
+  appStoreUrl    String?
   demoVideoUrl   String?
   caseStudyUrl   String?
   filterTags     Json

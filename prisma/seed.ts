@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 import { Prisma, PrismaClient } from "../src/generated/prisma";
+import { loadHackathonsFromMarkdown } from "./load-hackathons-from-md";
 import { loadProjectsFromMarkdown } from "./load-projects-from-md";
 
 const url = process.env.DATABASE_URL;
@@ -43,6 +44,7 @@ async function main() {
       status: p.status,
       githubUrl: p.githubUrl,
       websiteUrl: p.websiteUrl,
+      appStoreUrl: p.appStoreUrl,
       demoVideoUrl: p.demoVideoUrl,
       caseStudyUrl: p.caseStudyUrl,
       filterTags: json(p.filterTags),
@@ -71,29 +73,51 @@ async function main() {
         youtubeUrl: null,
         pitchDeckUrl: "/startup-catalog/Nature-Foundation-Models-v7.pdf",
       },
+      {
+        slug: "agentapply",
+        name: "AgentApply",
+        tagline:
+          "The application infrastructure layer for AI agents—a programmable API and protocol to securely discover, prepare, validate, and submit applications across jobs, accelerators, grants, fellowships, and founder programs.",
+        description:
+          "The deck argues the application internet was built for humans manually filling forms; AgentApply is how that stack becomes programmable—schemas, endpoints, structured application packages, status and workflow APIs, and agent identity (consent, signatures, verification)—so agents interact with systems instead of driving browsers.",
+        problem:
+          "AI agents can browse, write code, manage workflows, and operate autonomously—but the moment they try to apply to a job, accelerator, grant, fellowship, or founder program, everything breaks. Today’s path is fragmented, repetitive, and not machine-readable: fragile automation over buttons, dynamic forms, CAPTCHAs, inconsistent layouts, and broken flows. That is not scalable infrastructure.",
+        solution:
+          "Evolve from human-only web forms to agent-native programmable workflows: companies expose an Agent Application Endpoint (machine-readable requirements, application schema, submit URL, supported credentials); applicant-side agents read requirements programmatically, generate structured applications, upload documents, submit, receive receipts and status, and maintain application state—with standardized application APIs, agent identity infrastructure, structured schemas, an application-package protocol, and status/workflow APIs as in the deck.",
+        targetUsers:
+          "Employers, startups, accelerators, universities, research labs, fellowships, and grant organizations; plus builders of AI career agents, founder agents, research agents, recruiting agents, workflow assistants, and autonomous opportunity-discovery systems",
+        status: "Deck / early concept",
+        websiteUrl: null,
+        githubUrl: null,
+        youtubeUrl: null,
+        pitchDeckUrl: "/startup-catalog/AgentApply.pdf",
+      },
     ],
   });
 
+  const hackathonRows = loadHackathonsFromMarkdown(process.cwd());
+  if (hackathonRows.length === 0) {
+    throw new Error(
+      "No hackathons found. Add markdown files with YAML frontmatter under content/hackathons/",
+    );
+  }
   await prisma.hackathon.createMany({
-    data: [
-      {
-        slug: "climate-risk-vision",
-        hackathonName: "Global AI Hackathon (sample)",
-        projectName: "Climate Risk Vision",
-        problemAddressed: "Rapid assessment of flood risk from satellite and weather data.",
-        solutionSummary:
-          "Fine-tuned vision backbone with geospatial features for regional risk scoring.",
-        datasetUsed: "Open satellite tiles + NOAA samples",
-        modelTech: "PyTorch, timm, ONNX export",
-        technicalContribution: "Data pipeline, model training notebook, and API for scoring.",
-        impact: "Demoed live map with explainable hotspots.",
-        githubUrl: "https://github.com/ilakkmanoharan",
-        kaggleUrl: null,
-        demoVideo: null,
-        writeupLink: null,
-        statusResult: "Finalist",
-      },
-    ],
+    data: hackathonRows.map((h) => ({
+      slug: h.slug,
+      hackathonName: h.hackathonName,
+      projectName: h.projectName,
+      problemAddressed: h.problemAddressed,
+      solutionSummary: h.solutionSummary,
+      datasetUsed: h.datasetUsed,
+      modelTech: h.modelTech,
+      technicalContribution: h.technicalContribution,
+      impact: h.impact,
+      githubUrl: h.githubUrl,
+      kaggleUrl: h.kaggleUrl,
+      demoVideo: h.demoVideo,
+      writeupLink: h.writeupLink,
+      statusResult: h.statusResult,
+    })),
   });
 
   await prisma.founderStudioItem.createMany({

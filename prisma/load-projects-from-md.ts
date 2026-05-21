@@ -10,6 +10,7 @@ export type ProjectSeed = {
   status: string;
   githubUrl: string | null;
   websiteUrl: string | null;
+  appStoreUrl: string | null;
   demoVideoUrl: string | null;
   caseStudyUrl: string | null;
   filterTags: string[];
@@ -96,6 +97,7 @@ export function loadProjectsFromMarkdown(cwd: string): ProjectSeed[] {
       status,
       githubUrl: emptyToNull(fm.githubUrl),
       websiteUrl: emptyToNull(fm.websiteUrl),
+      appStoreUrl: emptyToNull(fm.appStoreUrl),
       demoVideoUrl: emptyToNull(fm.demoVideoUrl),
       caseStudyUrl: emptyToNull(fm.caseStudyUrl),
       filterTags,

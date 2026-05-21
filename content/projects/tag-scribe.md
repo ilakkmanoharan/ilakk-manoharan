@@ -7,6 +7,7 @@ status: Active
 featured: false
 githubUrl: "https://github.com/ilakkmanoharan/tag-scribe"
 websiteUrl: ""
+appStoreUrl: "https://apps.apple.com/us/app/tagscribe/id6760214615"
 demoVideoUrl: ""
 caseStudyUrl: ""
 filterTags: '["Full Stack","Mobile","Cloud"]'
@@ -22,3 +23,5 @@ A **Next.js 14** app on **Vercel** serves the **React** UI and `/api/*` REST lay
 The web signs in with **Firebase** (ID tokens on each request); **SwiftUI** on iOS uses **Sign in with Apple**, receives a server **JWT** in the Keychain and App Group, and ships a **Share Extension** so saves from other apps hit the same API; **Kotlin** and **Jetpack Compose** on Android are growing toward the same contract.
 
 Github: https://github.com/ilakkmanoharan/tag-scribe
+
+App Store: https://apps.apple.com/us/app/tagscribe/id6760214615

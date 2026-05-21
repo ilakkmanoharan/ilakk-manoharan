@@ -5,7 +5,10 @@ import { ProjectGrid } from "@/components/project-grid";
 import { ProjectProposalWriteups } from "@/components/project-proposal-writeups";
 import { ViewTracker } from "@/components/view-tracker";
 import { parseGrantProposals } from "@/lib/parse-grant-proposals";
+import { DEFAULT_APP_STORE_BY_PROJECT_SLUG } from "@/lib/project-default-links";
 import { prisma } from "@/lib/prisma";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -27,12 +30,18 @@ function loadGrantProposalsFromDisk() {
 }
 
 export default async function ProjectsPage() {
-  const [projects, grantProposals] = await Promise.all([
+  const [rows, grantProposals] = await Promise.all([
     prisma.project.findMany({
       orderBy: { updatedAt: "desc" },
     }),
     Promise.resolve(loadGrantProposalsFromDisk()),
   ]);
+
+  const projects = rows.map((p) => ({
+    ...p,
+    appStoreUrl:
+      p.appStoreUrl ?? DEFAULT_APP_STORE_BY_PROJECT_SLUG[p.slug] ?? null,
+  }));
 
   return (
     <>

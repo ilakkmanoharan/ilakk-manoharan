@@ -102,6 +102,17 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
                     GitHub
                   </a>
                 ) : null}
+                {p.appStoreUrl ? (
+                  <a
+                    href={p.appStoreUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 text-primary hover:underline"
+                  >
+                    <ExternalLink className="size-4" aria-hidden />
+                    App Store
+                  </a>
+                ) : null}
                 {p.websiteUrl ? (
                   <a
                     href={p.websiteUrl}

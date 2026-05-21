@@ -2,12 +2,12 @@
 slug: asra
 hackathonName: "Kaggle ARC Prize 2026 — ARC-AGI-3"
 projectName: ASRA
-problemAddressed: "ARC-AGI-3-style interactive environments demand fluid intelligence—rapid adaptation, hypothesis-driven exploration, and world-model formation in tasks with hidden mechanics, sparse information, and uncertain action semantics—not memorization, fixed policies, or static prediction."
-solutionSummary: "ASRA (Adaptive Scientific Reasoning Architecture): a modular cognitive stack for unseen interactive environments—observe → hypothesize → experiment → analyze → refine → retry—with cooperating subsystems for observation, hypothesis generation, experimentation, analysis, world models, abstraction memory, and reflection under one orchestrated cycle."
-datasetUsed: "Kaggle ARC Prize 2026 competition tasks — ARC-AGI-3 interactive evaluation environments (exploration, memory, sequential reasoning, generalization)."
-modelTech: "Modular cognitive architecture; hypothesis-driven exploration; abstraction memory (concepts, not task-specific answers); reference implementation on GitHub."
-technicalContribution: "Frames intelligence as scientific reasoning over brute search—exploration is hypothesis-driven; memory stores reusable abstractions; recursive loop aligns with ARC-AGI-3 requirements for adaptation, world understanding, and strategy invention in novel settings."
-impact: "Research architecture for agents that invent strategies dynamically, build compact theories of new worlds, and transfer abstractions across tasks—adaptation over memorization, generalization over benchmark fitting, and fluid intelligence in unfamiliar environments."
+problemAddressed: "Prediction-centric AI assumes stable tasks, known action semantics, and dense supervision—yet scientific and biological environments are partially observable, intervention-driven, and governed by hidden mechanics. Discovery requires hypothesis generation, causal experimentation, uncertainty-aware exploration, and theory refinement—not interpolation alone."
+solutionSummary: "ASRA (Adaptive Scientific Reasoning Architecture) models intelligence as intervention-centric scientific reasoning: observe → hypothesize → experiment → analyze → refine, with explanatory world models and action semantics inference (actions as latent operators inferred from transitions). Decision Biology—the first ASRA specialization—treats perturbations as interventions, signaling pathways as latent biological world models, and cellular adaptation as sequential causal reasoning under uncertainty."
+datasetUsed: "Kaggle ARC Prize 2026 / ARC-AGI-3 interactive evaluation environments; conceptual alignment with perturbation-response and decision-biology reasoning (interventions, pathway-level world models, adaptive state transitions)."
+modelTech: "Modular ASRA stack—observation/representation, hypothesis generation, experimental simulation, meta-abstraction memory, strategy invention; action semantics inference; Decision Biology domain layer; active inference and causal experimental design."
+technicalContribution: "Formalizes action semantics inference coupled with explanatory world-model learning; exploration as adaptive experimental design rather than random policy search; memory stores reusable causal motifs and reasoning operators, not task-specific answers—shifting from prediction-centric to intervention-centric scientific intelligence."
+impact: "Bridges adaptive architectures, causal reasoning, active inference, and systems biology toward agents that autonomously hypothesize, experiment, and model natural systems—building compact theories, inventing strategies, and transferring abstractions across unfamiliar interactive and biological environments."
 githubUrl: "https://github.com/ilakkmanoharan/asra"
 kaggleUrl: "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3"
 demoVideo: ""
@@ -15,8 +15,8 @@ writeupLink: ""
 statusResult: "In development"
 ---
 
-**ASRA** is a fluid-intelligence architecture for adaptive scientific reasoning in unseen interactive environments—inspired by [ARC Prize 2026 / ARC-AGI-3 on Kaggle](https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3).
+**ASRA** (*Adaptive Scientific Reasoning Architectures for Decision Biology*) reframes intelligence as **intervention-centric scientific reasoning** through world models, **action semantics inference**, and adaptive biological reasoning—not memorization or static prediction ([ARC Prize 2026 on Kaggle](https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3)).
 
-The system behaves like a scientist: observe, form hypotheses, experiment, analyze outcomes, and refine internal theories. Core stance: adaptation over memorization, scientific reasoning over search, world understanding over output prediction.
+**Decision Biology** interprets cells as adaptive information-processing systems: perturbations are interventions, pathways are latent world models, and adaptation is distributed causal reasoning under uncertainty.
 
-**Tagline:** A fluid-intelligence architecture for adaptive scientific reasoning in unseen interactive environments.
+**Tagline:** Intervention-centric scientific reasoning through world models, action semantics inference, and Decision Biology.

@@ -175,7 +175,7 @@ async function main() {
       category: "Backend Engineering",
       overview:
         "Designing scalable APIs, services, and data layers with strong correctness and observability.",
-      yearsExperience: 5,
+      yearsExperience: 20,
       tools: json(["Java", "Python", "Go", "Node.js", "Spring Boot", "FastAPI", "PostgreSQL", "Kafka", "Docker", "AWS"]),
       examples: json([
         "High-throughput ingestion services",
@@ -208,7 +208,7 @@ async function main() {
         category: "Full Stack Development",
         overview:
           "Shipping cohesive product experiences across Next.js/React, APIs, and databases.",
-        yearsExperience: 5,
+        yearsExperience: 12,
         tools: json(["TypeScript", "React", "Next.js", "Tailwind CSS", "PostgreSQL"]),
         examples: json(["Portfolio and dashboard products", "Auth-aware admin flows"]),
         videoUrls: json([]),
@@ -220,7 +220,7 @@ async function main() {
         category: "AI / ML Systems",
         overview:
           "ML lifecycle work: data quality, training, evaluation, deployment, and guardrails for production.",
-        yearsExperience: 4,
+        yearsExperience: 6,
         tools: json(["Python", "PyTorch", "Ray", "FastAPI", "vector DBs"]),
         examples: json(["Batch + online inference patterns", "Experiment tracking integrations"]),
         videoUrls: json([]),

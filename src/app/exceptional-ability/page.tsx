@@ -46,6 +46,12 @@ export default function ExceptionalAbilityPage() {
           <Link href="/projects" className={buttonVariants({ variant: "outline" })}>
             Projects
           </Link>
+          <Link href="/startups" className={buttonVariants({ variant: "outline" })}>
+            Startup catalog
+          </Link>
+          <Link href="/hackathons" className={buttonVariants({ variant: "outline" })}>
+            Hackathons
+          </Link>
           <Link href="/talks" className={buttonVariants({ variant: "outline" })}>
             Talks
           </Link>

@@ -26,6 +26,21 @@ export type ExceptionalAbilitySection = {
 export const exceptionalAbilityIntro =
   "Selected evidence of exceptional ability in software engineering, scientific AI, invention, and end-to-end product execution.";
 
+/** Included at the end of every evidence section’s link row. */
+export const portfolioNavLinks: ExceptionalAbilityLink[] = [
+  { label: "Projects", href: "/projects" },
+  { label: "Hackathons", href: "/hackathons" },
+  { label: "Startup catalog", href: "/startups" },
+];
+
+function withPortfolioLinks(links: ExceptionalAbilityLink[]): ExceptionalAbilityLink[] {
+  const seen = new Set(links.map((l) => l.href));
+  return [
+    ...links,
+    ...portfolioNavLinks.filter((l) => !seen.has(l.href)),
+  ];
+}
+
 export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
   {
     number: 1,
@@ -37,7 +52,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
       "What became very exciting to me is the possibility of using world models, adaptive reasoning, hidden-state inference, and exploration-driven learning to model how cells process information, respond to perturbations, adapt, and make decisions under uncertainty.",
       "Currently I'm building ASRA — an adaptive reasoning engine; Decision Biology — the first scientific domain built on top of it; and Nature Foundation Models — a broader scientific intelligence platform across biology, chemistry, physics, and environmental systems.",
     ],
-    links: [
+    links: withPortfolioLinks([
       {
         label: "ASRA on GitHub",
         href: "https://github.com/ilakkmanoharan/asra",
@@ -46,15 +61,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
         label: "ARC Prize 2026 — ARC-AGI-3",
         href: "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
       },
-      {
-        label: "Hackathons",
-        href: "/hackathons",
-      },
-      {
-        label: "Startup catalog",
-        href: "/startups",
-      },
-    ],
+    ]),
     hashtags: [
       "#fluidintelligence",
       "#decisionbiology",
@@ -72,7 +79,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
       "Quantum Dot Spin Qubits for Quantum Computing — ISSRDC 2023, Innovation Solutions Technical Session (Aug 2, 2023)",
       "Exploring Alternative Materials and Methods for Synthesizing Quantum Dots — ISSRDC 2023 (Aug 3, 2023)",
     ],
-    links: [
+    links: withPortfolioLinks([
       {
         label: "U.S. patent US 2024/0273653 A1",
         href: "https://patents.google.com/patent/US20240273653A1/en",
@@ -90,14 +97,10 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
         href: "https://www.youtube.com/watch?v=g91iMmAEupI",
       },
       {
-        label: "Projects",
-        href: "/projects",
-      },
-      {
         label: "Talks",
         href: "/talks",
       },
-    ],
+    ]),
   },
   {
     number: 3,
@@ -112,7 +115,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
       "Poll Hippo — lifestyle",
       "nerding app, Sequenched, QuizzlyMath5-WholeNumbers — education",
     ],
-    links: [
+    links: withPortfolioLinks([
       {
         label: "Publish Desk",
         href: "https://publish-desk.com/",
@@ -121,11 +124,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
         label: "Tag Scribe (App Store)",
         href: "https://apps.apple.com/us/app/tagscribe/id6760214615",
       },
-      {
-        label: "Projects",
-        href: "/projects",
-      },
-    ],
+    ]),
     appStoreScreenshots: [
       {
         src: "/images/app-store/developer-apps-productivity.png",

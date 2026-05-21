@@ -71,7 +71,7 @@ async function main() {
         websiteUrl: null,
         githubUrl: null,
         youtubeUrl: null,
-        pitchDeckUrl: "/startup-catalog/Nature-Foundation-Models-v7.pdf",
+        pitchDeckUrl: "/startup-catalog/Nature-Foundation-Models-v9.pdf",
       },
       {
         slug: "agentapply",

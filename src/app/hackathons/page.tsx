@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ViewTracker } from "@/components/view-tracker";
 import {
   Card,
@@ -97,6 +98,15 @@ export default async function HackathonsPage() {
                       <ExternalLink className="size-4" aria-hidden />
                       GitHub
                     </a>
+                  ) : null}
+                  {h.slug === "asra" ? (
+                    <Link
+                      href="/asra"
+                      className="inline-flex items-center gap-1 text-primary hover:underline"
+                    >
+                      <ExternalLink className="size-4" aria-hidden />
+                      ASRA
+                    </Link>
                   ) : null}
                   {h.kaggleUrl ? (
                     <a

@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Evidence of Exceptional Ability",
   description:
-    "Patent, federal R&D proposals, ISSRDC presentations, adaptive scientific reasoning (ASRA / Decision Biology), and shipped full-stack products.",
+    "Patent, federal R&D proposals, ISSRDC presentations, adaptive scientific reasoning (ASRA / Decision Biology), SciLayer open-science platform, and shipped full-stack products.",
 };
 
 function isExternal(href: string) {

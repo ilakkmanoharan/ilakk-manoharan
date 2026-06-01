@@ -11,14 +11,14 @@ function withPortfolioLinks(links: { label: string; href: string }[]) {
   return [...links, ...portfolioNavLinks.filter((l) => !seen.has(l.href))];
 }
 
-/** Evidence 2 — ASRA scholarly record on SciLayer. */
+/** Evidence 2 — ASRA Phase 1 scholarly record on SciLayer. */
 export const scilayerScholarlyEvidenceSection: ExceptionalAbilitySection = {
   number: 2,
-  title: "ASRA scholarly record on SciLayer — published preprints",
+  title: "ASRA Phase 1 - scholarly record on SciLayer — published preprints",
   paragraphs: [
     "I have developed ASRA (Adaptive Scientific Reasoning Architecture)—a coherent research program that treats scientific and interactive intelligence as reasoning from state transitions under uncertainty, not as execution of predefined policies.",
     "This combination—original theoretical framing, multi-paper development with versioned revisions, open implementations, and infrastructure to disseminate and review the work—demonstrates sustained, high-level contribution at the intersection of AI, scientific reasoning, and systems engineering.",
-    "Published scholarly record on [SciLayer](https://sci-layer.vercel.app) — The following works are sole-authored by me, publicly accessible, CC-BY-4.0 licensed where stated on the platform, and cross-linked as a unified program (each later paper cites earlier SciLayer releases).",
+    "Published scholarly record on [SciLayer](https://sci-layer.vercel.app) and the [Social Science Research Network (SSRN)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6835331) — The following works are sole-authored by me, publicly accessible, CC-BY-4.0 licensed where stated on SciLayer, and cross-linked as a unified program (each later paper cites earlier SciLayer releases).",
     "1. Concept Paper — architecture-level synthesis",
     "Ilakkuvaselvi Manoharan (2026). [Architectures for Adaptive Scientific Reasoning Under Uncertainty](https://sci-layer.vercel.app/articles/architectures-adaptive-scientific-reasoning-under-uncertainty). Concept Paper, SciLayer Systems (preprint).",
     "Contribution: A long-form conceptual review arguing that scientific intelligence requires architectures that distinguish observation from intervention, update beliefs from transitions, and select experiments under uncertainty. Integrates Dreamer/MuZero-style world models, Pearlian causality, free-energy/active inference, information-theoretic experiment value, and modern perturbation atlases (LINCS, scPerturb, Human Cell Atlas) into a unified design vocabulary for adaptive scientific reasoning systems. Identifies open problems: scalable causal representation learning, calibrated uncertainty in high-dimensional biology, interpretable abstraction, and benchmarks that bridge interactive games and real experimentation.",
@@ -33,11 +33,11 @@ export const scilayerScholarlyEvidenceSection: ExceptionalAbilitySection = {
     "Contribution: Applies the ASRA architecture to decision biology—perturbation–response reasoning, world models, and intervention-centric scientific intelligence in biological state spaces. Maintains distinct versions (v1, v2) documenting evolution of the manuscript.",
     "Why this supports exceptional ability: Demonstrates domain transfer of the same architectural abstraction from interactive/grid settings to biological reasoning—a mark of generalizable scientific contribution.",
     "4. Article — Transition-centric Phase 1 (versioned; v2 current)",
-    "Ilakkuvaselvi Manoharan (2026). [Transition-Centric Adaptive Reasoning: ASRA Phase 1 for Interactive Environments](https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1) (Version 2.0). Article, SciLayer Systems (preprint). [Version history](https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1/versions).",
+    "Ilakkuvaselvi Manoharan (2026). [Transition-Centric Adaptive Reasoning: ASRA Phase 1 for Interactive Environments](https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1) (Version 2.0). Article, SciLayer Systems (preprint). [Version history](https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1/versions). Also published on [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6835331).",
     "Version 1 (2026-05-28): Platform-agnostic specification of the Phase 1 loop—observe → log transition → infer semantics → explore under uncertainty—with cognitive design, algorithms, and limitations.",
     "Version 2 (2026-06-01): Extends v1 with execution fidelity theory (isolated scientific runtime, validation vs. deployment phases), game-state lifecycle alignment with competition APIs, and multi-game orchestration for scaling single-episode reasoning to evaluation campaigns (ARC Prize 2026 context).",
     "Contribution: Specifies a minimal, auditable agent architecture for environments where action meaning and rules are hidden; explicitly positions Phase 1 as the exploration front-end of a larger program (Nature Foundation Models, Decision Biology, conceptual review). Cross-cites prior SciLayer releases with public URLs.",
-    "Why this supports exceptional ability: Shows iterative original research with substantive v2 revision (not cosmetic edits), systems thinking (runtime isolation, orchestration), and engagement with leading interactive-AI benchmarks (ARC-AGI-3 documentation and competition mechanics).",
+    "Why this supports exceptional ability: Shows iterative original research with substantive v2 revision, systems thinking (runtime isolation, orchestration), and engagement with leading interactive-AI benchmarks (ARC-AGI-3 documentation and competition mechanics).",
   ],
   links: withPortfolioLinks([
     { label: "ORCID", href: "https://orcid.org/0009-0008-8073-5416" },
@@ -48,6 +48,10 @@ export const scilayerScholarlyEvidenceSection: ExceptionalAbilitySection = {
     { label: "SciLayer", href: "https://sci-layer.vercel.app" },
     { label: "SciLayer on GitHub", href: "https://github.com/ilakkmanoharan/SciLayer" },
     { label: "ASRA on GitHub", href: "https://github.com/ilakkmanoharan/asra" },
+    {
+      label: "SSRN — Transition-Centric Adaptive Reasoning: ASRA Phase 1",
+      href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6835331",
+    },
     {
       label: "Concept Paper — Architectures for Adaptive Scientific Reasoning Under Uncertainty",
       href: "https://sci-layer.vercel.app/articles/architectures-adaptive-scientific-reasoning-under-uncertainty",
@@ -81,5 +85,5 @@ export const scilayerScholarlyEvidenceSection: ExceptionalAbilitySection = {
       href: "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1/versions",
     },
   ]),
-  hashtags: ["#ASRA", "#scilayer", "#openscience", "#decisionbiology"],
+  hashtags: ["#ASRA", "#scilayer", "#openscience", "#decisionbiology", "#SSRN"],
 };

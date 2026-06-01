@@ -145,7 +145,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
   },
   {
     number: 5,
-    title: "SciLayer — Git-native open science archive",
+    title: "SciLayer — open science archive",
     paragraphs: [
       "SciLayer is an open scholarly archive I designed and built solo. Researchers sign in with ORCID, submit manuscripts from GitHub, and publish versioned preprints and articles with peer review, author profiles, and public discovery by search and taxonomy.",
       "It publishes my ASRA research corpus with persistent URLs and open licensing, and it matters as both a shipped product and scholarly infrastructure: Git stays the source of truth for manuscripts while the platform handles identity, validation, routing, and publication in one transparent workflow.",

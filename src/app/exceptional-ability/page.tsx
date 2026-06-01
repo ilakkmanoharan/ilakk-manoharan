@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import { LinkifiedText } from "@/components/linkified-text";
 import { ViewTracker } from "@/components/view-tracker";
 import {
   Card,
@@ -71,13 +72,15 @@ export default function ExceptionalAbilityPage() {
               <CardContent className="space-y-4 text-sm leading-relaxed">
                 {section.paragraphs.map((p) => (
                   <p key={p.slice(0, 48)} className="text-muted-foreground">
-                    {p}
+                    <LinkifiedText text={p} />
                   </p>
                 ))}
                 {section.bullets?.length ? (
                   <ul className="list-inside list-disc space-y-2 text-muted-foreground">
                     {section.bullets.map((b) => (
-                      <li key={b}>{b}</li>
+                      <li key={b}>
+                        <LinkifiedText text={b} />
+                      </li>
                     ))}
                   </ul>
                 ) : null}

@@ -1,7 +1,9 @@
 /**
  * Evidence of exceptional ability — edit here to update the public page.
  * Source notes: private/etc/exceptional-ability.md (gitignored).
+ * Evidence 2 (SciLayer preprints): src/lib/exceptional-ability-evidence2.ts
  */
+import { scilayerScholarlyEvidenceSection } from "@/lib/exceptional-ability-evidence2";
 export type ExceptionalAbilityLink = {
   label: string;
   href: string;
@@ -68,8 +70,9 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
       "#ARCPrize2026",
     ],
   },
+  scilayerScholarlyEvidenceSection,
   {
-    number: 2,
+    number: 3,
     title: "Patent, federal R&D proposals, ISSRDC, and shipped products",
     paragraphs: [
       "I have filed a U.S. patent application for Smart Restaurant Powered by Cloud-Native IoT AIOS (Publication No. US 2024/0273653 A1, published August 15, 2024). The application describes a fully automated AI-driven smart restaurant ecosystem integrating cloud-native IoT infrastructure, intelligent kitchen orchestration, contactless food preparation, automated ordering and vending, inventory optimization, and real-time operational analytics.",
@@ -103,7 +106,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
     ]),
   },
   {
-    number: 3,
+    number: 4,
     title: "Full-stack product execution — web and App Store",
     paragraphs: [
       "Demonstrated strong execution ability and work ethic by independently conceptualizing, architecting, designing, and implementing full-stack software products end-to-end across mobile, backend, infrastructure, and product layers. Recent examples include a magazine-style publishing platform and a productivity application for organizing and retrieving information using intelligent tagging workflows.",
@@ -141,7 +144,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
     ],
   },
   {
-    number: 4,
+    number: 5,
     title: "SciLayer — Git-native open science archive",
     paragraphs: [
       "SciLayer is an open archive for scientific papers across every field—preprints, research articles, reviews, datasets, and methods papers. Researchers sign in with ORCID, prepare manuscripts as Markdown in GitHub (manuscript.md, metadata.yml, references.bib), and submit a repository URL. The platform validates structure, classifies the work for routing, and moves it through peer review to public publication—with article pages, author profiles, editor and reviewer dashboards, and discovery by search, tags, and subject taxonomy.",

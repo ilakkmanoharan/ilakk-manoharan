@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Evidence of Exceptional Ability",
   description:
-    "ASRA preprints on SciLayer, patent, federal R&D proposals, ISSRDC presentations, adaptive scientific reasoning (ARC / Decision Biology), SciLayer platform, and shipped full-stack products.",
+    "ASRA Phase 2 Observation Engine, SciLayer preprints, patent, federal R&D proposals, ISSRDC presentations, adaptive scientific reasoning (ARC / Decision Biology), SciLayer platform, and shipped full-stack products.",
 };
 
 function isExternal(href: string) {

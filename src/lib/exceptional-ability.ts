@@ -4,10 +4,12 @@
  * Evidence 2 (SciLayer preprints): src/lib/exceptional-ability-evidence2.ts
  * Evidence 3 (ASRA Phase 2): src/lib/exceptional-ability-evidence3.ts
  * Evidence 4 (ASRA Phase 3): src/lib/exceptional-ability-evidence4.ts
+ * Evidence 5 (ASRA Phase 4): src/lib/exceptional-ability-evidence5.ts
  */
 import { scilayerScholarlyEvidenceSection } from "@/lib/exceptional-ability-evidence2";
 import { asraPhase2EvidenceSection } from "@/lib/exceptional-ability-evidence3";
 import { asraPhase3EvidenceSection } from "@/lib/exceptional-ability-evidence4";
+import { asraPhase4EvidenceSection } from "@/lib/exceptional-ability-evidence5";
 export type ExceptionalAbilityLink = {
   label: string;
   href: string;
@@ -77,8 +79,9 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
   scilayerScholarlyEvidenceSection,
   asraPhase2EvidenceSection,
   asraPhase3EvidenceSection,
+  asraPhase4EvidenceSection,
   {
-    number: 5,
+    number: 6,
     title: "Patent, federal R&D proposals, ISSRDC, and shipped products",
     paragraphs: [
       "I have filed a U.S. patent application for Smart Restaurant Powered by Cloud-Native IoT AIOS (Publication No. US 2024/0273653 A1, published August 15, 2024). The application describes a fully automated AI-driven smart restaurant ecosystem integrating cloud-native IoT infrastructure, intelligent kitchen orchestration, contactless food preparation, automated ordering and vending, inventory optimization, and real-time operational analytics.",
@@ -112,7 +115,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
     ]),
   },
   {
-    number: 6,
+    number: 7,
     title: "Full-stack product execution — web and App Store",
     paragraphs: [
       "Demonstrated strong execution ability and work ethic by independently conceptualizing, architecting, designing, and implementing full-stack software products end-to-end across mobile, backend, infrastructure, and product layers. Recent examples include a magazine-style publishing platform and a productivity application for organizing and retrieving information using intelligent tagging workflows.",
@@ -150,7 +153,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
     ],
   },
   {
-    number: 7,
+    number: 8,
     title: "SciLayer — open science archive",
     paragraphs: [
       "SciLayer is an open scholarly archive I designed and built solo. Researchers sign in with ORCID, submit manuscripts from GitHub, and publish versioned preprints and articles with peer review, author profiles, and public discovery by search and taxonomy.",

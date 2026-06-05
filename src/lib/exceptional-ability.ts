@@ -5,11 +5,13 @@
  * Evidence 3 (ASRA Phase 2): src/lib/exceptional-ability-evidence3.ts
  * Evidence 4 (ASRA Phase 3): src/lib/exceptional-ability-evidence4.ts
  * Evidence 5 (ASRA Phase 4): src/lib/exceptional-ability-evidence5.ts
+ * Evidence 9 (Orbit Wars): src/lib/exceptional-ability-evidence9.ts
  */
 import { scilayerScholarlyEvidenceSection } from "@/lib/exceptional-ability-evidence2";
 import { asraPhase2EvidenceSection } from "@/lib/exceptional-ability-evidence3";
 import { asraPhase3EvidenceSection } from "@/lib/exceptional-ability-evidence4";
 import { asraPhase4EvidenceSection } from "@/lib/exceptional-ability-evidence5";
+import { orbitWarsEvidenceSection } from "@/lib/exceptional-ability-evidence9";
 export type ExceptionalAbilityLink = {
   label: string;
   href: string;
@@ -168,4 +170,5 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
     ]),
     hashtags: ["#openscience", "#orcid", "#github", "#scilayer"],
   },
+  orbitWarsEvidenceSection,
 ];

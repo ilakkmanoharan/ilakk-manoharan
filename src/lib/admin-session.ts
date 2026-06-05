@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 import { SignJWT, jwtVerify } from "jose";
 
 export const ADMIN_COOKIE_NAME = "portfolio_admin";
@@ -33,4 +34,11 @@ export async function verifyAdminSession(token: string) {
   } catch {
     return false;
   }
+}
+
+export async function isAdminRequest() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get(ADMIN_COOKIE_NAME)?.value;
+  if (!token) return false;
+  return verifyAdminSession(token);
 }

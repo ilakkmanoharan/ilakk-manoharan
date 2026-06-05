@@ -34,6 +34,7 @@ export const navItems = [
   { href: "/talks", label: "Talks" },
   { href: "/skills", label: "Skills" },
   { href: "/recruiter", label: "Recruiter Portal" },
+  { href: "/agent", label: "Agent" },
   { href: "/exceptional-ability", label: "Exceptional Ability" },
   { href: "/schedule", label: "Schedule" },
   { href: "/contact", label: "Contact" },

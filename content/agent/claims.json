@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "lastSynced": "2026-05-28",
+  "claims": [
+    {
+      "id": "claim-roles-interest",
+      "text": "Ilak is interested in senior and staff-level software engineering roles with meaningful technical ownership, especially where AI systems, distributed backends, or product-minded engineering intersect. She is also open to technical founder associate or founding engineer conversations when there is strong mission and engineering culture fit.",
+      "topics": ["roles", "career", "hiring", "staff", "founding engineer"],
+      "sources": ["https://ilakk-manoharan.vercel.app/recruiter"]
+    },
+    {
+      "id": "claim-software-experience",
+      "text": "Ilak has built and shipped backend services, full-stack web applications, data-intensive pipelines, and ML-adjacent systems across design, implementation, testing, deployment, observability, and operational ownership.",
+      "topics": ["experience", "backend", "full-stack", "engineering"],
+      "sources": ["https://ilakk-manoharan.vercel.app/recruiter"]
+    },
+    {
+      "id": "claim-strongest-skills",
+      "text": "Her strongest areas include backend engineering (APIs, services, databases), distributed systems concepts, cloud-native deployment, and pragmatic AI/ML systems integration. She is comfortable across TypeScript, Python, and Go ecosystems.",
+      "topics": ["skills", "typescript", "python", "go", "distributed systems", "AI"],
+      "sources": ["https://ilakk-manoharan.vercel.app/skills"]
+    },
+    {
+      "id": "claim-ai-experience",
+      "text": "Ilak has experience integrating models into production workflows, building evaluation-minded features, and designing systems where ML components must be reliable, observable, and cost-aware.",
+      "topics": ["AI", "ML", "production", "evaluation"],
+      "sources": ["https://ilakk-manoharan.vercel.app/projects"]
+    },
+    {
+      "id": "claim-cloud-aws",
+      "text": "She has used AWS as a primary cloud, along with managed data and messaging services, containers, and infrastructure-as-code patterns. She can ramp on GCP or Azure where teams standardize on them.",
+      "topics": ["AWS", "cloud", "infrastructure"],
+      "sources": ["https://ilakk-manoharan.vercel.app/skills"]
+    },
+    {
+      "id": "claim-fulltime-startup",
+      "text": "Ilak is open to full-time roles and startup roles when the problem space is compelling, the team values craft and velocity, and compensation and runway expectations are transparent.",
+      "topics": ["full-time", "startup", "open to work"],
+      "sources": ["https://ilakk-manoharan.vercel.app/recruiter"]
+    },
+    {
+      "id": "claim-schedule-meeting",
+      "text": "Use the Schedule a Meeting page on this portfolio to propose a time. A calendar embed appears there when configured.",
+      "topics": ["meeting", "schedule", "calendar", "interview"],
+      "sources": ["https://ilakk-manoharan.vercel.app/schedule"]
+    },
+    {
+      "id": "claim-contact",
+      "text": "Use the Contact page or Recruiter Portal message form on this portfolio. LinkedIn and GitHub links are in the site footer.",
+      "topics": ["contact", "email", "linkedin", "github"],
+      "sources": ["https://ilakk-manoharan.vercel.app/contact"]
+    },
+    {
+      "id": "claim-asra-phase4-agent",
+      "text": "ASRA Phase 4 competition agent tag is asra-v0.6-phase4. Phase 4 focuses on semantics and causal inference for ARC-style reasoning.",
+      "topics": ["ASRA", "ARC Prize", "AI engineering", "causal inference"],
+      "sources": [
+        "https://github.com/ilakkmanoharan/asra",
+        "https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4"
+      ]
+    },
+    {
+      "id": "claim-asra-phase3",
+      "text": "ASRA Phase 3 implements navigation and memory engine components for competition agents on ARC-style tasks.",
+      "topics": ["ASRA", "navigation", "memory", "ARC Prize"],
+      "sources": [
+        "https://github.com/ilakkmanoharan/asra",
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ]
+    },
+    {
+      "id": "claim-orbit-wars",
+      "text": "Orbit Wars is a Kaggle real-time strategy competition agent pipeline built by Ilak, covering perception, planning, and execution for an RTS environment.",
+      "topics": ["Orbit Wars", "Kaggle", "RTS", "competition", "agents"],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects/orbit-wars",
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ]
+    },
+    {
+      "id": "claim-scilayer",
+      "text": "SciLayer is Ilak's scientific publishing and research narrative platform with peer-reviewed-style articles on AI systems, ASRA, and related work.",
+      "topics": ["SciLayer", "research", "publishing", "scientific AI"],
+      "sources": [
+        "https://sci-layer.vercel.app",
+        "https://ilakk-manoharan.vercel.app/projects/scilayer"
+      ]
+    },
+    {
+      "id": "claim-patent",
+      "text": "Ilak holds patent-related work on smart restaurant systems, documented on the portfolio under projects and exceptional ability evidence.",
+      "topics": ["patent", "invention", "smart restaurant"],
+      "sources": ["https://ilakk-manoharan.vercel.app/projects/smart-restaurant-patent"]
+    },
+    {
+      "id": "claim-portfolio-agent-policy",
+      "text": "Ilak's general-Agent1 answers only from verified claims with citations and refuses when uncertain. It does not infer salary, visa status, or unreleased work without an explicit claim.",
+      "topics": ["agent", "policy", "grounding"],
+      "sources": ["https://ilakk-manoharan.vercel.app/.well-known/agent.json"]
+    }
+  ]
+}

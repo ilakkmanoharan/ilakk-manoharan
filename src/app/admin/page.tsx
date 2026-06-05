@@ -142,6 +142,10 @@ export default async function AdminDashboardPage() {
         <Link className="text-primary hover:underline" href="/founder-studio">
           Founder Studio
         </Link>
+        ,{" "}
+        <Link className="text-primary hover:underline" href="/admin/agent">
+          Agent invites
+        </Link>
         .
       </p>
     </div>

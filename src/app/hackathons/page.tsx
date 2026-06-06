@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { prisma } from "@/lib/prisma";
+import { loadHackathonsForPage } from "@/lib/hackathons-content";
 import { ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -18,9 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default async function HackathonsPage() {
-  const items = await prisma.hackathon.findMany({
-    orderBy: { updatedAt: "desc" },
-  });
+  const items = loadHackathonsForPage();
 
   return (
     <>

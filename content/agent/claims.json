@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "lastSynced": "2026-06-06",
   "claims": [
     {
@@ -4191,7 +4191,7 @@
     },
     {
       "id": "claim-auto-evidence-5-p5",
-      "text": "I built this with Next.js 16, React 19, TypeScript, Tailwind, Prisma, Turso, Vercel, Resend for email, and the MCP SDK. Content lives in the repo; npm run content:sync rebuilds the knowledge graph on every deploy. The point wasn't to bolt a chatbot onto a résumé—it was to own the full stack from content pipeline to session logging to a refusal-first agent other systems can actually interview.",
+      "text": "I built this with Next.js 16, React 19, TypeScript, Tailwind, Prisma, Turso, Vercel, Resend for email, and the MCP SDK. The point wasn't to bolt a chatbot onto a résumé—it was to own the full stack from content pipeline to session logging to a refusal-first agent other systems can actually interview.",
       "topics": [
         "evidence 5",
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
@@ -4846,24 +4846,6 @@
     {
       "id": "claim-auto-evidence-10-b3",
       "text": "Stack: Next.js 16 · React 19 · TypeScript · Prisma · Turso · @modelcontextprotocol/sdk · Resend",
-      "topics": [
-        "portfolio site — shipped product summary",
-        "portfolio",
-        "agents",
-        "mcp",
-        "nextjs",
-        "fullstack"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-06"
-    },
-    {
-      "id": "claim-auto-evidence-10-b4",
-      "text": "Knowledge sync: content/agent/claims.json ← projects, evidence cards, recruiter Q&A (npm run agent:sync-knowledge)",
       "topics": [
         "portfolio site — shipped product summary",
         "portfolio",

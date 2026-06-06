@@ -24,7 +24,6 @@ export const portfolioAgentEvidenceSection: ExceptionalAbilitySection = {
     "Live portfolio: https://ilakk-manoharan.vercel.app · Source: https://github.com/ilakkmanoharan/ilakk-manoharan",
     "Ilak's general-Agent1: https://ilakk-manoharan.vercel.app/agent · Manifest: https://ilakk-manoharan.vercel.app/.well-known/agent.json · MCP: https://ilakk-manoharan.vercel.app/api/mcp",
     "Stack: Next.js 16 · React 19 · TypeScript · Prisma · Turso · @modelcontextprotocol/sdk · Resend",
-    "Knowledge sync: content/agent/claims.json ← projects, evidence cards, recruiter Q&A (npm run agent:sync-knowledge)",
   ],
   links: withPortfolioLinks([
     {

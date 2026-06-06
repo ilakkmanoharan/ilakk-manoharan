@@ -1,8 +1,8 @@
 {
-  "version": 12,
+  "version": 13,
   "lastSynced": "2026-06-06",
   "siteUrl": "https://ilakk-manoharan.vercel.app",
-  "claimCount": 913,
+  "claimCount": 917,
   "nodes": [
     {
       "id": "node-recruiter-recruiter-q-a",
@@ -311,6 +311,26 @@
         "claim-auto-startup-nature-foundation-models-p1",
         "claim-auto-startup-nature-foundation-models-p2",
         "claim-auto-startup-nature-foundation-models-p3"
+      ]
+    },
+    {
+      "id": "node-founder-studio-startup-idea-nature-foundation-models",
+      "type": "founder-studio",
+      "title": "Pitch: Nature Foundation Models",
+      "url": "https://ilakk-manoharan.vercel.app/founder-studio",
+      "claimIds": [
+        "claim-auto-founder-studio-startup-idea-nature-foundation-models-summary",
+        "claim-auto-founder-studio-startup-idea-nature-foundation-models-transcript"
+      ]
+    },
+    {
+      "id": "node-founder-studio-why-distributed-systems",
+      "type": "founder-studio",
+      "title": "Why I care about distributed systems",
+      "url": "https://ilakk-manoharan.vercel.app/founder-studio",
+      "claimIds": [
+        "claim-auto-founder-studio-why-distributed-systems-summary",
+        "claim-auto-founder-studio-why-distributed-systems-transcript"
       ]
     },
     {

@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { loadFounderStudioFromMarkdown } from "../../../prisma/load-founder-studio-from-md";
 import { loadStartupsFromMarkdown } from "../../../prisma/load-startups-from-md";
 import { loadHackathonsFromMarkdown } from "../../../prisma/load-hackathons-from-md";
 import { loadProjectsFromMarkdown } from "../../../prisma/load-projects-from-md";
@@ -21,6 +22,7 @@ export type KnowledgeNode = {
     | "project"
     | "hackathon"
     | "startup"
+    | "founder-studio"
     | "evidence"
     | "recruiter";
   title: string;
@@ -269,6 +271,58 @@ export function buildAutoClaims(cwd = process.cwd()): {
       id: `node-startup-${startup.slug}`,
       type: "startup",
       title: startup.name,
+      url,
+      claimIds,
+    });
+  }
+
+  for (const item of loadFounderStudioFromMarkdown(cwd)) {
+    const url = `${SITE}/founder-studio`;
+    const claimIds: string[] = [];
+
+    const summaryId = `claim-auto-founder-studio-${item.slug}-summary`;
+    claims.push(
+      makeClaim(
+        summaryId,
+        `${item.title} (${item.category}): ${item.summary}`,
+        [item.title, item.slug, item.category, "founder studio", "founder"],
+        [url],
+        "page",
+      ),
+    );
+    claimIds.push(summaryId);
+
+    const transcriptId = `claim-auto-founder-studio-${item.slug}-transcript`;
+    claims.push(
+      makeClaim(
+        transcriptId,
+        item.transcript,
+        [item.title, item.category, ...item.relatedSkills, "founder studio"],
+        [url],
+        "page",
+      ),
+    );
+    claimIds.push(transcriptId);
+
+    for (const [i, para] of splitParagraphs(item.body).entries()) {
+      if (para === item.transcript.trim()) continue;
+      const id = `claim-auto-founder-studio-${item.slug}-p${i + 1}`;
+      claims.push(
+        makeClaim(
+          id,
+          para,
+          [item.title, item.slug, "founder studio"],
+          [url],
+          "page",
+        ),
+      );
+      claimIds.push(id);
+    }
+
+    nodes.push({
+      id: `node-founder-studio-${item.slug}`,
+      type: "founder-studio",
+      title: item.title,
       url,
       claimIds,
     });

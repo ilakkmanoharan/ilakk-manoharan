@@ -8,8 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { prisma } from "@/lib/prisma";
-import { asStringArray } from "@/lib/json";
+import { loadFounderStudioForPage } from "@/lib/founder-studio-content";
 
 export const metadata: Metadata = {
   title: "Founder Studio",
@@ -18,9 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default async function FounderStudioPage() {
-  const items = await prisma.founderStudioItem.findMany({
-    orderBy: { updatedAt: "desc" },
-  });
+  const items = loadFounderStudioForPage();
 
   return (
     <>
@@ -82,7 +79,7 @@ export default async function FounderStudioPage() {
                     <span className="font-medium text-foreground">
                       Related skills:{" "}
                     </span>
-                    {asStringArray(item.relatedSkills).join(", ")}
+                    {item.relatedSkills.join(", ")}
                   </p>
                 </div>
               </CardContent>

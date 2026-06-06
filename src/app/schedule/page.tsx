@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 export default function SchedulePage() {
   const embed = siteConfig.calEmbedUrl?.trim();
+  const hasCalendar = Boolean(embed);
 
   return (
     <>
@@ -20,14 +21,21 @@ export default function SchedulePage() {
           Schedule a Meeting with Me
         </h1>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Prefer a self-serve calendar when available; the form below always
-          records your request in the portfolio database for follow-up.
+          {hasCalendar
+            ? "Pick a time on the calendar or submit the form — both routes notify Ilak for follow-up."
+            : "Submit your preferred date and time below. Ilak will confirm or propose alternate times by email."}
         </p>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-2">
-          <div className="space-y-4">
-            <h2 className="font-heading text-xl font-semibold">Calendar</h2>
-            {embed ? (
+        <div
+          className={
+            hasCalendar
+              ? "mt-10 grid gap-10 lg:grid-cols-2"
+              : "mt-10 mx-auto max-w-xl"
+          }
+        >
+          {hasCalendar ? (
+            <div className="space-y-4">
+              <h2 className="font-heading text-xl font-semibold">Calendar</h2>
               <div className="aspect-[4/5] min-h-[560px] w-full overflow-hidden rounded-xl border border-border bg-card shadow-sm">
                 <iframe
                   title="Scheduling"
@@ -36,24 +44,16 @@ export default function SchedulePage() {
                   allow="camera; microphone; payment"
                 />
               </div>
-            ) : (
-              <div className="rounded-xl border border-dashed border-border bg-muted/40 p-8 text-sm text-muted-foreground">
-                Set{" "}
-                <code className="rounded bg-muted px-1 py-0.5 text-xs">
-                  NEXT_PUBLIC_CAL_EMBED_URL
-                </code>{" "}
-                to your Cal.com or Calendly embed URL. Until then, use the
-                meeting request form.
-              </div>
-            )}
-          </div>
+            </div>
+          ) : null}
           <div>
-            <h2 className="font-heading text-xl font-semibold">
-              Meeting request form
-            </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Fields mirror the specification: contact details, reason, and
-              preferred timing.
+            {hasCalendar ? (
+              <h2 className="font-heading text-xl font-semibold">
+                Meeting request form
+              </h2>
+            ) : null}
+            <p className={`text-sm text-muted-foreground ${hasCalendar ? "mt-2" : ""}`}>
+              Contact details, reason for the meeting, and your preferred timing.
             </p>
             <div className="mt-6 rounded-xl border border-border bg-card p-6 shadow-sm">
               <MeetingRequestForm />

@@ -11,6 +11,7 @@ type Flags = {
   dryRun: boolean;
   sessionId?: string;
   since?: string;
+  label?: string;
 };
 
 function parseFlags(): Flags {
@@ -22,6 +23,7 @@ function parseFlags(): Flags {
     else if (a === "--dry-run") flags.dryRun = true;
     else if (a === "--session") flags.sessionId = args[++i];
     else if (a === "--since") flags.since = args[++i];
+    else if (a === "--label") flags.label = args[++i];
   }
   return flags;
 }
@@ -38,6 +40,7 @@ async function main() {
     where: {
       ...(flags.sessionId ? { id: flags.sessionId } : {}),
       ...(sinceDate ? { startedAt: { gte: sinceDate } } : {}),
+      ...(flags.label ? { invite: { label: flags.label } } : {}),
     },
     include: {
       invite: true,

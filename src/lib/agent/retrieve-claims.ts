@@ -1,43 +1,166 @@
 import { AGENT_MIN_MATCH_SCORE, AGENT_REFUSAL } from "@/lib/agent/config";
 import {
+  invalidateClaimsCache,
   loadClaimsGraph,
   loadRecruiterChunks,
 } from "@/lib/agent/knowledge";
-import type { AgentQueryResult, RetrievedClaim } from "@/lib/agent/types";
+import type { AgentClaim, AgentQueryResult, RetrievedClaim } from "@/lib/agent/types";
+import { prisma } from "@/lib/prisma";
+
+const STOPWORDS = new Set([
+  "the",
+  "and",
+  "for",
+  "are",
+  "but",
+  "not",
+  "you",
+  "all",
+  "can",
+  "her",
+  "was",
+  "one",
+  "our",
+  "out",
+  "day",
+  "get",
+  "has",
+  "him",
+  "his",
+  "how",
+  "its",
+  "may",
+  "new",
+  "now",
+  "old",
+  "see",
+  "two",
+  "who",
+  "boy",
+  "did",
+  "let",
+  "put",
+  "say",
+  "she",
+  "too",
+  "use",
+  "tell",
+  "about",
+  "what",
+  "when",
+  "where",
+  "which",
+  "with",
+  "have",
+  "from",
+  "this",
+  "that",
+  "your",
+  "will",
+  "would",
+  "could",
+  "should",
+  "been",
+  "being",
+  "does",
+  "into",
+  "more",
+  "some",
+  "them",
+  "than",
+  "then",
+  "there",
+  "these",
+  "they",
+  "also",
+  "just",
+  "like",
+  "make",
+  "know",
+  "want",
+  "give",
+  "work",
+  "ilak",
+  "me",
+]);
 
 function tokenize(text: string) {
   return text
     .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/[^a-z0-9\s-]/g, " ")
     .split(/\s+/)
-    .filter((w) => w.length > 2);
+    .filter((w) => w.length > 2 && !STOPWORDS.has(w));
 }
 
-function scoreText(text: string, words: Set<string>) {
+function scoreText(text: string, words: string[]) {
   const lc = text.toLowerCase();
   let score = 0;
   for (const w of words) {
     if (lc.includes(w)) score += 1;
   }
+  const q = words.join(" ");
+  if (q.length > 8 && lc.includes(q)) score += 4;
+  for (let i = 0; i < words.length - 1; i++) {
+    const bigram = `${words[i]} ${words[i + 1]}`;
+    if (lc.includes(bigram)) score += 2;
+  }
   return score;
 }
 
-export function retrieveClaims(
+function scoreClaim(
+  claim: { text: string; topics: string[] },
+  words: string[],
+): number {
+  let score = scoreText(claim.text, words);
+  for (const topic of claim.topics) {
+    score += scoreText(topic, words) * 1.5;
+  }
+  return score;
+}
+
+async function loadApprovedConversationClaims(): Promise<AgentClaim[]> {
+  try {
+    const rows = await prisma.agentKnowledgeCandidate.findMany({
+      where: { status: "approved" },
+      orderBy: { reviewedAt: "desc" },
+      take: 100,
+    });
+    return rows.map((r) => {
+      const citations = r.citations as { sources?: string[] } | null;
+      return {
+        id: r.promotedClaimId ?? `claim-promoted-${r.id}`,
+        text: r.answer,
+        topics: tokenize(r.question),
+        sources:
+          citations?.sources?.length
+            ? citations.sources
+            : ["https://ilakk-manoharan.vercel.app/agent"],
+        origin: "conversation" as const,
+        verified: true,
+      };
+    });
+  } catch {
+    return [];
+  }
+}
+
+export async function retrieveClaims(
   question: string,
   limit = 5,
-): { matches: RetrievedClaim[]; refused: boolean } {
-  const words = new Set(tokenize(question));
-  if (words.size === 0) {
+): Promise<{ matches: RetrievedClaim[]; refused: boolean }> {
+  invalidateClaimsCache();
+  const words = tokenize(question);
+  if (words.length === 0) {
     return { matches: [], refused: true };
   }
 
   const graph = loadClaimsGraph();
-  const scored: RetrievedClaim[] = graph.claims
+  const approved = await loadApprovedConversationClaims();
+  const allClaims = [...graph.claims, ...approved];
+  const scored: RetrievedClaim[] = allClaims
     .map((claim) => ({
       ...claim,
-      score:
-        scoreText(claim.text, words) +
-        claim.topics.reduce((acc, t) => acc + scoreText(t, words), 0),
+      score: scoreClaim(claim, words),
     }))
     .filter((c) => c.score >= AGENT_MIN_MATCH_SCORE)
     .sort((a, b) => b.score - a.score)
@@ -77,11 +200,11 @@ export function retrieveClaims(
   return { matches: [], refused: true };
 }
 
-export function buildQueryResultFromClaims(
+export async function buildQueryResultFromClaims(
   question: string,
   secondsRemaining: number | null,
-): AgentQueryResult {
-  const { matches, refused } = retrieveClaims(question);
+): Promise<AgentQueryResult> {
+  const { matches, refused } = await retrieveClaims(question);
   if (refused || matches.length === 0) {
     return {
       answer: AGENT_REFUSAL,

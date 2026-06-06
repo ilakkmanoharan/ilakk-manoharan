@@ -43,7 +43,7 @@ export function createPortfolioMcpServer(getToken: () => string | undefined) {
     },
     async ({ query, token, limit }) => {
       await requireInviteToken(token ?? getToken());
-      const { matches, refused } = retrieveClaims(query, limit ?? 5);
+      const { matches, refused } = await retrieveClaims(query, limit ?? 5);
       return {
         content: [
           {
@@ -143,7 +143,7 @@ export function createPortfolioMcpServer(getToken: () => string | undefined) {
     },
     async ({ token }) => {
       await requireInviteToken(token ?? getToken());
-      const { matches } = retrieveClaims(
+      const { matches } = await retrieveClaims(
         "roles full-time startup schedule meeting contact availability remote",
         4,
       );

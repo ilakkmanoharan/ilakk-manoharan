@@ -1,3 +1,4 @@
+import { queueKnowledgeCandidate } from "@/lib/agent/knowledge-candidates";
 import { prisma } from "@/lib/prisma";
 
 export type InviteValidation =
@@ -111,6 +112,7 @@ export async function recordAgentExchange(input: {
   answer: string;
   citations: unknown;
   elapsedSec: number;
+  refused?: boolean;
 }) {
   const ctx = await getSessionWithBudget(input.sessionId);
   if (!ctx || ctx.secondsRemaining <= 0) {
@@ -119,39 +121,48 @@ export async function recordAgentExchange(input: {
 
   const elapsed = Math.min(input.elapsedSec, ctx.secondsRemaining);
 
-  await prisma.$transaction([
-    prisma.agentMessage.create({
+  const agentMessage = await prisma.$transaction(async (tx) => {
+    await tx.agentMessage.create({
       data: {
         sessionId: input.sessionId,
         role: "user",
         content: input.question,
       },
-    }),
-    prisma.agentMessage.create({
+    });
+    const agent = await tx.agentMessage.create({
       data: {
         sessionId: input.sessionId,
         role: "agent",
         content: input.answer,
         citations: input.citations as object,
       },
-    }),
-    prisma.agentSession.update({
+    });
+    await tx.agentSession.update({
       where: { id: input.sessionId },
       data: {
         usedSeconds: { increment: elapsed },
         endedAt:
           ctx.secondsRemaining - elapsed <= 0 ? new Date() : undefined,
       },
-    }),
-    ...(ctx.session.inviteId
-      ? [
-          prisma.agentInvite.update({
-            where: { id: ctx.session.inviteId },
-            data: { usedConversationSec: { increment: elapsed } },
-          }),
-        ]
-      : []),
-  ]);
+    });
+    if (ctx.session.inviteId) {
+      await tx.agentInvite.update({
+        where: { id: ctx.session.inviteId },
+        data: { usedConversationSec: { increment: elapsed } },
+      });
+    }
+    return agent;
+  });
+
+  if (!input.refused) {
+    await queueKnowledgeCandidate({
+      sessionId: input.sessionId,
+      messageId: agentMessage.id,
+      question: input.question,
+      answer: input.answer,
+      citations: input.citations as { sources?: string[]; claims?: unknown[] },
+    });
+  }
 
   return {
     ok: true as const,

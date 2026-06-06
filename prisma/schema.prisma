@@ -197,6 +197,7 @@ model AgentSession {
   usedSeconds Int            @default(0)
   exportedAt  DateTime?
   messages    AgentMessage[]
+  knowledgeCandidates AgentKnowledgeCandidate[]
 
   @@index([inviteId])
   @@index([startedAt])
@@ -210,6 +211,25 @@ model AgentMessage {
   content   String
   citations Json?
   createdAt DateTime     @default(now())
+  knowledgeCandidate AgentKnowledgeCandidate?
 
+  @@index([sessionId])
+}
+
+model AgentKnowledgeCandidate {
+  id              String        @id @default(cuid())
+  sessionId       String
+  session         AgentSession  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  messageId       String        @unique
+  message         AgentMessage  @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  question        String
+  answer          String
+  citations       Json?
+  status          String        @default("pending")
+  promotedClaimId String?
+  reviewedAt      DateTime?
+  createdAt       DateTime      @default(now())
+
+  @@index([status])
   @@index([sessionId])
 }

@@ -4,6 +4,10 @@ export type AgentClaim = {
   topics: string[];
   sources: string[];
   lastVerified?: string;
+  lastSynced?: string;
+  /** manual = hand-authored; auto = synced from site content; conversation = promoted from verified chat */
+  origin?: "manual" | "recruiter" | "project" | "hackathon" | "startup" | "exceptional-ability" | "page" | "conversation";
+  verified?: boolean;
 };
 
 export type ClaimsGraph = {

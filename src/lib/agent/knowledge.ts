@@ -5,6 +5,10 @@ import { exceptionalAbilitySections } from "@/lib/exceptional-ability";
 
 let cachedClaims: ClaimsGraph | null = null;
 
+export function invalidateClaimsCache() {
+  cachedClaims = null;
+}
+
 export function loadClaimsGraph(): ClaimsGraph {
   if (cachedClaims) return cachedClaims;
   const file = path.join(process.cwd(), "content", "agent", "claims.json");
@@ -43,4 +47,10 @@ export function listProjectSlugs(): string[] {
     .readdirSync(dir)
     .filter((f) => f.endsWith(".md"))
     .map((f) => f.replace(/\.md$/, ""));
+}
+
+export function loadKnowledgeGraphManifest() {
+  const file = path.join(process.cwd(), "content", "agent", "knowledge-graph.json");
+  if (!fs.existsSync(file)) return null;
+  return JSON.parse(fs.readFileSync(file, "utf8"));
 }

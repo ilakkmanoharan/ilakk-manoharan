@@ -45,7 +45,7 @@ export async function runAgentQuery(input: {
     };
   }
 
-  let result = buildQueryResultFromClaims(question, secondsRemaining);
+  let result = await buildQueryResultFromClaims(question, secondsRemaining);
   result = await maybeParaphraseAnswer(question, result);
 
   if (sessionId) {
@@ -55,6 +55,7 @@ export async function runAgentQuery(input: {
       answer: result.answer,
       citations: { claims: result.claims, sources: result.sources, caller: input.caller },
       elapsedSec: input.elapsedSec ?? 30,
+      refused: result.refused,
     });
     if (!recorded.ok) {
       return { error: "Conversation budget exhausted", status: 403 };

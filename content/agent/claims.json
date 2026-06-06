@@ -1,112 +1,4201 @@
 {
-  "version": 1,
-  "lastSynced": "2026-05-28",
+  "version": 5,
+  "lastSynced": "2026-06-06",
   "claims": [
     {
       "id": "claim-roles-interest",
       "text": "Ilak is interested in senior and staff-level software engineering roles with meaningful technical ownership, especially where AI systems, distributed backends, or product-minded engineering intersect. She is also open to technical founder associate or founding engineer conversations when there is strong mission and engineering culture fit.",
-      "topics": ["roles", "career", "hiring", "staff", "founding engineer"],
-      "sources": ["https://ilakk-manoharan.vercel.app/recruiter"]
+      "topics": [
+        "roles",
+        "career",
+        "hiring",
+        "staff",
+        "founding engineer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-software-experience",
       "text": "Ilak has built and shipped backend services, full-stack web applications, data-intensive pipelines, and ML-adjacent systems across design, implementation, testing, deployment, observability, and operational ownership.",
-      "topics": ["experience", "backend", "full-stack", "engineering"],
-      "sources": ["https://ilakk-manoharan.vercel.app/recruiter"]
+      "topics": [
+        "experience",
+        "backend",
+        "full-stack",
+        "engineering"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-strongest-skills",
       "text": "Her strongest areas include backend engineering (APIs, services, databases), distributed systems concepts, cloud-native deployment, and pragmatic AI/ML systems integration. She is comfortable across TypeScript, Python, and Go ecosystems.",
-      "topics": ["skills", "typescript", "python", "go", "distributed systems", "AI"],
-      "sources": ["https://ilakk-manoharan.vercel.app/skills"]
+      "topics": [
+        "skills",
+        "typescript",
+        "python",
+        "go",
+        "distributed systems",
+        "AI"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-ai-experience",
       "text": "Ilak has experience integrating models into production workflows, building evaluation-minded features, and designing systems where ML components must be reliable, observable, and cost-aware.",
-      "topics": ["AI", "ML", "production", "evaluation"],
-      "sources": ["https://ilakk-manoharan.vercel.app/projects"]
+      "topics": [
+        "AI",
+        "ML",
+        "production",
+        "evaluation"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-cloud-aws",
       "text": "She has used AWS as a primary cloud, along with managed data and messaging services, containers, and infrastructure-as-code patterns. She can ramp on GCP or Azure where teams standardize on them.",
-      "topics": ["AWS", "cloud", "infrastructure"],
-      "sources": ["https://ilakk-manoharan.vercel.app/skills"]
+      "topics": [
+        "AWS",
+        "cloud",
+        "infrastructure"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-fulltime-startup",
       "text": "Ilak is open to full-time roles and startup roles when the problem space is compelling, the team values craft and velocity, and compensation and runway expectations are transparent.",
-      "topics": ["full-time", "startup", "open to work"],
-      "sources": ["https://ilakk-manoharan.vercel.app/recruiter"]
+      "topics": [
+        "full-time",
+        "startup",
+        "open to work"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-schedule-meeting",
       "text": "Use the Schedule a Meeting page on this portfolio to propose a time. A calendar embed appears there when configured.",
-      "topics": ["meeting", "schedule", "calendar", "interview"],
-      "sources": ["https://ilakk-manoharan.vercel.app/schedule"]
+      "topics": [
+        "meeting",
+        "schedule",
+        "calendar",
+        "interview"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/schedule"
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-contact",
       "text": "Use the Contact page or Recruiter Portal message form on this portfolio. LinkedIn and GitHub links are in the site footer.",
-      "topics": ["contact", "email", "linkedin", "github"],
-      "sources": ["https://ilakk-manoharan.vercel.app/contact"]
+      "topics": [
+        "contact",
+        "email",
+        "linkedin",
+        "github"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/contact"
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-asra-phase4-agent",
       "text": "ASRA Phase 4 competition agent tag is asra-v0.6-phase4. Phase 4 focuses on semantics and causal inference for ARC-style reasoning.",
-      "topics": ["ASRA", "ARC Prize", "AI engineering", "causal inference"],
+      "topics": [
+        "ASRA",
+        "ARC Prize",
+        "AI engineering",
+        "causal inference"
+      ],
       "sources": [
         "https://github.com/ilakkmanoharan/asra",
         "https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4"
-      ]
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-asra-phase3",
       "text": "ASRA Phase 3 implements navigation and memory engine components for competition agents on ARC-style tasks.",
-      "topics": ["ASRA", "navigation", "memory", "ARC Prize"],
+      "topics": [
+        "ASRA",
+        "navigation",
+        "memory",
+        "ARC Prize"
+      ],
       "sources": [
         "https://github.com/ilakkmanoharan/asra",
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ]
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-orbit-wars",
       "text": "Orbit Wars is a Kaggle real-time strategy competition agent pipeline built by Ilak, covering perception, planning, and execution for an RTS environment.",
-      "topics": ["Orbit Wars", "Kaggle", "RTS", "competition", "agents"],
+      "topics": [
+        "Orbit Wars",
+        "Kaggle",
+        "RTS",
+        "competition",
+        "agents"
+      ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/projects/orbit-wars",
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ]
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-scilayer",
       "text": "SciLayer is Ilak's scientific publishing and research narrative platform with peer-reviewed-style articles on AI systems, ASRA, and related work.",
-      "topics": ["SciLayer", "research", "publishing", "scientific AI"],
+      "topics": [
+        "SciLayer",
+        "research",
+        "publishing",
+        "scientific AI"
+      ],
       "sources": [
         "https://sci-layer.vercel.app",
         "https://ilakk-manoharan.vercel.app/projects/scilayer"
-      ]
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-patent",
       "text": "Ilak holds patent-related work on smart restaurant systems, documented on the portfolio under projects and exceptional ability evidence.",
-      "topics": ["patent", "invention", "smart restaurant"],
-      "sources": ["https://ilakk-manoharan.vercel.app/projects/smart-restaurant-patent"]
+      "topics": [
+        "patent",
+        "invention",
+        "smart restaurant"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects/smart-restaurant-patent"
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-portfolio-agent-policy",
       "text": "Ilak's general-Agent1 answers only from verified claims with citations and refuses when uncertain. It does not infer salary, visa status, or unreleased work without an explicit claim.",
-      "topics": ["agent", "policy", "grounding"],
-      "sources": ["https://ilakk-manoharan.vercel.app/.well-known/agent.json"]
+      "topics": [
+        "agent",
+        "policy",
+        "grounding"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/.well-known/agent.json"
+      ],
+      "origin": "manual",
+      "verified": true
     },
     {
       "id": "claim-portfolio-site",
       "text": "Ilak built and deployed ilakk-manoharan.vercel.app as a full-stack Next.js portfolio with projects, recruiter portal, scheduling, admin, and Ilak's general-Agent1—a retrieval-first representative with invite-gated chat, REST query API, and MCP tools.",
-      "topics": ["portfolio", "full-stack", "Next.js", "agent", "MCP"],
+      "topics": [
+        "portfolio",
+        "full-stack",
+        "Next.js",
+        "agent",
+        "MCP"
+      ],
       "sources": [
         "https://ilakk-manoharan.vercel.app",
         "https://github.com/ilakkmanoharan/ilakk-manoharan",
         "https://ilakk-manoharan.vercel.app/agent"
-      ]
+      ],
+      "origin": "manual",
+      "verified": true
+    },
+    {
+      "id": "claim-auto-recruiter-recruiter-q-a",
+      "text": "Preloaded answers about Ilakkuvaselvi (Ilak) Manoharan. This file powers the recruiter chatbot via keyword retrieval.",
+      "topics": [
+        "recruiter q&a",
+        "recruiter",
+        "q&a"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-recruiter-roles-interest",
+      "text": "Ilak is interested in senior and staff-level software engineering roles with meaningful technical ownership, especially where AI systems, distributed backends, or product-minded engineering intersect. She is also open to technical founder associate or founding engineer conversations when there is strong mission and engineering culture fit.",
+      "topics": [
+        "roles interest",
+        "recruiter",
+        "roles",
+        "interest"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-recruiter-software-engineering-experience",
+      "text": "Ilak has built and shipped backend services, full-stack web applications, data-intensive pipelines, and ML-adjacent systems. She has worked across the lifecycle: design, implementation, testing, deployment, observability, and on-call style operational ownership.",
+      "topics": [
+        "software engineering experience",
+        "recruiter",
+        "software",
+        "engineering",
+        "experience"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-recruiter-strongest-technical-skills",
+      "text": "Her strongest areas include backend engineering (APIs, services, databases), distributed systems concepts, cloud-native deployment, and pragmatic AI/ML systems integration (not just notebooks). She is comfortable across TypeScript, Python, and Go ecosystems depending on the problem.",
+      "topics": [
+        "strongest technical skills",
+        "recruiter",
+        "strongest",
+        "technical",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-recruiter-ai-experience",
+      "text": "Yes. Ilak has experience integrating models into production workflows, building evaluation-minded features, and designing systems where ML components must be reliable, observable, and cost-aware. She partners closely with research and product to keep scope realistic.",
+      "topics": [
+        "ai experience",
+        "recruiter",
+        "ai",
+        "experience"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-recruiter-cloud-platforms",
+      "text": "She has used AWS as a primary cloud, along with common managed data and messaging services, containers, and infrastructure-as-code patterns. She can ramp on GCP or Azure where teams standardize on them.",
+      "topics": [
+        "cloud platforms",
+        "recruiter",
+        "cloud",
+        "platforms"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-recruiter-projects-built",
+      "text": "Representative themes include workflow engines, scientific/research tooling, admin and dashboard surfaces, and reliability-focused services. See the Projects page on this portfolio for concrete examples and links.",
+      "topics": [
+        "projects built",
+        "recruiter",
+        "projects",
+        "built"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-recruiter-full-time-roles",
+      "text": "Yes, Ilak is open to full-time roles that match her scope and impact expectations, especially IC or hybrid IC-with-tech-lead responsibilities.",
+      "topics": [
+        "full-time roles",
+        "recruiter",
+        "full-time",
+        "roles"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-recruiter-startup-roles",
+      "text": "Yes, she is open to startup roles when the problem space is compelling, the team values craft and velocity, and compensation and runway expectations are transparent.",
+      "topics": [
+        "startup roles",
+        "recruiter",
+        "startup",
+        "roles"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-recruiter-schedule-a-meeting",
+      "text": "You can use the Schedule a Meeting page on this portfolio to propose a time. For quick coordination, you may also reference the calendar embed on that page once configured.",
+      "topics": [
+        "schedule a meeting",
+        "recruiter",
+        "schedule",
+        "a",
+        "meeting"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-recruiter-contact",
+      "text": "Use the Contact page or Recruiter Portal message form on this portfolio. For LinkedIn and GitHub, see the site footer links.",
+      "topics": [
+        "contact",
+        "recruiter"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/recruiter"
+      ],
+      "origin": "recruiter",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-apparel-online-store-summary",
+      "text": "Apparel Online Store: Multilingual fashion e-commerce: catalog and search, cart and Stripe checkout, accounts, loyalty, promos, gift cards, returns, BOPIS, and an admin area for products, orders, campaigns, and analytics. Role: Solo builder — Next.js monolith, Firebase, Stripe, and locale-driven shopper + admin UX. Status: Shipped. Tech: Next.js 14, React 18, TypeScript, Tailwind CSS, Framer Motion, Radix UI, Zustand, Firebase, Stripe.",
+      "topics": [
+        "apparel online store",
+        "apparel-online-store",
+        "full stack",
+        "cloud",
+        "next.js 14",
+        "react 18",
+        "typescript",
+        "tailwind css",
+        "framer motion",
+        "radix ui",
+        "zustand",
+        "firebase",
+        "stripe"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/apparel-online-store"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-apparel-online-store-p1",
+      "text": "Apparel Online Store is a multilingual fashion e-commerce app: catalog and search, cart and Stripe checkout, accounts, loyalty, promos, gift cards, returns, BOPIS, and an admin area for products, orders, campaigns, and analytics.",
+      "topics": [
+        "apparel online store",
+        "apparel-online-store",
+        "full stack",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/apparel-online-store"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-apparel-online-store-p2",
+      "text": "Stack: Next.js 14 (App Router), React 18, TypeScript, Tailwind CSS, Framer Motion, Radix / Headless UI, Zustand; Firebase (Firestore, Auth, Storage; Admin SDK in APIs); Stripe (checkout, webhooks, refunds, portal).",
+      "topics": [
+        "apparel online store",
+        "apparel-online-store",
+        "full stack",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/apparel-online-store"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-apparel-online-store-p3",
+      "text": "Architecture: One deployable Next.js monolith—/[locale] shopper routes with middleware-driven locales, separate /admin, and app/api handlers for payments and server-only work; the browser talks to Firestore where rules allow; secrets stay on the server.",
+      "topics": [
+        "apparel online store",
+        "apparel-online-store",
+        "full stack",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/apparel-online-store"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-summary",
+      "text": "Ilakk Manoharan Portfolio: Production portfolio and founder showcase that doubles as an agent-native platform—human visitors get projects, recruiting, and scheduling; other AI agents get a grounded representative with citations, REST, and MCP. Role: Solo builder — Next.js app, Prisma/Turso data layer, content pipeline, recruiter portal, scheduling, admin dashboard, and Ilak's general-Agent1 (retrieval-first chat, REST query API, MCP server). Status: Active. Tech: Next.js 16, React 19, TypeScript, Tailwind CSS, Prisma, Turso, Vercel, MCP, Resend.",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source",
+        "next.js 16",
+        "react 19",
+        "typescript",
+        "tailwind css",
+        "prisma",
+        "turso",
+        "vercel",
+        "mcp",
+        "resend"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan",
+        "https://ilakk-manoharan.vercel.app"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-p1",
+      "text": "This repository powers my public portfolio at ilakk-manoharan.vercel.app. It is not a static brochure—it is a full-stack Next.js application with content surfaces (projects, startups, hackathons, Founder Studio, skills, talks, exceptional-ability evidence), recruiter and hiring flows, contact and meeting requests, admin dashboard, and Ilak's general-Agent1.",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-p2",
+      "text": "Ilak's general-Agent1 (general-agent-1) is a retrieval-first AI representative: answers come from a claims graph (content/agent/claims.json), every factual reply cites a source URL, and low-confidence questions get an explicit refusal—not improvised salary, visa, or unreleased work.",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-p3",
+      "text": "- Human chat — /agent (public info) and invite-gated /agent/g/{token} sessions with time budgets - REST — POST /api/agent/query with manifest at /.well-known/agent.json - MCP — Streamable HTTP at /api/mcp with searchfacts, getproject, getevidence, getskills, and getavailability",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-p4",
+      "text": "Production stack: Next.js 16 App Router, Prisma 7 with Turso (libSQL) on Vercel, Resend for meeting-request email, content-as-code under content/projects/, and middleware-protected /admin for submissions and agent invites.",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-p5",
+      "text": "Built for recruiters and agent-to-agent interviews—the same grounded truth for humans and machines.",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-orbit-wars-summary",
+      "text": "Orbit Wars: Phased, open-source AI agent pipeline for Kaggle's Orbit Wars RTS competition ($50K prize pool): continuous 2D space, orbiting planets, comets, and multi-agent FFA under a one-second turn budget. Four versioned phases—from baseline ladder bot (μ 505.8) through intercept geometry, six-policy forward simulation, and competition-aware meta—each with a design paper, isolated code, and ladder submission. Role: Creator — phased bot architecture, orbit/intercept geometry, forward simulation policy picker, Kaggle submission pipeline, and open documentation. Status: Active. Tech: Python, Kaggle Environments, Kaggle CLI, Game AI, Heuristic Search, Forward Simulation.",
+      "topics": [
+        "orbit wars",
+        "orbit-wars",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "python",
+        "kaggle environments",
+        "kaggle cli",
+        "game ai",
+        "heuristic search",
+        "forward simulation"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/orbit-wars",
+        "https://www.kaggle.com/competitions/orbit-wars"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-orbit-wars-p1",
+      "text": "Orbit Wars is a featured Kaggle competition: design bots that play a novel real-time strategy game—sending fleets across a continuous 2D solar system to capture orbiting planets, intercept temporary comets, and outproduce opponents over 500 turns.",
+      "topics": [
+        "orbit wars",
+        "orbit-wars",
+        "ai / ml",
+        "open source",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/orbit-wars"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-orbit-wars-p2",
+      "text": "Each bot has one second per turn to decide. Naive expanders fail on sun collisions, moving targets, and multi-player free-for-all dynamics.",
+      "topics": [
+        "orbit wars",
+        "orbit-wars",
+        "ai / ml",
+        "open source",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/orbit-wars"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-orbit-wars-p3",
+      "text": "I built the project as a four-phase progression in orbit-wars—each folder submittable independently, with a paper.md, main.py, and local runner:",
+      "topics": [
+        "orbit wars",
+        "orbit-wars",
+        "ai / ml",
+        "open source",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/orbit-wars"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-orbit-wars-p4",
+      "text": "- Phase 0 — validate the pipeline; nearest expander + garrison floor + sun avoidance (ladder μ = 505.8) - Phase 1 — geometry.py for orbit prediction, intercept ETA, fleet speed; production-weighted greedy expansion - Phase 2 — six candidate policies forward-simulated 12 turns with opponent modeling; value-function picker - Phase 3 — game-phase meta (opening / midgame / endgame), FFA awareness, comet windows; balanced + aggressive variant for the latest-two final ranking rule",
+      "topics": [
+        "orbit wars",
+        "orbit-wars",
+        "ai / ml",
+        "open source",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/orbit-wars"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-orbit-wars-p5",
+      "text": "Tooling: scripts/bundle.sh packages any phase for Kaggle upload; tests/runall.py smoke-tests all phases.",
+      "topics": [
+        "orbit wars",
+        "orbit-wars",
+        "ai / ml",
+        "open source",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/orbit-wars"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-orbit-wars-p6",
+      "text": "From empty repo to five ladder submissions with full documentation in one day—interpretable classical game AI under a hard latency budget, fully open and reproducible.",
+      "topics": [
+        "orbit wars",
+        "orbit-wars",
+        "ai / ml",
+        "open source",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/orbit-wars"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-publish-desk-summary",
+      "text": "Publish Desk: Web platform for magazine-style publishing: Markdown from Git, structured articles and magazines, a publisher dashboard, and a polished public reader site—with premium and private-link options. Role: Founder and full-stack engineer — product, Git sync, Firebase, and reader experience. Status: Live. Tech: Next.js, React, TypeScript, Tailwind CSS, Firebase, Firestore, Node.js, Markdown.",
+      "topics": [
+        "publish desk",
+        "publish-desk",
+        "full stack",
+        "backend",
+        "cloud",
+        "next.js",
+        "react",
+        "typescript",
+        "tailwind css",
+        "firebase",
+        "firestore",
+        "node.js",
+        "markdown"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/publish-desk",
+        "https://www.publish-desk.com"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-publish-desk-p1",
+      "text": "Publish Desk is a web platform for publishers and teams who want magazine-style reading and organization—not only a flat blog.",
+      "topics": [
+        "publish desk",
+        "publish-desk",
+        "full stack",
+        "backend",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/publish-desk"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-publish-desk-p2",
+      "text": "Authors write in Markdown, often from Git, and sync that content into the app; it is stored as structured articles linked to magazines, with categories and tags.",
+      "topics": [
+        "publish desk",
+        "publish-desk",
+        "full stack",
+        "backend",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/publish-desk"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-publish-desk-p3",
+      "text": "A dashboard (after sign-in) is where publishers manage content, magazines, scheduling, GitHub as a source, and account settings.",
+      "topics": [
+        "publish desk",
+        "publish-desk",
+        "full stack",
+        "backend",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/publish-desk"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-publish-desk-p4",
+      "text": "A public site lets readers browse magazines and articles per publisher, with layouts from standard prose to magazine-style columns and optional comic-style panels. Premium and private-link options support teasers, gates, and hiding pieces from public listings when desired.",
+      "topics": [
+        "publish desk",
+        "publish-desk",
+        "full stack",
+        "backend",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/publish-desk"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-publish-desk-p5",
+      "text": "The stack is Next.js, React, and TypeScript on the front; Firebase Authentication and Firestore provide accounts and multi-tenant data.",
+      "topics": [
+        "publish desk",
+        "publish-desk",
+        "full stack",
+        "backend",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/publish-desk"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-publish-desk-p6",
+      "text": "Server API routes with Firebase Admin run trusted work such as GitHub sync—parsing Markdown, updating the database, and stabilizing images for the reader. The UI uses Tailwind CSS and Markdown rendering so articles look polished on both dashboard previews and the live site.",
+      "topics": [
+        "publish desk",
+        "publish-desk",
+        "full stack",
+        "backend",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/publish-desk"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-publish-desk-p7",
+      "text": "Git-friendly authoring, editorial presentation, and cloud-backed publishing—in one product.",
+      "topics": [
+        "publish desk",
+        "publish-desk",
+        "full stack",
+        "backend",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/publish-desk"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-researchgraph-os-summary",
+      "text": "ResearchGraph OS: Agentic research MVP: ingest PDFs, notes, pages, and transcripts into Git-backed memory (`researchgraph-memory/`), backed by a JSON graph and TF–IDF retrieval. FastAPI synchronously orchestrates role-specialized agents—research, SEO, citation, skeptic, contradiction, memory, change, and content—into cited Markdown briefs, evidence logs, and change logs; Next.js (App Router) is the operator UI. Opinionated pipeline over opaque chat: inspectable artifacts, optional LLMs, human-review boundaries. Role: Creator — multi-agent orchestration in FastAPI, file-backed long-term memory, Next.js dashboard (ingest, search, generate, SEO, contradictions, Git). Status: Active. Tech: Next.js, TypeScript, Tailwind CSS, FastAPI, Python, Pydantic, scikit-learn, PyMuPDF, Git.",
+      "topics": [
+        "researchgraph os",
+        "researchgraph-os",
+        "ai / ml",
+        "full stack",
+        "backend",
+        "scientific ai",
+        "next.js",
+        "typescript",
+        "tailwind css",
+        "fastapi",
+        "python",
+        "pydantic",
+        "scikit-learn",
+        "pymupdf",
+        "git"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ResearchGraph-OS"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-researchgraph-os-p1",
+      "text": "ResearchGraph OS turns PDFs, Markdown notes, webpages, and YouTube transcripts into durable, cited outputs—not only ephemeral chat. Everything important lands in researchgraph-memory/, a Git-friendly tree you can commit, diff, and push as long-term agent memory.",
+      "topics": [
+        "researchgraph os",
+        "researchgraph-os",
+        "ai / ml",
+        "full stack",
+        "backend",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ResearchGraph-OS"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-researchgraph-os-p2",
+      "text": "A JSON graph (sources, claims, entities, contradictions) plus TF–IDF search over summaries enables local retrieval without mandatory embeddings or paid APIs on the default path.",
+      "topics": [
+        "researchgraph os",
+        "researchgraph-os",
+        "ai / ml",
+        "full stack",
+        "backend",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ResearchGraph-OS"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-researchgraph-os-p3",
+      "text": "Here agentic means role-specialized pipeline steps: small Python modules under researchgraph.agents/ each own one job—retrieve context, derive SEO cues, verify citations, challenge claims skeptically, propose contradiction candidates, append run logs, write change summaries, and assemble Markdown. Document generation stacks several specialists in sequence (research → SEO → citation → skeptic → contradiction → change log)—multi-agent in composition, explicit synchronous orchestration in the API rather than autonomous conversational agents.",
+      "topics": [
+        "researchgraph os",
+        "researchgraph-os",
+        "ai / ml",
+        "full stack",
+        "backend",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ResearchGraph-OS"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-researchgraph-os-p4",
+      "text": "FastAPI exposes ingest, search, SEO-style analysis, claim helpers, document generation, evidence/change logs, and optional git commit in the memory folder. Next.js calls the API via NEXTPUBLICAPIURL for dashboard workflows: ingest → search → generate → SEO / evidence / Git.",
+      "topics": [
+        "researchgraph os",
+        "researchgraph-os",
+        "ai / ml",
+        "full stack",
+        "backend",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ResearchGraph-OS"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-researchgraph-os-p5",
+      "text": "Outputs: cited Markdown briefs (fixed sections), optional PDFs, evidence logs, change logs, with human-review boundaries and AI disclosure.",
+      "topics": [
+        "researchgraph os",
+        "researchgraph-os",
+        "ai / ml",
+        "full stack",
+        "backend",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ResearchGraph-OS"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-researchgraph-os-p6",
+      "text": "Architecture: Next.js → FastAPI → ingest / graph / retrieval / agents → files on disk → optional Git.",
+      "topics": [
+        "researchgraph os",
+        "researchgraph-os",
+        "ai / ml",
+        "full stack",
+        "backend",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ResearchGraph-OS"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-researchgraph-os-p7",
+      "text": "Positioning: An inspectable pipeline—not a generic chat wrapper—with room to add LLMs, vector stores, and richer PDF handling as the product matures.",
+      "topics": [
+        "researchgraph os",
+        "researchgraph-os",
+        "ai / ml",
+        "full stack",
+        "backend",
+        "scientific ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ResearchGraph-OS"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-scilayer-summary",
+      "text": "SciLayer: Open archive for scientific papers across every field—preprints, research articles, reviews, datasets, and methods papers. Researchers sign in with ORCID, submit manuscripts from GitHub, and move work through validation, classification, peer review, and public publication. Role: Solo builder — product and data model, Next.js app and API routes, Prisma schema, ORCID OAuth, manuscript validation and classification pipeline, public article and submission UI. Status: Active. Tech: Next.js 16, React, TypeScript, Tailwind CSS, Prisma, PostgreSQL, ORCID OAuth, remark, Zod.",
+      "topics": [
+        "scilayer",
+        "full stack",
+        "scientific ai",
+        "open source",
+        "backend",
+        "next.js 16",
+        "react",
+        "typescript",
+        "tailwind css",
+        "prisma",
+        "postgresql",
+        "orcid oauth",
+        "remark",
+        "zod"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/SciLayer"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-scilayer-p1",
+      "text": "SciLayer is an open archive for scientific papers across every field—preprints, research articles, reviews, datasets, and methods papers.",
+      "topics": [
+        "scilayer",
+        "full stack",
+        "scientific ai",
+        "open source",
+        "backend"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/SciLayer"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-scilayer-p2",
+      "text": "Researchers sign in with ORCID, submit manuscripts from GitHub, and move work through validation, classification, peer review, and public publication.",
+      "topics": [
+        "scilayer",
+        "full stack",
+        "scientific ai",
+        "open source",
+        "backend"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/SciLayer"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-scilayer-p3",
+      "text": "Built as a Next.js journal platform with article pages, author profiles, editor and reviewer dashboards, and discovery by search, tags, and subject taxonomy.",
+      "topics": [
+        "scilayer",
+        "full stack",
+        "scientific ai",
+        "open source",
+        "backend"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/SciLayer"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-scilayer-p4",
+      "text": "The stack is Next.js 16, React, and TypeScript with Tailwind CSS; Prisma and PostgreSQL back the data model; ORCID OAuth handles researcher identity; remark and Zod support manuscript content and validation on the submission pipeline.",
+      "topics": [
+        "scilayer",
+        "full stack",
+        "scientific ai",
+        "open source",
+        "backend"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/SciLayer"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-smart-restaurant-patent-summary",
+      "text": "Smart Restaurant (Cloud-Native IoT AIOS): Published U.S. patent application for a smart-restaurant architecture powered by cloud-native IoT and an AI-oriented operating stack—linking edge devices, services, and intelligence for operational automation. Role: Inventor — U.S. patent application US 2024/0273653 A1. Status: Published application (US 2024/0273653 A1). Tech: IoT, Cloud-native systems, Edge AI, Restaurant / hospitality automation, Distributed services.",
+      "topics": [
+        "smart restaurant (cloud-native iot aios)",
+        "smart-restaurant-patent",
+        "patents",
+        "cloud",
+        "ai / ml",
+        "iot",
+        "cloud-native systems",
+        "edge ai",
+        "restaurant / hospitality automation",
+        "distributed services"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://patents.google.com/patent/US20240273653A1/en"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-smart-restaurant-patent-p1",
+      "text": "Smart Restaurant powered by Cloud-Native IoT AIOS is described in U.S. patent application publication US 2024/0273653 A1 (Google Patents: US20240273653A1).",
+      "topics": [
+        "smart restaurant (cloud-native iot aios)",
+        "smart-restaurant-patent",
+        "patents",
+        "cloud",
+        "ai / ml"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-smart-restaurant-patent-p2",
+      "text": "The filing covers an architecture that combines IoT at the venue with a cloud-native control and data plane and an AI-oriented operating model suited to high-churn restaurant workflows—sensors, connectivity, and software services aligned for monitoring, automation, and intelligence-driven operations.",
+      "topics": [
+        "smart restaurant (cloud-native iot aios)",
+        "smart-restaurant-patent",
+        "patents",
+        "cloud",
+        "ai / ml"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-smart-restaurant-patent-p3",
+      "text": "A copy of the published application PDF is available from this project card (PDF link) for offline reading.",
+      "topics": [
+        "smart restaurant (cloud-native iot aios)",
+        "smart-restaurant-patent",
+        "patents",
+        "cloud",
+        "ai / ml"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-tag-scribe-summary",
+      "text": "Tag Scribe: Productivity app for capture and recall—links, highlights, images, text, and video in a private library shaped with categories, tags, lists, and a yearly planner. Next.js API over Firestore; SwiftUI iOS and Kotlin Android clients. Role: Solo builder — web API, Firebase auth, iOS Share Extension, and cross-platform contracts. Status: Active. Tech: Next.js 14, React, TypeScript, Vercel, Firestore, SQLite, Firebase Auth, SwiftUI, Kotlin, Jetpack Compose.",
+      "topics": [
+        "tag scribe",
+        "tag-scribe",
+        "full stack",
+        "mobile",
+        "cloud",
+        "next.js 14",
+        "react",
+        "typescript",
+        "vercel",
+        "firestore",
+        "sqlite",
+        "firebase auth",
+        "swiftui",
+        "kotlin",
+        "jetpack compose"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/tag-scribe"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-tag-scribe-p1",
+      "text": "Tag Scribe is a productivity app for capture and recall: links, highlights, images, text, and video land in a private library you shape with categories, tags, lists, and an archive.",
+      "topics": [
+        "tag scribe",
+        "tag-scribe",
+        "full stack",
+        "mobile",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/tag-scribe"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-tag-scribe-p2",
+      "text": "Optional due dates and priorities surface in a yearly planner so commitments stay visible beside everything you have saved to revisit.",
+      "topics": [
+        "tag scribe",
+        "tag-scribe",
+        "full stack",
+        "mobile",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/tag-scribe"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-tag-scribe-p3",
+      "text": "A Next.js 14 app on Vercel serves the React UI and /api/ REST layer over Firestore in production, or SQLite under private/ when Firebase Admin is not in use.",
+      "topics": [
+        "tag scribe",
+        "tag-scribe",
+        "full stack",
+        "mobile",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/tag-scribe"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-tag-scribe-p4",
+      "text": "The web signs in with Firebase (ID tokens on each request); SwiftUI on iOS uses Sign in with Apple, receives a server JWT in the Keychain and App Group, and ships a Share Extension so saves from other apps hit the same API; Kotlin and Jetpack Compose on Android are growing toward the same contract.",
+      "topics": [
+        "tag scribe",
+        "tag-scribe",
+        "full stack",
+        "mobile",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/tag-scribe"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-tag-scribe-p5",
+      "text": "Github: https://github.com/ilakkmanoharan/tag-scribe",
+      "topics": [
+        "tag scribe",
+        "tag-scribe",
+        "full stack",
+        "mobile",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/tag-scribe"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-tag-scribe-p6",
+      "text": "App Store: https://apps.apple.com/us/app/tagscribe/id6760214615",
+      "topics": [
+        "tag scribe",
+        "tag-scribe",
+        "full stack",
+        "mobile",
+        "cloud"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/tag-scribe"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-the-chess-multiverse-summary",
+      "text": "The Chess Multiverse: Multiplayer web chess on an infinite 2D grid of linked 8×8 boards—edge rules move play across boards. Monorepo: Express + WebSocket server (authoritative), Vite + React + PixiJS client, shared TypeScript rules engine. Role: Creator — game design, real-time server, PixiJS rendering, and Firebase Auth for lobby. Status: Active. Tech: React, TypeScript, Vite, PixiJS, Zustand, Tailwind CSS, Node.js, Express, WebSocket, Firebase Auth, Vitest.",
+      "topics": [
+        "the chess multiverse",
+        "the-chess-multiverse",
+        "full stack",
+        "backend",
+        "distributed systems",
+        "react",
+        "typescript",
+        "vite",
+        "pixijs",
+        "zustand",
+        "tailwind css",
+        "node.js",
+        "express",
+        "websocket",
+        "firebase auth",
+        "vitest"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/the-chess-multiverse"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-the-chess-multiverse-p1",
+      "text": "The Chess Multiverse is multiplayer web chess on an infinite 2D grid of linked 8×8 boards.",
+      "topics": [
+        "the chess multiverse",
+        "the-chess-multiverse",
+        "full stack",
+        "backend",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/the-chess-multiverse"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-the-chess-multiverse-p2",
+      "text": "Edge rules (e.g. queen exit) trigger moves to neighboring boards so play spans many boards, not one isolated surface.",
+      "topics": [
+        "the chess multiverse",
+        "the-chess-multiverse",
+        "full stack",
+        "backend",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/the-chess-multiverse"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-the-chess-multiverse-p3",
+      "text": "Monorepo (npm workspaces): packages/shared = pure TypeScript chess + board math + socket types used everywhere.",
+      "topics": [
+        "the chess multiverse",
+        "the-chess-multiverse",
+        "full stack",
+        "backend",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/the-chess-multiverse"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-the-chess-multiverse-p4",
+      "text": "apps/server = Node + Express + WebSocket (ws); authoritative in-memory world; validates/applies moves via shared; broadcasts gamestate, moveapplied, boardtransition. apps/web = Vite + React; PixiJS renders the multi-board world, pan/zoom, and pieces; Zustand mirrors game/session/WS; Tailwind for UI chrome.",
+      "topics": [
+        "the chess multiverse",
+        "the-chess-multiverse",
+        "full stack",
+        "backend",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/the-chess-multiverse"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-the-chess-multiverse-p5",
+      "text": "Flow: client opens WS → join → server pushes state; every move is validated server-side; Firebase Auth protects lobby and game routes. Web stack: React 18, react-router-dom 6, PixiJS 7, Zustand 4, Tailwind 3, Firebase JS SDK, Vitest.",
+      "topics": [
+        "the chess multiverse",
+        "the-chess-multiverse",
+        "full stack",
+        "backend",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/the-chess-multiverse"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-the-chess-multiverse-p6",
+      "text": "Server stack: Node ≥18, Express 4, firebase-admin (optional), tsx in dev, Vitest.",
+      "topics": [
+        "the chess multiverse",
+        "the-chess-multiverse",
+        "full stack",
+        "backend",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/the-chess-multiverse"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-the-chess-multiverse-p7",
+      "text": "Dev: npm run dev; build: shared → server → web; env vars configure WS URL and Firebase.",
+      "topics": [
+        "the chess multiverse",
+        "the-chess-multiverse",
+        "full stack",
+        "backend",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/the-chess-multiverse"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-the-chess-multiverse-p8",
+      "text": "Roadmap: persistence and real lobby data, stronger neighbor AI, optional “by piece” mode—the core sign-in, join, and real-time play loop is live today. Positioning: classical chess rules with spatial multiverse exploration—browser-first, real-time, server-authoritative play.",
+      "topics": [
+        "the chess multiverse",
+        "the-chess-multiverse",
+        "full stack",
+        "backend",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/the-chess-multiverse"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-asra-problem",
+      "text": "ASRA (Kaggle ARC Prize 2026 — ARC-AGI-3) — Problem: Prediction-centric AI assumes stable tasks, known action semantics, and dense supervision—yet scientific and biological environments are partially observable, intervention-driven, and governed by hidden mechanics. Discovery requires hypothesis generation, causal experimentation, uncertainty-aware exploration, and theory refinement—not interpolation alone.",
+      "topics": [
+        "asra",
+        "kaggle arc prize 2026 — arc-agi-3",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/asra",
+        "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-asra-solution",
+      "text": "ASRA (Kaggle ARC Prize 2026 — ARC-AGI-3) — Solution: ASRA (Adaptive Scientific Reasoning Architecture) models intelligence as intervention-centric scientific reasoning: observe → hypothesize → experiment → analyze → refine, with explanatory world models and action semantics inference (actions as latent operators inferred from transitions). Decision Biology—the first ASRA specialization—treats perturbations as interventions, signaling pathways as latent biological world models, and cellular adaptation as sequential causal reasoning under uncertainty.",
+      "topics": [
+        "asra",
+        "kaggle arc prize 2026 — arc-agi-3",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/asra",
+        "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-asra-technical-contribution",
+      "text": "ASRA (Kaggle ARC Prize 2026 — ARC-AGI-3) — Technical contribution: Formalizes action semantics inference coupled with explanatory world-model learning; exploration as adaptive experimental design rather than random policy search; memory stores reusable causal motifs and reasoning operators, not task-specific answers—shifting from prediction-centric to intervention-centric scientific intelligence.",
+      "topics": [
+        "asra",
+        "kaggle arc prize 2026 — arc-agi-3",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/asra",
+        "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-asra-impact",
+      "text": "ASRA (Kaggle ARC Prize 2026 — ARC-AGI-3) — Impact: Bridges adaptive architectures, causal reasoning, active inference, and systems biology toward agents that autonomously hypothesize, experiment, and model natural systems—building compact theories, inventing strategies, and transferring abstractions across unfamiliar interactive and biological environments.",
+      "topics": [
+        "asra",
+        "kaggle arc prize 2026 — arc-agi-3",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/asra",
+        "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-asra-model-tech",
+      "text": "ASRA (Kaggle ARC Prize 2026 — ARC-AGI-3) — Model / tech: Modular ASRA stack—observation/representation, hypothesis generation, experimental simulation, meta-abstraction memory, strategy invention; action semantics inference; Decision Biology domain layer; active inference and causal experimental design.",
+      "topics": [
+        "asra",
+        "kaggle arc prize 2026 — arc-agi-3",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/asra",
+        "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-asra-dataset",
+      "text": "ASRA (Kaggle ARC Prize 2026 — ARC-AGI-3) — Dataset: Kaggle ARC Prize 2026 / ARC-AGI-3 interactive evaluation environments; conceptual alignment with perturbation-response and decision-biology reasoning (interventions, pathway-level world models, adaptive state transitions).",
+      "topics": [
+        "asra",
+        "kaggle arc prize 2026 — arc-agi-3",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/asra",
+        "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-asra-body-1",
+      "text": "ASRA (Adaptive Scientific Reasoning Architectures for Decision Biology) reframes intelligence as intervention-centric scientific reasoning through world models, action semantics inference, and adaptive biological reasoning—not memorization or static prediction (ARC Prize 2026 on Kaggle).",
+      "topics": [
+        "asra",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/asra"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-asra-body-2",
+      "text": "Decision Biology interprets cells as adaptive information-processing systems: perturbations are interventions, pathways are latent world models, and adaptation is distributed causal reasoning under uncertainty.",
+      "topics": [
+        "asra",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/asra"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-asra-body-3",
+      "text": "Tagline: Intervention-centric scientific reasoning through world models, action semantics inference, and Decision Biology.",
+      "topics": [
+        "asra",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/asra"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-greenflux-problem",
+      "text": "GreenFlux (Kaggle's GEMMA4GOOD hackathon) — Problem: Environmental signals are harder to monitor and interpret in real time; microalgae such as *Chlorella* respond quickly to nutrient, temperature, salinity, and light stress—carrying information about ecosystem health, carbon cycling, and biofuel potential—yet many workflows stay fragmented, cloud-dependent, and unsuited to labs, classrooms, or field sites that need privacy and offline-capable tools.",
+      "topics": [
+        "greenflux",
+        "kaggle's gemma4good hackathon",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/green-flux"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-greenflux-solution",
+      "text": "GreenFlux (Kaggle's GEMMA4GOOD hackathon) — Solution: GreenFlux (\"Photosynthetic Decision Systems\"): Streamlit app exploring how microalgae—especially *Chlorella*—respond to abiotic stress and reallocate metabolism; Plotly dashboards, optional scikit-learn models, environmental what-if simulator, and privacy-friendly Gemma 4 via Ollama with TF-IDF RAG over curated markdown—plus optional `run_reasoning_chain` (Hypothesis, Evidence, Adaptation logic, Uncertainty) for scaffolded scientific explanation.",
+      "topics": [
+        "greenflux",
+        "kaggle's gemma4good hackathon",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/green-flux"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-greenflux-technical-contribution",
+      "text": "GreenFlux (Kaggle's GEMMA4GOOD hackathon) — Technical contribution: Local-first inference with vetted static fallback when Ollama is unavailable (no mandatory cloud completion); RAG-assembled prompts that discourage invented numbers and surface uncertainty; shared `scientific_explain` orchestrator for free-form Q&A and single-turn structured reasoning via `run_reasoning_chain`—scaffolded agentic pattern, not a multi-step tool loop yet; reproducible grounding for labs, classrooms, and offline field use.",
+      "topics": [
+        "greenflux",
+        "kaggle's gemma4good hackathon",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/green-flux"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-greenflux-impact",
+      "text": "GreenFlux (Kaggle's GEMMA4GOOD hackathon) — Impact: Demonstrates how local frontier models plus grounded retrieval can support environmental resilience—monitoring and stress interpretation, climate-resilience education, biofuel-oriented exploration, and offline or edge-friendly scientific assistance—so learners and practitioners get explainable narratives tied to measured or curated context instead of opaque, always-on cloud chat.",
+      "topics": [
+        "greenflux",
+        "kaggle's gemma4good hackathon",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/green-flux"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-greenflux-model-tech",
+      "text": "GreenFlux (Kaggle's GEMMA4GOOD hackathon) — Model / tech: Gemma 4 (Ollama), TF-IDF RAG over curated markdown, scientific reasoning orchestrator (`scientific_explain`), scikit-learn, Plotly, Streamlit, pandas/Parquet.",
+      "topics": [
+        "greenflux",
+        "kaggle's gemma4good hackathon",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/green-flux"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-greenflux-dataset",
+      "text": "GreenFlux (Kaggle's GEMMA4GOOD hackathon) — Dataset: Synthetic demo Parquet, user-uploaded CSV, or pipelines from public sets (laboratory algae growth corpora, ATP3 UFS-3 pond CSVs from OpenEI, GEO series with supplementary DE spreadsheets).",
+      "topics": [
+        "greenflux",
+        "kaggle's gemma4good hackathon",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/green-flux"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-hackathon-greenflux-body-1",
+      "text": "GreenFlux is the Kaggle GEMMA4GOOD submission: Streamlit, pandas/Parquet, Plotly, scikit-learn + TF-IDF RAG over markdown, and local Gemma chat via Ollama. Data may be synthetic demo parquet, user CSV, or public algae growth / pond / GEO pipelines. The shipped experience focuses on reproducible grounding, simple deployment, and clear limits of single-turn assistance—fine-tuning and future tool-call loops are documented as extensions.",
+      "topics": [
+        "greenflux",
+        "hackathon"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/hackathons",
+        "https://github.com/ilakkmanoharan/green-flux"
+      ],
+      "origin": "hackathon",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-agentapply-overview",
+      "text": "AgentApply: The application infrastructure layer for AI agents—a programmable API and protocol to securely discover, prepare, validate, and submit applications across jobs, accelerators, grants, fellowships, and founder programs. The deck argues the application internet was built for humans manually filling forms; AgentApply is how that stack becomes programmable—schemas, endpoints, structured application packages, status and workflow APIs, and agent identity (consent, signatures, verification)—so agents interact with systems instead of driving browsers.",
+      "topics": [
+        "agentapply",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-agentapply-problem",
+      "text": "AI agents can browse, write code, manage workflows, and operate autonomously—but the moment they try to apply to a job, accelerator, grant, fellowship, or founder program, everything breaks. Today's path is fragmented, repetitive, and not machine-readable: fragile automation over buttons, dynamic forms, CAPTCHAs, inconsistent layouts, and broken flows.",
+      "topics": [
+        "agentapply",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-agentapply-solution",
+      "text": "Evolve from human-only web forms to agent-native programmable workflows: companies expose an Agent Application Endpoint (machine-readable requirements, application schema, submit URL, supported credentials); applicant-side agents read requirements programmatically, generate structured applications, upload documents, submit, receive receipts and status, and maintain application state.",
+      "topics": [
+        "agentapply",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-agentapply-target-users",
+      "text": "Employers, startups, accelerators, universities, research labs, fellowships, and grant organizations; plus builders of AI career agents, founder agents, research agents, recruiting agents, workflow assistants, and autonomous opportunity-discovery systems",
+      "topics": [
+        "agentapply",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-agentapply-p1",
+      "text": "AgentApply is a founder concept for programmable application infrastructure—making jobs, grants, accelerators, and fellowships machine-readable so AI agents can apply with structured packages instead of brittle browser automation.",
+      "topics": [
+        "agentapply",
+        "startup"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-agentapply-p2",
+      "text": "Pitch deck: /startup-catalog/AgentApply.pdf on the startup catalog.",
+      "topics": [
+        "agentapply",
+        "startup"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-finance-autopilot-overview",
+      "text": "Finance Autopilot: Continuous, autonomous financial operations for high-growth companies. An autonomous financial system that connects to your bank and operational tools, continuously classifies transactions, maintains a tax-aware ledger, and executes financial actions—replacing fragmented bookkeeping, tax, payroll, and payment workflows with a single system that runs continuously.",
+      "topics": [
+        "finance autopilot",
+        "finance-autopilot",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-finance-autopilot-problem",
+      "text": "Finance is still manual, fragmented, and reactive. Startups rely on multiple tools and people to manage bookkeeping, taxes, payroll, and payments—with no system owning the full workflow.",
+      "topics": [
+        "finance autopilot",
+        "finance-autopilot",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-finance-autopilot-solution",
+      "text": "Finance Autopilot unifies the financial lifecycle: keeps books always up to date, computes taxes in real time, and executes payments and filings automatically—with built-in controls and auditability. From raw transactions to compliant, executed financial outcomes.",
+      "topics": [
+        "finance autopilot",
+        "finance-autopilot",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-finance-autopilot-target-users",
+      "text": "Startups and solo founders without finance teams; SMBs and digital businesses juggling accounting, payroll, and payments; high-growth companies needing real-time visibility and execution",
+      "topics": [
+        "finance autopilot",
+        "finance-autopilot",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-finance-autopilot-p1",
+      "text": "Finance Autopilot is a founder deck concept for continuous, autonomous financial operations—unifying bookkeeping, tax, payroll, and payments into one always-on system for startups and SMBs.",
+      "topics": [
+        "finance autopilot",
+        "finance-autopilot",
+        "startup"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-finance-autopilot-p2",
+      "text": "Pitch deck: /startup-catalog/Finance-Autopilot-v2.pdf on the startup catalog.",
+      "topics": [
+        "finance autopilot",
+        "finance-autopilot",
+        "startup"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-nature-foundation-models-overview",
+      "text": "Nature Foundation Models: Building foundation models for natural systems—Phase 1: decision biology with information-theoretic AI for cellular decision-making under uncertainty. Founder-led deck outlining a new category of foundation models trained on natural-system dynamics: multimodal scientific intelligence constrained by physics, chemistry, biology, and uncertainty—toward a programmable intelligence layer for science.",
+      "topics": [
+        "nature foundation models",
+        "nature-foundation-models",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-nature-foundation-models-problem",
+      "text": "Natural systems remain hard to predict across biology, chemistry, physics, and environmental science; knowledge is fragmented across scales and modalities; discovery workflows are still slow, empirical, and trial-and-error; we lack foundational AI that learns, simulates, and reasons about governing dynamics of nature.",
+      "topics": [
+        "nature foundation models",
+        "nature-foundation-models",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-nature-foundation-models-solution",
+      "text": "A stack from natural data and scientific representations through temporal/dynamics models, simulation, scientific agents, and design/discovery systems—models that learn physical and biological dynamics, model adaptive systems, simulate under uncertainty, and unify reasoning across domains. Phase 1 focuses on cells as probabilistic decision systems governed by information flow, energy constraints, physical laws, and stochastic dynamics.",
+      "topics": [
+        "nature foundation models",
+        "nature-foundation-models",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-nature-foundation-models-target-users",
+      "text": "Biotech R&D, academic labs, scientific computing teams, environmental and materials researchers, and partners building at the intersection of AI and natural sciences",
+      "topics": [
+        "nature foundation models",
+        "nature-foundation-models",
+        "startup",
+        "founder"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-nature-foundation-models-p1",
+      "text": "Nature Foundation Models is Ilak's long-term bet on AI infrastructure for scientific intelligence across biology, chemistry, physics, and environmental systems—not benchmark-bound prediction, but models that learn natural-system dynamics, simulate under uncertainty, and support discovery workflows.",
+      "topics": [
+        "nature foundation models",
+        "nature-foundation-models",
+        "startup"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-nature-foundation-models-p2",
+      "text": "Phase 1 wedges into Decision Biology: treating cells as adaptive information-processing systems where perturbations are interventions and pathways are latent world models. This connects directly to ASRA (Adaptive Scientific Reasoning Architecture) and the exceptional-ability research narrative on ilakk-manoharan.vercel.app.",
+      "topics": [
+        "nature foundation models",
+        "nature-foundation-models",
+        "startup"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-startup-nature-foundation-models-p3",
+      "text": "Pitch deck: /startup-catalog/Nature-Foundation-Models-v9.pdf on the startup catalog.",
+      "topics": [
+        "nature foundation models",
+        "nature-foundation-models",
+        "startup"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/startups"
+      ],
+      "origin": "startup",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-1-p1",
+      "text": "Recently, I started working on the Kaggle Competition ARC Prize 2026 — ARC-AGI-3, and immediately wanted to apply world models to Decision Biology and Nature Foundation Models too.",
+      "topics": [
+        "evidence 1",
+        "adaptive scientific reasoning — arc prize 2026 & decision biology",
+        "fluidintelligence",
+        "decisionbiology",
+        "arcprize2026",
+        "adaptive",
+        "scientific",
+        "reasoning",
+        "arc",
+        "prize",
+        "2026",
+        "decision",
+        "biology"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-1-p2",
+      "text": "The idea of agents exploring unfamiliar environments, inferring hidden mechanics, learning action semantics, and building adaptive reasoning systems felt directly connected to biological systems and cellular decision-making.",
+      "topics": [
+        "evidence 1",
+        "adaptive scientific reasoning — arc prize 2026 & decision biology",
+        "fluidintelligence",
+        "decisionbiology",
+        "arcprize2026",
+        "adaptive",
+        "scientific",
+        "reasoning",
+        "arc",
+        "prize",
+        "2026",
+        "decision",
+        "biology"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-1-p3",
+      "text": "So far, a lot of computational biology has mainly focused on prediction, classification, statistical modeling, sequence analysis, and narrow ML applications on biological datasets. But biological systems are adaptive, dynamic, uncertain, and continuously interacting with their environments.",
+      "topics": [
+        "evidence 1",
+        "adaptive scientific reasoning — arc prize 2026 & decision biology",
+        "fluidintelligence",
+        "decisionbiology",
+        "arcprize2026",
+        "adaptive",
+        "scientific",
+        "reasoning",
+        "arc",
+        "prize",
+        "2026",
+        "decision",
+        "biology"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-1-p4",
+      "text": "What became very exciting to me is the possibility of using world models, adaptive reasoning, hidden-state inference, and exploration-driven learning to model how cells process information, respond to perturbations, adapt, and make decisions under uncertainty.",
+      "topics": [
+        "evidence 1",
+        "adaptive scientific reasoning — arc prize 2026 & decision biology",
+        "fluidintelligence",
+        "decisionbiology",
+        "arcprize2026",
+        "adaptive",
+        "scientific",
+        "reasoning",
+        "arc",
+        "prize",
+        "2026",
+        "decision",
+        "biology"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-1-p5",
+      "text": "Currently I'm building ASRA — an adaptive reasoning engine; Decision Biology — the first scientific domain built on top of it; and Nature Foundation Models — a broader scientific intelligence platform across biology, chemistry, physics, and environmental systems.",
+      "topics": [
+        "evidence 1",
+        "adaptive scientific reasoning — arc prize 2026 & decision biology",
+        "fluidintelligence",
+        "decisionbiology",
+        "arcprize2026",
+        "adaptive",
+        "scientific",
+        "reasoning",
+        "arc",
+        "prize",
+        "2026",
+        "decision",
+        "biology"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p1",
+      "text": "I have developed ASRA (Adaptive Scientific Reasoning Architecture)—a coherent research program that treats scientific and interactive intelligence as reasoning from state transitions under uncertainty, not as execution of predefined policies.",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p2",
+      "text": "This combination—original theoretical framing, multi-paper development with versioned revisions, open implementations, and infrastructure to disseminate and review the work—demonstrates sustained, high-level contribution at the intersection of AI, scientific reasoning, and systems engineering.",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p3",
+      "text": "Published scholarly record on [SciLayer](https://sci-layer.vercel.app) and the [Social Science Research Network (SSRN)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6835331) — The following works are sole-authored by me, publicly accessible, CC-BY-4.0 licensed where stated on SciLayer, and cross-linked as a unified program (each later paper cites earlier SciLayer releases). ASRA for Decision Biology is indexed on SSRN (abstract ID 6835331).",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p4",
+      "text": "1. Concept Paper — architecture-level synthesis",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p5",
+      "text": "Ilakkuvaselvi Manoharan (2026). [Architectures for Adaptive Scientific Reasoning Under Uncertainty](https://sci-layer.vercel.app/articles/architectures-adaptive-scientific-reasoning-under-uncertainty). Concept Paper, SciLayer Systems (preprint).",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p6",
+      "text": "Contribution: A long-form conceptual review arguing that scientific intelligence requires architectures that distinguish observation from intervention, update beliefs from transitions, and select experiments under uncertainty. Integrates Dreamer/MuZero-style world models, Pearlian causality, free-energy/active inference, information-theoretic experiment value, and modern perturbation atlases (LINCS, scPerturb, Human Cell Atlas) into a unified design vocabulary for adaptive scientific reasoning systems. Identifies open problems: scalable causal representation learning, calibrated uncertainty in high-dimensional biology, interpretable abstraction, and benchmarks that bridge interactive games and real experimentation.",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p7",
+      "text": "Why this supports exceptional ability: Demonstrates original scholarly authorship at synthesis level—a field-spanning framework that other ASRA papers implement and extend.",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p8",
+      "text": "2. Article — pedagogical and technical exposition of core mechanism",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p9",
+      "text": "Ilakkuvaselvi Manoharan (2026). [Understanding Action Semantics Inference Through State Transitions in ASRA](https://sci-layer.vercel.app/articles/understanding-action-semantics-inference-through-state-transitions-in-asra). Article, SciLayer Systems (preprint).",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p10",
+      "text": "Contribution: Defines action semantics inference: discovering what abstract action tokens mean by analyzing before/after state transitions when no programmer-supplied semantics exist. Works through grids, diff localization, repeated transitions, and compression into predictive rules—making the ASRA mechanism accessible to engineers and researchers. Connects the idea to ARC-style environments and Decision Biology (perturbations as interventions).",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p11",
+      "text": "Supplement: [Video demonstration](https://sci-layer.vercel.app/articles/understanding-action-semantics-inference-through-state-transitions-in-asra) linked from the manuscript (YouTube).",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p12",
+      "text": "Why this supports exceptional ability: Shows ability to communicate and formalize a novel cognitive mechanism for adaptive systems—bridging research exposition and implementable design.",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p13",
+      "text": "3. Article — ASRA for Decision Biology (versioned research article)",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p14",
+      "text": "Ilakkuvaselvi Manoharan (2026). [ASRA for Decision Biology](https://sci-layer.vercel.app/articles/asra-for-decision-biology) (Version 2). Article, SciLayer Systems (preprint). [Version history](https://sci-layer.vercel.app/articles/asra-for-decision-biology/versions). PDFs: [v1](https://github.com/ilakkmanoharan/asra/blob/main/paper/asra_for_decision_biology_v1.pdf), [v2](https://github.com/ilakkmanoharan/asra/blob/main/paper/asra_for_decision_biology_v2.pdf). Also published on [SSRN — ASRA for Decision Biology](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6835331).",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p15",
+      "text": "Contribution: Applies the ASRA architecture to decision biology—perturbation–response reasoning, world models, and intervention-centric scientific intelligence in biological state spaces. Maintains distinct versions (v1, v2) documenting evolution of the manuscript.",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p16",
+      "text": "Why this supports exceptional ability: Demonstrates domain transfer of the same architectural abstraction from interactive/grid settings to biological reasoning—a mark of generalizable scientific contribution.",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p17",
+      "text": "4. Article — Transition-centric Phase 1 (versioned; v2 current)",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p18",
+      "text": "Ilakkuvaselvi Manoharan (2026). [Transition-Centric Adaptive Reasoning: ASRA Phase 1 for Interactive Environments](https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1) (Version 2.0). Article, SciLayer Systems (preprint). [Version history](https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1/versions).",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p19",
+      "text": "Version 1 (2026-05-28): Platform-agnostic specification of the Phase 1 loop—observe → log transition → infer semantics → explore under uncertainty—with cognitive design, algorithms, and limitations.",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p20",
+      "text": "Version 2 (2026-06-01): Extends v1 with execution fidelity theory (isolated scientific runtime, validation vs. deployment phases), game-state lifecycle alignment with competition APIs, and multi-game orchestration for scaling single-episode reasoning to evaluation campaigns (ARC Prize 2026 context).",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p21",
+      "text": "Contribution: Specifies a minimal, auditable agent architecture for environments where action meaning and rules are hidden; explicitly positions Phase 1 as the exploration front-end of a larger program (Nature Foundation Models, Decision Biology, conceptual review). Cross-cites prior SciLayer releases with public URLs.",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-2-p22",
+      "text": "Why this supports exceptional ability: Shows iterative original research with substantive v2 revision, systems thinking (runtime isolation, orchestration), and engagement with leading interactive-AI benchmarks (ARC-AGI-3 documentation and competition mechanics).",
+      "topics": [
+        "evidence 2",
+        "asra phase 1 - scholarly record on scilayer — published preprints",
+        "asra",
+        "scilayer",
+        "openscience",
+        "decisionbiology",
+        "ssrn",
+        "phase",
+        "scholarly",
+        "record",
+        "published",
+        "preprints"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-3-p1",
+      "text": "After establishing ASRA Phase 1—reasoning from state transitions when action labels and environment rules are hidden—I designed and implemented ASRA Phase 2, the Observation Engine: a pipeline that converts integer grid observations into objects, regions, typed transformation events, and explicit rule hypotheses, then feeds compact structural hints back into the same interactive agent used for ARC Prize 2026 (ARC-AGI-3).",
+      "topics": [
+        "evidence 3",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-3-p2",
+      "text": "Phase 2 is an original symbolization layer that answers: What structural entities changed between observations, and what operator class best describes that change? Without it, action-semantics inference collapses into coarse cell-diff buckets that cannot distinguish rotation from creation, recoloring from translation, or heterogeneous demo programs from a single global rule.",
+      "topics": [
+        "evidence 3",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-3-p3",
+      "text": "I designed the Phase 2 theory (object scenes, transform taxonomy, abductive rule induction, branched demo hypotheses, soft integration with Phase 1), implemented a modular perception stack in the open ASRA repository (ObjectExtractor, RegionDetector, ShapeMatcher, TransformationDetector, RuleCandidateGenerator, BeforeAfterAnalyzer), evaluated it on 800 Original ARC tasks (400 training + 400 evaluation) with 100% rule-candidate coverage and branched per-demo hypotheses where cross-demo operator heterogeneity is real (~2% of tasks), and deployed Phase 2 in a Kaggle competition notebook (asra-v0.4-phase2) with isolated runtime bootstrap and object-scene hints wired into exploration scoring.",
+      "topics": [
+        "evidence 3",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-3-p4",
+      "text": "Ilakkuvaselvi Manoharan (2026). [Object-Centric Adaptive Reasoning: ASRA Phase 2 — From Pixel Transitions to Symbolic Structure](https://sci-layer.vercel.app/articles/object-centric-adaptive-reasoning-asra-phase-2). Article, SciLayer Systems (preprint).",
+      "topics": [
+        "evidence 3",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-3-p5",
+      "text": "Contribution: Extends ASRA from transition logging to object-centric perception—segmenting grids into connected components, classifying CREATE/DELETE/ROTATE/TRANSLATE/RECOLOR and related transforms, inducing global or branched rule hypotheses when ARC demonstration pairs disagree, and integrating structural hints with Phase 1 exploration without abandoning empirical transitions.",
+      "topics": [
+        "evidence 3",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-3-p6",
+      "text": "Why this supports exceptional ability: Demonstrates original architecture-level work combining theory, measurable batch science (800-task evaluation), open-source implementation, and competition-scale deployment—extending a named program (ASRA) rather than a disconnected benchmark entry.",
+      "topics": [
+        "evidence 3",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-3-b1",
+      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → planned exploration, semantics, and planning phases in the ASRA roadmap",
+      "topics": [
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-3-b2",
+      "text": "Perception library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/perception",
+      "topics": [
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-3-b3",
+      "text": "Batch evaluation: 100% rule-candidate coverage on 800 Original ARC tasks; branched hypotheses when demo operators diverge",
+      "topics": [
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-3-b4",
+      "text": "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase2/asra-phase-2-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-4-p1",
+      "text": "After ASRA Phase 1 (transition-centric experience under hidden action semantics) and Phase 2 (object-centric observation and rule hypotheses), I designed and implemented ASRA Phase 3, the Navigation & Memory Engine: a stack that turns episodic transitions into exploration graphs, visitation memory, novelty versus usefulness scoring, compositional subgoals, strategy reuse, and transition replay—then deploys compact exploration hints alongside Phase 2 object-scene bias in the ARC Prize 2026 competition agent (asra-v0.5-phase3).",
+      "topics": [
+        "evidence 4",
+        "asra phase 3 - arc-agi-3: navigation & memory engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "exploration",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "navigation",
+        "memory",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-4-p2",
+      "text": "Phase 3 answers a question neither Phase 1 nor Phase 2 can alone: Where have I been? What territory remains unexplored? Which action opens new ground instead of repeating a loop? What intermediate goal am I pursuing?",
+      "topics": [
+        "evidence 4",
+        "asra phase 3 - arc-agi-3: navigation & memory engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "exploration",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "navigation",
+        "memory",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-4-p3",
+      "text": "I designed Phase 3 theory (exploration graphs with frontier scores, dual-key visitation memory, novelty/usefulness separation, subgoal inference, strategy libraries, and integration with Phases 1–2 without oracle maps), implemented Milestones 3A–3D in asra-arc/src/asra/exploration/ (exploration engine, memory system, subgoal module, MiniGrid/BabyAI runners, DoorKey benchmarks, and ARC-AGI-3 ablation tooling), validated on MiniGrid (coverage, revisit rate, frontier efficiency) and BabyAI (subgoal detection), and deployed the Kaggle notebook with isolated venv bootstrap and combined Phase 1 + Phase 2 + Phase 3 scoring.",
+      "topics": [
+        "evidence 4",
+        "asra phase 3 - arc-agi-3: navigation & memory engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "exploration",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "navigation",
+        "memory",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-4-p4",
+      "text": "Ilakkuvaselvi Manoharan (2026). [Directed Exploration and Episodic Memory: ASRA Phase 3 — From Structure to Navigation](https://sci-layer.vercel.app/articles/directed-exploration-episodic-memory-asra-phase-3). Article, SciLayer Systems (preprint). [Technical specification](https://sci-layer.vercel.app/articles/asra-phase-3-exploration-memory-navigation-spec).",
+      "topics": [
+        "evidence 4",
+        "asra phase 3 - arc-agi-3: navigation & memory engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "exploration",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "navigation",
+        "memory",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-4-p5",
+      "text": "Contribution: Extends ASRA from structure perception to directed exploration—exploration graphs with frontiers, exact hash plus object-fingerprint visitation keys, novelty and usefulness decomposition, BabyAI-style subgoal inference, strategy reuse, and transition replay integrated with Phase 1 transitions and Phase 2 object hints in the competition agent.",
+      "topics": [
+        "evidence 4",
+        "asra phase 3 - arc-agi-3: navigation & memory engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "exploration",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "navigation",
+        "memory",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-4-p6",
+      "text": "Why this supports exceptional ability: Demonstrates sustained original work across three ASRA layers—experience, observation, and navigation—combining theory, multi-environment evaluation infrastructure (MiniGrid, BabyAI, ARC ablations), open-source implementation, and competition-scale deployment within a single named architecture program.",
+      "topics": [
+        "evidence 4",
+        "asra phase 3 - arc-agi-3: navigation & memory engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "exploration",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "navigation",
+        "memory",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-4-b1",
+      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → planned causality, goals, and planning phases",
+      "topics": [
+        "asra phase 3 - arc-agi-3: navigation & memory engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "exploration",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-4-b2",
+      "text": "Exploration library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/exploration",
+      "topics": [
+        "asra phase 3 - arc-agi-3: navigation & memory engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "exploration",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-4-b3",
+      "text": "Milestones 3A–3D: MiniGrid foundation, useful exploration (DoorKey), BabyAI subgoals, ARC-AGI-3 integration (asra-v0.5-phase3)",
+      "topics": [
+        "asra phase 3 - arc-agi-3: navigation & memory engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "exploration",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-4-b4",
+      "text": "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase3/asra-phase-3-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 3 - arc-agi-3: navigation & memory engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "exploration",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-p1",
+      "text": "After ASRA Phase 1 (transition-centric experience), Phase 2 (object-centric observation), and Phase 3 (directed exploration and episodic memory), I designed and implemented ASRA Phase 4, the Semantics & Causal Inference Engine: a stack that aggregates action–effect observations into semantic signatures, maintains a causal transition model for predicting next-state features, tracks hypotheses with confirm/refute updates, supports counterfactual queries over alternate actions, and scores epistemic uncertainty per (state, action) pair—then deploys a compact CausalSemanticsEngine alongside Phase 2 object-scene and Phase 3 exploration hints in the ARC Prize 2026 competition agent (asra-v0.6-phase4).",
+      "topics": [
+        "evidence 5",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-p2",
+      "text": "Phase 4 answers questions that define scientific and strategic reasoning over interventions: If I take ACTION3 here, what will happen? How confident am I? What would have happened if I had taken ACTION1 instead?",
+      "topics": [
+        "evidence 5",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-p3",
+      "text": "I designed Phase 4 theory (intervention–response tuples without oracle action labels; semantic labels from cell diffs and Phase 2 transform histograms; confidence and uncertainty scoring; hypothesis confirm/refute; counterfactual effect lookup; explicit bridge to Decision Biology perturbation–response structure), implemented the causality stack in asra-arc/src/asra/causality/ (ActionEffectSummarizer, CausalTransitionModel, HypothesisTester, CounterfactualSimulator, UncertaintyScorer, SemanticsStore, and CausalExplorationPolicyV3), validated on ARC-AGI-3 transition logs (semantics consistency, effect-prediction MAE vs naive baseline, hypothesis confirm rates), and deployed the Kaggle notebook with isolated venv bootstrap and combined scoring across Phases 1–4.",
+      "topics": [
+        "evidence 5",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-p4",
+      "text": "Ilakkuvaselvi Manoharan (2026). [Causal Action Semantics: ASRA Phase 4 — From Observed Effects to Intervention Reasoning](https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4). Article, SciLayer Systems (preprint).",
+      "topics": [
+        "evidence 5",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-p5",
+      "text": "Contribution: Extends ASRA from directed exploration to causal semantics—empirical action meaning from observed effects, distributional effect signatures, hypothesis testing and counterfactual lookup, and uncertainty-aware action scoring integrated with Phase 1 transitions, Phase 2 object hints, and Phase 3 exploration memory in the competition agent.",
+      "topics": [
+        "evidence 5",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-p6",
+      "text": "Why this supports exceptional ability: Demonstrates sustained original work across four ASRA layers—experience, observation, navigation, and causal semantics—combining theory, measurable evaluation on transition logs, open-source implementation, and competition-scale deployment within a single named architecture program aimed at adaptive scientific reasoning.",
+      "topics": [
+        "evidence 5",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-b1",
+      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → Phase 4 Semantics & Causal Inference Engine → planned goal inference and planning phases",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-b2",
+      "text": "Causality library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/causality",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-b3",
+      "text": "Agent asra-v0.6-phase4: semantic labels, confidence, uncertainty, and predicted progress wired into combined Phase 1–4 scoring",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-b4",
+      "text": "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase4/asra-phase-4-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-6-p1",
+      "text": "I have filed a U.S. patent application for Smart Restaurant Powered by Cloud-Native IoT AIOS (Publication No. US 2024/0273653 A1, published August 15, 2024). The application describes a fully automated AI-driven smart restaurant ecosystem integrating cloud-native IoT infrastructure, intelligent kitchen orchestration, contactless food preparation, automated ordering and vending, inventory optimization, and real-time operational analytics.",
+      "topics": [
+        "evidence 6",
+        "patent, federal r&d proposals, issrdc, and shipped products",
+        "patent,",
+        "federal",
+        "r&d",
+        "proposals,",
+        "issrdc,",
+        "and",
+        "shipped",
+        "products"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-6-p2",
+      "text": "In addition, I developed multiple advanced scientific and engineering research proposals submitted to NASA SBIR, NSF SBIR/STTR, and ISS National Lab programs (2023–2024), covering areas such as quantum dots, spin qubits, spintronics, Physics-Informed Neural Networks (PINNs), computational fluid dynamics, quantum material synthesis, microgravity manufacturing, and AI-driven scientific modeling for aerospace and biomedical applications.",
+      "topics": [
+        "evidence 6",
+        "patent, federal r&d proposals, issrdc, and shipped products",
+        "patent,",
+        "federal",
+        "r&d",
+        "proposals,",
+        "issrdc,",
+        "and",
+        "shipped",
+        "products"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-6-b1",
+      "text": "Quantum Dot Spin Qubits for Quantum Computing — ISSRDC 2023, Innovation Solutions Technical Session (Aug 2, 2023)",
+      "topics": [
+        "patent, federal r&d proposals, issrdc, and shipped products"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-6-b2",
+      "text": "Exploring Alternative Materials and Methods for Synthesizing Quantum Dots — ISSRDC 2023 (Aug 3, 2023)",
+      "topics": [
+        "patent, federal r&d proposals, issrdc, and shipped products"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-7-p1",
+      "text": "Demonstrated strong execution ability and work ethic by independently conceptualizing, architecting, designing, and implementing full-stack software products end-to-end across mobile, backend, infrastructure, and product layers. Recent examples include a magazine-style publishing platform and a productivity application for organizing and retrieving information using intelligent tagging workflows.",
+      "topics": [
+        "evidence 7",
+        "full-stack product execution — web and app store",
+        "full",
+        "stack",
+        "product",
+        "execution",
+        "web",
+        "and",
+        "app",
+        "store"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-7-p2",
+      "text": "Published multiple iOS apps on the App Store under my developer account—including productivity, social, lifestyle, and education titles—alongside shipped web products.",
+      "topics": [
+        "evidence 7",
+        "full-stack product execution — web and app store",
+        "full",
+        "stack",
+        "product",
+        "execution",
+        "web",
+        "and",
+        "app",
+        "store"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-7-b1",
+      "text": "TagScribe — productivity / smart bookmarking",
+      "topics": [
+        "full-stack product execution — web and app store"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-7-b2",
+      "text": "Socically — social networking",
+      "topics": [
+        "full-stack product execution — web and app store"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-7-b3",
+      "text": "Poll Hippo — lifestyle",
+      "topics": [
+        "full-stack product execution — web and app store"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-7-b4",
+      "text": "nerding app, Sequenched, QuizzlyMath5-WholeNumbers — education",
+      "topics": [
+        "full-stack product execution — web and app store"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-8-p1",
+      "text": "SciLayer is an open scholarly archive I designed and built solo. Researchers sign in with ORCID, submit manuscripts from GitHub, and publish versioned preprints and articles with peer review, author profiles, and public discovery by search and taxonomy.",
+      "topics": [
+        "evidence 8",
+        "scilayer — open science archive",
+        "openscience",
+        "orcid",
+        "github",
+        "scilayer",
+        "open",
+        "science",
+        "archive"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-8-p2",
+      "text": "It publishes my ASRA research corpus with persistent URLs and open licensing, and it matters as both a shipped product and scholarly infrastructure: Git stays the source of truth for manuscripts while the platform handles identity, validation, routing, and publication in one transparent workflow.",
+      "topics": [
+        "evidence 8",
+        "scilayer — open science archive",
+        "openscience",
+        "orcid",
+        "github",
+        "scilayer",
+        "open",
+        "science",
+        "archive"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-9-p1",
+      "text": "I built and open-sourced a complete AI agent pipeline for Orbit Wars, a featured Kaggle real-time strategy competition with a $50,000 prize pool: bots send fleets across a continuous 2D solar system to capture orbiting planets, intercept comets, and outproduce opponents over 500 turns—under a strict one-second-per-turn latency budget.",
+      "topics": [
+        "evidence 9",
+        "orbit wars — kaggle rts competition agent pipeline",
+        "orbitwars",
+        "kaggle",
+        "gameai",
+        "opensource",
+        "orbit",
+        "wars",
+        "rts",
+        "competition",
+        "agent",
+        "pipeline"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-9-p2",
+      "text": "Rather than a single opaque bot, I engineered a four-phase progression—each phase with a design paper, isolated competition-ready code, and a live ladder submission. In one day I went from an empty repo to five validated submissions, including two distinct strategies tracked for the final ranking (only the latest two submissions count).",
+      "topics": [
+        "evidence 9",
+        "orbit wars — kaggle rts competition agent pipeline",
+        "orbitwars",
+        "kaggle",
+        "gameai",
+        "opensource",
+        "orbit",
+        "wars",
+        "rts",
+        "competition",
+        "agent",
+        "pipeline"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-9-p3",
+      "text": "Phase 0 established the ladder (nearest expansion with garrison floor and sun avoidance, μ = 505.8). Phase 1 added orbit prediction, intercept ETA, and production-weighted heuristics. Phase 2 introduced a six-policy forward simulator with 12-turn rollouts and opponent modeling. Phase 3 added game-phase awareness, FFA meta-strategy, comet windows, and an aggressive variant—classical interpretable game AI, not opaque ML, because the time budget demands it.",
+      "topics": [
+        "evidence 9",
+        "orbit wars — kaggle rts competition agent pipeline",
+        "orbitwars",
+        "kaggle",
+        "gameai",
+        "opensource",
+        "orbit",
+        "wars",
+        "rts",
+        "competition",
+        "agent",
+        "pipeline"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-9-p4",
+      "text": "Contribution: End-to-end competition engineering—shared geometry library, automated Kaggle bundling, smoke tests, versioned design papers, and competition-format strategy (conservative when ahead, neutral farming when outgunned, dual final bots hedging the latest-two rule)—fully reproducible in the public repo.",
+      "topics": [
+        "evidence 9",
+        "orbit wars — kaggle rts competition agent pipeline",
+        "orbitwars",
+        "kaggle",
+        "gameai",
+        "opensource",
+        "orbit",
+        "wars",
+        "rts",
+        "competition",
+        "agent",
+        "pipeline"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-9-p5",
+      "text": "Why this supports exceptional ability: Demonstrates disciplined systems thinking under hard constraints—geometry, planning, and engineering discipline in a novel RTS domain—with open documentation, measurable ladder progress, and rapid execution from concept to five competition submissions in a single session.",
+      "topics": [
+        "evidence 9",
+        "orbit wars — kaggle rts competition agent pipeline",
+        "orbitwars",
+        "kaggle",
+        "gameai",
+        "opensource",
+        "orbit",
+        "wars",
+        "rts",
+        "competition",
+        "agent",
+        "pipeline"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-9-b1",
+      "text": "Phased repo: Phase 0 → Phase 1 (geometry) → Phase 2 (simulation) → Phase 3 (competition meta + aggressive variant)",
+      "topics": [
+        "orbit wars — kaggle rts competition agent pipeline",
+        "orbitwars",
+        "kaggle",
+        "gameai",
+        "opensource"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-9-b2",
+      "text": "Orbit Wars on GitHub: https://github.com/ilakkmanoharan/orbit-wars",
+      "topics": [
+        "orbit wars — kaggle rts competition agent pipeline",
+        "orbitwars",
+        "kaggle",
+        "gameai",
+        "opensource"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-9-b3",
+      "text": "Phase papers: https://github.com/ilakkmanoharan/orbit-wars/tree/main/phase0 · https://github.com/ilakkmanoharan/orbit-wars/tree/main/phase1 · https://github.com/ilakkmanoharan/orbit-wars/tree/main/phase2 · https://github.com/ilakkmanoharan/orbit-wars/tree/main/phase3",
+      "topics": [
+        "orbit wars — kaggle rts competition agent pipeline",
+        "orbitwars",
+        "kaggle",
+        "gameai",
+        "opensource"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-9-b4",
+      "text": "Tooling: https://github.com/ilakkmanoharan/orbit-wars/blob/main/scripts/bundle.sh · https://github.com/ilakkmanoharan/orbit-wars/blob/main/tests/runall.py",
+      "topics": [
+        "orbit wars — kaggle rts competition agent pipeline",
+        "orbitwars",
+        "kaggle",
+        "gameai",
+        "opensource"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-10-p1",
+      "text": "I designed, built, and deployed a production portfolio at ilakk-manoharan.vercel.app that is not a static brochure: it is a full-stack Next.js application with filterable projects, startup catalog, hackathons, Founder Studio, skills, talks, exceptional-ability evidence, recruiter portal, Calendly scheduling, meeting requests, admin dashboard, and analytics—deployed from GitHub to Vercel with Turso (libSQL) for durable serverless writes.",
+      "topics": [
+        "evidence 10",
+        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio",
+        "agents",
+        "mcp",
+        "nextjs",
+        "fullstack",
+        "site",
+        "ilak's",
+        "general",
+        "agent1",
+        "agent",
+        "native",
+        "full",
+        "stack",
+        "platform"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-10-p2",
+      "text": "Recruiters, collaborators, and other AI agents need different interfaces to the same truth about my work. Humans want a polished site and scheduling; interview agents need structured APIs, citations, and refusal behavior—not a chatbot that improvises salary, visa status, or unreleased projects.",
+      "topics": [
+        "evidence 10",
+        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio",
+        "agents",
+        "mcp",
+        "nextjs",
+        "fullstack",
+        "site",
+        "ilak's",
+        "general",
+        "agent1",
+        "agent",
+        "native",
+        "full",
+        "stack",
+        "platform"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-10-p3",
+      "text": "Ilak's general-Agent1 (codename general-agent-1) is the programmable representative layer: retrieval before generation, refuse when uncertain, cite every factual claim. Answers come from a claims graph synced from projects, exceptional-ability evidence, recruiter Q&A, and skills—not from model imagination. Human chat, REST, and MCP all call the same retrieveClaims() brain.",
+      "topics": [
+        "evidence 10",
+        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio",
+        "agents",
+        "mcp",
+        "nextjs",
+        "fullstack",
+        "site",
+        "ilak's",
+        "general",
+        "agent1",
+        "agent",
+        "native",
+        "full",
+        "stack",
+        "platform"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-10-p4",
+      "text": "Three shipped surfaces share one policy: invite-gated human chat at /agent/g/{token} with conversation budgets; POST /api/agent/query for agent-to-agent REST with manifest at /.well-known/agent.json; and a first-class MCP server at /api/mcp (search_facts, get_project, get_evidence, get_skills, get_availability) so Claude Desktop, Cursor, and evaluation agents connect without scraping HTML.",
+      "topics": [
+        "evidence 10",
+        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio",
+        "agents",
+        "mcp",
+        "nextjs",
+        "fullstack",
+        "site",
+        "ilak's",
+        "general",
+        "agent1",
+        "agent",
+        "native",
+        "full",
+        "stack",
+        "platform"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-10-p5",
+      "text": "Contribution: End-to-end product execution—custom admin for agent invites, Prisma session logging, Resend email on meeting requests, content-as-code under content/projects/, and anti-hallucination policy published in the manifest—built for agent-to-agent interviews (e.g. K-Dense-style evaluations) with verifiable source URLs on every answer.",
+      "topics": [
+        "evidence 10",
+        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio",
+        "agents",
+        "mcp",
+        "nextjs",
+        "fullstack",
+        "site",
+        "ilak's",
+        "general",
+        "agent1",
+        "agent",
+        "native",
+        "full",
+        "stack",
+        "platform"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-10-p6",
+      "text": "Why this supports exceptional ability: Demonstrates full-stack ownership at the intersection of product, distributed systems, and AI systems design—an agent-native portfolio where the same site serves humans and machines with grounded retrieval, not generic LLM chat.",
+      "topics": [
+        "evidence 10",
+        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio",
+        "agents",
+        "mcp",
+        "nextjs",
+        "fullstack",
+        "site",
+        "ilak's",
+        "general",
+        "agent1",
+        "agent",
+        "native",
+        "full",
+        "stack",
+        "platform"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-10-b1",
+      "text": "Live portfolio: https://ilakk-manoharan.vercel.app · Source: https://github.com/ilakkmanoharan/ilakk-manoharan",
+      "topics": [
+        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio",
+        "agents",
+        "mcp",
+        "nextjs",
+        "fullstack"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-10-b2",
+      "text": "Ilak's general-Agent1: https://ilakk-manoharan.vercel.app/agent · Manifest: https://ilakk-manoharan.vercel.app/.well-known/agent.json · MCP: https://ilakk-manoharan.vercel.app/api/mcp",
+      "topics": [
+        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio",
+        "agents",
+        "mcp",
+        "nextjs",
+        "fullstack"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-10-b3",
+      "text": "Stack: Next.js 16 · React 19 · TypeScript · Prisma · Turso · @modelcontextprotocol/sdk · Resend",
+      "topics": [
+        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio",
+        "agents",
+        "mcp",
+        "nextjs",
+        "fullstack"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-10-b4",
+      "text": "Knowledge sync: content/agent/claims.json ← projects, evidence cards, recruiter Q&A (npm run agent:sync-knowledge)",
+      "topics": [
+        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio",
+        "agents",
+        "mcp",
+        "nextjs",
+        "fullstack"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-asra-video-1",
+      "text": "Understanding Action Semantics Inference Through State Transitions in ASRA: Explains how ASRA discovers what actions mean without being told—using a simple 3×3 grid example (Before → ACTION → After), change detection, semantic convergence, and a concrete update rule—then connects it to ARC reasoning, world models, Decision Biology, and the ASRA loop.",
+      "topics": [
+        "asra",
+        "decision biology",
+        "nature foundation models",
+        "video"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/asra",
+        "https://youtu.be/VmQygZPgK5A?si=_zhCbog5BEna7h7U"
+      ],
+      "origin": "page",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-asra-video-2",
+      "text": "Nature Foundation Models, Decision Biology, and A-S-R-A — Adaptive Scientific Intelligence: Technical overview (~10 min) of the research stack: why current AI is insufficient for scientific discovery, what Nature Foundation Models aim to build, how Decision Biology reframes cells as information-processing agents, and how A‑S‑R‑A learns hidden action semantics and evolving world models through interaction.",
+      "topics": [
+        "asra",
+        "decision biology",
+        "nature foundation models",
+        "video"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/asra",
+        "https://youtu.be/ssBvn41W1BE?si=7rT1w7QLpk2a7XjS"
+      ],
+      "origin": "page",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-asra-video-3",
+      "text": "ASRA Phase 1: First 10 Replay Frames — Guided Tutorial: Walkthrough of ASRA Phase 1 replay frames: before/after grids, changed cells, movement labels, and the on‑screen formula preview—clarifying that the mock backend cycles color in fixed cells (not spatial movement).",
+      "topics": [
+        "asra",
+        "decision biology",
+        "nature foundation models",
+        "video"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/asra",
+        "https://youtu.be/L-4dqw0oZCA?si=U5Rn2mJ77A3YThXk"
+      ],
+      "origin": "page",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-asra-video-4",
+      "text": "ASRA Phase 1: Animated Replay Walkthrough — How the Agent Sees, Acts, and Remembers: Narrated tour of the Phase 1 Animated Replay viewer: how episodes auto-play, how diffs are highlighted, why early RESET steps may show no change, and how replay ties to memory-on-disk and later learning.",
+      "topics": [
+        "asra",
+        "decision biology",
+        "nature foundation models",
+        "video"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/asra",
+        "https://youtu.be/2yvEltzWhfM?si=dol-fAbI7LGHLMad"
+      ],
+      "origin": "page",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-asra-video-5",
+      "text": "A-S-R-A, Decision Biology, and Nature Foundation Models — Adaptive Scientific Intelligence: Concise overview of the A‑S‑R‑A stack: limits of benchmark-bound AI, science as an observe → experiment → infer loop, Decision Biology as the first domain, and Nature Foundation Models as multi-domain scientific intelligence.",
+      "topics": [
+        "asra",
+        "decision biology",
+        "nature foundation models",
+        "video"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/asra",
+        "https://youtu.be/3PKC5MdBE6s?si=4VUZLqOSuDD9APrq"
+      ],
+      "origin": "page",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-asra-video-6",
+      "text": "ASRA Phase 1: Building Experiential Memory for Adaptive AI: Explains Phase 1 as an experience engine: logging transitions, grid differencing, stable state hashes, replay, dead-end detection, and state graph construction—building datasets for later semantics and world-model learning.",
+      "topics": [
+        "asra",
+        "decision biology",
+        "nature foundation models",
+        "video"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/asra",
+        "https://youtu.be/Jyak9_ev8h0?si=nYzN_CMCV0TDCSgh"
+      ],
+      "origin": "page",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-asra-video-7",
+      "text": "Action Semantic Inference in ASRA: Learning Meaning Through Interaction: Explainer on how ASRA infers unknown action meaning via experimentation, state differencing, causal reasoning, uncertainty reduction, memory, and abstraction in ARC-style environments—and why it matters for adaptive systems and scientific reasoning.",
+      "topics": [
+        "asra",
+        "decision biology",
+        "nature foundation models",
+        "video"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/asra",
+        "https://youtu.be/EDpNWZJPlvA?si=ozccUWHgd5E1NRKe"
+      ],
+      "origin": "page",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-home-intro",
+      "text": "Ilakkuvaselvi (Ilak) Manoharan is a software engineer, AI systems builder, and founder building at the intersection of distributed systems, full-stack engineering, scientific AI, and product innovation.",
+      "topics": [
+        "home",
+        "portfolio",
+        "about",
+        "ilak"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app"
+      ],
+      "origin": "page",
+      "verified": true,
+      "lastSynced": "2026-06-06"
     }
   ]
 }

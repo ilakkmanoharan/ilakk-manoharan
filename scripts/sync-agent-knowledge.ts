@@ -1,58 +1,23 @@
 #!/usr/bin/env tsx
 /**
- * Sync recruiter Q&A headings into content/agent/claims.json (manual topics preserved).
+ * Rebuild content/agent/claims.json and knowledge-graph.json from site content.
+ * Preserves manual claims; replaces claim-auto-* from projects, hackathons,
+ * startups, exceptional-ability, recruiter Q&A, and ASRA page content.
+ *
+ * Optional: OPENAI_API_KEY + --llm to enrich topic tags (not required for sync).
  */
-import fs from "node:fs";
-import path from "node:path";
+import { syncKnowledgeGraph } from "../src/lib/agent/sync-knowledge";
 
-type Claim = {
-  id: string;
-  text: string;
-  topics: string[];
-  sources: string[];
-};
-
-type Graph = { version: number; lastSynced: string; claims: Claim[] };
-
-function slugify(s: string) {
-  return s
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-}
-
-function main() {
-  const claimsPath = path.join(process.cwd(), "content", "agent", "claims.json");
-  const graph = JSON.parse(fs.readFileSync(claimsPath, "utf8")) as Graph;
-  const existingIds = new Set(graph.claims.map((c) => c.id));
-
-  const qaPath = path.join(
-    process.cwd(),
-    "public",
-    "recruiter-data",
-    "recruiter-qa.md",
+const args = process.argv.slice(2);
+if (args.includes("--llm")) {
+  console.warn(
+    "Note: --llm enrichment is reserved for a future pass; deterministic sync runs now.",
   );
-  const raw = fs.readFileSync(qaPath, "utf8");
-  const chunks = raw.split(/\n##\s+/).map((c) => c.trim()).filter(Boolean);
-
-  for (const chunk of chunks) {
-    const lines = chunk.split("\n");
-    const heading = lines[0]?.replace(/^#\s+/, "").trim() ?? "section";
-    const text = lines.slice(1).join("\n").trim();
-    if (!text) continue;
-    const id = `claim-recruiter-${slugify(heading)}`;
-    if (existingIds.has(id)) continue;
-    graph.claims.push({
-      id,
-      text,
-      topics: [heading.toLowerCase(), "recruiter"],
-      sources: ["https://ilakk-manoharan.vercel.app/recruiter"],
-    });
-  }
-
-  graph.lastSynced = new Date().toISOString().slice(0, 10);
-  fs.writeFileSync(claimsPath, `${JSON.stringify(graph, null, 2)}\n`);
-  console.log(`Synced claims (${graph.claims.length} total) → ${claimsPath}`);
 }
 
-main();
+const { graph, manifest, autoCount, promotedCount } = syncKnowledgeGraph();
+console.log(
+  `Synced ${graph.claims.length} claims (${autoCount} auto, ${promotedCount} promoted, ${manifest.nodes.length} nodes)`,
+);
+console.log(`→ content/agent/claims.json`);
+console.log(`→ content/agent/knowledge-graph.json`);

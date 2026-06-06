@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { ViewTracker } from "@/components/view-tracker";
 import { loadProjectsForPage } from "@/lib/projects-content";
-import { prisma } from "@/lib/prisma";
+import { loadSkillsForPage } from "@/lib/skills-content";
 import { siteConfig } from "@/lib/site";
 import { asStringArray } from "@/lib/json";
 import { Download } from "lucide-react";
@@ -24,14 +24,12 @@ export const metadata: Metadata = {
 };
 
 export default async function RecruiterPage() {
-  const [projects, skills] = await Promise.all([
-    Promise.resolve(
-      loadProjectsForPage()
-        .filter((p) => p.featured)
-        .slice(0, 4),
-    ),
-    prisma.skill.findMany({ take: 8, orderBy: { name: "asc" } }),
-  ]);
+  const projects = loadProjectsForPage()
+    .filter((p) => p.featured)
+    .slice(0, 4);
+  const skills = loadSkillsForPage()
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .slice(0, 8);
 
   return (
     <>
@@ -106,9 +104,20 @@ export default async function RecruiterPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground">
-              <ul className="list-inside list-disc">
+              <ul className="list-inside list-disc space-y-1">
                 {skills.map((s) => (
-                  <li key={s.id}>{s.name}</li>
+                  <li key={s.id}>
+                    <Link
+                      href={`/skills/${s.slug}`}
+                      className="text-foreground hover:underline"
+                    >
+                      {s.name}
+                    </Link>
+                    <span className="text-muted-foreground">
+                      {" "}
+                      · {s.yearsExperience}+ yrs
+                    </span>
+                  </li>
                 ))}
               </ul>
             </CardContent>

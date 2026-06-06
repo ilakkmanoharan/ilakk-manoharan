@@ -1,5 +1,5 @@
 {
-  "version": 15,
+  "version": 17,
   "lastSynced": "2026-06-06",
   "claims": [
     {
@@ -4075,10 +4075,10 @@
     },
     {
       "id": "claim-auto-evidence-5-p1",
-      "text": "I designed, built, and deployed ilakk-manoharan.vercel.app as a full-stack Next.js platform—not a static brochure. Humans get projects, recruiting, scheduling, and evidence cards; other AI agents get the same grounded truth through REST and MCP. Recruiters and interview agents need different interfaces to one corpus of verified facts, not a chatbot that improvises salary, visa status, or unreleased work.",
+      "text": "I designed, built, and deployed ilakk-manoharan.vercel.app myself—not as a static portfolio, but as a production Next.js app that has to work for two very different audiences. Recruiters need projects, scheduling, and evidence they can skim in a browser. Other AI agents need the same facts through an API or MCP, without inventing salary numbers or visa status I never published. That tension is what pushed me to build Ilak's general-Agent1 on top of the site.",
       "topics": [
         "evidence 5",
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4089,10 +4089,11 @@
         "ilak's",
         "general",
         "agent1",
-        "retrieval",
-        "first",
-        "agent",
-        "architecture"
+        "what",
+        "built",
+        "and",
+        "how",
+        "works"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -4103,10 +4104,10 @@
     },
     {
       "id": "claim-auto-evidence-5-p2",
-      "text": "Ilak's general-Agent1 (codename general-agent-1) is the programmable representative layer: retrieval before generation, refuse when uncertain, cite every factual claim. Answers come from a git-backed knowledge graph (content/agent/claims.json + knowledge-graph.json) synced from projects, exceptional-ability evidence, hackathons, startups, SciLayer manuscripts, recruiter Q&A, and ASRA content—not from model imagination.",
+      "text": "The core idea is straightforward: every factual answer has to come from content I actually wrote and checked in git—not from model improvisation. I keep projects, hackathons, startups, skills, exceptional-ability evidence, SciLayer manuscripts, recruiter Q&A, and ASRA work in markdown and TypeScript under content/. At build time, a sync step compiles those sources into a claims graph. At runtime, one function—retrieveClaims()—scores a question against that graph and returns matching claims with source URLs. The browser chat, the REST query API, and the MCP server all call that same function. If the match is weak, the agent refuses and points to Contact or Schedule instead of guessing.",
       "topics": [
         "evidence 5",
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4117,10 +4118,11 @@
         "ilak's",
         "general",
         "agent1",
-        "retrieval",
-        "first",
-        "agent",
-        "architecture"
+        "what",
+        "built",
+        "and",
+        "how",
+        "works"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -4131,10 +4133,10 @@
     },
     {
       "id": "claim-auto-evidence-5-p3",
-      "text": "Architecture: content sources → sync-knowledge.ts at build time → claims graph → retrieveClaims() at runtime → three surfaces sharing one brain: invite-gated human chat (/agent/g/{token}), POST /api/agent/query with manifest at /.well-known/agent.json, and Streamable HTTP MCP at /api/mcp (search_facts, get_project, get_evidence, get_skills, get_availability). Optional OpenAI paraphrase (Mode B) runs only after successful claim retrieval and is off by default.",
+      "text": "On the product side, I shipped the full recruiter loop: filterable project pages, startup catalog, hackathons, Founder Studio, skills, talks, this evidence page, recruiter chat backed by a fixed markdown brief, message forms, Calendly scheduling, admin dashboards, and invite-gated agent sessions with time budgets. Every agent conversation is logged in Prisma on Turso—invite, session, message, citations—so I can review what was asked and, when appropriate, promote vetted Q&A into the live knowledge graph after admin approval.",
       "topics": [
         "evidence 5",
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4145,10 +4147,11 @@
         "ilak's",
         "general",
         "agent1",
-        "retrieval",
-        "first",
-        "agent",
-        "architecture"
+        "what",
+        "built",
+        "and",
+        "how",
+        "works"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -4159,10 +4162,10 @@
     },
     {
       "id": "claim-auto-evidence-5-p4",
-      "text": "Knowledge graph workflow: npm run content:sync rebuilds claims from all site content; npm run agent:fetch-scilayer mirrors SciLayer articles; approved agent conversations queue as AgentKnowledgeCandidate rows in Turso and merge into live retrieval after admin review at /admin/agent. Every non-refused chat exchange persists in Prisma (AgentInvite → AgentSession → AgentMessage) with citation JSON.",
+      "text": "For agent-to-agent use, I published a manifest, a POST query API, and a Streamable HTTP MCP server using the @modelcontextprotocol/sdk. Tools like search_facts, get_project, get_evidence, and get_skills all require a valid invite token—the same policy as the human chat UI. I also added narrative answer composition for ASRA and ARC questions so multi-step research answers read in order instead of as a pile of fragments. Optional OpenAI paraphrase exists, but it only runs after successful retrieval and is off by default.",
       "topics": [
         "evidence 5",
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4173,10 +4176,11 @@
         "ilak's",
         "general",
         "agent1",
-        "retrieval",
-        "first",
-        "agent",
-        "architecture"
+        "what",
+        "built",
+        "and",
+        "how",
+        "works"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -4187,10 +4191,10 @@
     },
     {
       "id": "claim-auto-evidence-5-p5",
-      "text": "Anti-hallucination policy (published in the manifest and chat UI): answer only from synced content; cite source URLs; refuse below match threshold; never infer salary, visa, or unreleased work without an explicit claim. Built for agent-to-agent interviews—K-Dense-style evaluations connect via MCP or REST and receive verifiable answers with links, not invented prose.",
+      "text": "I built this with Next.js 16, React 19, TypeScript, Tailwind, Prisma, Turso, Vercel, Resend for email, and the MCP SDK. Content lives in the repo; npm run content:sync rebuilds the knowledge graph on every deploy. The point wasn't to bolt a chatbot onto a résumé—it was to own the full stack from content pipeline to session logging to a refusal-first agent other systems can actually interview.",
       "topics": [
         "evidence 5",
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4201,10 +4205,11 @@
         "ilak's",
         "general",
         "agent1",
-        "retrieval",
-        "first",
-        "agent",
-        "architecture"
+        "what",
+        "built",
+        "and",
+        "how",
+        "works"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -4215,10 +4220,10 @@
     },
     {
       "id": "claim-auto-evidence-5-p6",
-      "text": "Contribution: End-to-end AI systems product execution—@modelcontextprotocol/sdk MCP server, shared retrieveClaims() across UI/API/MCP, narrative answer composition for ASRA/ARC questions, Prisma + Turso session logging, admin invite budgets, and content-as-code under content/projects/ with build-time knowledge sync on every deploy.",
+      "text": "Why this supports exceptional ability: I shipped a live product where humans and machines read the same verified corpus, with citations and explicit refusal when I'm not confident—full-stack product work at the intersection of distributed systems, content engineering, and agent-native AI design.",
       "topics": [
         "evidence 5",
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4229,38 +4234,11 @@
         "ilak's",
         "general",
         "agent1",
-        "retrieval",
-        "first",
-        "agent",
-        "architecture"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-06"
-    },
-    {
-      "id": "claim-auto-evidence-5-p7",
-      "text": "Why this supports exceptional ability: Demonstrates full-stack ownership at the intersection of product engineering, distributed systems, and agent-native AI design—a production portfolio where humans and machines read the same verified knowledge graph with refusal and citations, not generic LLM chat.",
-      "topics": [
-        "evidence 5",
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
-        "portfolio",
-        "agents",
-        "mcp",
-        "knowledgegraph",
-        "nextjs",
-        "fullstack",
-        "platform",
-        "ilak's",
-        "general",
-        "agent1",
-        "retrieval",
-        "first",
-        "agent",
-        "architecture"
+        "what",
+        "built",
+        "and",
+        "how",
+        "works"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -4271,9 +4249,9 @@
     },
     {
       "id": "claim-auto-evidence-5-b1",
-      "text": "Live: https://ilakk-manoharan.vercel.app · Source: https://github.com/ilakkmanoharan/ilakk-manoharan",
+      "text": "Solo-built and deployed the portfolio at ilakk-manoharan.vercel.app from GitHub to Vercel",
       "topics": [
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4290,9 +4268,9 @@
     },
     {
       "id": "claim-auto-evidence-5-b2",
-      "text": "Agent: https://ilakk-manoharan.vercel.app/agent · Manifest: https://ilakk-manoharan.vercel.app/.well-known/agent.json · MCP: https://ilakk-manoharan.vercel.app/api/mcp",
+      "text": "One retrieval brain shared by invite-gated chat, REST query API, and MCP—no separate prompt hacks per surface",
       "topics": [
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4309,9 +4287,9 @@
     },
     {
       "id": "claim-auto-evidence-5-b3",
-      "text": "Knowledge sync: content/projects, hackathons, startups, exceptional-ability, SciLayer, recruiter Q&A → claims.json (npm run content:sync)",
+      "text": "Git-backed claims graph synced from all site content on every build; admin can promote reviewed conversation answers",
       "topics": [
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4328,9 +4306,9 @@
     },
     {
       "id": "claim-auto-evidence-5-b4",
-      "text": "Stack: Next.js 16 · React 19 · TypeScript · Prisma · Turso · MCP SDK · Resend",
+      "text": "Session logging end-to-end: invite → session → message with citation JSON stored in Turso",
       "topics": [
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4347,9 +4325,9 @@
     },
     {
       "id": "claim-auto-evidence-5-b5",
-      "text": "Phases shipped: claims + query API + invites + MCP + conversation export + admin knowledge promotion",
+      "text": "Stack: Next.js 16, React 19, TypeScript, Prisma, Turso, MCP SDK, Resend",
       "topics": [
-        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
         "mcp",
@@ -4785,7 +4763,7 @@
     },
     {
       "id": "claim-auto-evidence-10-p2",
-      "text": "Evidence 5 documents the agent-native layer in depth: Ilak's general-Agent1 knowledge graph, retrieval-first policy, REST + MCP surfaces, conversation logging, and admin promotion workflow. This card summarizes the full product footprint for readers who want the site scope before the architecture detail.",
+      "text": "Evidence 5 walks through the agent architecture in depth—the knowledge graph, retrieval-first policy, REST and MCP surfaces, session logging, and how I promote reviewed conversations. This card summarizes the full product footprint for readers who want the site scope first.",
       "topics": [
         "evidence 10",
         "portfolio site — shipped product summary",

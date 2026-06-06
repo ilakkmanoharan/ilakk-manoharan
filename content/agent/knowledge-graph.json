@@ -1,8 +1,8 @@
 {
-  "version": 15,
+  "version": 17,
   "lastSynced": "2026-06-06",
   "siteUrl": "https://ilakk-manoharan.vercel.app",
-  "claimCount": 963,
+  "claimCount": 962,
   "nodes": [
     {
       "id": "node-recruiter-recruiter-q-a",
@@ -533,7 +533,7 @@
     {
       "id": "node-evidence-5",
       "type": "evidence",
-      "title": "Evidence 5: Portfolio platform & Ilak's general-Agent1 — retrieval-first agent architecture",
+      "title": "Evidence 5: Portfolio platform & Ilak's general-Agent1 — what I built and how it works",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-5-p1",
@@ -542,7 +542,6 @@
         "claim-auto-evidence-5-p4",
         "claim-auto-evidence-5-p5",
         "claim-auto-evidence-5-p6",
-        "claim-auto-evidence-5-p7",
         "claim-auto-evidence-5-b1",
         "claim-auto-evidence-5-b2",
         "claim-auto-evidence-5-b3",

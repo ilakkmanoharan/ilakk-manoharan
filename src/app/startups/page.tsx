@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { prisma } from "@/lib/prisma";
+import { loadStartupsForPage } from "@/lib/startups-content";
 import { ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -19,9 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default async function StartupsPage() {
-  const startups = await prisma.startup.findMany({
-    orderBy: { updatedAt: "desc" },
-  });
+  const startups = loadStartupsForPage();
 
   return (
     <>

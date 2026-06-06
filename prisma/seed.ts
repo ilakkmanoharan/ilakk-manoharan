@@ -2,6 +2,7 @@ import "dotenv/config";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 import { Prisma, PrismaClient } from "../src/generated/prisma";
 import { loadHackathonsFromMarkdown } from "./load-hackathons-from-md";
+import { loadStartupsFromMarkdown } from "./load-startups-from-md";
 import { loadProjectsFromMarkdown } from "./load-projects-from-md";
 
 const url = process.env.DATABASE_URL;

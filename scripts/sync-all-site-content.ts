@@ -12,12 +12,12 @@
  *
  * Vercel build runs `content:sync` automatically before `next build`.
  */
-import { fetchAndCacheSciLayerArticles } from "../src/lib/agent/scilayer-content";
+import { fetchAndCacheSciLayerArticles, loadSciLayerArticlesFromDisk } from "../src/lib/agent/scilayer-content";
 import { syncKnowledgeGraph } from "../src/lib/agent/sync-knowledge";
-import { loadProjectsFromMarkdown } from "../prisma/load-projects-from-md";
-import { loadHackathonsFromMarkdown } from "../prisma/load-hackathons-from-md";
 import { exceptionalAbilitySections } from "../src/lib/exceptional-ability";
-import { loadSciLayerArticlesFromDisk } from "../src/lib/agent/scilayer-content";
+import { loadHackathonsFromMarkdown } from "../prisma/load-hackathons-from-md";
+import { loadProjectsFromMarkdown } from "../prisma/load-projects-from-md";
+import { loadStartupsFromMarkdown } from "../prisma/load-startups-from-md";
 
 const args = process.argv.slice(2);
 
@@ -30,6 +30,7 @@ async function main() {
   }
 
   const projects = loadProjectsFromMarkdown(cwd).length;
+  const startups = loadStartupsFromMarkdown(cwd).length;
   const hackathons = loadHackathonsFromMarkdown(cwd).length;
   const evidence = exceptionalAbilitySections.length;
   const scilayer = loadSciLayerArticlesFromDisk(cwd).length;
@@ -38,6 +39,7 @@ async function main() {
 
   console.log("Site content indexed:");
   console.log(`  projects (markdown): ${projects}`);
+  console.log(`  startups (markdown): ${startups}`);
   console.log(`  hackathons (markdown): ${hackathons}`);
   console.log(`  exceptional-ability sections: ${evidence}`);
   console.log(`  scilayer articles (local): ${scilayer}`);

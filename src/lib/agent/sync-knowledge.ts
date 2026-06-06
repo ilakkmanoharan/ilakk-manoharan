@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { loadStartupsFromMarkdown } from "../../../prisma/load-startups-from-md";
 import { loadHackathonsFromMarkdown } from "../../../prisma/load-hackathons-from-md";
 import { loadProjectsFromMarkdown } from "../../../prisma/load-projects-from-md";
 import { asraVideos } from "@/lib/asra";
@@ -81,36 +82,6 @@ function parseSimpleYaml(block: string): Record<string, string> {
     out[m[1]] = val;
   }
   return out;
-}
-
-function loadStartupsFromMarkdown(cwd: string) {
-  const dir = path.join(cwd, "content", "startups");
-  if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .filter((f) => f.endsWith(".md"))
-    .map((file) => {
-      const full = path.join(dir, file);
-      const raw = fs.readFileSync(full, "utf8").trimStart();
-      const afterFirst = raw.slice(3).replace(/^\r?\n/, "");
-      const endMarker = afterFirst.search(/\r?\n---\r?\n/);
-      const fm = parseSimpleYaml(
-        endMarker === -1 ? "" : afterFirst.slice(0, endMarker).trim(),
-      );
-      const body = endMarker === -1 ? raw : afterFirst.slice(endMarker + 4).trim();
-      const slug = fm.slug ?? path.basename(file, ".md");
-      return {
-        slug,
-        name: fm.name ?? slug,
-        tagline: fm.tagline ?? "",
-        description: fm.description ?? "",
-        problem: fm.problem ?? "",
-        solution: fm.solution ?? "",
-        targetUsers: fm.targetUsers ?? "",
-        status: fm.status ?? "",
-        body,
-      };
-    });
 }
 
 function makeClaim(

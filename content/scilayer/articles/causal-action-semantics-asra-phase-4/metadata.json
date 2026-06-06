@@ -1,0 +1,68 @@
+{
+  "slug": "causal-action-semantics-asra-phase-4",
+  "title": "Causal Action Semantics: ASRA Phase 4 — From Observed Effects to Intervention Reasoning",
+  "abstract": "Phase 4 adds the Semantics and Causal Inference Engine: semantic signatures, causal transition models, hypothesis confirm/refute, counterfactual queries, and epistemic uncertainty over (state, action) pairs—building on Phases 1–3. The article presents theory and architecture; a companion Kaggle notebook deploys CausalSemanticsEngine hints for ARC Prize 2026.",
+  "articleType": "Article",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra",
+  "repositoryLinks": [
+    {
+      "label": "ASRA Phase 4 — ARC Prize 2026 (companion notebook, ASRA repo)",
+      "href": "https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase4/asra-phase-4-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "ASRA Phase 4 notebook (SciLayer archive)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra-phase-4-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "Phase 4 causality implementation (asra-arc)",
+      "href": "https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/causality"
+    },
+    {
+      "label": "ASRA Phase 3 preprint (Navigation & Memory)",
+      "href": "https://sci-layer.vercel.app/articles/directed-exploration-episodic-memory-asra-phase-3"
+    },
+    {
+      "label": "ASRA Phase 2 preprint (Observation Engine)",
+      "href": "https://sci-layer.vercel.app/articles/object-centric-adaptive-reasoning-asra-phase-2"
+    },
+    {
+      "label": "ASRA Phase 1 preprint (Experience Engine)",
+      "href": "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-07-15",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "ASRA",
+    "Phase 4",
+    "action semantics",
+    "causal inference",
+    "counterfactuals",
+    "hypothesis testing",
+    "uncertainty",
+    "ARC",
+    "intervention reasoning"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-07-15",
+      "summary": "Initial SciLayer preprint: Semantics and Causal Inference Engine with Phase 4 Kaggle notebook link."
+    }
+  ]
+}

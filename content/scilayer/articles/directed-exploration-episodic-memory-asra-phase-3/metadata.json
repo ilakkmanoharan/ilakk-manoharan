@@ -1,0 +1,69 @@
+{
+  "slug": "directed-exploration-episodic-memory-asra-phase-3",
+  "title": "Directed Exploration and Episodic Memory: ASRA Phase 3 — From Structure to Navigation",
+  "abstract": "Phase 3 extends ASRA with the Navigation and Memory Engine: exploration graphs, visitation memory, novelty versus usefulness scoring, compositional subgoals, strategy reuse, and transition replay—building on Phase 1 transitions and Phase 2 object-centric observation. The article presents theory and architecture; a companion Kaggle notebook deploys compact exploration hints for ARC Prize 2026.",
+  "articleType": "Article",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra",
+  "repositoryLinks": [
+    {
+      "label": "ASRA Phase 3 — ARC Prize 2026 (companion notebook, ASRA repo)",
+      "href": "https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase3/asra-phase-3-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "ASRA Phase 3 notebook (SciLayer archive)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra-phase-3-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "Phase 3 exploration implementation (asra-arc)",
+      "href": "https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/exploration"
+    },
+    {
+      "label": "ASRA Phase 3 technical specification (SciLayer)",
+      "href": "https://sci-layer.vercel.app/articles/asra-phase-3-exploration-memory-navigation-spec"
+    },
+    {
+      "label": "ASRA Phase 2 preprint (Observation Engine)",
+      "href": "https://sci-layer.vercel.app/articles/object-centric-adaptive-reasoning-asra-phase-2"
+    },
+    {
+      "label": "ASRA Phase 1 preprint (Experience Engine)",
+      "href": "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-07-01",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "ASRA",
+    "Phase 3",
+    "exploration",
+    "episodic memory",
+    "navigation",
+    "novelty",
+    "subgoals",
+    "ARC",
+    "MiniGrid",
+    "BabyAI"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-07-01",
+      "summary": "Initial SciLayer preprint: Navigation and Memory Engine theory with Phase 3 Kaggle notebook link."
+    }
+  ]
+}

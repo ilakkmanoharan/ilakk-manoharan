@@ -1,0 +1,45 @@
+{
+  "slug": "asra-for-decision-biology",
+  "title": "ASRA for Decision Biology",
+  "abstract": "Adaptive Scientific Reasoning Architecture (ASRA) applied to decision biology: perturbation–response reasoning, world models, and intervention-centric scientific intelligence. Full text available as PDF (versions 1 and 2).",
+  "articleType": "Article",
+  "version": 2,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra/tree/main/paper",
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-05-10",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "ASRA",
+    "decision biology",
+    "perturbation biology",
+    "world models",
+    "scientific reasoning"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript-v2.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript-v1.md",
+      "commit": "pdf-v1",
+      "createdAt": "2026-05-01",
+      "summary": "PDF preprint v1 (GitHub)."
+    },
+    {
+      "version": 2,
+      "manuscriptFile": "manuscript-v2.md",
+      "commit": "pdf-v2",
+      "createdAt": "2026-05-10",
+      "summary": "PDF preprint v2 (GitHub)."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "transition-centric-adaptive-reasoning-asra-phase-1",
+  "title": "Transition-Centric Adaptive Reasoning: ASRA Phase 1 for Interactive Environments",
+  "abstract": "ASRA Phase 1 is a minimal agent architecture for fluid reasoning in sequential grid worlds where action labels are latent and environment rules are hidden. The agent maintains transition evidence, infers state-conditioned action semantics, and explores under uncertainty. Version 2 extends the baseline with execution-fidelity theory and competition-scale orchestration concepts.",
+  "articleType": "Article",
+  "version": 2,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra",
+  "repositoryLinks": [
+    {
+      "label": "All Kaggle notebooks (folder)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/tree/main/content/kaggle-notebooks"
+    },
+    {
+      "label": "ASRA Phase 1 — ARC Prize 2026 (v11.4 reference notebook)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra-phase-1-arc-prize-2026-v4-fixed.ipynb"
+    },
+    {
+      "label": "ASRA v0.3 — Kaggle submission notebook",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra_v0_3_kaggle_submission.ipynb"
+    },
+    {
+      "label": "ASRA v0.2 — Phase 1 ARC-AGI-3 (Kaggle-ready)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra_v0_2_phase1_arc_agi3_notebook.ipynb"
+    },
+    {
+      "label": "ASRA v0.1 — Phase 1 ARC-AGI-3 (introductory)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra_v0_1_phase1_arc_agi3_notebook.ipynb"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-06-01",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "ASRA",
+    "adaptive reasoning",
+    "transition models",
+    "ARC",
+    "interactive environments",
+    "action semantics"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript-v2.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript-v1.md",
+      "commit": "content-v1",
+      "createdAt": "2026-05-28",
+      "summary": "Phase 1 baseline: transition-centric loop without platform-specific deployment detail."
+    },
+    {
+      "version": 2,
+      "manuscriptFile": "manuscript-v2.md",
+      "commit": "content-v2",
+      "createdAt": "2026-06-01",
+      "summary": "Adds execution fidelity, validation vs. scoring, and multi-game orchestration (v2.0)."
+    }
+  ]
+}

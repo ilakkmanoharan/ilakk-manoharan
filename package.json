@@ -11,6 +11,7 @@
     "db:seed": "prisma db seed",
     "db:migrate": "prisma migrate dev",
     "agent:export-conversations": "tsx scripts/export-agent-conversations.ts",
+    "agent:fetch-scilayer": "tsx scripts/fetch-scilayer-content.ts",
     "agent:sync-knowledge": "tsx scripts/sync-agent-knowledge.ts",
     "turso:migrate": "tsx scripts/apply-turso-migrations.ts"
   },

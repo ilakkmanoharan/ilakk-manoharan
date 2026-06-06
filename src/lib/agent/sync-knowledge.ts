@@ -5,6 +5,7 @@ import { loadProjectsFromMarkdown } from "../../../prisma/load-projects-from-md"
 import { asraVideos } from "@/lib/asra";
 import { exceptionalAbilitySections } from "@/lib/exceptional-ability";
 import type { AgentClaim, ClaimsGraph } from "@/lib/agent/types";
+import { loadSciLayerArticlesFromDisk } from "@/lib/agent/scilayer-content";
 
 const SITE = "https://ilakk-manoharan.vercel.app";
 
@@ -15,6 +16,7 @@ export type KnowledgeNode = {
     | "claim-auto"
     | "claim-promoted"
     | "page"
+    | "scilayer"
     | "project"
     | "hackathon"
     | "startup"
@@ -341,6 +343,52 @@ export function buildAutoClaims(cwd = process.cwd()): {
       id: `node-evidence-${section.number}`,
       type: "evidence",
       title: `Evidence ${section.number}: ${section.title}`,
+      url,
+      claimIds,
+    });
+  }
+
+  for (const article of loadSciLayerArticlesFromDisk(cwd)) {
+    const url = article.articleUrl;
+    const claimIds: string[] = [];
+    const sources = [
+      url,
+      article.githubUrl ?? url,
+      `${SITE}/exceptional-ability`,
+    ].filter(Boolean) as string[];
+
+    if (article.abstract.trim()) {
+      const abstractId = `claim-auto-scilayer-${article.slug}-abstract`;
+      claims.push(
+        makeClaim(
+          abstractId,
+          `${article.title}: ${article.abstract}`,
+          [article.title, article.slug, ...article.keywords, "SciLayer", "ASRA"],
+          sources,
+          "scilayer",
+        ),
+      );
+      claimIds.push(abstractId);
+    }
+
+    for (const [i, para] of splitParagraphs(article.manuscript).entries()) {
+      const id = `claim-auto-scilayer-${article.slug}-p${i + 1}`;
+      claims.push(
+        makeClaim(
+          id,
+          para,
+          [article.title, article.slug, ...article.keywords, "SciLayer", "ARC"],
+          sources,
+          "scilayer",
+        ),
+      );
+      claimIds.push(id);
+    }
+
+    nodes.push({
+      id: `node-scilayer-${article.slug}`,
+      type: "scilayer",
+      title: article.title,
       url,
       claimIds,
     });

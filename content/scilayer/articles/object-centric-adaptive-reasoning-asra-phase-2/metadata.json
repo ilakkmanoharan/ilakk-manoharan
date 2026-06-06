@@ -1,0 +1,55 @@
+{
+  "slug": "object-centric-adaptive-reasoning-asra-phase-2",
+  "title": "Object-Centric Adaptive Reasoning: ASRA Phase 2 — From Pixel Transitions to Symbolic Structure",
+  "abstract": "Phase 1 established interactive intelligence from transition evidence alone; Phase 2 adds the Observation Engine—segmentation, object alignment, transform events, and rule candidates over ARC demonstration pairs, with compact object-scene hints feeding back into the interactive agent. This article presents the theory, architecture, and design principles for object-centric structure between Phase 1 logging and later memory, causality, and planning.",
+  "articleType": "Article",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra",
+  "repositoryLinks": [
+    {
+      "label": "ASRA Phase 2 — ARC Prize 2026 (companion notebook)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra-phase-2-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "ASRA Phase 1 preprint (Experience Engine)",
+      "href": "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1"
+    },
+    {
+      "label": "Phase 2 perception implementation (asra-arc)",
+      "href": "https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/perception"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-06-15",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "ASRA",
+    "Phase 2",
+    "object-centric reasoning",
+    "ARC",
+    "observation engine",
+    "rule induction",
+    "adaptive reasoning",
+    "connected components"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-06-15",
+      "summary": "Initial SciLayer preprint: Observation Engine theory and Phase 2 companion notebook link."
+    }
+  ]
+}

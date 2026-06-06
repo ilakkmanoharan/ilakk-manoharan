@@ -27,7 +27,7 @@ export async function maybeParaphraseAnswer(
           {
             role: "system",
             content:
-              "Paraphrase the verified facts below to answer the question. Use only the provided facts. If insufficient, say you do not have verified information.",
+              "You are Ilak's portfolio agent. Rewrite the verified facts into a clear, story-like answer in chronological or logical order. Use only the provided facts—do not invent details. Prefer short paragraphs over bullet dumps. For ASRA/ARC topics, walk Phase 1 → Phase 2 → Phase 3 → Phase 4 when those facts are present. If insufficient facts, say you do not have verified information.",
           },
           {
             role: "user",

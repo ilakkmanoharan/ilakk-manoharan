@@ -1,3 +1,4 @@
+import { composeAnswer, retrievalLimitForQuestion } from "@/lib/agent/compose-answer";
 import { AGENT_MIN_MATCH_SCORE, AGENT_REFUSAL } from "@/lib/agent/config";
 import {
   invalidateClaimsCache,
@@ -204,7 +205,8 @@ export async function buildQueryResultFromClaims(
   question: string,
   secondsRemaining: number | null,
 ): Promise<AgentQueryResult> {
-  const { matches, refused } = await retrieveClaims(question);
+  const limit = retrievalLimitForQuestion(question);
+  const { matches, refused } = await retrieveClaims(question, limit);
   if (refused || matches.length === 0) {
     return {
       answer: AGENT_REFUSAL,
@@ -220,12 +222,13 @@ export async function buildQueryResultFromClaims(
   }
 
   const sources = [...new Set(matches.flatMap((m) => m.sources))];
-  const answer = matches.map((m) => m.text).join("\n\n");
+  const answer = composeAnswer(question, matches);
+  const citedMatches = matches.slice(0, 6);
 
   return {
     answer,
     confidence: matches[0].score >= AGENT_MIN_MATCH_SCORE + 2 ? "high" : "high",
-    claims: matches.map((m) => ({
+    claims: citedMatches.map((m) => ({
       id: m.id,
       text: m.text,
       sources: m.sources,

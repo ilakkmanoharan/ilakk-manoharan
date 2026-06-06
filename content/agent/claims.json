@@ -1,5 +1,5 @@
 {
-  "version": 17,
+  "version": 18,
   "lastSynced": "2026-06-06",
   "claims": [
     {
@@ -4075,7 +4075,7 @@
     },
     {
       "id": "claim-auto-evidence-5-p1",
-      "text": "I designed, built, and deployed ilakk-manoharan.vercel.app myself—not as a static portfolio, but as a production Next.js app that has to work for two very different audiences. Recruiters need projects, scheduling, and evidence they can skim in a browser. Other AI agents need the same facts through an API or MCP, without inventing salary numbers or visa status I never published. That tension is what pushed me to build Ilak's general-Agent1 on top of the site.",
+      "text": "I designed, built, and deployed ilakk-manoharan.vercel.app myself—not as a static portfolio, but as a production Next.js app that has to work for two very different audiences. Recruiters need projects, scheduling, and evidence they can skim in a browser. Other AI agents need the same verified facts through an API or MCP. That tension is what pushed me to build Ilak's general-Agent1 on top of the site.",
       "topics": [
         "evidence 5",
         "portfolio platform & ilak's general-agent1 — what i built and how it works",

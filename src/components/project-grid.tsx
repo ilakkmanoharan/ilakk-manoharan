@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { Project } from "@/generated/prisma";
+import type { DisplayProject } from "@/lib/projects-content";
 import { asStringArray } from "@/lib/json";
 import { DEFAULT_APP_STORE_BY_PROJECT_SLUG } from "@/lib/project-default-links";
 import { Badge } from "@/components/ui/badge";
@@ -27,7 +27,7 @@ const FILTERS = [
   "Patents",
 ] as const;
 
-function appStoreUrlFor(project: Project): string | null {
+function appStoreUrlFor(project: DisplayProject): string | null {
   return (
     project.appStoreUrl ??
     DEFAULT_APP_STORE_BY_PROJECT_SLUG[project.slug] ??
@@ -35,7 +35,7 @@ function appStoreUrlFor(project: Project): string | null {
   );
 }
 
-export function ProjectGrid({ projects }: { projects: Project[] }) {
+export function ProjectGrid({ projects }: { projects: DisplayProject[] }) {
   const [active, setActive] = useState<string | null>(null);
 
   const filtered = useMemo(() => {

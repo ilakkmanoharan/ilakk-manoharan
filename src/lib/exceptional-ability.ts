@@ -4,14 +4,16 @@
  * Evidence 2 (SciLayer preprints): src/lib/exceptional-ability-evidence2.ts
  * Evidence 3 (ASRA Phase 2): src/lib/exceptional-ability-evidence3.ts
  * Evidence 4 (ASRA Phase 3): src/lib/exceptional-ability-evidence4.ts
- * Evidence 5 (ASRA Phase 4): src/lib/exceptional-ability-evidence5.ts
+ * Evidence 5 (Portfolio & general-Agent1 architecture): src/lib/exceptional-ability-evidence5.ts
+ * Evidence 11 (ASRA Phase 4): src/lib/exceptional-ability-evidence11.ts
  * Evidence 9 (Orbit Wars): src/lib/exceptional-ability-evidence9.ts
  * Evidence 10 (Portfolio & general-Agent1): src/lib/exceptional-ability-evidence10.ts
  */
 import { scilayerScholarlyEvidenceSection } from "@/lib/exceptional-ability-evidence2";
 import { asraPhase2EvidenceSection } from "@/lib/exceptional-ability-evidence3";
 import { asraPhase3EvidenceSection } from "@/lib/exceptional-ability-evidence4";
-import { asraPhase4EvidenceSection } from "@/lib/exceptional-ability-evidence5";
+import { portfolioAgentArchitectureEvidenceSection } from "@/lib/exceptional-ability-evidence5";
+import { asraPhase4EvidenceSection } from "@/lib/exceptional-ability-evidence11";
 import { orbitWarsEvidenceSection } from "@/lib/exceptional-ability-evidence9";
 import { portfolioAgentEvidenceSection } from "@/lib/exceptional-ability-evidence10";
 export type ExceptionalAbilityLink = {
@@ -83,7 +85,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
   scilayerScholarlyEvidenceSection,
   asraPhase2EvidenceSection,
   asraPhase3EvidenceSection,
-  asraPhase4EvidenceSection,
+  portfolioAgentArchitectureEvidenceSection,
   {
     number: 6,
     title: "Patent, federal R&D proposals, ISSRDC, and shipped products",
@@ -174,4 +176,5 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
   },
   orbitWarsEvidenceSection,
   portfolioAgentEvidenceSection,
+  asraPhase4EvidenceSection,
 ];

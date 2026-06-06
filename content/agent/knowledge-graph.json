@@ -1,8 +1,8 @@
 {
-  "version": 7,
+  "version": 9,
   "lastSynced": "2026-06-06",
   "siteUrl": "https://ilakk-manoharan.vercel.app",
-  "claimCount": 899,
+  "claimCount": 913,
   "nodes": [
     {
       "id": "node-recruiter-recruiter-q-a",
@@ -126,7 +126,12 @@
         "claim-auto-project-ilakk-manoharan-portfolio-p2",
         "claim-auto-project-ilakk-manoharan-portfolio-p3",
         "claim-auto-project-ilakk-manoharan-portfolio-p4",
-        "claim-auto-project-ilakk-manoharan-portfolio-p5"
+        "claim-auto-project-ilakk-manoharan-portfolio-p5",
+        "claim-auto-project-ilakk-manoharan-portfolio-p6",
+        "claim-auto-project-ilakk-manoharan-portfolio-p7",
+        "claim-auto-project-ilakk-manoharan-portfolio-p8",
+        "claim-auto-project-ilakk-manoharan-portfolio-p9",
+        "claim-auto-project-ilakk-manoharan-portfolio-p10"
       ]
     },
     {
@@ -390,7 +395,7 @@
     {
       "id": "node-evidence-5",
       "type": "evidence",
-      "title": "Evidence 5: ASRA Phase 4 - ARC-AGI-3: Semantics & Causal Inference Engine",
+      "title": "Evidence 5: Portfolio platform & Ilak's general-Agent1 — retrieval-first agent architecture",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-5-p1",
@@ -399,10 +404,12 @@
         "claim-auto-evidence-5-p4",
         "claim-auto-evidence-5-p5",
         "claim-auto-evidence-5-p6",
+        "claim-auto-evidence-5-p7",
         "claim-auto-evidence-5-b1",
         "claim-auto-evidence-5-b2",
         "claim-auto-evidence-5-b3",
-        "claim-auto-evidence-5-b4"
+        "claim-auto-evidence-5-b4",
+        "claim-auto-evidence-5-b5"
       ]
     },
     {
@@ -461,19 +468,34 @@
     {
       "id": "node-evidence-10",
       "type": "evidence",
-      "title": "Evidence 10: Portfolio site & Ilak's general-Agent1 — agent-native full-stack platform",
+      "title": "Evidence 10: Portfolio site — shipped product summary",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-10-p1",
         "claim-auto-evidence-10-p2",
         "claim-auto-evidence-10-p3",
-        "claim-auto-evidence-10-p4",
-        "claim-auto-evidence-10-p5",
-        "claim-auto-evidence-10-p6",
         "claim-auto-evidence-10-b1",
         "claim-auto-evidence-10-b2",
         "claim-auto-evidence-10-b3",
         "claim-auto-evidence-10-b4"
+      ]
+    },
+    {
+      "id": "node-evidence-11",
+      "type": "evidence",
+      "title": "Evidence 11: ASRA Phase 4 - ARC-AGI-3: Semantics & Causal Inference Engine",
+      "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
+      "claimIds": [
+        "claim-auto-evidence-11-p1",
+        "claim-auto-evidence-11-p2",
+        "claim-auto-evidence-11-p3",
+        "claim-auto-evidence-11-p4",
+        "claim-auto-evidence-11-p5",
+        "claim-auto-evidence-11-p6",
+        "claim-auto-evidence-11-b1",
+        "claim-auto-evidence-11-b2",
+        "claim-auto-evidence-11-b3",
+        "claim-auto-evidence-11-b4"
       ]
     },
     {

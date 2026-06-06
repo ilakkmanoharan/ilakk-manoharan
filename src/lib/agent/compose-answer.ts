@@ -58,7 +58,7 @@ function stripStructuredLabel(text: string) {
 const ARC_NARRATIVE_CLAIM_IDS = new Set([
   "claim-auto-hackathon-asra-solution",
   "claim-auto-scilayer-transition-centric-adaptive-reasoning-asra-phase-1-abstract",
-  "claim-auto-evidence-5-b1",
+  "claim-auto-evidence-11-b1",
 ]);
 
 function augmentArcMatches(matches: RetrievedClaim[]): RetrievedClaim[] {
@@ -116,7 +116,7 @@ function composeArcNarrative(matches: RetrievedClaim[]): string {
   });
 
   const roadmap =
-    filtered.find((m) => m.id === "claim-auto-evidence-5-b1") ??
+    filtered.find((m) => m.id === "claim-auto-evidence-11-b1") ??
     filtered.find((m) =>
       /Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → Phase 4/i.test(
         m.text,

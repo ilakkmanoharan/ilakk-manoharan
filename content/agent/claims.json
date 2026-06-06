@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 9,
   "lastSynced": "2026-06-06",
   "claims": [
     {
@@ -498,6 +498,7 @@
         "backend",
         "cloud",
         "open source",
+        "distributed systems",
         "next.js 16",
         "react 19",
         "typescript",
@@ -527,7 +528,8 @@
         "ai / ml",
         "backend",
         "cloud",
-        "open source"
+        "open source",
+        "distributed systems"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/projects",
@@ -539,7 +541,7 @@
     },
     {
       "id": "claim-auto-project-ilakk-manoharan-portfolio-p2",
-      "text": "Ilak's general-Agent1 (general-agent-1) is a retrieval-first AI representative: answers come from a claims graph (content/agent/claims.json), every factual reply cites a source URL, and low-confidence questions get an explicit refusal—not improvised salary, visa, or unreleased work.",
+      "text": "1. Traditional portfolio — credibility, narrative, evidence cards, links to GitHub, SciLayer, patents, and Kaggle work. 2. Programmable representative — Ilak's general-Agent1, so any client (browser, REST, MCP) calls one shared retrieval brain and gets grounded answers with citations.",
       "topics": [
         "ilakk manoharan portfolio",
         "ilakk-manoharan-portfolio",
@@ -547,7 +549,8 @@
         "ai / ml",
         "backend",
         "cloud",
-        "open source"
+        "open source",
+        "distributed systems"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/projects",
@@ -559,7 +562,7 @@
     },
     {
       "id": "claim-auto-project-ilakk-manoharan-portfolio-p3",
-      "text": "- Human chat — /agent (public info) and invite-gated /agent/g/{token} sessions with time budgets - REST — POST /api/agent/query with manifest at /.well-known/agent.json - MCP — Streamable HTTP at /api/mcp with searchfacts, getproject, getevidence, getskills, and getavailability",
+      "text": "Codename: general-agent-1 · Public entry: /agent · Manifest: /.well-known/agent.json",
       "topics": [
         "ilakk manoharan portfolio",
         "ilakk-manoharan-portfolio",
@@ -567,7 +570,8 @@
         "ai / ml",
         "backend",
         "cloud",
-        "open source"
+        "open source",
+        "distributed systems"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/projects",
@@ -579,7 +583,7 @@
     },
     {
       "id": "claim-auto-project-ilakk-manoharan-portfolio-p4",
-      "text": "Production stack: Next.js 16 App Router, Prisma 7 with Turso (libSQL) on Vercel, Resend for meeting-request email, content-as-code under content/projects/, and middleware-protected /admin for submissions and agent invites.",
+      "text": "Generic LLM chat on a portfolio hallucinates salary, visa status, and unreleased projects. This agent is the opposite: retrieval before generation, refuse when uncertain, cite every factual claim.",
       "topics": [
         "ilakk manoharan portfolio",
         "ilakk-manoharan-portfolio",
@@ -587,7 +591,8 @@
         "ai / ml",
         "backend",
         "cloud",
-        "open source"
+        "open source",
+        "distributed systems"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/projects",
@@ -599,7 +604,7 @@
     },
     {
       "id": "claim-auto-project-ilakk-manoharan-portfolio-p5",
-      "text": "Built for recruiters and agent-to-agent interviews—the same grounded truth for humans and machines.",
+      "text": "Knowledge graph: content/agent/claims.json and knowledge-graph.json sync at build time from projects, hackathons, startups, exceptional-ability evidence, SciLayer manuscripts, recruiter Q&A, and ASRA content (npm run content:sync). Each claim has { id, text, topics, sources, origin, verified }.",
       "topics": [
         "ilakk manoharan portfolio",
         "ilakk-manoharan-portfolio",
@@ -607,7 +612,113 @@
         "ai / ml",
         "backend",
         "cloud",
-        "open source"
+        "open source",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-p6",
+      "text": "Runtime path: question → retrieveClaims() (keyword scoring + approved conversation merge) → optional OpenAI paraphrase (off by default) → answer with source URLs. Low match → explicit refusal + Contact / Schedule pointers.",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-p7",
+      "text": "| Surface | Path | Purpose | |---------|------|---------| | Human chat | /agent/g/{token} | Invite-gated sessions with time budgets and citation chips | | REST | POST /api/agent/query | Agent-to-agent queries with manifest discovery | | MCP | /api/mcp | searchfacts, getproject, getevidence, getskills, getavailability |",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-p8",
+      "text": "Conversation workflow: every exchange persists in Turso (AgentInvite → AgentSession → AgentMessage). Successful answers queue as AgentKnowledgeCandidate for admin review at /admin/agent; approved rows merge into live retrieval.",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-p9",
+      "text": "Stack: Next.js 16 App Router, Prisma 7 + Turso on Vercel, @modelcontextprotocol/sdk, Resend for meeting-request email, content-as-code under content/.",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source",
+        "distributed systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/projects",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-project-ilakk-manoharan-portfolio-p10",
+      "text": "Built for recruiters and agent-to-agent interviews—the same grounded truth for humans and machines. Deep architecture write-up: Evidence 5 on /exceptional-ability.",
+      "topics": [
+        "ilakk manoharan portfolio",
+        "ilakk-manoharan-portfolio",
+        "full stack",
+        "ai / ml",
+        "backend",
+        "cloud",
+        "open source",
+        "distributed systems"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/projects",
@@ -3200,22 +3311,24 @@
     },
     {
       "id": "claim-auto-evidence-5-p1",
-      "text": "After ASRA Phase 1 (transition-centric experience), Phase 2 (object-centric observation), and Phase 3 (directed exploration and episodic memory), I designed and implemented ASRA Phase 4, the Semantics & Causal Inference Engine: a stack that aggregates action–effect observations into semantic signatures, maintains a causal transition model for predicting next-state features, tracks hypotheses with confirm/refute updates, supports counterfactual queries over alternate actions, and scores epistemic uncertainty per (state, action) pair—then deploys a compact CausalSemanticsEngine alongside Phase 2 object-scene and Phase 3 exploration hints in the ARC Prize 2026 competition agent (asra-v0.6-phase4).",
+      "text": "I designed, built, and deployed ilakk-manoharan.vercel.app as a full-stack Next.js platform—not a static brochure. Humans get projects, recruiting, scheduling, and evidence cards; other AI agents get the same grounded truth through REST and MCP. Recruiters and interview agents need different interfaces to one corpus of verified facts, not a chatbot that improvises salary, visa status, or unreleased work.",
       "topics": [
         "evidence 5",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack",
+        "platform",
+        "ilak's",
+        "general",
+        "agent1",
+        "retrieval",
+        "first",
+        "agent",
+        "architecture"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3226,22 +3339,24 @@
     },
     {
       "id": "claim-auto-evidence-5-p2",
-      "text": "Phase 4 answers questions that define scientific and strategic reasoning over interventions: If I take ACTION3 here, what will happen? How confident am I? What would have happened if I had taken ACTION1 instead?",
+      "text": "Ilak's general-Agent1 (codename general-agent-1) is the programmable representative layer: retrieval before generation, refuse when uncertain, cite every factual claim. Answers come from a git-backed knowledge graph (content/agent/claims.json + knowledge-graph.json) synced from projects, exceptional-ability evidence, hackathons, startups, SciLayer manuscripts, recruiter Q&A, and ASRA content—not from model imagination.",
       "topics": [
         "evidence 5",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack",
+        "platform",
+        "ilak's",
+        "general",
+        "agent1",
+        "retrieval",
+        "first",
+        "agent",
+        "architecture"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3252,22 +3367,24 @@
     },
     {
       "id": "claim-auto-evidence-5-p3",
-      "text": "I designed Phase 4 theory (intervention–response tuples without oracle action labels; semantic labels from cell diffs and Phase 2 transform histograms; confidence and uncertainty scoring; hypothesis confirm/refute; counterfactual effect lookup; explicit bridge to Decision Biology perturbation–response structure), implemented the causality stack in asra-arc/src/asra/causality/ (ActionEffectSummarizer, CausalTransitionModel, HypothesisTester, CounterfactualSimulator, UncertaintyScorer, SemanticsStore, and CausalExplorationPolicyV3), validated on ARC-AGI-3 transition logs (semantics consistency, effect-prediction MAE vs naive baseline, hypothesis confirm rates), and deployed the Kaggle notebook with isolated venv bootstrap and combined scoring across Phases 1–4.",
+      "text": "Architecture: content sources → sync-knowledge.ts at build time → claims graph → retrieveClaims() at runtime → three surfaces sharing one brain: invite-gated human chat (/agent/g/{token}), POST /api/agent/query with manifest at /.well-known/agent.json, and Streamable HTTP MCP at /api/mcp (search_facts, get_project, get_evidence, get_skills, get_availability). Optional OpenAI paraphrase (Mode B) runs only after successful claim retrieval and is off by default.",
       "topics": [
         "evidence 5",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack",
+        "platform",
+        "ilak's",
+        "general",
+        "agent1",
+        "retrieval",
+        "first",
+        "agent",
+        "architecture"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3278,22 +3395,24 @@
     },
     {
       "id": "claim-auto-evidence-5-p4",
-      "text": "Ilakkuvaselvi Manoharan (2026). [Causal Action Semantics: ASRA Phase 4 — From Observed Effects to Intervention Reasoning](https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4). Article, SciLayer Systems (preprint).",
+      "text": "Knowledge graph workflow: npm run content:sync rebuilds claims from all site content; npm run agent:fetch-scilayer mirrors SciLayer articles; approved agent conversations queue as AgentKnowledgeCandidate rows in Turso and merge into live retrieval after admin review at /admin/agent. Every non-refused chat exchange persists in Prisma (AgentInvite → AgentSession → AgentMessage) with citation JSON.",
       "topics": [
         "evidence 5",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack",
+        "platform",
+        "ilak's",
+        "general",
+        "agent1",
+        "retrieval",
+        "first",
+        "agent",
+        "architecture"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3304,22 +3423,24 @@
     },
     {
       "id": "claim-auto-evidence-5-p5",
-      "text": "Contribution: Extends ASRA from directed exploration to causal semantics—empirical action meaning from observed effects, distributional effect signatures, hypothesis testing and counterfactual lookup, and uncertainty-aware action scoring integrated with Phase 1 transitions, Phase 2 object hints, and Phase 3 exploration memory in the competition agent.",
+      "text": "Anti-hallucination policy (published in the manifest and chat UI): answer only from synced content; cite source URLs; refuse below match threshold; never infer salary, visa, or unreleased work without an explicit claim. Built for agent-to-agent interviews—K-Dense-style evaluations connect via MCP or REST and receive verifiable answers with links, not invented prose.",
       "topics": [
         "evidence 5",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack",
+        "platform",
+        "ilak's",
+        "general",
+        "agent1",
+        "retrieval",
+        "first",
+        "agent",
+        "architecture"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3330,22 +3451,52 @@
     },
     {
       "id": "claim-auto-evidence-5-p6",
-      "text": "Why this supports exceptional ability: Demonstrates sustained original work across four ASRA layers—experience, observation, navigation, and causal semantics—combining theory, measurable evaluation on transition logs, open-source implementation, and competition-scale deployment within a single named architecture program aimed at adaptive scientific reasoning.",
+      "text": "Contribution: End-to-end AI systems product execution—@modelcontextprotocol/sdk MCP server, shared retrieveClaims() across UI/API/MCP, narrative answer composition for ASRA/ARC questions, Prisma + Turso session logging, admin invite budgets, and content-as-code under content/projects/ with build-time knowledge sync on every deploy.",
       "topics": [
         "evidence 5",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack",
+        "platform",
+        "ilak's",
+        "general",
+        "agent1",
+        "retrieval",
+        "first",
+        "agent",
+        "architecture"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-p7",
+      "text": "Why this supports exceptional ability: Demonstrates full-stack ownership at the intersection of product engineering, distributed systems, and agent-native AI design—a production portfolio where humans and machines read the same verified knowledge graph with refusal and citations, not generic LLM chat.",
+      "topics": [
+        "evidence 5",
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack",
+        "platform",
+        "ilak's",
+        "general",
+        "agent1",
+        "retrieval",
+        "first",
+        "agent",
+        "architecture"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3356,14 +3507,15 @@
     },
     {
       "id": "claim-auto-evidence-5-b1",
-      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → Phase 4 Semantics & Causal Inference Engine → planned goal inference and planning phases",
+      "text": "Live: https://ilakk-manoharan.vercel.app · Source: https://github.com/ilakkmanoharan/ilakk-manoharan",
       "topics": [
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer"
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3374,14 +3526,15 @@
     },
     {
       "id": "claim-auto-evidence-5-b2",
-      "text": "Causality library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/causality",
+      "text": "Agent: https://ilakk-manoharan.vercel.app/agent · Manifest: https://ilakk-manoharan.vercel.app/.well-known/agent.json · MCP: https://ilakk-manoharan.vercel.app/api/mcp",
       "topics": [
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer"
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3392,14 +3545,15 @@
     },
     {
       "id": "claim-auto-evidence-5-b3",
-      "text": "Agent asra-v0.6-phase4: semantic labels, confidence, uncertainty, and predicted progress wired into combined Phase 1–4 scoring",
+      "text": "Knowledge sync: content/projects, hackathons, startups, exceptional-ability, SciLayer, recruiter Q&A → claims.json (npm run content:sync)",
       "topics": [
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer"
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3410,14 +3564,34 @@
     },
     {
       "id": "claim-auto-evidence-5-b4",
-      "text": "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase4/asra-phase-4-arc-prize-2026.ipynb",
+      "text": "Stack: Next.js 16 · React 19 · TypeScript · Prisma · Turso · MCP SDK · Resend",
       "topics": [
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer"
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-5-b5",
+      "text": "Phases shipped: claims + query API + invites + MCP + conversation export + admin knowledge promotion",
+      "topics": [
+        "portfolio platform & ilak's general-agent1 — retrieval-first agent architecture",
+        "portfolio",
+        "agents",
+        "mcp",
+        "knowledgegraph",
+        "nextjs",
+        "fullstack"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3824,24 +3998,19 @@
     },
     {
       "id": "claim-auto-evidence-10-p1",
-      "text": "I designed, built, and deployed a production portfolio at ilakk-manoharan.vercel.app that is not a static brochure: it is a full-stack Next.js application with filterable projects, startup catalog, hackathons, Founder Studio, skills, talks, exceptional-ability evidence, recruiter portal, Calendly scheduling, meeting requests, admin dashboard, and analytics—deployed from GitHub to Vercel with Turso (libSQL) for durable serverless writes.",
+      "text": "The live portfolio at ilakk-manoharan.vercel.app ships filterable projects, startup catalog, hackathons, Founder Studio, skills, talks, exceptional-ability evidence, recruiter portal, Calendly scheduling, meeting requests, admin dashboard, and analytics—deployed from GitHub to Vercel with Turso (libSQL) for durable serverless writes.",
       "topics": [
         "evidence 10",
-        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio site — shipped product summary",
         "portfolio",
         "agents",
         "mcp",
         "nextjs",
         "fullstack",
         "site",
-        "ilak's",
-        "general",
-        "agent1",
-        "agent",
-        "native",
-        "full",
-        "stack",
-        "platform"
+        "shipped",
+        "product",
+        "summary"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3852,24 +4021,19 @@
     },
     {
       "id": "claim-auto-evidence-10-p2",
-      "text": "Recruiters, collaborators, and other AI agents need different interfaces to the same truth about my work. Humans want a polished site and scheduling; interview agents need structured APIs, citations, and refusal behavior—not a chatbot that improvises salary, visa status, or unreleased projects.",
+      "text": "Evidence 5 documents the agent-native layer in depth: Ilak's general-Agent1 knowledge graph, retrieval-first policy, REST + MCP surfaces, conversation logging, and admin promotion workflow. This card summarizes the full product footprint for readers who want the site scope before the architecture detail.",
       "topics": [
         "evidence 10",
-        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio site — shipped product summary",
         "portfolio",
         "agents",
         "mcp",
         "nextjs",
         "fullstack",
         "site",
-        "ilak's",
-        "general",
-        "agent1",
-        "agent",
-        "native",
-        "full",
-        "stack",
-        "platform"
+        "shipped",
+        "product",
+        "summary"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3880,108 +4044,19 @@
     },
     {
       "id": "claim-auto-evidence-10-p3",
-      "text": "Ilak's general-Agent1 (codename general-agent-1) is the programmable representative layer: retrieval before generation, refuse when uncertain, cite every factual claim. Answers come from a claims graph synced from projects, exceptional-ability evidence, recruiter Q&A, and skills—not from model imagination. Human chat, REST, and MCP all call the same retrieveClaims() brain.",
+      "text": "Why this supports exceptional ability: Demonstrates sustained full-stack product execution—content-as-code, production deploy discipline, and a portfolio that serves both human recruiters and machine clients from one repository.",
       "topics": [
         "evidence 10",
-        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio site — shipped product summary",
         "portfolio",
         "agents",
         "mcp",
         "nextjs",
         "fullstack",
         "site",
-        "ilak's",
-        "general",
-        "agent1",
-        "agent",
-        "native",
-        "full",
-        "stack",
-        "platform"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-06"
-    },
-    {
-      "id": "claim-auto-evidence-10-p4",
-      "text": "Three shipped surfaces share one policy: invite-gated human chat at /agent/g/{token} with conversation budgets; POST /api/agent/query for agent-to-agent REST with manifest at /.well-known/agent.json; and a first-class MCP server at /api/mcp (search_facts, get_project, get_evidence, get_skills, get_availability) so Claude Desktop, Cursor, and evaluation agents connect without scraping HTML.",
-      "topics": [
-        "evidence 10",
-        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
-        "portfolio",
-        "agents",
-        "mcp",
-        "nextjs",
-        "fullstack",
-        "site",
-        "ilak's",
-        "general",
-        "agent1",
-        "agent",
-        "native",
-        "full",
-        "stack",
-        "platform"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-06"
-    },
-    {
-      "id": "claim-auto-evidence-10-p5",
-      "text": "Contribution: End-to-end product execution—custom admin for agent invites, Prisma session logging, Resend email on meeting requests, content-as-code under content/projects/, and anti-hallucination policy published in the manifest—built for agent-to-agent interviews (e.g. K-Dense-style evaluations) with verifiable source URLs on every answer.",
-      "topics": [
-        "evidence 10",
-        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
-        "portfolio",
-        "agents",
-        "mcp",
-        "nextjs",
-        "fullstack",
-        "site",
-        "ilak's",
-        "general",
-        "agent1",
-        "agent",
-        "native",
-        "full",
-        "stack",
-        "platform"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-06"
-    },
-    {
-      "id": "claim-auto-evidence-10-p6",
-      "text": "Why this supports exceptional ability: Demonstrates full-stack ownership at the intersection of product, distributed systems, and AI systems design—an agent-native portfolio where the same site serves humans and machines with grounded retrieval, not generic LLM chat.",
-      "topics": [
-        "evidence 10",
-        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
-        "portfolio",
-        "agents",
-        "mcp",
-        "nextjs",
-        "fullstack",
-        "site",
-        "ilak's",
-        "general",
-        "agent1",
-        "agent",
-        "native",
-        "full",
-        "stack",
-        "platform"
+        "shipped",
+        "product",
+        "summary"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3994,7 +4069,7 @@
       "id": "claim-auto-evidence-10-b1",
       "text": "Live portfolio: https://ilakk-manoharan.vercel.app · Source: https://github.com/ilakkmanoharan/ilakk-manoharan",
       "topics": [
-        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio site — shipped product summary",
         "portfolio",
         "agents",
         "mcp",
@@ -4012,7 +4087,7 @@
       "id": "claim-auto-evidence-10-b2",
       "text": "Ilak's general-Agent1: https://ilakk-manoharan.vercel.app/agent · Manifest: https://ilakk-manoharan.vercel.app/.well-known/agent.json · MCP: https://ilakk-manoharan.vercel.app/api/mcp",
       "topics": [
-        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio site — shipped product summary",
         "portfolio",
         "agents",
         "mcp",
@@ -4030,7 +4105,7 @@
       "id": "claim-auto-evidence-10-b3",
       "text": "Stack: Next.js 16 · React 19 · TypeScript · Prisma · Turso · @modelcontextprotocol/sdk · Resend",
       "topics": [
-        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio site — shipped product summary",
         "portfolio",
         "agents",
         "mcp",
@@ -4048,12 +4123,240 @@
       "id": "claim-auto-evidence-10-b4",
       "text": "Knowledge sync: content/agent/claims.json ← projects, evidence cards, recruiter Q&A (npm run agent:sync-knowledge)",
       "topics": [
-        "portfolio site & ilak's general-agent1 — agent-native full-stack platform",
+        "portfolio site — shipped product summary",
         "portfolio",
         "agents",
         "mcp",
         "nextjs",
         "fullstack"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-11-p1",
+      "text": "After ASRA Phase 1 (transition-centric experience), Phase 2 (object-centric observation), and Phase 3 (directed exploration and episodic memory), I designed and implemented ASRA Phase 4, the Semantics & Causal Inference Engine: a stack that aggregates action–effect observations into semantic signatures, maintains a causal transition model for predicting next-state features, tracks hypotheses with confirm/refute updates, supports counterfactual queries over alternate actions, and scores epistemic uncertainty per (state, action) pair—then deploys a compact CausalSemanticsEngine alongside Phase 2 object-scene and Phase 3 exploration hints in the ARC Prize 2026 competition agent (asra-v0.6-phase4).",
+      "topics": [
+        "evidence 11",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-11-p2",
+      "text": "Phase 4 answers questions that define scientific and strategic reasoning over interventions: If I take ACTION3 here, what will happen? How confident am I? What would have happened if I had taken ACTION1 instead?",
+      "topics": [
+        "evidence 11",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-11-p3",
+      "text": "I designed Phase 4 theory (intervention–response tuples without oracle action labels; semantic labels from cell diffs and Phase 2 transform histograms; confidence and uncertainty scoring; hypothesis confirm/refute; counterfactual effect lookup; explicit bridge to Decision Biology perturbation–response structure), implemented the causality stack in asra-arc/src/asra/causality/ (ActionEffectSummarizer, CausalTransitionModel, HypothesisTester, CounterfactualSimulator, UncertaintyScorer, SemanticsStore, and CausalExplorationPolicyV3), validated on ARC-AGI-3 transition logs (semantics consistency, effect-prediction MAE vs naive baseline, hypothesis confirm rates), and deployed the Kaggle notebook with isolated venv bootstrap and combined scoring across Phases 1–4.",
+      "topics": [
+        "evidence 11",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-11-p4",
+      "text": "Ilakkuvaselvi Manoharan (2026). [Causal Action Semantics: ASRA Phase 4 — From Observed Effects to Intervention Reasoning](https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4). Article, SciLayer Systems (preprint).",
+      "topics": [
+        "evidence 11",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-11-p5",
+      "text": "Contribution: Extends ASRA from directed exploration to causal semantics—empirical action meaning from observed effects, distributional effect signatures, hypothesis testing and counterfactual lookup, and uncertainty-aware action scoring integrated with Phase 1 transitions, Phase 2 object hints, and Phase 3 exploration memory in the competition agent.",
+      "topics": [
+        "evidence 11",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-11-p6",
+      "text": "Why this supports exceptional ability: Demonstrates sustained original work across four ASRA layers—experience, observation, navigation, and causal semantics—combining theory, measurable evaluation on transition logs, open-source implementation, and competition-scale deployment within a single named architecture program aimed at adaptive scientific reasoning.",
+      "topics": [
+        "evidence 11",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-11-b1",
+      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → Phase 4 Semantics & Causal Inference Engine → planned goal inference and planning phases",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-11-b2",
+      "text": "Causality library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/causality",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-11-b3",
+      "text": "Agent asra-v0.6-phase4: semantic labels, confidence, uncertainty, and predicted progress wired into combined Phase 1–4 scoring",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-evidence-11-b4",
+      "text": "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase4/asra-phase-4-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"

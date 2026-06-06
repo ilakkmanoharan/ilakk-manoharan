@@ -11,46 +11,60 @@ function withPortfolioLinks(links: { label: string; href: string }[]) {
   return [...links, ...portfolioNavLinks.filter((l) => !seen.has(l.href))];
 }
 
-/** Evidence 5 — ASRA Phase 4 Semantics & Causal Inference Engine (ARC-AGI-3). */
-export const asraPhase4EvidenceSection: ExceptionalAbilitySection = {
-  number: 5,
-  title: "ASRA Phase 4 - ARC-AGI-3: Semantics & Causal Inference Engine",
-  paragraphs: [
-    "After ASRA Phase 1 (transition-centric experience), Phase 2 (object-centric observation), and Phase 3 (directed exploration and episodic memory), I designed and implemented ASRA Phase 4, the Semantics & Causal Inference Engine: a stack that aggregates action–effect observations into semantic signatures, maintains a causal transition model for predicting next-state features, tracks hypotheses with confirm/refute updates, supports counterfactual queries over alternate actions, and scores epistemic uncertainty per (state, action) pair—then deploys a compact CausalSemanticsEngine alongside Phase 2 object-scene and Phase 3 exploration hints in the ARC Prize 2026 competition agent (asra-v0.6-phase4).",
-    "Phase 4 answers questions that define scientific and strategic reasoning over interventions: If I take ACTION3 here, what will happen? How confident am I? What would have happened if I had taken ACTION1 instead?",
-    "I designed Phase 4 theory (intervention–response tuples without oracle action labels; semantic labels from cell diffs and Phase 2 transform histograms; confidence and uncertainty scoring; hypothesis confirm/refute; counterfactual effect lookup; explicit bridge to Decision Biology perturbation–response structure), implemented the causality stack in asra-arc/src/asra/causality/ (ActionEffectSummarizer, CausalTransitionModel, HypothesisTester, CounterfactualSimulator, UncertaintyScorer, SemanticsStore, and CausalExplorationPolicyV3), validated on ARC-AGI-3 transition logs (semantics consistency, effect-prediction MAE vs naive baseline, hypothesis confirm rates), and deployed the Kaggle notebook with isolated venv bootstrap and combined scoring across Phases 1–4.",
-    "Ilakkuvaselvi Manoharan (2026). [Causal Action Semantics: ASRA Phase 4 — From Observed Effects to Intervention Reasoning](https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4). Article, SciLayer Systems (preprint).",
-    "Contribution: Extends ASRA from directed exploration to causal semantics—empirical action meaning from observed effects, distributional effect signatures, hypothesis testing and counterfactual lookup, and uncertainty-aware action scoring integrated with Phase 1 transitions, Phase 2 object hints, and Phase 3 exploration memory in the competition agent.",
-    "Why this supports exceptional ability: Demonstrates sustained original work across four ASRA layers—experience, observation, navigation, and causal semantics—combining theory, measurable evaluation on transition logs, open-source implementation, and competition-scale deployment within a single named architecture program aimed at adaptive scientific reasoning.",
-  ],
-  bullets: [
-    "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → Phase 4 Semantics & Causal Inference Engine → planned goal inference and planning phases",
-    "Causality library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/causality",
-    "Agent asra-v0.6-phase4: semantic labels, confidence, uncertainty, and predicted progress wired into combined Phase 1–4 scoring",
-    "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase4/asra-phase-4-arc-prize-2026.ipynb",
-  ],
-  links: withPortfolioLinks([
-    {
-      label: "SciLayer — ASRA Phase 4 article",
-      href: "https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4",
-    },
-    {
-      label: "ASRA Phase 4 Kaggle notebook (ASRA GitHub)",
-      href: "https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase4/asra-phase-4-arc-prize-2026.ipynb",
-    },
-    {
-      label: "ASRA causality library",
-      href: "https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/causality",
-    },
-    { label: "ASRA on GitHub", href: "https://github.com/ilakkmanoharan/asra" },
-    {
-      label: "ASRA Phase 3 (SciLayer)",
-      href: "https://sci-layer.vercel.app/articles/directed-exploration-episodic-memory-asra-phase-3",
-    },
-    {
-      label: "ARC Prize 2026 — ARC-AGI-3",
-      href: "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
-    },
-  ]),
-  hashtags: ["#ASRA", "#ARCPrize2026", "#ARCAGI3", "#causality", "#scilayer"],
-};
+/** Evidence 5 — Portfolio platform & Ilak's general-Agent1 architecture. */
+export const portfolioAgentArchitectureEvidenceSection: ExceptionalAbilitySection =
+  {
+    number: 5,
+    title:
+      "Portfolio platform & Ilak's general-Agent1 — retrieval-first agent architecture",
+    paragraphs: [
+      "I designed, built, and deployed ilakk-manoharan.vercel.app as a full-stack Next.js platform—not a static brochure. Humans get projects, recruiting, scheduling, and evidence cards; other AI agents get the same grounded truth through REST and MCP. Recruiters and interview agents need different interfaces to one corpus of verified facts, not a chatbot that improvises salary, visa status, or unreleased work.",
+      "Ilak's general-Agent1 (codename general-agent-1) is the programmable representative layer: retrieval before generation, refuse when uncertain, cite every factual claim. Answers come from a git-backed knowledge graph (content/agent/claims.json + knowledge-graph.json) synced from projects, exceptional-ability evidence, hackathons, startups, SciLayer manuscripts, recruiter Q&A, and ASRA content—not from model imagination.",
+      "Architecture: content sources → sync-knowledge.ts at build time → claims graph → retrieveClaims() at runtime → three surfaces sharing one brain: invite-gated human chat (/agent/g/{token}), POST /api/agent/query with manifest at /.well-known/agent.json, and Streamable HTTP MCP at /api/mcp (search_facts, get_project, get_evidence, get_skills, get_availability). Optional OpenAI paraphrase (Mode B) runs only after successful claim retrieval and is off by default.",
+      "Knowledge graph workflow: npm run content:sync rebuilds claims from all site content; npm run agent:fetch-scilayer mirrors SciLayer articles; approved agent conversations queue as AgentKnowledgeCandidate rows in Turso and merge into live retrieval after admin review at /admin/agent. Every non-refused chat exchange persists in Prisma (AgentInvite → AgentSession → AgentMessage) with citation JSON.",
+      "Anti-hallucination policy (published in the manifest and chat UI): answer only from synced content; cite source URLs; refuse below match threshold; never infer salary, visa, or unreleased work without an explicit claim. Built for agent-to-agent interviews—K-Dense-style evaluations connect via MCP or REST and receive verifiable answers with links, not invented prose.",
+      "Contribution: End-to-end AI systems product execution—@modelcontextprotocol/sdk MCP server, shared retrieveClaims() across UI/API/MCP, narrative answer composition for ASRA/ARC questions, Prisma + Turso session logging, admin invite budgets, and content-as-code under content/projects/ with build-time knowledge sync on every deploy.",
+      "Why this supports exceptional ability: Demonstrates full-stack ownership at the intersection of product engineering, distributed systems, and agent-native AI design—a production portfolio where humans and machines read the same verified knowledge graph with refusal and citations, not generic LLM chat.",
+    ],
+    bullets: [
+      "Live: https://ilakk-manoharan.vercel.app · Source: https://github.com/ilakkmanoharan/ilakk-manoharan",
+      "Agent: https://ilakk-manoharan.vercel.app/agent · Manifest: https://ilakk-manoharan.vercel.app/.well-known/agent.json · MCP: https://ilakk-manoharan.vercel.app/api/mcp",
+      "Knowledge sync: content/projects, hackathons, startups, exceptional-ability, SciLayer, recruiter Q&A → claims.json (npm run content:sync)",
+      "Stack: Next.js 16 · React 19 · TypeScript · Prisma · Turso · MCP SDK · Resend",
+      "Phases shipped: claims + query API + invites + MCP + conversation export + admin knowledge promotion",
+    ],
+    links: withPortfolioLinks([
+      {
+        label: "Live portfolio",
+        href: "https://ilakk-manoharan.vercel.app",
+      },
+      {
+        label: "Portfolio on GitHub",
+        href: "https://github.com/ilakkmanoharan/ilakk-manoharan",
+      },
+      {
+        label: "Ilak's general-Agent1",
+        href: "https://ilakk-manoharan.vercel.app/agent",
+      },
+      {
+        label: "Agent manifest",
+        href: "https://ilakk-manoharan.vercel.app/.well-known/agent.json",
+      },
+      {
+        label: "MCP endpoint",
+        href: "https://ilakk-manoharan.vercel.app/api/mcp",
+      },
+      {
+        label: "Exceptional ability",
+        href: "https://ilakk-manoharan.vercel.app/exceptional-ability",
+      },
+    ]),
+    hashtags: [
+      "#portfolio",
+      "#agents",
+      "#MCP",
+      "#knowledgegraph",
+      "#NextJS",
+      "#FullStack",
+    ],
+  };

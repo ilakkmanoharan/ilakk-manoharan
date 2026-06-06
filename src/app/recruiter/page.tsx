@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ViewTracker } from "@/components/view-tracker";
+import { loadProjectsForPage } from "@/lib/projects-content";
 import { prisma } from "@/lib/prisma";
 import { siteConfig } from "@/lib/site";
 import { asStringArray } from "@/lib/json";
@@ -24,11 +25,11 @@ export const metadata: Metadata = {
 
 export default async function RecruiterPage() {
   const [projects, skills] = await Promise.all([
-    prisma.project.findMany({
-      where: { featured: true },
-      take: 4,
-      orderBy: { updatedAt: "desc" },
-    }),
+    Promise.resolve(
+      loadProjectsForPage()
+        .filter((p) => p.featured)
+        .slice(0, 4),
+    ),
     prisma.skill.findMany({ take: 8, orderBy: { name: "asc" } }),
   ]);
 

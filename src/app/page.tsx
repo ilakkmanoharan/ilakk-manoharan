@@ -3,16 +3,14 @@ import { buttonVariants } from "@/components/ui/button";
 import { FadeIn } from "@/components/fade-in";
 import { IntroVideo } from "@/components/intro-video";
 import { ViewTracker } from "@/components/view-tracker";
-import { prisma } from "@/lib/prisma";
+import { loadProjectsForPage } from "@/lib/projects-content";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export default async function HomePage() {
-  const featured = await prisma.project.findMany({
-    where: { featured: true },
-    take: 3,
-    orderBy: { updatedAt: "desc" },
-  });
+  const featured = loadProjectsForPage()
+    .filter((p) => p.featured)
+    .slice(0, 3);
 
   return (
     <>

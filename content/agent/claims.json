@@ -97,6 +97,16 @@
       "text": "Ilak's general-Agent1 answers only from verified claims with citations and refuses when uncertain. It does not infer salary, visa status, or unreleased work without an explicit claim.",
       "topics": ["agent", "policy", "grounding"],
       "sources": ["https://ilakk-manoharan.vercel.app/.well-known/agent.json"]
+    },
+    {
+      "id": "claim-portfolio-site",
+      "text": "Ilak built and deployed ilakk-manoharan.vercel.app as a full-stack Next.js portfolio with projects, recruiter portal, scheduling, admin, and Ilak's general-Agent1—a retrieval-first representative with invite-gated chat, REST query API, and MCP tools.",
+      "topics": ["portfolio", "full-stack", "Next.js", "agent", "MCP"],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app",
+        "https://github.com/ilakkmanoharan/ilakk-manoharan",
+        "https://ilakk-manoharan.vercel.app/agent"
+      ]
     }
   ]
 }

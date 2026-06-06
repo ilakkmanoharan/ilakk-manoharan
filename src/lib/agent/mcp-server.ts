@@ -89,9 +89,9 @@ export function createPortfolioMcpServer(getToken: () => string | undefined) {
   server.registerTool(
     "get_evidence",
     {
-      description: "Exceptional ability evidence card (1-9)",
+      description: "Exceptional ability evidence card (1-10)",
       inputSchema: {
-        number: z.number().int().min(1).max(9),
+        number: z.number().int().min(1).max(10),
         token: z.string().optional(),
       },
     },

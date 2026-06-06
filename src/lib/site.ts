@@ -1,3 +1,13 @@
+function normalizeSiteUrl(raw: string) {
+  const trimmed = raw.trim().replace(/\/$/, "");
+  if (trimmed.startsWith("ttps://")) return `h${trimmed}`;
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+    return trimmed;
+  }
+  if (trimmed.length > 0) return `https://${trimmed}`;
+  return "http://localhost:3000";
+}
+
 export const siteConfig = {
   name: "Ilakkuvaselvi (Ilak) Manoharan",
   shortName: "Ilak Manoharan",
@@ -6,7 +16,7 @@ export const siteConfig = {
     "Software engineer, AI systems builder, and founder at the intersection of distributed systems, full-stack engineering, scientific AI, and product innovation.",
   heroGreeting:
     "Hi, I’m Ilakkuvaselvi (Ilak) Manoharan — a software engineer, AI systems builder, and founder building at the intersection of distributed systems, full-stack engineering, scientific AI, and product innovation.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   calEmbedUrl: process.env.NEXT_PUBLIC_CAL_EMBED_URL ?? "",
   introVideoId: process.env.NEXT_PUBLIC_INTRO_VIDEO_ID ?? "",
   resumeUrl: process.env.NEXT_PUBLIC_RESUME_URL ?? "",

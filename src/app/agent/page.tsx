@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 export default function AgentPublicPage() {
   const cfg = agentConfig();
   const manifest = buildAgentManifest();
+  const defaultChatMinutes = Math.round(cfg.defaultInviteBudgetSec / 60);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 md:px-6">
@@ -71,8 +72,9 @@ export default function AgentPublicPage() {
               and your email.
             </li>
             <li>
-              Ilak verifies the deposit and emails a private invite link (typically
-              2 minutes chat, 7-day link expiry).
+              Ilak verifies the deposit and emails a private invite link (typically{" "}
+              {defaultChatMinutes} minutes chat, {cfg.defaultInviteExpiryDays}-day link
+              expiry).
             </li>
           </ol>
           <p>

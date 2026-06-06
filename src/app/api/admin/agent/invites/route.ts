@@ -11,18 +11,23 @@ const createSchema = z.object({
   expiryDays: z.number().int().min(1).max(90).optional(),
 });
 
-export async function GET(request: Request) {
+export async function GET() {
   if (!(await isAdminRequest())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  const invites = await prisma.agentInvite.findMany({
-    orderBy: { createdAt: "desc" },
-    take: 50,
-    include: {
-      _count: { select: { sessions: true } },
-    },
-  });
-  return NextResponse.json({ invites });
+  try {
+    const invites = await prisma.agentInvite.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 50,
+      include: {
+        _count: { select: { sessions: true } },
+      },
+    });
+    return NextResponse.json({ invites });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Database error";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }
 
 export async function POST(request: Request) {
@@ -42,22 +47,28 @@ export async function POST(request: Request) {
   }
 
   const cfg = agentConfig();
-  const minutes = parsed.data.conversationMinutes ?? cfg.defaultInviteBudgetSec / 60;
+  const minutes =
+    parsed.data.conversationMinutes ?? cfg.defaultInviteBudgetSec / 60;
   const days = parsed.data.expiryDays ?? cfg.defaultInviteExpiryDays;
   const token = crypto.randomBytes(32).toString("base64url");
   const expiresAt = new Date(Date.now() + days * 24 * 60 * 60 * 1000);
 
-  const invite = await prisma.agentInvite.create({
-    data: {
-      token,
-      label: parsed.data.label ?? null,
-      conversationBudgetSec: minutes * 60,
-      expiresAt,
-    },
-  });
+  try {
+    const invite = await prisma.agentInvite.create({
+      data: {
+        token,
+        label: parsed.data.label ?? null,
+        conversationBudgetSec: minutes * 60,
+        expiresAt,
+      },
+    });
 
-  return NextResponse.json({
-    invite,
-    url: `/agent/g/${token}`,
-  });
+    return NextResponse.json({
+      invite,
+      url: `/agent/g/${token}`,
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Database error";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }

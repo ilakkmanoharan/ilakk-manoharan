@@ -1,6 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState, useTransition } from "react";
+import {
+  createAgentInvite,
+  revokeAgentInvite,
+  type AdminInviteRow,
+} from "@/lib/agent/admin-invites-actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,79 +18,58 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-type InviteRow = {
-  id: string;
-  token: string;
-  label: string | null;
-  expiresAt: string;
-  conversationBudgetSec: number;
-  usedConversationSec: number;
-  status: string;
-  createdAt: string;
-  _count: { sessions: number };
+type Props = {
+  initialInvites: AdminInviteRow[];
+  loadError?: string | null;
 };
 
-export function AdminAgentInvites() {
-  const [invites, setInvites] = useState<InviteRow[]>([]);
-  const [loaded, setLoaded] = useState(false);
+export function AdminAgentInvites({ initialInvites, loadError }: Props) {
+  const router = useRouter();
+  const invites = initialInvites;
   const [label, setLabel] = useState("");
   const [minutes, setMinutes] = useState("10");
   const [days, setDays] = useState("7");
-  const [creating, setCreating] = useState(false);
   const [lastUrl, setLastUrl] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(loadError ?? null);
+  const [pending, startTransition] = useTransition();
 
-  async function loadInvites() {
-    const res = await fetch("/api/admin/agent/invites");
-    if (!res.ok) {
-      setError("Failed to load invites");
-      return;
-    }
-    const data = (await res.json()) as { invites: InviteRow[] };
-    setInvites(data.invites);
-    setLoaded(true);
+  function refresh() {
+    router.refresh();
   }
 
-  async function createInvite() {
-    setCreating(true);
+  function createInvite() {
     setError(null);
     setLastUrl(null);
-    try {
-      const res = await fetch("/api/admin/agent/invites", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          label: label.trim() || undefined,
-          conversationMinutes: Number(minutes),
-          expiryDays: Number(days),
-        }),
+    startTransition(async () => {
+      const result = await createAgentInvite({
+        label: label.trim() || undefined,
+        conversationMinutes: Number(minutes),
+        expiryDays: Number(days),
       });
-      const data = (await res.json()) as { url?: string; error?: string };
-      if (!res.ok) {
-        setError(data.error ?? "Create failed");
+      if (!result.ok) {
+        setError(result.error);
         return;
       }
-      setLastUrl(data.url ?? null);
+      setLastUrl(result.url);
       setLabel("");
-      await loadInvites();
-    } finally {
-      setCreating(false);
-    }
+      refresh();
+    });
   }
 
-  async function revoke(id: string) {
-    await fetch(`/api/admin/agent/invites/${id}`, { method: "DELETE" });
-    await loadInvites();
+  function revoke(id: string) {
+    setError(null);
+    startTransition(async () => {
+      const result = await revokeAgentInvite(id);
+      if (!result.ok) {
+        setError(result.error);
+        return;
+      }
+      refresh();
+    });
   }
 
   return (
     <div className="space-y-6">
-      {!loaded ? (
-        <Button type="button" onClick={() => void loadInvites()}>
-          Load invites
-        </Button>
-      ) : null}
-
       <Card>
         <CardHeader>
           <CardTitle className="text-base">Create invite</CardTitle>
@@ -128,10 +113,10 @@ export function AdminAgentInvites() {
           <div className="sm:col-span-2">
             <Button
               type="button"
-              disabled={creating}
-              onClick={() => void createInvite()}
+              disabled={pending}
+              onClick={() => createInvite()}
             >
-              {creating ? "Creating…" : "Create invite"}
+              {pending ? "Creating…" : "Create invite"}
             </Button>
           </div>
           {lastUrl ? (
@@ -148,52 +133,51 @@ export function AdminAgentInvites() {
         </CardContent>
       </Card>
 
-      {loaded ? (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Invites</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm">
-            {invites.map((inv) => (
-              <div
-                key={inv.id}
-                className="flex flex-wrap items-start justify-between gap-2 border-b border-border pb-3 last:border-0"
-              >
-                <div>
-                  <p className="font-medium">{inv.label ?? "Untitled"}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {inv.status} · {inv._count.sessions} sessions · expires{" "}
-                    {new Date(inv.expiresAt).toLocaleDateString()}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Budget: {Math.floor(inv.usedConversationSec / 60)}/
-                    {Math.floor(inv.conversationBudgetSec / 60)} min
-                  </p>
-                  <a
-                    className="text-xs text-primary hover:underline"
-                    href={`/agent/g/${inv.token}`}
-                  >
-                    /agent/g/…
-                  </a>
-                </div>
-                {inv.status === "active" ? (
-                  <Button
-                    type="button"
-                    variant="outline"
-                    size="sm"
-                    onClick={() => void revoke(inv.id)}
-                  >
-                    Revoke
-                  </Button>
-                ) : null}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">Invites</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4 text-sm">
+          {invites.map((inv) => (
+            <div
+              key={inv.id}
+              className="flex flex-wrap items-start justify-between gap-2 border-b border-border pb-3 last:border-0"
+            >
+              <div>
+                <p className="font-medium">{inv.label ?? "Untitled"}</p>
+                <p className="text-xs text-muted-foreground">
+                  {inv.status} · {inv.sessionCount} sessions · expires{" "}
+                  {new Date(inv.expiresAt).toLocaleDateString()}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Budget: {Math.floor(inv.usedConversationSec / 60)}/
+                  {Math.floor(inv.conversationBudgetSec / 60)} min
+                </p>
+                <a
+                  className="text-xs text-primary hover:underline"
+                  href={`/agent/g/${inv.token}`}
+                >
+                  /agent/g/{inv.token.slice(0, 8)}…
+                </a>
               </div>
-            ))}
-            {invites.length === 0 ? (
-              <p className="text-muted-foreground">No invites yet.</p>
-            ) : null}
-          </CardContent>
-        </Card>
-      ) : null}
+              {inv.status === "active" ? (
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  disabled={pending}
+                  onClick={() => revoke(inv.id)}
+                >
+                  Revoke
+                </Button>
+              ) : null}
+            </div>
+          ))}
+          {invites.length === 0 ? (
+            <p className="text-muted-foreground">No invites yet.</p>
+          ) : null}
+        </CardContent>
+      </Card>
     </div>
   );
 }

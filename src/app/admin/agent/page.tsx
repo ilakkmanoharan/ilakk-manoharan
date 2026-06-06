@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AdminAgentInvites } from "@/components/admin-agent-invites";
+import { listAgentInvites } from "@/lib/agent/admin-invites-actions";
 
 export const metadata: Metadata = {
   title: "Admin — Agent",
   robots: { index: false, follow: false },
 };
 
-export default function AdminAgentPage() {
+export const dynamic = "force-dynamic";
+
+export default async function AdminAgentPage() {
+  let invites: Awaited<ReturnType<typeof listAgentInvites>> = [];
+  let loadError: string | null = null;
+
+  try {
+    invites = await listAgentInvites();
+  } catch (error) {
+    loadError =
+      error instanceof Error ? error.message : "Failed to load invites";
+  }
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 md:px-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -25,7 +38,7 @@ export default function AdminAgentPage() {
         .
       </p>
       <div className="mt-8">
-        <AdminAgentInvites />
+        <AdminAgentInvites initialInvites={invites} loadError={loadError} />
       </div>
     </div>
   );

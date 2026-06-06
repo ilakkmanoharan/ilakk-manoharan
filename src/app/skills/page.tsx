@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { prisma } from "@/lib/prisma";
+import { loadSkillsForPage } from "@/lib/skills-content";
 
 export const metadata: Metadata = {
   title: "Skills",
@@ -31,9 +31,9 @@ const CATEGORY_ORDER = [
 ] as const;
 
 export default async function SkillsPage() {
-  const skills = await prisma.skill.findMany({
-    orderBy: { name: "asc" },
-  });
+  const skills = loadSkillsForPage().sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
 
   const grouped = new Map<string, typeof skills>();
   for (const s of skills) {

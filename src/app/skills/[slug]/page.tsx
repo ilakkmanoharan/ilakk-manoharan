@@ -8,14 +8,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { prisma } from "@/lib/prisma";
-import { asStringArray } from "@/lib/json";
+import { loadSkillBySlug } from "@/lib/skills-content";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const skill = await prisma.skill.findUnique({ where: { slug } });
+  const skill = loadSkillBySlug(slug);
   if (!skill) return { title: "Skill" };
   return {
     title: skill.name,
@@ -25,16 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function SkillDetailPage({ params }: Props) {
   const { slug } = await params;
-  const skill = await prisma.skill.findUnique({
-    where: { slug },
-    include: { experiences: { orderBy: { id: "asc" } } },
-  });
+  const skill = loadSkillBySlug(slug);
   if (!skill) notFound();
 
-  const tools = asStringArray(skill.tools);
-  const examples = asStringArray(skill.examples);
-  const videos = asStringArray(skill.videoUrls);
-  const gh = asStringArray(skill.githubLinks);
+  const { tools, examples, videoUrls, githubLinks } = skill;
 
   return (
     <>
@@ -77,36 +70,38 @@ export default async function SkillDetailPage({ params }: Props) {
           </ul>
         </section>
 
-        <section className="mt-10 space-y-4">
-          <h2 className="font-heading text-xl font-semibold">
-            Professional experience
-          </h2>
-          <div className="space-y-4">
-            {skill.experiences.map((ex) => (
-              <Card key={ex.id} className="border-border/80">
-                <CardHeader>
-                  <CardTitle className="text-base">
-                    {ex.role} · {ex.organization}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-sm text-muted-foreground">
-                  <p>{ex.summary}</p>
-                  <p className="mt-2 text-xs">
-                    {ex.startYear ?? "?"} — {ex.endYear ?? "Present"}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
+        {skill.experiences.length ? (
+          <section className="mt-10 space-y-4">
+            <h2 className="font-heading text-xl font-semibold">
+              Professional experience
+            </h2>
+            <div className="space-y-4">
+              {skill.experiences.map((ex) => (
+                <Card key={ex.id} className="border-border/80">
+                  <CardHeader>
+                    <CardTitle className="text-base">
+                      {ex.role} · {ex.organization}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    <p>{ex.summary}</p>
+                    <p className="mt-2 text-xs">
+                      {ex.startYear ?? "?"} — {ex.endYear ?? "Present"}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
-        {videos.length ? (
+        {videoUrls.length ? (
           <section className="mt-10 space-y-4">
             <h2 className="font-heading text-xl font-semibold">
               Videos / explanations
             </h2>
             <ul className="list-inside list-disc text-sm">
-              {videos.map((v) => (
+              {videoUrls.map((v) => (
                 <li key={v}>
                   <a href={v} className="text-primary hover:underline" target="_blank" rel="noreferrer">
                     {v}
@@ -117,11 +112,11 @@ export default async function SkillDetailPage({ params }: Props) {
           </section>
         ) : null}
 
-        {gh.length ? (
+        {githubLinks.length ? (
           <section className="mt-10 space-y-4">
             <h2 className="font-heading text-xl font-semibold">GitHub</h2>
             <ul className="list-inside list-disc text-sm">
-              {gh.map((g) => (
+              {githubLinks.map((g) => (
                 <li key={g}>
                   <a href={g} className="text-primary hover:underline" target="_blank" rel="noreferrer">
                     {g}

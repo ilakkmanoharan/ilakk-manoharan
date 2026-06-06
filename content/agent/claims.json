@@ -1,5 +1,5 @@
 {
-  "version": 13,
+  "version": 15,
   "lastSynced": "2026-06-06",
   "claims": [
     {
@@ -2272,6 +2272,701 @@
         "https://ilakk-manoharan.vercel.app/founder-studio"
       ],
       "origin": "page",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-ai-ml-systems-overview",
+      "text": "AI / ML Systems (AI / ML Systems, 6+ years): ML lifecycle work—data quality, training, evaluation, deployment, and guardrails for production.",
+      "topics": [
+        "ai / ml systems",
+        "ai-ml-systems",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/ai-ml-systems",
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-ai-ml-systems-tools",
+      "text": "AI / ML Systems tools: Python, PyTorch, Ray, FastAPI, vector DBs",
+      "topics": [
+        "ai / ml systems",
+        "tools",
+        "ai-ml-systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/ai-ml-systems"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-ai-ml-systems-examples",
+      "text": "AI / ML Systems examples: Batch + online inference patterns; Experiment tracking integrations; Retrieval-first agent architectures",
+      "topics": [
+        "ai / ml systems",
+        "examples",
+        "ai-ml-systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/ai-ml-systems"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-ai-ml-systems-p1",
+      "text": "AI/ML systems engineering is not notebook demos—it is evaluation-minded integration into real workflows. I focus on reliability, observability, cost control, and clear refusal boundaries when models should not guess.",
+      "topics": [
+        "ai / ml systems",
+        "ai-ml-systems",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/ai-ml-systems"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-ai-ml-systems-p2",
+      "text": "Representative themes include ASRA (Adaptive Scientific Reasoning Architecture), SciLayer research tooling, and Ilak's general-Agent1 with grounded retrieval instead of hallucinated chat.",
+      "topics": [
+        "ai / ml systems",
+        "ai-ml-systems",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/ai-ml-systems"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-backend-engineering-overview",
+      "text": "Backend Engineering (Backend Engineering, 20+ years): Designing scalable APIs, services, and data layers with strong correctness and observability.",
+      "topics": [
+        "backend engineering",
+        "backend-engineering",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/backend-engineering",
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-backend-engineering-tools",
+      "text": "Backend Engineering tools: Java, Python, Go, Node.js, Spring Boot, FastAPI, PostgreSQL, Kafka, Docker, AWS",
+      "topics": [
+        "backend engineering",
+        "tools",
+        "backend-engineering"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/backend-engineering"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-backend-engineering-examples",
+      "text": "Backend Engineering examples: High-throughput ingestion services; Idempotent workflow workers; Schema evolution without downtime",
+      "topics": [
+        "backend engineering",
+        "examples",
+        "backend-engineering"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/backend-engineering"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-backend-engineering-exp-1",
+      "text": "Backend Engineering — Software Engineer at Enterprise software teams: Owned core billing and usage metering microservices with strong SLI/SLO discipline.",
+      "topics": [
+        "backend engineering",
+        "enterprise software teams",
+        "software engineer",
+        "experience"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/backend-engineering"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-backend-engineering-p1",
+      "text": "Backend engineering is where reliability meets product velocity. I design services that stay correct under load, expose clear contracts, and ship with observability from day one—not as an afterthought.",
+      "topics": [
+        "backend engineering",
+        "backend-engineering",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/backend-engineering"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-backend-engineering-p2",
+      "text": "Typical work spans API design, transactional data models, async workers, and operational playbooks for on-call ownership.",
+      "topics": [
+        "backend engineering",
+        "backend-engineering",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/backend-engineering"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-cloud-infrastructure-overview",
+      "text": "Cloud Infrastructure (Cloud Infrastructure, 10+ years): Cloud-native deployment on AWS with containers, managed data services, messaging, and infrastructure-as-code patterns.",
+      "topics": [
+        "cloud infrastructure",
+        "cloud-infrastructure",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/cloud-infrastructure",
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-cloud-infrastructure-tools",
+      "text": "Cloud Infrastructure tools: AWS, Docker, Terraform, ECS, S3, RDS, CloudWatch",
+      "topics": [
+        "cloud infrastructure",
+        "tools",
+        "cloud-infrastructure"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/cloud-infrastructure"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-cloud-infrastructure-examples",
+      "text": "Cloud Infrastructure examples: Containerized service deploys; Managed Postgres and object storage; IaC for reproducible environments",
+      "topics": [
+        "cloud infrastructure",
+        "examples",
+        "cloud-infrastructure"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/cloud-infrastructure"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-cloud-infrastructure-p1",
+      "text": "AWS has been my primary cloud, with managed data, messaging, and container services. I can ramp quickly on GCP or Azure where teams standardize on them.",
+      "topics": [
+        "cloud infrastructure",
+        "cloud-infrastructure",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/cloud-infrastructure"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-cloud-infrastructure-p2",
+      "text": "Infrastructure work pairs with application design: health checks, autoscaling signals, secret management, and cost-aware resource choices.",
+      "topics": [
+        "cloud infrastructure",
+        "cloud-infrastructure",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/cloud-infrastructure"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-databases-overview",
+      "text": "Databases (Databases, 15+ years): Relational modeling, query performance, migrations, and operational ownership of Postgres and SQLite-backed apps.",
+      "topics": [
+        "databases",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/databases",
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-databases-tools",
+      "text": "Databases tools: PostgreSQL, SQLite, Turso, Prisma, Redis",
+      "topics": [
+        "databases",
+        "tools"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/databases"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-databases-examples",
+      "text": "Databases examples: Schema evolution without downtime; Analytics-friendly indexing; Prisma migrations across dev and production",
+      "topics": [
+        "databases",
+        "examples"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/databases"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-databases-p1",
+      "text": "Database work spans modeling, migrations, indexing, and the operational story around backups and replication. This portfolio uses Prisma with Turso in production and SQLite locally, with content also git-backed in markdown for static surfaces.",
+      "topics": [
+        "databases",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/databases"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-databases-p2",
+      "text": "I treat migrations and backward-compatible schema changes as first-class release work—not a DBA handoff.",
+      "topics": [
+        "databases",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/databases"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-distributed-systems-overview",
+      "text": "Distributed Systems (Distributed Systems, 15+ years): Designing for partial failure, backpressure, idempotency, and operability across services and async workflows.",
+      "topics": [
+        "distributed systems",
+        "distributed-systems",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/distributed-systems",
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-distributed-systems-tools",
+      "text": "Distributed Systems tools: Kafka, Redis, PostgreSQL, Docker, Kubernetes, AWS",
+      "topics": [
+        "distributed systems",
+        "tools",
+        "distributed-systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/distributed-systems"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-distributed-systems-examples",
+      "text": "Distributed Systems examples: Workflow engines with durable execution; Event-driven ingestion pipelines; Graceful degradation under load",
+      "topics": [
+        "distributed systems",
+        "examples",
+        "distributed-systems"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/distributed-systems"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-distributed-systems-p1",
+      "text": "Distributed systems force honesty about failure modes. I enjoy designing for partial failure, clear SLIs, and operability from day one—backpressure, retries with idempotency keys, and visibility into queue lag and error budgets.",
+      "topics": [
+        "distributed systems",
+        "distributed-systems",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/distributed-systems"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-distributed-systems-p2",
+      "text": "See Founder Studio note Why I care about distributed systems and projects tagged with distributed workflow themes on this portfolio.",
+      "topics": [
+        "distributed systems",
+        "distributed-systems",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/distributed-systems"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-full-stack-development-overview",
+      "text": "Full Stack Development (Full Stack Development, 12+ years): Shipping cohesive product experiences across Next.js/React, APIs, and databases.",
+      "topics": [
+        "full stack development",
+        "full-stack-development",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/full-stack-development",
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-full-stack-development-tools",
+      "text": "Full Stack Development tools: TypeScript, React, Next.js, Tailwind CSS, PostgreSQL",
+      "topics": [
+        "full stack development",
+        "tools",
+        "full-stack-development"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/full-stack-development"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-full-stack-development-examples",
+      "text": "Full Stack Development examples: Portfolio and dashboard products; Auth-aware admin flows; Recruiter and scheduling surfaces",
+      "topics": [
+        "full stack development",
+        "examples",
+        "full-stack-development"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/full-stack-development"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-full-stack-development-p1",
+      "text": "Full-stack work means owning the vertical slice: UX, API boundaries, data modeling, and deployment. This portfolio itself is a production Next.js app with admin, recruiter, scheduling, and agent surfaces—not a static site.",
+      "topics": [
+        "full stack development",
+        "full-stack-development",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/full-stack-development"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-full-stack-development-p2",
+      "text": "I favor typed contracts end-to-end, accessible UI, and content pipelines that keep marketing pages and agent knowledge in sync.",
+      "topics": [
+        "full stack development",
+        "full-stack-development",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/full-stack-development"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-product-engineering-overview",
+      "text": "Product Engineering (Product Engineering, 12+ years): Translating user and recruiter journeys into shippable features with clear scope, metrics, and iteration loops.",
+      "topics": [
+        "product engineering",
+        "product-engineering",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/product-engineering",
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-product-engineering-tools",
+      "text": "Product Engineering tools: Next.js, Figma-adjacent UX, Analytics hooks, A/B-minded instrumentation",
+      "topics": [
+        "product engineering",
+        "tools",
+        "product-engineering"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/product-engineering"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-product-engineering-examples",
+      "text": "Product Engineering examples: Recruiter portal and Q&A flows; Schedule and contact funnels; Admin dashboards for content and agent invites",
+      "topics": [
+        "product engineering",
+        "examples",
+        "product-engineering"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/product-engineering"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-product-engineering-p1",
+      "text": "Product engineering sits between craft and velocity: recruiter-friendly narratives, scheduling flows, and admin tools that keep a solo-built portfolio operable without a separate CMS team.",
+      "topics": [
+        "product engineering",
+        "product-engineering",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/product-engineering"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-product-engineering-p2",
+      "text": "I partner with research and hiring stakeholders to keep scope realistic while preserving technical quality.",
+      "topics": [
+        "product engineering",
+        "product-engineering",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/product-engineering"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-scientific-ai-overview",
+      "text": "Scientific AI (Scientific AI, 5+ years): Research systems, scientific agents, and uncertainty-aware reasoning for biology and natural-system modeling.",
+      "topics": [
+        "scientific ai",
+        "scientific-ai",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/scientific-ai",
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-scientific-ai-tools",
+      "text": "Scientific AI tools: Python, PyTorch, SciLayer, ASRA, Kaggle evaluation harnesses",
+      "topics": [
+        "scientific ai",
+        "tools",
+        "scientific-ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/scientific-ai"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-scientific-ai-examples",
+      "text": "Scientific AI examples: ASRA ARC-AGI-3 submission; SciLayer manuscript pipeline; Nature Foundation Models research direction",
+      "topics": [
+        "scientific ai",
+        "examples",
+        "scientific-ai"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/scientific-ai"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-scientific-ai-p1",
+      "text": "Scientific AI work here means building systems where models must reason under uncertainty—not just benchmark scores. ASRA treats action labels as latent symbols inferred from evidence; SciLayer hosts manuscript-grade research artifacts.",
+      "topics": [
+        "scientific ai",
+        "scientific-ai",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/scientific-ai"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-scientific-ai-p2",
+      "text": "Phase 1 of Nature Foundation Models focuses on decision biology: cells as adaptive information-processing systems. See exceptional-ability evidence and SciLayer articles on this site.",
+      "topics": [
+        "scientific ai",
+        "scientific-ai",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/scientific-ai"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-startup-building-overview",
+      "text": "Startup Building (Startup Building, 8+ years): Founder-minded product shaping—from wedge narratives and decks to early technical architecture and go-to-market experiments.",
+      "topics": [
+        "startup building",
+        "startup-building",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/startup-building",
+        "https://ilakk-manoharan.vercel.app/skills"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-startup-building-tools",
+      "text": "Startup Building tools: Pitch decks, Landing pages, MVP scoping, Customer discovery",
+      "topics": [
+        "startup building",
+        "tools",
+        "startup-building"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/startup-building"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-startup-building-examples",
+      "text": "Startup Building examples: Nature Foundation Models concept; AgentApply and Finance Autopilot startup cards; Founder Studio pitch notes",
+      "topics": [
+        "startup building",
+        "examples",
+        "startup-building"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/startup-building"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-startup-building-p1",
+      "text": "Startup building combines narrative clarity with technical credibility. On this portfolio you'll find startup catalog entries, Founder Studio reflections, and evidence cards that tie research bets to shippable wedges.",
+      "topics": [
+        "startup building",
+        "startup-building",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/startup-building"
+      ],
+      "origin": "skill",
+      "verified": true,
+      "lastSynced": "2026-06-06"
+    },
+    {
+      "id": "claim-auto-skill-startup-building-p2",
+      "text": "Ilak is open to founding engineer and technical founder-associate conversations when mission and engineering culture align.",
+      "topics": [
+        "startup building",
+        "startup-building",
+        "skills"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/skills/startup-building"
+      ],
+      "origin": "skill",
       "verified": true,
       "lastSynced": "2026-06-06"
     },

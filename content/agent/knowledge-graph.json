@@ -1,8 +1,8 @@
 {
-  "version": 13,
+  "version": 15,
   "lastSynced": "2026-06-06",
   "siteUrl": "https://ilakk-manoharan.vercel.app",
-  "claimCount": 917,
+  "claimCount": 963,
   "nodes": [
     {
       "id": "node-recruiter-recruiter-q-a",
@@ -331,6 +331,124 @@
       "claimIds": [
         "claim-auto-founder-studio-why-distributed-systems-summary",
         "claim-auto-founder-studio-why-distributed-systems-transcript"
+      ]
+    },
+    {
+      "id": "node-skill-ai-ml-systems",
+      "type": "skill",
+      "title": "AI / ML Systems",
+      "url": "https://ilakk-manoharan.vercel.app/skills/ai-ml-systems",
+      "claimIds": [
+        "claim-auto-skill-ai-ml-systems-overview",
+        "claim-auto-skill-ai-ml-systems-tools",
+        "claim-auto-skill-ai-ml-systems-examples",
+        "claim-auto-skill-ai-ml-systems-p1",
+        "claim-auto-skill-ai-ml-systems-p2"
+      ]
+    },
+    {
+      "id": "node-skill-backend-engineering",
+      "type": "skill",
+      "title": "Backend Engineering",
+      "url": "https://ilakk-manoharan.vercel.app/skills/backend-engineering",
+      "claimIds": [
+        "claim-auto-skill-backend-engineering-overview",
+        "claim-auto-skill-backend-engineering-tools",
+        "claim-auto-skill-backend-engineering-examples",
+        "claim-auto-skill-backend-engineering-exp-1",
+        "claim-auto-skill-backend-engineering-p1",
+        "claim-auto-skill-backend-engineering-p2"
+      ]
+    },
+    {
+      "id": "node-skill-cloud-infrastructure",
+      "type": "skill",
+      "title": "Cloud Infrastructure",
+      "url": "https://ilakk-manoharan.vercel.app/skills/cloud-infrastructure",
+      "claimIds": [
+        "claim-auto-skill-cloud-infrastructure-overview",
+        "claim-auto-skill-cloud-infrastructure-tools",
+        "claim-auto-skill-cloud-infrastructure-examples",
+        "claim-auto-skill-cloud-infrastructure-p1",
+        "claim-auto-skill-cloud-infrastructure-p2"
+      ]
+    },
+    {
+      "id": "node-skill-databases",
+      "type": "skill",
+      "title": "Databases",
+      "url": "https://ilakk-manoharan.vercel.app/skills/databases",
+      "claimIds": [
+        "claim-auto-skill-databases-overview",
+        "claim-auto-skill-databases-tools",
+        "claim-auto-skill-databases-examples",
+        "claim-auto-skill-databases-p1",
+        "claim-auto-skill-databases-p2"
+      ]
+    },
+    {
+      "id": "node-skill-distributed-systems",
+      "type": "skill",
+      "title": "Distributed Systems",
+      "url": "https://ilakk-manoharan.vercel.app/skills/distributed-systems",
+      "claimIds": [
+        "claim-auto-skill-distributed-systems-overview",
+        "claim-auto-skill-distributed-systems-tools",
+        "claim-auto-skill-distributed-systems-examples",
+        "claim-auto-skill-distributed-systems-p1",
+        "claim-auto-skill-distributed-systems-p2"
+      ]
+    },
+    {
+      "id": "node-skill-full-stack-development",
+      "type": "skill",
+      "title": "Full Stack Development",
+      "url": "https://ilakk-manoharan.vercel.app/skills/full-stack-development",
+      "claimIds": [
+        "claim-auto-skill-full-stack-development-overview",
+        "claim-auto-skill-full-stack-development-tools",
+        "claim-auto-skill-full-stack-development-examples",
+        "claim-auto-skill-full-stack-development-p1",
+        "claim-auto-skill-full-stack-development-p2"
+      ]
+    },
+    {
+      "id": "node-skill-product-engineering",
+      "type": "skill",
+      "title": "Product Engineering",
+      "url": "https://ilakk-manoharan.vercel.app/skills/product-engineering",
+      "claimIds": [
+        "claim-auto-skill-product-engineering-overview",
+        "claim-auto-skill-product-engineering-tools",
+        "claim-auto-skill-product-engineering-examples",
+        "claim-auto-skill-product-engineering-p1",
+        "claim-auto-skill-product-engineering-p2"
+      ]
+    },
+    {
+      "id": "node-skill-scientific-ai",
+      "type": "skill",
+      "title": "Scientific AI",
+      "url": "https://ilakk-manoharan.vercel.app/skills/scientific-ai",
+      "claimIds": [
+        "claim-auto-skill-scientific-ai-overview",
+        "claim-auto-skill-scientific-ai-tools",
+        "claim-auto-skill-scientific-ai-examples",
+        "claim-auto-skill-scientific-ai-p1",
+        "claim-auto-skill-scientific-ai-p2"
+      ]
+    },
+    {
+      "id": "node-skill-startup-building",
+      "type": "skill",
+      "title": "Startup Building",
+      "url": "https://ilakk-manoharan.vercel.app/skills/startup-building",
+      "claimIds": [
+        "claim-auto-skill-startup-building-overview",
+        "claim-auto-skill-startup-building-tools",
+        "claim-auto-skill-startup-building-examples",
+        "claim-auto-skill-startup-building-p1",
+        "claim-auto-skill-startup-building-p2"
       ]
     },
     {

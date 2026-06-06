@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { loadFounderStudioFromMarkdown } from "../../../prisma/load-founder-studio-from-md";
+import { loadSkillsFromMarkdown } from "../../../prisma/load-skills-from-md";
 import { loadStartupsFromMarkdown } from "../../../prisma/load-startups-from-md";
 import { loadHackathonsFromMarkdown } from "../../../prisma/load-hackathons-from-md";
 import { loadProjectsFromMarkdown } from "../../../prisma/load-projects-from-md";
@@ -23,6 +24,7 @@ export type KnowledgeNode = {
     | "hackathon"
     | "startup"
     | "founder-studio"
+    | "skill"
     | "evidence"
     | "recruiter";
   title: string;
@@ -323,6 +325,87 @@ export function buildAutoClaims(cwd = process.cwd()): {
       id: `node-founder-studio-${item.slug}`,
       type: "founder-studio",
       title: item.title,
+      url,
+      claimIds,
+    });
+  }
+
+  for (const skill of loadSkillsFromMarkdown(cwd)) {
+    const url = `${SITE}/skills/${skill.slug}`;
+    const claimIds: string[] = [];
+
+    const overviewId = `claim-auto-skill-${skill.slug}-overview`;
+    claims.push(
+      makeClaim(
+        overviewId,
+        `${skill.name} (${skill.category}, ${skill.yearsExperience}+ years): ${skill.overview}`,
+        [skill.name, skill.category, skill.slug, "skills"],
+        [url, `${SITE}/skills`],
+        "skill",
+      ),
+    );
+    claimIds.push(overviewId);
+
+    if (skill.tools.length) {
+      const toolsId = `claim-auto-skill-${skill.slug}-tools`;
+      claims.push(
+        makeClaim(
+          toolsId,
+          `${skill.name} tools: ${skill.tools.join(", ")}`,
+          [skill.name, "tools", skill.slug],
+          [url],
+          "skill",
+        ),
+      );
+      claimIds.push(toolsId);
+    }
+
+    if (skill.examples.length) {
+      const examplesId = `claim-auto-skill-${skill.slug}-examples`;
+      claims.push(
+        makeClaim(
+          examplesId,
+          `${skill.name} examples: ${skill.examples.join("; ")}`,
+          [skill.name, "examples", skill.slug],
+          [url],
+          "skill",
+        ),
+      );
+      claimIds.push(examplesId);
+    }
+
+    for (const [i, ex] of skill.experiences.entries()) {
+      const id = `claim-auto-skill-${skill.slug}-exp-${i + 1}`;
+      claims.push(
+        makeClaim(
+          id,
+          `${skill.name} — ${ex.role} at ${ex.organization}: ${ex.summary}`,
+          [skill.name, ex.organization, ex.role, "experience"],
+          [url],
+          "skill",
+        ),
+      );
+      claimIds.push(id);
+    }
+
+    for (const [i, para] of splitParagraphs(skill.body).entries()) {
+      const id = `claim-auto-skill-${skill.slug}-p${i + 1}`;
+      claims.push(
+        makeClaim(
+          id,
+          para,
+          [skill.name, skill.slug, "skills"],
+          [url],
+          "skill",
+        ),
+      );
+      claimIds.push(id);
+    }
+
+    nodes.push({
+      id: `node-skill-${skill.slug}`,
+      type: "skill",
+      title: skill.name,
       url,
       claimIds,
     });

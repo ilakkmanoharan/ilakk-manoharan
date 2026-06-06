@@ -9,7 +9,7 @@ import {
 } from "@/lib/agent/knowledge";
 import { retrieveClaims } from "@/lib/agent/retrieve-claims";
 import { validateInviteToken } from "@/lib/agent/session";
-import { prisma } from "@/lib/prisma";
+import { loadSkillsForPage } from "@/lib/skills-content";
 
 async function requireInviteToken(token: string | undefined) {
   if (!token?.trim()) {
@@ -114,21 +114,20 @@ export function createPortfolioMcpServer(getToken: () => string | undefined) {
   server.registerTool(
     "get_skills",
     {
-      description: "Skills catalog from portfolio database",
+      description: "Skills catalog from portfolio markdown",
       inputSchema: { token: z.string().optional() },
     },
     async ({ token }) => {
       await requireInviteToken(token ?? getToken());
-      const skills = await prisma.skill.findMany({
-        orderBy: { name: "asc" },
-        select: {
-          name: true,
-          category: true,
-          overview: true,
-          yearsExperience: true,
-          slug: true,
-        },
-      });
+      const skills = loadSkillsForPage().map(
+        ({ name, category, overview, yearsExperience, slug }) => ({
+          name,
+          category,
+          overview,
+          yearsExperience,
+          slug,
+        }),
+      );
       return {
         content: [{ type: "text" as const, text: JSON.stringify(skills, null, 2) }],
       };

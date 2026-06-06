@@ -3,6 +3,7 @@ import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 import { Prisma, PrismaClient } from "../src/generated/prisma";
 import { loadFounderStudioFromMarkdown } from "./load-founder-studio-from-md";
 import { loadHackathonsFromMarkdown } from "./load-hackathons-from-md";
+import { loadSkillsFromMarkdown } from "./load-skills-from-md";
 import { loadStartupsFromMarkdown } from "./load-startups-from-md";
 import { loadProjectsFromMarkdown } from "./load-projects-from-md";
 
@@ -154,66 +155,34 @@ async function main() {
     })),
   });
 
-  const backend = await prisma.skill.create({
-    data: {
-      slug: "backend-engineering",
-      name: "Backend Engineering",
-      category: "Backend Engineering",
-      overview:
-        "Designing scalable APIs, services, and data layers with strong correctness and observability.",
-      yearsExperience: 20,
-      tools: json(["Java", "Python", "Go", "Node.js", "Spring Boot", "FastAPI", "PostgreSQL", "Kafka", "Docker", "AWS"]),
-      examples: json([
-        "High-throughput ingestion services",
-        "Idempotent workflow workers",
-        "Schema evolution without downtime",
-      ]),
-      videoUrls: json([]),
-      githubLinks: json(["https://github.com/ilakkmanoharan"]),
-    },
-  });
+  for (const skill of loadSkillsFromMarkdown(process.cwd())) {
+    const created = await prisma.skill.create({
+      data: {
+        slug: skill.slug,
+        name: skill.name,
+        category: skill.category,
+        overview: skill.overview,
+        yearsExperience: skill.yearsExperience,
+        tools: json(skill.tools),
+        examples: json(skill.examples),
+        videoUrls: json(skill.videoUrls),
+        githubLinks: json(skill.githubLinks),
+      },
+    });
 
-  await prisma.skillExperience.createMany({
-    data: [
-      {
-        skillId: backend.id,
-        organization: "Sample Org",
-        role: "Software Engineer",
-        summary: "Owned core billing and usage metering microservices.",
-        startYear: 2021,
-        endYear: 2024,
-      },
-    ],
-  });
-
-  await prisma.skill.createMany({
-    data: [
-      {
-        slug: "full-stack-development",
-        name: "Full Stack Development",
-        category: "Full Stack Development",
-        overview:
-          "Shipping cohesive product experiences across Next.js/React, APIs, and databases.",
-        yearsExperience: 12,
-        tools: json(["TypeScript", "React", "Next.js", "Tailwind CSS", "PostgreSQL"]),
-        examples: json(["Portfolio and dashboard products", "Auth-aware admin flows"]),
-        videoUrls: json([]),
-        githubLinks: json(["https://github.com/ilakkmanoharan"]),
-      },
-      {
-        slug: "ai-ml-systems",
-        name: "AI / ML Systems",
-        category: "AI / ML Systems",
-        overview:
-          "ML lifecycle work: data quality, training, evaluation, deployment, and guardrails for production.",
-        yearsExperience: 6,
-        tools: json(["Python", "PyTorch", "Ray", "FastAPI", "vector DBs"]),
-        examples: json(["Batch + online inference patterns", "Experiment tracking integrations"]),
-        videoUrls: json([]),
-        githubLinks: json(["https://github.com/ilakkmanoharan"]),
-      },
-    ],
-  });
+    if (skill.experiences.length) {
+      await prisma.skillExperience.createMany({
+        data: skill.experiences.map((ex) => ({
+          skillId: created.id,
+          organization: ex.organization,
+          role: ex.role,
+          summary: ex.summary,
+          startYear: ex.startYear,
+          endYear: ex.endYear,
+        })),
+      });
+    }
+  }
 }
 
 main()

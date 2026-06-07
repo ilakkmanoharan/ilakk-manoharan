@@ -94,7 +94,7 @@ export async function approveKnowledgeCandidate(
     };
 
     appendPromotedClaim(claim);
-    syncKnowledgeGraph();
+    await syncKnowledgeGraph();
     invalidateClaimsCache();
 
     await prisma.agentKnowledgeCandidate.update({

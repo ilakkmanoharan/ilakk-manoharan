@@ -7,7 +7,7 @@ yearsExperience: 5
 tools: '["Python", "PyTorch", "SciLayer", "ASRA", "Kaggle evaluation harnesses"]'
 examples: '["ASRA ARC-AGI-3 submission", "SciLayer manuscript pipeline", "Nature Foundation Models research direction"]'
 videoUrls: '[]'
-githubLinks: '["https://github.com/ilakkmanoharan/asra", "https://github.com/ilakkmanoharan/scilayer"]'
+githubLinks: '["https://github.com/ilakkmanoharan/asra", "https://github.com/ilakkmanoharan/SciLayer"]'
 experiences: '[]'
 ---
 

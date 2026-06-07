@@ -9,6 +9,8 @@ import { asraVideos } from "@/lib/asra";
 import { exceptionalAbilitySections } from "@/lib/exceptional-ability";
 import type { AgentClaim, ClaimsGraph } from "@/lib/agent/types";
 import { loadSciLayerArticlesFromDisk } from "@/lib/agent/scilayer-content";
+import { buildLiveSiteClaims } from "@/lib/agent/live-site-sync";
+import { buildNotebookExternalClaims } from "@/lib/agent/startup-applications-sync";
 
 const SITE = "https://ilakk-manoharan.vercel.app";
 
@@ -576,7 +578,20 @@ export function loadPromotedClaims(cwd = process.cwd()): AgentClaim[] {
   }));
 }
 
-export function syncKnowledgeGraph(cwd = process.cwd()) {
+export type SyncKnowledgeOptions = {
+  /** Path to notebook startup-applications folder (external markdown). */
+  notebookApplicationsDir?: string;
+  /** Path to notebook applied/ folder (fellowship & program applications). */
+  notebookAppliedDir?: string;
+  /** Fetch production site HTML and add live claims. */
+  fetchLiveSite?: boolean;
+  siteUrl?: string;
+};
+
+export async function syncKnowledgeGraph(
+  cwd = process.cwd(),
+  options: SyncKnowledgeOptions = {},
+) {
   const claimsPath = path.join(cwd, "content", "agent", "claims.json");
   const graphPath = path.join(cwd, "content", "agent", "knowledge-graph.json");
   const existing = JSON.parse(fs.readFileSync(claimsPath, "utf8")) as ClaimsGraph;
@@ -589,6 +604,31 @@ export function syncKnowledgeGraph(cwd = process.cwd()) {
   }
 
   const { claims: autoClaims, nodes } = buildAutoClaims(cwd);
+
+  const applicationsDir =
+    options.notebookApplicationsDir ??
+    process.env.NOTEBOOK_STARTUP_APPLICATIONS?.trim();
+  const appliedDir =
+    options.notebookAppliedDir ?? process.env.NOTEBOOK_APPLIED?.trim();
+
+  if (applicationsDir || appliedDir) {
+    const ext = buildNotebookExternalClaims({
+      startupApplicationsDir: applicationsDir
+        ? path.resolve(applicationsDir)
+        : undefined,
+      appliedDir: appliedDir ? path.resolve(appliedDir) : undefined,
+    });
+    autoClaims.push(...ext.claims);
+    nodes.push(...ext.nodes);
+  }
+
+  if (options.fetchLiveSite ?? process.env.SYNC_LIVE_SITE === "1") {
+    const siteUrl = options.siteUrl ?? SITE;
+    const live = await buildLiveSiteClaims(siteUrl);
+    autoClaims.push(...live.claims);
+    nodes.push(...live.nodes);
+  }
+
   const promoted = loadPromotedClaims(cwd);
   const graph = mergeClaimsGraph(existing, autoClaims, promoted);
 

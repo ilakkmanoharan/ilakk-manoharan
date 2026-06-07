@@ -6,7 +6,7 @@ role: "Solo builder — product and data model, Next.js app and API routes, Pris
 status: Active
 featured: true
 githubUrl: "https://github.com/ilakkmanoharan/SciLayer"
-websiteUrl: ""
+websiteUrl: "https://sci-layer.vercel.app"
 demoVideoUrl: ""
 caseStudyUrl: ""
 filterTags: '["Full Stack","Scientific AI","Open Source","Backend"]'

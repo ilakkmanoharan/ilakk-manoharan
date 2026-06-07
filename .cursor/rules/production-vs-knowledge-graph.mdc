@@ -1,0 +1,38 @@
+---
+description: Keep production website content separate from knowledge-graph updates unless the user explicitly asks to change the live site.
+alwaysApply: true
+---
+
+# Production site vs knowledge graph
+
+## Two layers — do not conflate them
+
+| Layer | Purpose | Primary sources |
+|-------|---------|-----------------|
+| **Production website** | What humans see at ilakk-manoharan.vercel.app | `content/*/*.md`, `src/lib/exceptional-ability*.ts`, page components |
+| **Knowledge graph** | Agent retrieval, citations, future content pulls | `content/agent/claims.json`, `content/agent/knowledge-graph.json` |
+
+## Data flow (one direction for pages)
+
+```
+Production content sources  →  npm run content:sync  →  claims.json / knowledge-graph.json
+                                    ↓
+                          retrieveClaims() / MCP / agent chat
+```
+
+- Site content **feeds** the knowledge graph. That is intentional and good.
+- The knowledge graph does **not** drive public page rendering. Pages read markdown and TS modules directly — not `claims.json`.
+- Promoted conversation claims merge into **retrieval only** (`promoted-claims.json`), not into page markdown or evidence modules.
+
+## Agent behavior — required
+
+1. **Do not edit production website content** (pages, `content/`, exceptional-ability modules, public copy) **unless the user explicitly asks** to update the live site or a specific page.
+2. **Knowledge graph work is allowed** without a site-update request: run `npm run content:sync` or `npm run agent:sync-knowledge`, regenerate `claims.json`, improve retrieval, admin promotion flows, agent code.
+3. **Do not assume** that syncing the knowledge graph means the user wants production pages changed. Sync **indexes** existing site content; it does not replace the need for an explicit ask before editing what visitors see.
+4. **Do not commit or push** production site changes unless the user asks. Knowledge-graph-only commits are fine when the user requested agent/graph work.
+5. When the user **does** ask to update production content, edit the canonical sources (`content/`, evidence TS, etc.), then optionally run `content:sync` so agents stay aligned.
+
+## Commands
+
+- `npm run content:sync` — rebuild claims from current site content (agent corpus)
+- `npm run build` — runs content:sync then Next.js build; deploy updates both rendered pages and agent claims when pushed

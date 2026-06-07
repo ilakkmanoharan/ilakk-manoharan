@@ -1,8 +1,9 @@
 #!/usr/bin/env tsx
 /**
- * Sync all git-tracked site content into the agent knowledge graph.
+ * Sync git-tracked **production content sources** into the agent knowledge graph.
+ * Does not modify production pages — pages read content/*.md and evidence TS directly.
  *
- * Run after adding or editing:
+ * Run after adding or editing production sources when you want agents aligned:
  *   content/projects/*.md, content/hackathons/*.md, content/startups/*.md
  *   content/founder-studio/*.md, content/skills/*.md, content/scilayer/articles/, exceptional-ability modules, recruiter Q&A
  *
@@ -10,8 +11,9 @@
  *   npm run content:sync              # rebuild claims from local content
  *   npm run content:sync -- --fetch-scilayer   # also refresh SciLayer mirror from GitHub
  *
- * Vercel build runs `content:sync` automatically before `next build`.
+ * Vercel build runs `content:sync` before `next build` (re-indexes committed site content into claims; does not change page sources).
  */
+import path from "node:path";
 import { fetchAndCacheSciLayerArticles, loadSciLayerArticlesFromDisk } from "../src/lib/agent/scilayer-content";
 import { syncKnowledgeGraph } from "../src/lib/agent/sync-knowledge";
 import { exceptionalAbilitySections } from "../src/lib/exceptional-ability";
@@ -39,7 +41,23 @@ async function main() {
   const evidence = exceptionalAbilitySections.length;
   const scilayer = loadSciLayerArticlesFromDisk(cwd).length;
 
-  const { graph, manifest, autoCount, promotedCount } = syncKnowledgeGraph(cwd);
+  const notebookApplicationsDir = process.env.NOTEBOOK_STARTUP_APPLICATIONS?.trim();
+  const notebookAppliedDir = process.env.NOTEBOOK_APPLIED?.trim();
+  const fetchLiveSite =
+    args.includes("--fetch-live-site") || process.env.SYNC_LIVE_SITE === "1";
+
+  const { graph, manifest, autoCount, promotedCount } = await syncKnowledgeGraph(
+    cwd,
+    {
+      notebookApplicationsDir: notebookApplicationsDir
+        ? path.resolve(notebookApplicationsDir)
+        : undefined,
+      notebookAppliedDir: notebookAppliedDir
+        ? path.resolve(notebookAppliedDir)
+        : undefined,
+      fetchLiveSite,
+    },
+  );
 
   console.log("Site content indexed:");
   console.log(`  projects (markdown): ${projects}`);

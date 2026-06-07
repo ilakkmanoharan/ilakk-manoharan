@@ -6,7 +6,7 @@ export type AgentClaim = {
   lastVerified?: string;
   lastSynced?: string;
   /** manual = hand-authored; auto = synced from site content; conversation = promoted from verified chat */
-  origin?: "manual" | "recruiter" | "project" | "hackathon" | "startup" | "skill" | "exceptional-ability" | "page" | "scilayer" | "conversation";
+  origin?: "manual" | "recruiter" | "project" | "hackathon" | "startup" | "skill" | "exceptional-ability" | "page" | "scilayer" | "private" | "conversation";
   verified?: boolean;
 };
 

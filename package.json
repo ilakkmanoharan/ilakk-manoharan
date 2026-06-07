@@ -14,6 +14,8 @@
     "agent:export-conversations": "tsx scripts/export-agent-conversations.ts",
     "agent:fetch-scilayer": "tsx scripts/fetch-scilayer-content.ts",
     "agent:sync-knowledge": "tsx scripts/sync-agent-knowledge.ts",
+    "agent:sync-private": "tsx scripts/sync-private-knowledge.ts",
+    "agent:watch-private": "tsx scripts/watch-private-knowledge.ts",
     "turso:migrate": "tsx scripts/apply-turso-migrations.ts"
   },
   "prisma": {

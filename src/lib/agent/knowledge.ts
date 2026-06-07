@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { ClaimsGraph } from "@/lib/agent/types";
+import type { AgentClaim, ClaimsGraph } from "@/lib/agent/types";
+import { PRIVATE_CLAIMS_OVERLAY } from "@/lib/agent/private-content-sync";
 import { exceptionalAbilitySections } from "@/lib/exceptional-ability";
 
 let cachedClaims: ClaimsGraph | null = null;
@@ -9,11 +10,31 @@ export function invalidateClaimsCache() {
   cachedClaims = null;
 }
 
+function loadPrivateClaimsOverlay(cwd = process.cwd()): AgentClaim[] {
+  const file = path.join(cwd, PRIVATE_CLAIMS_OVERLAY);
+  if (!fs.existsSync(file)) return [];
+  const raw = JSON.parse(fs.readFileSync(file, "utf8")) as { claims?: AgentClaim[] };
+  return raw.claims ?? [];
+}
+
 export function loadClaimsGraph(): ClaimsGraph {
   if (cachedClaims) return cachedClaims;
   const file = path.join(process.cwd(), "content", "agent", "claims.json");
   const raw = fs.readFileSync(file, "utf8");
-  cachedClaims = JSON.parse(raw) as ClaimsGraph;
+  const base = JSON.parse(raw) as ClaimsGraph;
+
+  const overlay = loadPrivateClaimsOverlay();
+  if (overlay.length === 0) {
+    cachedClaims = base;
+    return cachedClaims;
+  }
+
+  const byId = new Map(base.claims.map((c) => [c.id, c]));
+  for (const c of overlay) byId.set(c.id, c);
+  cachedClaims = {
+    ...base,
+    claims: [...byId.values()],
+  };
   return cachedClaims;
 }
 

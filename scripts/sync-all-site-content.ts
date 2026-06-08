@@ -14,6 +14,7 @@
  * Vercel build runs `content:sync` before `next build` (re-indexes committed site content into claims; does not change page sources).
  */
 import path from "node:path";
+import fs from "node:fs";
 import { fetchAndCacheSciLayerArticles, loadSciLayerArticlesFromDisk } from "../src/lib/agent/scilayer-content";
 import { syncKnowledgeGraph } from "../src/lib/agent/sync-knowledge";
 import { exceptionalAbilitySections } from "../src/lib/exceptional-ability";
@@ -40,6 +41,14 @@ async function main() {
   const hackathons = loadHackathonsFromMarkdown(cwd).length;
   const evidence = exceptionalAbilitySections.length;
   const scilayer = loadSciLayerArticlesFromDisk(cwd).length;
+  const asraMarketingDir = process.env.ASRA_MARKETING_DIR?.trim()
+    ? path.resolve(process.env.ASRA_MARKETING_DIR)
+    : path.join(cwd, "content", "marketing", "asra");
+  const asraMarketingFiles = fs.existsSync(asraMarketingDir)
+    ? fs.readdirSync(asraMarketingDir, { recursive: true }).filter(
+        (f) => typeof f === "string" && f.endsWith(".md"),
+      ).length
+    : 0;
 
   const notebookApplicationsDir = process.env.NOTEBOOK_STARTUP_APPLICATIONS?.trim();
   const notebookAppliedDir = process.env.NOTEBOOK_APPLIED?.trim();
@@ -67,6 +76,7 @@ async function main() {
   console.log(`  hackathons (markdown): ${hackathons}`);
   console.log(`  exceptional-ability sections: ${evidence}`);
   console.log(`  scilayer articles (local): ${scilayer}`);
+  console.log(`  asra marketing (mirror): ${asraMarketingFiles} markdown file(s)`);
   console.log(
     `Knowledge graph: ${graph.claims.length} claims (${autoCount} auto, ${promotedCount} promoted, ${manifest.nodes.length} nodes)`,
   );

@@ -11,6 +11,10 @@ import type { AgentClaim, ClaimsGraph } from "@/lib/agent/types";
 import { loadSciLayerArticlesFromDisk } from "@/lib/agent/scilayer-content";
 import { buildLiveSiteClaims } from "@/lib/agent/live-site-sync";
 import { buildNotebookExternalClaims } from "@/lib/agent/startup-applications-sync";
+import {
+  buildAsraMarketingClaims,
+  resolveAsraMarketingDir,
+} from "@/lib/agent/asra-marketing-sync";
 
 const SITE = "https://ilakk-manoharan.vercel.app";
 
@@ -539,6 +543,13 @@ export function buildAutoClaims(cwd = process.cwd()): {
     url: SITE,
     claimIds: [homeClaim.id],
   });
+
+  const asraMarketingDir = resolveAsraMarketingDir(cwd);
+  if (asraMarketingDir) {
+    const asraMkt = buildAsraMarketingClaims(asraMarketingDir);
+    claims.push(...asraMkt.claims);
+    nodes.push(...asraMkt.nodes);
+  }
 
   return { claims, nodes };
 }

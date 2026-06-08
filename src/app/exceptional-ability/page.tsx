@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Evidence of Exceptional Ability",
   description:
-    "ASRA Phase 2–4 engines, Orbit Wars Kaggle competition pipeline, SciLayer preprints, patent, federal R&D proposals, ISSRDC presentations, adaptive scientific reasoning (ARC / Decision Biology), SciLayer platform, and shipped full-stack products.",
+    "ASRA nine-phase cognitive stack (Phases 1–9), Orbit Wars Kaggle competition pipeline, SciLayer preprints, patent, federal R&D proposals, ISSRDC presentations, adaptive scientific reasoning (ARC / Decision Biology), SciLayer platform, and shipped full-stack products.",
 };
 
 function isExternal(href: string) {

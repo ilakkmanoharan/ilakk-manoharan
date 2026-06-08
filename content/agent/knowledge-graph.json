@@ -1,8 +1,8 @@
 {
-  "version": 26,
+  "version": 27,
   "lastSynced": "2026-06-08",
   "siteUrl": "https://ilakk-manoharan.vercel.app",
-  "claimCount": 1351,
+  "claimCount": 1411,
   "nodes": [
     {
       "id": "node-recruiter-recruiter-q-a",
@@ -461,7 +461,12 @@
         "claim-auto-evidence-1-p2",
         "claim-auto-evidence-1-p3",
         "claim-auto-evidence-1-p4",
-        "claim-auto-evidence-1-p5"
+        "claim-auto-evidence-1-p5",
+        "claim-auto-evidence-1-p6",
+        "claim-auto-evidence-1-p7",
+        "claim-auto-evidence-1-b1",
+        "claim-auto-evidence-1-b2",
+        "claim-auto-evidence-1-b3"
       ]
     },
     {
@@ -497,7 +502,7 @@
     {
       "id": "node-evidence-3",
       "type": "evidence",
-      "title": "Evidence 3: ASRA Phase 2 - ARC-AGI-3: Object-Centric Observation Engine",
+      "title": "Evidence 3: ASRA Phase 1 - ARC-AGI-3: Experience Engine",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-3-p1",
@@ -515,7 +520,7 @@
     {
       "id": "node-evidence-4",
       "type": "evidence",
-      "title": "Evidence 4: ASRA Phase 3 - ARC-AGI-3: Navigation & Memory Engine",
+      "title": "Evidence 4: ASRA Phase 2 - ARC-AGI-3: Object-Centric Observation Engine",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-4-p1",
@@ -533,7 +538,7 @@
     {
       "id": "node-evidence-5",
       "type": "evidence",
-      "title": "Evidence 5: Portfolio platform & Ilak's general-Agent1 — what I built and how it works",
+      "title": "Evidence 5: ASRA Phase 3 - ARC-AGI-3: Navigation & Memory Engine",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-5-p1",
@@ -545,30 +550,38 @@
         "claim-auto-evidence-5-b1",
         "claim-auto-evidence-5-b2",
         "claim-auto-evidence-5-b3",
-        "claim-auto-evidence-5-b4",
-        "claim-auto-evidence-5-b5"
+        "claim-auto-evidence-5-b4"
       ]
     },
     {
       "id": "node-evidence-6",
       "type": "evidence",
-      "title": "Evidence 6: Patent, federal R&D proposals, ISSRDC, and shipped products",
+      "title": "Evidence 6: ASRA Phase 4 - ARC-AGI-3: Semantics & Causal Inference Engine",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-6-p1",
         "claim-auto-evidence-6-p2",
+        "claim-auto-evidence-6-p3",
+        "claim-auto-evidence-6-p4",
+        "claim-auto-evidence-6-p5",
+        "claim-auto-evidence-6-p6",
         "claim-auto-evidence-6-b1",
-        "claim-auto-evidence-6-b2"
+        "claim-auto-evidence-6-b2",
+        "claim-auto-evidence-6-b3",
+        "claim-auto-evidence-6-b4"
       ]
     },
     {
       "id": "node-evidence-7",
       "type": "evidence",
-      "title": "Evidence 7: Full-stack product execution — web and App Store",
+      "title": "Evidence 7: ASRA Phase 5 - ARC-AGI-3: Goal Inference & Hypothesis Engine",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-7-p1",
         "claim-auto-evidence-7-p2",
+        "claim-auto-evidence-7-p3",
+        "claim-auto-evidence-7-p4",
+        "claim-auto-evidence-7-p5",
         "claim-auto-evidence-7-b1",
         "claim-auto-evidence-7-b2",
         "claim-auto-evidence-7-b3",
@@ -578,17 +591,24 @@
     {
       "id": "node-evidence-8",
       "type": "evidence",
-      "title": "Evidence 8: SciLayer — open science archive",
+      "title": "Evidence 8: ASRA Phase 6 - ARC-AGI-3: Planning & Strategy Invention",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-8-p1",
-        "claim-auto-evidence-8-p2"
+        "claim-auto-evidence-8-p2",
+        "claim-auto-evidence-8-p3",
+        "claim-auto-evidence-8-p4",
+        "claim-auto-evidence-8-p5",
+        "claim-auto-evidence-8-b1",
+        "claim-auto-evidence-8-b2",
+        "claim-auto-evidence-8-b3",
+        "claim-auto-evidence-8-b4"
       ]
     },
     {
       "id": "node-evidence-9",
       "type": "evidence",
-      "title": "Evidence 9: Orbit Wars — Kaggle RTS competition agent pipeline",
+      "title": "Evidence 9: ASRA Phase 7 - ARC-AGI-3: Robustness & Generalization",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-9-p1",
@@ -605,21 +625,24 @@
     {
       "id": "node-evidence-10",
       "type": "evidence",
-      "title": "Evidence 10: Portfolio site — shipped product summary",
+      "title": "Evidence 10: ASRA Phase 8 - Decision Biology Bridge",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-10-p1",
         "claim-auto-evidence-10-p2",
         "claim-auto-evidence-10-p3",
+        "claim-auto-evidence-10-p4",
+        "claim-auto-evidence-10-p5",
         "claim-auto-evidence-10-b1",
         "claim-auto-evidence-10-b2",
-        "claim-auto-evidence-10-b3"
+        "claim-auto-evidence-10-b3",
+        "claim-auto-evidence-10-b4"
       ]
     },
     {
       "id": "node-evidence-11",
       "type": "evidence",
-      "title": "Evidence 11: ASRA Phase 4 - ARC-AGI-3: Semantics & Causal Inference Engine",
+      "title": "Evidence 11: ASRA Phase 9 - Final Integration & Research Story",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-11-p1",
@@ -627,11 +650,96 @@
         "claim-auto-evidence-11-p3",
         "claim-auto-evidence-11-p4",
         "claim-auto-evidence-11-p5",
-        "claim-auto-evidence-11-p6",
         "claim-auto-evidence-11-b1",
         "claim-auto-evidence-11-b2",
         "claim-auto-evidence-11-b3",
         "claim-auto-evidence-11-b4"
+      ]
+    },
+    {
+      "id": "node-evidence-12",
+      "type": "evidence",
+      "title": "Evidence 12: Portfolio platform & Ilak's general-Agent1 — what I built and how it works",
+      "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
+      "claimIds": [
+        "claim-auto-evidence-12-p1",
+        "claim-auto-evidence-12-p2",
+        "claim-auto-evidence-12-p3",
+        "claim-auto-evidence-12-p4",
+        "claim-auto-evidence-12-p5",
+        "claim-auto-evidence-12-p6",
+        "claim-auto-evidence-12-b1",
+        "claim-auto-evidence-12-b2",
+        "claim-auto-evidence-12-b3",
+        "claim-auto-evidence-12-b4",
+        "claim-auto-evidence-12-b5"
+      ]
+    },
+    {
+      "id": "node-evidence-13",
+      "type": "evidence",
+      "title": "Evidence 13: Patent, federal R&D proposals, ISSRDC, and shipped products",
+      "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
+      "claimIds": [
+        "claim-auto-evidence-13-p1",
+        "claim-auto-evidence-13-p2",
+        "claim-auto-evidence-13-b1",
+        "claim-auto-evidence-13-b2"
+      ]
+    },
+    {
+      "id": "node-evidence-14",
+      "type": "evidence",
+      "title": "Evidence 14: Full-stack product execution — web and App Store",
+      "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
+      "claimIds": [
+        "claim-auto-evidence-14-p1",
+        "claim-auto-evidence-14-p2",
+        "claim-auto-evidence-14-b1",
+        "claim-auto-evidence-14-b2",
+        "claim-auto-evidence-14-b3",
+        "claim-auto-evidence-14-b4"
+      ]
+    },
+    {
+      "id": "node-evidence-15",
+      "type": "evidence",
+      "title": "Evidence 15: SciLayer — open science archive",
+      "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
+      "claimIds": [
+        "claim-auto-evidence-15-p1",
+        "claim-auto-evidence-15-p2"
+      ]
+    },
+    {
+      "id": "node-evidence-16",
+      "type": "evidence",
+      "title": "Evidence 16: Orbit Wars — Kaggle RTS competition agent pipeline",
+      "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
+      "claimIds": [
+        "claim-auto-evidence-16-p1",
+        "claim-auto-evidence-16-p2",
+        "claim-auto-evidence-16-p3",
+        "claim-auto-evidence-16-p4",
+        "claim-auto-evidence-16-p5",
+        "claim-auto-evidence-16-b1",
+        "claim-auto-evidence-16-b2",
+        "claim-auto-evidence-16-b3",
+        "claim-auto-evidence-16-b4"
+      ]
+    },
+    {
+      "id": "node-evidence-17",
+      "type": "evidence",
+      "title": "Evidence 17: Portfolio site — shipped product summary",
+      "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
+      "claimIds": [
+        "claim-auto-evidence-17-p1",
+        "claim-auto-evidence-17-p2",
+        "claim-auto-evidence-17-p3",
+        "claim-auto-evidence-17-b1",
+        "claim-auto-evidence-17-b2",
+        "claim-auto-evidence-17-b3"
       ]
     },
     {

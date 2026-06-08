@@ -1,5 +1,5 @@
 {
-  "version": 26,
+  "version": 27,
   "lastSynced": "2026-06-08",
   "claims": [
     {
@@ -709,7 +709,7 @@
     },
     {
       "id": "claim-auto-project-ilakk-manoharan-portfolio-p10",
-      "text": "Built for recruiters and agent-to-agent interviews—the same grounded truth for humans and machines. Deep architecture write-up: Evidence 5 on /exceptional-ability.",
+      "text": "Built for recruiters and agent-to-agent interviews—the same grounded truth for humans and machines. Deep architecture write-up: Evidence 12 on /exceptional-ability.",
       "topics": [
         "ilakk manoharan portfolio",
         "ilakk-manoharan-portfolio",
@@ -2980,6 +2980,7 @@
         "fluidintelligence",
         "decisionbiology",
         "arcprize2026",
+        "asra",
         "adaptive",
         "scientific",
         "reasoning",
@@ -3005,6 +3006,7 @@
         "fluidintelligence",
         "decisionbiology",
         "arcprize2026",
+        "asra",
         "adaptive",
         "scientific",
         "reasoning",
@@ -3030,6 +3032,7 @@
         "fluidintelligence",
         "decisionbiology",
         "arcprize2026",
+        "asra",
         "adaptive",
         "scientific",
         "reasoning",
@@ -3055,6 +3058,7 @@
         "fluidintelligence",
         "decisionbiology",
         "arcprize2026",
+        "asra",
         "adaptive",
         "scientific",
         "reasoning",
@@ -3073,13 +3077,14 @@
     },
     {
       "id": "claim-auto-evidence-1-p5",
-      "text": "Currently I'm building ASRA — an adaptive reasoning engine; Decision Biology — the first scientific domain built on top of it; and Nature Foundation Models — a broader scientific intelligence platform across biology, chemistry, physics, and environmental systems.",
+      "text": "ASRA is not a single competition hack—it is a nine-phase cognitive stack I designed, implemented, and deployed as versioned Kaggle agents (`asra-v0.1-phase1` through `asra-v1.0-phase9`). Each phase answers a distinct scientific question: experience → observation → navigation → causality → goals → planning → robustness → Decision Biology bridge → final integration.",
       "topics": [
         "evidence 1",
         "adaptive scientific reasoning — arc prize 2026 & decision biology",
         "fluidintelligence",
         "decisionbiology",
         "arcprize2026",
+        "asra",
         "adaptive",
         "scientific",
         "reasoning",
@@ -3088,6 +3093,109 @@
         "2026",
         "decision",
         "biology"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-1-p6",
+      "text": "What makes ASRA exceptional as a research program: (1) action semantics are inferred from `(state, action, next_state)` transitions, not supplied by the environment; (2) every phase ships theory, open-source modules, eval evidence, and a competition notebook with full folder parity—Phase 1 now matches Phases 2–9 with dedicated `kaggle-notebooks/phaseN/` folders, kernel metadata, CLI submit tooling, and conceptual articles; (3) the same architecture transfers from ARC grid worlds to Decision Biology perturbation–response reasoning and the Nature Foundation Models program.",
+      "topics": [
+        "evidence 1",
+        "adaptive scientific reasoning — arc prize 2026 & decision biology",
+        "fluidintelligence",
+        "decisionbiology",
+        "arcprize2026",
+        "asra",
+        "adaptive",
+        "scientific",
+        "reasoning",
+        "arc",
+        "prize",
+        "2026",
+        "decision",
+        "biology"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-1-p7",
+      "text": "Currently I'm building ASRA — an adaptive reasoning engine; Decision Biology — the first scientific domain built on top of it; and Nature Foundation Models — a broader scientific intelligence platform across biology, chemistry, physics, and environmental systems.",
+      "topics": [
+        "evidence 1",
+        "adaptive scientific reasoning — arc prize 2026 & decision biology",
+        "fluidintelligence",
+        "decisionbiology",
+        "arcprize2026",
+        "asra",
+        "adaptive",
+        "scientific",
+        "reasoning",
+        "arc",
+        "prize",
+        "2026",
+        "decision",
+        "biology"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-1-b1",
+      "text": "Nine-phase stack: Experience → Observation → Navigation → Causality → Goals → Planning → Robustness → Decision Biology → Integration",
+      "topics": [
+        "adaptive scientific reasoning — arc prize 2026 & decision biology",
+        "fluidintelligence",
+        "decisionbiology",
+        "arcprize2026",
+        "asra"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-1-b2",
+      "text": "All Kaggle notebooks: https://github.com/ilakkmanoharan/asra/tree/main/kaggle-notebooks",
+      "topics": [
+        "adaptive scientific reasoning — arc prize 2026 & decision biology",
+        "fluidintelligence",
+        "decisionbiology",
+        "arcprize2026",
+        "asra"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-1-b3",
+      "text": "SciLayer preprints (Phases 1–4 + program papers): https://sci-layer.vercel.app",
+      "topics": [
+        "adaptive scientific reasoning — arc prize 2026 & decision biology",
+        "fluidintelligence",
+        "decisionbiology",
+        "arcprize2026",
+        "asra"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"
@@ -3626,21 +3734,19 @@
     },
     {
       "id": "claim-auto-evidence-3-p1",
-      "text": "After establishing ASRA Phase 1—reasoning from state transitions when action labels and environment rules are hidden—I designed and implemented ASRA Phase 2, the Observation Engine: a pipeline that converts integer grid observations into objects, regions, typed transformation events, and explicit rule hypotheses, then feeds compact structural hints back into the same interactive agent used for ARC Prize 2026 (ARC-AGI-3).",
+      "text": "ASRA Phase 1 establishes the Experience Engine—the empirical substrate every later phase depends on. When action labels and environment rules are hidden, the agent cannot begin with predefined policies. Phase 1 treats every intervention as an experiment: observe grid state, apply an action token, log `(state, action, next_state, reward)` transitions, hash states for identity, infer coarse action semantics from cell-level diffs, and explore under uncertainty while tabooing empirically dead ends.",
       "topics": [
         "evidence 3",
-        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra phase 1 - arc-agi-3: experience engine",
         "asra",
         "arcprize2026",
         "arcagi3",
-        "objectcentric",
+        "worldmodels",
         "scilayer",
         "phase",
         "arc",
         "agi",
-        "object",
-        "centric",
-        "observation",
+        "experience",
         "engine"
       ],
       "sources": [
@@ -3652,21 +3758,19 @@
     },
     {
       "id": "claim-auto-evidence-3-p2",
-      "text": "Phase 2 is an original symbolization layer that answers: What structural entities changed between observations, and what operator class best describes that change? Without it, action-semantics inference collapses into coarse cell-diff buckets that cannot distinguish rotation from creation, recoloring from translation, or heterogeneous demo programs from a single global rule.",
+      "text": "Phase 1 answers the first scientific question in the nine-phase stack: What happened when we acted, and how can we use that evidence to choose the next intervention? Without this layer, object detectors have no consecutive frames, causal models have no logged effects, and planners have no edge tables.",
       "topics": [
         "evidence 3",
-        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra phase 1 - arc-agi-3: experience engine",
         "asra",
         "arcprize2026",
         "arcagi3",
-        "objectcentric",
+        "worldmodels",
         "scilayer",
         "phase",
         "arc",
         "agi",
-        "object",
-        "centric",
-        "observation",
+        "experience",
         "engine"
       ],
       "sources": [
@@ -3678,21 +3782,19 @@
     },
     {
       "id": "claim-auto-evidence-3-p3",
-      "text": "I designed the Phase 2 theory (object scenes, transform taxonomy, abductive rule induction, branched demo hypotheses, soft integration with Phase 1), implemented a modular perception stack in the open ASRA repository (ObjectExtractor, RegionDetector, ShapeMatcher, TransformationDetector, RuleCandidateGenerator, BeforeAfterAnalyzer), evaluated it on 800 Original ARC tasks (400 training + 400 evaluation) with 100% rule-candidate coverage and branched per-demo hypotheses where cross-demo operator heterogeneity is real (~2% of tasks), and deployed Phase 2 in a Kaggle competition notebook (asra-v0.4-phase2) with isolated runtime bootstrap and object-scene hints wired into exploration scoring.",
+      "text": "I designed Phase 1 theory (transition-centric adaptive reasoning, state-conditioned semantics inference, information-directed exploration, execution fidelity with isolated competition venv), implemented the research stack in asra-arc (`env/`, `memory/`, `agent/`), and brought Phase 1 to full parity with Phases 2–9: a dedicated `kaggle-notebooks/phase1/` folder with conceptual article, specification, implementation reference, kernel metadata, CLI submit tooling, and the canonical notebook `asra-phase-1-arc-prize-2026.ipynb` (agent tag `asra-v0.1-phase1`).",
       "topics": [
         "evidence 3",
-        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra phase 1 - arc-agi-3: experience engine",
         "asra",
         "arcprize2026",
         "arcagi3",
-        "objectcentric",
+        "worldmodels",
         "scilayer",
         "phase",
         "arc",
         "agi",
-        "object",
-        "centric",
-        "observation",
+        "experience",
         "engine"
       ],
       "sources": [
@@ -3704,21 +3806,19 @@
     },
     {
       "id": "claim-auto-evidence-3-p4",
-      "text": "Ilakkuvaselvi Manoharan (2026). [Object-Centric Adaptive Reasoning: ASRA Phase 2 — From Pixel Transitions to Symbolic Structure](https://sci-layer.vercel.app/articles/object-centric-adaptive-reasoning-asra-phase-2). Article, SciLayer Systems (preprint).",
+      "text": "Ilakkuvaselvi Manoharan (2026). [Transition-Centric Adaptive Reasoning: ASRA Phase 1 for Interactive Environments](https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1) (Version 2.0). Article, SciLayer Systems (preprint).",
       "topics": [
         "evidence 3",
-        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra phase 1 - arc-agi-3: experience engine",
         "asra",
         "arcprize2026",
         "arcagi3",
-        "objectcentric",
+        "worldmodels",
         "scilayer",
         "phase",
         "arc",
         "agi",
-        "object",
-        "centric",
-        "observation",
+        "experience",
         "engine"
       ],
       "sources": [
@@ -3730,21 +3830,19 @@
     },
     {
       "id": "claim-auto-evidence-3-p5",
-      "text": "Contribution: Extends ASRA from transition logging to object-centric perception—segmenting grids into connected components, classifying CREATE/DELETE/ROTATE/TRANSLATE/RECOLOR and related transforms, inducing global or branched rule hypotheses when ARC demonstration pairs disagree, and integrating structural hints with Phase 1 exploration without abandoning empirical transitions.",
+      "text": "Contribution: Specifies a minimal, auditable agent architecture for environments where action meaning and rules are hidden—the reproducible interaction-to-knowledge pipeline that Phases 2–9 extend.",
       "topics": [
         "evidence 3",
-        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra phase 1 - arc-agi-3: experience engine",
         "asra",
         "arcprize2026",
         "arcagi3",
-        "objectcentric",
+        "worldmodels",
         "scilayer",
         "phase",
         "arc",
         "agi",
-        "object",
-        "centric",
-        "observation",
+        "experience",
         "engine"
       ],
       "sources": [
@@ -3756,9 +3854,105 @@
     },
     {
       "id": "claim-auto-evidence-3-p6",
-      "text": "Why this supports exceptional ability: Demonstrates original architecture-level work combining theory, measurable batch science (800-task evaluation), open-source implementation, and competition-scale deployment—extending a named program (ASRA) rather than a disconnected benchmark entry.",
+      "text": "Why this supports exceptional ability: Demonstrates original foundational architecture work with competition-grade deployment discipline—Phase 1 is not a placeholder baseline but the named start of a nine-layer program with folder, kernel, and scholarly parity across every phase.",
       "topics": [
         "evidence 3",
+        "asra phase 1 - arc-agi-3: experience engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "worldmodels",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "experience",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-3-b1",
+      "text": "Phase 1 Experience Engine → Phase 2 Observation → Phase 3 Navigation → Phases 4–9 (causality, goals, planning, robustness, Decision Biology, integration)",
+      "topics": [
+        "asra phase 1 - arc-agi-3: experience engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "worldmodels",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-3-b2",
+      "text": "Kaggle kernel: https://www.kaggle.com/code/ilakkmanoharan/asra-phase-1-arc-prize-2026",
+      "topics": [
+        "asra phase 1 - arc-agi-3: experience engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "worldmodels",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-3-b3",
+      "text": "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase1/asra-phase-1-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 1 - arc-agi-3: experience engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "worldmodels",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-3-b4",
+      "text": "Conceptual article (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase1/asra-phase1-transition-centric-experience.md",
+      "topics": [
+        "asra phase 1 - arc-agi-3: experience engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "worldmodels",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-4-p1",
+      "text": "After establishing ASRA Phase 1—reasoning from state transitions when action labels and environment rules are hidden—I designed and implemented ASRA Phase 2, the Observation Engine: a pipeline that converts integer grid observations into objects, regions, typed transformation events, and explicit rule hypotheses, then feeds compact structural hints back into the same interactive agent used for ARC Prize 2026 (ARC-AGI-3).",
+      "topics": [
+        "evidence 4",
         "asra phase 2 - arc-agi-3: object-centric observation engine",
         "asra",
         "arcprize2026",
@@ -3781,8 +3975,138 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-3-b1",
-      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → planned exploration, semantics, and planning phases in the ASRA roadmap",
+      "id": "claim-auto-evidence-4-p2",
+      "text": "Phase 2 is an original symbolization layer that answers: What structural entities changed between observations, and what operator class best describes that change? Without it, action-semantics inference collapses into coarse cell-diff buckets that cannot distinguish rotation from creation, recoloring from translation, or heterogeneous demo programs from a single global rule.",
+      "topics": [
+        "evidence 4",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-4-p3",
+      "text": "I designed the Phase 2 theory (object scenes, transform taxonomy, abductive rule induction, branched demo hypotheses, soft integration with Phase 1), implemented a modular perception stack in the open ASRA repository (ObjectExtractor, RegionDetector, ShapeMatcher, TransformationDetector, RuleCandidateGenerator, BeforeAfterAnalyzer), evaluated it on 800 Original ARC tasks (400 training + 400 evaluation) with 100% rule-candidate coverage and branched per-demo hypotheses where cross-demo operator heterogeneity is real (~2% of tasks), and deployed Phase 2 in a Kaggle competition notebook (asra-v0.4-phase2) with isolated runtime bootstrap and object-scene hints wired into exploration scoring.",
+      "topics": [
+        "evidence 4",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-4-p4",
+      "text": "Ilakkuvaselvi Manoharan (2026). [Object-Centric Adaptive Reasoning: ASRA Phase 2 — From Pixel Transitions to Symbolic Structure](https://sci-layer.vercel.app/articles/object-centric-adaptive-reasoning-asra-phase-2). Article, SciLayer Systems (preprint).",
+      "topics": [
+        "evidence 4",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-4-p5",
+      "text": "Contribution: Extends ASRA from transition logging to object-centric perception—segmenting grids into connected components, classifying CREATE/DELETE/ROTATE/TRANSLATE/RECOLOR and related transforms, inducing global or branched rule hypotheses when ARC demonstration pairs disagree, and integrating structural hints with Phase 1 exploration without abandoning empirical transitions.",
+      "topics": [
+        "evidence 4",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-4-p6",
+      "text": "Why this supports exceptional ability: Demonstrates original architecture-level work combining theory, measurable batch science (800-task evaluation), open-source implementation, and competition-scale deployment—extending a named program (ASRA) rather than a disconnected benchmark entry.",
+      "topics": [
+        "evidence 4",
+        "asra phase 2 - arc-agi-3: object-centric observation engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "objectcentric",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "object",
+        "centric",
+        "observation",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-4-b1",
+      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → Phases 3–9 (navigation, causality, goals, planning, robustness, Decision Biology, integration)",
       "topics": [
         "asra phase 2 - arc-agi-3: object-centric observation engine",
         "asra",
@@ -3799,7 +4123,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-3-b2",
+      "id": "claim-auto-evidence-4-b2",
       "text": "Perception library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/perception",
       "topics": [
         "asra phase 2 - arc-agi-3: object-centric observation engine",
@@ -3817,7 +4141,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-3-b3",
+      "id": "claim-auto-evidence-4-b3",
       "text": "Batch evaluation: 100% rule-candidate coverage on 800 Original ARC tasks; branched hypotheses when demo operators diverge",
       "topics": [
         "asra phase 2 - arc-agi-3: object-centric observation engine",
@@ -3835,7 +4159,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-3-b4",
+      "id": "claim-auto-evidence-4-b4",
       "text": "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase2/asra-phase-2-arc-prize-2026.ipynb",
       "topics": [
         "asra phase 2 - arc-agi-3: object-centric observation engine",
@@ -3853,10 +4177,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-4-p1",
+      "id": "claim-auto-evidence-5-p1",
       "text": "After ASRA Phase 1 (transition-centric experience under hidden action semantics) and Phase 2 (object-centric observation and rule hypotheses), I designed and implemented ASRA Phase 3, the Navigation & Memory Engine: a stack that turns episodic transitions into exploration graphs, visitation memory, novelty versus usefulness scoring, compositional subgoals, strategy reuse, and transition replay—then deploys compact exploration hints alongside Phase 2 object-scene bias in the ARC Prize 2026 competition agent (asra-v0.5-phase3).",
       "topics": [
-        "evidence 4",
+        "evidence 5",
         "asra phase 3 - arc-agi-3: navigation & memory engine",
         "asra",
         "arcprize2026",
@@ -3878,10 +4202,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-4-p2",
+      "id": "claim-auto-evidence-5-p2",
       "text": "Phase 3 answers a question neither Phase 1 nor Phase 2 can alone: Where have I been? What territory remains unexplored? Which action opens new ground instead of repeating a loop? What intermediate goal am I pursuing?",
       "topics": [
-        "evidence 4",
+        "evidence 5",
         "asra phase 3 - arc-agi-3: navigation & memory engine",
         "asra",
         "arcprize2026",
@@ -3903,10 +4227,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-4-p3",
+      "id": "claim-auto-evidence-5-p3",
       "text": "I designed Phase 3 theory (exploration graphs with frontier scores, dual-key visitation memory, novelty/usefulness separation, subgoal inference, strategy libraries, and integration with Phases 1–2 without oracle maps), implemented Milestones 3A–3D in asra-arc/src/asra/exploration/ (exploration engine, memory system, subgoal module, MiniGrid/BabyAI runners, DoorKey benchmarks, and ARC-AGI-3 ablation tooling), validated on MiniGrid (coverage, revisit rate, frontier efficiency) and BabyAI (subgoal detection), and deployed the Kaggle notebook with isolated venv bootstrap and combined Phase 1 + Phase 2 + Phase 3 scoring.",
       "topics": [
-        "evidence 4",
+        "evidence 5",
         "asra phase 3 - arc-agi-3: navigation & memory engine",
         "asra",
         "arcprize2026",
@@ -3928,10 +4252,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-4-p4",
+      "id": "claim-auto-evidence-5-p4",
       "text": "Ilakkuvaselvi Manoharan (2026). [Directed Exploration and Episodic Memory: ASRA Phase 3 — From Structure to Navigation](https://sci-layer.vercel.app/articles/directed-exploration-episodic-memory-asra-phase-3). Article, SciLayer Systems (preprint). [Technical specification](https://sci-layer.vercel.app/articles/asra-phase-3-exploration-memory-navigation-spec).",
       "topics": [
-        "evidence 4",
+        "evidence 5",
         "asra phase 3 - arc-agi-3: navigation & memory engine",
         "asra",
         "arcprize2026",
@@ -3953,10 +4277,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-4-p5",
+      "id": "claim-auto-evidence-5-p5",
       "text": "Contribution: Extends ASRA from structure perception to directed exploration—exploration graphs with frontiers, exact hash plus object-fingerprint visitation keys, novelty and usefulness decomposition, BabyAI-style subgoal inference, strategy reuse, and transition replay integrated with Phase 1 transitions and Phase 2 object hints in the competition agent.",
       "topics": [
-        "evidence 4",
+        "evidence 5",
         "asra phase 3 - arc-agi-3: navigation & memory engine",
         "asra",
         "arcprize2026",
@@ -3978,10 +4302,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-4-p6",
+      "id": "claim-auto-evidence-5-p6",
       "text": "Why this supports exceptional ability: Demonstrates sustained original work across three ASRA layers—experience, observation, and navigation—combining theory, multi-environment evaluation infrastructure (MiniGrid, BabyAI, ARC ablations), open-source implementation, and competition-scale deployment within a single named architecture program.",
       "topics": [
-        "evidence 4",
+        "evidence 5",
         "asra phase 3 - arc-agi-3: navigation & memory engine",
         "asra",
         "arcprize2026",
@@ -4003,8 +4327,8 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-4-b1",
-      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → planned causality, goals, and planning phases",
+      "id": "claim-auto-evidence-5-b1",
+      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → Phases 4–9 (causality, goals, planning, robustness, Decision Biology, integration)",
       "topics": [
         "asra phase 3 - arc-agi-3: navigation & memory engine",
         "asra",
@@ -4021,7 +4345,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-4-b2",
+      "id": "claim-auto-evidence-5-b2",
       "text": "Exploration library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/exploration",
       "topics": [
         "asra phase 3 - arc-agi-3: navigation & memory engine",
@@ -4039,7 +4363,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-4-b3",
+      "id": "claim-auto-evidence-5-b3",
       "text": "Milestones 3A–3D: MiniGrid foundation, useful exploration (DoorKey), BabyAI subgoals, ARC-AGI-3 integration (asra-v0.5-phase3)",
       "topics": [
         "asra phase 3 - arc-agi-3: navigation & memory engine",
@@ -4057,7 +4381,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-4-b4",
+      "id": "claim-auto-evidence-5-b4",
       "text": "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase3/asra-phase-3-arc-prize-2026.ipynb",
       "topics": [
         "asra phase 3 - arc-agi-3: navigation & memory engine",
@@ -4075,10 +4399,1178 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-p1",
+      "id": "claim-auto-evidence-6-p1",
+      "text": "After ASRA Phase 1 (transition-centric experience), Phase 2 (object-centric observation), and Phase 3 (directed exploration and episodic memory), I designed and implemented ASRA Phase 4, the Semantics & Causal Inference Engine: a stack that aggregates action–effect observations into semantic signatures, maintains a causal transition model for predicting next-state features, tracks hypotheses with confirm/refute updates, supports counterfactual queries over alternate actions, and scores epistemic uncertainty per (state, action) pair—then deploys a compact CausalSemanticsEngine alongside Phase 2 object-scene and Phase 3 exploration hints in the ARC Prize 2026 competition agent (asra-v0.6-phase4).",
+      "topics": [
+        "evidence 6",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-6-p2",
+      "text": "Phase 4 answers questions that define scientific and strategic reasoning over interventions: If I take ACTION3 here, what will happen? How confident am I? What would have happened if I had taken ACTION1 instead?",
+      "topics": [
+        "evidence 6",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-6-p3",
+      "text": "I designed Phase 4 theory (intervention–response tuples without oracle action labels; semantic labels from cell diffs and Phase 2 transform histograms; confidence and uncertainty scoring; hypothesis confirm/refute; counterfactual effect lookup; explicit bridge to Decision Biology perturbation–response structure), implemented the causality stack in asra-arc/src/asra/causality/ (ActionEffectSummarizer, CausalTransitionModel, HypothesisTester, CounterfactualSimulator, UncertaintyScorer, SemanticsStore, and CausalExplorationPolicyV3), validated on ARC-AGI-3 transition logs (semantics consistency, effect-prediction MAE vs naive baseline, hypothesis confirm rates), and deployed the Kaggle notebook with isolated venv bootstrap and combined scoring across Phases 1–4.",
+      "topics": [
+        "evidence 6",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-6-p4",
+      "text": "Ilakkuvaselvi Manoharan (2026). [Causal Action Semantics: ASRA Phase 4 — From Observed Effects to Intervention Reasoning](https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4). Article, SciLayer Systems (preprint).",
+      "topics": [
+        "evidence 6",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-6-p5",
+      "text": "Contribution: Extends ASRA from directed exploration to causal semantics—empirical action meaning from observed effects, distributional effect signatures, hypothesis testing and counterfactual lookup, and uncertainty-aware action scoring integrated with Phase 1 transitions, Phase 2 object hints, and Phase 3 exploration memory in the competition agent.",
+      "topics": [
+        "evidence 6",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-6-p6",
+      "text": "Why this supports exceptional ability: Demonstrates sustained original work across four ASRA layers—experience, observation, navigation, and causal semantics—combining theory, measurable evaluation on transition logs, open-source implementation, and competition-scale deployment within the nine-phase program aimed at adaptive scientific reasoning.",
+      "topics": [
+        "evidence 6",
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer",
+        "phase",
+        "arc",
+        "agi",
+        "semantics",
+        "causal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-6-b1",
+      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → Phase 4 Semantics & Causal Inference Engine → Phases 5–9 (goals, planning, robustness, Decision Biology, integration)",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-6-b2",
+      "text": "Causality library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/causality",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-6-b3",
+      "text": "Agent asra-v0.6-phase4: semantic labels, confidence, uncertainty, and predicted progress wired into combined Phase 1–4 scoring",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-6-b4",
+      "text": "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase4/asra-phase-4-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "causality",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-7-p1",
+      "text": "After Phases 1–4 established transitions, object-centric observation, directed exploration, and causal action semantics, I designed ASRA Phase 5, the Goal Inference & Hypothesis Engine: a stack that generates win-condition hypotheses from scene structure and semantic operators, detects progress signals from sparse rewards and structural change, classifies object roles (agent, target, token, hazard, key, door), ranks competing goal explanations, and plans discriminating experiments using Phase 4 uncertainty and counterfactuals—deployed in the competition agent as `asra-v0.7-phase5`.",
+      "topics": [
+        "evidence 7",
+        "asra phase 5 - arc-agi-3: goal inference & hypothesis engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "hypothesis",
+        "goals",
+        "phase",
+        "arc",
+        "agi",
+        "goal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-7-p2",
+      "text": "Phase 5 answers the pivot question: What is this system trying to achieve? Which hidden objective best explains the progress we have seen? What experiment should we run next to distinguish competing explanations? Without Phase 5, an agent that understands interventions still acts without purpose—it knows ACTION3 translates an object but not whether translation serves collection, pattern matching, or hazard avoidance.",
+      "topics": [
+        "evidence 7",
+        "asra phase 5 - arc-agi-3: goal inference & hypothesis engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "hypothesis",
+        "goals",
+        "phase",
+        "arc",
+        "agi",
+        "goal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-7-p3",
+      "text": "I specified and implemented the compact `GoalHypothesisEngine` in the Kaggle agent (goal templates for move, match, collect, unlock, avoid, transform; progress detector; hypothesis ranker; experiment planner), with the full research engine specified for `asra-arc/src/asra/goals/`. Conceptual theory is documented in `asra-phase5-goal-inference-hypothesis-engine.md` alongside kernel metadata and CLI submit tooling—full folder parity with Phases 1–4 and 6–9.",
+      "topics": [
+        "evidence 7",
+        "asra phase 5 - arc-agi-3: goal inference & hypothesis engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "hypothesis",
+        "goals",
+        "phase",
+        "arc",
+        "agi",
+        "goal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-7-p4",
+      "text": "Contribution: Extends ASRA from intervention reasoning to scientific objective inference—win-condition hypotheses, progress signals, object roles, and goal-discriminating experiments integrated with Phase 4 causal semantics.",
+      "topics": [
+        "evidence 7",
+        "asra phase 5 - arc-agi-3: goal inference & hypothesis engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "hypothesis",
+        "goals",
+        "phase",
+        "arc",
+        "agi",
+        "goal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-7-p5",
+      "text": "Why this supports exceptional ability: Demonstrates sustained original work across five ASRA layers—moving from what actions do to what success requires, with theory, open specification, and competition-scale deployment in a single named architecture program.",
+      "topics": [
+        "evidence 7",
+        "asra phase 5 - arc-agi-3: goal inference & hypothesis engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "hypothesis",
+        "goals",
+        "phase",
+        "arc",
+        "agi",
+        "goal",
+        "inference",
+        "engine"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-7-b1",
+      "text": "Phases 1–4 cognitive core → Phase 5 Goal Inference → Phase 6 Planning → Phases 7–9 (robustness, Decision Biology, integration)",
+      "topics": [
+        "asra phase 5 - arc-agi-3: goal inference & hypothesis engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "hypothesis",
+        "goals"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-7-b2",
+      "text": "Agent asra-v0.7-phase5: goal templates, progress signals, hypothesis ranking wired into combined Phase 1–5 scoring",
+      "topics": [
+        "asra phase 5 - arc-agi-3: goal inference & hypothesis engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "hypothesis",
+        "goals"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-7-b3",
+      "text": "Kaggle notebook: https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase5/asra-phase-5-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 5 - arc-agi-3: goal inference & hypothesis engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "hypothesis",
+        "goals"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-7-b4",
+      "text": "Conceptual article: https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase5/asra-phase5-goal-inference-hypothesis-engine.md",
+      "topics": [
+        "asra phase 5 - arc-agi-3: goal inference & hypothesis engine",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "hypothesis",
+        "goals"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-8-p1",
+      "text": "After Phase 5 infers what the environment is trying to achieve, ASRA Phase 6 adds the Planning & Strategy Invention layer: BFS and A* planners over observed transition graphs, MCTS-lite rollouts when graphs are sparse, a reusable strategy library mapping goal templates to operator sequences, a meta-controller for explore-exploit balance, and reset and plan repair mechanisms for recovery—deployed as `asra-v0.8-phase6`.",
+      "topics": [
+        "evidence 8",
+        "asra phase 6 - arc-agi-3: planning & strategy invention",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "planning",
+        "strategy",
+        "phase",
+        "arc",
+        "agi",
+        "invention"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-8-p2",
+      "text": "Phase 6 answers: Given a leading goal hypothesis, what sequence of actions should we execute—and when should we abandon the plan? Without Phase 6, an agent with goal beliefs still selects actions myopically; human problem-solving in unknown environments—and biological experiment design—requires sequencing: reach before collect, unlock before traverse, transform before match.",
+      "topics": [
+        "evidence 8",
+        "asra phase 6 - arc-agi-3: planning & strategy invention",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "planning",
+        "strategy",
+        "phase",
+        "arc",
+        "agi",
+        "invention"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-8-p3",
+      "text": "I specified and implemented the compact `PlanningEngine` atop Phase 5's `GoalHypothesisEngine` in the Kaggle agent, with the full research stack specified for `asra-arc/src/asra/planning/`. Theory, specification, implementation reference, kernel metadata, and CLI submit live in `kaggle-notebooks/phase6/` with the same folder parity as Phases 1–5 and 7–9.",
+      "topics": [
+        "evidence 8",
+        "asra phase 6 - arc-agi-3: planning & strategy invention",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "planning",
+        "strategy",
+        "phase",
+        "arc",
+        "agi",
+        "invention"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-8-p4",
+      "text": "Contribution: Extends ASRA from goal inference to multi-step planning—strategy libraries, graph search, meta-control, and plan repair integrated with Phases 1–5 in the competition agent.",
+      "topics": [
+        "evidence 8",
+        "asra phase 6 - arc-agi-3: planning & strategy invention",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "planning",
+        "strategy",
+        "phase",
+        "arc",
+        "agi",
+        "invention"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-8-p5",
+      "text": "Why this supports exceptional ability: Demonstrates sustained original work across six ASRA layers—combining theory, planning algorithms under competition latency constraints, and deployment as Milestone #2: an agent that plans, not only scores single actions.",
+      "topics": [
+        "evidence 8",
+        "asra phase 6 - arc-agi-3: planning & strategy invention",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "planning",
+        "strategy",
+        "phase",
+        "arc",
+        "agi",
+        "invention"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-8-b1",
+      "text": "Phases 1–5 → Phase 6 Planning & Strategy Invention → Phase 7 Robustness → Phases 8–9 (Decision Biology, integration)",
+      "topics": [
+        "asra phase 6 - arc-agi-3: planning & strategy invention",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "planning",
+        "strategy"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-8-b2",
+      "text": "Agent asra-v0.8-phase6: BFS/A, strategy library, meta-controller, plan repair in combined Phase 1–6 scoring",
+      "topics": [
+        "asra phase 6 - arc-agi-3: planning & strategy invention",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "planning",
+        "strategy"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-8-b3",
+      "text": "Kaggle notebook: https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase6/asra-phase-6-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 6 - arc-agi-3: planning & strategy invention",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "planning",
+        "strategy"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-8-b4",
+      "text": "Conceptual article: https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase6/asra-phase6-planning-strategy-invention.md",
+      "topics": [
+        "asra phase 6 - arc-agi-3: planning & strategy invention",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "planning",
+        "strategy"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-9-p1",
+      "text": "After Phase 6 adds goal-conditioned planning, ASRA Phase 7 optimizes reliability—not just capability. Phase 6 asks whether the agent can plan toward inferred objectives; Phase 7 asks whether that capability persists across unseen layouts, long horizons, and memory–perception mismatch. I designed the Robustness & Generalization layer: failure analyzer clustering dead-ends and wrong-goal episodes, generalization benchmarks across Procgen and DMLab, memory mismatch detection, planner stuck-loop detection, action waste reduction, and a consolidated evaluation dashboard—deployed as `asra-v0.85-phase7`.",
+      "topics": [
+        "evidence 9",
+        "asra phase 7 - arc-agi-3: robustness & generalization",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "robustness",
+        "generalization",
+        "phase",
+        "arc",
+        "agi"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-9-p2",
+      "text": "Competition agents that plan well on familiar state graphs often collapse under procedural variation: Procgen layout shifts break memorized BFS paths; long episodes trigger stuck loops; stale visitation memory misleads the meta-controller. Phase 7 makes these failure modes measurable and interruptible before wasting the action budget.",
+      "topics": [
+        "evidence 9",
+        "asra phase 7 - arc-agi-3: robustness & generalization",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "robustness",
+        "generalization",
+        "phase",
+        "arc",
+        "agi"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-9-p3",
+      "text": "I specified and implemented the compact `RobustnessEngine` wrapping Phase 6's `PlanningEngine` in the Kaggle agent, with the research library specified for `asra-arc/src/asra/robustness/`. Full folder parity in `kaggle-notebooks/phase7/`—conceptual article, specification, notebook, kernel metadata, and CLI submit.",
+      "topics": [
+        "evidence 9",
+        "asra phase 7 - arc-agi-3: robustness & generalization",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "robustness",
+        "generalization",
+        "phase",
+        "arc",
+        "agi"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-9-p4",
+      "text": "Contribution: Extends ASRA from planning capability to cross-layout reliability—failure diagnosis, stuck detection, and generalization evaluation preparing the final candidate agent before Phase 9 integration.",
+      "topics": [
+        "evidence 9",
+        "asra phase 7 - arc-agi-3: robustness & generalization",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "robustness",
+        "generalization",
+        "phase",
+        "arc",
+        "agi"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-9-p5",
+      "text": "Why this supports exceptional ability: Demonstrates systems-level rigor across seven ASRA layers—combining theory, multi-environment generalization benchmarks, and competition-scale deployment with explicit failure-mode engineering rare in research competition entries.",
+      "topics": [
+        "evidence 9",
+        "asra phase 7 - arc-agi-3: robustness & generalization",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "robustness",
+        "generalization",
+        "phase",
+        "arc",
+        "agi"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-9-b1",
+      "text": "Phases 1–6 cognitive + planning stack → Phase 7 Robustness → Phase 8 Decision Biology → Phase 9 integration",
+      "topics": [
+        "asra phase 7 - arc-agi-3: robustness & generalization",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "robustness",
+        "generalization"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-9-b2",
+      "text": "Agent asra-v0.85-phase7: failure analyzer, stuck detector, action waste reducer wrapping Phase 1–6 stack",
+      "topics": [
+        "asra phase 7 - arc-agi-3: robustness & generalization",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "robustness",
+        "generalization"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-9-b3",
+      "text": "Kaggle notebook: https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase7/asra-phase-7-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 7 - arc-agi-3: robustness & generalization",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "robustness",
+        "generalization"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-9-b4",
+      "text": "Conceptual article: https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase7/asra-phase7-robustness-generalization.md",
+      "topics": [
+        "asra phase 7 - arc-agi-3: robustness & generalization",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "robustness",
+        "generalization"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-10-p1",
+      "text": "Phases 1–7 built and hardened a transition-centric cognitive stack for interactive grid environments. From Phase 4 onward, ASRA drew conceptual parallels to Decision Biology—intervention–response reasoning under latent objectives—but remained game-bound in implementation. ASRA Phase 8 makes that bridge operational: an isomorphic extension mapping environment states to cell states, game actions to perturbations, and goal hypotheses to pathway survival objectives—deployed as `asra-v0.9-phase8`.",
+      "topics": [
+        "evidence 10",
+        "asra phase 8 - decision biology bridge",
+        "asra",
+        "decisionbiology",
+        "nfm",
+        "perturbation",
+        "scilayer",
+        "phase",
+        "decision",
+        "biology",
+        "bridge"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-10-p2",
+      "text": "Phase 8 reuses Phase 1 transition schema, Phase 4 intervention semantics, Phase 5 hypothesis ranking, and Phase 6 experiment sequencing on biological datasets—LINCS L1000, OmniPath, scPerturb, Cell Painting, and Human Cell Atlas context. Without Phase 8, ASRA remains an ARC competition project. With Phase 8, it becomes a Nature Foundation Models narrative: one architecture for adaptive reasoning in unknown dynamical systems—whether those systems are grid worlds or living cells.",
+      "topics": [
+        "evidence 10",
+        "asra phase 8 - decision biology bridge",
+        "asra",
+        "decisionbiology",
+        "nfm",
+        "perturbation",
+        "scilayer",
+        "phase",
+        "decision",
+        "biology",
+        "bridge"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-10-p3",
+      "text": "I specified the Decision Biology bridge in `asra-arc/src/asra/decision_biology/`, documented theory in `asra-phase8-decision-biology-bridge.md`, and deployed the Kaggle agent with bridge identity in `kaggle-notebooks/phase8/`—full folder parity with Phases 1–7 and 9. The program-level SciLayer article [ASRA for Decision Biology](https://sci-layer.vercel.app/articles/asra-for-decision-biology) (also on SSRN) provides the scholarly foundation.",
+      "topics": [
+        "evidence 10",
+        "asra phase 8 - decision biology bridge",
+        "asra",
+        "decisionbiology",
+        "nfm",
+        "perturbation",
+        "scilayer",
+        "phase",
+        "decision",
+        "biology",
+        "bridge"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-10-p4",
+      "text": "Contribution: Extends ASRA from ARC grid worlds to perturbation–response reasoning in biological state spaces—the same transition loop, different domain.",
+      "topics": [
+        "evidence 10",
+        "asra phase 8 - decision biology bridge",
+        "asra",
+        "decisionbiology",
+        "nfm",
+        "perturbation",
+        "scilayer",
+        "phase",
+        "decision",
+        "biology",
+        "bridge"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-10-p5",
+      "text": "Why this supports exceptional ability: Demonstrates domain transfer of a named architecture from interactive benchmarks to decision biology—a mark of generalizable scientific contribution, not a disconnected competition entry.",
+      "topics": [
+        "evidence 10",
+        "asra phase 8 - decision biology bridge",
+        "asra",
+        "decisionbiology",
+        "nfm",
+        "perturbation",
+        "scilayer",
+        "phase",
+        "decision",
+        "biology",
+        "bridge"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-10-b1",
+      "text": "Phases 1–7 (games) → Phase 8 Decision Biology bridge → Phase 9 unified research story",
+      "topics": [
+        "asra phase 8 - decision biology bridge",
+        "asra",
+        "decisionbiology",
+        "nfm",
+        "perturbation",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-10-b2",
+      "text": "Mapping: game state → cell state; action → perturbation; goal → pathway survival objective",
+      "topics": [
+        "asra phase 8 - decision biology bridge",
+        "asra",
+        "decisionbiology",
+        "nfm",
+        "perturbation",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-10-b3",
+      "text": "Kaggle notebook: https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase8/asra-phase-8-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 8 - decision biology bridge",
+        "asra",
+        "decisionbiology",
+        "nfm",
+        "perturbation",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-10-b4",
+      "text": "Conceptual article: https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase8/asra-phase8-decision-biology-bridge.md",
+      "topics": [
+        "asra phase 8 - decision biology bridge",
+        "asra",
+        "decisionbiology",
+        "nfm",
+        "perturbation",
+        "scilayer"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-11-p1",
+      "text": "Phases 1–8 constructed a nine-layer cognitive stack—each phase answering a distinct scientific question, each producing an agent version, specification, conceptual article, and Kaggle notebook with full folder parity. ASRA Phase 9 is integration and narrative, not a new cognitive layer: it selects tuned weights from Phase 7, composes the full embedded stack into `asra-v1.0-phase9`, submits the final ARC Prize 2026 agent, and packages the research story—architecture diagram, evaluation report, demo video, GitHub README, and Decision Biology extension section.",
+      "topics": [
+        "evidence 11",
+        "asra phase 9 - final integration & research story",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "nfm",
+        "research",
+        "phase",
+        "final",
+        "integration",
+        "story"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-11-p2",
+      "text": "Phase 9 asks: Can we present the answers coherently? The merit of the ASRA program is not any single phase in isolation—it is the cumulative stack where each layer depends on the empirical substrate below it, each ships as open theory plus competition deployment, and the same architecture bridges ARC grid worlds to Decision Biology.",
+      "topics": [
+        "evidence 11",
+        "asra phase 9 - final integration & research story",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "nfm",
+        "research",
+        "phase",
+        "final",
+        "integration",
+        "story"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-11-p3",
+      "text": "I specified integration deliverables in `kaggle-notebooks/phase9/`—final submission spec, research story article, notebook builder, kernel metadata, and CLI submit—completing the nine-phase roadmap from `asra-v0.1-phase1` through `asra-v1.0-phase9` with one research narrative for competition judges, open-source collaborators, and the Nature Foundation Models program.",
+      "topics": [
+        "evidence 11",
+        "asra phase 9 - final integration & research story",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "nfm",
+        "research",
+        "phase",
+        "final",
+        "integration",
+        "story"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-11-p4",
+      "text": "Contribution: Unifies nine phases into a single legible research program—best ARC agent, full architecture narrative, evaluation report, and Decision Biology demo as one coherent story.",
+      "topics": [
+        "evidence 11",
+        "asra phase 9 - final integration & research story",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "nfm",
+        "research",
+        "phase",
+        "final",
+        "integration",
+        "story"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-11-p5",
+      "text": "Why this supports exceptional ability: Demonstrates sustained, end-to-end original research program execution—nine versioned agents, nine Kaggle notebooks, SciLayer preprints for Phases 1–4, conceptual articles for all phases, and explicit domain transfer to decision biology—at a scope and coherence rare for solo-authored work.",
+      "topics": [
+        "evidence 11",
+        "asra phase 9 - final integration & research story",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "nfm",
+        "research",
+        "phase",
+        "final",
+        "integration",
+        "story"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-11-b1",
+      "text": "Nine-phase stack complete: Experience → Observation → Navigation → Causality → Goals → Planning → Robustness → Decision Biology → Integration",
+      "topics": [
+        "asra phase 9 - final integration & research story",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "nfm",
+        "research"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-11-b2",
+      "text": "Final agent asra-v1.0-phase9: full Phase 1–7 stack + Phase 8 bridge identity + Phase 7 tuned weights",
+      "topics": [
+        "asra phase 9 - final integration & research story",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "nfm",
+        "research"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-11-b3",
+      "text": "Kaggle notebook: https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase9/asra-phase-9-arc-prize-2026.ipynb",
+      "topics": [
+        "asra phase 9 - final integration & research story",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "nfm",
+        "research"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-11-b4",
+      "text": "Research story: https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase9/asra-phase9-final-research-story.md",
+      "topics": [
+        "asra phase 9 - final integration & research story",
+        "asra",
+        "arcprize2026",
+        "arcagi3",
+        "nfm",
+        "research"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-08"
+    },
+    {
+      "id": "claim-auto-evidence-12-p1",
       "text": "I designed, built, and deployed ilakk-manoharan.vercel.app myself—not as a static portfolio, but as a production Next.js app that has to work for two very different audiences. Recruiters need projects, scheduling, and evidence they can skim in a browser. Other AI agents need the same verified facts through an API or MCP. That tension is what pushed me to build Ilak's general-Agent1 on top of the site.",
       "topics": [
-        "evidence 5",
+        "evidence 12",
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
@@ -4104,10 +5596,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-p2",
+      "id": "claim-auto-evidence-12-p2",
       "text": "The core idea is straightforward: every factual answer has to come from content I actually wrote and checked in git—not from model improvisation. I keep projects, hackathons, startups, skills, exceptional-ability evidence, SciLayer manuscripts, recruiter Q&A, and ASRA work in markdown and TypeScript under content/. At build time, a sync step compiles those sources into a claims graph. At runtime, one function—retrieveClaims()—scores a question against that graph and returns matching claims with source URLs. The browser chat, the REST query API, and the MCP server all call that same function. If the match is weak, the agent refuses and points to Contact or Schedule instead of guessing.",
       "topics": [
-        "evidence 5",
+        "evidence 12",
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
@@ -4133,10 +5625,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-p3",
+      "id": "claim-auto-evidence-12-p3",
       "text": "On the product side, I shipped the full recruiter loop: filterable project pages, startup catalog, hackathons, Founder Studio, skills, talks, this evidence page, recruiter chat backed by a fixed markdown brief, message forms, Calendly scheduling, admin dashboards, and invite-gated agent sessions with time budgets. Every agent conversation is logged in Prisma on Turso—invite, session, message, citations—so I can review what was asked and, when appropriate, promote vetted Q&A into the live knowledge graph after admin approval.",
       "topics": [
-        "evidence 5",
+        "evidence 12",
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
@@ -4162,10 +5654,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-p4",
+      "id": "claim-auto-evidence-12-p4",
       "text": "For agent-to-agent use, I published a manifest, a POST query API, and a Streamable HTTP MCP server using the @modelcontextprotocol/sdk. Tools like search_facts, get_project, get_evidence, and get_skills all require a valid invite token—the same policy as the human chat UI. I also added narrative answer composition for ASRA and ARC questions so multi-step research answers read in order instead of as a pile of fragments. Optional OpenAI paraphrase exists, but it only runs after successful retrieval and is off by default.",
       "topics": [
-        "evidence 5",
+        "evidence 12",
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
@@ -4191,10 +5683,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-p5",
+      "id": "claim-auto-evidence-12-p5",
       "text": "I built this with Next.js 16, React 19, TypeScript, Tailwind, Prisma, Turso, Vercel, Resend for email, and the MCP SDK. The point wasn't to bolt a chatbot onto a résumé—it was to own the full stack from content pipeline to session logging to a refusal-first agent other systems can actually interview.",
       "topics": [
-        "evidence 5",
+        "evidence 12",
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
@@ -4220,10 +5712,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-p6",
+      "id": "claim-auto-evidence-12-p6",
       "text": "Why this supports exceptional ability: I shipped a live product where humans and machines read the same verified corpus, with citations and explicit refusal when I'm not confident—full-stack product work at the intersection of distributed systems, content engineering, and agent-native AI design.",
       "topics": [
-        "evidence 5",
+        "evidence 12",
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
         "portfolio",
         "agents",
@@ -4249,7 +5741,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-b1",
+      "id": "claim-auto-evidence-12-b1",
       "text": "Solo-built and deployed the portfolio at ilakk-manoharan.vercel.app from GitHub to Vercel",
       "topics": [
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
@@ -4268,7 +5760,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-b2",
+      "id": "claim-auto-evidence-12-b2",
       "text": "One retrieval brain shared by invite-gated chat, REST query API, and MCP—no separate prompt hacks per surface",
       "topics": [
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
@@ -4287,7 +5779,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-b3",
+      "id": "claim-auto-evidence-12-b3",
       "text": "Git-backed claims graph synced from all site content on every build; admin can promote reviewed conversation answers",
       "topics": [
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
@@ -4306,7 +5798,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-b4",
+      "id": "claim-auto-evidence-12-b4",
       "text": "Session logging end-to-end: invite → session → message with citation JSON stored in Turso",
       "topics": [
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
@@ -4325,7 +5817,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-5-b5",
+      "id": "claim-auto-evidence-12-b5",
       "text": "Stack: Next.js 16, React 19, TypeScript, Prisma, Turso, MCP SDK, Resend",
       "topics": [
         "portfolio platform & ilak's general-agent1 — what i built and how it works",
@@ -4344,10 +5836,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-6-p1",
+      "id": "claim-auto-evidence-13-p1",
       "text": "I have filed a U.S. patent application for Smart Restaurant Powered by Cloud-Native IoT AIOS (Publication No. US 2024/0273653 A1, published August 15, 2024). The application describes a fully automated AI-driven smart restaurant ecosystem integrating cloud-native IoT infrastructure, intelligent kitchen orchestration, contactless food preparation, automated ordering and vending, inventory optimization, and real-time operational analytics.",
       "topics": [
-        "evidence 6",
+        "evidence 13",
         "patent, federal r&d proposals, issrdc, and shipped products",
         "patent,",
         "federal",
@@ -4366,10 +5858,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-6-p2",
+      "id": "claim-auto-evidence-13-p2",
       "text": "In addition, I developed multiple advanced scientific and engineering research proposals submitted to NASA SBIR, NSF SBIR/STTR, and ISS National Lab programs (2023–2024), covering areas such as quantum dots, spin qubits, spintronics, Physics-Informed Neural Networks (PINNs), computational fluid dynamics, quantum material synthesis, microgravity manufacturing, and AI-driven scientific modeling for aerospace and biomedical applications.",
       "topics": [
-        "evidence 6",
+        "evidence 13",
         "patent, federal r&d proposals, issrdc, and shipped products",
         "patent,",
         "federal",
@@ -4388,7 +5880,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-6-b1",
+      "id": "claim-auto-evidence-13-b1",
       "text": "Quantum Dot Spin Qubits for Quantum Computing — ISSRDC 2023, Innovation Solutions Technical Session (Aug 2, 2023)",
       "topics": [
         "patent, federal r&d proposals, issrdc, and shipped products"
@@ -4401,7 +5893,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-6-b2",
+      "id": "claim-auto-evidence-13-b2",
       "text": "Exploring Alternative Materials and Methods for Synthesizing Quantum Dots — ISSRDC 2023 (Aug 3, 2023)",
       "topics": [
         "patent, federal r&d proposals, issrdc, and shipped products"
@@ -4414,10 +5906,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-7-p1",
+      "id": "claim-auto-evidence-14-p1",
       "text": "Demonstrated strong execution ability and work ethic by independently conceptualizing, architecting, designing, and implementing full-stack software products end-to-end across mobile, backend, infrastructure, and product layers. Recent examples include a magazine-style publishing platform and a productivity application for organizing and retrieving information using intelligent tagging workflows.",
       "topics": [
-        "evidence 7",
+        "evidence 14",
         "full-stack product execution — web and app store",
         "full",
         "stack",
@@ -4436,10 +5928,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-7-p2",
+      "id": "claim-auto-evidence-14-p2",
       "text": "Published multiple iOS apps on the App Store under my developer account—including productivity, social, lifestyle, and education titles—alongside shipped web products.",
       "topics": [
-        "evidence 7",
+        "evidence 14",
         "full-stack product execution — web and app store",
         "full",
         "stack",
@@ -4458,7 +5950,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-7-b1",
+      "id": "claim-auto-evidence-14-b1",
       "text": "TagScribe — productivity / smart bookmarking",
       "topics": [
         "full-stack product execution — web and app store"
@@ -4471,7 +5963,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-7-b2",
+      "id": "claim-auto-evidence-14-b2",
       "text": "Socically — social networking",
       "topics": [
         "full-stack product execution — web and app store"
@@ -4484,7 +5976,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-7-b3",
+      "id": "claim-auto-evidence-14-b3",
       "text": "Poll Hippo — lifestyle",
       "topics": [
         "full-stack product execution — web and app store"
@@ -4497,7 +5989,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-7-b4",
+      "id": "claim-auto-evidence-14-b4",
       "text": "nerding app, Sequenched, QuizzlyMath5-WholeNumbers — education",
       "topics": [
         "full-stack product execution — web and app store"
@@ -4510,10 +6002,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-8-p1",
+      "id": "claim-auto-evidence-15-p1",
       "text": "SciLayer is an open scholarly archive I designed and built solo. Researchers sign in with ORCID, submit manuscripts from GitHub, and publish versioned preprints and articles with peer review, author profiles, and public discovery by search and taxonomy.",
       "topics": [
-        "evidence 8",
+        "evidence 15",
         "scilayer — open science archive",
         "openscience",
         "orcid",
@@ -4531,10 +6023,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-8-p2",
+      "id": "claim-auto-evidence-15-p2",
       "text": "It publishes my ASRA research corpus with persistent URLs and open licensing, and it matters as both a shipped product and scholarly infrastructure: Git stays the source of truth for manuscripts while the platform handles identity, validation, routing, and publication in one transparent workflow.",
       "topics": [
-        "evidence 8",
+        "evidence 15",
         "scilayer — open science archive",
         "openscience",
         "orcid",
@@ -4552,10 +6044,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-9-p1",
+      "id": "claim-auto-evidence-16-p1",
       "text": "I built and open-sourced a complete AI agent pipeline for Orbit Wars, a featured Kaggle real-time strategy competition with a $50,000 prize pool: bots send fleets across a continuous 2D solar system to capture orbiting planets, intercept comets, and outproduce opponents over 500 turns—under a strict one-second-per-turn latency budget.",
       "topics": [
-        "evidence 9",
+        "evidence 16",
         "orbit wars — kaggle rts competition agent pipeline",
         "orbitwars",
         "kaggle",
@@ -4576,10 +6068,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-9-p2",
+      "id": "claim-auto-evidence-16-p2",
       "text": "Rather than a single opaque bot, I engineered a four-phase progression—each phase with a design paper, isolated competition-ready code, and a live ladder submission. In one day I went from an empty repo to five validated submissions, including two distinct strategies tracked for the final ranking (only the latest two submissions count).",
       "topics": [
-        "evidence 9",
+        "evidence 16",
         "orbit wars — kaggle rts competition agent pipeline",
         "orbitwars",
         "kaggle",
@@ -4600,10 +6092,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-9-p3",
+      "id": "claim-auto-evidence-16-p3",
       "text": "Phase 0 established the ladder (nearest expansion with garrison floor and sun avoidance, μ = 505.8). Phase 1 added orbit prediction, intercept ETA, and production-weighted heuristics. Phase 2 introduced a six-policy forward simulator with 12-turn rollouts and opponent modeling. Phase 3 added game-phase awareness, FFA meta-strategy, comet windows, and an aggressive variant—classical interpretable game AI, not opaque ML, because the time budget demands it.",
       "topics": [
-        "evidence 9",
+        "evidence 16",
         "orbit wars — kaggle rts competition agent pipeline",
         "orbitwars",
         "kaggle",
@@ -4624,10 +6116,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-9-p4",
+      "id": "claim-auto-evidence-16-p4",
       "text": "Contribution: End-to-end competition engineering—shared geometry library, automated Kaggle bundling, smoke tests, versioned design papers, and competition-format strategy (conservative when ahead, neutral farming when outgunned, dual final bots hedging the latest-two rule)—fully reproducible in the public repo.",
       "topics": [
-        "evidence 9",
+        "evidence 16",
         "orbit wars — kaggle rts competition agent pipeline",
         "orbitwars",
         "kaggle",
@@ -4648,10 +6140,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-9-p5",
+      "id": "claim-auto-evidence-16-p5",
       "text": "Why this supports exceptional ability: Demonstrates disciplined systems thinking under hard constraints—geometry, planning, and engineering discipline in a novel RTS domain—with open documentation, measurable ladder progress, and rapid execution from concept to five competition submissions in a single session.",
       "topics": [
-        "evidence 9",
+        "evidence 16",
         "orbit wars — kaggle rts competition agent pipeline",
         "orbitwars",
         "kaggle",
@@ -4672,7 +6164,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-9-b1",
+      "id": "claim-auto-evidence-16-b1",
       "text": "Phased repo: Phase 0 → Phase 1 (geometry) → Phase 2 (simulation) → Phase 3 (competition meta + aggressive variant)",
       "topics": [
         "orbit wars — kaggle rts competition agent pipeline",
@@ -4689,7 +6181,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-9-b2",
+      "id": "claim-auto-evidence-16-b2",
       "text": "Orbit Wars on GitHub: https://github.com/ilakkmanoharan/orbit-wars",
       "topics": [
         "orbit wars — kaggle rts competition agent pipeline",
@@ -4706,7 +6198,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-9-b3",
+      "id": "claim-auto-evidence-16-b3",
       "text": "Phase papers: https://github.com/ilakkmanoharan/orbit-wars/tree/main/phase0 · https://github.com/ilakkmanoharan/orbit-wars/tree/main/phase1 · https://github.com/ilakkmanoharan/orbit-wars/tree/main/phase2 · https://github.com/ilakkmanoharan/orbit-wars/tree/main/phase3",
       "topics": [
         "orbit wars — kaggle rts competition agent pipeline",
@@ -4723,7 +6215,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-9-b4",
+      "id": "claim-auto-evidence-16-b4",
       "text": "Tooling: https://github.com/ilakkmanoharan/orbit-wars/blob/main/scripts/bundle.sh · https://github.com/ilakkmanoharan/orbit-wars/blob/main/tests/runall.py",
       "topics": [
         "orbit wars — kaggle rts competition agent pipeline",
@@ -4740,10 +6232,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-10-p1",
+      "id": "claim-auto-evidence-17-p1",
       "text": "The live portfolio at ilakk-manoharan.vercel.app ships filterable projects, startup catalog, hackathons, Founder Studio, skills, talks, exceptional-ability evidence, recruiter portal, Calendly scheduling, meeting requests, admin dashboard, and analytics—deployed from GitHub to Vercel with Turso (libSQL) for durable serverless writes.",
       "topics": [
-        "evidence 10",
+        "evidence 17",
         "portfolio site — shipped product summary",
         "portfolio",
         "agents",
@@ -4763,10 +6255,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-10-p2",
-      "text": "Evidence 5 walks through the agent architecture in depth—the knowledge graph, retrieval-first policy, REST and MCP surfaces, session logging, and how I promote reviewed conversations. This card summarizes the full product footprint for readers who want the site scope first.",
+      "id": "claim-auto-evidence-17-p2",
+      "text": "Evidence 12 walks through the agent architecture in depth—the knowledge graph, retrieval-first policy, REST and MCP surfaces, session logging, and how I promote reviewed conversations. This card summarizes the full product footprint for readers who want the site scope first.",
       "topics": [
-        "evidence 10",
+        "evidence 17",
         "portfolio site — shipped product summary",
         "portfolio",
         "agents",
@@ -4786,10 +6278,10 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-10-p3",
+      "id": "claim-auto-evidence-17-p3",
       "text": "Why this supports exceptional ability: Demonstrates sustained full-stack product execution—content-as-code, production deploy discipline, and a portfolio that serves both human recruiters and machine clients from one repository.",
       "topics": [
-        "evidence 10",
+        "evidence 17",
         "portfolio site — shipped product summary",
         "portfolio",
         "agents",
@@ -4809,7 +6301,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-10-b1",
+      "id": "claim-auto-evidence-17-b1",
       "text": "Live portfolio: https://ilakk-manoharan.vercel.app · Source: https://github.com/ilakkmanoharan/ilakk-manoharan",
       "topics": [
         "portfolio site — shipped product summary",
@@ -4827,7 +6319,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-10-b2",
+      "id": "claim-auto-evidence-17-b2",
       "text": "Ilak's general-Agent1: https://ilakk-manoharan.vercel.app/agent · Manifest: https://ilakk-manoharan.vercel.app/.well-known/agent.json · MCP: https://ilakk-manoharan.vercel.app/api/mcp",
       "topics": [
         "portfolio site — shipped product summary",
@@ -4845,7 +6337,7 @@
       "lastSynced": "2026-06-08"
     },
     {
-      "id": "claim-auto-evidence-10-b3",
+      "id": "claim-auto-evidence-17-b3",
       "text": "Stack: Next.js 16 · React 19 · TypeScript · Prisma · Turso · @modelcontextprotocol/sdk · Resend",
       "topics": [
         "portfolio site — shipped product summary",
@@ -4854,234 +6346,6 @@
         "mcp",
         "nextjs",
         "fullstack"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-08"
-    },
-    {
-      "id": "claim-auto-evidence-11-p1",
-      "text": "After ASRA Phase 1 (transition-centric experience), Phase 2 (object-centric observation), and Phase 3 (directed exploration and episodic memory), I designed and implemented ASRA Phase 4, the Semantics & Causal Inference Engine: a stack that aggregates action–effect observations into semantic signatures, maintains a causal transition model for predicting next-state features, tracks hypotheses with confirm/refute updates, supports counterfactual queries over alternate actions, and scores epistemic uncertainty per (state, action) pair—then deploys a compact CausalSemanticsEngine alongside Phase 2 object-scene and Phase 3 exploration hints in the ARC Prize 2026 competition agent (asra-v0.6-phase4).",
-      "topics": [
-        "evidence 11",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-08"
-    },
-    {
-      "id": "claim-auto-evidence-11-p2",
-      "text": "Phase 4 answers questions that define scientific and strategic reasoning over interventions: If I take ACTION3 here, what will happen? How confident am I? What would have happened if I had taken ACTION1 instead?",
-      "topics": [
-        "evidence 11",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-08"
-    },
-    {
-      "id": "claim-auto-evidence-11-p3",
-      "text": "I designed Phase 4 theory (intervention–response tuples without oracle action labels; semantic labels from cell diffs and Phase 2 transform histograms; confidence and uncertainty scoring; hypothesis confirm/refute; counterfactual effect lookup; explicit bridge to Decision Biology perturbation–response structure), implemented the causality stack in asra-arc/src/asra/causality/ (ActionEffectSummarizer, CausalTransitionModel, HypothesisTester, CounterfactualSimulator, UncertaintyScorer, SemanticsStore, and CausalExplorationPolicyV3), validated on ARC-AGI-3 transition logs (semantics consistency, effect-prediction MAE vs naive baseline, hypothesis confirm rates), and deployed the Kaggle notebook with isolated venv bootstrap and combined scoring across Phases 1–4.",
-      "topics": [
-        "evidence 11",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-08"
-    },
-    {
-      "id": "claim-auto-evidence-11-p4",
-      "text": "Ilakkuvaselvi Manoharan (2026). [Causal Action Semantics: ASRA Phase 4 — From Observed Effects to Intervention Reasoning](https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4). Article, SciLayer Systems (preprint).",
-      "topics": [
-        "evidence 11",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-08"
-    },
-    {
-      "id": "claim-auto-evidence-11-p5",
-      "text": "Contribution: Extends ASRA from directed exploration to causal semantics—empirical action meaning from observed effects, distributional effect signatures, hypothesis testing and counterfactual lookup, and uncertainty-aware action scoring integrated with Phase 1 transitions, Phase 2 object hints, and Phase 3 exploration memory in the competition agent.",
-      "topics": [
-        "evidence 11",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-08"
-    },
-    {
-      "id": "claim-auto-evidence-11-p6",
-      "text": "Why this supports exceptional ability: Demonstrates sustained original work across four ASRA layers—experience, observation, navigation, and causal semantics—combining theory, measurable evaluation on transition logs, open-source implementation, and competition-scale deployment within a single named architecture program aimed at adaptive scientific reasoning.",
-      "topics": [
-        "evidence 11",
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer",
-        "phase",
-        "arc",
-        "agi",
-        "semantics",
-        "causal",
-        "inference",
-        "engine"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-08"
-    },
-    {
-      "id": "claim-auto-evidence-11-b1",
-      "text": "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → Phase 4 Semantics & Causal Inference Engine → planned goal inference and planning phases",
-      "topics": [
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-08"
-    },
-    {
-      "id": "claim-auto-evidence-11-b2",
-      "text": "Causality library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/causality",
-      "topics": [
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-08"
-    },
-    {
-      "id": "claim-auto-evidence-11-b3",
-      "text": "Agent asra-v0.6-phase4: semantic labels, confidence, uncertainty, and predicted progress wired into combined Phase 1–4 scoring",
-      "topics": [
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer"
-      ],
-      "sources": [
-        "https://ilakk-manoharan.vercel.app/exceptional-ability"
-      ],
-      "origin": "exceptional-ability",
-      "verified": true,
-      "lastSynced": "2026-06-08"
-    },
-    {
-      "id": "claim-auto-evidence-11-b4",
-      "text": "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase4/asra-phase-4-arc-prize-2026.ipynb",
-      "topics": [
-        "asra phase 4 - arc-agi-3: semantics & causal inference engine",
-        "asra",
-        "arcprize2026",
-        "arcagi3",
-        "causality",
-        "scilayer"
       ],
       "sources": [
         "https://ilakk-manoharan.vercel.app/exceptional-ability"

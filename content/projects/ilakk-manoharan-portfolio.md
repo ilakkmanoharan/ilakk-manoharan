@@ -42,4 +42,4 @@ Generic LLM chat on a portfolio **hallucinates** salary, visa status, and unrele
 
 **Stack:** Next.js 16 App Router, Prisma 7 + Turso on Vercel, `@modelcontextprotocol/sdk`, Resend for meeting-request email, content-as-code under `content/`.
 
-Built for recruiters and **agent-to-agent interviews**—the same grounded truth for humans and machines. Deep architecture write-up: Evidence 5 on [/exceptional-ability](https://ilakk-manoharan.vercel.app/exceptional-ability).
+Built for recruiters and **agent-to-agent interviews**—the same grounded truth for humans and machines. Deep architecture write-up: Evidence 12 on [/exceptional-ability](https://ilakk-manoharan.vercel.app/exceptional-ability).

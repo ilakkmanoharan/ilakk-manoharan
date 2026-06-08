@@ -11,13 +11,13 @@ function withPortfolioLinks(links: { label: string; href: string }[]) {
   return [...links, ...portfolioNavLinks.filter((l) => !seen.has(l.href))];
 }
 
-/** Evidence 10 — Portfolio site summary (see Evidence 5 for agent architecture depth). */
+/** Evidence 17 — Portfolio site summary (see Evidence 12 for agent architecture depth). */
 export const portfolioAgentEvidenceSection: ExceptionalAbilitySection = {
-  number: 10,
+  number: 17,
   title: "Portfolio site — shipped product summary",
   paragraphs: [
     "The live portfolio at ilakk-manoharan.vercel.app ships filterable projects, startup catalog, hackathons, Founder Studio, skills, talks, exceptional-ability evidence, recruiter portal, Calendly scheduling, meeting requests, admin dashboard, and analytics—deployed from GitHub to Vercel with Turso (libSQL) for durable serverless writes.",
-    "Evidence 5 walks through the agent architecture in depth—the knowledge graph, retrieval-first policy, REST and MCP surfaces, session logging, and how I promote reviewed conversations. This card summarizes the full product footprint for readers who want the site scope first.",
+    "Evidence 12 walks through the agent architecture in depth—the knowledge graph, retrieval-first policy, REST and MCP surfaces, session logging, and how I promote reviewed conversations. This card summarizes the full product footprint for readers who want the site scope first.",
     "Why this supports exceptional ability: Demonstrates sustained full-stack product execution—content-as-code, production deploy discipline, and a portfolio that serves both human recruiters and machine clients from one repository.",
   ],
   bullets: [

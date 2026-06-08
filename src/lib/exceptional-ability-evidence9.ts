@@ -11,9 +11,9 @@ function withPortfolioLinks(links: { label: string; href: string }[]) {
   return [...links, ...portfolioNavLinks.filter((l) => !seen.has(l.href))];
 }
 
-/** Evidence 9 — Orbit Wars Kaggle competition agent pipeline. */
+/** Evidence 16 — Orbit Wars Kaggle competition agent pipeline. */
 export const orbitWarsEvidenceSection: ExceptionalAbilitySection = {
-  number: 9,
+  number: 16,
   title: "Orbit Wars — Kaggle RTS competition agent pipeline",
   paragraphs: [
     "I built and open-sourced a complete AI agent pipeline for Orbit Wars, a featured Kaggle real-time strategy competition with a $50,000 prize pool: bots send fleets across a continuous 2D solar system to capture orbiting planets, intercept comets, and outproduce opponents over 500 turns—under a strict one-second-per-turn latency budget.",

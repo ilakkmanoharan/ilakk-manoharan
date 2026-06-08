@@ -2,4 +2,4 @@
 
 Public page: `/exceptional-ability` (content driven by `src/lib/exceptional-ability.ts`).
 
-Edit the private source at `private/etc/exceptional-ability.md`, then sync changes into `src/lib/exceptional-ability.ts` for deploy.
+Edit production modules in `src/lib/exceptional-ability.ts` and `src/lib/exceptional-ability-evidence*.ts`, then sync the private mirror with `private/exceptional-ability/exp-ability-main.md` (generated from production).

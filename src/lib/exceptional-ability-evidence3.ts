@@ -11,9 +11,9 @@ function withPortfolioLinks(links: { label: string; href: string }[]) {
   return [...links, ...portfolioNavLinks.filter((l) => !seen.has(l.href))];
 }
 
-/** Evidence 3 — ASRA Phase 2 Observation Engine (ARC-AGI-3). */
+/** Evidence 4 — ASRA Phase 2 Observation Engine (ARC-AGI-3). */
 export const asraPhase2EvidenceSection: ExceptionalAbilitySection = {
-  number: 3,
+  number: 4,
   title: "ASRA Phase 2 - ARC-AGI-3: Object-Centric Observation Engine",
   paragraphs: [
     "After establishing ASRA Phase 1—reasoning from state transitions when action labels and environment rules are hidden—I designed and implemented ASRA Phase 2, the Observation Engine: a pipeline that converts integer grid observations into objects, regions, typed transformation events, and explicit rule hypotheses, then feeds compact structural hints back into the same interactive agent used for ARC Prize 2026 (ARC-AGI-3).",
@@ -24,7 +24,7 @@ export const asraPhase2EvidenceSection: ExceptionalAbilitySection = {
     "Why this supports exceptional ability: Demonstrates original architecture-level work combining theory, measurable batch science (800-task evaluation), open-source implementation, and competition-scale deployment—extending a named program (ASRA) rather than a disconnected benchmark entry.",
   ],
   bullets: [
-    "Phase 1 Experience Engine → Phase 2 Observation Engine → planned exploration, semantics, and planning phases in the ASRA roadmap",
+    "Phase 1 Experience Engine → Phase 2 Observation Engine → Phases 3–9 (navigation, causality, goals, planning, robustness, Decision Biology, integration)",
     "Perception library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/perception",
     "Batch evaluation: 100% rule-candidate coverage on 800 Original ARC tasks; branched hypotheses when demo operators diverge",
     "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase2/asra-phase-2-arc-prize-2026.ipynb",

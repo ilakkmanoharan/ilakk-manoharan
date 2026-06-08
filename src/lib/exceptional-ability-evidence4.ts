@@ -11,9 +11,9 @@ function withPortfolioLinks(links: { label: string; href: string }[]) {
   return [...links, ...portfolioNavLinks.filter((l) => !seen.has(l.href))];
 }
 
-/** Evidence 4 — ASRA Phase 3 Navigation & Memory Engine (ARC-AGI-3). */
+/** Evidence 5 — ASRA Phase 3 Navigation & Memory Engine (ARC-AGI-3). */
 export const asraPhase3EvidenceSection: ExceptionalAbilitySection = {
-  number: 4,
+  number: 5,
   title: "ASRA Phase 3 - ARC-AGI-3: Navigation & Memory Engine",
   paragraphs: [
     "After ASRA Phase 1 (transition-centric experience under hidden action semantics) and Phase 2 (object-centric observation and rule hypotheses), I designed and implemented ASRA Phase 3, the Navigation & Memory Engine: a stack that turns episodic transitions into exploration graphs, visitation memory, novelty versus usefulness scoring, compositional subgoals, strategy reuse, and transition replay—then deploys compact exploration hints alongside Phase 2 object-scene bias in the ARC Prize 2026 competition agent (asra-v0.5-phase3).",
@@ -24,7 +24,7 @@ export const asraPhase3EvidenceSection: ExceptionalAbilitySection = {
     "Why this supports exceptional ability: Demonstrates sustained original work across three ASRA layers—experience, observation, and navigation—combining theory, multi-environment evaluation infrastructure (MiniGrid, BabyAI, ARC ablations), open-source implementation, and competition-scale deployment within a single named architecture program.",
   ],
   bullets: [
-    "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → planned causality, goals, and planning phases",
+    "Phase 1 Experience Engine → Phase 2 Observation Engine → Phase 3 Navigation & Memory Engine → Phases 4–9 (causality, goals, planning, robustness, Decision Biology, integration)",
     "Exploration library: https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/exploration",
     "Milestones 3A–3D: MiniGrid foundation, useful exploration (DoorKey), BabyAI subgoals, ARC-AGI-3 integration (asra-v0.5-phase3)",
     "Kaggle notebook (ASRA repo): https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase3/asra-phase-3-arc-prize-2026.ipynb",

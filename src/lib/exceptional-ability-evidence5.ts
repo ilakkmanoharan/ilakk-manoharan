@@ -11,10 +11,10 @@ function withPortfolioLinks(links: { label: string; href: string }[]) {
   return [...links, ...portfolioNavLinks.filter((l) => !seen.has(l.href))];
 }
 
-/** Evidence 5 — Portfolio platform & Ilak's general-Agent1 architecture. */
+/** Evidence 12 — Portfolio platform & Ilak's general-Agent1 architecture. */
 export const portfolioAgentArchitectureEvidenceSection: ExceptionalAbilitySection =
   {
-    number: 5,
+    number: 12,
     title:
       "Portfolio platform & Ilak's general-Agent1 — what I built and how it works",
     paragraphs: [

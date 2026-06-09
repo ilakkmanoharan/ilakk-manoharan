@@ -14,12 +14,16 @@ function withPortfolioLinks(links: { label: string; href: string }[]) {
 /** Evidence 2 — ASRA Phase 1 scholarly record on SciLayer. */
 export const scilayerScholarlyEvidenceSection: ExceptionalAbilitySection = {
   number: 2,
-  title: "ASRA Phase 1 - scholarly record on SciLayer — published preprints",
+  title: "Scholarly record on SciLayer — published preprints (NFM & ASRA)",
   paragraphs: [
     "I have developed ASRA (Adaptive Scientific Reasoning Architecture)—a coherent research program that treats scientific and interactive intelligence as reasoning from state transitions under uncertainty, not as execution of predefined policies.",
     "This combination—original theoretical framing, multi-paper development with versioned revisions, open implementations, and infrastructure to disseminate and review the work—demonstrates sustained, high-level contribution at the intersection of AI, scientific reasoning, and systems engineering.",
     "Published scholarly record on [SciLayer](https://sci-layer.vercel.app) and the [Social Science Research Network (SSRN)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6835331) — The following works are sole-authored by me, publicly accessible, CC-BY-4.0 licensed where stated on SciLayer, and cross-linked as a unified program (each later paper cites earlier SciLayer releases). ASRA for Decision Biology is indexed on SSRN (abstract ID 6835331).",
-    "1. Concept Paper — architecture-level synthesis",
+    "Nature Foundation Models — hierarchical framework (program paper)",
+    "Ilakkuvaselvi Manoharan (2026). [Nature Foundation Models: A Hierarchical Framework for Learning Worlds, Embodiment, and Scientific Intelligence](https://sci-layer.vercel.app/articles/nature-foundation-models-hierarchical-framework) (Version 2). Article, SciLayer Systems (preprint).",
+    "Contribution: Defines the Nature Foundation Models research program—NFM-Worlds (world modeling), NFM-Robotics (embodied learning), Atlas, and Atlas-GS (Gaussian Splatting)—unified by the state–action–dynamics abstraction and a seven-stage developmental pipeline from world representation to adaptive scientific reasoning. Positions ASRA and Decision Biology as instantiations of the same interaction loop across grid worlds and biological state spaces.",
+    "Why this supports exceptional ability: Demonstrates original program-level architecture synthesis—connecting scientific intelligence, world models, embodiment, and domain branches in one formal hierarchy rather than disconnected projects.",
+    "1. Concept Paper — architecture-level synthesis (ASRA)",
     "Ilakkuvaselvi Manoharan (2026). [Architectures for Adaptive Scientific Reasoning Under Uncertainty](https://sci-layer.vercel.app/articles/architectures-adaptive-scientific-reasoning-under-uncertainty). Concept Paper, SciLayer Systems (preprint).",
     "Contribution: A long-form conceptual review arguing that scientific intelligence requires architectures that distinguish observation from intervention, update beliefs from transitions, and select experiments under uncertainty. Integrates Dreamer/MuZero-style world models, Pearlian causality, free-energy/active inference, information-theoretic experiment value, and modern perturbation atlases (LINCS, scPerturb, Human Cell Atlas) into a unified design vocabulary for adaptive scientific reasoning systems. Identifies open problems: scalable causal representation learning, calibrated uncertainty in high-dimensional biology, interpretable abstraction, and benchmarks that bridge interactive games and real experimentation.",
     "Why this supports exceptional ability: Demonstrates original scholarly authorship at synthesis level—a field-spanning framework that other ASRA papers implement and extend.",
@@ -48,6 +52,10 @@ export const scilayerScholarlyEvidenceSection: ExceptionalAbilitySection = {
     { label: "SciLayer", href: "https://sci-layer.vercel.app" },
     { label: "SciLayer on GitHub", href: "https://github.com/ilakkmanoharan/SciLayer" },
     { label: "ASRA on GitHub", href: "https://github.com/ilakkmanoharan/asra" },
+    {
+      label: "Article — Nature Foundation Models (v2)",
+      href: "https://sci-layer.vercel.app/articles/nature-foundation-models-hierarchical-framework",
+    },
     {
       label: "Concept Paper — Architectures for Adaptive Scientific Reasoning Under Uncertainty",
       href: "https://sci-layer.vercel.app/articles/architectures-adaptive-scientific-reasoning-under-uncertainty",
@@ -85,5 +93,5 @@ export const scilayerScholarlyEvidenceSection: ExceptionalAbilitySection = {
       href: "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1/versions",
     },
   ]),
-  hashtags: ["#ASRA", "#scilayer", "#openscience", "#decisionbiology", "#SSRN"],
+  hashtags: ["#NFM", "#ASRA", "#scilayer", "#openscience", "#decisionbiology", "#SSRN"],
 };

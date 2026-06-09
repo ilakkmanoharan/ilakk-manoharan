@@ -1,8 +1,8 @@
 {
-  "version": 27,
-  "lastSynced": "2026-06-08",
+  "version": 28,
+  "lastSynced": "2026-06-09",
   "siteUrl": "https://ilakk-manoharan.vercel.app",
-  "claimCount": 1411,
+  "claimCount": 1415,
   "nodes": [
     {
       "id": "node-recruiter-recruiter-q-a",
@@ -472,7 +472,7 @@
     {
       "id": "node-evidence-2",
       "type": "evidence",
-      "title": "Evidence 2: ASRA Phase 1 - scholarly record on SciLayer — published preprints",
+      "title": "Evidence 2: Scholarly record on SciLayer — published preprints (NFM & ASRA)",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-2-p1",
@@ -496,7 +496,11 @@
         "claim-auto-evidence-2-p19",
         "claim-auto-evidence-2-p20",
         "claim-auto-evidence-2-p21",
-        "claim-auto-evidence-2-p22"
+        "claim-auto-evidence-2-p22",
+        "claim-auto-evidence-2-p23",
+        "claim-auto-evidence-2-p24",
+        "claim-auto-evidence-2-p25",
+        "claim-auto-evidence-2-p26"
       ]
     },
     {

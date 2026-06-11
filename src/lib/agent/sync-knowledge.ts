@@ -6,6 +6,7 @@ import { loadStartupsFromMarkdown } from "../../../prisma/load-startups-from-md"
 import { loadHackathonsFromMarkdown } from "../../../prisma/load-hackathons-from-md";
 import { loadProjectsFromMarkdown } from "../../../prisma/load-projects-from-md";
 import { asraVideos } from "@/lib/asra";
+import { nfmPapers, nfmStackLayers } from "@/lib/nfm";
 import { exceptionalAbilitySections } from "@/lib/exceptional-ability";
 import type { AgentClaim, ClaimsGraph } from "@/lib/agent/types";
 import { loadSciLayerArticlesFromDisk } from "@/lib/agent/scilayer-content";
@@ -507,6 +508,70 @@ export function buildAutoClaims(cwd = process.cwd()): {
       claimIds,
     });
   }
+
+  const nfmPageUrl = `${SITE}/nfm`;
+  for (const layer of nfmStackLayers) {
+    const id = `claim-auto-nfm-layer-${slugify(layer.name)}`;
+    claims.push(
+      makeClaim(
+        id,
+        `${layer.name} (${layer.role}, ${layer.status}): ${layer.description}`,
+        ["Nature Foundation Models", "NFM", layer.name, "world models", "Atlas-GS"],
+        [nfmPageUrl, `${SITE}/startups`, `${SITE}/exceptional-ability`],
+        "page",
+      ),
+    );
+    nodes.push({
+      id: `node-nfm-layer-${slugify(layer.name)}`,
+      type: "page",
+      title: layer.name,
+      url: nfmPageUrl,
+      claimIds: [id],
+    });
+  }
+
+  for (const [i, paper] of nfmPapers.entries()) {
+    const id = `claim-auto-nfm-paper-${i + 1}`;
+    claims.push(
+      makeClaim(
+        id,
+        `${paper.category}: ${paper.title}`,
+        ["Nature Foundation Models", "NFM", "ASRA", "SciLayer", paper.category],
+        [paper.href, nfmPageUrl, `${SITE}/exceptional-ability`],
+        "page",
+      ),
+    );
+    nodes.push({
+      id: `node-nfm-paper-${i + 1}`,
+      type: "scilayer",
+      title: paper.title,
+      url: paper.href,
+      claimIds: [id],
+    });
+  }
+
+  const nfmOverviewId = "claim-auto-nfm-overview";
+  claims.push(
+    makeClaim(
+      nfmOverviewId,
+      "Nature Foundation Models (NFM) is a research program for learning persistent world models, action semantics, causal structure, and mechanisms from interaction—a hierarchy from NFM through NFM-Worlds, NFM-Robotics, Atlas, and Atlas-GS v1, connected to the nine-phase ASRA adaptive scientific reasoning stack and Decision Biology.",
+      ["Nature Foundation Models", "NFM", "Atlas-GS", "ASRA", "scientific AI"],
+      [
+        nfmPageUrl,
+        "https://github.com/ilakkmanoharan/Nature-Foundation-Models",
+        "https://github.com/ilakkmanoharan/asra",
+        "https://sci-layer.vercel.app",
+      ],
+      "page",
+    ),
+  );
+  nodes.push({
+    id: "node-nfm-program",
+    type: "page",
+    title: "Nature Foundation Models",
+    url: nfmPageUrl,
+    claimIds: [nfmOverviewId],
+  });
 
   for (const [i, video] of asraVideos.entries()) {
     const id = `claim-auto-asra-video-${i + 1}`;

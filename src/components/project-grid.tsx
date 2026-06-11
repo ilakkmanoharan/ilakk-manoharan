@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { DisplayProject } from "@/lib/projects-content";
 import { asStringArray } from "@/lib/json";
@@ -125,15 +126,24 @@ export function ProjectGrid({ projects }: { projects: DisplayProject[] }) {
                   </a>
                 ) : null}
                 {p.websiteUrl ? (
-                  <a
-                    href={p.websiteUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1 text-primary hover:underline"
-                  >
-                    <ExternalLink className="size-4" aria-hidden />
-                    Website
-                  </a>
+                  p.websiteUrl.startsWith("/") ? (
+                    <Link
+                      href={p.websiteUrl}
+                      className="inline-flex items-center gap-1 text-primary hover:underline"
+                    >
+                      Program page
+                    </Link>
+                  ) : (
+                    <a
+                      href={p.websiteUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 text-primary hover:underline"
+                    >
+                      <ExternalLink className="size-4" aria-hidden />
+                      Website
+                    </a>
+                  )
                 ) : null}
                 {p.demoVideoUrl ? (
                   <a

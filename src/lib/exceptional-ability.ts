@@ -10,6 +10,7 @@
  * Evidence 12 (Portfolio & general-Agent1): src/lib/exceptional-ability-evidence5.ts
  * Evidence 16 (Orbit Wars): src/lib/exceptional-ability-evidence9.ts
  * Evidence 17 (Portfolio summary): src/lib/exceptional-ability-evidence10.ts
+ * Evidence 18 (NFM & Atlas-GS): src/lib/exceptional-ability-evidence-nfm.ts
  */
 import { scilayerScholarlyEvidenceSection } from "@/lib/exceptional-ability-evidence2";
 import { asraPhase1EvidenceSection } from "@/lib/exceptional-ability-evidence-phase1";
@@ -24,6 +25,7 @@ import { asraPhase9EvidenceSection } from "@/lib/exceptional-ability-evidence-ph
 import { portfolioAgentArchitectureEvidenceSection } from "@/lib/exceptional-ability-evidence5";
 import { orbitWarsEvidenceSection } from "@/lib/exceptional-ability-evidence9";
 import { portfolioAgentEvidenceSection } from "@/lib/exceptional-ability-evidence10";
+import { nfmAtlasGsEvidenceSection } from "@/lib/exceptional-ability-evidence-nfm";
 export type ExceptionalAbilityLink = {
   label: string;
   href: string;
@@ -97,6 +99,10 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
       {
         label: "Decision Biology",
         href: "https://decision-biology.vercel.app",
+      },
+      {
+        label: "Nature Foundation Models (NFM)",
+        href: "/nfm",
       },
       {
         label: "ARC Prize 2026 — ARC-AGI-3",
@@ -211,4 +217,5 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
   },
   orbitWarsEvidenceSection,
   portfolioAgentEvidenceSection,
+  nfmAtlasGsEvidenceSection,
 ];

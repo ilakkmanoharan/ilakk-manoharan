@@ -13,6 +13,7 @@ const DEFAULT_PAGES = [
   "/exceptional-ability",
   "/agent",
   "/asra",
+  "/nfm",
   "/schedule",
   "/contact",
 ];

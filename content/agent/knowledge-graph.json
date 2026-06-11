@@ -1,8 +1,8 @@
 {
-  "version": 28,
-  "lastSynced": "2026-06-09",
+  "version": 29,
+  "lastSynced": "2026-06-11",
   "siteUrl": "https://ilakk-manoharan.vercel.app",
-  "claimCount": 1415,
+  "claimCount": 1450,
   "nodes": [
     {
       "id": "node-recruiter-recruiter-q-a",
@@ -113,6 +113,18 @@
         "claim-auto-project-apparel-online-store-p1",
         "claim-auto-project-apparel-online-store-p2",
         "claim-auto-project-apparel-online-store-p3"
+      ]
+    },
+    {
+      "id": "node-project-atlas-gs",
+      "type": "project",
+      "title": "Nature Foundation Models — Atlas-GS",
+      "url": "https://ilakk-manoharan.vercel.app/projects",
+      "claimIds": [
+        "claim-auto-project-atlas-gs-summary",
+        "claim-auto-project-atlas-gs-p1",
+        "claim-auto-project-atlas-gs-p2",
+        "claim-auto-project-atlas-gs-p3"
       ]
     },
     {
@@ -310,7 +322,8 @@
         "claim-auto-startup-nature-foundation-models-target-users",
         "claim-auto-startup-nature-foundation-models-p1",
         "claim-auto-startup-nature-foundation-models-p2",
-        "claim-auto-startup-nature-foundation-models-p3"
+        "claim-auto-startup-nature-foundation-models-p3",
+        "claim-auto-startup-nature-foundation-models-p4"
       ]
     },
     {
@@ -744,6 +757,23 @@
         "claim-auto-evidence-17-b1",
         "claim-auto-evidence-17-b2",
         "claim-auto-evidence-17-b3"
+      ]
+    },
+    {
+      "id": "node-evidence-18",
+      "type": "evidence",
+      "title": "Evidence 18: Nature Foundation Models — hierarchical program & Atlas-GS v1 implementation",
+      "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
+      "claimIds": [
+        "claim-auto-evidence-18-p1",
+        "claim-auto-evidence-18-p2",
+        "claim-auto-evidence-18-p3",
+        "claim-auto-evidence-18-p4",
+        "claim-auto-evidence-18-p5",
+        "claim-auto-evidence-18-b1",
+        "claim-auto-evidence-18-b2",
+        "claim-auto-evidence-18-b3",
+        "claim-auto-evidence-18-b4"
       ]
     },
     {
@@ -1492,6 +1522,195 @@
         "claim-auto-scilayer-understanding-action-semantics-inference-through-state-transitions-in-asra-p117",
         "claim-auto-scilayer-understanding-action-semantics-inference-through-state-transitions-in-asra-p118",
         "claim-auto-scilayer-understanding-action-semantics-inference-through-state-transitions-in-asra-p119"
+      ]
+    },
+    {
+      "id": "node-nfm-layer-nature-foundation-models-nfm",
+      "type": "page",
+      "title": "Nature Foundation Models (NFM)",
+      "url": "https://ilakk-manoharan.vercel.app/nfm",
+      "claimIds": [
+        "claim-auto-nfm-layer-nature-foundation-models-nfm"
+      ]
+    },
+    {
+      "id": "node-nfm-layer-nfm-worlds",
+      "type": "page",
+      "title": "NFM-Worlds",
+      "url": "https://ilakk-manoharan.vercel.app/nfm",
+      "claimIds": [
+        "claim-auto-nfm-layer-nfm-worlds"
+      ]
+    },
+    {
+      "id": "node-nfm-layer-nfm-robotics",
+      "type": "page",
+      "title": "NFM-Robotics",
+      "url": "https://ilakk-manoharan.vercel.app/nfm",
+      "claimIds": [
+        "claim-auto-nfm-layer-nfm-robotics"
+      ]
+    },
+    {
+      "id": "node-nfm-layer-atlas",
+      "type": "page",
+      "title": "Atlas",
+      "url": "https://ilakk-manoharan.vercel.app/nfm",
+      "claimIds": [
+        "claim-auto-nfm-layer-atlas"
+      ]
+    },
+    {
+      "id": "node-nfm-layer-atlas-gs",
+      "type": "page",
+      "title": "Atlas-GS",
+      "url": "https://ilakk-manoharan.vercel.app/nfm",
+      "claimIds": [
+        "claim-auto-nfm-layer-atlas-gs"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-1",
+      "type": "scilayer",
+      "title": "Nature Foundation Models: A Hierarchical Framework for Learning Worlds, Embodiment, and Scientific Intelligence",
+      "url": "https://sci-layer.vercel.app/articles/nature-foundation-models-hierarchical-framework",
+      "claimIds": [
+        "claim-auto-nfm-paper-1"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-2",
+      "type": "scilayer",
+      "title": "Atlas-GS: An End-to-End Implementation of Gaussian World Modeling for Embodied Robotics",
+      "url": "https://sci-layer.vercel.app/articles/atlas-gs-end-to-end-implementation",
+      "claimIds": [
+        "claim-auto-nfm-paper-2"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-3",
+      "type": "scilayer",
+      "title": "Architectures for Adaptive Scientific Reasoning Under Uncertainty",
+      "url": "https://sci-layer.vercel.app/articles/architectures-adaptive-scientific-reasoning-under-uncertainty",
+      "claimIds": [
+        "claim-auto-nfm-paper-3"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-4",
+      "type": "scilayer",
+      "title": "Understanding Action Semantics Inference Through State Transitions in ASRA",
+      "url": "https://sci-layer.vercel.app/articles/understanding-action-semantics-inference-through-state-transitions-in-asra",
+      "claimIds": [
+        "claim-auto-nfm-paper-4"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-5",
+      "type": "scilayer",
+      "title": "ASRA for Decision Biology",
+      "url": "https://sci-layer.vercel.app/articles/asra-for-decision-biology",
+      "claimIds": [
+        "claim-auto-nfm-paper-5"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-6",
+      "type": "scilayer",
+      "title": "Transition-Centric Adaptive Reasoning: ASRA Phase 1",
+      "url": "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1",
+      "claimIds": [
+        "claim-auto-nfm-paper-6"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-7",
+      "type": "scilayer",
+      "title": "Object-Centric Adaptive Reasoning: ASRA Phase 2",
+      "url": "https://sci-layer.vercel.app/articles/object-centric-adaptive-reasoning-asra-phase-2",
+      "claimIds": [
+        "claim-auto-nfm-paper-7"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-8",
+      "type": "scilayer",
+      "title": "Directed Exploration and Episodic Memory: ASRA Phase 3",
+      "url": "https://sci-layer.vercel.app/articles/directed-exploration-episodic-memory-asra-phase-3",
+      "claimIds": [
+        "claim-auto-nfm-paper-8"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-9",
+      "type": "scilayer",
+      "title": "ASRA Phase 3 — Exploration, Memory & Navigation (Technical Specification)",
+      "url": "https://sci-layer.vercel.app/articles/asra-phase-3-exploration-memory-navigation-spec",
+      "claimIds": [
+        "claim-auto-nfm-paper-9"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-10",
+      "type": "scilayer",
+      "title": "Causal Action Semantics: ASRA Phase 4",
+      "url": "https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4",
+      "claimIds": [
+        "claim-auto-nfm-paper-10"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-11",
+      "type": "scilayer",
+      "title": "Goal Inference and Hypothesis Ranking: ASRA Phase 5",
+      "url": "https://sci-layer.vercel.app/articles/goal-inference-hypothesis-ranking-asra-phase-5",
+      "claimIds": [
+        "claim-auto-nfm-paper-11"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-12",
+      "type": "scilayer",
+      "title": "Planning and Strategy Invention: ASRA Phase 6",
+      "url": "https://sci-layer.vercel.app/articles/planning-strategy-invention-asra-phase-6",
+      "claimIds": [
+        "claim-auto-nfm-paper-12"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-13",
+      "type": "scilayer",
+      "title": "Robustness and Generalization: ASRA Phase 7",
+      "url": "https://sci-layer.vercel.app/articles/robustness-generalization-asra-phase-7",
+      "claimIds": [
+        "claim-auto-nfm-paper-13"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-14",
+      "type": "scilayer",
+      "title": "Decision Biology Bridge: ASRA Phase 8",
+      "url": "https://sci-layer.vercel.app/articles/decision-biology-bridge-asra-phase-8",
+      "claimIds": [
+        "claim-auto-nfm-paper-14"
+      ]
+    },
+    {
+      "id": "node-nfm-paper-15",
+      "type": "scilayer",
+      "title": "Final Submission Research Story: ASRA Phase 9",
+      "url": "https://sci-layer.vercel.app/articles/final-submission-research-story-asra-phase-9",
+      "claimIds": [
+        "claim-auto-nfm-paper-15"
+      ]
+    },
+    {
+      "id": "node-nfm-program",
+      "type": "page",
+      "title": "Nature Foundation Models",
+      "url": "https://ilakk-manoharan.vercel.app/nfm",
+      "claimIds": [
+        "claim-auto-nfm-overview"
       ]
     },
     {

@@ -22,7 +22,7 @@ export type DisplayProject = {
 
 export function loadProjectsForPage(cwd = process.cwd()): DisplayProject[] {
   const now = new Date();
-  return loadProjectsFromMarkdown(cwd).map((p) => ({
+  const rows = loadProjectsFromMarkdown(cwd).map((p) => ({
     id: p.slug,
     slug: p.slug,
     title: p.title,
@@ -40,4 +40,7 @@ export function loadProjectsForPage(cwd = process.cwd()): DisplayProject[] {
     createdAt: now,
     updatedAt: now,
   }));
+  return rows.sort(
+    (a, b) => Number(b.featured) - Number(a.featured) || a.title.localeCompare(b.title),
+  );
 }

@@ -54,10 +54,9 @@ export function loadStartupsFromMarkdown(cwd: string): StartupSeed[] {
     return [];
   }
 
-  return fs
+  const startups = fs
     .readdirSync(dir)
     .filter((f) => f.endsWith(".md"))
-    .sort()
     .map((file) => {
       const full = path.join(dir, file);
       const raw = fs.readFileSync(full, "utf8").trimStart();
@@ -90,6 +89,11 @@ export function loadStartupsFromMarkdown(cwd: string): StartupSeed[] {
           DEFAULT_PITCH_DECK_BY_SLUG[slug] ??
           null,
         body,
+        sortOrder: Number.parseInt(fm.sortOrder ?? "999", 10) || 999,
       };
     });
+
+  return startups
+    .sort((a, b) => a.sortOrder - b.sortOrder || a.name.localeCompare(b.name))
+    .map(({ sortOrder: _sortOrder, ...startup }) => startup);
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { StartupInterestDialog } from "@/components/startup-interest-dialog";
 import { ViewTracker } from "@/components/view-tracker";
 import {
@@ -63,15 +64,24 @@ export default async function StartupsPage() {
                 <p className="text-muted-foreground">{s.description}</p>
                 <div className="flex flex-wrap gap-3">
                   {s.websiteUrl ? (
-                    <a
-                      href={s.websiteUrl}
-                      className="inline-flex items-center gap-1 text-primary hover:underline"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <ExternalLink className="size-4" aria-hidden />
-                      Website
-                    </a>
+                    s.websiteUrl.startsWith("/") ? (
+                      <Link
+                        href={s.websiteUrl}
+                        className="inline-flex items-center gap-1 text-primary hover:underline"
+                      >
+                        Program page
+                      </Link>
+                    ) : (
+                      <a
+                        href={s.websiteUrl}
+                        className="inline-flex items-center gap-1 text-primary hover:underline"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <ExternalLink className="size-4" aria-hidden />
+                        Website
+                      </a>
+                    )
                   ) : null}
                   {s.githubUrl ? (
                     <a

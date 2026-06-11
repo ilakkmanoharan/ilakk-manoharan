@@ -63,6 +63,12 @@ export default function AsraPage() {
             Kaggle ARC Prize 2026 (ARC-AGI-3)
           </a>
           <Link
+            href="/nfm"
+            className="inline-flex items-center gap-1 text-primary hover:underline"
+          >
+            Nature Foundation Models
+          </Link>
+          <Link
             href="/hackathons"
             className="inline-flex items-center gap-1 text-primary hover:underline"
           >

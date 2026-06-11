@@ -1,5 +1,10 @@
 import { loadClaimsGraph } from "@/lib/agent/knowledge";
 import type { RetrievedClaim } from "@/lib/agent/types";
+import {
+  getProjectsForSkillQuery,
+  isSkillQuestion,
+  resolveSkillFromQuery,
+} from "@/lib/project-skills-index";
 
 const SKIP_LINE_PATTERNS = [
   /^Why this supports exceptional ability:/i,
@@ -145,8 +150,54 @@ function composeGenericNarrative(matches: RetrievedClaim[]): string {
   return filtered.slice(0, 5).map((m) => m.text).join("\n\n");
 }
 
+function composeSkillNarrative(question: string, matches: RetrievedClaim[]): string {
+  const group = getProjectsForSkillQuery(question);
+  const skill = resolveSkillFromQuery(question);
+  const skillClaims = matches.filter(
+    (m) =>
+      m.id.startsWith("claim-auto-skill-has-") ||
+      m.id.startsWith("claim-auto-skill-projects-"),
+  );
+
+  if (group && group.projects.length > 0) {
+    const years =
+      group.yearsExperience != null
+        ? ` Ilak lists ${group.yearsExperience}+ years of ${group.skillLabel} experience on the skills page.`
+        : "";
+    const projectList = group.projects
+      .map(
+        (p) =>
+          `• ${p.title} (${p.status}) — ${p.evidence.slice(0, 2).join("; ")}`,
+      )
+      .join("\n");
+
+    const askingProjects =
+      /\bprojects?\b.*\b(with|involving|using|for)\b/i.test(question) ||
+      /\b(which|what|list|pull|show)\b.*\bprojects?\b/i.test(question);
+
+    if (askingProjects) {
+      return `Projects involving ${group.skillLabel}:\n\n${projectList}\n\nFull skill ↔ project index: https://ilakk-manoharan.vercel.app/skills/projects#${group.skillId}`;
+    }
+
+    return `Yes — Ilak has ${group.skillLabel} skill.${years}\n\nDemonstrated in:\n${projectList}\n\nMore detail: https://ilakk-manoharan.vercel.app/skills/projects#${group.skillId}`;
+  }
+
+  if (skillClaims.length > 0) {
+    return skillClaims.map((m) => m.text).join("\n\n");
+  }
+
+  if (skill) {
+    return `I don't have a mapped project for "${skill.label}" in the verified index yet. See https://ilakk-manoharan.vercel.app/skills/projects for the full skill map, or https://ilakk-manoharan.vercel.app/skills for experience pages.`;
+  }
+
+  return composeGenericNarrative(matches);
+}
+
 export function composeAnswer(question: string, matches: RetrievedClaim[]): string {
   if (matches.length === 0) return "";
+  if (isSkillQuestion(question)) {
+    return composeSkillNarrative(question, matches);
+  }
   if (isArcAsraQuestion(question, matches)) {
     return composeArcNarrative(matches);
   }
@@ -155,6 +206,7 @@ export function composeAnswer(question: string, matches: RetrievedClaim[]): stri
 
 export function retrievalLimitForQuestion(question: string, defaultLimit = 5) {
   const q = question.toLowerCase();
+  if (isSkillQuestion(question) || resolveSkillFromQuery(question)) return 8;
   if (/\b(arc|asra|agi-3|arc-agi|experience)\b/.test(q)) return 12;
   if (/\b(orbit\s*wars|orbit-wars|kaggle\s*rts)\b/.test(q)) return 10;
   if (/\b(nfm|nature foundation|atlas-gs)\b/.test(q)) return 10;

@@ -13,13 +13,13 @@ type Message = {
 };
 
 const WELCOME =
-  "Hi — I'm Ilak's general-Agent1. I answer from a verified knowledge graph (projects, ASRA, NFM, Orbit Wars, SciLayer papers, skills) using TF-IDF vector retrieval — no guessing.\n\nWhat would you like to know about Ilak's work, research, or how to get in touch?";
+  "Hi — I'm Ilak's general-Agent1. What would you like to know about Ilak's work, research, or how to get in touch?";
 
 const SUGGESTIONS = [
+  "Does Ilak have Python experience?",
+  "Projects involving machine learning",
   "What is Orbit Wars Phase 4?",
-  "Tell me about Nature Foundation Models",
-  "What is ASRA?",
-  "What projects has Ilak shipped?",
+  "Does Ilak know backend engineering?",
   "How do I schedule a meeting?",
 ];
 

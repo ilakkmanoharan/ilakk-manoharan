@@ -11,6 +11,7 @@ import {
   tfidfScoreClaim,
   tokenizeForVectors,
 } from "@/lib/agent/tfidf-retrieval";
+import { resolveSkillFromQuery } from "@/lib/project-skills-index";
 import { prisma } from "@/lib/prisma";
 
 const STOPWORDS = new Set([
@@ -167,11 +168,27 @@ export async function retrieveClaims(
   const graph = loadClaimsGraph();
   const approved = await loadApprovedConversationClaims();
   const allClaims = [...graph.claims, ...approved];
+  const skill = resolveSkillFromQuery(question);
+  const skillBoost = skill?.id ?? null;
+
   const scored: RetrievedClaim[] = allClaims
-    .map((claim) => ({
-      ...claim,
-      score: scoreClaim(claim, lexicalWords.length ? lexicalWords : words, allClaims),
-    }))
+    .map((claim) => {
+      let score = scoreClaim(
+        claim,
+        lexicalWords.length ? lexicalWords : words,
+        allClaims,
+      );
+      if (
+        skillBoost &&
+        (claim.id.includes(`skill-has-${skillBoost}`) ||
+          claim.id.includes(`skill-projects-${skillBoost}`) ||
+          claim.id.includes(`skill-edge-${skillBoost}`) ||
+          claim.topics.some((t) => t.includes(skillBoost.replace(/-/g, " "))))
+      ) {
+        score += 12;
+      }
+      return { ...claim, score };
+    })
     .filter((c) => c.score >= AGENT_MIN_MATCH_SCORE)
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);

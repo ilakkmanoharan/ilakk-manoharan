@@ -17,6 +17,7 @@ import {
   resolveAsraMarketingDir,
 } from "@/lib/agent/asra-marketing-sync";
 import { buildProjectRepoClaims } from "@/lib/agent/project-repos-sync";
+import { buildProjectSkillsClaims } from "@/lib/agent/project-skills-sync";
 
 const SITE = "https://ilakk-manoharan.vercel.app";
 
@@ -620,6 +621,10 @@ export function buildAutoClaims(cwd = process.cwd()): {
   const projectRepos = buildProjectRepoClaims(cwd);
   claims.push(...projectRepos.claims);
   nodes.push(...projectRepos.nodes);
+
+  const projectSkills = buildProjectSkillsClaims(cwd);
+  claims.push(...projectSkills.claims);
+  nodes.push(...projectSkills.nodes);
 
   return { claims, nodes };
 }

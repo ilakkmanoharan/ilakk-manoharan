@@ -58,7 +58,11 @@ export default async function SkillsPage() {
         </h1>
         <p className="mt-3 max-w-2xl text-muted-foreground">
           Click a skill to see the detail page with years of experience, tools,
-          representative work, and links.
+          representative work, and links.{" "}
+          <Link href="/skills/projects" className="text-primary hover:underline">
+            Projects by skill
+          </Link>{" "}
+          maps every portfolio project to the skills it demonstrates.
         </p>
         <div className="mt-10 space-y-12">
           {categories.map((cat) => (

@@ -8,6 +8,7 @@ const DEFAULT_PAGES = [
   "/hackathons",
   "/founder-studio",
   "/skills",
+  "/skills/projects",
   "/talks",
   "/recruiter",
   "/exceptional-ability",

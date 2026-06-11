@@ -1,14 +1,24 @@
 {
-  "syncedAt": "2026-06-06T20:32:11.189Z",
+  "syncedAt": "2026-06-11T14:42:51.910Z",
   "source": "https://github.com/ilakkmanoharan/SciLayer/tree/main/content",
-  "articleCount": 8,
+  "articleCount": 18,
   "slugs": [
     "architectures-adaptive-scientific-reasoning-under-uncertainty",
     "asra-for-decision-biology",
     "asra-phase-3-exploration-memory-navigation-spec",
+    "asra-vs-buchanan-mathematical-theory-of-memory",
+    "atlas-gs-end-to-end-implementation",
     "causal-action-semantics-asra-phase-4",
+    "decision-biology-bridge-asra-phase-8",
     "directed-exploration-episodic-memory-asra-phase-3",
+    "final-submission-research-story-asra-phase-9",
+    "from-databricks-meets-pytorch-to-keras-ai-platform-evolution",
+    "goal-inference-hypothesis-ranking-asra-phase-5",
+    "nature-foundation-models-hierarchical-framework",
     "object-centric-adaptive-reasoning-asra-phase-2",
+    "orbit-wars-nfm-asra-atlas-phase-4",
+    "planning-strategy-invention-asra-phase-6",
+    "robustness-generalization-asra-phase-7",
     "transition-centric-adaptive-reasoning-asra-phase-1",
     "understanding-action-semantics-inference-through-state-transitions-in-asra"
   ]

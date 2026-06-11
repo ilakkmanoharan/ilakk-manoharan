@@ -1,0 +1,71 @@
+{
+  "slug": "final-submission-research-story-asra-phase-9",
+  "title": "Final Submission and Research Story: ASRA Phase 9 — Integrating Adaptive Scientific Reasoning",
+  "abstract": "Phase 9 integrates Phases 1–8 into asra-v1.0-phase9: the final ARC Prize 2026 competition agent, unified architecture narrative, evaluation report framing, and Decision Biology extension section. The article presents integration theory and communication deliverables; a companion Kaggle notebook submits the v1.0 agent.",
+  "articleType": "Article",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra",
+  "repositoryLinks": [
+    {
+      "label": "ASRA Phase 9 — ARC Prize 2026 (Kaggle kernel)",
+      "href": "https://www.kaggle.com/code/ilakkmanoharan/asra-phase-9-arc-prize-2026"
+    },
+    {
+      "label": "ASRA Phase 9 — ARC Prize 2026 (ASRA repo notebook)",
+      "href": "https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase9/asra-phase-9-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "ASRA Phase 9 notebook (SciLayer archive)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra-phase-9-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "ASRA Phase 8 preprint (Decision Biology Bridge)",
+      "href": "https://sci-layer.vercel.app/articles/decision-biology-bridge-asra-phase-8"
+    },
+    {
+      "label": "ASRA Phase 7 preprint (Robustness & Generalization)",
+      "href": "https://sci-layer.vercel.app/articles/robustness-generalization-asra-phase-7"
+    },
+    {
+      "label": "ASRA Phase 6 preprint (Planning & Strategy)",
+      "href": "https://sci-layer.vercel.app/articles/planning-strategy-invention-asra-phase-6"
+    },
+    {
+      "label": "AI platform evolution white paper (ASRA case study)",
+      "href": "https://sci-layer.vercel.app/articles/from-databricks-meets-pytorch-to-keras-ai-platform-evolution"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-11-15",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "ASRA",
+    "Phase 9",
+    "integration",
+    "ARC Prize 2026",
+    "final submission",
+    "research story",
+    "evaluation report",
+    "Decision Biology"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-11-15",
+      "summary": "Initial SciLayer preprint: Phase 9 integration and final submission with Kaggle notebook link."
+    }
+  ]
+}

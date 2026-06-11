@@ -16,6 +16,7 @@
 import path from "node:path";
 import fs from "node:fs";
 import { fetchAndCacheSciLayerArticles, loadSciLayerArticlesFromDisk } from "../src/lib/agent/scilayer-content";
+import { buildProjectRepoClaims } from "../src/lib/agent/project-repos-sync";
 import { syncKnowledgeGraph } from "../src/lib/agent/sync-knowledge";
 import { exceptionalAbilitySections } from "../src/lib/exceptional-ability";
 import { loadFounderStudioFromMarkdown } from "../prisma/load-founder-studio-from-md";
@@ -29,9 +30,13 @@ const args = process.argv.slice(2);
 async function main() {
   const cwd = process.cwd();
 
-  if (args.includes("--fetch-scilayer")) {
+  const fetchSciLayer =
+    args.includes("--fetch-scilayer") || process.env.SYNC_FETCH_SCILAYER === "1";
+  if (fetchSciLayer) {
     const articles = await fetchAndCacheSciLayerArticles(cwd);
-    console.log(`SciLayer: cached ${articles.length} articles → content/scilayer/articles/`);
+    console.log(
+      `SciLayer: cached ${articles.length} Ilak-authored articles → content/scilayer/articles/`,
+    );
   }
 
   const projects = loadProjectsFromMarkdown(cwd).length;
@@ -41,6 +46,7 @@ async function main() {
   const hackathons = loadHackathonsFromMarkdown(cwd).length;
   const evidence = exceptionalAbilitySections.length;
   const scilayer = loadSciLayerArticlesFromDisk(cwd).length;
+  const projectRepos = buildProjectRepoClaims(cwd);
   const asraMarketingDir = process.env.ASRA_MARKETING_DIR?.trim()
     ? path.resolve(process.env.ASRA_MARKETING_DIR)
     : path.join(cwd, "content", "marketing", "asra");
@@ -75,7 +81,10 @@ async function main() {
   console.log(`  skills (markdown): ${skills}`);
   console.log(`  hackathons (markdown): ${hackathons}`);
   console.log(`  exceptional-ability sections: ${evidence}`);
-  console.log(`  scilayer articles (local): ${scilayer}`);
+  console.log(`  scilayer articles (local, Ilak-authored): ${scilayer}`);
+  console.log(
+    `  project repos (local): ${projectRepos.indexed.length} indexed (${projectRepos.indexed.map((p) => p.slug).join(", ") || "none"})`,
+  );
   console.log(`  asra marketing (mirror): ${asraMarketingFiles} markdown file(s)`);
   console.log(
     `Knowledge graph: ${graph.claims.length} claims (${autoCount} auto, ${promotedCount} promoted, ${manifest.nodes.length} nodes)`,

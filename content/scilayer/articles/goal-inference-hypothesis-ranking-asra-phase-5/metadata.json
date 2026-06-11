@@ -1,0 +1,77 @@
+{
+  "slug": "goal-inference-hypothesis-ranking-asra-phase-5",
+  "title": "Goal Inference and Hypothesis Ranking: ASRA Phase 5 — From Interventions to Scientific Objectives",
+  "abstract": "Phase 5 adds the Goal Inference and Hypothesis Engine: win-condition templates, progress detection, object roles, hypothesis ranking, and discriminating experiment planning—building on Phases 1–4. The article presents theory and architecture; a companion Kaggle notebook deploys GoalHypothesisEngine hints for ARC Prize 2026.",
+  "articleType": "Article",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra",
+  "repositoryLinks": [
+    {
+      "label": "ASRA Phase 5 — ARC Prize 2026 (companion notebook, ASRA repo)",
+      "href": "https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase5/asra-phase-5-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "ASRA Phase 5 notebook (SciLayer archive)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra-phase-5-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "Phase 5 goals implementation (asra-arc)",
+      "href": "https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/goals"
+    },
+    {
+      "label": "ASRA Phase 6 preprint (Planning & Strategy)",
+      "href": "https://sci-layer.vercel.app/articles/planning-strategy-invention-asra-phase-6"
+    },
+    {
+      "label": "ASRA Phase 4 preprint (Causal Semantics)",
+      "href": "https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4"
+    },
+    {
+      "label": "ASRA Phase 3 preprint (Navigation & Memory)",
+      "href": "https://sci-layer.vercel.app/articles/directed-exploration-episodic-memory-asra-phase-3"
+    },
+    {
+      "label": "ASRA Phase 2 preprint (Observation Engine)",
+      "href": "https://sci-layer.vercel.app/articles/object-centric-adaptive-reasoning-asra-phase-2"
+    },
+    {
+      "label": "ASRA Phase 1 preprint (Experience Engine)",
+      "href": "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-08-01",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "ASRA",
+    "Phase 5",
+    "goal inference",
+    "hypothesis ranking",
+    "win conditions",
+    "experiment design",
+    "object roles",
+    "progress detection",
+    "ARC",
+    "Decision Biology"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-08-01",
+      "summary": "Initial SciLayer preprint: Goal Inference and Hypothesis Engine with Phase 5 Kaggle notebook link."
+    }
+  ]
+}

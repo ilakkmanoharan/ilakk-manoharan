@@ -1,0 +1,72 @@
+{
+  "slug": "decision-biology-bridge-asra-phase-8",
+  "title": "Decision Biology Bridge: ASRA Phase 8 — From Grid Worlds to Perturbation–Response Reasoning",
+  "abstract": "Phase 8 extends ASRA's transition-centric cognitive stack from grid worlds to perturbation–response biology: cell-state hashing, perturbation semantics, pathway hypotheses, and a biological transition graph on LINCS, OmniPath, scPerturb, and HCA context. The article presents theory and architecture; a companion Kaggle notebook deploys the asra-v0.9-phase8 bridge agent for ARC Prize 2026.",
+  "articleType": "Article",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra",
+  "repositoryLinks": [
+    {
+      "label": "ASRA Phase 8 — ARC Prize 2026 (Kaggle kernel)",
+      "href": "https://www.kaggle.com/code/ilakkmanoharan/asra-phase-8-arc-prize-2026"
+    },
+    {
+      "label": "ASRA Phase 8 — ARC Prize 2026 (ASRA repo notebook)",
+      "href": "https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase8/asra-phase-8-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "ASRA Phase 8 notebook (SciLayer archive)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra-phase-8-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "Phase 8 decision_biology implementation (asra-arc)",
+      "href": "https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/decision_biology"
+    },
+    {
+      "label": "ASRA for Decision Biology (related preprint)",
+      "href": "https://sci-layer.vercel.app/articles/asra-for-decision-biology"
+    },
+    {
+      "label": "ASRA Phase 7 preprint (Robustness & Generalization)",
+      "href": "https://sci-layer.vercel.app/articles/robustness-generalization-asra-phase-7"
+    },
+    {
+      "label": "ASRA Phase 6 preprint (Planning & Strategy)",
+      "href": "https://sci-layer.vercel.app/articles/planning-strategy-invention-asra-phase-6"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-10-15",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "ASRA",
+    "Phase 8",
+    "Decision Biology",
+    "LINCS",
+    "OmniPath",
+    "perturbation",
+    "pathway hypothesis",
+    "transition graph",
+    "ARC"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-10-15",
+      "summary": "Initial SciLayer preprint: Decision Biology Bridge with Phase 8 Kaggle notebook link."
+    }
+  ]
+}

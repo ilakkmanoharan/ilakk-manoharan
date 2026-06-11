@@ -1,0 +1,41 @@
+{
+  "slug": "nature-foundation-models-hierarchical-framework",
+  "title": "Nature Foundation Models: A Hierarchical Framework for Learning Worlds, Embodiment, and Scientific Intelligence",
+  "abstract": "We propose Nature Foundation Models (NFM), a research program for systems that learn representations, dynamics, causal structure, and mechanisms directly from interaction with the natural world. NFM organizes scientific intelligence as a hierarchy—NFM-Worlds, NFM-Robotics, Atlas, and Atlas-GS—with a shared state–action–dynamics abstraction and a seven-stage developmental pipeline from world representation to adaptive scientific reasoning. The central thesis is that scientific reasoning should emerge from increasingly sophisticated interactions with learned world models rather than from an independent symbolic module.",
+  "articleType": "Concept Paper",
+  "version": 2,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/SciLayer",
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-06-08",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "nature foundation models",
+    "world models",
+    "embodied AI",
+    "scientific reasoning",
+    "causal discovery",
+    "NFM-Robotics",
+    "Atlas-GS",
+    "Gaussian splatting"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 2,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v2",
+      "createdAt": "2026-06-08",
+      "summary": "NFM hierarchical framework v2 — worlds, embodiment, developmental pipeline, Atlas-GS."
+    }
+  ]
+}

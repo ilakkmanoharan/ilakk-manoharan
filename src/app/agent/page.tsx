@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AgentPublicChat } from "@/components/agent-public-chat";
 import { agentConfig } from "@/lib/agent/config";
 import { buildAgentManifest } from "@/lib/agent/manifest";
 import {
@@ -13,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "General Agent",
   description:
-    "Ilak's general-Agent1 — grounded portfolio representative with citations.",
+    "Ilak's general-Agent1 — grounded portfolio representative with TF-IDF knowledge-graph retrieval and citations.",
 };
 
 export default function AgentPublicPage() {
@@ -27,21 +28,26 @@ export default function AgentPublicPage() {
         Ilak&apos;s general-Agent1
       </h1>
       <p className="mt-3 text-muted-foreground">
-        A retrieval-first agent that answers about Ilak&apos;s work only from
-        verified claims—with citations and no guessing.
+        A retrieval-first agent grounded in Ilak&apos;s verified knowledge graph —
+        projects, ASRA, Nature Foundation Models, Orbit Wars, SciLayer preprints,
+        and skills — with citations and no guessing.
       </p>
+
+      <div className="mt-8">
+        <AgentPublicChat />
+      </div>
 
       <Card className="mt-8">
         <CardHeader>
           <CardTitle className="text-base">Private access</CardTitle>
           <CardDescription>
-            Chat, HTTP API, and MCP require an invite link from Ilak.
+            Extended chat, HTTP API, and MCP require an invite link from Ilak.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3 text-sm text-muted-foreground">
           <p>
             If you received <code>/agent/g/&#123;token&#125;</code>, open that
-            link to start a timed session.
+            link to start a timed session with a longer conversation budget.
           </p>
           <p>
             Machine manifest:{" "}

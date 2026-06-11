@@ -1,0 +1,47 @@
+{
+  "slug": "atlas-gs-end-to-end-implementation",
+  "title": "Atlas-GS: An End-to-End Implementation of Gaussian World Modeling for Embodied Robotics",
+  "abstract": "We present Atlas-GS v1, the first end-to-end implementation of a 3D Gaussian world-modeling pipeline within the Nature Foundation Models (NFM) hierarchy. Atlas-GS ingests RGB-D observations, constructs a persistent Gaussian field, localizes against that map, persists world state across sessions, and logs state–action–state transitions. The system implements Phases 0–6 as a modular Python package with CLI tools and demo video generation—without requiring GPU hardware for v1 validation. We report empirical results on TUM RGB-D (4,018 Gaussians, 0.0102 m localization RMSE) and synthetic sequences.",
+  "articleType": "Implementation Paper",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/SciLayer",
+  "repositoryLinks": [
+    {
+      "label": "NFM · Atlas-GS implementation",
+      "href": "https://github.com/ilakkmanoharan/Nature-Foundation-Models/tree/main/NFM-Robotics/Atlas/Atlas-GS"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-06-10",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "Atlas-GS",
+    "3D Gaussian splatting",
+    "world models",
+    "embodied AI",
+    "RGB-D mapping",
+    "scene memory",
+    "nature foundation models",
+    "robotics"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-06-10",
+      "summary": "Atlas-GS v1 implementation paper — Phases 0–6, TUM RGB-D evaluation, world bundle format."
+    }
+  ]
+}

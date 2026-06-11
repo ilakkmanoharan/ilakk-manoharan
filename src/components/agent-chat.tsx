@@ -35,7 +35,13 @@ export function AgentChat({
     initialSeconds ?? null,
   );
   const [question, setQuestion] = useState("");
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      role: "agent",
+      content:
+        "Welcome — I'm Ilak's general-Agent1. I answer from verified claims in the knowledge graph with citations. What would you like to know about Ilak's work, research, or scheduling?",
+    },
+  ]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const turnStarted = useRef<number | null>(null);
@@ -151,11 +157,6 @@ export function AgentChat({
       ) : null}
 
       <div className="max-h-96 space-y-3 overflow-y-auto rounded-lg border border-border bg-muted/20 p-3">
-        {messages.length === 0 ? (
-          <p className="text-sm text-muted-foreground">
-            Ask about roles, projects, ASRA, SciLayer, skills, or scheduling.
-          </p>
-        ) : null}
         {messages.map((m, i) => (
           <div
             key={`${m.role}-${i}`}

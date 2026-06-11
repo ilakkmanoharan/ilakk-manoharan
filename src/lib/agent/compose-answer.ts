@@ -156,5 +156,7 @@ export function composeAnswer(question: string, matches: RetrievedClaim[]): stri
 export function retrievalLimitForQuestion(question: string, defaultLimit = 5) {
   const q = question.toLowerCase();
   if (/\b(arc|asra|agi-3|arc-agi|experience)\b/.test(q)) return 12;
+  if (/\b(orbit\s*wars|orbit-wars|kaggle\s*rts)\b/.test(q)) return 10;
+  if (/\b(nfm|nature foundation|atlas-gs)\b/.test(q)) return 10;
   return defaultLimit;
 }

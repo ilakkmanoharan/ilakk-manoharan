@@ -1,0 +1,74 @@
+{
+  "slug": "asra-vs-buchanan-mathematical-theory-of-memory",
+  "title": "ASRA vs Buchanan–Ma: A Mathematical Theory of Memory",
+  "abstract": "Comparative analysis of Buchanan, Pai, Wang, and Ma's representation-learning textbook (arXiv:2606.06624) and the Adaptive Scientific Reasoning Architecture (ASRA). Buchanan–Ma formalizes compressive memory and white-box deep representations; ASRA formalizes intervention loops, causal semantics, goal hypotheses, and experiment design. The programs are complementary: memory theory vs scientific reasoning under uncertainty.",
+  "articleType": "Concept Paper",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra",
+  "repositoryLinks": [
+    {
+      "label": "Buchanan et al. — arXiv:2606.06624 (source PDF)",
+      "href": "https://arxiv.org/pdf/2606.06624"
+    },
+    {
+      "label": "ASRA concept review (SciLayer)",
+      "href": "https://sci-layer.vercel.app/articles/architectures-adaptive-scientific-reasoning-under-uncertainty"
+    },
+    {
+      "label": "ASRA Phase 1 preprint (Experience Engine)",
+      "href": "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1"
+    },
+    {
+      "label": "ASRA Phase 4 preprint (Causal Semantics)",
+      "href": "https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4"
+    },
+    {
+      "label": "ASRA Phase 5 preprint (Goal Inference)",
+      "href": "https://sci-layer.vercel.app/articles/goal-inference-hypothesis-ranking-asra-phase-5"
+    },
+    {
+      "label": "ASRA Phase 8 preprint (Decision Biology Bridge)",
+      "href": "https://sci-layer.vercel.app/articles/decision-biology-bridge-asra-phase-8"
+    },
+    {
+      "label": "ASRA research bundles (content/asra)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/tree/main/content/asra"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-06-08",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "ASRA",
+    "representation learning",
+    "mathematical theory of memory",
+    "world models",
+    "compression",
+    "causal inference",
+    "scientific intelligence",
+    "Buchanan",
+    "Yi Ma",
+    "cybernetics",
+    "Decision Biology"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-06-08",
+      "summary": "Initial SciLayer preprint: ASRA vs Buchanan–Ma memory theory comparison (bullet-format)."
+    }
+  ]
+}

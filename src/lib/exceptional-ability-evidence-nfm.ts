@@ -11,9 +11,9 @@ function withPortfolioLinks(links: { label: string; href: string }[]) {
   return [...links, ...portfolioNavLinks.filter((l) => !seen.has(l.href))];
 }
 
-/** Evidence 18 — Nature Foundation Models program & Atlas-GS v1. */
+/** Evidence 19 — Nature Foundation Models program & Atlas-GS v1. */
 export const nfmAtlasGsEvidenceSection: ExceptionalAbilitySection = {
-  number: 18,
+  number: 19,
   title:
     "Nature Foundation Models — hierarchical program & Atlas-GS v1 implementation",
   paragraphs: [

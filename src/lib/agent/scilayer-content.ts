@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { isIlakSciLayerAuthor } from "@/lib/agent/scilayer-authors";
 
 export type SciLayerArticle = {
   slug: string;
@@ -39,7 +40,10 @@ function readLocalArticle(slug: string, cwd: string): SciLayerArticle | null {
     keywords?: string[];
     manuscriptFile?: string;
     githubUrl?: string;
+    authors?: { name?: string; orcid?: string }[];
   };
+
+  if (!isIlakSciLayerAuthor(meta.authors)) return null;
 
   const manuscriptFile =
     meta.manuscriptFile ??
@@ -107,7 +111,10 @@ export async function fetchAndCacheSciLayerArticles(cwd = process.cwd()) {
       keywords?: string[];
       manuscriptFile?: string;
       githubUrl?: string;
+      authors?: { name?: string; orcid?: string }[];
     };
+
+    if (!isIlakSciLayerAuthor(meta.authors)) continue;
 
     const listRes = await fetch(
       `https://api.github.com/repos/ilakkmanoharan/SciLayer/contents/content/articles/${slug}?ref=main`,

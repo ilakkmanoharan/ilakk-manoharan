@@ -1,0 +1,83 @@
+{
+  "slug": "from-databricks-meets-pytorch-to-keras-ai-platform-evolution",
+  "title": "From \"Databricks Meets PyTorch\" to \"Databricks Meets Keras\": AI Platform Evolution with ASRA",
+  "abstract": "A practical technical essay on two recurring AI platform patterns—enterprise data infrastructure paired with maximum research flexibility (PyTorch-class) versus the same substrate with radical simplicity (Keras-class)—and how ASRA implements both lanes on the path toward scientific intelligence platforms.",
+  "articleType": "Concept Paper",
+  "version": 2,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra",
+  "repositoryLinks": [
+    {
+      "label": "White paper — Markdown (ASRA repository)",
+      "href": "https://github.com/ilakkmanoharan/asra/blob/main/documents/from_databricks_meets_pytorch_to_keras_whitepaper.md"
+    },
+    {
+      "label": "White paper — PDF (ASRA repository)",
+      "href": "https://github.com/ilakkmanoharan/asra/blob/main/documents/from_databricks_meets_pytorch_to_keras_whitepaper.pdf"
+    },
+    {
+      "label": "ASRA ad poster (PNG)",
+      "href": "https://github.com/ilakkmanoharan/asra/blob/main/documents/poster/asra-scientific-intelligence-poster.png"
+    },
+    {
+      "label": "ASRA repository",
+      "href": "https://github.com/ilakkmanoharan/asra"
+    },
+    {
+      "label": "ASRA for Decision Biology (SciLayer)",
+      "href": "https://sci-layer.vercel.app/articles/asra-for-decision-biology"
+    },
+    {
+      "label": "Architectures for Adaptive Scientific Reasoning (SciLayer)",
+      "href": "https://sci-layer.vercel.app/articles/architectures-adaptive-scientific-reasoning-under-uncertainty"
+    },
+    {
+      "label": "ASRA Phase 1 preprint (Experience Engine)",
+      "href": "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1"
+    },
+    {
+      "label": "ASRA Phase 7 preprint (Robustness)",
+      "href": "https://sci-layer.vercel.app/articles/robustness-generalization-asra-phase-7"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-06-08",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "AI infrastructure",
+    "MLOps",
+    "PyTorch",
+    "Keras",
+    "lakehouse",
+    "scientific AI",
+    "ASRA",
+    "Decision Biology",
+    "platform evolution"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-06-08",
+      "summary": "Initial SciLayer preprint (long-form industry white paper with diagrams)."
+    },
+    {
+      "version": 2,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v2",
+      "createdAt": "2026-06-08",
+      "summary": "Simplified v2.0 technical essay: PyTorch vs Keras platform patterns and ASRA dual-lane case study."
+    }
+  ]
+}

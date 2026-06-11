@@ -1,45 +1,56 @@
 {
   "slug": "transition-centric-adaptive-reasoning-asra-phase-1",
-  "title": "Transition-Centric Adaptive Reasoning: ASRA Phase 1 for Interactive Environments",
-  "abstract": "ASRA Phase 1 is a minimal agent architecture for fluid reasoning in sequential grid worlds where action labels are latent and environment rules are hidden. The agent maintains transition evidence, infers state-conditioned action semantics, and explores under uncertainty. Version 2 extends the baseline with execution-fidelity theory and competition-scale orchestration concepts.",
+  "title": "Transition-Centric Experience: ASRA Phase 1 — From Unknown Actions to Empirical Reasoning",
+  "abstract": "Phase 1 establishes the ASRA Experience Engine: transition logging, hash-stable state IDs, effect-based action semantics inference, uncertainty-directed exploration, dead-end taboo, Swarm orchestration, and competition-grade execution fidelity. The article presents full theory and architecture; a companion Kaggle notebook deploys asra-v0.1-phase1 for ARC Prize 2026.",
   "articleType": "Article",
-  "version": 2,
+  "version": 3,
   "status": "published_preprint",
   "license": "CC-BY-4.0",
   "githubUrl": "https://github.com/ilakkmanoharan/asra",
   "repositoryLinks": [
     {
-      "label": "All Kaggle notebooks (folder)",
-      "href": "https://github.com/ilakkmanoharan/SciLayer/tree/main/content/kaggle-notebooks"
+      "label": "ASRA Phase 1 — ARC Prize 2026 (Kaggle kernel)",
+      "href": "https://www.kaggle.com/code/ilakkmanoharan/asra-phase-1-arc-prize-2026"
     },
     {
-      "label": "ASRA Phase 1 — ARC Prize 2026 (v11.4 reference notebook)",
+      "label": "ASRA Phase 1 — ARC Prize 2026 (ASRA repo notebook)",
+      "href": "https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase1/asra-phase-1-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "ASRA Phase 1 notebook (SciLayer archive)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra-phase-1-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "Phase 1 Experience Engine (asra-arc)",
+      "href": "https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra"
+    },
+    {
+      "label": "ASRA Phase 2 preprint (Observation Engine)",
+      "href": "https://sci-layer.vercel.app/articles/object-centric-adaptive-reasoning-asra-phase-2"
+    },
+    {
+      "label": "Legacy v4-fixed notebook (SciLayer archive)",
       "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra-phase-1-arc-prize-2026-v4-fixed.ipynb"
     },
     {
-      "label": "ASRA v0.3 — Kaggle submission notebook",
+      "label": "ASRA v0.3 — early Kaggle submission notebook",
       "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra_v0_3_kaggle_submission.ipynb"
-    },
-    {
-      "label": "ASRA v0.2 — Phase 1 ARC-AGI-3 (Kaggle-ready)",
-      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra_v0_2_phase1_arc_agi3_notebook.ipynb"
-    },
-    {
-      "label": "ASRA v0.1 — Phase 1 ARC-AGI-3 (introductory)",
-      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra_v0_1_phase1_arc_agi3_notebook.ipynb"
     }
   ],
   "journal": "SciLayer Systems",
-  "publishedAt": "2026-06-01",
+  "publishedAt": "2026-06-08",
   "views": 0,
   "downloads": 0,
   "keywords": [
     "ASRA",
-    "adaptive reasoning",
+    "Phase 1",
+    "Experience Engine",
     "transition models",
+    "action semantics",
+    "exploration",
     "ARC",
-    "interactive environments",
-    "action semantics"
+    "execution fidelity",
+    "Decision Biology"
   ],
   "authors": [
     {
@@ -48,7 +59,7 @@
       "affiliation": "Nature Foundation Models"
     }
   ],
-  "manuscriptFile": "manuscript-v2.md",
+  "manuscriptFile": "manuscript-v3.md",
   "versions": [
     {
       "version": 1,
@@ -63,6 +74,13 @@
       "commit": "content-v2",
       "createdAt": "2026-06-01",
       "summary": "Adds execution fidelity, validation vs. scoring, and multi-game orchestration (v2.0)."
+    },
+    {
+      "version": 3,
+      "manuscriptFile": "manuscript-v3.md",
+      "commit": "content-v3",
+      "createdAt": "2026-06-08",
+      "summary": "Phase 1 parity preprint: full Experience Engine theory + canonical asra-phase-1-arc-prize-2026 Kaggle kernel link."
     }
   ]
 }

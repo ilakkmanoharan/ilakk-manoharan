@@ -1,0 +1,65 @@
+{
+  "slug": "orbit-wars-nfm-asra-atlas-phase-4",
+  "title": "Orbit Wars Phase 4: Applying NFM, ASRA, and Atlas-GS to Multi-Agent RTS Competition",
+  "abstract": "We present Orbit Wars Phase 4, an open-source Kaggle agent unifying Nature Foundation Models (state–action–dynamics world modeling), Atlas-GS (2D Gaussian spatial value splat for target prioritization), and ASRA (hypothesis-driven simulation with five strategic theories tested per turn). The agent operates under a one-second decision budget in a continuous 2D RTS with orbiting planets, comets, and multi-agent free-for-all play.",
+  "articleType": "Implementation Paper",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/orbit-wars",
+  "repositoryLinks": [
+    {
+      "label": "Orbit Wars — Phase 4 agent",
+      "href": "https://github.com/ilakkmanoharan/orbit-wars/tree/main/phase4"
+    },
+    {
+      "label": "Orbit Wars — Phase 4 paper (source)",
+      "href": "https://github.com/ilakkmanoharan/orbit-wars/blob/main/phase4/paper.md"
+    },
+    {
+      "label": "Kaggle Orbit Wars competition",
+      "href": "https://www.kaggle.com/competitions/orbit-wars"
+    },
+    {
+      "label": "NFM hierarchical framework (SciLayer)",
+      "href": "https://sci-layer.vercel.app/articles/nature-foundation-models-hierarchical-framework"
+    },
+    {
+      "label": "Atlas-GS implementation (SciLayer)",
+      "href": "https://sci-layer.vercel.app/articles/atlas-gs-end-to-end-implementation"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-06-11",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "Orbit Wars",
+    "Nature Foundation Models",
+    "ASRA",
+    "Atlas-GS",
+    "world models",
+    "game AI",
+    "Kaggle",
+    "multi-agent RTS",
+    "Gaussian value fields",
+    "hypothesis-driven planning"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-06-11",
+      "summary": "Phase 4 implementation paper — NFM world dynamics, Atlas-GS 2D value splat, ASRA hypothesis loop for Orbit Wars Kaggle."
+    }
+  ]
+}

@@ -6,6 +6,11 @@ import {
   loadRecruiterChunks,
 } from "@/lib/agent/knowledge";
 import type { AgentClaim, AgentQueryResult, RetrievedClaim } from "@/lib/agent/types";
+import {
+  invalidateTfidfCache,
+  tfidfScoreClaim,
+  tokenizeForVectors,
+} from "@/lib/agent/tfidf-retrieval";
 import { prisma } from "@/lib/prisma";
 
 const STOPWORDS = new Set([
@@ -109,14 +114,16 @@ function scoreText(text: string, words: string[]) {
 }
 
 function scoreClaim(
-  claim: { text: string; topics: string[] },
+  claim: AgentClaim,
   words: string[],
+  allClaims: AgentClaim[],
 ): number {
   let score = scoreText(claim.text, words);
   for (const topic of claim.topics) {
     score += scoreText(topic, words) * 1.5;
   }
-  return score;
+  const vectorScore = tfidfScoreClaim(claim, words, allClaims) * 8;
+  return score + vectorScore;
 }
 
 async function loadApprovedConversationClaims(): Promise<AgentClaim[]> {
@@ -150,7 +157,9 @@ export async function retrieveClaims(
   limit = 5,
 ): Promise<{ matches: RetrievedClaim[]; refused: boolean }> {
   invalidateClaimsCache();
-  const words = tokenize(question);
+  invalidateTfidfCache();
+  const words = tokenizeForVectors(question);
+  const lexicalWords = tokenize(question);
   if (words.length === 0) {
     return { matches: [], refused: true };
   }
@@ -161,7 +170,7 @@ export async function retrieveClaims(
   const scored: RetrievedClaim[] = allClaims
     .map((claim) => ({
       ...claim,
-      score: scoreClaim(claim, words),
+      score: scoreClaim(claim, lexicalWords.length ? lexicalWords : words, allClaims),
     }))
     .filter((c) => c.score >= AGENT_MIN_MATCH_SCORE)
     .sort((a, b) => b.score - a.score)
@@ -175,7 +184,7 @@ export async function retrieveClaims(
   let bestScore = 0;
   let bestChunk = "";
   for (const chunk of chunks) {
-    const score = scoreText(chunk, words);
+    const score = scoreText(chunk, lexicalWords.length ? lexicalWords : words);
     if (score > bestScore) {
       bestScore = score;
       bestChunk = chunk;

@@ -1,0 +1,85 @@
+{
+  "slug": "planning-strategy-invention-asra-phase-6",
+  "title": "Planning and Strategy Invention: ASRA Phase 6 — From Goals to Action Sequences",
+  "abstract": "Phase 6 adds the Planning & Strategy Invention layer: BFS/A* and MCTS-lite over observed transitions, a strategy library mapping goal templates to operator sequences, meta explore-exploit control, and plan repair—building on Phases 1–5. The article presents theory and architecture; a companion Kaggle notebook deploys PlanningEngine hints for ARC Prize 2026.",
+  "articleType": "Article",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://github.com/ilakkmanoharan/asra",
+  "repositoryLinks": [
+    {
+      "label": "ASRA Phase 6 — ARC Prize 2026 (Kaggle kernel)",
+      "href": "https://www.kaggle.com/code/ilakkmanoharan/asra-phase-6-arc-prize-2026"
+    },
+    {
+      "label": "ASRA Phase 6 — ARC Prize 2026 (ASRA repo notebook)",
+      "href": "https://github.com/ilakkmanoharan/asra/blob/main/kaggle-notebooks/phase6/asra-phase-6-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "ASRA Phase 6 notebook (SciLayer archive)",
+      "href": "https://github.com/ilakkmanoharan/SciLayer/blob/main/content/kaggle-notebooks/asra-phase-6-arc-prize-2026.ipynb"
+    },
+    {
+      "label": "Phase 6 planning implementation (asra-arc)",
+      "href": "https://github.com/ilakkmanoharan/asra/tree/main/asra-arc/src/asra/planning"
+    },
+    {
+      "label": "ASRA Phase 7 preprint (Robustness & Generalization)",
+      "href": "https://sci-layer.vercel.app/articles/robustness-generalization-asra-phase-7"
+    },
+    {
+      "label": "ASRA Phase 5 preprint (Goal Inference)",
+      "href": "https://sci-layer.vercel.app/articles/goal-inference-hypothesis-ranking-asra-phase-5"
+    },
+    {
+      "label": "ASRA Phase 4 preprint (Causal Semantics)",
+      "href": "https://sci-layer.vercel.app/articles/causal-action-semantics-asra-phase-4"
+    },
+    {
+      "label": "ASRA Phase 3 preprint (Navigation & Memory)",
+      "href": "https://sci-layer.vercel.app/articles/directed-exploration-episodic-memory-asra-phase-3"
+    },
+    {
+      "label": "ASRA Phase 2 preprint (Observation Engine)",
+      "href": "https://sci-layer.vercel.app/articles/object-centric-adaptive-reasoning-asra-phase-2"
+    },
+    {
+      "label": "ASRA Phase 1 preprint (Experience Engine)",
+      "href": "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-08-15",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "ASRA",
+    "Phase 6",
+    "planning",
+    "strategy library",
+    "BFS",
+    "MCTS",
+    "meta-controller",
+    "Milestone 2",
+    "ARC",
+    "Decision Biology"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-08-15",
+      "summary": "Initial SciLayer preprint: Planning & Strategy Invention with Phase 6 Kaggle notebook link."
+    }
+  ]
+}

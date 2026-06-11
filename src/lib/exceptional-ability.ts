@@ -9,8 +9,9 @@
  * Evidence 7–11 (ASRA Phases 5–9): src/lib/exceptional-ability-evidence-phase5.ts … phase9.ts
  * Evidence 12 (Portfolio & general-Agent1): src/lib/exceptional-ability-evidence5.ts
  * Evidence 16 (Orbit Wars): src/lib/exceptional-ability-evidence9.ts
- * Evidence 17 (Portfolio summary): src/lib/exceptional-ability-evidence10.ts
- * Evidence 18 (NFM & Atlas-GS): src/lib/exceptional-ability-evidence-nfm.ts
+ * Evidence 17 (Orbit Wars Phase 4): src/lib/exceptional-ability-evidence-orbit-wars-phase4.ts
+ * Evidence 18 (Portfolio summary): src/lib/exceptional-ability-evidence10.ts
+ * Evidence 19 (NFM & Atlas-GS): src/lib/exceptional-ability-evidence-nfm.ts
  */
 import { scilayerScholarlyEvidenceSection } from "@/lib/exceptional-ability-evidence2";
 import { asraPhase1EvidenceSection } from "@/lib/exceptional-ability-evidence-phase1";
@@ -26,6 +27,7 @@ import { portfolioAgentArchitectureEvidenceSection } from "@/lib/exceptional-abi
 import { orbitWarsEvidenceSection } from "@/lib/exceptional-ability-evidence9";
 import { portfolioAgentEvidenceSection } from "@/lib/exceptional-ability-evidence10";
 import { nfmAtlasGsEvidenceSection } from "@/lib/exceptional-ability-evidence-nfm";
+import { orbitWarsPhase4EvidenceSection } from "@/lib/exceptional-ability-evidence-orbit-wars-phase4";
 export type ExceptionalAbilityLink = {
   label: string;
   href: string;
@@ -216,6 +218,7 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
     hashtags: ["#openscience", "#orcid", "#github", "#scilayer"],
   },
   orbitWarsEvidenceSection,
+  orbitWarsPhase4EvidenceSection,
   portfolioAgentEvidenceSection,
   nfmAtlasGsEvidenceSection,
 ];

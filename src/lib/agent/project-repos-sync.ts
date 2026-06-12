@@ -11,6 +11,8 @@ const TEXT_EXTENSIONS = new Set([".md", ".txt", ".markdown"]);
 /** Repos outside PROJECTS_ROOT (sibling to home or custom layout). */
 const KNOWN_REPO_PATHS: Record<string, string[]> = {
   "orbit-wars": ["orbit-wars"],
+  "ARC-NeuroGolf": ["ARC-NeuroGolf"],
+  "ASRA-Security": ["ASRA-Security"],
 };
 
 function slugify(s: string) {

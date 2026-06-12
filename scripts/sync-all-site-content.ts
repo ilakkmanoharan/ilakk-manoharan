@@ -55,6 +55,14 @@ async function main() {
         (f) => typeof f === "string" && f.endsWith(".md"),
       ).length
     : 0;
+  const arcNeurogolfMarketingDir = path.join(cwd, "content", "marketing", "arc-neurogolf");
+  const arcNeurogolfMarketingFiles = fs.existsSync(arcNeurogolfMarketingDir)
+    ? fs.readdirSync(arcNeurogolfMarketingDir).filter((f) => f.endsWith(".md")).length
+    : 0;
+  const asraSecurityMarketingDir = path.join(cwd, "content", "marketing", "asra-security");
+  const asraSecurityMarketingFiles = fs.existsSync(asraSecurityMarketingDir)
+    ? fs.readdirSync(asraSecurityMarketingDir).filter((f) => f.endsWith(".md")).length
+    : 0;
 
   const notebookApplicationsDir = process.env.NOTEBOOK_STARTUP_APPLICATIONS?.trim();
   const notebookAppliedDir = process.env.NOTEBOOK_APPLIED?.trim();
@@ -86,6 +94,8 @@ async function main() {
     `  project repos (local): ${projectRepos.indexed.length} indexed (${projectRepos.indexed.map((p) => p.slug).join(", ") || "none"})`,
   );
   console.log(`  asra marketing (mirror): ${asraMarketingFiles} markdown file(s)`);
+  console.log(`  arc-neurogolf marketing (mirror): ${arcNeurogolfMarketingFiles} markdown file(s)`);
+  console.log(`  asra-security marketing (mirror): ${asraSecurityMarketingFiles} markdown file(s)`);
   console.log(
     `Knowledge graph: ${graph.claims.length} claims (${autoCount} auto, ${promotedCount} promoted, ${manifest.nodes.length} nodes)`,
   );

@@ -13,6 +13,14 @@ import { loadSciLayerArticlesFromDisk } from "@/lib/agent/scilayer-content";
 import { buildLiveSiteClaims } from "@/lib/agent/live-site-sync";
 import { buildNotebookExternalClaims } from "@/lib/agent/startup-applications-sync";
 import {
+  buildAsraSecurityMarketingClaims,
+  resolveAsraSecurityMarketingDir,
+} from "@/lib/agent/asra-security-marketing-sync";
+import {
+  buildArcNeurogolfMarketingClaims,
+  resolveArcNeurogolfMarketingDir,
+} from "@/lib/agent/arc-neurogolf-marketing-sync";
+import {
   buildAsraMarketingClaims,
   resolveAsraMarketingDir,
 } from "@/lib/agent/asra-marketing-sync";
@@ -616,6 +624,20 @@ export function buildAutoClaims(cwd = process.cwd()): {
     const asraMkt = buildAsraMarketingClaims(asraMarketingDir);
     claims.push(...asraMkt.claims);
     nodes.push(...asraMkt.nodes);
+  }
+
+  const arcNeurogolfMarketingDir = resolveArcNeurogolfMarketingDir(cwd);
+  if (arcNeurogolfMarketingDir) {
+    const arcMkt = buildArcNeurogolfMarketingClaims(arcNeurogolfMarketingDir);
+    claims.push(...arcMkt.claims);
+    nodes.push(...arcMkt.nodes);
+  }
+
+  const asraSecurityMarketingDir = resolveAsraSecurityMarketingDir(cwd);
+  if (asraSecurityMarketingDir) {
+    const secMkt = buildAsraSecurityMarketingClaims(asraSecurityMarketingDir);
+    claims.push(...secMkt.claims);
+    nodes.push(...secMkt.nodes);
   }
 
   const projectRepos = buildProjectRepoClaims(cwd);

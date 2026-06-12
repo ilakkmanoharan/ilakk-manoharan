@@ -210,5 +210,7 @@ export function retrievalLimitForQuestion(question: string, defaultLimit = 5) {
   if (/\b(arc|asra|agi-3|arc-agi|experience)\b/.test(q)) return 12;
   if (/\b(orbit\s*wars|orbit-wars|kaggle\s*rts)\b/.test(q)) return 10;
   if (/\b(nfm|nature foundation|atlas-gs)\b/.test(q)) return 10;
+  if (/\b(neurogolf|arc-genome|arc-neurogolf|onnx.*arc)\b/.test(q)) return 10;
+  if (/\b(asra-security|agent security|red team|tool attack)\b/.test(q)) return 10;
   return defaultLimit;
 }

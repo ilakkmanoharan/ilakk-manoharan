@@ -12,6 +12,8 @@
  * Evidence 17 (Orbit Wars Phase 4): src/lib/exceptional-ability-evidence-orbit-wars-phase4.ts
  * Evidence 18 (Portfolio summary): src/lib/exceptional-ability-evidence10.ts
  * Evidence 19 (NFM & Atlas-GS): src/lib/exceptional-ability-evidence-nfm.ts
+ * Evidence 20 (ARC-Genome / NeuroGolf): src/lib/exceptional-ability-evidence-arc-neurogolf.ts
+ * Evidence 21 (ASRA-Security): src/lib/exceptional-ability-evidence-asra-security.ts
  */
 import { scilayerScholarlyEvidenceSection } from "@/lib/exceptional-ability-evidence2";
 import { asraPhase1EvidenceSection } from "@/lib/exceptional-ability-evidence-phase1";
@@ -25,9 +27,11 @@ import { asraPhase8EvidenceSection } from "@/lib/exceptional-ability-evidence-ph
 import { asraPhase9EvidenceSection } from "@/lib/exceptional-ability-evidence-phase9";
 import { portfolioAgentArchitectureEvidenceSection } from "@/lib/exceptional-ability-evidence5";
 import { orbitWarsEvidenceSection } from "@/lib/exceptional-ability-evidence9";
+import { orbitWarsPhase4EvidenceSection } from "@/lib/exceptional-ability-evidence-orbit-wars-phase4";
 import { portfolioAgentEvidenceSection } from "@/lib/exceptional-ability-evidence10";
 import { nfmAtlasGsEvidenceSection } from "@/lib/exceptional-ability-evidence-nfm";
-import { orbitWarsPhase4EvidenceSection } from "@/lib/exceptional-ability-evidence-orbit-wars-phase4";
+import { asraSecurityEvidenceSection } from "@/lib/exceptional-ability-evidence-asra-security";
+import { arcNeurogolfEvidenceSection } from "@/lib/exceptional-ability-evidence-arc-neurogolf";
 export type ExceptionalAbilityLink = {
   label: string;
   href: string;
@@ -221,4 +225,6 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
   orbitWarsPhase4EvidenceSection,
   portfolioAgentEvidenceSection,
   nfmAtlasGsEvidenceSection,
+  arcNeurogolfEvidenceSection,
+  asraSecurityEvidenceSection,
 ];

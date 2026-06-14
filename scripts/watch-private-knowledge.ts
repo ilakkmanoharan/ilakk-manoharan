@@ -1,6 +1,7 @@
 #!/usr/bin/env tsx
 /**
  * Watch private/ content and rebuild the local knowledge graph overlay on change.
+ * Also watches Nature-Foundation-Models/private/ when the local repo is present.
  *
  * Usage:
  *   npm run agent:watch-private
@@ -20,7 +21,7 @@ const DEBOUNCE_MS = 800;
 let timer: ReturnType<typeof setTimeout> | null = null;
 let running = false;
 
-async function runSync(cwd: string, label: string) {
+async function runPrivateOverlaySync(cwd: string, label: string) {
   if (running) {
     console.log(`[skip] sync already running (${label})`);
     return;
@@ -39,10 +40,10 @@ async function runSync(cwd: string, label: string) {
   }
 }
 
-function scheduleSync(cwd: string, label: string) {
+function schedulePrivateSync(cwd: string, label: string) {
   if (timer) clearTimeout(timer);
   timer = setTimeout(() => {
-    void runSync(cwd, label);
+    void runPrivateOverlaySync(cwd, label);
   }, DEBOUNCE_MS);
 }
 
@@ -54,9 +55,11 @@ function watchPath(cwd: string, target: string) {
 
   const stat = fs.statSync(target);
   const label = path.relative(cwd, target);
+  const allowHtml = target.includes("Nature-Foundation-Models");
+  const ok = (ext: string) => TEXT_OK(ext) || (allowHtml && ext === ".html");
 
   if (stat.isFile()) {
-    fs.watch(target, () => scheduleSync(cwd, label));
+    fs.watch(target, () => schedulePrivateSync(cwd, label));
     console.log(`  watching file  ${label}`);
     return;
   }
@@ -64,15 +67,15 @@ function watchPath(cwd: string, target: string) {
   try {
     fs.watch(target, { recursive: true }, (_event, filename) => {
       if (!filename) {
-        scheduleSync(cwd, label);
+        schedulePrivateSync(cwd, label);
         return;
       }
       const ext = path.extname(filename).toLowerCase();
-      if (TEXT_OK(ext)) scheduleSync(cwd, `${label}/${filename}`);
+      if (ok(ext)) schedulePrivateSync(cwd, `${label}/${filename}`);
     });
     console.log(`  watching dir    ${label}/`);
   } catch {
-    fs.watch(target, () => scheduleSync(cwd, label));
+    fs.watch(target, () => schedulePrivateSync(cwd, label));
     console.log(`  watching dir    ${label}/ (non-recursive)`);
   }
 }
@@ -90,7 +93,7 @@ async function main() {
   }
 
   console.log("Initial private overlay sync…");
-  await runSync(cwd, "initial");
+  await runPrivateOverlaySync(cwd, "initial");
 
   console.log("\nWatching private content (Ctrl+C to stop):");
   for (const p of listPrivateWatchPaths(cwd)) {

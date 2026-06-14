@@ -2,6 +2,10 @@ import fs from "node:fs";
 import path from "node:path";
 import type { AgentClaim } from "@/lib/agent/types";
 import type { KnowledgeGraphManifest, KnowledgeNode } from "@/lib/agent/sync-knowledge";
+import {
+  buildNfmPrivateClaimsFromEnv,
+  listNfmPrivateWatchPaths,
+} from "@/lib/agent/nfm-private-sync";
 
 /** Gitignored overlay — local agent corpus only; never deployed to Vercel. */
 export const PRIVATE_CLAIMS_OVERLAY = path.join(
@@ -258,6 +262,14 @@ export function buildPrivateContentClaims(cwd = process.cwd()): {
     }
   }
 
+  const nfmPrivate = buildNfmPrivateClaimsFromEnv(cwd);
+  if (nfmPrivate.indexed.length > 0) {
+    claims.push(...nfmPrivate.claims);
+    nodes.push(...nfmPrivate.nodes);
+    stats.bySource["Nature-Foundation-Models/private"] = nfmPrivate.indexed.length;
+    stats.files += nfmPrivate.indexed.length;
+  }
+
   stats.claims = claims.length;
   stats.nodes = nodes.length;
   return { claims, nodes, stats };
@@ -293,5 +305,8 @@ export function syncPrivateContentOverlay(cwd = process.cwd()) {
 }
 
 export function listPrivateWatchPaths(cwd = process.cwd()) {
-  return PRIVATE_CONTENT_SOURCES.map((s) => path.join(cwd, s.rel));
+  return [
+    ...PRIVATE_CONTENT_SOURCES.map((s) => path.join(cwd, s.rel)),
+    ...listNfmPrivateWatchPaths(cwd),
+  ];
 }

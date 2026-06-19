@@ -1,5 +1,8 @@
 const SCILAYER = "https://sci-layer.vercel.app/articles";
 
+/** Dedicated NFM program site (vision, hierarchy, Atlas-GS, media). */
+export const NFM_PROGRAM_SITE = "https://nature-foundation-models.vercel.app";
+
 export type NfmPaper = {
   title: string;
   href: string;
@@ -152,6 +155,7 @@ export const nfmPapers: NfmPaper[] = [
 ];
 
 export const nfmLinks = {
+  programSite: NFM_PROGRAM_SITE,
   programPage: "/nfm",
   nfmGithub: "https://github.com/ilakkmanoharan/Nature-Foundation-Models",
   asraGithub: "https://github.com/ilakkmanoharan/asra",

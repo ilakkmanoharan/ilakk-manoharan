@@ -30,6 +30,12 @@ export type PrivateContentSource = {
 
 /** Private folders/files indexed into the local knowledge graph overlay. */
 export const PRIVATE_CONTENT_SOURCES: PrivateContentSource[] = [
+  {
+    rel: "private/agent-knowledge/Q-A-bank",
+    kind: "private-qa-bank",
+    label: "Agent Q&A bank",
+    topics: ["qa", "agent", "recruiter", "interview", "investor", "project"],
+  },
   { rel: "private/DMs", kind: "private-dm", label: "DM", topics: ["dm", "outreach", "private"] },
   {
     rel: "private/exceptional-ability",

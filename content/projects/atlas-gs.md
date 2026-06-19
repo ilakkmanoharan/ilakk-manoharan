@@ -6,7 +6,7 @@ role: "Creator — NFM hierarchy design, Atlas-GS Python package and CLI, Gaussi
 status: Active
 featured: true
 githubUrl: "https://github.com/ilakkmanoharan/Nature-Foundation-Models"
-websiteUrl: "/nfm"
+websiteUrl: "https://nature-foundation-models.vercel.app"
 demoVideoUrl: ""
 caseStudyUrl: "https://sci-layer.vercel.app/articles/atlas-gs-end-to-end-implementation"
 filterTags: '["AI / ML","Scientific AI","Open Source","Backend"]'
@@ -17,4 +17,4 @@ techStack: '["Python","3D Gaussian Splatting","RGB-D","ICP Localization","TUM RG
 
 It ingests RGB-D observations, builds persistent Gaussian world models, localizes subsequent frames against the map, persists world bundles across sessions, and logs `(state, action, state)` transitions for downstream learning—validated on TUM RGB-D `fr1_xyz` (4,018 gaussians, **0.0102 m** localization RMSE) without requiring GPU hardware or robot deployment for v1.
 
-The program page at **[/nfm](/nfm)** links the full stack—NFM-Worlds, NFM-Robotics, **ASRA** (nine-phase adaptive scientific reasoning), and all **SciLayer** preprints. Implementation paper: [Atlas-GS on SciLayer](https://sci-layer.vercel.app/articles/atlas-gs-end-to-end-implementation). ASRA code: [github.com/ilakkmanoharan/asra](https://github.com/ilakkmanoharan/asra).
+Program site: [nature-foundation-models.vercel.app](https://nature-foundation-models.vercel.app) (vision, hierarchy, Atlas-GS metrics, pitch decks, posters). Portfolio summary: [/nfm](/nfm). Implementation paper: [Atlas-GS on SciLayer](https://sci-layer.vercel.app/articles/atlas-gs-end-to-end-implementation). ASRA code: [github.com/ilakkmanoharan/asra](https://github.com/ilakkmanoharan/asra).

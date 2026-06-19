@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Evidence of Exceptional Ability",
   description:
-    "Nature Foundation Models (NFM) and Atlas-GS v1, ASRA nine-phase cognitive stack (Phases 1–9), ASRA-Security multi-step agent red-teaming, ARC-Genome / NeuroGolf 2026 neural circuit compiler, Orbit Wars Kaggle competition pipeline (including Phase 4 NFM × ASRA × Atlas-GS), SciLayer preprints, patent, federal R&D proposals, ISSRDC presentations, adaptive scientific reasoning (ARC / Decision Biology), SciLayer platform, and shipped full-stack products.",
+    "Nature Foundation Models (NFM) and Atlas-GS v1, ASRA nine-phase cognitive stack (Phases 1–9), NeuroGolf 2026 remote submission pipeline (GitHub Actions), ASRA-Security multi-step agent red-teaming, ARC-Genome / NeuroGolf neural circuit compiler, Orbit Wars Kaggle competition pipeline (including Phase 4 NFM × ASRA × Atlas-GS), SciLayer preprints, patent, federal R&D proposals, ISSRDC presentations, adaptive scientific reasoning (ARC / Decision Biology), SciLayer platform, and shipped full-stack products.",
 };
 
 function isExternal(href: string) {

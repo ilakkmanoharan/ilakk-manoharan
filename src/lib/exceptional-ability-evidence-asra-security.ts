@@ -11,9 +11,9 @@ function withPortfolioLinks(links: { label: string; href: string }[]) {
   return [...links, ...portfolioNavLinks.filter((l) => !seen.has(l.href))];
 }
 
-/** Evidence 21 — ASRA-Security multi-step agent red-teaming. */
+/** Evidence 22 — ASRA-Security multi-step agent red-teaming. */
 export const asraSecurityEvidenceSection: ExceptionalAbilitySection = {
-  number: 21,
+  number: 22,
   title:
     "ASRA-Security — adaptive search for multi-step tool-using agent failures",
   paragraphs: [

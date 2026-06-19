@@ -52,7 +52,11 @@ export const orbitWarsPhase4EvidenceSection: ExceptionalAbilitySection = {
       label: "Orbit Wars on Kaggle",
       href: "https://www.kaggle.com/competitions/orbit-wars",
     },
-    { label: "Nature Foundation Models (NFM page)", href: "/nfm" },
+    {
+      label: "Nature Foundation Models (program site)",
+      href: "https://nature-foundation-models.vercel.app",
+    },
+    { label: "NFM on portfolio", href: "/nfm" },
     { label: "ASRA page", href: "/asra" },
   ]),
   hashtags: [

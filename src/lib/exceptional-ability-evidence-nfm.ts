@@ -1,4 +1,5 @@
 import type { ExceptionalAbilitySection } from "@/lib/exceptional-ability";
+import { NFM_PROGRAM_SITE } from "@/lib/nfm";
 
 const portfolioNavLinks = [
   { label: "Projects", href: "/projects" },
@@ -27,10 +28,15 @@ export const nfmAtlasGsEvidenceSection: ExceptionalAbilitySection = {
     "NFM stack: program → worlds → robotics → Atlas → Atlas-GS (v1 implemented)",
     "Atlas-GS: mapping, localization, scene memory, transition logging — TUM fr1_xyz 0.0102 m RMSE",
     "Repository: github.com/ilakkmanoharan/Nature-Foundation-Models (NFM-Robotics/Atlas/Atlas-GS)",
-    "Program page with all SciLayer papers: ilakk-manoharan.vercel.app/nfm",
+    `Program site: ${NFM_PROGRAM_SITE.replace("https://", "")}`,
+    "Portfolio summary: ilakk-manoharan.vercel.app/nfm",
   ],
   links: withPortfolioLinks([
-    { label: "Nature Foundation Models (NFM page)", href: "/nfm" },
+    {
+      label: "Nature Foundation Models (program site)",
+      href: NFM_PROGRAM_SITE,
+    },
+    { label: "NFM on portfolio", href: "/nfm" },
     {
       label: "NFM on GitHub",
       href: "https://github.com/ilakkmanoharan/Nature-Foundation-Models",

@@ -1,5 +1,5 @@
 {
-  "version": 39,
+  "version": 40,
   "lastSynced": "2026-06-19",
   "claims": [
     {
@@ -7601,20 +7601,23 @@
     },
     {
       "id": "claim-auto-evidence-21-p1",
-      "text": "For NeuroGolf 2026, each full ARC-Genome submission validates 400 ONNX circuits against ARC-GEN generalization gates and Kaggle’s official cost formula. A complete run takes about 75–90 minutes and peaks at 2–4 GB RAM during ONNX profiling — enough to block a laptop for a full workday if run locally every iteration.",
+      "text": "For NeuroGolf 2026, each ARC-Genome submission validates 400 ONNX circuits against ARC-GEN generalization and Kaggle’s official cost formula. A full solve takes about 75–90 minutes and peaks at 2–4 GB RAM during ONNX profiling — enough to block a laptop for a full work session if run locally every iteration.",
       "topics": [
         "evidence 21",
-        "neurogolf 2026 — remote ml competition pipeline (github actions)",
+        "neurogolf 2026 — remote competition automation (cursor cloud + github actions)",
         "neurogolf",
         "arcgenome",
+        "cursor",
         "githubactions",
         "mlops",
         "kaggle",
         "2026",
         "remote",
         "competition",
-        "pipeline",
-        "(github",
+        "automation",
+        "(cursor",
+        "cloud",
+        "github",
         "actions)"
       ],
       "sources": [
@@ -7626,20 +7629,23 @@
     },
     {
       "id": "claim-auto-evidence-21-p2",
-      "text": "I built a GitHub Actions pipeline that runs the entire workflow on cloud runners: solve, audit, zip, conditional Kaggle submit, log fetch, and a dated submission registry. I design solvers and theory locally; the infrastructure handles reproducible execution, artifact retention, and incremental seeding from prior submissions. That split freed my machine for research while keeping every run auditable.",
+      "text": "I built a closed-loop automation system on Cursor cloud agents — four chained automations that run the full Kaggle cycle without human intervention: solve and conditional submit (~90 min), fetch official grades and per-task logs, analyze results and implement the next solver, and publish a submission report to a gallery. Each step commits to GitHub and triggers the next via guard rules. My laptop can be closed; research judgment stays human, machine execution stays remote.",
       "topics": [
         "evidence 21",
-        "neurogolf 2026 — remote ml competition pipeline (github actions)",
+        "neurogolf 2026 — remote competition automation (cursor cloud + github actions)",
         "neurogolf",
         "arcgenome",
+        "cursor",
         "githubactions",
         "mlops",
         "kaggle",
         "2026",
         "remote",
         "competition",
-        "pipeline",
-        "(github",
+        "automation",
+        "(cursor",
+        "cloud",
+        "github",
         "actions)"
       ],
       "sources": [
@@ -7651,20 +7657,23 @@
     },
     {
       "id": "claim-auto-evidence-21-p3",
-      "text": "The payoff was time and throughput, not automation for its own sake. Zero local RAM for full solves; documented submission progression from 64 to 70 pass_all tasks with estimated scores moving from ~835 toward ~905 (June 2026). I could iterate on algorithm design daily without tying up local compute or risking environment drift between runs.",
+      "text": "GitHub Actions workflows are the backup when a solve exceeds Cursor’s runtime limit — same solve-audit-submit path on a longer-timeout runner. Every run keeps a dated submission folder, registry row, logs, and audit JSON so the loop is reproducible, not a one-off notebook submit.",
       "topics": [
         "evidence 21",
-        "neurogolf 2026 — remote ml competition pipeline (github actions)",
+        "neurogolf 2026 — remote competition automation (cursor cloud + github actions)",
         "neurogolf",
         "arcgenome",
+        "cursor",
         "githubactions",
         "mlops",
         "kaggle",
         "2026",
         "remote",
         "competition",
-        "pipeline",
-        "(github",
+        "automation",
+        "(cursor",
+        "cloud",
+        "github",
         "actions)"
       ],
       "sources": [
@@ -7676,20 +7685,51 @@
     },
     {
       "id": "claim-auto-evidence-21-p4",
-      "text": "Why this supports exceptional ability: Treats a Kaggle competition as version-controlled ML infrastructure — gated deploys, secrets hygiene, cached validation data, and a submission ledger — the same discipline I would apply to production ML delivery, not a one-off notebook submit.",
+      "text": "The payoff was time and throughput. Zero local RAM for full solves; documented progression from 64 to 70 pass_all tasks with Kaggle scores moving from ~835 toward 915 on submission-4 (June 2026). I could iterate on algorithm design daily without tying up local compute or drifting environments between runs.",
       "topics": [
         "evidence 21",
-        "neurogolf 2026 — remote ml competition pipeline (github actions)",
+        "neurogolf 2026 — remote competition automation (cursor cloud + github actions)",
         "neurogolf",
         "arcgenome",
+        "cursor",
         "githubactions",
         "mlops",
         "kaggle",
         "2026",
         "remote",
         "competition",
-        "pipeline",
-        "(github",
+        "automation",
+        "(cursor",
+        "cloud",
+        "github",
+        "actions)"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-evidence-21-p5",
+      "text": "Why this supports exceptional ability: Treats a solo Kaggle competition as version-controlled ML operations — gated submits, secrets hygiene, chained automations, and a submission ledger — the same discipline applied to production ML delivery.",
+      "topics": [
+        "evidence 21",
+        "neurogolf 2026 — remote competition automation (cursor cloud + github actions)",
+        "neurogolf",
+        "arcgenome",
+        "cursor",
+        "githubactions",
+        "mlops",
+        "kaggle",
+        "2026",
+        "remote",
+        "competition",
+        "automation",
+        "(cursor",
+        "cloud",
+        "github",
         "actions)"
       ],
       "sources": [
@@ -7701,11 +7741,12 @@
     },
     {
       "id": "claim-auto-evidence-21-b1",
-      "text": "NeuroGolf 2026: ~75–90 min full pipeline offloaded from local machine",
+      "text": "Four Cursor cloud automations: solve → fetch logs → analyze + implement → publish (loop closes on main)",
       "topics": [
-        "neurogolf 2026 — remote ml competition pipeline (github actions)",
+        "neurogolf 2026 — remote competition automation (cursor cloud + github actions)",
         "neurogolf",
         "arcgenome",
+        "cursor",
         "githubactions",
         "mlops",
         "kaggle"
@@ -7719,11 +7760,12 @@
     },
     {
       "id": "claim-auto-evidence-21-b2",
-      "text": "400 tasks × ARC-GEN gate per run; conditional Kaggle submit on improvement",
+      "text": "~75–90 min full solve offloaded; GHA fallback for long runs",
       "topics": [
-        "neurogolf 2026 — remote ml competition pipeline (github actions)",
+        "neurogolf 2026 — remote competition automation (cursor cloud + github actions)",
         "neurogolf",
         "arcgenome",
+        "cursor",
         "githubactions",
         "mlops",
         "kaggle"
@@ -7737,11 +7779,12 @@
     },
     {
       "id": "claim-auto-evidence-21-b3",
-      "text": "Submission registry + artifacts (logs, audit JSON) for reproducibility",
+      "text": "Conditional Kaggle submit only on passall or score improvement; 400 tasks × ARC-GEN gate",
       "topics": [
-        "neurogolf 2026 — remote ml competition pipeline (github actions)",
+        "neurogolf 2026 — remote competition automation (cursor cloud + github actions)",
         "neurogolf",
         "arcgenome",
+        "cursor",
         "githubactions",
         "mlops",
         "kaggle"
@@ -7755,11 +7798,31 @@
     },
     {
       "id": "claim-auto-evidence-21-b4",
-      "text": "Repository: https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+      "text": "Submission registry + gallery + artifacts (logs, audit JSON) per run",
       "topics": [
-        "neurogolf 2026 — remote ml competition pipeline (github actions)",
+        "neurogolf 2026 — remote competition automation (cursor cloud + github actions)",
         "neurogolf",
         "arcgenome",
+        "cursor",
+        "githubactions",
+        "mlops",
+        "kaggle"
+      ],
+      "sources": [
+        "https://ilakk-manoharan.vercel.app/exceptional-ability"
+      ],
+      "origin": "exceptional-ability",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-evidence-21-b5",
+      "text": "Repository: https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+      "topics": [
+        "neurogolf 2026 — remote competition automation (cursor cloud + github actions)",
+        "neurogolf",
+        "arcgenome",
+        "cursor",
         "githubactions",
         "mlops",
         "kaggle"
@@ -55804,6 +55867,63 @@
       "lastSynced": "2026-06-19"
     },
     {
+      "id": "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-2026-06-18-readme-md-p1",
+      "text": "ARC-Genome (ARC-NeuroGolf) — Kaggle Submissions — 2026-06-18: First submission folder for today. Created by automation loop.",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-2026-06-18-readme-md-p2",
+      "text": "ARC-Genome (ARC-NeuroGolf) — Kaggle Submissions — 2026-06-18: | | Folder | Status | |---|---|---| | 1 | submission-1/ | Pending — Cursor agent PR after submission-4 logs |",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-2026-06-18-readme-md-p3",
+      "text": "ARC-Genome (ARC-NeuroGolf) — Kaggle Submissions — 2026-06-18: GitHub Actions → NeuroGolf loop → phase full: - Grades 2026-06-17/submission-4 - Cursor agent implements submission-1/ here - After PR merge → phase submit-only",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
       "id": "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-readme-md-p1",
       "text": "ARC-Genome (ARC-NeuroGolf) — Kaggle Submissions: Archive and workflow for NeuroGolf 2026 daily submissions.",
       "topics": [
@@ -57972,6 +58092,158 @@
     {
       "id": "claim-auto-project-repo-arc-neurogolf-phases-phase6-paper-md-p12",
       "text": "ARC-Genome (ARC-NeuroGolf) — Phase 6: Generalization Hardening + Cost Audit: Combined with Phases 1–5: 7,000+ Kaggle score (400 tasks × ~17–19 avg).",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p1",
+      "text": "ARC-Genome (ARC-NeuroGolf) — NeuroGolf — Cursor Automations: Four cloud automations run the Kaggle submission loop on Cursor cloud against ilakkmanoharan/ARC-NeuroGolf.",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p2",
+      "text": "ARC-Genome (ARC-NeuroGolf) — NeuroGolf — Cursor Automations: Start here: overview.md — full architecture, trigger chain, and diagrams.",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p3",
+      "text": "ARC-Genome (ARC-NeuroGolf) — NeuroGolf — Cursor Automations: Dashboard: cursor.com/automations Setup walkthrough: cursor-automation-setup.md",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p4",
+      "text": "ARC-Genome (ARC-NeuroGolf) — NeuroGolf — Cursor Automations: | | Cursor name | Doc | |---|---|---| | 1 | NeuroGolf — fetch Kaggle logs | 01-fetch-kaggle-logs.md | | 2 | NeuroGolf — analyze and implement | 02-analyze-and-implement.md | | 3 | NeuroGolf — solve and submit | 03-solve-and-submit.md | | 4 | NeuroGolf — build submission page | 04-build-submission-page.md |",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p5",
+      "text": "ARC-Genome (ARC-NeuroGolf) — NeuroGolf — Cursor Automations: Loop: 3 → 1 → 2 → (3 + 4 in parallel) → repeat",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p6",
+      "text": "ARC-Genome (ARC-NeuroGolf) — NeuroGolf — Cursor Automations: Trigger: All use GitHub push to main; GUARD blocks in each prompt filter which runs do real work.",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p7",
+      "text": "ARC-Genome (ARC-NeuroGolf) — NeuroGolf — Cursor Automations: 1. Automation 1 — push + guard + optional daily schedule 2. Automation 2 — push + guard 3. Automation 3 — push + guard 4. Automation 4 — push + guard 5. Enable all → Run Test 2 once if 1 already committed logs",
+      "topics": [
+        "arc-genome (arc-neurogolf)",
+        "arc-neurogolf",
+        "ai / ml",
+        "open source",
+        "scientific ai",
+        "project repo"
+      ],
+      "sources": [
+        "https://github.com/ilakkmanoharan/ARC-NeuroGolf",
+        "https://ilakk-manoharan.vercel.app/projects"
+      ],
+      "origin": "project",
+      "verified": true,
+      "lastSynced": "2026-06-19"
+    },
+    {
+      "id": "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p8",
+      "text": "ARC-Genome (ARC-NeuroGolf) — NeuroGolf — Cursor Automations: | Secret | Used by | |---|---| | KAGGLEAPITOKEN | 1, 3 | | KAGGLEARCGENDATASET | 3 |",
       "topics": [
         "arc-genome (arc-neurogolf)",
         "arc-neurogolf",

@@ -1,8 +1,8 @@
 {
-  "version": 39,
+  "version": 40,
   "lastSynced": "2026-06-19",
   "siteUrl": "https://ilakk-manoharan.vercel.app",
-  "claimCount": 3537,
+  "claimCount": 3550,
   "nodes": [
     {
       "id": "node-recruiter-recruiter-q-a",
@@ -846,17 +846,19 @@
     {
       "id": "node-evidence-21",
       "type": "evidence",
-      "title": "Evidence 21: NeuroGolf 2026 — remote ML competition pipeline (GitHub Actions)",
+      "title": "Evidence 21: NeuroGolf 2026 — remote competition automation (Cursor cloud + GitHub Actions)",
       "url": "https://ilakk-manoharan.vercel.app/exceptional-ability",
       "claimIds": [
         "claim-auto-evidence-21-p1",
         "claim-auto-evidence-21-p2",
         "claim-auto-evidence-21-p3",
         "claim-auto-evidence-21-p4",
+        "claim-auto-evidence-21-p5",
         "claim-auto-evidence-21-b1",
         "claim-auto-evidence-21-b2",
         "claim-auto-evidence-21-b3",
-        "claim-auto-evidence-21-b4"
+        "claim-auto-evidence-21-b4",
+        "claim-auto-evidence-21-b5"
       ]
     },
     {
@@ -3332,6 +3334,9 @@
         "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-2026-06-17-submission-3-kaggle-logs-readme-md-p2",
         "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-2026-06-17-submission-3-kaggle-logs-readme-md-p3",
         "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-2026-06-17-submission-3-kaggle-logs-readme-md-p4",
+        "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-2026-06-18-readme-md-p1",
+        "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-2026-06-18-readme-md-p2",
+        "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-2026-06-18-readme-md-p3",
         "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-readme-md-p1",
         "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-readme-md-p2",
         "claim-auto-project-repo-arc-neurogolf-kaggle-submissions-readme-md-p3",
@@ -3447,6 +3452,14 @@
         "claim-auto-project-repo-arc-neurogolf-phases-phase6-paper-md-p10",
         "claim-auto-project-repo-arc-neurogolf-phases-phase6-paper-md-p11",
         "claim-auto-project-repo-arc-neurogolf-phases-phase6-paper-md-p12",
+        "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p1",
+        "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p2",
+        "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p3",
+        "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p4",
+        "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p5",
+        "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p6",
+        "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p7",
+        "claim-auto-project-repo-arc-neurogolf-private-automations-readme-md-p8",
         "claim-auto-project-repo-arc-neurogolf-private-paper-md-p1",
         "claim-auto-project-repo-arc-neurogolf-private-paper-md-p2",
         "claim-auto-project-repo-arc-neurogolf-private-paper-md-p3",

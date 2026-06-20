@@ -21,7 +21,7 @@ export type DisplayStartup = {
 
 export function loadStartupsForPage(cwd = process.cwd()): DisplayStartup[] {
   const now = new Date();
-  return loadStartupsFromMarkdown(cwd).map((s) => ({
+  return loadStartupsFromMarkdown(cwd, { publicCatalogOnly: true }).map((s) => ({
     id: s.slug,
     slug: s.slug,
     name: s.name,

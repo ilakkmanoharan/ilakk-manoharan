@@ -96,6 +96,10 @@ export function buildAsraMarketingClaims(marketingDir: string): {
 
   for (const filePath of collectTextFiles(abs)) {
     const rel = path.relative(abs, filePath);
+    const relPosix = rel.replace(/\\/g, "/");
+    if (/^emails\//i.test(relPosix) || relPosix.includes("/emails/")) {
+      continue;
+    }
     const relSlug = slugify(rel.replace(/[/\\]/g, "-").replace(/\.[^.]+$/, ""));
     const raw = fs.readFileSync(filePath, "utf8");
     const claimIds: string[] = [];
@@ -105,11 +109,7 @@ export function buildAsraMarketingClaims(marketingDir: string): {
       titleMatch?.[1]?.trim() ??
       path.basename(filePath, path.extname(filePath)).replace(/-/g, " ");
 
-    const sources = [
-      pageUrl,
-      ASRA_REPO,
-      `asra-marketing://${rel.replace(/\\/g, "/")}`,
-    ];
+    const sources = [pageUrl, ASRA_REPO];
 
     const summaryId = `claim-auto-asra-marketing-${relSlug}-file`;
     claims.push(

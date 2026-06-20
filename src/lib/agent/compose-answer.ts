@@ -1,4 +1,5 @@
 import { loadClaimsGraph } from "@/lib/agent/knowledge";
+import { isNfmQuestion } from "@/lib/agent/query-intent";
 import type { RetrievedClaim } from "@/lib/agent/types";
 import {
   getProjectsForSkillQuery,
@@ -78,6 +79,68 @@ function augmentArcMatches(matches: RetrievedClaim[]): RetrievedClaim[] {
     }
   }
   return [...byId.values()];
+}
+
+const NFM_NARRATIVE_CLAIM_IDS = new Set([
+  "claim-auto-startup-nature-foundation-models-p1",
+  "claim-auto-startup-nature-foundation-models-overview",
+  "claim-auto-startup-nature-foundation-models-p2",
+  "claim-auto-startup-nature-foundation-models-solution",
+  "claim-auto-startup-nature-foundation-models-p3",
+]);
+
+function augmentNfmMatches(matches: RetrievedClaim[]): RetrievedClaim[] {
+  const byId = new Map(matches.map((m) => [m.id, m]));
+  const graph = loadClaimsGraph();
+  for (const c of graph.claims) {
+    if (!NFM_NARRATIVE_CLAIM_IDS.has(c.id)) continue;
+    if (!byId.has(c.id)) {
+      byId.set(c.id, { ...c, score: 1 });
+    }
+  }
+  return [...byId.values()];
+}
+
+function composeNfmNarrative(matches: RetrievedClaim[]): string {
+  const augmented = augmentNfmMatches(matches);
+  const filtered = dedupeClaims(augmented).filter((m) => !shouldSkipClaim(m.text));
+
+  const intro =
+    filtered.find((m) => m.id === "claim-auto-startup-nature-foundation-models-p1") ??
+    filtered.find((m) =>
+      /long-term bet on AI infrastructure for scientific intelligence/i.test(m.text),
+    );
+
+  const overview =
+    filtered.find((m) => m.id === "claim-auto-startup-nature-foundation-models-overview") ??
+    filtered.find((m) =>
+      /Foundation models for natural systems/i.test(m.text),
+    );
+
+  const hierarchy =
+    filtered.find((m) => m.id === "claim-auto-startup-nature-foundation-models-p2");
+
+  const solution =
+    filtered.find((m) => m.id === "claim-auto-startup-nature-foundation-models-solution");
+
+  const wedge =
+    filtered.find((m) => m.id === "claim-auto-startup-nature-foundation-models-p3");
+
+  const parts: string[] = [];
+  if (overview) parts.push(overview.text);
+  else if (intro) parts.push(intro.text);
+  if (hierarchy) parts.push(hierarchy.text);
+  if (solution) parts.push(solution.text);
+  else if (wedge) parts.push(wedge.text);
+
+  if (parts.length === 0) {
+    return composeGenericNarrative(filtered);
+  }
+
+  parts.push(
+    "More: https://ilakk-manoharan.vercel.app/nfm · Program site: https://nature-foundation-models.vercel.app",
+  );
+  return parts.join("\n\n");
 }
 
 function composeArcNarrative(matches: RetrievedClaim[]): string {
@@ -197,6 +260,9 @@ export function composeAnswer(question: string, matches: RetrievedClaim[]): stri
   if (matches.length === 0) return "";
   if (isSkillQuestion(question)) {
     return composeSkillNarrative(question, matches);
+  }
+  if (isNfmQuestion(question)) {
+    return composeNfmNarrative(matches);
   }
   if (isArcAsraQuestion(question, matches)) {
     return composeArcNarrative(matches);

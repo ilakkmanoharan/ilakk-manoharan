@@ -47,7 +47,10 @@ function parseSimpleYaml(block: string): Record<string, string> {
 }
 
 /** Read `content/startups/*.md` relative to `cwd` (use `process.cwd()` from repo root). */
-export function loadStartupsFromMarkdown(cwd: string): StartupSeed[] {
+export function loadStartupsFromMarkdown(
+  cwd: string,
+  options?: { publicCatalogOnly?: boolean },
+): StartupSeed[] {
   const dir = path.join(cwd, "content", "startups");
   if (!fs.existsSync(dir)) {
     console.warn(`No startup markdown dir at ${dir}`);
@@ -89,11 +92,15 @@ export function loadStartupsFromMarkdown(cwd: string): StartupSeed[] {
           DEFAULT_PITCH_DECK_BY_SLUG[slug] ??
           null,
         body,
-        sortOrder: Number.parseInt(fm.sortOrder ?? "999", 10) || 999,
+        sortOrder: (() => {
+          const parsed = Number.parseInt(fm.sortOrder ?? "999", 10);
+          return Number.isNaN(parsed) ? 999 : parsed;
+        })(),
+        visible: fm.visible !== "false",
       };
-    });
+    })
+    .filter((s) => !options?.publicCatalogOnly || s.visible)
+    .sort((a, b) => a.sortOrder - b.sortOrder || a.name.localeCompare(b.name));
 
-  return startups
-    .sort((a, b) => a.sortOrder - b.sortOrder || a.name.localeCompare(b.name))
-    .map(({ sortOrder: _sortOrder, ...startup }) => startup);
+  return startups.map(({ sortOrder: _sortOrder, visible: _visible, ...startup }) => startup);
 }

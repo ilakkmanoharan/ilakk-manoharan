@@ -103,9 +103,6 @@ export function AgentPublicChat() {
           </div>
           <div>
             <p className="font-heading font-semibold">Try the agent</p>
-            <p className="text-xs text-muted-foreground">
-              Public demo · TF-IDF retrieval over {">"}1,400 verified claims
-            </p>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ problem: "AI agents can browse, write code, manage workflows, and operate autono
 solution: "Evolve from human-only web forms to agent-native programmable workflows: companies expose an Agent Application Endpoint (machine-readable requirements, application schema, submit URL, supported credentials); applicant-side agents read requirements programmatically, generate structured applications, upload documents, submit, receive receipts and status, and maintain application state."
 targetUsers: "Employers, startups, accelerators, universities, research labs, fellowships, and grant organizations; plus builders of AI career agents, founder agents, research agents, recruiting agents, workflow assistants, and autonomous opportunity-discovery systems"
 status: "Deck / early concept"
+visible: false
 ---
 
 **AgentApply** is a founder concept for programmable application infrastructure—making jobs, grants, accelerators, and fellowships machine-readable so AI agents can apply with structured packages instead of brittle browser automation.

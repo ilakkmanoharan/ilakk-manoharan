@@ -321,7 +321,28 @@ export function resolveSkillFromQuery(question: string): (typeof SKILL_REGISTRY)
 
 export function isSkillQuestion(question: string): boolean {
   const q = question.toLowerCase();
-  if (resolveSkillFromQuery(question)) return true;
+
+  // Lazy import avoided — duplicate minimal check to keep this module leaf-free.
+  const isDefinition =
+    /\b(what is|what are|what's|explain|tell me about|describe|overview of|define)\b/.test(
+      q,
+    ) &&
+    /\b(nfm|nature foundation models?|asra|atlas-gs|decision biology|orbit wars|arc-genome|neurogolf|scilayer|researchgraph)\b/.test(
+      q,
+    );
+  if (isDefinition) return false;
+
+  const skill = resolveSkillFromQuery(question);
+  if (skill) {
+    const skillIntent =
+      /\b(does|do|can|has|have|know)\b.*\b(ilak|he|she)\b/i.test(q) ||
+      /\b(skill|experience|background)\b/i.test(q) ||
+      /\bprojects?\b.*\b(with|involving|using|for)\b/i.test(q) ||
+      /\b(which|what|list|pull|show)\b.*\bprojects?\b/i.test(q);
+    if (skillIntent) return true;
+    return false;
+  }
+
   return (
     /\b(does|do|can|has|have|know)\b.*\b(ilak|he|she)\b.*\b(skill|experience|background)\b/i.test(
       q,

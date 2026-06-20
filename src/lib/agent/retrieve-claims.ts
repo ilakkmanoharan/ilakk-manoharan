@@ -5,6 +5,11 @@ import {
   loadClaimsGraph,
   loadRecruiterChunks,
 } from "@/lib/agent/knowledge";
+import { isProgramDefinitionQuestion } from "@/lib/agent/query-intent";
+import {
+  claimIsEligibleForRetrieval,
+  filterPublicSources,
+} from "@/lib/agent/source-policy";
 import type { AgentClaim, AgentQueryResult, RetrievedClaim } from "@/lib/agent/types";
 import {
   invalidateTfidfCache,
@@ -167,9 +172,10 @@ export async function retrieveClaims(
 
   const graph = loadClaimsGraph();
   const approved = await loadApprovedConversationClaims();
-  const allClaims = [...graph.claims, ...approved];
+  const allClaims = [...graph.claims, ...approved].filter(claimIsEligibleForRetrieval);
   const skill = resolveSkillFromQuery(question);
-  const skillBoost = skill?.id ?? null;
+  const skillBoost =
+    skill?.id && !isProgramDefinitionQuestion(question) ? skill.id : null;
 
   const scored: RetrievedClaim[] = allClaims
     .map((claim) => {
@@ -247,7 +253,7 @@ export async function buildQueryResultFromClaims(
     };
   }
 
-  const sources = [...new Set(matches.flatMap((m) => m.sources))];
+  const sources = filterPublicSources(matches.flatMap((m) => m.sources));
   const answer = composeAnswer(question, matches);
   const citedMatches = matches.slice(0, 6);
 
@@ -257,7 +263,7 @@ export async function buildQueryResultFromClaims(
     claims: citedMatches.map((m) => ({
       id: m.id,
       text: m.text,
-      sources: m.sources,
+      sources: filterPublicSources(m.sources),
     })),
     sources,
     refused: false,

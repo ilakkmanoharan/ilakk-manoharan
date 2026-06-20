@@ -7,6 +7,7 @@ problem: "Finance is still manual, fragmented, and reactive. Startups rely on mu
 solution: "Finance Autopilot unifies the financial lifecycle: keeps books always up to date, computes taxes in real time, and executes payments and filings automatically—with built-in controls and auditability. From raw transactions to compliant, executed financial outcomes."
 targetUsers: "Startups and solo founders without finance teams; SMBs and digital businesses juggling accounting, payroll, and payments; high-growth companies needing real-time visibility and execution"
 status: "Deck / early concept"
+sortOrder: 1
 ---
 
 **Finance Autopilot** is a founder deck concept for continuous, autonomous financial operations—unifying bookkeeping, tax, payroll, and payments into one always-on system for startups and SMBs.

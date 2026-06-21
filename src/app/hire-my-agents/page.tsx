@@ -74,7 +74,7 @@ export default function HireMyAgentsPage() {
                 Hire AI agents that actually do the work.
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-                Browse a workforce of conversational avatar agents — engineers, assistants,
+                Browse a workforce of intelligent agents — engineers, assistants,
                 recruiters, product managers, researchers, designers, finance agents, social
                 media managers, AI security agents, and red teams — each with memory, tools,
                 workflows, and daily reporting.

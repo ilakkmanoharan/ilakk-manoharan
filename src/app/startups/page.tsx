@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { StartupInterestDialog } from "@/components/startup-interest-dialog";
 import { ViewTracker } from "@/components/view-tracker";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,8 +11,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { loadStartupsForPage } from "@/lib/startups-content";
+import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -62,6 +64,25 @@ export default async function StartupsPage() {
                   <p className="mt-1 text-muted-foreground">{s.targetUsers}</p>
                 </div>
                 <p className="text-muted-foreground">{s.description}</p>
+                {s.slug === "hire-my-agents" ? (
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href="/hire-my-agents#agents"
+                      className={cn(
+                        buttonVariants(),
+                        "bg-[#0f172a] hover:bg-[#1e293b]",
+                      )}
+                    >
+                      Hire agents
+                    </Link>
+                    <Link
+                      href="/hire-my-agents"
+                      className={cn(buttonVariants({ variant: "outline" }))}
+                    >
+                      View landing page
+                    </Link>
+                  </div>
+                ) : null}
                 <div className="flex flex-wrap gap-3">
                   {s.websiteUrl ? (
                     s.websiteUrl.startsWith("/") ? (

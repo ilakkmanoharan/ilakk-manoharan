@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AgentPublicChat } from "@/components/agent-public-chat";
+import { MeetMyAgent } from "@/components/meet-my-agent";
 import { agentConfig } from "@/lib/agent/config";
 import { buildAgentManifest } from "@/lib/agent/manifest";
 import {
@@ -24,7 +25,16 @@ export default function AgentPublicPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 md:px-6">
-      <h1 className="font-heading text-3xl font-semibold">
+      <h2 className="font-heading text-2xl font-semibold">Meet My Agent</h2>
+      <p className="mt-2 text-sm text-muted-foreground">
+        A friendly assistant avatar — ask about Ilak&apos;s current research project.
+      </p>
+
+      <div className="mt-6">
+        <MeetMyAgent />
+      </div>
+
+      <h1 className="mt-12 font-heading text-3xl font-semibold">
         Ilak&apos;s general-Agent1
       </h1>
       <p className="mt-3 text-muted-foreground">

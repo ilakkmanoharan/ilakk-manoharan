@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { isCurrentProjectQuestion } from "@/lib/agent/current-project";
+import {
+  getCurrentWorkAnswer,
+} from "@/lib/agent/current-work";
 import { buildQueryResultFromClaims } from "@/lib/agent/retrieve-claims";
 import { getRequestIp } from "@/lib/request";
 import { clientKey, rateLimit } from "@/lib/rate-limit";
@@ -25,6 +29,18 @@ export async function POST(request: Request) {
   const parsed = schema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
+  }
+
+  if (isCurrentProjectQuestion(parsed.data.question)) {
+    const current = getCurrentWorkAnswer();
+    return NextResponse.json({
+      answer: current.plain,
+      html: current.html,
+      sources: current.sources,
+      refused: false,
+      confidence: 1,
+      retrieval: "current-work-md",
+    });
   }
 
   const result = await buildQueryResultFromClaims(parsed.data.question, null);

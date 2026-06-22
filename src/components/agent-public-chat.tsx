@@ -4,10 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { Bot, Sparkles, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { AgentMessageContent } from "@/components/agent-message-content";
+import { CURRENT_PROJECT_PROMPT } from "@/lib/agent/current-project";
 
 type Message = {
   role: "user" | "agent";
   content: string;
+  html?: string;
   sources?: string[];
   refused?: boolean;
 };
@@ -16,6 +19,7 @@ const WELCOME =
   "Hi — I'm Ilak's general-Agent1. What would you like to know about Ilak's work, research, or how to get in touch?";
 
 const SUGGESTIONS = [
+  CURRENT_PROJECT_PROMPT,
   "Does Ilak have Python experience?",
   "Projects involving machine learning",
   "What is Orbit Wars Phase 4?",
@@ -53,6 +57,7 @@ export function AgentPublicChat() {
       });
       const data = (await res.json()) as {
         answer?: string;
+        html?: string;
         sources?: string[];
         refused?: boolean;
         error?: string;
@@ -75,6 +80,7 @@ export function AgentPublicChat() {
         {
           role: "agent",
           content: data.answer ?? "No answer.",
+          html: data.html,
           sources: data.sources,
           refused: data.refused,
         },
@@ -134,7 +140,7 @@ export function AgentPublicChat() {
                     : "border border-border bg-muted/30"
                 }`}
               >
-                <p className="whitespace-pre-wrap">{m.content}</p>
+                <AgentMessageContent content={m.content} html={m.html} />
                 {m.sources && m.sources.length > 0 ? (
                   <ul className="mt-3 space-y-1 border-t border-border/60 pt-2 text-xs">
                     <li className="font-medium opacity-80">Sources</li>

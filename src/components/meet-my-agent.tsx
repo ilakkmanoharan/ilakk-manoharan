@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { AgentMessageContent } from "@/components/agent-message-content";
 import { CURRENT_PROJECT_PROMPT, isCurrentProjectQuestion } from "@/lib/agent/current-project";
+import { speakAgentText } from "@/lib/agent/speak";
 
 type ChatMessage = {
   role: "agent" | "user";
@@ -34,10 +35,7 @@ export function MeetMyAgent() {
   useEffect(() => {
     if (greeted || typeof window === "undefined" || !window.speechSynthesis) return;
     setGreeted(true);
-    const utterance = new SpeechSynthesisUtterance(GREETING);
-    utterance.rate = 0.95;
-    utterance.pitch = 1.05;
-    window.speechSynthesis.speak(utterance);
+    speakAgentText(GREETING);
   }, [greeted]);
 
   async function submit(question: string) {
@@ -58,7 +56,11 @@ export function MeetMyAgent() {
 
     try {
       const res = await fetch("/api/agent/current-work");
-      const data = (await res.json()) as { plain?: string; html?: string };
+      const data = (await res.json()) as {
+        plain?: string;
+        html?: string;
+        spoken?: string;
+      };
       setMessages((prev) => [
         ...prev,
         {
@@ -67,6 +69,9 @@ export function MeetMyAgent() {
           html: data.html,
         },
       ]);
+      if (data.spoken) {
+        speakAgentText(data.spoken);
+      }
     } catch {
       setMessages((prev) => [
         ...prev,

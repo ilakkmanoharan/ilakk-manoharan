@@ -36,6 +36,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       answer: current.plain,
       html: current.html,
+      spoken: current.spoken,
       sources: current.sources,
       refused: false,
       confidence: 1,

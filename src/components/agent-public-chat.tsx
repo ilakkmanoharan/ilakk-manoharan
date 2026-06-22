@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { AgentMessageContent } from "@/components/agent-message-content";
 import { CURRENT_PROJECT_PROMPT } from "@/lib/agent/current-project";
+import { speakAgentText } from "@/lib/agent/speak";
 
 type Message = {
   role: "user" | "agent";
@@ -58,6 +59,7 @@ export function AgentPublicChat() {
       const data = (await res.json()) as {
         answer?: string;
         html?: string;
+        spoken?: string;
         sources?: string[];
         refused?: boolean;
         error?: string;
@@ -85,6 +87,9 @@ export function AgentPublicChat() {
           refused: data.refused,
         },
       ]);
+      if (data.spoken) {
+        speakAgentText(data.spoken);
+      }
     } catch {
       setMessages((prev) => [
         ...prev,

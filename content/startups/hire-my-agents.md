@@ -9,6 +9,7 @@ solution: "Browse a roster of avatar agents, scope the job in conversation, conn
 targetUsers: "Solo founders, creators, and small teams who want fractional AI staff; companies building agent-native operations with Personal Brain and Company Brain memory layers"
 status: "AI workforce / agent-native company"
 websiteUrl: "/hire-my-agents"
+theoryUrl: "https://sci-layer.vercel.app/articles/agent-context-as-a-data-layer"
 visible: true
 ---
 

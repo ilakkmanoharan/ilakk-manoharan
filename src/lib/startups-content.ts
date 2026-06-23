@@ -15,6 +15,7 @@ export type DisplayStartup = {
   githubUrl: string | null;
   youtubeUrl: string | null;
   pitchDeckUrl: string | null;
+  theoryUrl: string | null;
   createdAt: Date;
   updatedAt: Date;
 };
@@ -35,6 +36,7 @@ export function loadStartupsForPage(cwd = process.cwd()): DisplayStartup[] {
     githubUrl: s.githubUrl,
     youtubeUrl: s.youtubeUrl,
     pitchDeckUrl: s.pitchDeckUrl,
+    theoryUrl: s.theoryUrl,
     createdAt: now,
     updatedAt: now,
   }));

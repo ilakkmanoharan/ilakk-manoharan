@@ -14,6 +14,7 @@ export type StartupSeed = {
   githubUrl: string | null;
   youtubeUrl: string | null;
   pitchDeckUrl: string | null;
+  theoryUrl: string | null;
   body: string;
 };
 
@@ -91,6 +92,7 @@ export function loadStartupsFromMarkdown(
           emptyToNull(fm.pitchDeckUrl) ??
           DEFAULT_PITCH_DECK_BY_SLUG[slug] ??
           null,
+        theoryUrl: emptyToNull(fm.theoryUrl),
         body,
         sortOrder: (() => {
           const parsed = Number.parseInt(fm.sortOrder ?? "999", 10);

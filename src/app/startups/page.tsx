@@ -136,6 +136,17 @@ export default async function StartupsPage() {
                       Pitch deck
                     </a>
                   ) : null}
+                  {s.theoryUrl ? (
+                    <a
+                      href={s.theoryUrl}
+                      className="inline-flex items-center gap-1 text-primary hover:underline"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <ExternalLink className="size-4" aria-hidden />
+                      Theory
+                    </a>
+                  ) : null}
                 </div>
                 <div className="mt-auto border-t border-border pt-4">
                   <StartupInterestDialog startupName={s.name} />

@@ -1,0 +1,57 @@
+{
+  "slug": "agent-context-as-a-data-layer",
+  "title": "Agent Context as a Data Layer: Beyond Chat History and RAG",
+  "abstract": "Most production agents still treat context as an ever-growing chat transcript. This concept paper argues for a different contract: the model context window is working memory; durable agent context is a persistent data layer—event logs, structured facts, vector retrieval, live project state, and causal transition history. We contrast chat-as-memory with layered storage, explain why RAG alone is insufficient, and describe how retrieval pipelines reduce context sensitivity and amnesia. The design is motivated by Hire My Agents, a workforce platform where agents run scoped jobs with audit trails—not open-ended chat.",
+  "articleType": "Concept Paper",
+  "version": 1,
+  "status": "published_preprint",
+  "license": "CC-BY-4.0",
+  "githubUrl": "https://ilakk-manoharan.vercel.app/hire-my-agents",
+  "repositoryLinks": [
+    {
+      "label": "Transition-centric memory and directed exploration (ASRA)",
+      "href": "https://sci-layer.vercel.app/articles/transition-centric-memory-and-directed-exploration-asra"
+    },
+    {
+      "label": "ASRA Phase 1 — Transition-centric experience",
+      "href": "https://sci-layer.vercel.app/articles/transition-centric-adaptive-reasoning-asra-phase-1"
+    },
+    {
+      "label": "Hire My Agents",
+      "href": "https://ilakk-manoharan.vercel.app/hire-my-agents"
+    }
+  ],
+  "journal": "SciLayer Systems",
+  "publishedAt": "2026-06-23",
+  "views": 0,
+  "downloads": 0,
+  "keywords": [
+    "agent memory",
+    "context layer",
+    "RAG",
+    "transition memory",
+    "context amnesia",
+    "context sensitivity",
+    "Hire My Agents",
+    "agent architecture",
+    "event logs",
+    "workforce agents"
+  ],
+  "authors": [
+    {
+      "name": "Ilakkuvaselvi Manoharan",
+      "orcid": "0009-0008-8073-5416",
+      "affiliation": "Hire My Agents · Nature Foundation Models"
+    }
+  ],
+  "manuscriptFile": "manuscript.md",
+  "versions": [
+    {
+      "version": 1,
+      "manuscriptFile": "manuscript.md",
+      "commit": "content-v1",
+      "createdAt": "2026-06-23",
+      "summary": "Initial SciLayer preprint on agent context as a layered data infrastructure beyond chat history and RAG."
+    }
+  ]
+}

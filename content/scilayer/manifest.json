@@ -1,8 +1,9 @@
 {
-  "syncedAt": "2026-06-11T14:42:51.910Z",
+  "syncedAt": "2026-06-23T00:00:00.000Z",
   "source": "https://github.com/ilakkmanoharan/SciLayer/tree/main/content",
-  "articleCount": 18,
+  "articleCount": 19,
   "slugs": [
+    "agent-context-as-a-data-layer",
     "architectures-adaptive-scientific-reasoning-under-uncertainty",
     "asra-for-decision-biology",
     "asra-phase-3-exploration-memory-navigation-spec",

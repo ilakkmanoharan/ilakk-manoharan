@@ -14,17 +14,19 @@ export type Talk = {
   relatedAudioUrl?: string;
   relatedAudioLabel?: string;
   slidesUrl?: string;
+  websiteUrl?: string;
 };
 
 export const talks: Talk[] = [
   {
-    title: "Build Your Own Bot: A Live Chatbot Agent Demo",
+    title: "Hire My Agents: AI Workers with Jobs, Reports, and Accountability",
     event: "Naperville AI Enthusiasts meetup",
     location: "NIU Naperville, 1120 E Diehl Rd, Room 119 · Jun 22, 2026 · 6:00 PM",
     date: "2026",
     format: "Meetup",
     description:
-      "Opening slot at the Naperville AI Enthusiasts meetup — a live demo of the agent I built from the ground up: how it's wired, how it handles real conversations, and what I learned building Hire My Agents (AI workforce platform with memory, workflows, and accountability).",
+      "Opening slot at the Naperville AI Enthusiasts meetup — an introduction to Hire My Agents, an AI workforce platform where you hire specialized agents for real work: assistance, engineering, recruiting, research, and more. I cover why most agents fail beyond short demos, what makes these workers different (memory, workflows, tools, approval gates, and daily reporting), and how I'm training the first generation of agents with jobs, reports, and accountability. Learn more: https://ilakk-manoharan.vercel.app/hire-my-agents",
+    websiteUrl: "/hire-my-agents",
     videoUrl: "/talks/naperville-ai-meetup-2026/recording.mp4",
     audioUrl: "/talks/naperville-ai-meetup-2026/talk10.m4a",
     relatedAudioUrl: "/talks/naperville-ai-meetup-2026/context-as-a-data-layer.m4a",

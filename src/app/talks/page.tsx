@@ -90,6 +90,20 @@ export default function TalksPage() {
                       Related: {t.relatedAudioLabel ?? "Audio"}
                     </a>
                   ) : null}
+                  {t.websiteUrl ? (
+                    <a
+                      href={t.websiteUrl}
+                      {...(isExternalUrl(t.websiteUrl)
+                        ? { target: "_blank", rel: "noreferrer" }
+                        : {})}
+                      className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
+                    >
+                      {isExternalUrl(t.websiteUrl) ? (
+                        <ExternalLink className="size-4" aria-hidden />
+                      ) : null}
+                      Hire My Agents
+                    </a>
+                  ) : null}
                   {t.slidesUrl ? (
                     <a
                       href={t.slidesUrl}

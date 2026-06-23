@@ -1,6 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 
+export type ProjectLink = {
+  label: string;
+  url: string;
+};
+
 export type ProjectSeed = {
   slug: string;
   title: string;
@@ -13,6 +18,7 @@ export type ProjectSeed = {
   appStoreUrl: string | null;
   demoVideoUrl: string | null;
   caseStudyUrl: string | null;
+  relatedLinks: ProjectLink[];
   filterTags: string[];
   featured: boolean;
 };
@@ -76,11 +82,15 @@ export function loadProjectsFromMarkdown(cwd: string): ProjectSeed[] {
 
     let filterTags: string[];
     let techStack: string[];
+    let relatedLinks: ProjectLink[];
     try {
       filterTags = JSON.parse(fm.filterTags ?? "[]") as string[];
       techStack = JSON.parse(fm.techStack ?? "[]") as string[];
+      relatedLinks = JSON.parse(fm.relatedLinks ?? "[]") as ProjectLink[];
     } catch {
-      throw new Error(`${file}: filterTags and techStack must be valid JSON arrays`);
+      throw new Error(
+        `${file}: filterTags, techStack, and relatedLinks must be valid JSON arrays`,
+      );
     }
 
     const featured =
@@ -100,6 +110,7 @@ export function loadProjectsFromMarkdown(cwd: string): ProjectSeed[] {
       appStoreUrl: emptyToNull(fm.appStoreUrl),
       demoVideoUrl: emptyToNull(fm.demoVideoUrl),
       caseStudyUrl: emptyToNull(fm.caseStudyUrl),
+      relatedLinks,
       filterTags,
       featured,
     });

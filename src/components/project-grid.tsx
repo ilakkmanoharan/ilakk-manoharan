@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
 import type { DisplayProject } from "@/lib/projects-content";
 import { asStringArray } from "@/lib/json";
@@ -33,6 +34,40 @@ function appStoreUrlFor(project: DisplayProject): string | null {
     project.appStoreUrl ??
     DEFAULT_APP_STORE_BY_PROJECT_SLUG[project.slug] ??
     null
+  );
+}
+
+function isExternalUrl(url: string) {
+  return url.startsWith("http://") || url.startsWith("https://");
+}
+
+function ProjectHref({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) {
+  if (isExternalUrl(href)) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex items-center gap-1 text-primary hover:underline"
+      >
+        <ExternalLink className="size-4" aria-hidden />
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link
+      href={href}
+      className="inline-flex items-center gap-1 text-primary hover:underline"
+    >
+      {children}
+    </Link>
   );
 }
 
@@ -75,7 +110,8 @@ export function ProjectGrid({ projects }: { projects: DisplayProject[] }) {
           return (
           <Card
             key={p.id}
-            className="group border-border/80 transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg"
+            id={p.slug}
+            className="group scroll-mt-24 border-border/80 transition-all hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg"
           >
             <CardHeader>
               <div className="flex flex-wrap gap-1.5">
@@ -131,7 +167,7 @@ export function ProjectGrid({ projects }: { projects: DisplayProject[] }) {
                       href={p.websiteUrl}
                       className="inline-flex items-center gap-1 text-primary hover:underline"
                     >
-                      Program page
+                      Website
                     </Link>
                   ) : (
                     <a
@@ -167,6 +203,11 @@ export function ProjectGrid({ projects }: { projects: DisplayProject[] }) {
                       : "Case study"}
                   </a>
                 ) : null}
+                {p.relatedLinks.map((link) => (
+                  <ProjectHref key={`${link.label}-${link.url}`} href={link.url}>
+                    {link.label}
+                  </ProjectHref>
+                ))}
               </div>
             </CardContent>
           </Card>

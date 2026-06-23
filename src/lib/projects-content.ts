@@ -14,6 +14,7 @@ export type DisplayProject = {
   appStoreUrl: string | null;
   demoVideoUrl: string | null;
   caseStudyUrl: string | null;
+  relatedLinks: { label: string; url: string }[];
   filterTags: string[];
   featured: boolean;
   createdAt: Date;
@@ -35,6 +36,7 @@ export function loadProjectsForPage(cwd = process.cwd()): DisplayProject[] {
     appStoreUrl: p.appStoreUrl,
     demoVideoUrl: p.demoVideoUrl,
     caseStudyUrl: p.caseStudyUrl,
+    relatedLinks: p.relatedLinks,
     filterTags: p.filterTags,
     featured: p.featured,
     createdAt: now,

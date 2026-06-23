@@ -12,6 +12,10 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { talks } from "@/lib/talks";
 
+function isExternalUrl(url: string) {
+  return url.startsWith("http://") || url.startsWith("https://");
+}
+
 export const metadata: Metadata = {
   title: "Talks",
   description:
@@ -59,12 +63,31 @@ export default function TalksPage() {
                   {t.videoUrl ? (
                     <a
                       href={t.videoUrl}
-                      target="_blank"
-                      rel="noreferrer"
+                      {...(isExternalUrl(t.videoUrl)
+                        ? { target: "_blank", rel: "noreferrer" }
+                        : {})}
                       className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
                     >
-                      <ExternalLink className="size-4" aria-hidden />
+                      {isExternalUrl(t.videoUrl) ? (
+                        <ExternalLink className="size-4" aria-hidden />
+                      ) : null}
                       Recording
+                    </a>
+                  ) : null}
+                  {t.audioUrl ? (
+                    <a
+                      href={t.audioUrl}
+                      className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
+                    >
+                      Audio
+                    </a>
+                  ) : null}
+                  {t.relatedAudioUrl ? (
+                    <a
+                      href={t.relatedAudioUrl}
+                      className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
+                    >
+                      Related: {t.relatedAudioLabel ?? "Audio"}
                     </a>
                   ) : null}
                   {t.slidesUrl ? (

@@ -10,10 +10,26 @@ export type Talk = {
   format: string;
   description: string;
   videoUrl?: string;
+  audioUrl?: string;
+  relatedAudioUrl?: string;
+  relatedAudioLabel?: string;
   slidesUrl?: string;
 };
 
 export const talks: Talk[] = [
+  {
+    title: "Build Your Own Bot: A Live Chatbot Agent Demo",
+    event: "Naperville AI Enthusiasts meetup",
+    location: "NIU Naperville, 1120 E Diehl Rd, Room 119 · Jun 22, 2026 · 6:00 PM",
+    date: "2026",
+    format: "Meetup",
+    description:
+      "Opening slot at the Naperville AI Enthusiasts meetup — a live demo of the agent I built from the ground up: how it's wired, how it handles real conversations, and what I learned building Hire My Agents (AI workforce platform with memory, workflows, and accountability).",
+    videoUrl: "/talks/naperville-ai-meetup-2026/recording.mp4",
+    audioUrl: "/talks/naperville-ai-meetup-2026/talk10.m4a",
+    relatedAudioUrl: "/talks/naperville-ai-meetup-2026/context-as-a-data-layer.m4a",
+    relatedAudioLabel: "Context as a data layer",
+  },
   {
     title: "Quantum Dot Spin Qubits for Quantum Computing",
     event: "ISSRDC 2023",

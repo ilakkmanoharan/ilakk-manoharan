@@ -32,6 +32,9 @@ def update_portfolio_manifest(config: AgentConfig, timeline_data: dict[str, Any]
     return out
 
 
+_PLACEHOLDER_SUBMISSION_IDS = frozenset({"dry-run", "pending", ""})
+
+
 def sync_timeline_summary_fields(
     timeline_data: dict[str, Any],
     *,
@@ -40,7 +43,7 @@ def sync_timeline_summary_fields(
     hypothesis_path: str | None = None,
     strategy_path: str | None = None,
 ) -> dict[str, Any]:
-    if submission_id is not None:
+    if submission_id is not None and submission_id not in _PLACEHOLDER_SUBMISSION_IDS:
         timeline_data["latest_submission_id"] = submission_id
     if score is not None:
         timeline_data["latest_score"] = score

@@ -318,7 +318,7 @@ class DailyResearchCycle:
             self.config,
             push.kernel_slug,
             poll_seconds=120,
-            max_polls=3,
+            max_polls=30,
         )
         if kernel_wait["status"] not in {"COMPLETE", "COMPLETED"}:
             note = (

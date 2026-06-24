@@ -80,9 +80,35 @@ export function loadArcAgi3Research(): ArcAgi3ResearchData {
   };
 }
 
+const RESEARCH_REPO_PREFIX = "arc-agi-3-research";
+
 export function githubResearchUrl(relativePath: string): string {
   const clean = relativePath.replace(/^\/+/, "");
-  return `https://github.com/ilakkmanoharan/ilakk-manoharan/blob/main/${clean}`;
+  const prefixed = clean.startsWith(`${RESEARCH_REPO_PREFIX}/`)
+    ? clean
+    : `${RESEARCH_REPO_PREFIX}/${clean}`;
+  return `https://github.com/ilakkmanoharan/ilakk-manoharan/blob/main/${prefixed}`;
+}
+
+export function githubResearchTreeUrl(): string {
+  return `https://github.com/ilakkmanoharan/ilakk-manoharan/tree/main/${RESEARCH_REPO_PREFIX}/research`;
+}
+
+/** Ignore placeholder IDs from dry-run / draft cycles. */
+export function effectiveLatestSubmissionId(
+  data: ArcAgi3ResearchData,
+): string | null {
+  const id = data.latest_submission_id;
+  if (id && id !== "dry-run" && id !== "pending") {
+    return id;
+  }
+  for (const event of [...data.events].reverse()) {
+    const sid = event.submission_id;
+    if (sid && sid !== "dry-run" && sid !== "pending") {
+      return sid;
+    }
+  }
+  return null;
 }
 
 export const EVENT_LABELS: Record<string, string> = {

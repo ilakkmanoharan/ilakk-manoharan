@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/card";
 import {
   EVENT_LABELS,
+  effectiveLatestSubmissionId,
+  githubResearchTreeUrl,
   githubResearchUrl,
   loadArcAgi3Research,
 } from "@/lib/arc-agi-3-research";
@@ -25,6 +27,7 @@ export const metadata: Metadata = {
 export default function ArcAgi3ResearchPage() {
   const data = loadArcAgi3Research();
   const events = [...data.events].reverse();
+  const latestSubmissionId = effectiveLatestSubmissionId(data);
 
   return (
     <>
@@ -61,13 +64,13 @@ export default function ArcAgi3ResearchPage() {
 
         <div className="mt-8 flex flex-wrap gap-3 text-sm">
           <a
-            href="https://github.com/ilakkmanoharan/ilakk-manoharan/tree/main/arc-agi-3-research"
+            href={githubResearchTreeUrl()}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 text-primary hover:underline"
           >
             <ExternalLink className="size-4" aria-hidden />
-            Research repository
+            Research log (GitHub)
           </a>
           <a
             href={data.competition_url}
@@ -95,7 +98,7 @@ export default function ArcAgi3ResearchPage() {
             <CardContent className="space-y-2 text-sm text-muted-foreground">
               <p>
                 <span className="font-medium text-foreground">ID: </span>
-                {data.latest_submission_id ?? "—"}
+                {latestSubmissionId ?? "—"}
               </p>
               <p>
                 <span className="font-medium text-foreground">Score: </span>

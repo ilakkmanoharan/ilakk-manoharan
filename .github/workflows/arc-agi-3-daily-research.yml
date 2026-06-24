@@ -44,7 +44,7 @@ jobs:
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ARC_AGENT_DRY_RUN: ${{ github.event.inputs.dry_run && '1' || '' }}
-          ARC_AGENT_AUTO_SUBMIT: ${{ github.event_name == 'schedule' && '1' || (github.event.inputs.auto_submit && '1' || '') }}
+          ARC_AGENT_AUTO_SUBMIT: ${{ (github.event.inputs.dry_run == true || github.event.inputs.dry_run == 'true' || github.event.inputs.auto_submit == false || github.event.inputs.auto_submit == 'false') && '' || '1' }}
         run: |
           ARGS=""
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then

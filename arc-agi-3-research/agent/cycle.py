@@ -317,9 +317,11 @@ class DailyResearchCycle:
         kernel_wait = wait_for_kernel(
             self.config,
             push.kernel_slug,
-            poll_seconds=120,
-            max_polls=30,
+            poll_seconds=60,
+            max_polls=45,
+            initial_delay_seconds=30,
         )
+        resolved_slug = kernel_wait.get("kernel_slug") or push.kernel_slug
         if kernel_wait["status"] not in {"COMPLETE", "COMPLETED"}:
             note = (
                 f"Kernel push finished but run status={kernel_wait['status']}; "
@@ -341,7 +343,7 @@ class DailyResearchCycle:
 
         submit = submit_code_competition(
             self.config,
-            kernel_slug=push.kernel_slug,
+            kernel_slug=resolved_slug,
             kernel_version=push.version,
             message=message,
             output_file=self.config.kaggle_output_file,
@@ -352,10 +354,11 @@ class DailyResearchCycle:
             status="SUBMITTED",
             kaggle_url=submit.url,
             github_documents=self.timeline.relative_paths(package_dir),
-            summary=f"Submitted kernel {push.kernel_slug} v{push.version}",
+            summary=f"Submitted kernel {resolved_slug} v{push.version}",
             extra={
                 "kernel_url": push.url,
                 "kernel_version": push.version,
+                "kernel_slug": resolved_slug,
             },
         )
         self.timeline.append_event(
@@ -367,7 +370,7 @@ class DailyResearchCycle:
         return {
             "submission_id": submit.submission_id,
             "status": "SUBMITTED",
-            "kernel_slug": push.kernel_slug,
+            "kernel_slug": resolved_slug,
             "kernel_version": push.version,
             "kernel_url": push.url,
             "url": submit.url,

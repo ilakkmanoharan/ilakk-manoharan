@@ -1,19 +1,27 @@
 {
-  "submission_id": "dry-run",
+  "submission_id": "53760137",
   "status": "COMPLETE",
   "score": null,
   "private_score": null,
-  "description": "Dry-run placeholder submission",
+  "description": "asra-v0.6-phase4 v4 fix missing CausalSemanticsEngine",
   "error_description": null,
-  "file_name": "submission.parquet",
+  "file_name": null,
   "kernel_slug": "ilakkmanoharan/asra-phase-4-arc-prize-2026",
-  "kernel_version": null,
-  "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/asra-phase-4-arc-prize-2026",
-  "submitted_at": null,
+  "kernel_version": "327786166",
+  "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/asra-phase-4-arc-prize-2026?scriptVersionId=327786166",
+  "submitted_at": "2026-06-17 02:16:51.277000",
   "competition_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
   "submissions_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
   "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
   "raw": {
-    "dry_run": true
+    "ref": 53760137,
+    "status": "COMPLETE",
+    "publicScore": null,
+    "privateScore": null,
+    "description": "asra-v0.6-phase4 v4 fix missing CausalSemanticsEngine",
+    "errorDescription": null,
+    "fileName": null,
+    "url": "/code/ilakkmanoharan/asra-phase-4-arc-prize-2026?scriptVersionId=327786166",
+    "date": "2026-06-17 02:16:51.277000"
   }
 }

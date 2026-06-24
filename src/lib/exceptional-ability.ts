@@ -15,6 +15,10 @@
  * Evidence 20 (ARC-Genome / NeuroGolf): src/lib/exceptional-ability-evidence-arc-neurogolf.ts
  * Evidence 21 (NeuroGolf CI/CD): src/lib/exceptional-ability-evidence-neurogolf-cicd.ts
  * Evidence 22 (ASRA-Security): src/lib/exceptional-ability-evidence-asra-security.ts
+ * Evidence 23 (ASDB): src/lib/exceptional-ability-evidence-asdb.ts
+ * Evidence 24 (CMB): src/lib/exceptional-ability-evidence-cmb.ts
+ * Evidence 25 (WMIB): src/lib/exceptional-ability-evidence-wmib.ts
+ * Evidence 26 (Hire My Agents): src/lib/exceptional-ability-evidence-hire-my-agents.ts
  */
 import { scilayerScholarlyEvidenceSection } from "@/lib/exceptional-ability-evidence2";
 import { asraPhase1EvidenceSection } from "@/lib/exceptional-ability-evidence-phase1";
@@ -34,6 +38,10 @@ import { nfmAtlasGsEvidenceSection } from "@/lib/exceptional-ability-evidence-nf
 import { asraSecurityEvidenceSection } from "@/lib/exceptional-ability-evidence-asra-security";
 import { arcNeurogolfEvidenceSection } from "@/lib/exceptional-ability-evidence-arc-neurogolf";
 import { neurogolfCicdEvidenceSection } from "@/lib/exceptional-ability-evidence-neurogolf-cicd";
+import { asdbEvidenceSection } from "@/lib/exceptional-ability-evidence-asdb";
+import { cmbEvidenceSection } from "@/lib/exceptional-ability-evidence-cmb";
+import { wmibEvidenceSection } from "@/lib/exceptional-ability-evidence-wmib";
+import { hireMyAgentsEvidenceSection } from "@/lib/exceptional-ability-evidence-hire-my-agents";
 import { NFM_PROGRAM_SITE } from "@/lib/nfm";
 export type ExceptionalAbilityLink = {
   label: string;
@@ -235,4 +243,8 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
   arcNeurogolfEvidenceSection,
   neurogolfCicdEvidenceSection,
   asraSecurityEvidenceSection,
+  asdbEvidenceSection,
+  cmbEvidenceSection,
+  wmibEvidenceSection,
+  hireMyAgentsEvidenceSection,
 ];

@@ -167,7 +167,7 @@ export function ProjectGrid({ projects }: { projects: DisplayProject[] }) {
                       href={p.websiteUrl}
                       className="inline-flex items-center gap-1 text-primary hover:underline"
                     >
-                      Website
+                      {p.slug === "arc-agi-3-research" ? "Research log" : "Website"}
                     </Link>
                   ) : (
                     <a

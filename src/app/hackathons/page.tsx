@@ -106,6 +106,15 @@ export default async function HackathonsPage() {
                       ASRA
                     </Link>
                   ) : null}
+                  {h.slug === "arc-agi-3-research-agent" ? (
+                    <Link
+                      href="/projects/arc-agi-3"
+                      className="inline-flex items-center gap-1 text-primary hover:underline"
+                    >
+                      <ExternalLink className="size-4" aria-hidden />
+                      Research log
+                    </Link>
+                  ) : null}
                   {h.kaggleUrl ? (
                     <a
                       href={h.kaggleUrl}

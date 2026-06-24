@@ -1,0 +1,19 @@
+{
+  "id": "ilakkmanoharan/asra-phase-4-arc-prize-2026",
+  "id_no": 121358000,
+  "title": "ASRA Phase 4 \u2014 ARC Prize 2026",
+  "code_file": "asra-phase-4-arc-prize-2026.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": [],
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [
+    "arc-prize-2026-arc-agi-3"
+  ],
+  "model_sources": []
+}

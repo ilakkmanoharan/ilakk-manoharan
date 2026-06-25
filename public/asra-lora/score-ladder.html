@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Kaggle Score Ladder · ASRA-LoRA</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="topnav"><a href="index.html" class="">Home</a>
+<a href="dashboard.html" class="">Dashboard</a>
+<a href="score-ladder.html" class="active">Kaggle Ladder</a>
+<a href="arc-gallery.html" class="">ARC Gallery</a>
+<a href="reasoning-trace.html" class="">Reasoning Trace</a>
+<a href="training-qa.html" class="">Training QA</a>
+<a href="state-graph.html" class="">State Graph</a>
+<a href="exploration-graph.html" class="">Exploration</a>
+<a href="episode-replay.html" class="">Episode Replay</a>
+<a href="adapter.html" class="">LoRA Adapter</a></nav>
+  <header class="hero">
+    <h1>Kaggle Score Ladder</h1>
+    <p class="sub">Competition submit history tied to Dataset 4 post-mortems.</p>
+  </header>
+  <main>
+  <div class="card"><h2>Public score ladder</h2><p>ARC-AGI-3 Kaggle submits — Phase 1 baseline 0.03</p>
+    <canvas id="ladder"></canvas></div>
+  <table class="stat-table"><tr><th>Phase</th><th>Score</th><th>Ref</th><th>Notes</th></tr><tr><td>1</td><td>0.03</td><td>53652655</td><td>0.03 — baseline Experience Engine</td></tr><tr><td>2</td><td>0.00</td><td>53660658</td><td>0.00 — object-scene hints did not raise public score vs Phas</td></tr><tr><td>3</td><td>0.00</td><td>53720818</td><td>0.00 — exploration/memory hints; gateway verified</td></tr><tr><td>4</td><td>None</td><td>53755707</td><td></td></tr><tr><td>4</td><td>0.0</td><td>53760137</td><td></td></tr></table>
+  <div class="grid" style="margin-top:1rem">
+    <div class="card">
+      <h2>Phase 1 · ref 53652655</h2>
+      <p><span class="badge">score 0.03</span> asra-v0.1-phase1 v3 official gateway pattern</p>
+      <p>Phase 1 baseline submit established at score 0.03. Validate gateway plumbing before chasing score.</p>
+      <ul><li>Ensure transition logging captures diff and state_hash on every action.</li></ul>
+    </div>
+    <div class="card">
+      <h2>Phase 2 · ref 53660658</h2>
+      <p><span class="badge">score 0.00</span> asra-v0.4-phase2 v3 official gateway pattern</p>
+      <p>Score dropped by 0.03 to 0.00. Revert risky policy changes and isolate regression.</p>
+      <ul><li>Add loop detection penalty when revisit count exceeds 2.</li><li>Attach object-scene hints only when they change action ranking.</li></ul>
+    </div>
+    <div class="card">
+      <h2>Phase 3 · ref 53720818</h2>
+      <p><span class="badge">score 0.00</span> asra-v0.5-phase3 v3 official gateway pattern</p>
+      <p>Score flat at 0.00. 0.00 — exploration/memory hints; gateway verified Next: improve exploration efficiency or action semantics.</p>
+      <ul><li>Add loop detection penalty when revisit count exceeds 2.</li><li>Attach object-scene hints only when they change action ranking.</li><li>Weight novelty and usefulness separately instead of hash novelty alone.</li></ul>
+    </div>
+    <div class="card">
+      <h2>Phase 4 · ref 53755707</h2>
+      <p><span class="badge">score None</span> asra-v0.6-phase4 v3 official gateway pattern</p>
+      <p>Score flat at 0.00.  Next: improve exploration efficiency or action semantics.</p>
+      <ul><li>Add loop detection penalty when revisit count exceeds 2.</li><li>Attach object-scene hints only when they change action ranking.</li><li>Weight novelty and usefulness separately instead of hash novelty alone.</li></ul>
+    </div>
+    <div class="card">
+      <h2>Phase 4 · ref 53760137</h2>
+      <p><span class="badge">score 0.0</span> asra-v0.6-phase4 v4 fix missing CausalSemanticsEngine</p>
+      <p>Score flat at 0.00.  Next: improve exploration efficiency or action semantics.</p>
+      <ul><li>Add loop detection penalty when revisit count exceeds 2.</li><li>Attach object-scene hints only when they change action ranking.</li><li>Weight novelty and usefulness separately instead of hash novelty alone.</li></ul>
+    </div></div>
+  <script>
+  const phases = ["Phase 1", "Phase 2", "Phase 3", "Phase 4", "Phase 4"];
+  const scores = [0.03, 0.0, 0.0, 0.0, 0.0];
+  new Chart(document.getElementById('ladder'), {
+    type: 'line',
+    data: { labels: phases, datasets: [{ label: 'Public score', data: scores, borderColor: '#5eead4', backgroundColor: 'rgba(94,234,212,.15)', fill: true, tension: .3 }] },
+    options: { plugins: { legend: { labels: { color: '#e8eefc' } } }, scales: { x: { ticks: { color: '#8fa3c8' } }, y: { ticks: { color: '#8fa3c8' }, suggestedMax: 0.05 } } }
+  });
+  </script>
+  </main>
+  <footer>
+    <a href="https://github.com/ilakkmanoharan/ASRA-LoRA">ASRA-LoRA</a> ·
+    <a href="https://sci-layer.vercel.app/articles/asra-lora-adaptive-scientific-reasoning-lora-fine-tuning">SciLayer paper</a>
+  </footer>
+</body>
+</html>

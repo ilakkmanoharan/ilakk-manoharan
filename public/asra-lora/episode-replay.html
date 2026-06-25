@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Episode Replay · ASRA-LoRA</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="topnav"><a href="index.html" class="">Home</a>
+<a href="dashboard.html" class="">Dashboard</a>
+<a href="score-ladder.html" class="">Kaggle Ladder</a>
+<a href="arc-gallery.html" class="">ARC Gallery</a>
+<a href="reasoning-trace.html" class="">Reasoning Trace</a>
+<a href="training-qa.html" class="">Training QA</a>
+<a href="state-graph.html" class="">State Graph</a>
+<a href="exploration-graph.html" class="">Exploration</a>
+<a href="episode-replay.html" class="active">Episode Replay</a>
+<a href="adapter.html" class="">LoRA Adapter</a></nav>
+  <header class="hero">
+    <h1>Episode Replay</h1>
+    <p class="sub">Live transition replay with LoRA prediction overlay slot.</p>
+  </header>
+  <main>
+    <div class="card">
+      <h2>Episode replay</h2>
+      <p>Step through a real ASRA transition episode. <strong>LoRA overlay</strong> shows rule-based stand-in until <code>adapters/hypothesis-lora-v0</code> is trained.</p>
+      <div class="replay-controls">
+        <button onclick="prev()">← Prev</button>
+        <button onclick="next()">Next →</button>
+        <span id="stepLabel" class="badge">Step 0</span>
+      </div>
+      <div id="panel"></div>
+      <div class="pred-slot" id="loraSlot">LoRA prediction slot</div>
+    </div>
+    <script>
+    const EP = [{"step": 1, "action": "RESET", "state": "d4665b979aa7", "next": "d4665b979aa7", "changed": 0, "effect": "dead_end", "predicted": "Hypothesis: RESET \u2192 dead_end"}, {"step": 2, "action": "ACTION1", "state": "d4665b979aa7", "next": "11b164a97f0a", "changed": 1, "effect": "small_change", "predicted": "Hypothesis: ACTION1 applies localized transform (small_change)."}, {"step": 3, "action": "RESET", "state": "11b164a97f0a", "next": "d4665b979aa7", "changed": 1, "effect": "small_change", "predicted": "Hypothesis: RESET applies localized transform (small_change)."}, {"step": 4, "action": "ACTION1", "state": "d4665b979aa7", "next": "11b164a97f0a", "changed": 1, "effect": "small_change", "predicted": "Hypothesis: ACTION1 applies localized transform (small_change)."}, {"step": 5, "action": "ACTION1", "state": "11b164a97f0a", "next": "15a2439b544e", "changed": 1, "effect": "small_change", "predicted": "Hypothesis: ACTION1 applies localized transform (small_change)."}, {"step": 6, "action": "RESET", "state": "15a2439b544e", "next": "d4665b979aa7", "changed": 1, "effect": "small_change", "predicted": "Hypothesis: RESET applies localized transform (small_change)."}, {"step": 7, "action": "ACTION2", "state": "d4665b979aa7", "next": "86e9784478b7", "changed": 1, "effect": "small_change", "predicted": "Hypothesis: ACTION2 applies localized transform (small_change)."}, {"step": 8, "action": "RESET", "state": "86e9784478b7", "next": "d4665b979aa7", "changed": 1, "effect": "small_change", "predicted": "Hypothesis: RESET applies localized transform (small_change)."}, {"step": 9, "action": "ACTION2", "state": "d4665b979aa7", "next": "86e9784478b7", "changed": 1, "effect": "small_change", "predicted": "Hypothesis: ACTION2 applies localized transform (small_change)."}, {"step": 10, "action": "ACTION1", "state": "86e9784478b7", "next": "ac7acf5144e7", "changed": 1, "effect": "small_change", "predicted": "Hypothesis: ACTION1 applies localized transform (small_change)."}, {"step": 11, "action": "RESET", "state": "ac7acf5144e7", "next": "d4665b979aa7", "changed": 2, "effect": "small_change", "predicted": "Hypothesis: RESET applies localized transform (small_change)."}, {"step": 12, "action": "ACTION3", "state": "d4665b979aa7", "next": "32af0db1e3d5", "changed": 1, "effect": "small_change", "predicted": "Hypothesis: ACTION3 applies localized transform (small_change)."}];
+    let idx = 0;
+    function render() {
+      const e = EP[idx];
+      document.getElementById('stepLabel').textContent = `Step ${e.step} / ${EP.length}`;
+      document.getElementById('panel').innerHTML = `
+        <p><strong>Action</strong> ${e.action}</p>
+        <p><strong>State</strong> ${e.state} → <strong>Next</strong> ${e.next}</p>
+        <p><strong>Changed cells</strong> ${e.changed} · <strong>Effect</strong> ${e.effect}</p>`;
+      document.getElementById('loraSlot').innerHTML = `<strong>Adapter output (v0 stand-in):</strong> ${e.predicted}<br/><em>Train Qwen2.5 HypothesisLoRA: <code>python train/hypothesis_lora_sft.py</code></em>`;
+    }
+    function next() { idx = Math.min(EP.length-1, idx+1); render(); }
+    function prev() { idx = Math.max(0, idx-1); render(); }
+    render();
+    </script>
+    </main>
+  <footer>
+    <a href="https://github.com/ilakkmanoharan/ASRA-LoRA">ASRA-LoRA</a> ·
+    <a href="https://sci-layer.vercel.app/articles/asra-lora-adaptive-scientific-reasoning-lora-fine-tuning">SciLayer paper</a>
+  </footer>
+</body>
+</html>

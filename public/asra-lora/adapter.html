@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>LoRA Adapter · ASRA-LoRA</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="topnav"><a href="index.html" class="">Home</a>
+<a href="dashboard.html" class="">Dashboard</a>
+<a href="score-ladder.html" class="">Kaggle Ladder</a>
+<a href="arc-gallery.html" class="">ARC Gallery</a>
+<a href="reasoning-trace.html" class="">Reasoning Trace</a>
+<a href="training-qa.html" class="">Training QA</a>
+<a href="state-graph.html" class="">State Graph</a>
+<a href="exploration-graph.html" class="">Exploration</a>
+<a href="episode-replay.html" class="">Episode Replay</a>
+<a href="adapter.html" class="active">LoRA Adapter</a></nav>
+  <header class="hero">
+    <h1>LoRA Adapter</h1>
+    <p class="sub">Qwen2.5 fine-tuning pipeline and evidence status.</p>
+  </header>
+  <main>
+    <section class="hero-card">
+      <span class="badge">Status: dry_run</span>
+      <h2>Qwen2.5 LoRA adapter pipeline</h2>
+      <p><strong>Shipped today:</strong> 242,247 synthetic SFT rows across 7 datasets with public portfolio evidence.</p>
+      <p><strong>Adapter target:</strong> HypothesisLoRA on Qwen/Qwen2.5-1.5B-Instruct — action-effect and ARC hypothesis heads first; competition integration in Phase 7.</p>
+    </section>
+    <div class="grid">
+      <div class="card"><h2>What to say</h2>
+        <ul>
+          <li>Built 242K+ synthetic reasoning traces from ASRA logs + Original ARC</li>
+          <li>Seven task-specific corpora with schemas and regeneration scripts</li>
+          <li>LoRA SFT pipeline on Qwen2.5-1.5B — not answer memorization, reasoning supervision</li>
+          <li>Kaggle agent uses rule engine today; adapters plug into my_agent.py next</li>
+        </ul>
+      </div>
+      <div class="card"><h2>Honest boundary</h2>
+        <p>LoRA does not replace the ARC-AGI-3 competition agent. It adds hypothesis, exploration, and failure-analysis modules inside the same ASRA transition loop.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:1rem"><h2>Adapter manifest</h2><pre>{
+  "status": "dry_run",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "dataset": "dataset1_action_effect_v0.jsonl",
+  "examples": 5000,
+  "metrics": {}
+}</pre></div>
+    </main>
+  <footer>
+    <a href="https://github.com/ilakkmanoharan/ASRA-LoRA">ASRA-LoRA</a> ·
+    <a href="https://sci-layer.vercel.app/articles/asra-lora-adaptive-scientific-reasoning-lora-fine-tuning">SciLayer paper</a>
+  </footer>
+</body>
+</html>

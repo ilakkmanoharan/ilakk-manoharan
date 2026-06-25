@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ASRA-LoRA Evidence · ASRA-LoRA</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="topnav"><a href="index.html" class="active">Home</a>
+<a href="dashboard.html" class="">Dashboard</a>
+<a href="score-ladder.html" class="">Kaggle Ladder</a>
+<a href="arc-gallery.html" class="">ARC Gallery</a>
+<a href="reasoning-trace.html" class="">Reasoning Trace</a>
+<a href="training-qa.html" class="">Training QA</a>
+<a href="state-graph.html" class="">State Graph</a>
+<a href="exploration-graph.html" class="">Exploration</a>
+<a href="episode-replay.html" class="">Episode Replay</a>
+<a href="adapter.html" class="">LoRA Adapter</a></nav>
+  <header class="hero">
+    <h1>ASRA-LoRA Evidence</h1>
+    <p class="sub">Portfolio site for synthetic datasets and LoRA training pipeline.</p>
+  </header>
+  <main>
+    <section class="hero-card">
+      <span class="badge">Synthetic datasets · v0 shipped</span>
+      <h2 style="margin:.5rem 0 0">242K+ reasoning rows across 7 LoRA training corpora</h2>
+      <p>Built from ASRA transition logs, Kaggle submission archives, and Original ARC — ready for Qwen2.5 adapter training.</p>
+      <div class="kpis">
+        <div class="kpi"><div class="n">242,247</div><div class="l">Total SFT rows</div></div>
+        <div class="kpi"><div class="n">7</div><div class="l">Dataset modules</div></div>
+        <div class="kpi"><div class="n">81k</div><div class="l">Action-effect rows</div></div>
+        <div class="kpi"><div class="n">1.8k</div><div class="l">ARC hypothesis pairs</div></div>
+      </div>
+      <a class="btn" href="dashboard.html">Open interactive dashboard →</a>
+      <a class="btn" href="adapter.html" style="margin-left:.5rem;background:#334155">LoRA adapter pipeline →</a>
+    </section>
+    <div class="grid">
+      <div class="card"><h2>Tier 1 · Portfolio</h2><p>Kaggle score ladder, ARC gallery, annotated reasoning trace.</p>
+        <a href="score-ladder.html">Score ladder</a> · <a href="arc-gallery.html">ARC gallery</a> · <a href="reasoning-trace.html">Trace</a></div>
+      <div class="card"><h2>Tier 2 · Training QA</h2><p>Class balance, oversampling weights, novelty scatter.</p>
+        <a href="training-qa.html">Training QA</a> · <code>streamlit run scripts/explore_streamlit.py</code></div>
+      <div class="card"><h2>Tier 3 · ASRA research</h2><p>State graphs, exploration heatmaps, episode replay.</p>
+        <a href="state-graph.html">State graph</a> · <a href="exploration-graph.html">Exploration</a> · <a href="episode-replay.html">Replay</a></div>
+    </div>
+    <section class="card" style="margin-top:1rem">
+      <h2>Dataset inventory</h2>
+      <table class="stat-table"><tr><th>File</th><th>Rows</th></tr>
+      <tr><td>dataset1_action_effect_v0.jsonl</td><td>81,391</td></tr><tr><td>dataset2_next_action_v0.jsonl</td><td>70,342</td></tr><tr><td>dataset3_failure_revision_v0.jsonl</td><td>81,391</td></tr><tr><td>dataset4_submit_postmortem_v0.jsonl</td><td>5</td></tr><tr><td>dataset5_hypothesis_arc_v0.jsonl</td><td>1,859</td></tr><tr><td>dataset6_solution_arc_v0.jsonl</td><td>1,859</td></tr><tr><td>dataset7_trace_trajectory_v0.jsonl</td><td>5,400</td></tr>
+      </table>
+    </section>
+    </main>
+  <footer>
+    <a href="https://github.com/ilakkmanoharan/ASRA-LoRA">ASRA-LoRA</a> ·
+    <a href="https://sci-layer.vercel.app/articles/asra-lora-adaptive-scientific-reasoning-lora-fine-tuning">SciLayer paper</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Dataset Dashboard · ASRA-LoRA</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <nav class="topnav"><a href="index.html" class="">Home</a>
+<a href="dashboard.html" class="active">Dashboard</a>
+<a href="score-ladder.html" class="">Kaggle Ladder</a>
+<a href="arc-gallery.html" class="">ARC Gallery</a>
+<a href="reasoning-trace.html" class="">Reasoning Trace</a>
+<a href="training-qa.html" class="">Training QA</a>
+<a href="state-graph.html" class="">State Graph</a>
+<a href="exploration-graph.html" class="">Exploration</a>
+<a href="episode-replay.html" class="">Episode Replay</a>
+<a href="adapter.html" class="">LoRA Adapter</a></nav>
+  <header class="hero">
+    <h1>Dataset Dashboard</h1>
+    <p class="sub">Aggregated stats across all seven corpora.</p>
+  </header>
+  <main>
+    <div class="kpis" id="kpis"></div>
+    <div class="grid" id="charts"></div>
+    <script>
+    const STATS = {"datasets": {"1_action_effect": {"effects": {"repeated_state": 600, "small_change": 69048, "dead_end": 218, "terminal_transition": 10987, "no_change": 411, "large_change": 127}, "agents": {"asra-v0.1": 78398, "asra-v0.5-phase3": 1993, "unknown": 1000}, "changed_cells_hist": {"labels": ["0.00\u20130.20", "0.20\u20130.40", "0.40\u20130.60", "0.60\u20130.80", "0.80\u20131.00", "1.00\u20131.20", "1.20\u20131.40", "1.40\u20131.60", "1.60\u20131.80", "1.80\u20132.00", "2.00\u20132.20", "2.20\u20132.40", "2.40\u20132.60", "2.60\u20132.80", "2.80\u20133.00", "3.00\u20133.20", "3.20\u20133.40", "3.40\u20133.60", "3.60\u20133.80", "3.80\u20134.00"], "counts": [1229, 0, 0, 0, 0, 79882, 0, 0, 0, 0, 153, 0, 0, 0, 0, 119, 0, 0, 0, 8]}}, "2_next_action": {"actions": {"ACTION1": 29754, "ACTION2": 16094, "ACTION3": 2779, "RESET": 229, "ACTION4": 59, "ACTION5": 54, "ACTION6": 40, "ACTION7": 31, "knockdown_TP53": 23, "activate_AKT1": 22, "activate_SMAD3": 22, "activate_ATM": 21}, "novelty_hist": {"labels": ["0.00\u20130.05", "0.05\u20130.10", "0.10\u20130.16", "0.16\u20130.21", "0.21\u20130.26", "0.26\u20130.31", "0.31\u20130.37", "0.37\u20130.42", "0.42\u20130.47", "0.47\u20130.52", "0.52\u20130.58", "0.58\u20130.63", "0.63\u20130.68", "0.68\u20130.73", "0.73\u20130.79", "0.79\u20130.84", "0.84\u20130.89", "0.89\u20130.94", "0.94\u20131.00", "1.00\u20131.05"], "counts": [2, 0, 0, 0, 0, 2, 3, 6, 9, 55, 0, 90, 0, 107, 0, 0, 0, 0, 0, 119]}, "usefulness_hist": {"labels": ["-0.64\u2013-0.54", "-0.54\u2013-0.45", "-0.45\u2013-0.35", "-0.35\u2013-0.26", "-0.26\u2013-0.16", "-0.16\u2013-0.06", "-0.06\u20130.03", "0.03\u20130.13", "0.13\u20130.22", "0.22\u20130.32", "0.32\u20130.42", "0.42\u20130.51", "0.51\u20130.61", "0.61\u20130.70", "0.70\u20130.80", "0.80\u20130.90", "0.90\u20130.99", "0.99\u20131.09", "1.09\u20131.18", "1.18\u20131.28"], "counts": [2, 0, 0, 0, 0, 0, 0, 0, 5, 0, 87, 0, 0, 0, 174, 0, 0, 0, 122, 3]}}, "3_failure_revision": {"effect_types": {"repeated_state": 591, "small_change": 42080, "dead_end": 7, "terminal_transition": 6838, "no_change": 411, "large_change": 73}}, "4_submit_postmortem": {"phases": ["Phase 1", "Phase 2", "Phase 3", "Phase 4", "Phase 4"], "scores": [0.03, 0.0, 0.0, 0.0, 0.0]}, "5_hypothesis_arc": {"grid_sizes": {"10\u00d710": 140, "3\u00d73": 109, "9\u00d79": 53, "12\u00d712": 53, "15\u00d715": 53, "13\u00d713": 47, "7\u00d77": 46, "5\u00d75": 44, "6\u00d76": 40, "30\u00d730": 40, "20\u00d720": 35, "16\u00d716": 34, "11\u00d711": 30, "8\u00d78": 26, "4\u00d74": 24}}, "7_trace_trajectory": {"domains": {"asra_transition": 5000, "original_arc": 400}, "stage_counts": {"8": 1721, "6": 3679}}}, "manifest": {"dataset1_action_effect_v0.jsonl": {"rows": 81391, "path": "/Users/ilakkmanoharan2026/ASRA-LoRA/data/generated/dataset1_action_effect_v0.jsonl"}, "dataset2_next_action_v0.jsonl": {"rows": 70342, "path": "/Users/ilakkmanoharan2026/ASRA-LoRA/data/generated/dataset2_next_action_v0.jsonl"}, "dataset3_failure_revision_v0.jsonl": {"rows": 81391, "path": "/Users/ilakkmanoharan2026/ASRA-LoRA/data/generated/dataset3_failure_revision_v0.jsonl"}, "dataset4_submit_postmortem_v0.jsonl": {"rows": 5, "path": "/Users/ilakkmanoharan2026/ASRA-LoRA/data/generated/dataset4_submit_postmortem_v0.jsonl"}, "dataset5_hypothesis_arc_v0.jsonl": {"rows": 1859, "path": "/Users/ilakkmanoharan2026/ASRA-LoRA/data/generated/dataset5_hypothesis_arc_v0.jsonl"}, "dataset6_solution_arc_v0.jsonl": {"rows": 1859, "path": "/Users/ilakkmanoharan2026/ASRA-LoRA/data/generated/dataset6_solution_arc_v0.jsonl"}, "dataset7_trace_trajectory_v0.jsonl": {"rows": 5400, "path": "/Users/ilakkmanoharan2026/ASRA-LoRA/data/generated/dataset7_trace_trajectory_v0.jsonl"}}};
+    const palette = ["#5eead4","#818cf8","#f472b6","#fbbf24","#34d399","#60a5fa","#fb7185","#a78bfa"];
+    function kpi(label, value) {
+      const el = document.createElement("div");
+      el.className = "kpi";
+      el.innerHTML = `<div class="n">${value}</div><div class="l">${label}</div>`;
+      return el;
+    }
+    const kpis = document.getElementById("kpis");
+    const manifest = STATS.manifest || {};
+    const totalRows = Object.values(manifest).reduce((s, m) => s + (m.rows || 0), 0);
+    kpis.appendChild(kpi("Total rows", totalRows.toLocaleString()));
+    kpis.appendChild(kpi("Datasets", Object.keys(manifest).length));
+    kpis.appendChild(kpi("Largest", "D1 · 81k"));
+    function addCard(title, subtitle, canvasId) {
+      const card = document.createElement("section");
+      card.className = "card";
+      card.innerHTML = `<h2>${title}</h2><p>${subtitle}</p><canvas id="${canvasId}"></canvas>`;
+      document.getElementById("charts").appendChild(card);
+      return document.getElementById(canvasId);
+    }
+    function barChart(canvas, labels, values, label) {
+      new Chart(canvas, { type: "bar", data: { labels, datasets: [{ label, data: values, backgroundColor: "#5eead499" }] },
+        options: { plugins: { legend: { display: false } }, scales: { x: { ticks: { color: "#8fa3c8" } }, y: { ticks: { color: "#8fa3c8" } } } } });
+    }
+    function doughnut(canvas, labels, values) {
+      new Chart(canvas, { type: "doughnut", data: { labels, datasets: [{ data: values, backgroundColor: palette }] },
+        options: { plugins: { legend: { position: "bottom", labels: { color: "#e8eefc" } } } } });
+    }
+    const d1 = STATS.datasets["1_action_effect"];
+    doughnut(addCard("D1 · Action effects", "Class balance", "c1"), Object.keys(d1.effects), Object.values(d1.effects));
+    barChart(addCard("D1 · Changed cells", "Cell diff distribution", "c1h"), d1.changed_cells_hist.labels.slice(0,12), d1.changed_cells_hist.counts.slice(0,12), "count");
+    const d2 = STATS.datasets["2_next_action"];
+    barChart(addCard("D2 · Next actions", "Action labels", "c2"), Object.keys(d2.actions), Object.values(d2.actions), "rows");
+    const d3 = STATS.datasets["3_failure_revision"];
+    doughnut(addCard("D3 · Failure types", "FailureLoRA drivers", "c3"), Object.keys(d3.effect_types), Object.values(d3.effect_types));
+    const d4 = STATS.datasets["4_submit_postmortem"];
+    barChart(addCard("D4 · Kaggle scores", "By phase", "c4"), d4.phases, d4.scores, "score");
+    const d7 = STATS.datasets["7_trace_trajectory"];
+    doughnut(addCard("D7 · Trace domains", "ASRA vs ARC", "c7"), Object.keys(d7.domains), Object.values(d7.domains));
+    </script>
+    </main>
+  <footer>
+    <a href="https://github.com/ilakkmanoharan/ASRA-LoRA">ASRA-LoRA</a> ·
+    <a href="https://sci-layer.vercel.app/articles/asra-lora-adaptive-scientific-reasoning-lora-fine-tuning">SciLayer paper</a>
+  </footer>
+</body>
+</html>

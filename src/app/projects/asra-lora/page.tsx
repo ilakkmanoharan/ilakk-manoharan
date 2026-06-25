@@ -10,7 +10,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "ASRA-LoRA",
@@ -238,9 +239,12 @@ export default function AsraLoraProjectPage() {
             ))}
           </div>
           <div className="mt-6">
-            <Button asChild>
-              <a href="/asra-lora/dashboard.html">Open dashboard →</a>
-            </Button>
+            <a
+              href="/asra-lora/dashboard.html"
+              className={cn(buttonVariants())}
+            >
+              Open dashboard →
+            </a>
           </div>
         </section>
 

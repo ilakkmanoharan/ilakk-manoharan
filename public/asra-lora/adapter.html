@@ -24,13 +24,13 @@
   </header>
   <main>
     <section class="hero-card">
-      <span class="badge">Status: dry_run</span>
+      <span class="badge">Status: trained</span>
       <h2>Qwen2.5 LoRA adapter pipeline</h2>
-      <p><strong>Shipped today:</strong> 242,247 synthetic SFT rows across 7 datasets with public portfolio evidence.</p>
-      <p><strong>Adapter target:</strong> HypothesisLoRA on Qwen/Qwen2.5-1.5B-Instruct — action-effect and ARC hypothesis heads first; competition integration in Phase 7.</p>
+      <p><strong>Shipped:</strong> 242,247 synthetic SFT rows · trained HypothesisLoRA weights · held-out eval · Phase 7 Kaggle agent bridge.</p>
+      <p><strong>Adapter target:</strong> HypothesisLoRA on Qwen/Qwen2.5-1.5B-Instruct — Dataset 1 action-effect semantics; embedded cache in <code>asra-phase-7-arc-prize-2026</code> competition loop.</p>
     </section>
     <div class="grid">
-      <div class="card"><h2>What to say</h2>
+      <div class="card">
         <ul>
           <li>Built 242K+ synthetic reasoning traces from ASRA logs + Original ARC</li>
           <li>Seven task-specific corpora with schemas and regeneration scripts</li>
@@ -39,15 +39,65 @@
         </ul>
       </div>
       <div class="card"><h2>Honest boundary</h2>
-        <p>LoRA does not replace the ARC-AGI-3 competition agent. It adds hypothesis, exploration, and failure-analysis modules inside the same ASRA transition loop.</p>
+        <p>LoRA augments semantics inside the ASRA transition loop; it does not replace the full competition agent. Kaggle runtime uses a distilled cache for turn-budget safety; local inference loads full PEFT weights.</p>
       </div>
     </div>
-    <div class="card" style="margin-top:1rem"><h2>Adapter manifest</h2><pre>{
-  "status": "dry_run",
+    <div class="card" style="margin-top:1rem"><h2>Adapter manifest + eval</h2><pre>{
+  "status": "trained",
   "model": "Qwen/Qwen2.5-1.5B-Instruct",
   "dataset": "dataset1_action_effect_v0.jsonl",
   "examples": 5000,
-  "metrics": {}
+  "max_steps": 120,
+  "device": "mps",
+  "metrics": {
+    "train_loss": 2.0251681725184123
+  },
+  "kaggle": {
+    "phase": 7,
+    "kernel": "ilakkmanoharan/asra-phase-7-arc-prize-2026",
+    "bridge": "HypothesisLoRABridge",
+    "cache_entries": 600
+  },
+  "eval_report": "data/reports/hypothesis_lora_eval.json",
+  "eval": {
+    "dataset": "dataset1_action_effect_v0.jsonl",
+    "adapter": "/Users/ilakkmanoharan2026/ASRA-LoRA/adapters/hypothesis-lora-v0",
+    "val_fraction": 0.05,
+    "accuracy": 0.0,
+    "n_eval": 80,
+    "correct": 0,
+    "majority_baseline": 0.525,
+    "confusion_top": [
+      [
+        [
+          "repeated_state",
+          "terminal_transition"
+        ],
+        34
+      ],
+      [
+        [
+          "no_change",
+          "small_change"
+        ],
+        30
+      ],
+      [
+        [
+          "no_change",
+          "terminal_transition"
+        ],
+        8
+      ],
+      [
+        [
+          "repeated_state",
+          "small_change"
+        ],
+        8
+      ]
+    ]
+  }
 }</pre></div>
     </main>
   <footer>

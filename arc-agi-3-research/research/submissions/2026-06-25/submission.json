@@ -1,0 +1,27 @@
+{
+  "submission_id": "54016192",
+  "status": "COMPLETE",
+  "score": null,
+  "private_score": null,
+  "description": "ARC-AGI-3 research agent \u2014 2026-06-24 \u2014 intervention from strategy plan",
+  "error_description": null,
+  "file_name": null,
+  "kernel_slug": "ilakkmanoharan/arc-agi-3-research-agent",
+  "kernel_version": "330092671",
+  "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=330092671",
+  "submitted_at": "2026-06-24 15:50:31.580000",
+  "competition_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+  "submissions_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+  "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+  "raw": {
+    "ref": 54016192,
+    "status": "COMPLETE",
+    "publicScore": null,
+    "privateScore": null,
+    "description": "ARC-AGI-3 research agent \u2014 2026-06-24 \u2014 intervention from strategy plan",
+    "errorDescription": null,
+    "fileName": null,
+    "url": "/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=330092671",
+    "date": "2026-06-24 15:50:31.580000"
+  }
+}

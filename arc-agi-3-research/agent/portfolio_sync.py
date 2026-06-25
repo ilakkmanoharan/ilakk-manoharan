@@ -35,6 +35,112 @@ def update_portfolio_manifest(config: AgentConfig, timeline_data: dict[str, Any]
 _PLACEHOLDER_SUBMISSION_IDS = frozenset({"dry-run", "pending", ""})
 
 
+def write_status_summary(
+    config: AgentConfig,
+    timeline_data: dict[str, Any],
+    *,
+    submit_result: dict[str, Any] | None = None,
+    notebook_note: str | None = None,
+) -> Path:
+    """Human-readable snapshot for the portfolio status dashboard."""
+    events = timeline_data.get("events", [])
+    last_cycle = next(
+        (e for e in reversed(events) if e.get("event_type") == "cycle_completed"),
+        None,
+    )
+    last_submit = next(
+        (
+            e
+            for e in reversed(events)
+            if e.get("event_type") in {"submission_created", "resubmitted"}
+            and e.get("status") in {"SUBMITTED", "COMPLETE", "COMPLETED"}
+        ),
+        None,
+    )
+
+    hypothesis_one_liner = (
+        "Improving transition logging and action-semantics recovery "
+        "will raise milestone scores."
+    )
+    hypothesis_path = timeline_data.get("latest_hypothesis_path")
+    if hypothesis_path:
+        hp = config.repo_root / hypothesis_path
+        if hp.exists():
+            text = hp.read_text(encoding="utf-8")
+            for line in text.splitlines():
+                if line.startswith("Improving ") or line.startswith("Extend "):
+                    hypothesis_one_liner = line.strip()
+                    break
+
+    summary: dict[str, Any] = {
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "public_score": timeline_data.get("latest_score"),
+        "latest_submission_id": timeline_data.get("latest_submission_id"),
+        "agent_auto_submit": True,
+        "next_cycle_utc": "14:00 UTC daily (GitHub Actions)",
+        "notebook_status": notebook_note or "arc_agi_3_next_submission.ipynb (ASRA Phase 4 bootstrap)",
+        "current_hypothesis": hypothesis_one_liner,
+        "planned_direction": (
+            "ASRA-LoRA: transition-trace adapters (HypothesisLoRA, ExplorationLoRA) "
+            "— see SciLayer concept paper"
+        ),
+        "planned_direction_url": (
+            "https://sci-layer.vercel.app/articles/"
+            "asra-lora-adaptive-scientific-reasoning-lora-fine-tuning"
+        ),
+        "last_cycle_status": (last_cycle or {}).get("status") or (last_cycle or {}).get("summary"),
+        "last_agent_submission": {
+            "submission_id": (last_submit or {}).get("submission_id")
+            or (submit_result or {}).get("submission_id"),
+            "status": (last_submit or {}).get("status")
+            or (submit_result or {}).get("status"),
+            "kernel_slug": ((last_submit or {}).get("extra") or {}).get("kernel_slug")
+            or (submit_result or {}).get("kernel_slug"),
+            "summary": (last_submit or {}).get("summary")
+            or (submit_result or {}).get("note"),
+        },
+        "submission_history": [
+            {
+                "name": "ARC AGI 3 Research Agent — v1",
+                "date": "2026-06-24",
+                "score": "0.00",
+                "status": "Succeeded",
+                "note": "First agent auto-submit; ASRA Phase 4 notebook under new kernel",
+            },
+            {
+                "name": "ASRA Phase 4 — v4",
+                "date": "2026-06-17",
+                "score": "0.00",
+                "status": "Succeeded",
+                "note": "Fix missing CausalSemanticsEngine",
+            },
+            {
+                "name": "ASRA Phase 4 — v3",
+                "date": "2026-06-16",
+                "score": "—",
+                "status": "Kaggle Error",
+                "note": "Official gateway pattern",
+            },
+            {
+                "name": "ASRA Phase 3 — v2",
+                "date": "2026-06-15",
+                "score": "0.00",
+                "status": "Succeeded",
+                "note": "Official gateway pattern",
+            },
+        ],
+        "known_blockers": [
+            "Notebook is not yet auto-edited from strategy — same ASRA Phase 4 code resubmitted",
+            "Public score 0.00 — gateway runs but does not solve ARC-AGI-3 games",
+            "Timeline syncs previous submission until next cycle ingests latest Kaggle result",
+        ],
+    }
+
+    out = config.research_root / "status-summary.json"
+    out.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    return out
+
+
 def sync_timeline_summary_fields(
     timeline_data: dict[str, Any],
     *,

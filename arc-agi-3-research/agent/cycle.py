@@ -15,7 +15,11 @@ from agent.kernel_submitter import (
     submit_code_competition,
     wait_for_kernel,
 )
-from agent.portfolio_sync import sync_timeline_summary_fields, update_portfolio_manifest
+from agent.portfolio_sync import (
+    sync_timeline_summary_fields,
+    update_portfolio_manifest,
+    write_status_summary,
+)
 from agent.research_analyzer import (
     generate_analysis_artifacts,
     generate_hypothesis,
@@ -102,6 +106,30 @@ class DailyResearchCycle:
         )
         notebook_path = _ensure_notebook(self.config, strategy_path)
         submit_result = self._phase_submit(day, notebook_path, strategy_path)
+
+        if submit_result.get("submission_id"):
+            data = self.timeline.load()
+            data = sync_timeline_summary_fields(
+                data,
+                submission_id=str(submit_result["submission_id"]),
+                score=submit_result.get("score"),
+            )
+            self.timeline.save(data)
+            update_portfolio_manifest(self.config, data)
+
+        notebook_note = (
+            "arc_agi_3_next_submission.ipynb"
+            if notebook_path.exists()
+            else "notebook missing"
+        )
+        if _notebook_is_scaffold(notebook_path):
+            notebook_note += " — ASRA Phase 4 bootstrap (no strategy edits applied yet)"
+        write_status_summary(
+            self.config,
+            self.timeline.load(),
+            submit_result=submit_result,
+            notebook_note=notebook_note,
+        )
 
         self.timeline.append_event(
             "cycle_completed",

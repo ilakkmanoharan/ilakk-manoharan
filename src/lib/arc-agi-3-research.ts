@@ -15,6 +15,35 @@ export type ArcAgi3TimelineEvent = {
   extra?: Record<string, unknown>;
 };
 
+export type ArcAgi3SubmissionHistoryEntry = {
+  name: string;
+  date: string;
+  score: string;
+  status: string;
+  note: string;
+};
+
+export type ArcAgi3StatusSummary = {
+  updated_at?: string;
+  public_score?: string | number | null;
+  latest_submission_id?: string | null;
+  agent_auto_submit?: boolean;
+  next_cycle_utc?: string;
+  notebook_status?: string;
+  current_hypothesis?: string;
+  planned_direction?: string;
+  planned_direction_url?: string;
+  last_cycle_status?: string;
+  last_agent_submission?: {
+    submission_id?: string | null;
+    status?: string;
+    kernel_slug?: string;
+    summary?: string;
+  };
+  submission_history?: ArcAgi3SubmissionHistoryEntry[];
+  known_blockers?: string[];
+};
+
 export type ArcAgi3ResearchData = {
   version: number;
   competition: string;
@@ -26,6 +55,7 @@ export type ArcAgi3ResearchData = {
   latest_strategy_path: string | null;
   events: ArcAgi3TimelineEvent[];
   updated_at?: string;
+  status_summary?: ArcAgi3StatusSummary;
 };
 
 const RESEARCH_DIR = path.join(process.cwd(), "arc-agi-3-research", "research");
@@ -40,6 +70,10 @@ function readJsonFile<T>(filePath: string): T | null {
 }
 
 export function loadArcAgi3Research(): ArcAgi3ResearchData {
+  const statusSummary = readJsonFile<ArcAgi3StatusSummary>(
+    path.join(RESEARCH_DIR, "status-summary.json"),
+  );
+
   const timeline =
     readJsonFile<ArcAgi3ResearchData>(path.join(RESEARCH_DIR, "timeline.json")) ??
     readJsonFile<ArcAgi3ResearchData>(
@@ -58,6 +92,7 @@ export function loadArcAgi3Research(): ArcAgi3ResearchData {
       latest_hypothesis_path: null,
       latest_strategy_path: null,
       events: [],
+      status_summary: statusSummary ?? undefined,
     };
   }
 
@@ -69,14 +104,17 @@ export function loadArcAgi3Research(): ArcAgi3ResearchData {
       "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
     research_end: timeline.research_end ?? "2026-11-01",
     latest_submission_id: timeline.latest_submission_id ?? null,
-    latest_score: timeline.latest_score ?? null,
+    latest_score:
+      statusSummary?.public_score ?? timeline.latest_score ?? null,
     latest_hypothesis_path: timeline.latest_hypothesis_path ?? null,
     latest_strategy_path: timeline.latest_strategy_path ?? null,
     events: timeline.events ?? [],
     updated_at:
-      "updated_at" in timeline && typeof timeline.updated_at === "string"
+      statusSummary?.updated_at ??
+      ("updated_at" in timeline && typeof timeline.updated_at === "string"
         ? timeline.updated_at
-        : undefined,
+        : undefined),
+    status_summary: statusSummary ?? undefined,
   };
 }
 
@@ -109,6 +147,28 @@ export function effectiveLatestSubmissionId(
     }
   }
   return null;
+}
+
+export function formatArcAgi3Score(
+  score: string | number | null | undefined,
+): string {
+  if (score === null || score === undefined || score === "") {
+    return "0.00";
+  }
+  return String(score);
+}
+
+export function latestCycleStatus(data: ArcAgi3ResearchData): string {
+  const summary = data.status_summary;
+  if (summary?.last_cycle_status) {
+    return String(summary.last_cycle_status);
+  }
+  for (const event of [...data.events].reverse()) {
+    if (event.event_type === "cycle_completed") {
+      return event.status || event.summary || "—";
+    }
+  }
+  return "—";
 }
 
 export const EVENT_LABELS: Record<string, string> = {

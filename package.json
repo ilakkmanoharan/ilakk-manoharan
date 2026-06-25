@@ -11,6 +11,7 @@
     "db:seed": "prisma db seed",
     "db:migrate": "prisma migrate dev",
     "content:sync": "tsx scripts/sync-all-site-content.ts",
+    "social:publish": "tsx scripts/social-publish/publish.ts",
     "content:sync:full": "SYNC_FETCH_SCILAYER=1 tsx scripts/sync-all-site-content.ts --fetch-scilayer",
     "agent:export-conversations": "tsx scripts/export-agent-conversations.ts",
     "agent:fetch-scilayer": "tsx scripts/fetch-scilayer-content.ts",

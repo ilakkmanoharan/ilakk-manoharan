@@ -42,6 +42,7 @@ export const navItems = [
   { href: "/hackathons", label: "Hackathons" },
   { href: "/founder-studio", label: "Founder Studio" },
   { href: "/talks", label: "Talks" },
+  { href: "/social", label: "Social" },
   { href: "/skills", label: "Skills" },
   { href: "/recruiter", label: "Recruiter Portal" },
   { href: "/agent", label: "Agent" },

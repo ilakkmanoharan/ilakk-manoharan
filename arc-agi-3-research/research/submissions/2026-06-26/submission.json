@@ -1,19 +1,27 @@
 {
-  "submission_id": "dry-run",
+  "submission_id": "54044908",
   "status": "COMPLETE",
   "score": null,
   "private_score": null,
-  "description": "Dry-run placeholder submission",
+  "description": "ARC-AGI-3 research agent \u2014 2026-06-25 \u2014 intervention from strategy plan",
   "error_description": null,
-  "file_name": "submission.parquet",
-  "kernel_slug": "ilakkmanoharan/asra-phase-4-arc-prize-2026",
-  "kernel_version": null,
-  "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/asra-phase-4-arc-prize-2026",
-  "submitted_at": null,
+  "file_name": null,
+  "kernel_slug": "ilakkmanoharan/arc-agi-3-research-agent",
+  "kernel_version": "330329335",
+  "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=330329335",
+  "submitted_at": "2026-06-25 14:57:10.303000",
   "competition_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
   "submissions_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
   "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
   "raw": {
-    "dry_run": true
+    "ref": 54044908,
+    "status": "COMPLETE",
+    "publicScore": null,
+    "privateScore": null,
+    "description": "ARC-AGI-3 research agent \u2014 2026-06-25 \u2014 intervention from strategy plan",
+    "errorDescription": null,
+    "fileName": null,
+    "url": "/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=330329335",
+    "date": "2026-06-25 14:57:10.303000"
   }
 }

@@ -5,21 +5,24 @@
 # Failure analysis
 
 Transitions parsed: 0
-Errors: 0
+Errors: 2
 Action counts: {}
 Label hints: {}
+Top errors:
+  - "errorDescription": null,
+  - [31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
 
 ## LoRA advisor
 
-- Classification mode: `empty`
-- HypothesisLoRA: /Users/ilakkmanoharan2026/ASRA-LoRA/adapters/hypothesis-lora-v0 (ASRA-LoRA repo: /Users/ilakkmanoharan2026/ASRA-LoRA)
+- Classification mode: `empty+heuristic`
+- HypothesisLoRA: heuristic only (ASRA-LoRA repo: /home/runner/work/ilakk-manoharan/ilakk-manoharan/ASRA-LoRA)
 - Labels inferred: 0
-- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh
-- Failure revision: Continue LoRA-guided directed exploration under step budget.
+- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes
+- Failure revision: Runtime errors detected — stabilize notebook imports and CausalSemanticsEngine before policy changes.
 
 ### Failure mode
 
-Continue LoRA-guided directed exploration under step budget.
+Runtime errors detected — stabilize notebook imports and CausalSemanticsEngine before policy changes.
 
 
 ## Evidence
@@ -27,17 +30,20 @@ Continue LoRA-guided directed exploration under step budget.
 # Causal analysis
 
 Transitions parsed: 0
-Errors: 0
+Errors: 2
 Action counts: {}
 Label hints: {}
+Top errors:
+  - "errorDescription": null,
+  - [31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
 
 ## LoRA advisor
 
-- Classification mode: `empty`
-- HypothesisLoRA: /Users/ilakkmanoharan2026/ASRA-LoRA/adapters/hypothesis-lora-v0 (ASRA-LoRA repo: /Users/ilakkmanoharan2026/ASRA-LoRA)
+- Classification mode: `empty+heuristic`
+- HypothesisLoRA: heuristic only (ASRA-LoRA repo: /home/runner/work/ilakk-manoharan/ilakk-manoharan/ASRA-LoRA)
 - Labels inferred: 0
-- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh
-- Failure revision: Continue LoRA-guided directed exploration under step budget.
+- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes
+- Failure revision: Runtime errors detected — stabilize notebook imports and CausalSemanticsEngine before policy changes.
 
 ## Causal chain
 
@@ -50,11 +56,11 @@ Observation → LoRA labels → Exploration plan → Notebook intervention → S
 
 ## LoRA advisor
 
-- Classification mode: `empty`
-- HypothesisLoRA: /Users/ilakkmanoharan2026/ASRA-LoRA/adapters/hypothesis-lora-v0 (ASRA-LoRA repo: /Users/ilakkmanoharan2026/ASRA-LoRA)
+- Classification mode: `empty+heuristic`
+- HypothesisLoRA: heuristic only (ASRA-LoRA repo: /home/runner/work/ilakk-manoharan/ilakk-manoharan/ASRA-LoRA)
 - Labels inferred: 0
-- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh
-- Failure revision: Continue LoRA-guided directed exploration under step budget.
+- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes
+- Failure revision: Runtime errors detected — stabilize notebook imports and CausalSemanticsEngine before policy changes.
 
 ## Working theory
 
@@ -79,7 +85,7 @@ Bootstrap Kaggle notebook from ASRA Phase 7 with HypothesisLoRA cache bridge; ex
 
 ## Expected Outcome
 
-Improved action-semantics labels and exploration efficiency via empty.
+Improved action-semantics labels and exploration efficiency via empty+heuristic.
 
 ## Risks
 
@@ -91,4 +97,4 @@ Retrain HypothesisLoRA on merged cycle JSONL; add ExplorationLoRA trainer when D
 
 ## LoRA adapters
 
-HypothesisLoRA: /Users/ilakkmanoharan2026/ASRA-LoRA/adapters/hypothesis-lora-v0 (ASRA-LoRA repo: /Users/ilakkmanoharan2026/ASRA-LoRA)
+HypothesisLoRA: heuristic only (ASRA-LoRA repo: /home/runner/work/ilakk-manoharan/ilakk-manoharan/ASRA-LoRA)

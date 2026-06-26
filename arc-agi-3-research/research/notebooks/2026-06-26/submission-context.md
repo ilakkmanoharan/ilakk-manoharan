@@ -6,7 +6,7 @@ Bootstrap Kaggle notebook from ASRA Phase 7 with HypothesisLoRA cache bridge; ex
 
 ## Exploration plan
 
-ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh
+ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes
 
 ## Full strategy
 
@@ -22,21 +22,24 @@ Linked hypothesis excerpt:
 # Failure analysis
 
 Transitions parsed: 0
-Errors: 0
+Errors: 2
 Action counts: {}
 Label hints: {}
+Top errors:
+  - "errorDescription": null,
+  - [31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
 
 ## LoRA advisor
 
-- Classification mode: `empty`
-- HypothesisLoRA: /Users/ilakkmanoharan2026/ASRA-LoRA/adapters/hypothesis-lora-v0 (ASRA-LoRA repo: /Users/ilakkmanoharan2026/ASRA-LoRA)
+- Classification mode: `empty+heuristic`
+- HypothesisLoRA: heuristic only (ASRA-LoRA repo: /home/runner/work/ilakk-manoharan/ilakk-manoharan/ASRA-LoRA)
 - Labels inferred: 0
-- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh
-- Failure revision: Continue LoRA-guided directed exploration under step budget.
+- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes
+- Failure revision: Runtime errors detected — stabilize notebook imports and CausalSemanticsEngine before policy changes.
 
 ### Failure mode
 
-Continue LoRA-guided directed exploration under step budget.
+Runtime errors detected — stabilize notebook imports and CausalSemanticsEngine before policy changes.
 
 
 ## Evidence
@@ -44,17 +47,20 @@ Continue LoRA-guided directed exploration under step budget.
 # Causal analysis
 
 Transitions parsed: 0
-Errors: 0
+Errors: 2
 Action counts: {}
 Label hints: {}
+Top errors:
+  - "errorDescription": null,
+  - [31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
 
 ## LoRA advisor
 
-- Classification mode: `empty`
-- HypothesisLoRA: /Users/ilakkmanoharan2026/ASRA-LoRA/adapters/hypothesis-lora-v0 (ASRA-LoRA repo: /Users/ilakkmanoharan2026/ASRA-LoRA)
+- Classification mode: `empty+heuristic`
+- HypothesisLoRA: heuristic only (ASRA-LoRA repo: /home/runner/work/ilakk-manoharan/ilakk-manoharan/ASRA-LoRA)
 - Labels inferred: 0
-- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh
-- Failure revision: Continue LoRA-guided directed exploration under step budget.
+- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes
+- Failure revision: Runtime errors detected — stabilize notebook imports and CausalSemanticsEngine before policy changes.
 
 ## Causal chain
 
@@ -67,44 +73,27 @@ Observation → LoRA labels → Exploration plan → Notebook intervention → S
 
 ## LoRA advisor
 
-- Classification mode: `empty`
-- HypothesisLoRA: /Users/ilakkmanoharan2026/ASRA-LoRA/adapters/hypothesis-lora-v0 (ASRA-LoRA repo: /Users/ilakkmanoharan2026/ASRA-LoRA)
+- Classification mode: `empty+heuristic`
+- HypothesisLoRA: heuristic only (ASRA-LoRA repo: /home/runner/work/ilakk-manoharan/ilakk-manoharan/ASRA-LoRA)
 - Labels inferred: 0
-- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh
-- Failure revision: Continue LoRA-guided directed exploration under step budget.
+- Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes
+- Failure revision: Runtime errors detected — stabilize notebook imports and CausalSemanticsEngine before policy changes.
 
 ## Working theory
 
-ARC-AGI-3 solving improves when transition-centric LoRA adapters (Hypothesis, Exploration, Failure, Trace) close the loop between Kaggle logs, strategy, notebook code, and dataset retraining.
-
-## Hypothesis
-
-LoRA adapters trained on transition traces will improve ARC-AGI-3 action-semantics recovery and raise milestone scores faster than static ASRA heuristics alone.
-
-## Intervention
-
-Bootstrap Kaggle notebook from ASRA Phase 7 with HypothesisLoRA cache bridge; export cycle transition JSONL to ASRA-LoRA datasets; retrain adapters on merged corpora.
-
-
-## Hypothesis
-
-LoRA adapters trained on transition traces will improve ARC-AGI-3 action-semantics recovery and raise milestone scores faster than static ASRA heuristics alone.
-
-## Intervention
-
-Bootstrap Kaggle notebook from ASRA Phase 7 with HypothesisLoRA cache bridge; export cycle transition JSONL to ASRA-LoRA datasets; retrain adapters on merged corpo
+ARC-AGI-3 solving improves when transition-centric LoRA adapters (Hypothesis, Exploration, Failure, Trace) close the loop between Kaggle logs, strategy, not
 
 ---
 
 ## LoRA-driven plan
 
-**Mode:** empty
+**Mode:** empty+heuristic
 
-**Adapters:** HypothesisLoRA: /Users/ilakkmanoharan2026/ASRA-LoRA/adapters/hypothesis-lora-v0 (ASRA-LoRA repo: /Users/ilakkmanoharan2026/ASRA-LoRA)
+**Adapters:** HypothesisLoRA: heuristic only (ASRA-LoRA repo: /home/runner/work/ilakk-manoharan/ilakk-manoharan/ASRA-LoRA)
 
-**Exploration plan:** ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh
+**Exploration plan:** ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes
 
-**Failure revision:** Continue LoRA-guided directed exploration under step budget.
+**Failure revision:** Runtime errors detected — stabilize notebook imports and CausalSemanticsEngine before policy changes.
 
 
 ---
@@ -115,10 +104,7 @@ Bootstrap Kaggle notebook from ASRA Phase 7 with HypothesisLoRA cache bridge; ex
 - Package `hypothesis_lora_kaggle_cache_embed.py` with kernel
 - Stamp notebook with LoRA intervention cell from strategy
 - Log transitions to `research/datasets/{day}/dataset1_action_effect_cycle.jsonl`
-- Next exploration actions (ExplorationLoRA rules): ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh
+- Next exploration actions (ExplorationLoRA rules): ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes
 
-## Architecture changes
-
-- HypothesisLoRA: classify action effects from state transitions
-- ExplorationLoRA (rules until D2 trained): choose next action 
+## 
 ```

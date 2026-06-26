@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-06-26T07:10:38.372706+00:00",
+  "updated_at": "2026-06-26T14:53:09.880318+00:00",
   "public_score": null,
-  "latest_submission_id": "54016192",
+  "latest_submission_id": "54081131",
   "agent_auto_submit": true,
   "next_cycle_utc": "14:00 UTC daily (GitHub Actions)",
-  "notebook_status": "arc_agi_3_next_submission.ipynb \u2014 LoRA strategy applied (empty)",
+  "notebook_status": "arc_agi_3_next_submission.ipynb \u2014 LoRA strategy applied (empty+heuristic)",
   "current_hypothesis": "Improving transition logging and action-semantics recovery will raise milestone scores.",
   "planned_direction": "ASRA-LoRA loop: HypothesisLoRA labels logs \u2192 Exploration/Failure/Trace adapters plan next actions \u2192 notebook uses Phase 7 + LoRA cache \u2192 cycle JSONL merges into retraining corpora",
   "planned_direction_url": "https://sci-layer.vercel.app/articles/asra-lora-adaptive-scientific-reasoning-lora-fine-tuning",
   "last_cycle_status": "draft",
   "last_agent_submission": {
-    "submission_id": "54044908",
+    "submission_id": "54081131",
     "status": "SUBMITTED",
     "kernel_slug": "ilakkmanoharan/arc-agi-3-research-agent",
-    "summary": "Submitted kernel ilakkmanoharan/arc-agi-3-research-agent v2"
+    "summary": "Submitted kernel ilakkmanoharan/arc-agi-3-research-agent v3"
   },
   "submission_history": [
     {
@@ -46,7 +46,7 @@
     }
   ],
   "known_blockers": [
-    "ExplorationLoRA / FailureLoRA / TraceLoRA trainers not shipped yet (rule-based fallbacks)",
+    "ExplorationLoRA / FailureLoRA / TraceLoRA trainers: ExplorationLoRA shipped; others rule-based until D3/D7",
     "HypothesisLoRA requires ASRA-LoRA repo or adapter weights on runner",
     "Public score 0.00 until Phase 7 + LoRA bridge solves games"
   ]

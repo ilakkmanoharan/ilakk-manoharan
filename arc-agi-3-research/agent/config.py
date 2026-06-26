@@ -47,6 +47,7 @@ class AgentConfig:
     use_lora: bool
     asra_lora_repo: Path | None
     hypothesis_adapter_dir: Path | None
+    exploration_adapter_dir: Path | None
     lora_cache_embed_path: Path | None
     lora_inference_mode: str
 
@@ -67,6 +68,10 @@ class AgentConfig:
         hypothesis_adapter_raw = os.getenv("HYPOTHESIS_LORA_ADAPTER_DIR", "").strip()
         hypothesis_adapter_dir = (
             Path(hypothesis_adapter_raw) if hypothesis_adapter_raw else None
+        )
+        exploration_adapter_raw = os.getenv("EXPLORATION_LORA_ADAPTER_DIR", "").strip()
+        exploration_adapter_dir = (
+            Path(exploration_adapter_raw) if exploration_adapter_raw else None
         )
         lora_cache_raw = os.getenv("LORA_CACHE_EMBED_PATH", "").strip()
         lora_cache_embed_path = Path(lora_cache_raw) if lora_cache_raw else None
@@ -99,6 +104,7 @@ class AgentConfig:
             use_lora=use_lora,
             asra_lora_repo=asra_lora_repo,
             hypothesis_adapter_dir=hypothesis_adapter_dir,
+            exploration_adapter_dir=exploration_adapter_dir,
             lora_cache_embed_path=lora_cache_embed_path,
             lora_inference_mode=os.getenv("LORA_INFERENCE_MODE", "auto"),
         )

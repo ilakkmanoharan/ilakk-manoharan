@@ -171,25 +171,77 @@ print(json.dumps(out))
     return json.loads(proc.stdout.strip())
 
 
+def resolve_exploration_adapter_dir(config: AgentConfig) -> Path | None:
+    env = getattr(config, "exploration_adapter_dir", None)
+    if env and Path(env).exists():
+        return Path(env).resolve()
+    repo = resolve_asra_lora_repo(config)
+    if repo:
+        default = repo / "adapters" / "exploration-lora-v0"
+        if default.exists():
+            return default
+    return None
+
+
 def exploration_plan_from_labels(
+    config: AgentConfig,
     labels: dict[str, str],
     log_analysis: LogAnalysis,
-) -> list[str]:
-    """ExplorationLoRA placeholder — rule-based until D2 trainer ships."""
+) -> tuple[list[str], str]:
+    """ExplorationLoRA when adapter available; heuristic fallback otherwise."""
+    mode = "heuristic"
+    repo = resolve_asra_lora_repo(config)
+    adapter_dir = resolve_exploration_adapter_dir(config)
+
+    visit_count = max(log_analysis.action_counts.values()) if log_analysis.action_counts else 1
     dead_ends = sum(1 for v in labels.values() if v in {"dead_end", "no_change"})
+    frontier = {
+        "visit_count_current_state": visit_count,
+        "dead_end_ratio": round(dead_ends / max(len(labels), 1), 3),
+        "loop_detected": dead_ends > len(labels) // 2 if labels else False,
+        "policy": "arc_agi_3_research_agent",
+    }
+    last_transitions = [
+        {
+            "action": t.action,
+            "state_hash": t.state_hash[:12],
+            "changed_cells": t.num_changed_cells,
+        }
+        for t in log_analysis.transitions[-3:]
+    ]
+    hypotheses = sorted(set(labels.values()))[:5]
+
+    if adapter_dir and repo and config.lora_inference_mode != "heuristic":
+        try:
+            import sys
+
+            sys.path.insert(0, str(repo))
+            from infer.exploration_lora import ExplorationLoRA  # type: ignore
+
+            model = ExplorationLoRA(adapter_dir=str(adapter_dir))
+            result = model.recommend_next_action(
+                frontier_summary=frontier,
+                last_transitions=last_transitions,
+                hypotheses=hypotheses,
+            )
+            action = result["next_action"]
+            plan = [action, "RESET", "Log transition JSONL for LoRA retraining"]
+            if log_analysis.errors:
+                plan.append("Fix gateway/runtime errors before exploration policy changes")
+            return plan, "exploration_lora"
+        except Exception:
+            pass
+
+    dead_ends_count = dead_ends
     terminals = sum(1 for v in labels.values() if v == "terminal_transition")
     plan: list[str] = []
-    if dead_ends > terminals:
-        plan.append("RESET")
-        plan.append("ACTION1")
-        plan.append("Prefer untried actions on repeated no_change states")
+    if dead_ends_count > terminals:
+        plan.extend(["RESET", "ACTION1", "Prefer untried actions on repeated no_change states"])
     else:
-        plan.append("ACTION2")
-        plan.append("ACTION3")
-        plan.append("Log transition JSONL for LoRA cache refresh")
+        plan.extend(["ACTION2", "ACTION3", "Log transition JSONL for LoRA cache refresh"])
     if log_analysis.errors:
         plan.append("Fix gateway/runtime errors before exploration policy changes")
-    return plan
+    return plan, mode
 
 
 def failure_revision_from_score(

@@ -131,7 +131,7 @@ def write_status_summary(
             },
         ],
         "known_blockers": [
-            "ExplorationLoRA / FailureLoRA / TraceLoRA trainers not shipped yet (rule-based fallbacks)",
+            "ExplorationLoRA / FailureLoRA / TraceLoRA trainers: ExplorationLoRA shipped; others rule-based until D3/D7",
             "HypothesisLoRA requires ASRA-LoRA repo or adapter weights on runner",
             "Public score 0.00 until Phase 7 + LoRA bridge solves games",
         ],

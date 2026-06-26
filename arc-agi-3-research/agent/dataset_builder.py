@@ -38,11 +38,23 @@ def _exploration_row(
     transition: ParsedTransition,
     hypotheses: list[str],
     next_action: str,
+    visit_count: int,
 ) -> dict[str, Any]:
     return {
+        "dataset": "next_action_v0",
+        "instruction": "Recommend the next action given exploration context.",
         "input": {
-            "state_hash": transition.state_hash,
-            "action": transition.action,
+            "frontier_summary": {
+                "visit_count_current_state": visit_count,
+                "policy": "arc_agi_3_research_cycle",
+            },
+            "last_transitions": [
+                {
+                    "action": transition.action,
+                    "state_hash": transition.state_hash[:12],
+                    "changed_cells": transition.num_changed_cells,
+                }
+            ],
             "hypotheses": hypotheses,
         },
         "output": next_action,
@@ -118,6 +130,7 @@ def export_cycle_datasets(
                     transition,
                     hypotheses=[label],
                     next_action=exploration_plan[0],
+                    visit_count=log_analysis.action_counts.get(transition.action, 1),
                 )
             )
 

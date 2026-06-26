@@ -40,7 +40,9 @@ def advise_from_logs(
     labels, mode = classify_transitions_with_hypothesis_lora(
         config, log_analysis.transitions
     )
-    exploration = exploration_plan_from_labels(labels, log_analysis)
+    exploration, exploration_mode = exploration_plan_from_labels(
+        config, labels, log_analysis
+    )
     failure_revision = failure_revision_from_score(submission_score, log_analysis)
 
     adapter_dir = resolve_adapter_dir(config)
@@ -86,7 +88,7 @@ def advise_from_logs(
     architecture_changes = "\n".join(
         [
             "- HypothesisLoRA: classify action effects from state transitions",
-            "- ExplorationLoRA (rules until D2 trained): choose next action under budget",
+            "- ExplorationLoRA: recommend next action from frontier + transition history",
             "- FailureLoRA (rules until D3 trained): revise policy when score stuck at 0",
             "- TraceLoRA (rules until D7 trained): full observe→hypothesis→revision traces",
             "- Merge cycle JSONL into ASRA-LoRA `data/generated/` for retraining",
@@ -126,7 +128,7 @@ def advise_from_logs(
 
     return LoraAdvisorResult(
         labels=labels,
-        classification_mode=mode,
+        classification_mode=f"{mode}+{exploration_mode}",
         exploration_plan=exploration,
         failure_revision=failure_revision,
         hypothesis=hypothesis,

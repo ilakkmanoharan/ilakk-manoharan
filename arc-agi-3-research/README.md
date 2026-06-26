@@ -27,7 +27,10 @@ arc-agi-3-research/
     hypotheses/
     strategies/
     notebooks/
-    reports/
+    datasets/
+    adapters/            # HypothesisLoRA Kaggle cache (synced from ASRA-LoRA)
+  docs/
+    asra-lora-integration.md
   templates/
   notebooks/             # Next submission scaffold
 ```
@@ -47,6 +50,19 @@ Dry-run the daily cycle (no API keys):
 python scripts/run_daily_cycle.py --dry-run
 ```
 
+## ASRA-LoRA strategy (default on)
+
+Phases 3–8 now use LoRA advisors when `ARC_AGENT_USE_LORA=1`:
+
+1. Parse Kaggle logs into transitions
+2. **HypothesisLoRA** labels (heuristic fallback in CI)
+3. **Exploration / Failure / Trace** advisors plan next submission
+4. Export training JSONL to `research/datasets/{day}/`
+5. Bootstrap **ASRA Phase 7** notebook + inject LoRA intervention cell
+6. Package HypothesisLoRA cache embed with kernel
+
+See `docs/asra-lora-integration.md` and [ASRA-LoRA on GitHub](https://github.com/ilakkmanoharan/ASRA-LoRA).
+
 ## GitHub Secrets
 
 ```text
@@ -64,7 +80,9 @@ Workflow env:
 ARC_AGENT_AUTO_SUBMIT=1   # push kernel + submit (on in GitHub Actions)
 ARC_AGENT_DRY_RUN=1       # test without API calls
 KAGGLE_KERNEL_SLUG=arc-agi-3-research-agent
-KAGGLE_BASE_KERNEL=ilakkmanoharan/asra-phase-4-arc-prize-2026
+ARC_AGENT_USE_LORA=1      # LoRA-driven analysis/strategy (default on)
+ASRA_LORA_REPO=...        # path to ASRA-LoRA clone
+KAGGLE_BASE_KERNEL=ilakkmanoharan/asra-phase-7-arc-prize-2026
 ```
 
 Never commit tokens.

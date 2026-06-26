@@ -1,0 +1,19 @@
+{
+  "submission_id": "dry-run",
+  "status": "COMPLETE",
+  "score": null,
+  "private_score": null,
+  "description": "Dry-run placeholder submission",
+  "error_description": null,
+  "file_name": "submission.parquet",
+  "kernel_slug": "ilakkmanoharan/asra-phase-4-arc-prize-2026",
+  "kernel_version": null,
+  "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/asra-phase-4-arc-prize-2026",
+  "submitted_at": null,
+  "competition_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+  "submissions_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+  "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+  "raw": {
+    "dry_run": true
+  }
+}

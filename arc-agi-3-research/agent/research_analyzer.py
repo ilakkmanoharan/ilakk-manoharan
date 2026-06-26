@@ -3,6 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 
 from agent.config import AgentConfig
+from agent.lora_advisor import LoraAdvisorResult, advise_from_logs, format_lora_analysis_markdown
+from agent.log_parser import LogAnalysis, parse_log_paths
 
 
 ANALYSIS_FILES = (
@@ -17,10 +19,6 @@ def _read_optional(path: Path) -> str:
     return path.read_text(encoding="utf-8") if path.exists() else ""
 
 
-def _template_block(title: str, body: str) -> str:
-    return f"## {title}\n\n{body.strip() or '_Pending._'}\n"
-
-
 def generate_analysis_artifacts(
     config: AgentConfig,
     *,
@@ -29,10 +27,21 @@ def generate_analysis_artifacts(
     submission_score: str | float | None,
     submission_summary: str,
     logs_summary: str,
+    log_paths: list[Path] | None = None,
     use_openai: bool,
+    lora_advisor: LoraAdvisorResult | None = None,
 ) -> dict[str, Path]:
     analysis_dir = config.research_root / "analysis" / day_dir_name
     analysis_dir.mkdir(parents=True, exist_ok=True)
+
+    log_analysis = parse_log_paths(log_paths or []) if log_paths else LogAnalysis()
+    if config.has_lora() and lora_advisor is None:
+        lora_advisor = advise_from_logs(
+            config,
+            log_analysis=log_analysis,
+            submission_score=submission_score,
+            submission_status=submission_status,
+        )
 
     context = (
         f"Submission status: {submission_status}\n"
@@ -41,7 +50,9 @@ def generate_analysis_artifacts(
         f"Logs: {logs_summary}\n"
     )
 
-    if use_openai and config.has_openai():
+    if lora_advisor is not None:
+        contents = format_lora_analysis_markdown(lora_advisor, log_analysis)
+    elif use_openai and config.has_openai():
         contents = _generate_with_openai(config, context)
     else:
         contents = _generate_stub(context, submission_status)
@@ -130,6 +141,7 @@ def generate_hypothesis(
     *,
     day_dir_name: str,
     analysis_paths: dict[str, Path],
+    lora_advisor: LoraAdvisorResult | None = None,
 ) -> Path:
     hypotheses_dir = config.research_root / "hypotheses" / day_dir_name
     hypotheses_dir.mkdir(parents=True, exist_ok=True)
@@ -140,21 +152,48 @@ def generate_hypothesis(
     evidence = _read_optional(analysis_paths.get("causal-analysis.md", Path()))
     theory = _read_optional(analysis_paths.get("theory.md", Path()))
 
+    hypothesis = (
+        "Improving transition logging and action-semantics recovery will "
+        "raise ARC-AGI-3 milestone scores on the next submission."
+    )
+    intervention = (
+        "Extend ASRA Phase 1 transition schema, add replay buffer, and "
+        "tighten exploration policy under fixed step budget."
+    )
+    expected_outcome = "Higher completion rate on hidden-mechanism games."
+    risks = "Overfitting to a single game family; notebook runtime limits."
+    next_experiment = "Ablate exploration memory vs baseline on one held-out game."
+
+    if lora_advisor is not None:
+        hypothesis = lora_advisor.hypothesis
+        intervention = lora_advisor.intervention
+        expected_outcome = (
+            "Improved action-semantics labels and exploration efficiency "
+            f"via {lora_advisor.classification_mode}."
+        )
+        risks = (
+            "LoRA cache miss on unseen states; adapter drift if cycle datasets "
+            "are not merged into ASRA-LoRA retraining."
+        )
+        next_experiment = (
+            "Retrain HypothesisLoRA on merged cycle JSONL; add ExplorationLoRA "
+            "trainer when D2 pipeline lands."
+        )
+
     body = template.format(
         observation=observation[:2000] or "_See analysis artifacts._",
         evidence=evidence[:2000] or "_See causal analysis._",
         interpretation=theory[:1500] or "_Pending interpretation._",
-        hypothesis=(
-            "Improving transition logging and action-semantics recovery will "
-            "raise ARC-AGI-3 milestone scores on the next submission."
+        hypothesis=hypothesis,
+        intervention=intervention,
+        expected_outcome=expected_outcome,
+        risks=risks,
+        next_experiment=next_experiment,
+        lora_adapters=(
+            lora_advisor.adapter_note
+            if lora_advisor
+            else "_LoRA advisor disabled for this cycle._"
         ),
-        intervention=(
-            "Extend ASRA Phase 1 transition schema, add replay buffer, and "
-            "tighten exploration policy under fixed step budget."
-        ),
-        expected_outcome="Higher completion rate on hidden-mechanism games.",
-        risks="Overfitting to a single game family; notebook runtime limits.",
-        next_experiment="Ablate exploration memory vs baseline on one held-out game.",
     )
     out = hypotheses_dir / "hypothesis.md"
     out.write_text(body, encoding="utf-8")
@@ -166,6 +205,7 @@ def generate_strategy(
     *,
     day_dir_name: str,
     hypothesis_path: Path,
+    lora_advisor: LoraAdvisorResult | None = None,
 ) -> Path:
     strategies_dir = config.research_root / "strategies" / day_dir_name
     strategies_dir.mkdir(parents=True, exist_ok=True)
@@ -173,25 +213,46 @@ def generate_strategy(
     template = template_path.read_text(encoding="utf-8")
     hypothesis_excerpt = hypothesis_path.read_text(encoding="utf-8")[:2500]
 
-    body = template.format(
-        hypothesis_excerpt=hypothesis_excerpt,
-        notebook_modifications=(
+    if lora_advisor is not None:
+        notebook_modifications = lora_advisor.notebook_modifications
+        architecture_changes = lora_advisor.architecture_changes
+        feature_additions = lora_advisor.feature_additions
+        ablations = lora_advisor.ablations
+        experiment_plan = lora_advisor.experiment_plan
+        lora_section = (
+            f"**Mode:** {lora_advisor.classification_mode}\n\n"
+            f"**Adapters:** {lora_advisor.adapter_note}\n\n"
+            f"**Exploration plan:** {', '.join(lora_advisor.exploration_plan)}\n\n"
+            f"**Failure revision:** {lora_advisor.failure_revision}\n"
+        )
+    else:
+        notebook_modifications = (
             "- Update `notebooks/arc_agi_3_next_submission.ipynb` bootstrap\n"
             "- Pin ASRA phase modules used in agent loop\n"
             "- Log transitions to JSONL under research/logs/"
-        ),
-        architecture_changes=(
+        )
+        architecture_changes = (
             "- Strengthen transition-centric memory store\n"
             "- Add causal hypothesis ranking before action selection"
-        ),
-        feature_additions="- Directed exploration under step budget",
-        ablations="- Memory off vs memory on\n- Random vs directed exploration",
-        experiment_plan=(
+        )
+        feature_additions = "- Directed exploration under step budget"
+        ablations = "- Memory off vs memory on\n- Random vs directed exploration"
+        experiment_plan = (
             "1. Implement intervention from hypothesis\n"
             "2. Run local smoke test\n"
             "3. Submit notebook to Kaggle\n"
             "4. Monitor status every 2 hours"
-        ),
+        )
+        lora_section = "_Enable ARC_AGENT_USE_LORA=1 for ASRA-LoRA-driven strategy._"
+
+    body = template.format(
+        hypothesis_excerpt=hypothesis_excerpt,
+        lora_section=lora_section,
+        notebook_modifications=notebook_modifications,
+        architecture_changes=architecture_changes,
+        feature_additions=feature_additions,
+        ablations=ablations,
+        experiment_plan=experiment_plan,
     )
     out = strategies_dir / "next-submission-plan.md"
     out.write_text(body, encoding="utf-8")

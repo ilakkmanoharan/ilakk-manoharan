@@ -8,12 +8,19 @@ from typing import Any
 
 from agent.config import AgentConfig
 from agent.kaggle_client import KaggleClient
+from agent.dataset_builder import export_cycle_datasets
+from agent.log_parser import parse_log_paths
+from agent.lora_advisor import advise_from_logs
 from agent.kernel_submitter import (
     build_kernel_package,
     default_kernel_slug,
     push_kernel,
     submit_code_competition,
     wait_for_kernel,
+)
+from agent.notebook_editor import (
+    apply_strategy_to_notebook,
+    copy_adapter_files_to_kernel_package,
 )
 from agent.portfolio_sync import (
     sync_timeline_summary_fields,
@@ -32,7 +39,14 @@ def _utc_day() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
 
-def _ensure_notebook(config: AgentConfig, strategy_path: Path) -> Path:
+def _ensure_notebook(
+    config: AgentConfig,
+    strategy_path: Path,
+    *,
+    day: str,
+    intervention: str,
+    exploration_plan: list[str],
+) -> Path:
     notebooks_dir = config.research_root / "notebooks"
     notebooks_dir.mkdir(parents=True, exist_ok=True)
     target = notebooks_dir / "arc_agi_3_next_submission.ipynb"
@@ -44,11 +58,13 @@ def _ensure_notebook(config: AgentConfig, strategy_path: Path) -> Path:
     if config.has_kaggle() and _notebook_is_scaffold(target):
         _bootstrap_notebook_from_kernel(config, target)
 
-    stamp = notebooks_dir / _utc_day() / "submission-context.md"
-    stamp.parent.mkdir(parents=True, exist_ok=True)
-    stamp.write_text(
-        f"# Next submission context\n\nBased on:\n\n`{strategy_path.relative_to(config.repo_root)}`\n",
-        encoding="utf-8",
+    apply_strategy_to_notebook(
+        config,
+        notebook_path=target,
+        strategy_path=strategy_path,
+        day=day,
+        intervention=intervention,
+        exploration_plan=exploration_plan,
     )
     return target
 
@@ -95,16 +111,63 @@ class DailyResearchCycle:
 
         submission = self._phase_retrieve_submission(day)
         log_paths = self._phase_retrieve_logs(day, submission)
-        analysis_paths = self._phase_analysis(day, submission, log_paths)
-        hypothesis_path = self._phase_hypothesis(day, analysis_paths)
-        strategy_path = self._phase_strategy(day, hypothesis_path)
+        lora_advisor = None
+        if self.config.has_lora():
+            log_analysis = parse_log_paths(log_paths)
+            lora_advisor = advise_from_logs(
+                self.config,
+                log_analysis=log_analysis,
+                submission_score=submission.score,
+                submission_status=submission.status,
+            )
+            self.timeline.append_event(
+                "lora_analysis_created",
+                submission_id=submission.submission_id,
+                score=submission.score,
+                summary=(
+                    f"LoRA advisor ({lora_advisor.classification_mode}): "
+                    f"{len(lora_advisor.labels)} labels, "
+                    f"plan={', '.join(lora_advisor.exploration_plan[:3])}"
+                ),
+            )
+            dataset_paths = export_cycle_datasets(
+                self.config,
+                day=day,
+                log_analysis=log_analysis,
+                submission_id=submission.submission_id,
+                submission_score=submission.score,
+                lora_labels=lora_advisor.labels,
+                exploration_plan=lora_advisor.exploration_plan,
+                failure_revision=lora_advisor.failure_revision,
+            )
+            self.timeline.append_event(
+                "dataset_exported",
+                submission_id=submission.submission_id,
+                github_documents=self.timeline.relative_paths(
+                    dataset_paths["manifest"],
+                    dataset_paths["action_effect"],
+                ),
+                summary="Exported cycle JSONL datasets for ASRA-LoRA retraining",
+            )
+
+        analysis_paths = self._phase_analysis(
+            day, submission, log_paths, lora_advisor=lora_advisor
+        )
+        hypothesis_path = self._phase_hypothesis(day, analysis_paths, lora_advisor)
+        strategy_path = self._phase_strategy(day, hypothesis_path, lora_advisor)
         commit_note = self._phase_record_commit(
             day, analysis_paths, hypothesis_path, strategy_path
         )
         manifest_path = self._phase_portfolio_update(
             submission, hypothesis_path, strategy_path
         )
-        notebook_path = _ensure_notebook(self.config, strategy_path)
+        notebook_path = _ensure_notebook(
+            self.config,
+            strategy_path,
+            day=day,
+            intervention=lora_advisor.intervention if lora_advisor else "ASRA baseline",
+            exploration_plan=lora_advisor.exploration_plan if lora_advisor else [],
+        )
         submit_result = self._phase_submit(day, notebook_path, strategy_path)
 
         if submit_result.get("submission_id"):
@@ -123,7 +186,9 @@ class DailyResearchCycle:
             else "notebook missing"
         )
         if _notebook_is_scaffold(notebook_path):
-            notebook_note += " — ASRA Phase 4 bootstrap (no strategy edits applied yet)"
+            notebook_note += " — scaffold (bootstrap may still apply)"
+        elif lora_advisor:
+            notebook_note += f" — LoRA strategy applied ({lora_advisor.classification_mode})"
         write_status_summary(
             self.config,
             self.timeline.load(),
@@ -206,7 +271,14 @@ class DailyResearchCycle:
         )
         return paths
 
-    def _phase_analysis(self, day: str, submission, log_paths: list[Path]):
+    def _phase_analysis(
+        self,
+        day: str,
+        submission,
+        log_paths: list[Path],
+        *,
+        lora_advisor=None,
+    ):
         logs_summary = ", ".join(p.name for p in log_paths[:8])
         analysis_paths = generate_analysis_artifacts(
             self.config,
@@ -215,7 +287,9 @@ class DailyResearchCycle:
             submission_score=submission.score,
             submission_summary=submission.description,
             logs_summary=logs_summary,
-            use_openai=self.config.has_openai(),
+            log_paths=log_paths,
+            use_openai=self.config.has_openai() and lora_advisor is None,
+            lora_advisor=lora_advisor,
         )
         self.timeline.append_event(
             "analysis_created",
@@ -239,9 +313,12 @@ class DailyResearchCycle:
         )
         return analysis_paths
 
-    def _phase_hypothesis(self, day: str, analysis_paths: dict[str, Path]) -> Path:
+    def _phase_hypothesis(self, day: str, analysis_paths: dict[str, Path], lora_advisor=None) -> Path:
         path = generate_hypothesis(
-            self.config, day_dir_name=day, analysis_paths=analysis_paths
+            self.config,
+            day_dir_name=day,
+            analysis_paths=analysis_paths,
+            lora_advisor=lora_advisor,
         )
         self.timeline.append_event(
             "hypothesis_created",
@@ -250,9 +327,12 @@ class DailyResearchCycle:
         )
         return path
 
-    def _phase_strategy(self, day: str, hypothesis_path: Path) -> Path:
+    def _phase_strategy(self, day: str, hypothesis_path: Path, lora_advisor=None) -> Path:
         path = generate_strategy(
-            self.config, day_dir_name=day, hypothesis_path=hypothesis_path
+            self.config,
+            day_dir_name=day,
+            hypothesis_path=hypothesis_path,
+            lora_advisor=lora_advisor,
         )
         self.timeline.append_event(
             "strategy_created",
@@ -327,6 +407,7 @@ class DailyResearchCycle:
             message=message,
             day=day,
         )
+        copy_adapter_files_to_kernel_package(self.config, package_dir)
 
         if not self.config.auto_submit:
             note = (

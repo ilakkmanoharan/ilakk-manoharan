@@ -1,0 +1,1 @@
+{"input": {"failed_hypothesis": "score_stuck_at_zero", "observation": "Transitions parsed: 0\nErrors: 0\nAction counts: {}\nLabel hints: {}"}, "output": "Continue LoRA-guided directed exploration under step budget.", "source": "arc-agi-3-research-cycle"}

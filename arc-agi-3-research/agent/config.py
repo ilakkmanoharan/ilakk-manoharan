@@ -23,6 +23,8 @@ EVENT_TYPES = frozenset(
         "portfolio_updated",
         "cycle_started",
         "cycle_completed",
+        "dataset_exported",
+        "lora_analysis_created",
     }
 )
 
@@ -42,6 +44,11 @@ class AgentConfig:
     openai_model: str
     dry_run: bool
     auto_submit: bool
+    use_lora: bool
+    asra_lora_repo: Path | None
+    hypothesis_adapter_dir: Path | None
+    lora_cache_embed_path: Path | None
+    lora_inference_mode: str
 
     @classmethod
     def from_env(cls, repo_root: Path | None = None) -> AgentConfig:
@@ -54,6 +61,23 @@ class AgentConfig:
         }
         token = os.getenv("KAGGLE_API_TOKEN") or None
         key = os.getenv("KAGGLE_KEY") or token
+        use_lora = os.getenv("ARC_AGENT_USE_LORA", "1").lower() in {"1", "true", "yes"}
+        asra_lora_repo_raw = os.getenv("ASRA_LORA_REPO", "").strip()
+        asra_lora_repo = Path(asra_lora_repo_raw) if asra_lora_repo_raw else None
+        hypothesis_adapter_raw = os.getenv("HYPOTHESIS_LORA_ADAPTER_DIR", "").strip()
+        hypothesis_adapter_dir = (
+            Path(hypothesis_adapter_raw) if hypothesis_adapter_raw else None
+        )
+        lora_cache_raw = os.getenv("LORA_CACHE_EMBED_PATH", "").strip()
+        lora_cache_embed_path = Path(lora_cache_raw) if lora_cache_raw else None
+        default_base_kernel = os.getenv(
+            "KAGGLE_BASE_KERNEL",
+            (
+                "ilakkmanoharan/asra-phase-7-arc-prize-2026"
+                if use_lora
+                else "ilakkmanoharan/asra-phase-4-arc-prize-2026"
+            ),
+        )
         return cls(
             repo_root=root,
             research_root=root / "research",
@@ -66,14 +90,17 @@ class AgentConfig:
             kaggle_kernel_slug=os.getenv(
                 "KAGGLE_KERNEL_SLUG", "arc-agi-3-research-agent"
             ),
-            kaggle_base_kernel=os.getenv(
-                "KAGGLE_BASE_KERNEL", "ilakkmanoharan/asra-phase-4-arc-prize-2026"
-            ),
+            kaggle_base_kernel=default_base_kernel,
             kaggle_output_file=os.getenv("KAGGLE_OUTPUT_FILE", "submission.parquet"),
             openai_api_key=os.getenv("OPENAI_API_KEY"),
             openai_model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"),
             dry_run=dry_run,
             auto_submit=auto_submit,
+            use_lora=use_lora,
+            asra_lora_repo=asra_lora_repo,
+            hypothesis_adapter_dir=hypothesis_adapter_dir,
+            lora_cache_embed_path=lora_cache_embed_path,
+            lora_inference_mode=os.getenv("LORA_INFERENCE_MODE", "auto"),
         )
 
     def has_kaggle(self) -> bool:
@@ -83,3 +110,6 @@ class AgentConfig:
 
     def has_openai(self) -> bool:
         return bool(self.openai_api_key) and not self.dry_run
+
+    def has_lora(self) -> bool:
+        return self.use_lora

@@ -185,4 +185,6 @@ export const EVENT_LABELS: Record<string, string> = {
   fix_committed: "Fix committed",
   resubmitted: "Resubmitted",
   portfolio_updated: "Portfolio updated",
+  dataset_exported: "Dataset exported",
+  lora_analysis_created: "LoRA analysis created",
 };

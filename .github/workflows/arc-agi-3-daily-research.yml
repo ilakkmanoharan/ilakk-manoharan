@@ -28,6 +28,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Checkout ASRA-LoRA (LoRA adapters + cache)
+        uses: actions/checkout@v4
+        with:
+          repository: ilakkmanoharan/ASRA-LoRA
+          path: ASRA-LoRA
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -60,6 +66,10 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ARC_AGENT_DRY_RUN: ${{ (github.event.inputs.dry_run == true || github.event.inputs.dry_run == 'true') && '1' || '' }}
           ARC_AGENT_AUTO_SUBMIT: ${{ (github.event.inputs.dry_run == true || github.event.inputs.dry_run == 'true' || github.event.inputs.auto_submit == false || github.event.inputs.auto_submit == 'false') && '' || '1' }}
+          ARC_AGENT_USE_LORA: "1"
+          ASRA_LORA_REPO: ${{ github.workspace }}/ASRA-LoRA
+          KAGGLE_BASE_KERNEL: ilakkmanoharan/asra-phase-7-arc-prize-2026
+          LORA_INFERENCE_MODE: heuristic
         run: |
           ARGS=""
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then

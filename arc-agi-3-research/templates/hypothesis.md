@@ -31,3 +31,7 @@
 ## Next Experiment
 
 {next_experiment}
+
+## LoRA adapters
+
+{lora_adapters}

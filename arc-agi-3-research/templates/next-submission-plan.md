@@ -6,6 +6,12 @@ Linked hypothesis excerpt:
 
 ---
 
+## LoRA-driven plan
+
+{lora_section}
+
+---
+
 ## Notebook modifications
 
 {notebook_modifications}

@@ -81,8 +81,9 @@ def write_status_summary(
         "notebook_status": notebook_note or "arc_agi_3_next_submission.ipynb (ASRA Phase 4 bootstrap)",
         "current_hypothesis": hypothesis_one_liner,
         "planned_direction": (
-            "ASRA-LoRA: transition-trace adapters (HypothesisLoRA, ExplorationLoRA) "
-            "— see SciLayer concept paper"
+            "ASRA-LoRA loop: HypothesisLoRA labels logs → Exploration/Failure/Trace "
+            "adapters plan next actions → notebook uses Phase 7 + LoRA cache → "
+            "cycle JSONL merges into retraining corpora"
         ),
         "planned_direction_url": (
             "https://sci-layer.vercel.app/articles/"
@@ -130,9 +131,9 @@ def write_status_summary(
             },
         ],
         "known_blockers": [
-            "Notebook is not yet auto-edited from strategy — same ASRA Phase 4 code resubmitted",
-            "Public score 0.00 — gateway runs but does not solve ARC-AGI-3 games",
-            "Timeline syncs previous submission until next cycle ingests latest Kaggle result",
+            "ExplorationLoRA / FailureLoRA / TraceLoRA trainers not shipped yet (rule-based fallbacks)",
+            "HypothesisLoRA requires ASRA-LoRA repo or adapter weights on runner",
+            "Public score 0.00 until Phase 7 + LoRA bridge solves games",
         ],
     }
 

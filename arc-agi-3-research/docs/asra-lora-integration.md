@@ -8,7 +8,7 @@ The research agent uses **ASRA-LoRA adapters** to close the loop between Kaggle 
 Kaggle logs
   → parse transitions (log_parser)
   → HypothesisLoRA labels (or heuristic fallback)
-  → Exploration / Failure / Trace advisors (rules until D2/D3/D7 trainers ship)
+  → ExplorationLoRA (when `adapters/exploration-lora-v0/` exists) / Failure / Trace advisors (rules until D3/D7 trainers ship)
   → analysis + hypothesis + strategy markdown
   → export cycle JSONL → research/datasets/{day}/
   → apply strategy to notebook (Phase 7 bootstrap + LoRA stamp + cache embed)
@@ -21,7 +21,7 @@ Kaggle logs
 | Adapter | Role in agent | Training data |
 |---------|---------------|---------------|
 | **HypothesisLoRA** | Label action effects from logs | D1 + cycle `dataset1_action_effect_cycle.jsonl` |
-| **ExplorationLoRA** | Plan next actions (rules for now) | D2 + cycle `dataset2_exploration_cycle.jsonl` |
+| **ExplorationLoRA** | Plan next actions (LoRA when weights exist) | D2 + cycle `dataset2_exploration_cycle.jsonl` |
 | **FailureLoRA** | Revise policy when score stuck (rules) | D3 + cycle `dataset3_failure_revision_cycle.jsonl` |
 | **TraceLoRA** | Full reasoning trace per cycle (rules) | D7 + cycle `dataset7_trace_cycle.jsonl` |
 
@@ -38,12 +38,26 @@ KAGGLE_BASE_KERNEL=ilakkmanoharan/asra-phase-7-arc-prize-2026
 
 ## Retrain after a cycle
 
+**HypothesisLoRA:**
+
 ```bash
 cd /path/to/ASRA-LoRA
 cat ../ilakk-manoharan/arc-agi-3-research/research/datasets/*/dataset1_action_effect_cycle.jsonl \
   >> data/generated/dataset1_action_effect_v0.jsonl
 python3 train/hypothesis_lora_sft.py --dataset dataset1_action_effect_v0.jsonl
 bash scripts/run_lora_pipeline.sh   # export cache + sync Phase 7
+```
+
+**ExplorationLoRA (cloud — Kaggle GPU):**
+
+1. Merge cycle exports into D2, then run [Train ExplorationLoRA](https://github.com/ilakkmanoharan/ASRA-LoRA/actions/workflows/train-exploration-lora.yml) on ASRA-LoRA (needs `KAGGLE_API_TOKEN` secret).
+2. Download the workflow artifact to `adapters/exploration-lora-v0/`, or enable **commit weights** on the workflow.
+3. Next daily ARC-AGI-3 run picks up ExplorationLoRA automatically when weights are present in the ASRA-LoRA checkout.
+
+```bash
+cat ../ilakk-manoharan/arc-agi-3-research/research/datasets/*/dataset2_exploration_cycle.jsonl \
+  >> data/generated/dataset2_next_action_v0.jsonl
+python3 scripts/cloud_train_exploration_lora.py --max-rows 4000 --max-steps 100
 ```
 
 SciLayer concept paper: https://sci-layer.vercel.app/articles/asra-lora-adaptive-scientific-reasoning-lora-fine-tuning

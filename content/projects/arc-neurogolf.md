@@ -18,6 +18,6 @@ techStack: '["Python","ONNX","ARC-AGI","LoRA","MLX","GitHub Actions","Kaggle","A
 
 An **autonomous Agent 1 loop** (Cursor Cloud + GitHub Actions) runs continuously: solve → submit → poll Kaggle every 10 minutes → logs → **LoRA-guided** diagnose → plan → implement → repeat. Three MLX LoRA adapters on Llama-3.2-3B learn from synthetic rows mined from our own submission analyses — goal: **raise Kaggle public score**.
 
-**Current best:** **915.03** Kaggle, **70** pass_all verified tasks (2026-06-17 submission-4). LoRA research charts and adapter stats: [/projects/arc-neurogolf](/projects/arc-neurogolf).
+**Current best:** **940.75** Kaggle, **72** pass_all verified tasks (2026-06-26 submission-2). LoRA research charts and per-submission stats: [/projects/arc-neurogolf](/projects/arc-neurogolf).
 
 Open source: [github.com/ilakkmanoharan/ARC-NeuroGolf](https://github.com/ilakkmanoharan/ARC-NeuroGolf)

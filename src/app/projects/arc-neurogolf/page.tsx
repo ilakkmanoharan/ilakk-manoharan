@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { NeurogolfLoraCharts } from "@/components/neurogolf-lora-charts";
+import { NeurogolfSubmissionsTable } from "@/components/neurogolf-submissions-table";
 import { ViewTracker } from "@/components/view-tracker";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -90,7 +91,7 @@ export default function ArcNeurogolfResearchPage() {
               <CardTitle className="text-3xl">{stats.best_kaggle ?? "—"}</CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground">
-              {stats.best_label}
+              {stats.best_label ?? "Best scored submission"}
             </CardContent>
           </Card>
           <Card>
@@ -112,6 +113,18 @@ export default function ArcNeurogolfResearchPage() {
             </CardContent>
           </Card>
         </div>
+
+        <section className="mt-10">
+          <h2 className="font-heading text-2xl font-semibold">Submissions</h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Per-submission Kaggle score, pass_all, audit est, and links to analysis /
+            plan / theory in the repo. Updated when{" "}
+            <code className="rounded bg-muted px-1">update_lora_research_page.py</code> runs.
+          </p>
+          <div className="mt-4">
+            <NeurogolfSubmissionsTable submissions={stats.submissions ?? []} />
+          </div>
+        </section>
 
         <section className="mt-10">
           <h2 className="font-heading text-2xl font-semibold">Progress charts</h2>

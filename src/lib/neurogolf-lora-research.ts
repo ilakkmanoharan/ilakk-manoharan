@@ -18,6 +18,34 @@ export type NeurogolfAdapterStats = {
   base_model: string;
 };
 
+export type NeurogolfSubmissionDetail = {
+  label: string;
+  date: string;
+  submission: number;
+  milestone: string | null;
+  phase: number | null;
+  pass_all: number | null;
+  kaggle_eligible: number | null;
+  train_only: number | null;
+  oversized_pass_all: number | null;
+  kaggle_actual: number | null;
+  kaggle_est: number | null;
+  kaggle_delta: number | null;
+  audit_ratio: number | null;
+  outcome: string;
+  submitted: boolean;
+  submitted_at: string | null;
+  submitted_by: string | null;
+  message: string;
+  onnx_count: number | null;
+  new_tasks: number[] | null;
+  solver_counts: Record<string, number> | null;
+  arcgen_validate_samples: number | null;
+  elapsed_s: number | null;
+  audit_buckets: Record<string, number> | null;
+  docs: Record<string, string>;
+};
+
 export type NeurogolfLoraStats = {
   generated_at: string;
   competition: string;
@@ -26,6 +54,7 @@ export type NeurogolfLoraStats = {
   best_pass_all: number | null;
   best_label: string | null;
   timeline: NeurogolfTimelinePoint[];
+  submissions: NeurogolfSubmissionDetail[];
   outcomes: Record<string, number>;
   adapters: Record<string, NeurogolfAdapterStats>;
   note_arcgen: string;

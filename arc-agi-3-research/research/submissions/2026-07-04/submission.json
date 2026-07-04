@@ -1,0 +1,27 @@
+{
+  "submission_id": "54296051",
+  "status": "COMPLETE",
+  "score": null,
+  "private_score": null,
+  "description": "ARC-AGI-3 Duck REPL harness v11 \u2014 2026-07-03",
+  "error_description": null,
+  "file_name": null,
+  "kernel_slug": "ilakkmanoharan/arc-agi-3-research-agent",
+  "kernel_version": "332387901",
+  "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=332387901",
+  "submitted_at": "2026-07-03 11:11:55.297000",
+  "competition_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+  "submissions_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+  "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+  "raw": {
+    "ref": 54296051,
+    "status": "COMPLETE",
+    "publicScore": null,
+    "privateScore": null,
+    "description": "ARC-AGI-3 Duck REPL harness v11 \u2014 2026-07-03",
+    "errorDescription": null,
+    "fileName": null,
+    "url": "/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=332387901",
+    "date": "2026-07-03 11:11:55.297000"
+  }
+}

@@ -38,6 +38,7 @@ export const siteConfig = {
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
+  { href: "/experience", label: "Professional Experience" },
   { href: "/startups", label: "Startup Catalog" },
   { href: "/hackathons", label: "Hackathons" },
   { href: "/founder-studio", label: "Founder Studio" },

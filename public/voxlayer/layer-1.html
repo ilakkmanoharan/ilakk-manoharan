@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layer 1 — Planner | VoxLayer Architecture</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to architecture diagram</a>
+
+    <div class="layer-hero mixed">
+      <div class="layer-number">Layer 1</div>
+      <h1>Planner — the shopping list</h1>
+      <p class="layer-nickname">"What to generate"</p>
+      <p class="layer-summary">Layer 1 answers: "What training examples do we need?" In v2 it reads sipagent's state machine JSON, lists every legal transition (edge), and schedules ~100 jobs per edge. It does not write dialogue — only the work list for Layers 2–5.</p>
+      <span class="status-badge mixed">v1 scripts shipped; SM edge planner planned</span>
+      <p class="code-ref">Shipped: traversal/scenarios.py + distribution % · Planned: planner/sm_graph.py, edge_scheduler.py</p>
+    </div>
+
+    <section class="qa-section">
+      <h2>Questions &amp; answers</h2>
+      <p class="qa-hint">Click a question to reveal the answer.</p>
+      <div class="qa-list">
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is Layer 1 in one sentence?</button>
+          <div class="qa-answer committed">Layer 1 decides <strong>which</strong> training examples to create and <strong>how many</strong> — the shopping list before anyone builds a row.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">How does v1 planning work today (Jul 6 commit)?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li>Config says: 70% happy, 20% edge, 10% failure</li>
+              <li>Layer 1 picks a <strong>script name</strong> like <code>happy:take_message</code> from <code>scenarios.py</code></li>
+              <li>Nine fixed scripts — not full state-machine enumeration</li>
+              <li>Scripts drive which call stories get simulated</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What problem did Jeff flag with v1 planning?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li>Some SM edges appear <strong>hundreds</strong> of times in a 2k dataset</li>
+              <li>Some edges appear <strong>zero</strong> times</li>
+              <li>Only ~11 unique caller template lines across 2k rows</li>
+            </ul>
+            v1 path_class % does not guarantee even edge coverage.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Is Layer 1 the LLM?</button>
+          <div class="qa-answer committed">No. Layer 1 never calls Gemma or any model. It only schedules which state-machine edge needs a training row.</div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">What is an "edge" in the state machine?</button>
+          <div class="qa-answer planned">
+            A <strong>state</strong> = where the call is right now (e.g. <code>TAKE_MESSAGE</code>).<br>
+            An <strong>edge</strong> = one legal move from state A to state B (e.g. <code>INTENT_CLASSIFY → TRANSFER</code>).<br><br>
+            Jeff's ask: ~100 training examples <strong>per edge</strong>, not "100 random calls and hope we covered transfer."
+          </div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">How will v2 parse the state machine (sm_graph.py)?</button>
+          <div class="qa-answer planned">
+            <ul>
+              <li>Open <code>state_machine_v1.json</code> from Layer 0 config</li>
+              <li>Read <code>initial_state</code> (usually <code>INTENT_CLASSIFY</code>)</li>
+              <li>For each state, read <code>transitions</code></li>
+              <li>Flatten nested branches (<code>business_hours</code>, <code>after_hours</code>) into simple arrows</li>
+              <li>Build Edge objects: <code>edge_id</code>, <code>from_state</code>, <code>to_state</code>, <code>events</code></li>
+            </ul>
+            Receptionist has ~20 edges total.
+          </div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">How will v2 schedule quotas (edge_scheduler.py)?</button>
+          <div class="qa-answer planned">
+            For each edge: create <code>transition_quota</code> jobs (default 100). Optional overrides for rare edges. Optional <code>total_rows</code> cap. Shuffle job order using seed from config.<br><br>
+            Output: a list of <strong>WorkUnit</strong> objects — one per training row to create.
+          </div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">What is a WorkUnit?</button>
+          <div class="qa-answer planned">
+            One work unit = one training row (v2 default). Example:
+            <ul>
+              <li><code>scenario_id</code>: acme-plumbing-CONFIRM_SLOTS__SEND_MESSAGE-0042</li>
+              <li><code>edge</code>: CONFIRM_SLOTS → SEND_MESSAGE</li>
+              <li><code>index</code>: 42 of 100 for this edge</li>
+              <li><code>entry_depth</code>: random → maybe 4 prefix turns in messages[]</li>
+              <li><code>path_class</code>: happy (optional tag for reporting)</li>
+            </ul>
+            Layers 2–5 each consume one work unit at a time.
+          </div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">Does one work unit = one whole phone call?</button>
+          <div class="qa-answer planned"><strong>No (v2).</strong> One work unit = one <strong>target transition</strong>, with optional prefix history packed inside one JSONL line. See Layers 2 and 5.</div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">Why ~100 examples per edge?</button>
+          <div class="qa-answer planned">Jeff's acceptance bar — the fine-tuned model must learn <strong>every</strong> legal state move with enough diverse examples. Edge quotas make coverage measurable.</div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">What happens to path_class in v2?</button>
+          <div class="qa-answer planned">In v1, path_class (happy/edge/failure) <strong>drives</strong> planning. In v2, the edge scheduler is <strong>primary</strong>; path_class becomes an optional tag for D-02-style reports, not the outer loop.</div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">Will there be a CLI to inspect edges before a run?</button>
+          <div class="qa-answer planned">Planned: <code>voxtune-generate --config receptionist-v2.yaml --list-edges</code> — prints the SM graph Jeff can review before a 2k run.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does Layer 1 NOT do?</button>
+          <div class="qa-answer committed">Does not run sipagent (Layer 2), pick company names (entities module), generate spoken lines (Layer 4), build messages[] (Layer 3), or write JSONL (Layer 5).</div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">What does Layer 1 hand off to Layer 2?</button>
+          <div class="qa-answer planned">
+            Per job: target edge A → B, <code>from_state</code> A (where agent must be before target turn), <code>to_state</code> B (label forced on assistant output), <code>entry_depth</code> hint, <code>edge_id</code> for meta.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <nav class="nav-layers">
+      <a href="layer-0.html">Layer 0</a>
+      <a href="layer-1.html" class="active">Layer 1</a>
+      <a href="layer-2.html">Layer 2</a>
+      <a href="layer-4.html">Layer 4</a>
+      <a href="layer-3.html">Layer 3</a>
+      <a href="layer-5.html">Layer 5</a>
+    </nav>
+  </div>
+  <script src="js/accordion.js"></script>
+</body>
+</html>

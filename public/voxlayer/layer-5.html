@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layer 5 — Writer | VoxLayer Architecture</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to architecture diagram</a>
+
+    <div class="layer-hero committed">
+      <div class="layer-number">Layer 5</div>
+      <h1>Writer — the filing cabinet</h1>
+      <p class="layer-nickname">"Save one JSONL line per example"</p>
+      <p class="layer-summary">Layer 5 takes each finished row from Layer 3 and appends one line to a JSONL file. When the run finishes, you have a dataset ready for voxtune-validate and Unsloth training. It does not plan, walk, speak, or wrap — it only persists.</p>
+      <span class="status-badge committed">Shipped — generate.py write loop in voxtune main</span>
+      <p class="code-ref">Shipped: cli/generate.py, models.py, samples/receptionist_500.jsonl</p>
+    </div>
+
+    <section class="qa-section">
+      <h2>Questions &amp; answers</h2>
+      <p class="qa-hint">Click a question to reveal the answer.</p>
+      <div class="qa-list">
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is Layer 5 in one sentence?</button>
+          <div class="qa-answer committed">Layer 5 is the filing clerk — it serializes each assembled training row and appends one JSON line to the output file.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does Layer 5 do step by step?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li>Receive assembled row from Layer 3 (in memory)</li>
+              <li>Serialize to compact JSON (UTF-8, one object)</li>
+              <li>Append one line to output.path from Layer 0 config</li>
+              <li>Repeat for every work unit Layer 1 scheduled</li>
+              <li>Flush / close file when run completes</li>
+            </ul>
+            Typical: inside <code>voxtune-generate</code> main loop after <code>PromptAssembler.build_row(...)</code>.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is JSONL and why one line per row?</button>
+          <div class="qa-answer committed">
+            JSONL = JSON Lines — one JSON object per line. Benefits: streaming (write row 1 before row 2000 exists), easier resume/split, training loaders ingest line by line, no single giant array in git.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does each line contain?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li><code>messages[]</code> — model input (system + conversation with runtime badges)</li>
+              <li><code>output</code> — model label (target assistant line + next_state)</li>
+              <li><code>meta</code> — provenance (scenario_id, path_class, state, next_state, company_slug…)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Where is the Jul 6 sample dataset?</button>
+          <div class="qa-answer committed"><code>voxtune/generator/samples/receptionist_500.jsonl</code> — 500 rows, 3 companies, 70/20/10 path_class, passes voxtune-validate. Also on cluster at <code>/data/datasets/receptionist_500.jsonl</code>.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Is JSONL the same as ChatML?</button>
+          <div class="qa-answer committed"><strong>No.</strong> ChatML is the shape <strong>inside</strong> messages[]. JSONL is the <strong>file format</strong> — one JSON object per line on disk.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Does Layer 5 call Gemma or validate?</button>
+          <div class="qa-answer committed"><strong>No.</strong> GPU work is Layer 4. Validation is a separate step after the file is written: <code>voxtune-validate --input …</code></div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">How is the dataset used for training?</button>
+          <div class="qa-answer committed"><code>python -m voxtune.training.train --dataset /data/datasets/receptionist_500.jsonl</code><br><br>Trainer reads messages[] + output. Do not rely on deprecated duplicate instruction fields.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does Layer 5 NOT do?</button>
+          <div class="qa-answer committed">Does not validate, shuffle the plan (Layer 1 does), merge rows into one call, or upload to cluster storage (ops/Helm handles paths).</div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">How many lines per phone call in v2?</button>
+          <div class="qa-answer planned"><strong>v2:</strong> usually one line per target edge — prefix history lives inside that line's messages[]. <strong>v1:</strong> many lines per full simulated call (turn_index 1…N, same scenario_id).</div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">What v2 scale should we expect?</button>
+          <div class="qa-answer planned">Receptionist ~20 edges × 100 quota ≈ 2,000 lines. Each line may have 4–8 messages[] entries. Line count ≈ work unit count ≈ edges × quota.</div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">What new meta fields will v2 writer pass?</button>
+          <div class="qa-answer planned">edge_id, planner_mode, entry_depth, skillset — small extensions on top of existing meta. scenario_id usually unique per row (includes edge + index).</div>
+        </div>
+
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">What is the planned coverage report after write?</button>
+          <div class="qa-answer planned"><code>voxtune-validate --input … --coverage-report /tmp/edge_coverage.json</code><br><br>Checks every edge has ~transition_quota rows, no missing edges, meta.edge_id counts match planner. Jeff sign-off metric beyond path_class ±2%.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is the full run lifecycle?</button>
+          <div class="qa-answer committed">
+            Layer 0 load config → Layer 1 build work list → Layer 5 open file → FOR each unit: Layer 2 runtime + prefix → Layer 4 dialogue → Layer 3 assemble → Layer 5 append line → close file → voxtune-validate.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Checklist before declaring D-04 done</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li>File exists at configured output.path</li>
+              <li>Line count matches expected work units</li>
+              <li>voxtune-validate pass rate acceptable</li>
+              <li>Sample rows: runtime JSON present, next_state correct</li>
+            </ul>
+            v2 adds: coverage report shows all edges near quota.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <nav class="nav-layers">
+      <a href="layer-0.html">Layer 0</a>
+      <a href="layer-1.html">Layer 1</a>
+      <a href="layer-2.html">Layer 2</a>
+      <a href="layer-4.html">Layer 4</a>
+      <a href="layer-3.html">Layer 3</a>
+      <a href="layer-5.html" class="active">Layer 5</a>
+    </nav>
+  </div>
+  <script src="js/accordion.js"></script>
+</body>
+</html>

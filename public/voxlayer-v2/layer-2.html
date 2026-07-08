@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layer 2 — Traversal | VoxLayer Architecture</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to architecture diagram</a>
+
+    <div class="layer-hero committed">
+      <div class="layer-number">Layer 2</div>
+      <h1>Traversal — stage setup</h1>
+      <p class="layer-nickname">"Get sipagent into the right call state"</p>
+      <p class="layer-summary">Before we record the target moment of a call, Layer 2 puts sipagent's runtime in the correct state (e.g. CONFIRM_SLOTS) with slots filled. It walks the state machine in code — it decides what happens. It does not write the final pretty words (Layer 4).</p>
+      <span class="status-badge committed">Simulator + bridge shipped; prefix path committed</span>
+      <p class="code-ref">Shipped: traversal/simulator.py, prompts/sipagent_bridge.py · Shipped: path_finder.py, prefix_runner.py</p>
+    </div>
+
+    <section class="qa-section">
+      <h2>Questions &amp; answers</h2>
+      <p class="qa-hint">Click a question to reveal the answer.</p>
+      <div class="qa-list">
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is Layer 2 in one sentence?</button>
+          <div class="qa-answer committed">Layer 2 is the stage crew — it gets sipagent's runtime into the right call state with the right slots filled before the target training turn is recorded.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">How does v1 traversal work today?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li>Layer 1 picks a script (e.g. <code>happy:take_message</code>) from <code>scenarios.py</code></li>
+              <li><code>CallSimulator</code> in <code>simulator.py</code> runs the <strong>entire call</strong> turn by turn</li>
+              <li>Each turn becomes its own JSONL row (<code>turn_index</code> 1, 2, 3…)</li>
+              <li>Many rows share one <code>scenario_id</code></li>
+              <li>Templates supply words; assembler builds messages[] per turn</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Why do we use real sipagent runtime (sipagent_bridge)?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li>Training must match production slot rules and transitions</li>
+              <li><code>[skillset_runtime_context]</code> JSON in messages[] must be honest</li>
+              <li>Validator checks <code>next_state</code> against what the SM allows</li>
+            </ul>
+            <code>build_receptionist_runtime(company, caller) → SkillsetRuntime</code> — if we invented a parallel engine, the model would learn wrong rules.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Does Layer 2 call the LLM?</button>
+          <div class="qa-answer committed">Usually <strong>no</strong> for navigation. It may invoke Layer 4 for prefix <strong>wording</strong>, but state changes are always <strong>code</strong>, not LLM guesses.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is history[] vs messages[]?</button>
+          <div class="qa-answer committed"><code>history[]</code> is an internal list of prefix (user, assistant) pairs during the walk. Layer 3 turns that into production-shaped <code>messages[]</code> with system prompt, runtime badges, and elapsed time.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">How will v2 traversal work for each work unit?</button>
+          <div class="qa-answer committed">
+            <strong>Step 1:</strong> Build runtime from entity profiles (company + caller frozen for the row).<br>
+            <strong>Step 2:</strong> <code>path_finder</code> finds shortest legal path from <code>INTENT_CLASSIFY</code> → <code>from_state</code> A.<br>
+            <strong>Step 3:</strong> <code>prefix_runner</code> walks each edge before the target — code forces transitions, Layer 4/templates supply words, append to history[].<br>
+            <strong>Step 4:</strong> Assert <code>rt.current_state == A</code> and slots filled; hand off to Layer 4 for target turn.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is prefix history?</button>
+          <div class="qa-answer committed">To reach e.g. <code>CONFIRM_SLOTS</code>, we need earlier turns (classify intent → take message → fill slots). Those turns become <code>history[]</code>. In v2, one JSONL row = one target edge, but messages[] can contain prefix turns inside the same row for realistic context.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is entry_depth (cold open vs mid-call)?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li><code>cold_open</code> — messages[] starts at INTENT_CLASSIFY (full path in prefix)</li>
+              <li><code>random</code> — sometimes shorter entry, still legal path to from_state</li>
+              <li><code>fixed</code> — always same depth for debugging</li>
+            </ul>
+            Mid-call rows teach the model that calls don't always start at "hello."
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Why shortest path in path_finder?</button>
+          <div class="qa-answer committed">Simplicity and repeatability. Longer paths cost more tokens and are harder to debug. MVP uses shortest; other policies can come later.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Can the LLM choose next_state?</button>
+          <div class="qa-answer committed"><strong>Never.</strong> The state machine + path_finder already decided the path. Code applies <code>apply_state_transition(committed_to_state)</code>. Layer 4 only supplies spoken words.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Is each JSONL row a full phone call in v2?</button>
+          <div class="qa-answer committed"><strong>v2:</strong> one row ≈ one target transition, with optional prefix inside messages[]. <strong>v1:</strong> many rows per full simulated call.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What if path_finder fails?</button>
+          <div class="qa-answer committed">That edge job should error or skip with a log — don't emit a row at the wrong state. Unreachable edges should be flagged at planner load time.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What failure modes must Layer 2 prevent?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li>Wrong state — label says CONFIRM_SLOTS but runtime says TAKE_MESSAGE</li>
+              <li>Empty slots — confirm state without caller_name filled</li>
+              <li>Illegal transition — path uses an edge not in the SM</li>
+              <li>Entity leakage — company A's name with company B's caller</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Worked example: CONFIRM_SLOTS → SEND_MESSAGE</button>
+          <div class="qa-answer committed">
+            Layer 1 job: edge CONFIRM_SLOTS → SEND_MESSAGE.<br><br>
+            Layer 2: (1) Runtime Acme + Maria Chen. (2) Path: INTENT_CLASSIFY → TAKE_MESSAGE → CONFIRM_SLOTS. (3) Prefix 2–3 template turns. (4) Assert state == CONFIRM_SLOTS, slots present. (5) Pass to Layer 4 for target user "Yes, that's correct" and agent reply.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <nav class="nav-layers">
+      <a href="layer-0.html">Layer 0</a>
+      <a href="layer-1.html">Layer 1</a>
+      <a href="layer-2.html" class="active">Layer 2</a>
+      <a href="layer-4.html">Layer 4</a>
+      <a href="layer-3.html">Layer 3</a>
+      <a href="layer-5.html">Layer 5</a>
+    </nav>
+  </div>
+  <script src="js/accordion.js"></script>
+</body>
+</html>

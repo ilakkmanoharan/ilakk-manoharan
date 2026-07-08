@@ -9,7 +9,7 @@ githubUrl: "https://github.com/antillestech/voxtune"
 websiteUrl: ""
 demoVideoUrl: ""
 caseStudyUrl: ""
-relatedLinks: '[{"label":"Voxlayer dataset generation architecture page","url":"/voxlayer/index.html"}]'
+relatedLinks: '[{"label":"Voxlayer dataset generation architecture (v1)","url":"/voxlayer/index.html"},{"label":"Voxlayer dataset generation architecture (v2 — shipped)","url":"/voxlayer-v2/index.html"}]'
 filterTags: '["AI / ML","Backend","Cloud"]'
 techStack: '["Python","sipagent","YAML","JSONL","vLLM","Gemma","Kubernetes","Laravel","Filament","Unsloth","Helm"]'
 ---

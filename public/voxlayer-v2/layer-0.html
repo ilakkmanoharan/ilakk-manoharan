@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layer 0 — Config | VoxLayer Architecture</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to architecture diagram</a>
+
+    <div class="layer-hero committed">
+      <div class="layer-number">Layer 0</div>
+      <h1>Config — the control panel</h1>
+      <p class="layer-nickname">"The recipe card"</p>
+      <p class="layer-summary">A YAML settings file tells the generator everything about one run: which skillset, where the state machine lives, how many rows to make, which companies to use, and whether to call an LLM. It loads and validates settings — it does not generate conversations.</p>
+      <span class="status-badge committed">Shipped — v1 YAML in repo; v2 blocks committed</span>
+      <p class="code-ref">Shipped: voxtune/generator/config/schema.py, loader.py, config/examples/*.yaml</p>
+    </div>
+
+    <section class="qa-section">
+      <h2>Questions &amp; answers</h2>
+      <p class="qa-hint">Click a question to reveal the answer. <span style="color: var(--green)">Green</span> = in voxtune today. <span style="color: var(--green)">Green</span> = D-01 v2 target.</p>
+      <div class="qa-list">
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is Layer 0 in one sentence?</button>
+          <div class="qa-answer committed">Layer 0 is a YAML file you pass to <code>voxtune-generate --config …</code>. It is the control panel for the whole run — settings only, no dialogue generation.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does Layer 0 actually do?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li>Reads one YAML file from disk</li>
+              <li>Validates required fields (paths exist, percentages sum correctly)</li>
+              <li>Produces a <code>GeneratorConfig</code> Python object the other layers read</li>
+              <li>Fails fast — bad config stops the run before wasting GPU time</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does Layer 0 NOT do?</button>
+          <div class="qa-answer committed">It does not walk the state machine, write caller/agent words, build <code>messages[]</code>, call sipagent runtime, or write JSONL. Those are Layers 1–5.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What v1 config settings exist in git today?</button>
+          <div class="qa-answer committed">
+            File: <code>generator/config/examples/receptionist-demo.yaml</code>
+            <ul>
+              <li><code>generation.num_rows</code> — total row count (e.g. 500)</li>
+              <li><code>distribution</code> — happy 70% / edge 20% / failure 10%</li>
+              <li><code>companies</code> — three embedded business profiles (Acme, Bright, Summit)</li>
+              <li><code>paraphrase.mode: template</code> — phrase book only, no GPU</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">How do you run the generator with Layer 0 config?</button>
+          <div class="qa-answer committed"><code>voxtune-generate --config generator/config/examples/receptionist-demo.yaml</code><br><br>Inside <code>generate.py</code>: <code>load_config</code> → <code>schema.py</code> parses → validation → hand off to planner/simulator.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Is Layer 0 the state machine?</button>
+          <div class="qa-answer committed">No. Layer 0 only <strong>points to</strong> the state machine file path. Layer 1 reads that JSON graph.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Can I run without an LLM?</button>
+          <div class="qa-answer committed">Yes. Set <code>paraphrase.mode: template</code> in YAML. No GPU needed for dialogue.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What v2 config blocks are committed but not committed?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li><code>skillset</code> block — specialty, SM path, sipagent_root (skillset-agnostic)</li>
+              <li><code>planner</code> — <code>mode: transition</code>, <code>transition_quota: 100</code>, <code>entry_depth</code></li>
+              <li><code>entities.pool_file</code> + <code>mix_and_match: true</code></li>
+              <li><code>paraphrase.llm</code> — vLLM URL, model (Gemma 3 12B), temperature</li>
+              <li><code>receptionist-v2.yaml</code> example config file</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does the v2 planner block control?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li><code>mode: transition</code> — schedule by state-machine edges, not nine scripts</li>
+              <li><code>transition_quota: 100</code> — ~100 training rows per SM edge (Jeff's bar)</li>
+              <li><code>transition_quota_overrides</code> — lower count for rare edges</li>
+              <li><code>entry_depth: random</code> — cold open vs mid-call prefix (see Layer 2)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does the v2 entities block control?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li><code>pool_file</code> — large YAML list of companies, hours, routing, callers, phones, issues</li>
+              <li><code>mix_and_match: true</code> — pick company and caller independently for more variety</li>
+            </ul>
+            v1 embeds three companies directly in the demo YAML. v2 moves to a separate pool file under <code>generator/entities/</code>.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">How will we switch skillsets without changing Python?</button>
+          <div class="qa-answer committed">Same <code>voxtune-generate</code> binary, different YAML. Point <code>skillset.state_machine.path</code> at Receptionist or InboundSales SM JSON. Layer 0 is how Jeff gets a generic engine across skillsets.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does Layer 0 hand off to Layer 1?</button>
+          <div class="qa-answer committed">When Layer 0 finishes, the run knows: which SM JSON to parse, how many rows per edge (v2) or distribution % (v1), where entities come from, and how Layer 4 should get words (template vs LLM).</div>
+        </div>
+
+      </div>
+    </section>
+
+    <nav class="nav-layers">
+      <a href="layer-0.html" class="active">Layer 0</a>
+      <a href="layer-1.html">Layer 1</a>
+      <a href="layer-2.html">Layer 2</a>
+      <a href="layer-4.html">Layer 4</a>
+      <a href="layer-3.html">Layer 3</a>
+      <a href="layer-5.html">Layer 5</a>
+    </nav>
+  </div>
+  <script src="js/accordion.js"></script>
+</body>
+</html>

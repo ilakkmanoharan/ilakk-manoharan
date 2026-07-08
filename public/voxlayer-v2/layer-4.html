@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layer 4 — Dialogue | VoxLayer Architecture</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to architecture diagram</a>
+
+    <div class="layer-hero committed">
+      <div class="layer-number">Layer 4</div>
+      <h1>Dialogue — the script</h1>
+      <p class="layer-nickname">"What caller and agent say"</p>
+      <p class="layer-summary">Layer 4 produces spoken English — caller lines and receptionist lines. It does not choose the next state (Layer 2 committed that). It does not build messages[] (Layer 3). Think scriptwriter vs director vs editor.</p>
+      <span class="status-badge committed">Templates shipped; LLM dialogue committed</span>
+      <p class="code-ref">Shipped: paraphrase/template.py · Shipped: dialogue/llm_engine.py, llm_client.py, prompts.py</p>
+    </div>
+
+    <section class="qa-section">
+      <h2>Questions &amp; answers</h2>
+      <p class="qa-hint">Click a question to reveal the answer.</p>
+      <div class="qa-list">
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is Layer 4 in one sentence?</button>
+          <div class="qa-answer committed">Layer 4 writes what people say on the phone — user_text and assistant_text — as plain English only, before Layer 3 wraps it in production format.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">How do templates work today (v1)?</button>
+          <div class="qa-answer committed">
+            File: <code>paraphrase/template.py</code>
+            <ul>
+              <li>~11 user template keys (hello, leave message, confirm yes…)</li>
+              <li>~18 agent template keys (greeting, ask name, confirm slots…)</li>
+              <li>Random pick + slot substitution ({caller_name}, {business_name}…)</li>
+            </ul>
+            Fast, no GPU, deterministic — but low diversity (Jeff saw ~11 unique caller lines across 2k rows).
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Who says what — user vs assistant?</button>
+          <div class="qa-answer committed">
+            <strong>user</strong> = caller on the phone → Layer 4 outputs user_text.<br>
+            <strong>assistant</strong> = receptionist AI → Layer 4 outputs assistant_text (before &lt;next_state&gt; is appended in code).<br><br>
+            For edge-centric rows, the output field is usually the target assistant line with next_state.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Can I run without a GPU?</button>
+          <div class="qa-answer committed">Yes — set <code>paraphrase.mode: template</code> in Layer 0 config. No GPU needed.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Is Layer 4 the same as the assembler?</button>
+          <div class="qa-answer committed"><strong>No.</strong> Layer 4 = words. Layer 3 = shape (roles, system prompt, [skillset_runtime_context], formatting).</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is the LLM dialogue mode (Jeff target)?</button>
+          <div class="qa-answer committed">
+            Planned <code>dialogue/llm_engine.py</code> calls Gemma 3 12B (or configured model) via vLLM OpenAI-compatible API on L40S. Prompt includes company, caller, state, committed transition, recent history. Returns varied user + agent lines.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is hybrid mode?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li><strong>Prefix turns:</strong> templates (cheap, reach right state)</li>
+              <li><strong>Target turn:</strong> LLM (diversity where Jeff cares most)</li>
+            </ul>
+            Common v2 MVP — matches Phase 3 of the engineering plan.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Does the LLM choose next_state?</button>
+          <div class="qa-answer committed"><strong>No.</strong> After Layer 4, code (not LLM) appends <code>&lt;next_state&gt;PLANNED_STATE&lt;/next_state&gt;</code>. The LLM must not invent a different transition.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What must the LLM NOT do?</button>
+          <div class="qa-answer committed">
+            <ul>
+              <li>Invent a different transition ("let's transfer instead")</li>
+              <li>Change company or caller identity</li>
+              <li>Output ChatML or JSON wrappers (Layer 3 does that)</li>
+              <li>Omit required slot references on confirm/send turns</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Why not let the LLM generate the whole messages[] history?</button>
+          <div class="qa-answer committed">Uneven edge coverage, hard to validate, LLM might skip states. Code walks the SM; LLM only supplies words. Navigation is always code.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Prefix vs target — two dialogue jobs</button>
+          <div class="qa-answer committed">
+            <strong>Prefix:</strong> triggered by prefix_runner during Layer 2 walk — typically templates — to reach from_state cheaply.<br><br>
+            <strong>Target:</strong> after prefix assertions — typically LLM in hybrid mode — diverse example for the scheduled edge.<br><br>
+            Target LLM prompt should include prefix history so caller doesn't contradict earlier lines.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What about tts_prompts from the state machine?</button>
+          <div class="qa-answer committed">Some SM states ship fixed agent wording in state_machine_v1.json. Policy options: always use tts_prompts (production fidelity), LLM paraphrase with same meaning, or templates mimic TTS lines. Jeff wants train-how-you-fight — don't drift on critical compliance lines.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Why did templates fail Jeff's diversity bar?</button>
+          <div class="qa-answer committed">Same small key set → same lines repeat → model overfits phrasing, not state logic. Edge quotas (Layer 1) fix coverage; LLM (Layer 4 v2) fixes wording diversity.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What LLM infrastructure is committed?</button>
+          <div class="qa-answer committed">
+            From config: <code>paraphrase.llm.provider: vllm</code>, base_url, model (google/gemma-3-12b-it), temperature 0.85. Helm chart runs generator + vLLM on GPU nodes. Jeff's stack also has Qwen on 5090 and Gemma locally in container.
+          </div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does Layer 4 NOT do?</button>
+          <div class="qa-answer committed">Does not walk the state machine, schedule edges, build messages[] or system prompt, or write JSONL.</div>
+        </div>
+
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does Layer 4 hand off to Layer 3?</button>
+          <div class="qa-answer committed">Raw text: user_text and assistant_text for the target turn (assistant before next_state tag). Prefix history was already appended during Layer 2 walk. Layer 3 combines with SkillsetRuntime → full messages[] + output + meta.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <nav class="nav-layers">
+      <a href="layer-0.html">Layer 0</a>
+      <a href="layer-1.html">Layer 1</a>
+      <a href="layer-2.html">Layer 2</a>
+      <a href="layer-4.html" class="active">Layer 4</a>
+      <a href="layer-3.html">Layer 3</a>
+      <a href="layer-5.html">Layer 5</a>
+    </nav>
+  </div>
+  <script src="js/accordion.js"></script>
+</body>
+</html>

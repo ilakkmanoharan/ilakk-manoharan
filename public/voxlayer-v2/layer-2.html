@@ -84,7 +84,7 @@
           <div class="qa-answer planned">
             <p><strong>Shipped (v2):</strong> <code>entry_depth: cold_open</code> in YAML — Layer 2 walks the <strong>full</strong> prefix script from a call-opening user turn to <code>from_state</code>. Prefix length depends on the edge (zero at <code>INTENT_CLASSIFY</code>, longer for deep states like <code>CONFIRM_SLOTS</code>).</p>
             <p><strong>Output meta:</strong> <code>meta.entry_depth</code> is an <strong>integer</strong> — how many prefix turns are in <code>messages[]</code> (reporting only).</p>
-            <p><strong>Not shipped:</strong> <code>random</code> / <code>fixed</code> were planned optional modes to vary prefix length for the same edge (KV-cache position diversity). They are <strong>not implemented</strong>, <strong>not the default</strong>, and not used for receptionist training.</p>
+            <p><strong>Not shipped:</strong> <code>random</code> / <code>fixed</code> were planned optional modes to vary prefix length for the same edge (KV-cache position diversity). Those modes were planned and documented, but never wired into Layer 2. The knob is in config; the engine ignores it. They are <strong>not implemented</strong>, <strong>not the default</strong>, and not used for receptionist training.</p>
           </div>
         </div>
 

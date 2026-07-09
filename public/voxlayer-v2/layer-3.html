@@ -61,7 +61,7 @@
 
         <div class="qa-item committed">
           <button class="qa-question committed" aria-expanded="false">What is the output field?</button>
-          <div class="qa-answer committed">The training label — usually the target assistant line: <code>Thank you, I'll send that message now.&lt;next_state&gt;SEND_MESSAGE&lt;/next_state&gt;</code>. Jeff prefers training on full messages[] + output, not a duplicate legacy instruction string.</div>
+          <div class="qa-answer committed">The training label — usually the target assistant line: <code>Thank you, I'll send that message now.&lt;next_state&gt;SEND_MESSAGE&lt;/next_state&gt;</code>. Training uses full messages[] + output, not a duplicate legacy instruction string.</div>
         </div>
 
         <div class="qa-item committed">
@@ -78,7 +78,7 @@
               <li>Exactly one system message first</li>
               <li>Roles alternate after system (user, assistant, user, assistant…)</li>
               <li>Every user message has [skillset_runtime_context] and elapsed ms</li>
-              <li>Target output has valid next_state matching Layer 1's committed edge</li>
+              <li>Target output has valid next_state matching Layer 1's planned edge</li>
               <li>Entity consistency — company/caller in text match meta and runtime JSON</li>
               <li>No leakage across scenario_ids</li>
             </ul>
@@ -106,9 +106,9 @@
           <div class="qa-answer committed">Bookkeeping for validators and humans — not model input. Includes scenario_id, edge_id, company_slug, skill_id, state, next_state, entry_depth, path_class, planner_mode, turn_index. Training may ignore meta; validators require it.</div>
         </div>
 
-        <div class="qa-item committed">
-          <button class="qa-question committed" aria-expanded="false">What changes in v2 assembly (without replacing Layer 3)?</button>
-          <div class="qa-answer committed">
+        <div class="qa-item planned">
+          <button class="qa-question planned" aria-expanded="false">What changes in v2 assembly (without replacing Layer 3)?</button>
+          <div class="qa-answer planned">
             <ul>
               <li>One row per work unit — prefix history stacked inside same messages[]</li>
               <li>scenario_id usually unique per row (includes edge + index)</li>

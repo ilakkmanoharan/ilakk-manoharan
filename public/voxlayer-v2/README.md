@@ -16,9 +16,7 @@ Double-click `index.html` in Finder, or from repo root:
 open private/architecture-discussion/layers/web/index.html
 ```
 
-## Serve on a port (shareable link on your machine)
-
-From the `web/` folder:
+## Serve on a port
 
 ```bash
 cd private/architecture-discussion/layers/web
@@ -27,21 +25,28 @@ python3 -m http.server 8765
 
 Then open: **http://localhost:8765/**
 
-On VPN, teammates can use `http://<your-ip>:8765/` if firewall allows.
+## Color legend (v2 site)
 
-## Color legend
+- **All green** — v2 shipped in voxtune (Jul 10): SM edge planner, full-prefix traversal, entity pool, full LLM dialogue (Qwen), coverage report
+- Historical **v1** page (green + purple) lives at portfolio `/voxlayer/` — Jul 6 baseline vs early v2 plan
 
-- **Green** — shipped in voxtune (`main`, Jul 6 commit)
-- **Purple** — D-01 v2 target (not yet committed)
+## Live URLs
+
+- v1 (historical): https://ilakk-manoharan.vercel.app/voxlayer/index.html
+- v2 (current): https://ilakk-manoharan.vercel.app/voxlayer-v2/index.html
+
+## Deploy
+
+Copy this folder to `ilakk-manoharan/public/voxlayer-v2/` and push `main` (Vercel auto-deploys).
 
 ## Files
 
 ```text
 web/
-├── index.html          # Overview diagram + layer links
+├── index.html
 ├── layer-0.html … layer-5.html
 ├── css/styles.css
-└── js/accordion.js     # Click question → show answer
+└── js/accordion.js
 ```
 
-Source markdown: `../layer-*.md`
+*July 10, 2026*

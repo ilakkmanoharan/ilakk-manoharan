@@ -11,9 +11,11 @@ demoVideoUrl: ""
 caseStudyUrl: ""
 relatedLinks: '[{"label":"Voxlayer dataset generation architecture (v1)","url":"/voxlayer/index.html"},{"label":"Voxlayer dataset generation architecture (v2 — shipped)","url":"/voxlayer-v2/index.html"}]'
 filterTags: '["AI / ML","Backend","Cloud"]'
-techStack: '["Python","sipagent","YAML","JSONL","vLLM","Gemma","Kubernetes","Laravel","Filament","Unsloth","Helm"]'
+techStack: '["Python","sipagent","YAML","JSONL","vLLM","Qwen","Gemma","Kubernetes","Laravel","Filament","Unsloth","Helm"]'
 ---
 
 **VoxLayer** is a contract engagement building training data for production phone receptionist AI (sipagent skillsets). The generator walks the real state machine, freezes company/caller context per scenario, and emits sipagent-faithful ChatML rows for fine-tuning.
 
-**Architecture page:** [/voxlayer/index.html](/voxlayer/index.html) — interactive six-layer diagram with green (shipped Jul 6) vs purple (D-01 v2 plan) Q&amp;A.
+**Architecture pages:**
+- [/voxlayer/index.html](/voxlayer/index.html) — **v1** Jul 6 baseline (green = shipped then; purple = early v2 plan)
+- [/voxlayer-v2/index.html](/voxlayer-v2/index.html) — **v2 shipped** (all green): SM edge planner, full-prefix traversal, entity pool, full LLM dialogue via Qwen, coverage report

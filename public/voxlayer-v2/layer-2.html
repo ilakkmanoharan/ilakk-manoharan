@@ -10,13 +10,13 @@
   <div class="container">
     <a href="index.html" class="back-link">← Back to architecture diagram</a>
 
-    <div class="layer-hero mixed">
+    <div class="layer-hero committed">
       <div class="layer-number">Layer 2</div>
       <h1>Traversal — stage setup</h1>
       <p class="layer-nickname">"Get sipagent into the right call state"</p>
       <p class="layer-summary">Before we record the target moment of a call, Layer 2 puts sipagent's runtime in the correct state (e.g. CONFIRM_SLOTS) with slots filled. It walks the state machine in code — it decides what happens. It does not write the final pretty words (Layer 4).</p>
-      <span class="status-badge mixed">Simulator + bridge shipped; prefix path planned</span>
-      <p class="code-ref">Shipped: traversal/simulator.py, prompts/sipagent_bridge.py · Planned: path_finder.py, prefix_runner.py</p>
+      <span class="status-badge committed">Shipped — prefix_runner + path_finder (full cold_open prefix)</span>
+      <p class="code-ref">Shipped: path_finder.py, prefix_runner.py, sipagent_bridge.py · Legacy: simulator.py (v1 scripts)</p>
     </div>
 
     <section class="qa-section">
@@ -64,9 +64,9 @@
           <div class="qa-answer committed"><code>history[]</code> is an internal list of prefix (user, assistant) pairs during the walk. Layer 3 turns that into production-shaped <code>messages[]</code> with system prompt, runtime badges, and elapsed time.</div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">How will v2 traversal work for each work unit?</button>
-          <div class="qa-answer planned">
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">How does v2 traversal work for each work unit?</button>
+          <div class="qa-answer committed">
             <strong>Step 1:</strong> Build runtime from entity profiles (company + caller frozen for the row).<br>
             <strong>Step 2:</strong> <code>path_finder</code> finds shortest legal path from <code>INTENT_CLASSIFY</code> → <code>from_state</code> A.<br>
             <strong>Step 3:</strong> <code>prefix_runner</code> walks each edge before the target — code forces transitions, Layer 4/templates supply words, append to history[].<br>
@@ -74,38 +74,38 @@
           </div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">What is prefix history?</button>
-          <div class="qa-answer planned">To reach e.g. <code>CONFIRM_SLOTS</code>, we need earlier turns (classify intent → take message → fill slots). Those turns become <code>history[]</code>. In v2, one JSONL row = one target edge, but messages[] can contain prefix turns inside the same row for realistic context.</div>
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is prefix history?</button>
+          <div class="qa-answer committed">To reach e.g. <code>CONFIRM_SLOTS</code>, we need earlier turns (classify intent → take message → fill slots). Those turns become <code>history[]</code>. In v2, one JSONL row = one target edge, but messages[] can contain prefix turns inside the same row for realistic context.</div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">What is entry_depth?</button>
-          <div class="qa-answer planned">
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is entry_depth?</button>
+          <div class="qa-answer committed">
             <p><strong>Shipped (v2):</strong> <code>entry_depth: cold_open</code> in YAML — Layer 2 walks the <strong>full</strong> prefix script from a call-opening user turn to <code>from_state</code>. Prefix length depends on the edge (zero at <code>INTENT_CLASSIFY</code>, longer for deep states like <code>CONFIRM_SLOTS</code>).</p>
             <p><strong>Output meta:</strong> <code>meta.entry_depth</code> is an <strong>integer</strong> — how many prefix turns are in <code>messages[]</code> (reporting only).</p>
             <p><strong>Not shipped:</strong> <code>random</code> / <code>fixed</code> were planned optional modes to vary prefix length for the same edge (KV-cache position diversity). Those modes were planned and documented, but never wired into Layer 2. The knob is in config; the engine ignores it. They are <strong>not implemented</strong>, <strong>not the default</strong>, and not used for receptionist training.</p>
           </div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">Why shortest path in path_finder?</button>
-          <div class="qa-answer planned">Simplicity and repeatability. Longer paths cost more tokens and are harder to debug. MVP uses shortest; other policies can come later.</div>
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Why shortest path in path_finder?</button>
+          <div class="qa-answer committed">Simplicity and repeatability. Longer paths cost more tokens and are harder to debug. MVP uses shortest; other policies can come later.</div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">Can the LLM choose next_state?</button>
-          <div class="qa-answer planned"><strong>Never.</strong> The state machine + path_finder already decided the path. Code applies <code>apply_state_transition(planned_to_state)</code>. Layer 4 only supplies spoken words.</div>
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Can the LLM choose next_state?</button>
+          <div class="qa-answer committed"><strong>Never.</strong> The state machine + path_finder already decided the path. Code applies <code>apply_state_transition(planned_to_state)</code>. Layer 4 only supplies spoken words.</div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">Is each JSONL row a full phone call in v2?</button>
-          <div class="qa-answer planned"><strong>v2:</strong> one row ≈ one target transition, with <strong>full prefix history</strong> inside messages[] from call answer to the edge (no mid-call truncation). <strong>v1:</strong> many rows per full simulated call.</div>
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Is each JSONL row a full phone call in v2?</button>
+          <div class="qa-answer committed"><strong>v2:</strong> one row ≈ one target transition, with <strong>full prefix history</strong> inside messages[] from call answer to the edge (no mid-call truncation). <strong>v1:</strong> many rows per full simulated call.</div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">What if path_finder fails?</button>
-          <div class="qa-answer planned">That edge job should error or skip with a log — don't emit a row at the wrong state. Unreachable edges should be flagged at planner load time.</div>
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What if path_finder fails?</button>
+          <div class="qa-answer committed">That edge job should error or skip with a log — don't emit a row at the wrong state. Unreachable edges should be flagged at planner load time.</div>
         </div>
 
         <div class="qa-item committed">
@@ -120,11 +120,11 @@
           </div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">Worked example: CONFIRM_SLOTS → SEND_MESSAGE</button>
-          <div class="qa-answer planned">
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">Worked example: CONFIRM_SLOTS → SEND_MESSAGE</button>
+          <div class="qa-answer committed">
             Layer 1 job: edge CONFIRM_SLOTS → SEND_MESSAGE.<br><br>
-            Layer 2: (1) Runtime Acme + Maria Chen. (2) Path: INTENT_CLASSIFY → TAKE_MESSAGE → CONFIRM_SLOTS. (3) Prefix 2–3 template turns. (4) Assert state == CONFIRM_SLOTS, slots present. (5) Pass to Layer 4 for target user "Yes, that's correct" and agent reply.
+            Layer 2: (1) Runtime Acme + Maria Chen. (2) Path: INTENT_CLASSIFY → TAKE_MESSAGE → CONFIRM_SLOTS. (3) Prefix walk — full cold_open script; wording from LLM when <code>mode: llm</code>. (4) Assert state == CONFIRM_SLOTS, slots present. (5) Pass to Layer 4 for target user confirm + agent send reply.
           </div>
         </div>
 

@@ -10,12 +10,12 @@
   <div class="container">
     <a href="index.html" class="back-link">← Back to architecture diagram</a>
 
-    <div class="layer-hero mixed">
+    <div class="layer-hero committed">
       <div class="layer-number">Layer 0</div>
       <h1>Config — the control panel</h1>
       <p class="layer-nickname">"The recipe card"</p>
       <p class="layer-summary">A YAML settings file tells the generator everything about one run: which skillset, where the state machine lives, how many rows to make, which companies to use, and whether to call an LLM. It loads and validates settings — it does not generate conversations.</p>
-      <span class="status-badge mixed">Partially shipped — v1 YAML in repo; v2 blocks planned</span>
+      <span class="status-badge committed">Shipped — v1 + v2 YAML (planner, entities, paraphrase.llm)</span>
       <p class="code-ref">Shipped: voxtune/generator/config/schema.py, loader.py, config/examples/*.yaml</p>
     </div>
 
@@ -74,22 +74,22 @@
           <div class="qa-answer committed">Yes. Set <code>paraphrase.mode: template</code> in YAML. No GPU needed for dialogue.</div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">What v2 config blocks are planned but not committed?</button>
-          <div class="qa-answer planned">
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What v2 config blocks are shipped?</button>
+          <div class="qa-answer committed">
             <ul>
               <li><code>skillset</code> block — specialty, SM path, sipagent_root (skillset-agnostic)</li>
               <li><code>planner</code> — <code>mode: transition</code>, <code>transition_quota: 100</code>, <code>entry_depth</code></li>
               <li><code>entities.pool_file</code> + <code>mix_and_match: true</code></li>
-              <li><code>paraphrase.llm</code> — vLLM URL, model (Gemma 3 12B), temperature</li>
-              <li><code>receptionist-v2.yaml</code> example config file</li>
+              <li><code>paraphrase.mode: llm</code> + <code>paraphrase.llm</code> — Qwen at <code>http://gpu.stratustalk.com:8000/v1</code> for generation (Gemma at voxtune-api for train/test)</li>
+              <li><code>receptionist-v2.yaml</code> / <code>receptionist-v2-k8s.yaml</code> example configs</li>
             </ul>
           </div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">What does the v2 planner block control?</button>
-          <div class="qa-answer planned">
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does the v2 planner block control?</button>
+          <div class="qa-answer committed">
             <ul>
               <li><code>mode: transition</code> — schedule by state-machine edges, not nine scripts</li>
               <li><code>transition_quota: 100</code> — ~100 training rows per SM edge (acceptance bar)</li>
@@ -99,9 +99,9 @@
           </div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">What does the v2 entities block control?</button>
-          <div class="qa-answer planned">
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What does the v2 entities block control?</button>
+          <div class="qa-answer committed">
             <ul>
               <li><code>pool_file</code> — large YAML list of companies, hours, routing, callers, phones, issues</li>
               <li><code>mix_and_match: true</code> — pick company and caller independently for more variety</li>
@@ -110,9 +110,9 @@
           </div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">How will we switch skillsets without changing Python?</button>
-          <div class="qa-answer planned">Same <code>voxtune-generate</code> binary, different YAML. Point <code>skillset.state_machine.path</code> at Receptionist or InboundSales SM JSON. Layer 0 keeps the engine skillset-agnostic via config.</div>
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">How do we switch skillsets without changing Python?</button>
+          <div class="qa-answer committed">Same <code>voxtune-generate</code> binary, different YAML. Point <code>skillset.state_machine.path</code> at Receptionist or InboundSales SM JSON. Layer 0 keeps the engine skillset-agnostic via config.</div>
         </div>
 
         <div class="qa-item committed">

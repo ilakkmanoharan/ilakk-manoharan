@@ -3,28 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoxLayer Dataset Generator — Six Layers Architecture</title>
+  <title>VoxLayer Dataset Generator v2 — Six Layers (All Shipped)</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <div class="container">
     <header class="page-header">
-      <h1>VoxLayer Dataset Generator</h1>
-      <p class="subtitle">Six-layer architecture for building sipagent-faithful training data. Click any layer to read detailed Q&amp;A.</p>
+      <h1>VoxLayer Dataset Generator <span style="color:#16a34a">v2</span></h1>
+      <p class="subtitle">Version 2 — all six layers shipped in voxtune. SM edge planner, full-prefix traversal, entity pool, full LLM dialogue (Qwen), coverage report.</p>
     </header>
 
     <div class="legend">
       <div class="legend-item">
         <span class="legend-swatch committed"></span>
-        <span><strong style="color: var(--green)">Green</strong> — shipped in voxtune (Jul 6 commit)</span>
+        <span><strong style="color: var(--green)">All green</strong> — v2 shipped in voxtune (Jul 10) — planner, prefix, LLM dialogue, coverage</span>
       </div>
       <div class="legend-item">
-        <span class="legend-swatch planned"></span>
-        <span><strong style="color: var(--purple)">Purple</strong> — D-01 v2 target (not yet committed)</span>
-      </div>
-      <div class="legend-item">
-        <span class="legend-swatch mixed"></span>
-        <span><strong>Mixed</strong> — partial: some shipped, some planned</span>
+        <a href="/voxlayer/index.html" style="color: var(--purple); font-size: 0.9rem;">← View Version 1 (Jul 6 baseline)</a>
       </div>
     </div>
 
@@ -33,9 +28,6 @@
         <defs>
           <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
             <path d="M0,0 L8,3 L0,6 Z" fill="#16a34a"/>
-          </marker>
-          <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
-            <path d="M0,0 L8,3 L0,6 Z" fill="#9333ea"/>
           </marker>
           <marker id="arrow-gray" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
             <path d="M0,0 L8,3 L0,6 Z" fill="#9ca3af"/>
@@ -47,12 +39,10 @@
 
         <!-- Layer 0 -->
         <a href="layer-0.html" class="layer-box">
-          <rect x="20" y="70" width="130" height="100" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
-          <rect x="20" y="70" width="130" height="50" rx="10" fill="#dcfce7" stroke="none"/>
-          <rect x="20" y="108" width="130" height="12" fill="#dcfce7" stroke="none"/>
+          <rect x="20" y="70" width="130" height="100" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
           <text x="85" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#111827" font-family="Segoe UI, sans-serif">Layer 0</text>
           <text x="85" y="118" text-anchor="middle" font-size="11" fill="#4b5563" font-family="Segoe UI, sans-serif">Config</text>
-          <text x="85" y="152" text-anchor="middle" font-size="9" fill="#9333ea" font-family="Segoe UI, sans-serif">YAML recipe</text>
+          <text x="85" y="152" text-anchor="middle" font-size="9" fill="#16a34a" font-family="Segoe UI, sans-serif">YAML recipe</text>
         </a>
 
         <!-- Arrow 0→1 -->
@@ -60,12 +50,10 @@
 
         <!-- Layer 1 -->
         <a href="layer-1.html" class="layer-box">
-          <rect x="180" y="70" width="130" height="100" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
-          <rect x="180" y="70" width="130" height="35" rx="10" fill="#dcfce7" stroke="none"/>
-          <rect x="180" y="98" width="130" height="10" fill="#dcfce7" stroke="none"/>
+          <rect x="180" y="70" width="130" height="100" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
           <text x="245" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#111827" font-family="Segoe UI, sans-serif">Layer 1</text>
           <text x="245" y="118" text-anchor="middle" font-size="11" fill="#4b5563" font-family="Segoe UI, sans-serif">Planner</text>
-          <text x="245" y="152" text-anchor="middle" font-size="9" fill="#9333ea" font-family="Segoe UI, sans-serif">SM edge quotas</text>
+          <text x="245" y="152" text-anchor="middle" font-size="9" fill="#16a34a" font-family="Segoe UI, sans-serif">SM edge quotas</text>
         </a>
 
         <!-- Arrow 1→2 -->
@@ -73,26 +61,22 @@
 
         <!-- Layer 2 -->
         <a href="layer-2.html" class="layer-box">
-          <rect x="340" y="70" width="130" height="100" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
-          <rect x="340" y="70" width="130" height="55" rx="10" fill="#dcfce7" stroke="none"/>
-          <rect x="340" y="118" width="130" height="12" fill="#dcfce7" stroke="none"/>
+          <rect x="340" y="70" width="130" height="100" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
           <text x="405" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#111827" font-family="Segoe UI, sans-serif">Layer 2</text>
           <text x="405" y="118" text-anchor="middle" font-size="11" fill="#4b5563" font-family="Segoe UI, sans-serif">Traversal</text>
-          <text x="405" y="152" text-anchor="middle" font-size="9" fill="#9333ea" font-family="Segoe UI, sans-serif">Prefix path</text>
+          <text x="405" y="152" text-anchor="middle" font-size="9" fill="#16a34a" font-family="Segoe UI, sans-serif">Prefix path</text>
         </a>
 
         <!-- Arrow 2→4 (purple - v2 dialogue order) -->
-        <line x1="470" y1="120" x2="498" y2="120" stroke="#9333ea" stroke-width="2.5" marker-end="url(#arrow-purple)"/>
-        <text x="484" y="108" text-anchor="middle" font-size="8" fill="#9333ea" font-family="Segoe UI, sans-serif">4 before 3</text>
+        <line x1="470" y1="120" x2="498" y2="120" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+        <text x="484" y="108" text-anchor="middle" font-size="8" fill="#16a34a" font-family="Segoe UI, sans-serif">4 before 3</text>
 
         <!-- Layer 4 -->
         <a href="layer-4.html" class="layer-box">
-          <rect x="500" y="70" width="130" height="100" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.5"/>
-          <rect x="500" y="70" width="130" height="45" rx="10" fill="#dcfce7" stroke="none"/>
-          <rect x="500" y="108" width="130" height="12" fill="#dcfce7" stroke="none"/>
+          <rect x="500" y="70" width="130" height="100" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
           <text x="565" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#111827" font-family="Segoe UI, sans-serif">Layer 4</text>
           <text x="565" y="118" text-anchor="middle" font-size="11" fill="#4b5563" font-family="Segoe UI, sans-serif">Dialogue</text>
-          <text x="565" y="152" text-anchor="middle" font-size="9" fill="#9333ea" font-family="Segoe UI, sans-serif">LLM + templates</text>
+          <text x="565" y="152" text-anchor="middle" font-size="9" fill="#16a34a" font-family="Segoe UI, sans-serif">LLM (Qwen) ✓</text>
         </a>
 
         <!-- Arrow 4→3 -->
@@ -120,28 +104,28 @@
         <!-- Validate box -->
         <rect x="700" y="220" width="200" height="56" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 3"/>
         <text x="800" y="246" text-anchor="middle" font-size="12" font-weight="600" fill="#4b5563" font-family="Segoe UI, sans-serif">voxtune-validate</text>
-        <text x="800" y="264" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="Segoe UI, sans-serif">+ coverage report (v2)</text>
+        <text x="800" y="264" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="Segoe UI, sans-serif">+ coverage report ✓</text>
         <line x1="860" y1="170" x2="860" y2="200" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
-        <line x1="800" y1="220" x2="800" y2="200" stroke="#9333ea" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="800" y1="220" x2="800" y2="200" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="4 3"/>
 
         <!-- Data flow description -->
         <rect x="40" y="320" width="840" height="260" rx="12" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
         <text x="460" y="350" text-anchor="middle" font-size="15" font-weight="700" fill="#111827" font-family="Segoe UI, sans-serif">What each layer produces</text>
 
         <text x="60" y="385" font-size="12" fill="#16a34a" font-family="Segoe UI, sans-serif">● Layer 0 → GeneratorConfig (settings object)</text>
-        <text x="60" y="410" font-size="12" fill="#9333ea" font-family="Segoe UI, sans-serif">● Layer 1 → WorkUnit list (~100 jobs per SM edge)</text>
-        <text x="60" y="435" font-size="12" fill="#9333ea" font-family="Segoe UI, sans-serif">● Layer 2 → SkillsetRuntime at from_state + prefix history[]</text>
-        <text x="60" y="460" font-size="12" fill="#9333ea" font-family="Segoe UI, sans-serif">● Layer 4 → user_text + assistant_text (spoken words only)</text>
+        <text x="60" y="410" font-size="12" fill="#16a34a" font-family="Segoe UI, sans-serif">● Layer 1 → WorkUnit list (~100 jobs per SM edge)</text>
+        <text x="60" y="435" font-size="12" fill="#16a34a" font-family="Segoe UI, sans-serif">● Layer 2 → SkillsetRuntime at from_state + prefix history[]</text>
+        <text x="60" y="460" font-size="12" fill="#16a34a" font-family="Segoe UI, sans-serif">● Layer 4 → user_text + assistant_text (spoken words only)</text>
         <text x="60" y="485" font-size="12" fill="#16a34a" font-family="Segoe UI, sans-serif">● Layer 3 → messages[] + output + meta (production ChatML shape)</text>
         <text x="60" y="510" font-size="12" fill="#16a34a" font-family="Segoe UI, sans-serif">● Layer 5 → one JSONL line appended to dataset file</text>
 
         <text x="480" y="385" font-size="12" fill="#4b5563" font-family="Segoe UI, sans-serif"><tspan font-weight="600">v1 today (Jul 6):</tspan> scripts + templates,</text>
         <text x="480" y="405" font-size="12" fill="#4b5563" font-family="Segoe UI, sans-serif">many rows per call, path_class %</text>
-        <text x="480" y="435" font-size="12" fill="#4b5563" font-family="Segoe UI, sans-serif"><tspan font-weight="600">v2 target (acceptance bar):</tspan> SM edge quotas,</text>
-        <text x="480" y="455" font-size="12" fill="#4b5563" font-family="Segoe UI, sans-serif">prefix paths, LLM target turns,</text>
+        <text x="480" y="435" font-size="12" fill="#4b5563" font-family="Segoe UI, sans-serif"><tspan font-weight="600">v2 shipped:</tspan> SM edge quotas,</text>
+        <text x="480" y="455" font-size="12" fill="#4b5563" font-family="Segoe UI, sans-serif">full prefix, LLM prefix+target (Qwen),</text>
         <text x="480" y="475" font-size="12" fill="#4b5563" font-family="Segoe UI, sans-serif">one row per edge job</text>
 
-        <text x="460" y="545" text-anchor="middle" font-size="11" fill="#6b7280" font-family="Segoe UI, sans-serif">Source: voxlayer/private/architecture-discussion/layers/ · July 8, 2026</text>
+        <text x="460" y="545" text-anchor="middle" font-size="11" fill="#6b7280" font-family="Segoe UI, sans-serif">Source: voxlayer/private/architecture-discussion/layers/ · July 10, 2026</text>
       </svg>
     </div>
 
@@ -159,7 +143,7 @@
       Layer numbers follow the plan; dialogue (4) runs before assembly (3) because we need the words before we wrap them.
     </div>
 
-    <footer>VoxLayer · D-01 dataset generator architecture · July 8, 2026</footer>
+    <footer>VoxLayer · D-01 dataset generator architecture · July 10, 2026</footer>
   </div>
 </body>
 </html>

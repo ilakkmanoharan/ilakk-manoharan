@@ -86,24 +86,24 @@
           <div class="qa-answer committed">Does not validate, shuffle the plan (Layer 1 does), merge rows into one call, or upload to cluster storage (ops/Helm handles paths).</div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">How many lines per phone call in v2?</button>
-          <div class="qa-answer planned"><strong>v2:</strong> usually one line per target edge — prefix history lives inside that line's messages[]. <strong>v1:</strong> many lines per full simulated call (turn_index 1…N, same scenario_id).</div>
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">How many lines per phone call in v2?</button>
+          <div class="qa-answer committed"><strong>v2:</strong> usually one line per target edge — prefix history lives inside that line's messages[]. <strong>v1:</strong> many lines per full simulated call (turn_index 1…N, same scenario_id).</div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">What v2 scale should we expect?</button>
-          <div class="qa-answer planned">Receptionist ~20 edges × 100 quota ≈ 2,000 lines. Each line may have 4–8 messages[] entries. Line count ≈ work unit count ≈ edges × quota.</div>
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What v2 scale should we expect?</button>
+          <div class="qa-answer committed">Receptionist ~20 edges × 100 quota ≈ 2,000 lines. Each line may have 4–8 messages[] entries. Line count ≈ work unit count ≈ edges × quota.</div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">What new meta fields will v2 writer pass?</button>
-          <div class="qa-answer planned">edge_id, planner_mode, entry_depth, skillset — small extensions on top of existing meta. scenario_id usually unique per row (includes edge + index).</div>
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What new meta fields does the v2 writer pass?</button>
+          <div class="qa-answer committed">edge_id, planner_mode, entry_depth, skillset — small extensions on top of existing meta. scenario_id usually unique per row (includes edge + index).</div>
         </div>
 
-        <div class="qa-item planned">
-          <button class="qa-question planned" aria-expanded="false">What is the planned coverage report after write?</button>
-          <div class="qa-answer planned"><code>voxtune-validate --input … --coverage-report /tmp/edge_coverage.json</code><br><br>Checks every edge has ~transition_quota rows, no missing edges, meta.edge_id counts match planner. Acceptance metric beyond path_class ±2%.</div>
+        <div class="qa-item committed">
+          <button class="qa-question committed" aria-expanded="false">What is the coverage report after write?</button>
+          <div class="qa-answer committed"><code>voxtune-validate --input … --coverage-report /tmp/edge_coverage.json</code><br><br>Checks every edge has ~transition_quota rows, no missing edges, meta.edge_id counts match planner. Acceptance metric beyond path_class ±2%.</div>
         </div>
 
         <div class="qa-item committed">

@@ -1,0 +1,27 @@
+{
+  "submission_id": "54730665",
+  "status": "COMPLETE",
+  "score": null,
+  "private_score": null,
+  "description": "ARC-AGI-3 research agent \u2014 2026-07-15",
+  "error_description": null,
+  "file_name": null,
+  "kernel_slug": "ilakkmanoharan/arc-agi-3-research-agent",
+  "kernel_version": "335479274",
+  "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=335479274",
+  "submitted_at": "2026-07-15 15:18:34.807000",
+  "competition_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+  "submissions_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+  "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+  "raw": {
+    "ref": 54730665,
+    "status": "COMPLETE",
+    "publicScore": null,
+    "privateScore": null,
+    "description": "ARC-AGI-3 research agent \u2014 2026-07-15",
+    "errorDescription": null,
+    "fileName": null,
+    "url": "/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=335479274",
+    "date": "2026-07-15 15:18:34.807000"
+  }
+}

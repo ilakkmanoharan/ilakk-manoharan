@@ -1,242 +1,26 @@
 {
-  "updated_at": "2026-07-16T15:27:24.848429+00:00",
+  "updated_at": "2026-07-17T15:07:00.566132+00:00",
   "competition": "arc-prize-2026-arc-agi-3",
   "competition_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
   "research_end": "2026-11-01",
-  "latest_submission_id": "54763893",
+  "latest_submission_id": "54786153",
   "latest_score": null,
-  "latest_hypothesis_path": "research/hypotheses/2026-07-16/hypothesis.md",
-  "latest_strategy_path": "research/strategies/2026-07-16/next-submission-plan.md",
-  "event_count": 354,
+  "latest_hypothesis_path": "research/hypotheses/2026-07-17/hypothesis.md",
+  "latest_strategy_path": "research/strategies/2026-07-17/next-submission-plan.md",
+  "event_count": 368,
   "latest_event": {
-    "id": "f413492d-aa40-42ef-8c4a-4ee3b497808e",
-    "date": "2026-07-16",
-    "time": "15:27:24",
+    "id": "e7d4545c-66a0-4315-a3d0-e42f0f52846d",
+    "date": "2026-07-17",
+    "time": "15:07:00",
     "event_type": "resubmitted",
-    "submission_id": "54763893",
+    "submission_id": "54786153",
     "status": "",
     "score": "",
     "kaggle_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
     "github_documents": [],
-    "summary": "ARC-AGI-3 research agent \u2014 2026-07-16"
+    "summary": "ARC-AGI-3 research agent \u2014 2026-07-17"
   },
   "events": [
-    {
-      "id": "d78694be-87a9-4d2d-a99d-57d916d7640b",
-      "date": "2026-07-13",
-      "time": "16:21:22",
-      "event_type": "analysis_created",
-      "submission_id": "54612126",
-      "status": "COMPLETE",
-      "score": "",
-      "kaggle_url": "",
-      "github_documents": [
-        "research/analysis/2026-07-13/success-analysis.md",
-        "research/analysis/2026-07-13/failure-analysis.md",
-        "research/analysis/2026-07-13/causal-analysis.md",
-        "research/analysis/2026-07-13/theory.md"
-      ],
-      "summary": "Generated success/failure/causal analysis and theory update"
-    },
-    {
-      "id": "7a77380e-7f83-45f7-a99a-1da0eeb37db8",
-      "date": "2026-07-13",
-      "time": "16:21:22",
-      "event_type": "success_recorded",
-      "submission_id": "54612126",
-      "status": "COMPLETE",
-      "score": "",
-      "kaggle_url": "",
-      "github_documents": [],
-      "summary": "Recorded success recorded"
-    },
-    {
-      "id": "2e9d9375-97e2-4d9f-86e3-c9c2e98b11ad",
-      "date": "2026-07-13",
-      "time": "16:21:22",
-      "event_type": "hypothesis_created",
-      "submission_id": "",
-      "status": "",
-      "score": "",
-      "kaggle_url": "",
-      "github_documents": [
-        "research/hypotheses/2026-07-13/hypothesis.md"
-      ],
-      "summary": "Generated hypothesis from analysis artifacts"
-    },
-    {
-      "id": "b42644c1-ba91-4cbc-a03e-ca9dac613e7f",
-      "date": "2026-07-13",
-      "time": "16:21:22",
-      "event_type": "strategy_created",
-      "submission_id": "",
-      "status": "",
-      "score": "",
-      "kaggle_url": "",
-      "github_documents": [
-        "research/strategies/2026-07-13/next-submission-plan.md"
-      ],
-      "summary": "Generated next-submission plan from hypothesis"
-    },
-    {
-      "id": "7bd6b503-65f4-4955-9071-cf0853544f7b",
-      "date": "2026-07-13",
-      "time": "16:21:22",
-      "event_type": "fix_committed",
-      "submission_id": "",
-      "status": "",
-      "score": "",
-      "kaggle_url": "",
-      "github_documents": [
-        "research/analysis/2026-07-13/success-analysis.md",
-        "research/analysis/2026-07-13/failure-analysis.md",
-        "research/analysis/2026-07-13/causal-analysis.md",
-        "research/analysis/2026-07-13/theory.md",
-        "research/hypotheses/2026-07-13/hypothesis.md",
-        "research/strategies/2026-07-13/next-submission-plan.md"
-      ],
-      "summary": "Artifacts ready for git commit: ARC Research Update 2026-07-13"
-    },
-    {
-      "id": "f173d476-6b19-4dd8-a1e5-b16709ca94a8",
-      "date": "2026-07-13",
-      "time": "16:21:22",
-      "event_type": "portfolio_updated",
-      "submission_id": "54612126",
-      "status": "",
-      "score": "",
-      "kaggle_url": "",
-      "github_documents": [
-        "research/portfolio-manifest.json"
-      ],
-      "summary": "Updated portfolio manifest for research page"
-    },
-    {
-      "id": "958757e5-508e-46e4-a8df-b5aaf6dc5ac3",
-      "date": "2026-07-13",
-      "time": "16:21:56",
-      "event_type": "submission_created",
-      "submission_id": "54653726",
-      "status": "SUBMITTED",
-      "score": "",
-      "kaggle_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
-      "github_documents": [
-        "research/submissions/2026-07-13/kernel-package"
-      ],
-      "summary": "Submitted kernel ilakkmanoharan/arc-agi-3-research-agent v24",
-      "extra": {
-        "kernel_url": "https://www.kaggle.com/code/ilakkmanoharan/arc-agi-3-research-agent",
-        "kernel_version": 24,
-        "kernel_slug": "ilakkmanoharan/arc-agi-3-research-agent"
-      }
-    },
-    {
-      "id": "15c4cae0-06cb-4f29-9a35-585d08d1340d",
-      "date": "2026-07-13",
-      "time": "16:21:56",
-      "event_type": "resubmitted",
-      "submission_id": "54653726",
-      "status": "",
-      "score": "",
-      "kaggle_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
-      "github_documents": [],
-      "summary": "ARC-AGI-3 research agent \u2014 2026-07-13"
-    },
-    {
-      "id": "762ab7a6-2854-4347-bd23-99487f2fb7ce",
-      "date": "2026-07-13",
-      "time": "16:21:56",
-      "event_type": "cycle_completed",
-      "submission_id": "54653726",
-      "status": "SUBMITTED",
-      "score": "",
-      "kaggle_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
-      "github_documents": [
-        "research/analysis/2026-07-13/success-analysis.md",
-        "research/analysis/2026-07-13/failure-analysis.md",
-        "research/analysis/2026-07-13/causal-analysis.md",
-        "research/analysis/2026-07-13/theory.md",
-        "research/hypotheses/2026-07-13/hypothesis.md",
-        "research/strategies/2026-07-13/next-submission-plan.md",
-        "research/portfolio-manifest.json"
-      ],
-      "summary": "Daily cycle completed for 2026-07-13"
-    },
-    {
-      "id": "52bef027-6152-45c7-a1f9-48555970dc8b",
-      "date": "2026-07-14",
-      "time": "15:16:14",
-      "event_type": "cycle_started",
-      "submission_id": "",
-      "status": "",
-      "score": "",
-      "kaggle_url": "",
-      "github_documents": [],
-      "summary": "Daily research cycle started for 2026-07-14"
-    },
-    {
-      "id": "39f1f092-cd77-4ba2-bb89-d50caf015f6d",
-      "date": "2026-07-14",
-      "time": "15:16:15",
-      "event_type": "status_checked",
-      "submission_id": "54653726",
-      "status": "COMPLETE",
-      "score": "",
-      "kaggle_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
-      "github_documents": [
-        "research/submissions/2026-07-14/submission.json"
-      ],
-      "summary": "Retrieved latest Kaggle submission (COMPLETE, score=None)",
-      "extra": {
-        "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=334848690",
-        "kernel_slug": "ilakkmanoharan/arc-agi-3-research-agent"
-      }
-    },
-    {
-      "id": "c1951f63-80c1-402c-a90e-caf1951bc3e5",
-      "date": "2026-07-14",
-      "time": "15:16:16",
-      "event_type": "logs_retrieved",
-      "submission_id": "54653726",
-      "status": "",
-      "score": "",
-      "kaggle_url": "",
-      "github_documents": [
-        "research/logs/2026-07-14/metadata.json",
-        "research/logs/2026-07-14/submission-api.json",
-        "research/logs/2026-07-14/arc-agi-3-research-agent.log",
-        "research/logs/2026-07-14/submission.parquet",
-        "research/logs/2026-07-14/kernel-status.json"
-      ],
-      "summary": "Retrieved 5 log artifact(s) for latest submission"
-    },
-    {
-      "id": "bc56e1d9-126f-40db-8232-f75622e46271",
-      "date": "2026-07-14",
-      "time": "15:16:16",
-      "event_type": "lora_analysis_created",
-      "submission_id": "54653726",
-      "status": "",
-      "score": "",
-      "kaggle_url": "",
-      "github_documents": [],
-      "summary": "LoRA advisor (empty+heuristic): 0 labels, plan=ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh"
-    },
-    {
-      "id": "5272d567-75e0-4e9e-8b4e-5827917a9610",
-      "date": "2026-07-14",
-      "time": "15:16:16",
-      "event_type": "dataset_exported",
-      "submission_id": "54653726",
-      "status": "",
-      "score": "",
-      "kaggle_url": "",
-      "github_documents": [
-        "research/datasets/2026-07-14/manifest.json",
-        "research/datasets/2026-07-14/dataset1_action_effect_cycle.jsonl"
-      ],
-      "summary": "Exported cycle JSONL datasets for ASRA-LoRA retraining"
-    },
     {
       "id": "8863b525-a972-4221-a84d-0ae20ed1db9c",
       "date": "2026-07-14",
@@ -789,6 +573,222 @@
       "kaggle_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
       "github_documents": [],
       "summary": "ARC-AGI-3 research agent \u2014 2026-07-16"
+    },
+    {
+      "id": "72ccf48d-8b08-4ae6-bc29-8b74e6d12c8f",
+      "date": "2026-07-16",
+      "time": "15:27:24",
+      "event_type": "cycle_completed",
+      "submission_id": "54763893",
+      "status": "SUBMITTED",
+      "score": "",
+      "kaggle_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+      "github_documents": [
+        "research/analysis/2026-07-16/success-analysis.md",
+        "research/analysis/2026-07-16/failure-analysis.md",
+        "research/analysis/2026-07-16/causal-analysis.md",
+        "research/analysis/2026-07-16/theory.md",
+        "research/hypotheses/2026-07-16/hypothesis.md",
+        "research/strategies/2026-07-16/next-submission-plan.md",
+        "research/portfolio-manifest.json"
+      ],
+      "summary": "Daily cycle completed for 2026-07-16"
+    },
+    {
+      "id": "132cef95-e186-4044-8453-993843fe00a6",
+      "date": "2026-07-17",
+      "time": "15:05:23",
+      "event_type": "cycle_started",
+      "submission_id": "",
+      "status": "",
+      "score": "",
+      "kaggle_url": "",
+      "github_documents": [],
+      "summary": "Daily research cycle started for 2026-07-17"
+    },
+    {
+      "id": "40815d2a-ec74-4cfc-b382-c2ee87989c7f",
+      "date": "2026-07-17",
+      "time": "15:05:24",
+      "event_type": "status_checked",
+      "submission_id": "54763893",
+      "status": "COMPLETE",
+      "score": "",
+      "kaggle_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+      "github_documents": [
+        "research/submissions/2026-07-17/submission.json"
+      ],
+      "summary": "Retrieved latest Kaggle submission (COMPLETE, score=None)",
+      "extra": {
+        "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=335748870",
+        "kernel_slug": "ilakkmanoharan/arc-agi-3-research-agent"
+      }
+    },
+    {
+      "id": "f9a2ae38-0ce9-45c6-ba31-0d429bae92c6",
+      "date": "2026-07-17",
+      "time": "15:05:25",
+      "event_type": "logs_retrieved",
+      "submission_id": "54763893",
+      "status": "",
+      "score": "",
+      "kaggle_url": "",
+      "github_documents": [
+        "research/logs/2026-07-17/metadata.json",
+        "research/logs/2026-07-17/submission-api.json",
+        "research/logs/2026-07-17/arc-agi-3-research-agent.log",
+        "research/logs/2026-07-17/submission.parquet",
+        "research/logs/2026-07-17/kernel-status.json"
+      ],
+      "summary": "Retrieved 5 log artifact(s) for latest submission"
+    },
+    {
+      "id": "0efa2076-c284-432a-a968-158e9c4a6e8f",
+      "date": "2026-07-17",
+      "time": "15:05:25",
+      "event_type": "lora_analysis_created",
+      "submission_id": "54763893",
+      "status": "",
+      "score": "",
+      "kaggle_url": "",
+      "github_documents": [],
+      "summary": "LoRA advisor (empty+heuristic): 0 labels, plan=ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh"
+    },
+    {
+      "id": "979e2c88-b1d9-4012-b5c8-b360476c09a1",
+      "date": "2026-07-17",
+      "time": "15:05:25",
+      "event_type": "dataset_exported",
+      "submission_id": "54763893",
+      "status": "",
+      "score": "",
+      "kaggle_url": "",
+      "github_documents": [
+        "research/datasets/2026-07-17/manifest.json",
+        "research/datasets/2026-07-17/dataset1_action_effect_cycle.jsonl"
+      ],
+      "summary": "Exported cycle JSONL datasets for ASRA-LoRA retraining"
+    },
+    {
+      "id": "c149f6f4-d436-44ae-938e-651ee60a56dd",
+      "date": "2026-07-17",
+      "time": "15:05:25",
+      "event_type": "analysis_created",
+      "submission_id": "54763893",
+      "status": "COMPLETE",
+      "score": "",
+      "kaggle_url": "",
+      "github_documents": [
+        "research/analysis/2026-07-17/success-analysis.md",
+        "research/analysis/2026-07-17/failure-analysis.md",
+        "research/analysis/2026-07-17/causal-analysis.md",
+        "research/analysis/2026-07-17/theory.md"
+      ],
+      "summary": "Generated success/failure/causal analysis and theory update"
+    },
+    {
+      "id": "a9d8eb58-07d2-4d35-a554-d4cede4e40b7",
+      "date": "2026-07-17",
+      "time": "15:05:25",
+      "event_type": "success_recorded",
+      "submission_id": "54763893",
+      "status": "COMPLETE",
+      "score": "",
+      "kaggle_url": "",
+      "github_documents": [],
+      "summary": "Recorded success recorded"
+    },
+    {
+      "id": "5cafaf08-680f-45a9-913c-b0d8106b17e7",
+      "date": "2026-07-17",
+      "time": "15:05:25",
+      "event_type": "hypothesis_created",
+      "submission_id": "",
+      "status": "",
+      "score": "",
+      "kaggle_url": "",
+      "github_documents": [
+        "research/hypotheses/2026-07-17/hypothesis.md"
+      ],
+      "summary": "Generated hypothesis from analysis artifacts"
+    },
+    {
+      "id": "c29e983a-b5bf-4ba6-b143-7844c41c6750",
+      "date": "2026-07-17",
+      "time": "15:05:25",
+      "event_type": "strategy_created",
+      "submission_id": "",
+      "status": "",
+      "score": "",
+      "kaggle_url": "",
+      "github_documents": [
+        "research/strategies/2026-07-17/next-submission-plan.md"
+      ],
+      "summary": "Generated next-submission plan from hypothesis"
+    },
+    {
+      "id": "e084d37a-f7a5-4755-8a8b-c4b74d0cb836",
+      "date": "2026-07-17",
+      "time": "15:05:25",
+      "event_type": "fix_committed",
+      "submission_id": "",
+      "status": "",
+      "score": "",
+      "kaggle_url": "",
+      "github_documents": [
+        "research/analysis/2026-07-17/success-analysis.md",
+        "research/analysis/2026-07-17/failure-analysis.md",
+        "research/analysis/2026-07-17/causal-analysis.md",
+        "research/analysis/2026-07-17/theory.md",
+        "research/hypotheses/2026-07-17/hypothesis.md",
+        "research/strategies/2026-07-17/next-submission-plan.md"
+      ],
+      "summary": "Artifacts ready for git commit: ARC Research Update 2026-07-17"
+    },
+    {
+      "id": "62aac281-c625-423a-adcb-a575b38f75bd",
+      "date": "2026-07-17",
+      "time": "15:05:25",
+      "event_type": "portfolio_updated",
+      "submission_id": "54763893",
+      "status": "",
+      "score": "",
+      "kaggle_url": "",
+      "github_documents": [
+        "research/portfolio-manifest.json"
+      ],
+      "summary": "Updated portfolio manifest for research page"
+    },
+    {
+      "id": "e0a61765-94fc-4e19-80ee-f0c03efbf1d0",
+      "date": "2026-07-17",
+      "time": "15:07:00",
+      "event_type": "submission_created",
+      "submission_id": "54786153",
+      "status": "SUBMITTED",
+      "score": "",
+      "kaggle_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+      "github_documents": [
+        "research/submissions/2026-07-17/kernel-package"
+      ],
+      "summary": "Submitted kernel ilakkmanoharan/arc-agi-3-research-agent v28",
+      "extra": {
+        "kernel_url": "https://www.kaggle.com/code/ilakkmanoharan/arc-agi-3-research-agent",
+        "kernel_version": 28,
+        "kernel_slug": "ilakkmanoharan/arc-agi-3-research-agent"
+      }
+    },
+    {
+      "id": "e7d4545c-66a0-4315-a3d0-e42f0f52846d",
+      "date": "2026-07-17",
+      "time": "15:07:00",
+      "event_type": "resubmitted",
+      "submission_id": "54786153",
+      "status": "",
+      "score": "",
+      "kaggle_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+      "github_documents": [],
+      "summary": "ARC-AGI-3 research agent \u2014 2026-07-17"
     }
   ]
 }

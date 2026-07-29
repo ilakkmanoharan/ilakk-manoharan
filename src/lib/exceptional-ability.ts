@@ -20,6 +20,7 @@
  * Evidence 25 (WMIB): src/lib/exceptional-ability-evidence-wmib.ts
  * Evidence 26 (Hire My Agents): src/lib/exceptional-ability-evidence-hire-my-agents.ts
  * Evidence 27 (ASRA-LoRA): src/lib/exceptional-ability-evidence-asra-lora.ts
+ * Evidence 28 (StratusTalk Inc): src/lib/exceptional-ability-evidence-stratustalk.ts
  */
 import { scilayerScholarlyEvidenceSection } from "@/lib/exceptional-ability-evidence2";
 import { asraPhase1EvidenceSection } from "@/lib/exceptional-ability-evidence-phase1";
@@ -44,6 +45,7 @@ import { cmbEvidenceSection } from "@/lib/exceptional-ability-evidence-cmb";
 import { wmibEvidenceSection } from "@/lib/exceptional-ability-evidence-wmib";
 import { hireMyAgentsEvidenceSection } from "@/lib/exceptional-ability-evidence-hire-my-agents";
 import { asraLoraEvidenceSection } from "@/lib/exceptional-ability-evidence-asra-lora";
+import { stratustalkEvidenceSection } from "@/lib/exceptional-ability-evidence-stratustalk";
 import { NFM_PROGRAM_SITE } from "@/lib/nfm";
 export type ExceptionalAbilityLink = {
   label: string;
@@ -250,4 +252,5 @@ export const exceptionalAbilitySections: ExceptionalAbilitySection[] = [
   wmibEvidenceSection,
   hireMyAgentsEvidenceSection,
   asraLoraEvidenceSection,
+  stratustalkEvidenceSection,
 ];

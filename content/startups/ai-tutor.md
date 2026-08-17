@@ -8,7 +8,7 @@ problem: "Technical interview prep is still fragmented and passive. Candidates g
 solution: "AI Tutor puts you in a shared interview workspace with an Agentic Owl who can speak, subtitle, observe the board and code, guide with progressive hints, and evaluate the session. Practice coding interviews and system design with voice conversation, a collaborative whiteboard, a code editor, and personalized coaching backed by learner memory and RAG."
 targetUsers: "Software engineers preparing for coding and system design interviews; bootcamp and CS students building interview skills; career switchers who want a realistic mock interviewer instead of another problem bank or chat window"
 status: "EdTech / early concept"
-websiteUrl: "https://ai-tutor.vercel.app"
+websiteUrl: "https://ai-tutor-lyart-zeta.vercel.app"
 visible: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 slug: ai-tutor
 name: AI Tutor
-sortOrder: 3
+sortOrder: 4
 tagline: "A live interview room with an animated AI mentor—coding, system design, voice, and a collaborative whiteboard."
 description: "AI Tutor is an interview-prep product built around an Agentic Owl: an expressive AI interviewer who speaks, draws architecture, asks follow-ups, and coaches through Socratic tutoring—combining LeetCode-style practice, system design, a coding workspace, and persistent learning history in one shared interview room rather than a chatbot."
 problem: "Technical interview prep is still fragmented and passive. Candidates grind problems on LeetCode-style sites, paste questions into chatbots that dump answers, and rarely practice the real interview loop—thinking aloud, drawing systems, handling follow-ups, and getting scored feedback from a patient mentor."

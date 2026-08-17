@@ -83,6 +83,29 @@ export default async function StartupsPage() {
                     </Link>
                   </div>
                 ) : null}
+                {s.slug === "ai-tutor" && s.websiteUrl ? (
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href={s.websiteUrl}
+                      className={cn(
+                        buttonVariants(),
+                        "bg-[#0f172a] hover:bg-[#1e293b]",
+                      )}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Open AI Tutor
+                    </a>
+                    <a
+                      href={s.websiteUrl}
+                      className={cn(buttonVariants({ variant: "outline" }))}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      View app
+                    </a>
+                  </div>
+                ) : null}
                 <div className="flex flex-wrap gap-3">
                   {s.websiteUrl ? (
                     s.websiteUrl.startsWith("/") ? (

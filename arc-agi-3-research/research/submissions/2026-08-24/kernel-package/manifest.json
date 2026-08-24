@@ -1,0 +1,25 @@
+{
+  "status": "trained",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "dataset": "dataset1_action_effect_v0.jsonl",
+  "examples": 5000,
+  "max_steps": 120,
+  "device": "mps",
+  "metrics": {
+    "train_loss": 2.0251681725184123
+  },
+  "kaggle": {
+    "phase": 7,
+    "kernel": "ilakkmanoharan/asra-phase-7-arc-prize-2026",
+    "bridge": "HypothesisLoRABridge",
+    "cache_entries": 600
+  },
+  "eval_report": "data/reports/hypothesis_lora_eval.json",
+  "exploration_lora": {
+    "status": "dry_run",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "dataset": "dataset2_next_action_v0.jsonl",
+    "examples": 4000,
+    "metrics": {}
+  }
+}

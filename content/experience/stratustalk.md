@@ -9,12 +9,14 @@ githubUrl: "https://github.com/antillestech/voxtune"
 websiteUrl: ""
 demoVideoUrl: ""
 caseStudyUrl: ""
-relatedLinks: '[{"label":"StratusTalk dataset generation architecture (v1)","url":"/voxlayer/index.html"},{"label":"StratusTalk dataset generation architecture (v2 — shipped)","url":"/voxlayer-v2/index.html"}]'
+relatedLinks: '[{"label":"StratusTalk STAR challenge videos","url":"/experience/stratustalk-star"},{"label":"StratusTalk dataset generation architecture (v1)","url":"/voxlayer/index.html"},{"label":"StratusTalk dataset generation architecture (v2 — shipped)","url":"/voxlayer-v2/index.html"}]'
 filterTags: '["AI / ML","Backend","Cloud"]'
 techStack: '["Python","YAML","JSONL","ChatML","Unsloth","LoRA","PEFT","vLLM","Qwen","Gemma","Kubernetes","Helm","Laravel","Filament"]'
 ---
 
 **StratusTalk Inc** builds conversational phone agents that follow a structured call policy (intent, messaging, transfer, confirm, close)—not free-form chat. As a contract ML engineer, I own the synthetic data and adaptation stack: end-to-end trajectory generation over finite-state dialogue graphs, Unsloth-compatible ChatML packaging, parameter-efficient fine-tuning of mid-size LLMs, and golden-set evaluation so model gains reflect generalization rather than train contamination.
+
+**STAR challenge videos:** [/experience/stratustalk-star](/experience/stratustalk-star) — seventeen interview walkthroughs (LoRA cost thesis, Mode C eval honesty, sipagent tags, GPU train lifecycle, and more).
 
 **Architecture pages:**
 - [/voxlayer/index.html](/voxlayer/index.html) — **v1** baseline (six-layer engine: config, SM edge planner, traversal, dialogue, assembler, JSONL writer)

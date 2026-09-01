@@ -15,9 +15,22 @@ export type Talk = {
   relatedAudioLabel?: string;
   slidesUrl?: string;
   websiteUrl?: string;
+  websiteLabel?: string;
 };
 
 export const talks: Talk[] = [
+  {
+    title: "AI Tutor: Human in the Loop vs Adaptive Reasoning",
+    event: "Naperville AI Enthusiasts meetup",
+    location: "NIU Naperville, 1120 E Diehl Rd, Room 119 · Aug 31, 2026",
+    date: "2026",
+    format: "Meetup",
+    description:
+      "Introduction to AI Tutor—a live learning room with an Agentic Owl mentor who speaks, listens, draws on a shared whiteboard, and coaches turn-by-turn instead of dumping answers. I contrast human-in-the-loop tutoring with adaptive reasoning: observe what the learner understands, adjust strategy, and work through problems step by step. First course: Software Engineering Interview Prep. Live product: https://ai-tutor-lyart-zeta.vercel.app",
+    websiteUrl: "https://ai-tutor-lyart-zeta.vercel.app",
+    websiteLabel: "AI Tutor",
+    videoUrl: "https://www.youtube.com/watch?v=sg6PHunOkbQ",
+  },
   {
     title: "Hire My Agents: AI Workers with Jobs, Reports, and Accountability",
     event: "Naperville AI Enthusiasts meetup",
@@ -27,6 +40,7 @@ export const talks: Talk[] = [
     description:
       "Opening slot at the Naperville AI Enthusiasts meetup — an introduction to Hire My Agents, an AI workforce platform where you hire specialized agents for real work: assistance, engineering, recruiting, research, and more. I cover why most agents fail beyond short demos, what makes these workers different (memory, workflows, tools, approval gates, and daily reporting), and how I'm training the first generation of agents with jobs, reports, and accountability. Learn more: https://ilakk-manoharan.vercel.app/hire-my-agents",
     websiteUrl: "/hire-my-agents",
+    websiteLabel: "Hire My Agents",
     videoUrl: "/talks/naperville-ai-meetup-2026/recording.mp4",
     audioUrl: "/talks/naperville-ai-meetup-2026/talk10.m4a",
     relatedAudioUrl: "/talks/naperville-ai-meetup-2026/context-as-a-data-layer.m4a",

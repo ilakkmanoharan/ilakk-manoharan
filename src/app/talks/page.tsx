@@ -101,7 +101,7 @@ export default function TalksPage() {
                       {isExternalUrl(t.websiteUrl) ? (
                         <ExternalLink className="size-4" aria-hidden />
                       ) : null}
-                      Hire My Agents
+                      {t.websiteLabel ?? "Website"}
                     </a>
                   ) : null}
                   {t.slidesUrl ? (

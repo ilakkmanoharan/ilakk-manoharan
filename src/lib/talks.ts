@@ -27,8 +27,6 @@ export const talks: Talk[] = [
     format: "Meetup",
     description:
       "Introduction to AI Tutor—a live learning room with an Agentic Owl mentor who speaks, listens, draws on a shared whiteboard, and coaches turn-by-turn instead of dumping answers. Why human-in-the-loop vs adaptive reasoning? Most AI tutors either give you the answer (no human thinking) or treat every learner the same (no adaptation). AI Tutor keeps the learner in the loop—the Owl asks, listens, and waits for your reasoning—while using adaptive reasoning to observe what you understand, update its model of you, and change strategy step by step. First course: Software Engineering Interview Prep.",
-    websiteUrl: "https://ai-tutor-lyart-zeta.vercel.app",
-    websiteLabel: "AI Tutor",
     videoUrl: "https://www.youtube.com/watch?v=sg6PHunOkbQ",
   },
   {

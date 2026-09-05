@@ -1,0 +1,19 @@
+{
+  "day": "2026-09-05",
+  "exported_at": "2026-09-05T16:22:44.032319+00:00",
+  "submission_id": "56017009",
+  "row_counts": {
+    "dataset1_action_effect": 0,
+    "dataset2_exploration": 0,
+    "dataset3_failure_revision": 1,
+    "dataset7_trace": 1
+  },
+  "asra_lora_merge_hint": "Append cycle JSONL files to ASRA-LoRA data/generated/ and re-run train/hypothesis_lora_sft.py (and future Exploration/Failure/Trace trainers).",
+  "files": {
+    "action_effect": "research/datasets/2026-09-05/dataset1_action_effect_cycle.jsonl",
+    "exploration": "research/datasets/2026-09-05/dataset2_exploration_cycle.jsonl",
+    "failure_revision": "research/datasets/2026-09-05/dataset3_failure_revision_cycle.jsonl",
+    "trace": "research/datasets/2026-09-05/dataset7_trace_cycle.jsonl",
+    "manifest": "research/datasets/2026-09-05/manifest.json"
+  }
+}

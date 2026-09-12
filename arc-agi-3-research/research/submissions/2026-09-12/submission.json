@@ -1,0 +1,27 @@
+{
+  "submission_id": "56167844",
+  "status": "COMPLETE",
+  "score": null,
+  "private_score": null,
+  "description": "Phase A.1 + P0: FrameJournal + RetrodictGate + WorldModelSandbox + Tabby/Glubby/Sam + kill-switch + asra_run_summary telemetry",
+  "error_description": null,
+  "file_name": null,
+  "kernel_slug": "ilakkmanoharan/arc-agi-3-research-agent",
+  "kernel_version": "349057651",
+  "notebook_url": "https://www.kaggle.com/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=349057651",
+  "submitted_at": "2026-09-11 15:09:51.867000",
+  "competition_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+  "submissions_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+  "url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/submissions",
+  "raw": {
+    "ref": 56167844,
+    "status": "COMPLETE",
+    "publicScore": null,
+    "privateScore": null,
+    "description": "Phase A.1 + P0: FrameJournal + RetrodictGate + WorldModelSandbox + Tabby/Glubby/Sam + kill-switch + asra_run_summary telemetry",
+    "errorDescription": null,
+    "fileName": null,
+    "url": "/code/ilakkmanoharan/arc-agi-3-research-agent?scriptVersionId=349057651",
+    "date": "2026-09-11 15:09:51.867000"
+  }
+}

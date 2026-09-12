@@ -1,19 +1,20 @@
 name: ARC-AGI-3 Daily Research
 
+# Disabled 2026-09-12: scheduled auto-submit burned daily Kaggle slots
+# (Sep 10 Phase 4 overwrite; Sep 12 56189475) without this machine's consent.
+# Cron removed. auto_submit defaults false. Schedule events never set
+# ARC_AGENT_AUTO_SUBMIT (empty inputs used to evaluate as submit=on).
 on:
-  schedule:
-    # 14:00 UTC daily
-    - cron: "0 14 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
         description: "Skip live Kaggle/OpenAI calls"
         type: boolean
-        default: false
-      auto_submit:
-        description: "Push kernel and submit to Kaggle"
-        type: boolean
         default: true
+      auto_submit:
+        description: "Push kernel and submit to Kaggle (off unless explicitly checked)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -65,7 +66,9 @@ jobs:
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ARC_AGENT_DRY_RUN: ${{ (github.event.inputs.dry_run == true || github.event.inputs.dry_run == 'true') && '1' || '' }}
-          ARC_AGENT_AUTO_SUBMIT: ${{ (github.event.inputs.dry_run == true || github.event.inputs.dry_run == 'true' || github.event.inputs.auto_submit == false || github.event.inputs.auto_submit == 'false') && '' || '1' }}
+          # Only submit when a human checks auto_submit on workflow_dispatch.
+          # Scheduled/empty inputs must stay off (old `|| '1'` default caused Sep 12).
+          ARC_AGENT_AUTO_SUBMIT: ${{ (github.event.inputs.auto_submit == true || github.event.inputs.auto_submit == 'true') && '1' || '' }}
           ARC_AGENT_USE_LORA: "1"
           ASRA_LORA_REPO: ${{ github.workspace }}/ASRA-LoRA
           KAGGLE_BASE_KERNEL: ilakkmanoharan/asra-phase-7-arc-prize-2026

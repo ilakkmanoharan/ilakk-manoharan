@@ -1,0 +1,417 @@
+{
+  "schemaVersion": 1,
+  "project": "rsna-knee-mri-classifier",
+  "competition": "rsna-knee-abnormality-detection",
+  "date": "2026-09-15",
+  "timezone": "America/Chicago",
+  "generatedAt": "2026-09-15T17:31:19.950740Z",
+  "sourceWindow": {
+    "start": "2026-09-15T05:00:00Z",
+    "end": "2026-09-16T04:59:59.999999Z"
+  },
+  "dailySummary": "3 submission(s); 3 scored. Best 0.498. Public score rose by 0.0040 from first to last scored submission (0.4940 \u2192 0.4980). The later submissions followed report_shrinkage_priors, metadata_prior_blend. Do not claim causation beyond explicit strategy linkage.",
+  "submissions": [
+    {
+      "ref": "56250767",
+      "timestamp": "2026-09-15T09:15:13.110000Z",
+      "fileName": "submission.csv",
+      "description": "ASRA submission_001 Stage B: gold-label prevalence baseline with tiny noise",
+      "status": "COMPLETE",
+      "publicScore": 0.494,
+      "privateScore": null,
+      "strategy": null
+    },
+    {
+      "ref": "56259307",
+      "timestamp": "2026-09-15T16:52:24.720000Z",
+      "fileName": "submission.csv",
+      "description": "agent1 2026-09-15 cycle 1 strategy=report_shrinkage_priors | 2026-09-15_cycle01_20260915T114138-0500_hypotheses.md",
+      "status": "COMPLETE",
+      "publicScore": 0.498,
+      "privateScore": null,
+      "strategy": "report_shrinkage_priors"
+    },
+    {
+      "ref": "56259512",
+      "timestamp": "2026-09-15T17:08:11.313000Z",
+      "fileName": "submission.csv",
+      "description": "agent1 2026-09-15 cycle 2 strategy=metadata_prior_blend | 2026-09-15_cycle02_20260915T115912-0500_hypotheses.md",
+      "status": "COMPLETE",
+      "publicScore": 0.498,
+      "privateScore": null,
+      "strategy": "metadata_prior_blend"
+    }
+  ],
+  "scoreSummary": {
+    "firstScored": 0.494,
+    "lastScored": 0.498,
+    "bestScore": 0.498,
+    "worstScore": 0.494,
+    "dailyAbsoluteChange": 0.0040000000000000036,
+    "dailyPercentageChange": 0.8097165991902842,
+    "changeFromPreviousSubmission": null,
+    "changeFromPreviousClose": null,
+    "changeFromPriorBest": 0.498,
+    "newAllTimeBest": true,
+    "submissionCount": 3,
+    "scoredCount": 3,
+    "failedOrPendingCount": 0,
+    "meanScore": 0.49666666666666665,
+    "medianScore": 0.498,
+    "scoreStdDev": 0.0018856180831641283,
+    "cumulativeBest": 0.498,
+    "consecutiveImprovementCount": null,
+    "daysSincePreviousAllTimeBest": null
+  },
+  "scoreMovementReason": "Public score rose by 0.0040 from first to last scored submission (0.4940 \u2192 0.4980). The later submissions followed report_shrinkage_priors, metadata_prior_blend. Do not claim causation beyond explicit strategy linkage.",
+  "conceptsImplemented": [
+    {
+      "name": "Plane-aware multi-series aggregation",
+      "why": "Sagittal/coronal/axial emphasize different structures (ACL sagittal, MCL coronal, PF OA axial). Pooling all series together dilutes plane-specific signal and hurts macro AUC equally across 12 targets.",
+      "how": "Encode slices \u2192 series emb \u2192 fixed plane slots + availability mask; never treat missing plane as clinical negative."
+    },
+    {
+      "name": "Weak supervision from multilingual reports",
+      "why": "Only ~58 gold labels vs thousands of reports. Ignoring reports leaves ranking models undertrained; hard pseudo-labels from negation mistakes invert targets.",
+      "how": "Negation/uncertainty/temporality-aware parser \u2192 soft labels + confidence weights; calibrate on gold folds only; never use test reports."
+    },
+    {
+      "name": "Per-target calibrated prevalence prior blend",
+      "why": "Macro AUC cares about ranking per target. Pure constant prevalence (~0.49 public) is a floor; blending study-level model logits with target prevalence stabilizes rare labels (MCL, Baker's).",
+      "how": "p = clip((1-\u03b1)\u00b7\u03c3(logit) + \u03b1\u00b7prev_t); tune \u03b1 on OOF; larger \u03b1 for rare/unstable heads."
+    },
+    {
+      "name": "Fluid-sensitive / fat-suppression series routing",
+      "why": "train_series.csv exposes Fluid_Sensitive and Fat_Suppression. Contusion/effusion/synovitis benefit from fluid-sensitive series; bone findings may prefer others.",
+      "how": "Weight series embeddings by sequence flags before plane pooling; ablate via ASRA H-routing."
+    },
+    {
+      "name": "Frozen encoder then last-block unfreeze",
+      "why": "Tiny gold set overfits if the full backbone trains early. Frozen ImageNet/RadImageNet encoder + heads first is the reliable baseline.",
+      "how": "Train heads only until OOF beats prevalence; then unfreeze last block at low LR."
+    },
+    {
+      "name": "Target-specific view preference soft regularizer",
+      "why": "Hard rules (no sagittal \u21d2 ACL=0) destroy recall. Soft preferred-plane coverage features improve ranking without forcing zeros.",
+      "how": "Concatenate preferred-plane coverage; small consistency loss only after ablation accepts it."
+    },
+    {
+      "name": "Ensemble fold checkpoints + rank average",
+      "why": "Single fold on 58 labels is noisy. Probability or rank ensembling across folds lifts macro AUC more than architecture churn.",
+      "how": "Save fold*.pt; at inference mean probs or average ranks then rescale to [eps,1-eps]."
+    }
+  ],
+  "research": [],
+  "hypotheses": [
+    {
+      "id": "H_plane_slots_visual",
+      "statement": "Frozen EfficientNet-B0 with plane slots trained on real (or JPEG) MRI lifts macro AUC over metadata-only.",
+      "motivation": "Not recorded",
+      "changeBeingTested": "Primary hypothesis this cycle",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [],
+      "status": "untested",
+      "linkedExperimentIds": [],
+      "linkedSubmissions": [],
+      "confidence": "low",
+      "caveats": "Parsed from hypothesis markdown; status not asserted without score linkage."
+    },
+    {
+      "id": "H_meta_prior",
+      "statement": "Series-metadata features (plane availability + fluid-sensitive counts) blended with per-target prevalence will beat pure prevalence on public macro AUC.",
+      "motivation": "Not recorded",
+      "changeBeingTested": "Backlog",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [],
+      "status": "untested",
+      "linkedExperimentIds": [],
+      "linkedSubmissions": [],
+      "confidence": "low",
+      "caveats": "Backlog item from hypothesis analysis."
+    },
+    {
+      "id": "H_report_shrinkage",
+      "statement": "Train-time report soft-label shrinkage priors (global target means conditioned on evidence state frequencies) improve calibration of the metadata model without using test reports.",
+      "motivation": "Not recorded",
+      "changeBeingTested": "Backlog",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [],
+      "status": "untested",
+      "linkedExperimentIds": [],
+      "linkedSubmissions": [
+        "56259307"
+      ],
+      "confidence": "low",
+      "caveats": "Backlog item from hypothesis analysis."
+    },
+    {
+      "id": "H_fluid_routing",
+      "statement": "Up-weighting fluid-sensitive series for effusion/synovitis/contusion improves those target AUCs without hurting ligaments.",
+      "motivation": "Not recorded",
+      "changeBeingTested": "Backlog",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [],
+      "status": "untested",
+      "linkedExperimentIds": [],
+      "linkedSubmissions": [],
+      "confidence": "low",
+      "caveats": "Backlog item from hypothesis analysis."
+    },
+    {
+      "id": "H_ensemble_rank",
+      "statement": "Rank-average of prevalence, metadata, and visual models beats any single model.",
+      "motivation": "Not recorded",
+      "changeBeingTested": "Backlog",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [],
+      "status": "untested",
+      "linkedExperimentIds": [],
+      "linkedSubmissions": [],
+      "confidence": "low",
+      "caveats": "Backlog item from hypothesis analysis."
+    }
+  ],
+  "experiments": [
+    {
+      "id": "EXP-20260915-01",
+      "strategy": "Not recorded",
+      "configSummary": "ASRA submission_001 Stage B: gold-label prevalence baseline with tiny noise",
+      "submissionRefs": [
+        "56250767"
+      ]
+    },
+    {
+      "id": "EXP-20260915-02",
+      "strategy": "report_shrinkage_priors",
+      "configSummary": "agent1 2026-09-15 cycle 1 strategy=report_shrinkage_priors | 2026-09-15_cycle01_20260915T114138-0500_hypotheses.md",
+      "submissionRefs": [
+        "56259307"
+      ]
+    },
+    {
+      "id": "EXP-20260915-03",
+      "strategy": "metadata_prior_blend",
+      "configSummary": "agent1 2026-09-15 cycle 2 strategy=metadata_prior_blend | 2026-09-15_cycle02_20260915T115912-0500_hypotheses.md",
+      "submissionRefs": [
+        "56259512"
+      ]
+    }
+  ],
+  "results": {
+    "facts": [
+      "Scored submissions: 3",
+      "Best score today: 0.498",
+      "Public score rose by 0.0040 from first to last scored submission (0.4940 \u2192 0.4980). The later submissions followed report_shrinkage_priors, metadata_prior_blend. Do not claim causation beyond explicit strategy linkage."
+    ],
+    "whatWorked": [
+      "Score improved vs first submission of the day."
+    ],
+    "whatDidNotWork": [
+      "Not recorded"
+    ]
+  },
+  "analysis": {
+    "facts": [
+      "Public score rose by 0.0040 from first to last scored submission (0.4940 \u2192 0.4980). The later submissions followed report_shrinkage_priors, metadata_prior_blend. Do not claim causation beyond explicit strategy linkage."
+    ],
+    "interpretations": [
+      "Interpretations are limited to recorded strategies and artifacts; commits are associated temporally unless explicitly linked."
+    ],
+    "limitations": [
+      "Kaggle credentials missing or fetch empty \u2014 used repo Analysis JSON if present."
+    ],
+    "nextSteps": [
+      "Not recorded \u2014 fill research notes template for stronger next-day plans."
+    ]
+  },
+  "githubActivity": {
+    "commits": [
+      {
+        "sha": "a5fd8ad57a6603c2a7d62ac6af4a7970cb80a138",
+        "timestamp": "2026-09-15T12:14:02-05:00",
+        "message": "agent1: cycle 02_20260915T120433-0500 submit score=0.498"
+      },
+      {
+        "sha": "c2901ad3d08beabc7673b66abd04d22ff258e8cb",
+        "timestamp": "2026-09-15T12:12:38-05:00",
+        "message": "agent1: cycle 02_20260915T120433-0500 research/analysis/plan (metadata_prior_blend)"
+      },
+      {
+        "sha": "a5abb9f26b59e7c931599de7c837cd8eb6d11296",
+        "timestamp": "2026-09-15T12:09:13-05:00",
+        "message": "agent1: cycle 02_20260915T115912-0500 submit score=0.498"
+      },
+      {
+        "sha": "3ce511d11adc8d283fa7076d420afe89d3e4154e",
+        "timestamp": "2026-09-15T12:07:34-05:00",
+        "message": "agent1: cycle 02_20260915T115912-0500 research/analysis/plan (metadata_prior_blend)"
+      },
+      {
+        "sha": "3f5868243e8d1c805c833efc750e8df0dcb23345",
+        "timestamp": "2026-09-15T11:59:13-05:00",
+        "message": "agent1: retry forever on errors and email alerts to operator"
+      },
+      {
+        "sha": "0f2b75b46665fe8596e10c93cc2ac1e82db50eb4",
+        "timestamp": "2026-09-15T11:53:44-05:00",
+        "message": "agent1: arXiv backoff, Kaggle quota sync, launchd scheduler"
+      },
+      {
+        "sha": "c215cfeceb3506ba83bd90fb9625d2ed500d43e5",
+        "timestamp": "2026-09-15T11:53:28-05:00",
+        "message": "agent1: cycle 01_20260915T114138-0500 submit score=0.498"
+      },
+      {
+        "sha": "c7e10840e593726bf436a30de20295f97762001d",
+        "timestamp": "2026-09-15T11:51:47-05:00",
+        "message": "agent1: cycle 01_20260915T114138-0500 research/analysis/plan (report_shrinkage_priors)"
+      },
+      {
+        "sha": "45631c783826f3f0d3e821bb83f77140f702dbc6",
+        "timestamp": "2026-09-15T11:41:15-05:00",
+        "message": "agent1: cycle 00_20260915T114110-0500 submit score=None"
+      },
+      {
+        "sha": "e8c8b66a7786d01cf84c4d1e79384c00ca11eb9b",
+        "timestamp": "2026-09-15T11:41:13-05:00",
+        "message": "agent1: cycle 00_20260915T114110-0500 research/analysis/plan (metadata_prior_blend)"
+      },
+      {
+        "sha": "9be36b178a91350f2b3a53cb0cae34abbb5bcb02",
+        "timestamp": "2026-09-15T11:33:44-05:00",
+        "message": "first commit"
+      }
+    ],
+    "changedFiles": [
+      ".env.example",
+      ".gitignore",
+      "Analysis/.gitkeep",
+      "Analysis/2026-09-15_cycle00_20260915T114110-0500_analysis.md",
+      "Analysis/2026-09-15_cycle00_20260915T114110-0500_submissions.json",
+      "Analysis/2026-09-15_cycle01_20260915T114138-0500_analysis.md",
+      "Analysis/2026-09-15_cycle01_20260915T114138-0500_submissions.json",
+      "Analysis/2026-09-15_cycle02_20260915T115912-0500_analysis.md",
+      "Analysis/2026-09-15_cycle02_20260915T115912-0500_submissions.json",
+      "Analysis/2026-09-15_cycle02_20260915T120433-0500_analysis.md",
+      "Analysis/2026-09-15_cycle02_20260915T120433-0500_submissions.json",
+      "Hypothesis analysis/.gitkeep",
+      "Hypothesis analysis/2026-09-15_cycle00_20260915T114110-0500_hypotheses.md",
+      "Hypothesis analysis/2026-09-15_cycle01_20260915T114138-0500_hypotheses.md",
+      "Hypothesis analysis/2026-09-15_cycle02_20260915T115912-0500_hypotheses.md",
+      "Hypothesis analysis/2026-09-15_cycle02_20260915T120433-0500_hypotheses.md",
+      "Plans/.gitkeep",
+      "Plans/2026-09-15_cycle00_20260915T114110-0500_plan.json",
+      "Plans/2026-09-15_cycle00_20260915T114110-0500_plan.md",
+      "Plans/2026-09-15_cycle01_20260915T114138-0500_plan.json",
+      "Plans/2026-09-15_cycle01_20260915T114138-0500_plan.md",
+      "Plans/2026-09-15_cycle02_20260915T115912-0500_plan.json",
+      "Plans/2026-09-15_cycle02_20260915T115912-0500_plan.md",
+      "Plans/2026-09-15_cycle02_20260915T120433-0500_plan.json",
+      "Plans/2026-09-15_cycle02_20260915T120433-0500_plan.md",
+      "README.md",
+      "Research/.gitkeep",
+      "Research/2026-09-15_cycle00_20260915T114110-0500_research.json",
+      "Research/2026-09-15_cycle00_20260915T114110-0500_research.md",
+      "Research/2026-09-15_cycle01_20260915T114138-0500_research.json",
+      "Research/2026-09-15_cycle01_20260915T114138-0500_research.md",
+      "Research/2026-09-15_cycle02_20260915T115912-0500_research.json",
+      "Research/2026-09-15_cycle02_20260915T115912-0500_research.md",
+      "Research/2026-09-15_cycle02_20260915T120433-0500_research.json",
+      "Research/2026-09-15_cycle02_20260915T120433-0500_research.md",
+      "agent/README.md",
+      "agent/__init__.py",
+      "agent/clock.py",
+      "agent/config.yaml",
+      "agent/git_sync.py",
+      "agent/notify.py",
+      "agent/run_cycle.py",
+      "agent/run_daily.py",
+      "agent/stages/__init__.py",
+      "agent/stages/analyze.py",
+      "agent/stages/hypothesize.py",
+      "agent/stages/implement.py",
+      "agent/stages/plan.py",
+      "agent/stages/research.py",
+      "agent/stages/submit.py",
+      "agent/state.py",
+      "artifacts/.gitignore",
+      "artifacts/agent_state/.gitkeep",
+      "artifacts/agent_state/day_state.json",
+      "artifacts/audit.json",
+      "artifacts/folds/.gitkeep",
+      "artifacts/folds/folds.csv",
+      "artifacts/hypothesis_ledger/.gitkeep",
+      "artifacts/hypothesis_ledger/submission_001.jsonl",
+      "artifacts/oof/.gitkeep",
+      "artifacts/oof/oof_predictions.csv",
+      "artifacts/oof/oof_probs.npy",
+      "artifacts/oof/oof_report.json",
+      "artifacts/report_parser_qa.json",
+      "artifacts/submission.csv",
+      "artifacts/submission_stage_b.csv",
+      "configs/submission_001.yaml",
+      "configs/submission_001_local.yaml",
+      "kaggle_submit/kernel-metadata.json",
+      "kaggle_submit/rsna-knee-submission-001-prevalence.ipynb",
+      "kaggle_submit_agent/rsna-knee-asra-agent-20260915-c00/kernel-metadata.json",
+      "kaggle_submit_agent/rsna-knee-asra-agent-20260915-c00/notebook.ipynb",
+      "kaggle_submit_agent/rsna-knee-asra-agent-20260915-c01/kernel-metadata.json",
+      "kaggle_submit_agent/rsna-knee-asra-agent-20260915-c01/notebook.ipynb",
+      "kaggle_submit_agent/rsna-knee-asra-agent-20260915-c02/kernel-metadata.json",
+      "kaggle_submit_agent/rsna-knee-asra-agent-20260915-c02/notebook.ipynb",
+      "kaggle_submit_v2/kernel-metadata.json",
+      "kaggle_submit_v2/notebook.ipynb",
+      "launchd/com.ilakkmanoharan.rsna-knee-agent1.plist",
+      "notebooks/00_data_audit.ipynb",
+      "notebooks/01_report_world_model.ipynb",
+      "notebooks/02_train_baseline.ipynb",
+      "notebooks/03_kaggle_inference.ipynb",
+      "requirements.txt",
+      "scripts/install_agent1_launchd.sh",
+      "src/__init__.py",
+      "src/asra/__init__.py",
+      "src/asra/experiment.py",
+      "src/asra/hypothesis.py",
+      "src/asra/ledger.py",
+      "src/constants.py",
+      "src/infer.py",
+      "src/symbolic/__init__.py",
+      "src/symbolic/constraints.py",
+      "src/symbolic/evidence_graph.py",
+      "src/symbolic/ontology.py",
+      "src/symbolic/report_parser.py",
+      "src/train.py",
+      "src/utils.py",
+      "src/validate_submission.py",
+      "submission.csv",
+      "tests/conftest.py",
+      "tests/test_dicom_sampling.py",
+      "tests/test_pooling_constraints.py",
+      "tests/test_report_parser.py",
+      "tests/test_submission_and_folds.py"
+    ],
+    "note": null
+  },
+  "provenance": [
+    {
+      "claim": "submissions",
+      "source": "Kaggle API and/or RSNA Analysis/*_submissions.json"
+    },
+    {
+      "claim": "concepts",
+      "source": "RSNA Research/*_research.json"
+    },
+    {
+      "claim": "hypotheses",
+      "source": "RSNA Hypothesis analysis/*_hypotheses.md"
+    }
+  ],
+  "warnings": [
+    "Kaggle credentials missing or fetch empty \u2014 used repo Analysis JSON if present."
+  ]
+}

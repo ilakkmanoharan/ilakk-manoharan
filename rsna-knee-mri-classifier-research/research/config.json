@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "project": "rsna-knee-mri-classifier",
+  "competition": "rsna-knee-abnormality-detection",
+  "competitionUrl": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection",
+  "githubUrl": "https://github.com/ilakkmanoharan/rsna-knee-mri-classifier",
+  "timezone": "America/Chicago",
+  "metric": "publicScore",
+  "metricDirection": "maximize",
+  "title": "RSNA Knee MRI Classifier",
+  "description": "Deep-learning system for detecting knee abnormalities from MRI exams. Combines multi-view medical-image classification with ASRA-inspired symbolic representations.",
+  "activeResearchQuestions": [
+    "Can plane-aware visual models beat metadata/prevalence baselines on public macro AUC?",
+    "Do multilingual report soft labels improve ranking without using test reports?",
+    "Which single ASRA ablation lifts score without collapsing rare targets?"
+  ],
+  "currentBestApproach": "Best public score 0.498 on 2026-09-15. agent1 2026-09-15 cycle 2 strategy=metadata_prior_blend | 2026-09-15_cycle02_20260915T115912-0500_hypotheses.md"
+}

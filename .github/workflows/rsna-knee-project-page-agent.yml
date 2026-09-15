@@ -1,0 +1,98 @@
+name: RSNA Knee Project Page Agent
+
+on:
+  schedule:
+    # Hourly; script no-ops unless America/Chicago hour is 23 (11 PM CT).
+    - cron: "5 * * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Optional YYYY-MM-DD (America/Chicago day) to generate"
+        required: false
+        type: string
+      dry_run:
+        description: "Analyze without writing files"
+        type: boolean
+        default: false
+      skip_eleven_pm_gate:
+        description: "Run even when not 11 PM Chicago (manual / backfill)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rsna-knee-project-page-agent
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: rsna-knee-mri-classifier-research
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout RSNA competition repo
+        uses: actions/checkout@v4
+        with:
+          repository: ilakkmanoharan/rsna-knee-mri-classifier
+          path: rsna-knee-mri-classifier
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: rsna-knee-mri-classifier-research/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run project-page-agent
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          RSNA_REPO_PATH: ${{ github.workspace }}/rsna-knee-mri-classifier
+          TZ: America/Chicago
+        run: |
+          ARGS=()
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            ARGS+=(--require-eleven-pm)
+          elif [ "${{ github.event.inputs.skip_eleven_pm_gate }}" != "true" ]; then
+            ARGS+=(--require-eleven-pm)
+          fi
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            ARGS+=(--date "${{ github.event.inputs.date }}")
+          fi
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            python project_page_agent.py dry-run "${ARGS[@]}"
+          else
+            python project_page_agent.py generate --force "${ARGS[@]}"
+            python project_page_agent.py validate
+          fi
+
+      - name: Commit research artifacts
+        if: ${{ github.event.inputs.dry_run != true && github.event.inputs.dry_run != 'true' }}
+        run: |
+          cd "${{ github.workspace }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rsna-knee-mri-classifier-research/research/
+          if git diff --staged --quiet; then
+            echo "No research changes to commit"
+            exit 0
+          fi
+          DAY="${{ github.event.inputs.date }}"
+          if [ -z "$DAY" ]; then
+            DAY=$(TZ=America/Chicago date +%F)
+          fi
+          git commit -m "RSNA Knee research update ${DAY}"
+          git push

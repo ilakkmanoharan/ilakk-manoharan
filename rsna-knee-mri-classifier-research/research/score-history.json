@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "project": "rsna-knee-mri-classifier",
+  "competition": "rsna-knee-abnormality-detection",
+  "timezone": "America/Chicago",
+  "updatedAt": "2026-09-15T17:31:19.950921Z",
+  "points": [
+    {
+      "date": "2026-09-15",
+      "timestamp": "2026-09-15T09:15:13.110000Z",
+      "submissionRef": "56250767",
+      "score": 0.494,
+      "status": "COMPLETE",
+      "description": "ASRA submission_001 Stage B: gold-label prevalence baseline with tiny noise",
+      "cumulativeBest": 0.494,
+      "isAllTimeBest": true
+    },
+    {
+      "date": "2026-09-15",
+      "timestamp": "2026-09-15T16:52:24.720000Z",
+      "submissionRef": "56259307",
+      "score": 0.498,
+      "status": "COMPLETE",
+      "description": "agent1 2026-09-15 cycle 1 strategy=report_shrinkage_priors | 2026-09-15_cycle01_20260915T114138-0500_hypotheses.md",
+      "cumulativeBest": 0.498,
+      "isAllTimeBest": true
+    },
+    {
+      "date": "2026-09-15",
+      "timestamp": "2026-09-15T17:08:11.313000Z",
+      "submissionRef": "56259512",
+      "score": 0.498,
+      "status": "COMPLETE",
+      "description": "agent1 2026-09-15 cycle 2 strategy=metadata_prior_blend | 2026-09-15_cycle02_20260915T115912-0500_hypotheses.md",
+      "cumulativeBest": 0.498,
+      "isAllTimeBest": false
+    }
+  ],
+  "bestPublicScore": 0.498,
+  "bestScoreDate": "2026-09-15",
+  "latestPublicScore": 0.498,
+  "latestScoreDate": "2026-09-15",
+  "totalSubmissions": 3,
+  "experimentDays": 1
+}

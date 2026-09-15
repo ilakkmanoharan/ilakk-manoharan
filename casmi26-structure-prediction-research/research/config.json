@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "project": "casmi26-structure-prediction",
+  "competition": "enveda-CASMI26-molecule-id-mass-spectra",
+  "competitionUrl": "https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra",
+  "githubUrl": "https://github.com/ilakkmanoharan/casmi26-structure-prediction",
+  "timezone": "America/Chicago",
+  "metric": "publicScore",
+  "metricDirection": "maximize",
+  "title": "Enveda CASMI 2026",
+  "description": "Neuro-symbolic research system for identifying molecular structures from mass spectra. Retrieval-first baseline with an explicit adduct/mass symbolic world model, ASRA-aligned experiment loop, and iterative Kaggle submissions.",
+  "activeResearchQuestions": [
+    "Does excluding exact test\u2194train spectrum duplicates raise public MRR@25 by avoiding poisoned enveda-180 labels?",
+    "Does an entropy + modified-cosine hybrid discriminate near-isobars better than cosine alone when similarity saturates?",
+    "Does indexing all libraries (including pluskal_ms2) recover structures missing from preferred NP/enveda slices?"
+  ],
+  "currentBestApproach": "Best public score 0.143 on 2026-09-15. v0.1 retrieval+symbolic preferred-libs modified-cosine"
+}

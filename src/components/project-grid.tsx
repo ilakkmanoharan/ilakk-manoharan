@@ -171,7 +171,10 @@ export function ProjectGrid({ projects }: { projects: DisplayProject[] }) {
                         ? "Research log"
                         : p.slug === "asra-lora"
                           ? "Portfolio"
-                          : "Website"}
+                          : p.slug === "rsna-knee-mri-classifier" ||
+                              p.slug === "casmi26-structure-prediction"
+                            ? "Project page"
+                            : "Website"}
                     </Link>
                   ) : (
                     <a

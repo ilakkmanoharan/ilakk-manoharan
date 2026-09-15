@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "project": "casmi26-structure-prediction",
+  "competition": "enveda-CASMI26-molecule-id-mass-spectra",
+  "date": "2026-09-15",
+  "timezone": "America/Chicago",
+  "generatedAt": "2026-09-15T23:48:08.735601Z",
+  "sourceWindow": {
+    "start": "2026-09-15T05:00:00Z",
+    "end": "2026-09-16T04:59:59.999999Z"
+  },
+  "dailySummary": "1 submission(s); 1 scored. Best 0.143. Public score unchanged from first to last scored (0.1430). Strategies seen: H1+H2+H3.",
+  "submissions": [
+    {
+      "ref": "2026-09-15_cycle01_submission",
+      "timestamp": "2026-09-15T11:20:21Z",
+      "fileName": "submission.csv",
+      "description": "v0.1 retrieval+symbolic preferred-libs modified-cosine",
+      "status": "COMPLETE",
+      "publicScore": 0.143,
+      "privateScore": null,
+      "strategy": "H1+H2+H3"
+    }
+  ],
+  "scoreSummary": {
+    "firstScored": 0.143,
+    "lastScored": 0.143,
+    "bestScore": 0.143,
+    "worstScore": 0.143,
+    "dailyAbsoluteChange": 0.0,
+    "dailyPercentageChange": 0.0,
+    "changeFromPreviousSubmission": null,
+    "changeFromPreviousClose": null,
+    "changeFromPriorBest": 0.143,
+    "newAllTimeBest": true,
+    "submissionCount": 1,
+    "scoredCount": 1,
+    "failedOrPendingCount": 0,
+    "meanScore": 0.143,
+    "medianScore": 0.143,
+    "scoreStdDev": null,
+    "cumulativeBest": 0.143,
+    "consecutiveImprovementCount": null,
+    "daysSincePreviousAllTimeBest": null
+  },
+  "scoreMovementReason": "Public score unchanged from first to last scored (0.1430). Strategies seen: H1+H2+H3.",
+  "conceptsImplemented": [
+    {
+      "name": "Exclude exact test\u2194train spectrum duplicates from evidence",
+      "why": "v0.1 shows identical spectra in `enveda-180` whose train labels do **not** match competition GT (perfect library match \u21d2 only 0.143). Blind trust of leaked rows actively ranks wrong SMILES #1.",
+      "how": "Not recorded"
+    },
+    {
+      "name": "Entropy similarity (+ keep modified cosine)",
+      "why": "Literature: better ID than cosine; diversifies ranking when cosine saturates",
+      "how": "Not recorded"
+    },
+    {
+      "name": "Index all libraries (incl. pluskal_ms2)",
+      "why": "Coverage; NP/public + synthetic space",
+      "how": "Not recorded"
+    },
+    {
+      "name": "Structure-level ExactMolWt filter",
+      "why": "Filter by true molecular mass from SMILES, not only spectrum adduct mass",
+      "how": "Not recorded"
+    },
+    {
+      "name": "CE-aware aggregation",
+      "why": "Reward train hits with CE close to query CE; multi-CE support already partially used",
+      "how": "Not recorded"
+    },
+    {
+      "name": "Ensemble cleaning views (floor 0.1%/1%, top-128)",
+      "why": "Spec recommends not committing to one view",
+      "how": "Not recorded"
+    },
+    {
+      "name": "MS2Deepscore / Spec2Vec / MS2Query",
+      "why": "SOTA analogue + exact ranking",
+      "how": "Not recorded"
+    },
+    {
+      "name": "Formula prediction \u2192 candidate DB",
+      "why": "Needed when structure absent / poisoned labels",
+      "how": "Not recorded"
+    },
+    {
+      "name": "De novo (DiffMS, MSNovelist)",
+      "why": "Class-3 only; deferred per first-submission spec",
+      "how": "Not recorded"
+    }
+  ],
+  "research": [],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "statement": "Excluding train spectra whose cleaned peaks+precursor match a test spectrum (or downweighting their contribution to 0) will free rank-1 for structures supported by non-identical evidence and raise public MRR@25.",
+      "motivation": "v0.1 rank-1 is always the enveda-180 exact duplicate label; public score 0.143 shows those labels \u2260 GT.",
+      "changeBeingTested": "submit v0.2 with duplicate exclusion only (+ minor entropy hybrid).",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [],
+      "status": "untested",
+      "linkedExperimentIds": [],
+      "linkedSubmissions": [],
+      "confidence": "medium",
+      "caveats": "Parsed from Hypothesis analysis markdown."
+    },
+    {
+      "id": "H2",
+      "statement": "Scoring `0.55\u00b7entropy + 0.45\u00b7modified_cosine` on mass-filtered candidates improves discrimination among near-isobars vs cosine alone.",
+      "motivation": "Li & Fiehn (2021); cosine saturates at 1.0 on our cleaned top-64 views.",
+      "changeBeingTested": "H2 \u2014 Entropy + modified-cosine hybrid",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [],
+      "status": "untested",
+      "linkedExperimentIds": [],
+      "linkedSubmissions": [],
+      "confidence": "low",
+      "caveats": "Parsed from Hypothesis analysis markdown."
+    },
+    {
+      "id": "H3",
+      "statement": "Including `pluskal_ms2` and other libs increases Hit@25 / MRR by recovering structures absent from preferred NP/enveda slices.",
+      "motivation": "Coverage gap; soft domain prior still prefers enveda when evidence ties.",
+      "changeBeingTested": "H3 \u2014 Full-library index",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [],
+      "status": "untested",
+      "linkedExperimentIds": [],
+      "linkedSubmissions": [],
+      "confidence": "low",
+      "caveats": "Parsed from Hypothesis analysis markdown."
+    },
+    {
+      "id": "H4",
+      "statement": "Reducing `enveda-180` prior weight (or zeroing it) prevents poisoned enveda hits from beating stronger spectral evidence from other libs.",
+      "motivation": "Not recorded",
+      "changeBeingTested": "H4 \u2014 Soften domain prior",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [],
+      "status": "untested",
+      "linkedExperimentIds": [],
+      "linkedSubmissions": [],
+      "confidence": "low",
+      "caveats": "Parsed from Hypothesis analysis markdown."
+    },
+    {
+      "id": "H5",
+      "statement": "Filtering candidates by RDKit exact mass vs inferred neutral mass (\u00b120\u201335 ppm) removes adduct-inconsistent decoys better than spectrum-neutral-mass alone.",
+      "motivation": "Not recorded",
+      "changeBeingTested": "H5 \u2014 Structure ExactMolWt gate",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [],
+      "status": "untested",
+      "linkedExperimentIds": [],
+      "linkedSubmissions": [],
+      "confidence": "low",
+      "caveats": "Parsed from Hypothesis analysis markdown."
+    }
+  ],
+  "experiments": [
+    {
+      "id": "EXP-20260915-01",
+      "strategy": "H1+H2+H3",
+      "configSummary": "v0.1 retrieval+symbolic preferred-libs modified-cosine",
+      "submissionRefs": [
+        "2026-09-15_cycle01_submission"
+      ]
+    }
+  ],
+  "results": {
+    "facts": [
+      "Scored submissions: 1",
+      "Best score today: 0.143",
+      "Public score unchanged from first to last scored (0.1430). Strategies seen: H1+H2+H3."
+    ],
+    "whatWorked": [
+      "Not recorded"
+    ],
+    "whatDidNotWork": [
+      "Not recorded"
+    ]
+  },
+  "analysis": {
+    "facts": [
+      "Public score unchanged from first to last scored (0.1430). Strategies seen: H1+H2+H3."
+    ],
+    "interpretations": [
+      "Interpretations are limited to recorded strategies and artifacts; commits are associated temporally unless explicitly linked."
+    ],
+    "limitations": [
+      "Kaggle credentials missing or fetch empty \u2014 used CASMI Analysis / agent/state.json if present."
+    ],
+    "nextSteps": [
+      "Not recorded \u2014 fill research notes template for stronger next-day plans."
+    ]
+  },
+  "githubActivity": {
+    "commits": [
+      {
+        "sha": "5971c13a489323e50c7d447cf07bf8396460fa01",
+        "timestamp": "2026-09-15T17:53:36-05:00",
+        "message": "Add Cursor Cloud Automations setup for laptop-off daily CASMI cycles."
+      },
+      {
+        "sha": "8a416c0cae2c93bd0e6addfc5b9c7ce8430691a3",
+        "timestamp": "2026-09-15T11:20:38-05:00",
+        "message": "first commit"
+      }
+    ],
+    "changedFiles": [
+      ".cursor/environment.json",
+      ".cursor/skills/casmi26-daily-agent/SKILL.md",
+      ".gitignore",
+      "Analysis/2026-09-15_cycle01_submission.md",
+      "Hypothesis analysis/2026-09-15_cycle01_hypotheses.md",
+      "README.md",
+      "Research/2026-09-15_cycle01_methods.md",
+      "Specs/2026-09-15_cycle01_next_submission_spec.md",
+      "agent/CLOUD_CYCLE_PROMPT.md",
+      "agent/run_cycle.py",
+      "agent/run_daily_loop.py",
+      "agent/state.json",
+      "agent/state.schema.md",
+      "casmi26/__init__.py",
+      "casmi26/adducts.py",
+      "casmi26/chemistry.py",
+      "casmi26/config.py",
+      "casmi26/index.py",
+      "casmi26/metrics.py",
+      "casmi26/retrieve.py",
+      "casmi26/spectrum.py",
+      "casmi26/submission.py",
+      "requirements.txt",
+      "scripts/run_pipeline.py",
+      "tests/test_adducts_and_submission.py"
+    ],
+    "note": null
+  },
+  "provenance": [
+    {
+      "claim": "submissions",
+      "source": "Kaggle API and/or CASMI Analysis/*_submission.md + agent/state.json"
+    },
+    {
+      "claim": "concepts",
+      "source": "CASMI Research/*_methods.md"
+    },
+    {
+      "claim": "hypotheses",
+      "source": "CASMI Hypothesis analysis/*_hypotheses.md"
+    }
+  ],
+  "warnings": [
+    "Kaggle credentials missing or fetch empty \u2014 used CASMI Analysis / agent/state.json if present."
+  ]
+}

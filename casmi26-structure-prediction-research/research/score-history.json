@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "project": "casmi26-structure-prediction",
+  "competition": "enveda-CASMI26-molecule-id-mass-spectra",
+  "timezone": "America/Chicago",
+  "updatedAt": "2026-09-15T23:48:08.735771Z",
+  "points": [
+    {
+      "date": "2026-09-15",
+      "timestamp": "2026-09-15T11:20:21Z",
+      "submissionRef": "2026-09-15_cycle01_submission",
+      "score": 0.143,
+      "status": "COMPLETE",
+      "description": "v0.1 retrieval+symbolic preferred-libs modified-cosine",
+      "cumulativeBest": 0.143,
+      "isAllTimeBest": true
+    }
+  ],
+  "bestPublicScore": 0.143,
+  "bestScoreDate": "2026-09-15",
+  "latestPublicScore": 0.143,
+  "latestScoreDate": "2026-09-15",
+  "totalSubmissions": 1,
+  "experimentDays": 1
+}

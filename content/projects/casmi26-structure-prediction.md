@@ -6,10 +6,10 @@ role: "Creator — model architecture, symbolic world model, spectral preprocess
 status: Active
 featured: true
 githubUrl: "https://github.com/ilakkmanoharan/casmi26-structure-prediction"
-websiteUrl: ""
+websiteUrl: "/projects/casmi26-structure-prediction"
 demoVideoUrl: ""
 caseStudyUrl: ""
-relatedLinks: '[{"label":"Kaggle competition","url":"https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra"},{"label":"Research log","url":"https://github.com/ilakkmanoharan/casmi26-structure-prediction"},{"label":"Latest experiment","url":"https://github.com/ilakkmanoharan/casmi26-structure-prediction#run"},{"label":"ASRA","url":"/asra"}]'
+relatedLinks: '[{"label":"Kaggle competition","url":"https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra"},{"label":"Latest experiment","url":"https://github.com/ilakkmanoharan/casmi26-structure-prediction#run"},{"label":"ASRA","url":"/asra"}]'
 filterTags: '["AI / ML","Scientific AI","Open Source"]'
 techStack: '["Python","PyTorch","RDKit","Mass Spectrometry","Molecular Graphs","Symbolic World Models","ASRA","Kaggle API","GitHub Actions"]'
 ---

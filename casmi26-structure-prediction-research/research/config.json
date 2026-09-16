@@ -14,5 +14,5 @@
     "Does an entropy + modified-cosine hybrid discriminate near-isobars better than cosine alone when similarity saturates?",
     "Does indexing all libraries (including pluskal_ms2) recover structures missing from preferred NP/enveda slices?"
   ],
-  "currentBestApproach": "Best public score 0.143 on 2026-09-15. v0.1 retrieval+symbolic preferred-libs modified-cosine"
+  "currentBestApproach": "Best public score 0.143 on 2026-09-15. 2026-09-15_cycle02_submission"
 }

@@ -4,12 +4,12 @@
   "competition": "enveda-CASMI26-molecule-id-mass-spectra",
   "date": "2026-09-15",
   "timezone": "America/Chicago",
-  "generatedAt": "2026-09-15T23:48:08.735601Z",
+  "generatedAt": "2026-09-16T04:36:38.809363Z",
   "sourceWindow": {
     "start": "2026-09-15T05:00:00Z",
     "end": "2026-09-16T04:59:59.999999Z"
   },
-  "dailySummary": "1 submission(s); 1 scored. Best 0.143. Public score unchanged from first to last scored (0.1430). Strategies seen: H1+H2+H3.",
+  "dailySummary": "2 submission(s); 1 scored. Best 0.143. Public score unchanged from first to last scored (0.1430). Strategies seen: H1+H2+H3.",
   "submissions": [
     {
       "ref": "2026-09-15_cycle01_submission",
@@ -20,6 +20,16 @@
       "publicScore": 0.143,
       "privateScore": null,
       "strategy": "H1+H2+H3"
+    },
+    {
+      "ref": "2026-09-15_cycle02_submission",
+      "timestamp": "2026-09-15T16:20:00Z",
+      "fileName": "submission.csv",
+      "description": "2026-09-15_cycle02_submission",
+      "status": "PENDING",
+      "publicScore": null,
+      "privateScore": null,
+      "strategy": null
     }
   ],
   "scoreSummary": {
@@ -33,9 +43,9 @@
     "changeFromPreviousClose": null,
     "changeFromPriorBest": 0.143,
     "newAllTimeBest": true,
-    "submissionCount": 1,
+    "submissionCount": 2,
     "scoredCount": 1,
-    "failedOrPendingCount": 0,
+    "failedOrPendingCount": 1,
     "meanScore": 0.143,
     "medianScore": 0.143,
     "scoreStdDev": null,
@@ -46,48 +56,48 @@
   "scoreMovementReason": "Public score unchanged from first to last scored (0.1430). Strategies seen: H1+H2+H3.",
   "conceptsImplemented": [
     {
-      "name": "Exclude exact test\u2194train spectrum duplicates from evidence",
-      "why": "v0.1 shows identical spectra in `enveda-180` whose train labels do **not** match competition GT (perfect library match \u21d2 only 0.143). Blind trust of leaked rows actively ranks wrong SMILES #1.",
+      "name": "Keep EXCLUDE_EXACT_DUPLICATES",
+      "why": "Poisoned exact hits place wrong SMILES at #1; removing them frees ranking for non-identical evidence",
       "how": "Not recorded"
     },
     {
-      "name": "Entropy similarity (+ keep modified cosine)",
-      "why": "Literature: better ID than cosine; diversifies ranking when cosine saturates",
+      "name": "Raise ENTROPY_WEIGHT (major ablation this cycle)",
+      "why": "Li & Fiehn: entropy \u226b cosine for ID; after dups removed, near-matches need better discrimination than balanced 0.55 hybrid",
       "how": "Not recorded"
     },
     {
-      "name": "Index all libraries (incl. pluskal_ms2)",
-      "why": "Coverage; NP/public + synthetic space",
+      "name": "Retain modified cosine in hybrid",
+      "why": "Bittremieux: modcos still best for analogs / CE-shifted fragments",
       "how": "Not recorded"
     },
     {
-      "name": "Structure-level ExactMolWt filter",
-      "why": "Filter by true molecular mass from SMILES, not only spectrum adduct mass",
+      "name": "Multi-spectrum / CE aggregation (`TOP_K_SPECTRA_PER_QUERY`)",
+      "why": "Reward structures supported across CEs/adducts; raises Hit@25 when single best hit is noisy",
       "how": "Not recorded"
     },
     {
-      "name": "CE-aware aggregation",
-      "why": "Reward train hits with CE close to query CE; multi-CE support already partially used",
+      "name": "Mass-window + peak-tol tuning",
+      "why": "Tighter `MASS_TOL_PPM` / `PEAK_MZ_TOL` cuts decoys after all-libs index; looser backfill recovers sparse queries",
       "how": "Not recorded"
     },
     {
-      "name": "Ensemble cleaning views (floor 0.1%/1%, top-128)",
-      "why": "Spec recommends not committing to one view",
+      "name": "Cleaning views (`TOP_PEAKS`, `INTENSITY_FLOOR`)",
+      "why": "Entropy is noise-robust but top-N / floor still change which peaks survive",
       "how": "Not recorded"
     },
     {
-      "name": "MS2Deepscore / Spec2Vec / MS2Query",
-      "why": "SOTA analogue + exact ranking",
+      "name": "MS2Query / Spec2Vec / MS2Deepscore",
+      "why": "SOTA analogue ranking",
       "how": "Not recorded"
     },
     {
-      "name": "Formula prediction \u2192 candidate DB",
-      "why": "Needed when structure absent / poisoned labels",
+      "name": "Formula\u2192candidate (SIRIUS-style)",
+      "why": "Needed when true structure absent from train libs",
       "how": "Not recorded"
     },
     {
-      "name": "De novo (DiffMS, MSNovelist)",
-      "why": "Class-3 only; deferred per first-submission spec",
+      "name": "Pure Class-3 de novo (DiffMS, MSNovelist, unconstrained LLM SMILES)",
+      "why": "Does not solve CASMI by retrieval alone; defer",
       "how": "Not recorded"
     }
   ],
@@ -95,23 +105,23 @@
   "hypotheses": [
     {
       "id": "H1",
-      "statement": "Excluding train spectra whose cleaned peaks+precursor match a test spectrum (or downweighting their contribution to 0) will free rank-1 for structures supported by non-identical evidence and raise public MRR@25.",
-      "motivation": "v0.1 rank-1 is always the enveda-180 exact duplicate label; public score 0.143 shows those labels \u2260 GT.",
-      "changeBeingTested": "submit v0.2 with duplicate exclusion only (+ minor entropy hybrid).",
+      "statement": "Raising `ENTROPY_WEIGHT` from **0.55 \u2192 0.70** (hybrid \u2248 `0.70\u00b7entropy + 0.30\u00b7modified_cosine`) improves public MRR@25 vs the cycle01 0.55 setting, given exact-duplicate exclusion remains on.",
+      "motivation": "Li & Fiehn (Nat. Methods 2021) show entropy similarity outperforms cosine for library ID; Bittremieux (JASMS 2022) still supports keeping some modcos for analog/CE-shift cases. After removing sim=1.0 poisoned hits, ranking lives in the near-match regime where entropy\u2019s noise robustness and intensity reweighting matter most.",
+      "changeBeingTested": "H1 \u2014 Entropy-dominant hybrid (MAJOR ABLATION this slot)",
       "expectedResult": "Not recorded",
       "observedResult": "Not recorded",
       "evidence": [],
       "status": "untested",
       "linkedExperimentIds": [],
       "linkedSubmissions": [],
-      "confidence": "medium",
+      "confidence": "low",
       "caveats": "Parsed from Hypothesis analysis markdown."
     },
     {
       "id": "H2",
-      "statement": "Scoring `0.55\u00b7entropy + 0.45\u00b7modified_cosine` on mass-filtered candidates improves discrimination among near-isobars vs cosine alone.",
-      "motivation": "Li & Fiehn (2021); cosine saturates at 1.0 on our cleaned top-64 views.",
-      "changeBeingTested": "H2 \u2014 Entropy + modified-cosine hybrid",
+      "statement": "Turning `EXCLUDE_EXACT_DUPLICATES` off would collapse back toward v0.1 behavior (wrong SMILES at #1).",
+      "motivation": "Not recorded",
+      "changeBeingTested": "H2 \u2014 Keep exact-dup exclusion (control, not ablated)",
       "expectedResult": "Not recorded",
       "observedResult": "Not recorded",
       "evidence": [],
@@ -123,9 +133,9 @@
     },
     {
       "id": "H3",
-      "statement": "Including `pluskal_ms2` and other libs increases Hit@25 / MRR by recovering structures absent from preferred NP/enveda slices.",
-      "motivation": "Coverage gap; soft domain prior still prefers enveda when evidence ties.",
-      "changeBeingTested": "H3 \u2014 Full-library index",
+      "statement": "`MASS_TOL_PPM: 25 \u2192 15` (+ backfill 60 \u2192 40) reduces false library hits after all-libs indexing and raises MRR@25.",
+      "motivation": "Not recorded",
+      "changeBeingTested": "H3 \u2014 Tighter mass window (candidate for later slot)",
       "expectedResult": "Not recorded",
       "observedResult": "Not recorded",
       "evidence": [],
@@ -137,23 +147,9 @@
     },
     {
       "id": "H4",
-      "statement": "Reducing `enveda-180` prior weight (or zeroing it) prevents poisoned enveda hits from beating stronger spectral evidence from other libs.",
+      "statement": "`TOP_K_SPECTRA_PER_QUERY: 80 \u2192 120` improves multi-CE support features and mean-top-k similarity, lifting MRR when single-spectrum evidence is ambiguous.",
       "motivation": "Not recorded",
-      "changeBeingTested": "H4 \u2014 Soften domain prior",
-      "expectedResult": "Not recorded",
-      "observedResult": "Not recorded",
-      "evidence": [],
-      "status": "untested",
-      "linkedExperimentIds": [],
-      "linkedSubmissions": [],
-      "confidence": "low",
-      "caveats": "Parsed from Hypothesis analysis markdown."
-    },
-    {
-      "id": "H5",
-      "statement": "Filtering candidates by RDKit exact mass vs inferred neutral mass (\u00b120\u201335 ppm) removes adduct-inconsistent decoys better than spectrum-neutral-mass alone.",
-      "motivation": "Not recorded",
-      "changeBeingTested": "H5 \u2014 Structure ExactMolWt gate",
+      "changeBeingTested": "H4 \u2014 Broader neighbor pool / CE aggregation (later slot)",
       "expectedResult": "Not recorded",
       "observedResult": "Not recorded",
       "evidence": [],
@@ -171,6 +167,14 @@
       "configSummary": "v0.1 retrieval+symbolic preferred-libs modified-cosine",
       "submissionRefs": [
         "2026-09-15_cycle01_submission"
+      ]
+    },
+    {
+      "id": "EXP-20260915-02",
+      "strategy": "Not recorded",
+      "configSummary": "2026-09-15_cycle02_submission",
+      "submissionRefs": [
+        "2026-09-15_cycle02_submission"
       ]
     }
   ],
@@ -204,26 +208,30 @@
   "githubActivity": {
     "commits": [
       {
-        "sha": "5971c13a489323e50c7d447cf07bf8396460fa01",
-        "timestamp": "2026-09-15T17:53:36-05:00",
-        "message": "Add Cursor Cloud Automations setup for laptop-off daily CASMI cycles."
-      },
-      {
-        "sha": "8a416c0cae2c93bd0e6addfc5b9c7ce8430691a3",
-        "timestamp": "2026-09-15T11:20:38-05:00",
-        "message": "first commit"
+        "sha": "a5b7c3e0522f592a366ea65d22116c75bc9f50ef",
+        "timestamp": "2026-09-16T00:52:13Z",
+        "message": "Add cycle02 Research/Analysis/Hypothesis from Grok Bot"
       }
     ],
     "changedFiles": [
       ".cursor/environment.json",
       ".cursor/skills/casmi26-daily-agent/SKILL.md",
+      ".cursor/skills/casmi26-grok-research/SKILL.md",
+      ".cursor/skills/casmi26-grok-watchdog/SKILL.md",
+      ".github/workflows/casmi-loop.yml",
       ".gitignore",
       "Analysis/2026-09-15_cycle01_submission.md",
+      "Analysis/2026-09-15_cycle02_submission.md",
       "Hypothesis analysis/2026-09-15_cycle01_hypotheses.md",
+      "Hypothesis analysis/2026-09-15_cycle02_hypotheses.md",
       "README.md",
       "Research/2026-09-15_cycle01_methods.md",
+      "Research/2026-09-15_cycle02_methods.md",
       "Specs/2026-09-15_cycle01_next_submission_spec.md",
+      "Specs/2026-09-15_cycle02_next_submission_spec.md",
       "agent/CLOUD_CYCLE_PROMPT.md",
+      "agent/GROK_RESEARCH_PROMPT.md",
+      "agent/how-github-submits-work.md",
       "agent/run_cycle.py",
       "agent/run_daily_loop.py",
       "agent/state.json",
@@ -237,7 +245,21 @@
       "casmi26/retrieve.py",
       "casmi26/spectrum.py",
       "casmi26/submission.py",
+      "kaggle_kernel/casmi26-first-submission.ipynb",
+      "kaggle_kernel/kernel-metadata.json",
       "requirements.txt",
+      "scripts/__init__.py",
+      "scripts/casmi_loop/__init__.py",
+      "scripts/casmi_loop/build_kernel.py",
+      "scripts/casmi_loop/chatgpt_spec.py",
+      "scripts/casmi_loop/check_and_dispatch.py",
+      "scripts/casmi_loop/config.py",
+      "scripts/casmi_loop/github_push.py",
+      "scripts/casmi_loop/implement.py",
+      "scripts/casmi_loop/orchestrate.py",
+      "scripts/casmi_loop/slots.py",
+      "scripts/casmi_loop/state.py",
+      "scripts/casmi_loop/submit.py",
       "scripts/run_pipeline.py",
       "tests/test_adducts_and_submission.py"
     ],

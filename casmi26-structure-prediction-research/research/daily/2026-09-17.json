@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "project": "casmi26-structure-prediction",
+  "competition": "enveda-CASMI26-molecule-id-mass-spectra",
+  "date": "2026-09-17",
+  "timezone": "America/Chicago",
+  "generatedAt": "2026-09-18T04:26:59.331576Z",
+  "sourceWindow": {
+    "start": "2026-09-17T05:00:00Z",
+    "end": "2026-09-18T04:59:59.999999Z"
+  },
+  "dailySummary": "4 submission(s); 1 scored. Best 0.143. Public score unchanged from first to last scored (0.1430). Strategies seen: mass_tolerance_refinement, mass_tolerance_optimization_01, 2026-09-17-v0.3, state_best.",
+  "submissions": [
+    {
+      "ref": "2026-09-17_cycle03_submission",
+      "timestamp": "2026-09-17T16:20:00Z",
+      "fileName": "submission.csv",
+      "description": "2026-09-17_cycle03_submission",
+      "status": "PENDING",
+      "publicScore": null,
+      "privateScore": null,
+      "strategy": "mass_tolerance_refinement"
+    },
+    {
+      "ref": "2026-09-17_cycle04_submission",
+      "timestamp": "2026-09-17T16:20:00Z",
+      "fileName": "submission.csv",
+      "description": "2026-09-17_cycle04_submission",
+      "status": "PENDING",
+      "publicScore": null,
+      "privateScore": null,
+      "strategy": "mass_tolerance_optimization_01"
+    },
+    {
+      "ref": "2026-09-17_cycle05_submission",
+      "timestamp": "2026-09-17T16:20:00Z",
+      "fileName": "submission.csv",
+      "description": "2026-09-17_cycle05_submission",
+      "status": "PENDING",
+      "publicScore": null,
+      "privateScore": null,
+      "strategy": "2026-09-17-v0.3"
+    },
+    {
+      "ref": "2026-09-17_best",
+      "timestamp": "2026-09-17T16:20:00Z",
+      "fileName": "submission.csv",
+      "description": "best_public_score from agent/state.json",
+      "status": "COMPLETE",
+      "publicScore": 0.143,
+      "privateScore": null,
+      "strategy": "state_best"
+    }
+  ],
+  "scoreSummary": {
+    "firstScored": 0.143,
+    "lastScored": 0.143,
+    "bestScore": 0.143,
+    "worstScore": 0.143,
+    "dailyAbsoluteChange": 0.0,
+    "dailyPercentageChange": 0.0,
+    "changeFromPreviousSubmission": 0.0,
+    "changeFromPreviousClose": 0.0,
+    "changeFromPriorBest": 0.0,
+    "newAllTimeBest": false,
+    "submissionCount": 4,
+    "scoredCount": 1,
+    "failedOrPendingCount": 3,
+    "meanScore": 0.143,
+    "medianScore": 0.143,
+    "scoreStdDev": null,
+    "cumulativeBest": 0.143,
+    "consecutiveImprovementCount": null,
+    "daysSincePreviousAllTimeBest": null
+  },
+  "scoreMovementReason": "Public score unchanged from first to last scored (0.1430). Strategies seen: mass_tolerance_refinement, mass_tolerance_optimization_01, 2026-09-17-v0.3, state_best.",
+  "conceptsImplemented": [],
+  "research": [],
+  "hypotheses": [],
+  "experiments": [
+    {
+      "id": "EXP-20260917-01",
+      "strategy": "mass_tolerance_refinement",
+      "configSummary": "2026-09-17_cycle03_submission",
+      "submissionRefs": [
+        "2026-09-17_cycle03_submission"
+      ]
+    },
+    {
+      "id": "EXP-20260917-02",
+      "strategy": "mass_tolerance_optimization_01",
+      "configSummary": "2026-09-17_cycle04_submission",
+      "submissionRefs": [
+        "2026-09-17_cycle04_submission"
+      ]
+    },
+    {
+      "id": "EXP-20260917-03",
+      "strategy": "2026-09-17-v0.3",
+      "configSummary": "2026-09-17_cycle05_submission",
+      "submissionRefs": [
+        "2026-09-17_cycle05_submission"
+      ]
+    },
+    {
+      "id": "EXP-20260917-04",
+      "strategy": "state_best",
+      "configSummary": "best_public_score from agent/state.json",
+      "submissionRefs": [
+        "2026-09-17_best"
+      ]
+    }
+  ],
+  "results": {
+    "facts": [
+      "Scored submissions: 1",
+      "Best score today: 0.143",
+      "Public score unchanged from first to last scored (0.1430). Strategies seen: mass_tolerance_refinement, mass_tolerance_optimization_01, 2026-09-17-v0.3, state_best."
+    ],
+    "whatWorked": [
+      "Not recorded"
+    ],
+    "whatDidNotWork": [
+      "Not recorded"
+    ]
+  },
+  "analysis": {
+    "facts": [
+      "Public score unchanged from first to last scored (0.1430). Strategies seen: mass_tolerance_refinement, mass_tolerance_optimization_01, 2026-09-17-v0.3, state_best."
+    ],
+    "interpretations": [
+      "Interpretations are limited to recorded strategies and artifacts; commits are associated temporally unless explicitly linked."
+    ],
+    "limitations": [
+      "Kaggle credentials missing or fetch empty \u2014 used CASMI Analysis / agent/state.json if present."
+    ],
+    "nextSteps": [
+      "Not recorded \u2014 fill research notes template for stronger next-day plans."
+    ]
+  },
+  "githubActivity": {
+    "commits": [
+      {
+        "sha": "c9def7ff089ca759dd1828c3b1ff19e5bcbb2b0d",
+        "timestamp": "2026-09-17T02:33:29-05:00",
+        "message": "Submit 2026-09-17_cycle05 to Kaggle 56298621: docs + code"
+      }
+    ],
+    "changedFiles": [
+      ".cursor/environment.json",
+      ".cursor/skills/casmi26-daily-agent/SKILL.md",
+      ".cursor/skills/casmi26-grok-research/SKILL.md",
+      ".cursor/skills/casmi26-grok-watchdog/SKILL.md",
+      ".github/workflows/casmi-loop.yml",
+      ".gitignore",
+      "Analysis/2026-09-15_cycle01_submission.md",
+      "Analysis/2026-09-15_cycle02_submission.md",
+      "Analysis/2026-09-17_cycle03_submission.md",
+      "Analysis/2026-09-17_cycle04_submission.md",
+      "Analysis/2026-09-17_cycle05_submission.md",
+      "Hypothesis analysis/2026-09-15_cycle01_hypotheses.md",
+      "Hypothesis analysis/2026-09-15_cycle02_hypotheses.md",
+      "Hypothesis analysis/2026-09-17_cycle03_hypotheses.md",
+      "Hypothesis analysis/2026-09-17_cycle04_hypotheses.md",
+      "Hypothesis analysis/2026-09-17_cycle05_hypotheses.md",
+      "README.md",
+      "Research/2026-09-15_cycle01_methods.md",
+      "Research/2026-09-15_cycle02_methods.md",
+      "Research/2026-09-17_cycle03_methods.md",
+      "Research/2026-09-17_cycle04_methods.md",
+      "Research/2026-09-17_cycle05_methods.md",
+      "Specs/2026-09-15_cycle01_next_submission_spec.md",
+      "Specs/2026-09-15_cycle02_next_submission_spec.md",
+      "Specs/2026-09-17_cycle03_next_submission_spec.md",
+      "Specs/2026-09-17_cycle04_next_submission_spec.md",
+      "Specs/2026-09-17_cycle05_next_submission_spec.md",
+      "agent/CLOUD_CYCLE_PROMPT.md",
+      "agent/GROK_RESEARCH_PROMPT.md",
+      "agent/how-github-submits-work.md",
+      "agent/run_cycle.py",
+      "agent/run_daily_loop.py",
+      "agent/state.json",
+      "agent/state.schema.md",
+      "casmi26/__init__.py",
+      "casmi26/adducts.py",
+      "casmi26/chemistry.py",
+      "casmi26/config.py",
+      "casmi26/index.py",
+      "casmi26/metrics.py",
+      "casmi26/retrieve.py",
+      "casmi26/spectrum.py",
+      "casmi26/submission.py",
+      "kaggle_kernel/casmi26-first-submission.ipynb",
+      "kaggle_kernel/kernel-metadata.json",
+      "requirements.txt",
+      "scripts/__init__.py",
+      "scripts/casmi_loop/__init__.py",
+      "scripts/casmi_loop/build_kernel.py",
+      "scripts/casmi_loop/chatgpt_spec.py",
+      "scripts/casmi_loop/check_and_dispatch.py",
+      "scripts/casmi_loop/config.py",
+      "scripts/casmi_loop/github_push.py",
+      "scripts/casmi_loop/implement.py",
+      "scripts/casmi_loop/orchestrate.py",
+      "scripts/casmi_loop/slots.py",
+      "scripts/casmi_loop/state.py",
+      "scripts/casmi_loop/submit.py",
+      "scripts/run_pipeline.py",
+      "tests/test_adducts_and_submission.py"
+    ],
+    "note": null
+  },
+  "provenance": [
+    {
+      "claim": "submissions",
+      "source": "Kaggle API and/or CASMI Analysis/*_submission.md + agent/state.json"
+    },
+    {
+      "claim": "concepts",
+      "source": "CASMI Research/*_methods.md"
+    },
+    {
+      "claim": "hypotheses",
+      "source": "CASMI Hypothesis analysis/*_hypotheses.md"
+    }
+  ],
+  "warnings": [
+    "Kaggle credentials missing or fetch empty \u2014 used CASMI Analysis / agent/state.json if present."
+  ]
+}

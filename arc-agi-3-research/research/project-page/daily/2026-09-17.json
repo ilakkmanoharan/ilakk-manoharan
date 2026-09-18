@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "project": "arc-agi-3-research",
+  "competition": "arc-prize-2026-arc-agi-3",
+  "date": "2026-09-17",
+  "timezone": "America/Chicago",
+  "generatedAt": "2026-09-18T04:35:29.610712Z",
+  "sourceWindow": {
+    "start": "2026-09-17T05:00:00Z",
+    "end": "2026-09-18T04:59:59.999999Z"
+  },
+  "dailySummary": "0 submission(s); 0 scored. Best Not recorded. No public score recorded yet for this day. Submission concepts/description: Not recorded",
+  "submissions": [],
+  "scoreSummary": {
+    "firstScored": null,
+    "lastScored": null,
+    "bestScore": null,
+    "worstScore": null,
+    "dailyAbsoluteChange": null,
+    "dailyPercentageChange": null,
+    "changeFromPreviousSubmission": null,
+    "changeFromPreviousClose": null,
+    "changeFromPriorBest": null,
+    "newAllTimeBest": false,
+    "submissionCount": 0,
+    "scoredCount": 0,
+    "failedOrPendingCount": 0,
+    "meanScore": null,
+    "medianScore": null,
+    "scoreStdDev": null,
+    "cumulativeBest": 0.0,
+    "consecutiveImprovementCount": null,
+    "daysSincePreviousAllTimeBest": null
+  },
+  "scoreMovementReason": "No public score recorded yet for this day. Submission concepts/description: Not recorded",
+  "conceptsImplemented": [],
+  "research": [],
+  "hypotheses": [],
+  "experiments": [],
+  "results": {
+    "facts": [
+      "Scored submissions: 0",
+      "Best score today: None",
+      "No public score recorded yet for this day. Submission concepts/description: Not recorded"
+    ],
+    "whatWorked": [
+      "Not recorded"
+    ],
+    "whatDidNotWork": [
+      "Not recorded"
+    ]
+  },
+  "analysis": {
+    "facts": [
+      "No public score recorded yet for this day. Submission concepts/description: Not recorded"
+    ],
+    "interpretations": [
+      "Interpretations are limited to recorded artifacts; pending Kaggle scores are marked Not recorded."
+    ],
+    "limitations": [
+      "No submission.json for 2026-09-17"
+    ],
+    "nextSteps": [
+      "Not recorded \u2014 see strategies/ for next-day plan."
+    ]
+  },
+  "githubActivity": {
+    "commits": [],
+    "changedFiles": [],
+    "note": "See arc-agi-3-research/research/{submissions,analysis,hypotheses,strategies}/2026-09-17"
+  },
+  "provenance": [
+    {
+      "claim": "submissions",
+      "source": "research/submissions/2026-09-17/submission.json"
+    },
+    {
+      "claim": "concepts",
+      "source": "Parsed from submission description tokens"
+    },
+    {
+      "claim": "hypotheses",
+      "source": "research/hypotheses/2026-09-17/hypothesis.md"
+    }
+  ],
+  "warnings": [
+    "No submission.json for 2026-09-17"
+  ]
+}

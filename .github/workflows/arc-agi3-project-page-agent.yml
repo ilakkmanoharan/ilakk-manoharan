@@ -1,0 +1,90 @@
+name: ARC-AGI-3 Project Page Agent
+
+on:
+  schedule:
+    # Hourly; script no-ops unless America/Chicago hour is 23 (11 PM CT).
+    - cron: "10 * * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Optional YYYY-MM-DD (America/Chicago day) to generate"
+        required: false
+        type: string
+      dry_run:
+        description: "Analyze without writing files"
+        type: boolean
+        default: false
+      skip_eleven_pm_gate:
+        description: "Run even when not 11 PM Chicago (manual / backfill)"
+        type: boolean
+        default: true
+      backfill_all:
+        description: "Rebuild all days from research/submissions/"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: arc-agi3-project-page-agent
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: arc-agi-3-research
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run project-page-agent
+        env:
+          TZ: America/Chicago
+        run: |
+          ARGS=()
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            ARGS+=(--require-eleven-pm)
+          elif [ "${{ github.event.inputs.skip_eleven_pm_gate }}" != "true" ]; then
+            ARGS+=(--require-eleven-pm)
+          fi
+          if [ "${{ github.event.inputs.backfill_all }}" = "true" ]; then
+            python project_page_agent.py backfill-all
+            python project_page_agent.py validate
+          elif [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            if [ -n "${{ github.event.inputs.date }}" ]; then
+              ARGS+=(--date "${{ github.event.inputs.date }}")
+            fi
+            python project_page_agent.py dry-run "${ARGS[@]}"
+          else
+            if [ -n "${{ github.event.inputs.date }}" ]; then
+              ARGS+=(--date "${{ github.event.inputs.date }}")
+            fi
+            python project_page_agent.py generate --force "${ARGS[@]}"
+            python project_page_agent.py validate
+          fi
+
+      - name: Commit project-page artifacts
+        if: ${{ github.event.inputs.dry_run != true && github.event.inputs.dry_run != 'true' }}
+        run: |
+          cd "${{ github.workspace }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add arc-agi-3-research/research/project-page/
+          if git diff --staged --quiet; then
+            echo "No project-page changes to commit"
+            exit 0
+          fi
+          DAY="${{ github.event.inputs.date }}"
+          if [ -z "$DAY" ]; then
+            DAY=$(TZ=America/Chicago date +%F)
+          fi
+          git commit -m "ARC-AGI-3 project page research update ${DAY}"
+          git push

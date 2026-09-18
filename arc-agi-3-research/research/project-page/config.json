@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "project": "arc-agi-3-research",
+  "competition": "arc-prize-2026-arc-agi-3",
+  "competitionUrl": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+  "githubUrl": "https://github.com/ilakkmanoharan/ilakk-manoharan/tree/main/arc-agi-3-research",
+  "timezone": "America/Chicago",
+  "metric": "publicScore",
+  "metricDirection": "maximize",
+  "title": "ARC-AGI-3 Research Agent",
+  "description": "Autonomous ASRA-aligned research loop for ARC Prize 2026 (ARC-AGI-3): daily Kaggle submissions, log analysis, hypotheses, strategies, and score tracking. Built on ASRA-NFM neuro-symbolic world-model concepts.",
+  "activeResearchQuestions": [
+    "Which ASRA-NFM concepts (object-centric state, action-semantics, transition world models) lift public score on ARC-AGI-3 interactive environments?",
+    "Do FrameJournal + RetrodictGate + WorldModelSandbox reduce runtime failure modes before policy exploration pays off?",
+    "Can hypothesis-linked LoRA advisors steer the next submission better than heuristic exploration alone?"
+  ],
+  "currentBestApproach": "Daily research agent with ASRA Phase A.1 stack (FrameJournal, RetrodictGate, WorldModelSandbox) and kill-switch telemetry; public scores often pending/null until leaderboard refresh.",
+  "asraNfmConcepts": [
+    {
+      "name": "Neuro-symbolic learning",
+      "why": "Combine neural pattern discovery with symbolic objects, relations, rules, and interpretable inference.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Object-centric state representation",
+      "why": "Represent states as entities with properties, relations, and constraints rather than raw grids alone.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Transition-based world modeling",
+      "why": "Learn (state, action, next-state) transitions to predict environment dynamics.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Action-semantics discovery",
+      "why": "Infer what action IDs mean via intervention\u2014syntax vs semantics vs mechanism vs utility.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Causal world models",
+      "why": "Prefer do()-style interventions over correlations when explaining outcomes.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Symbolic rule induction",
+      "why": "Induce compact IF/THEN rules from transitions using coverage, accuracy, and MDL.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Hypothesis generation and testing",
+      "why": "Maintain competing explanations; propose \u2192 predict \u2192 intervene \u2192 evaluate.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Active exploration / information gain",
+      "why": "Choose actions that reduce uncertainty under risk and cost budgets.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Planning through the world model",
+      "why": "Simulate action sequences with search (BFS/A*/beam/MCTS) when rules are reliable.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Uncertainty-aware reasoning",
+      "why": "Track confidence on objects, actions, rules, and exceptions.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Multi-timescale memory",
+      "why": "Working, episodic, semantic, procedural, and research memory.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    },
+    {
+      "name": "Autonomous ML experiments",
+      "why": "Treat Kaggle runs as hypothesis-linked experiments with lineage and bounded autonomy.",
+      "source": "asra-nfm/private/paper/paper1.md"
+    }
+  ]
+}

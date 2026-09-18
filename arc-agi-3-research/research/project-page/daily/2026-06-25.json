@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "project": "arc-agi-3-research",
+  "competition": "arc-prize-2026-arc-agi-3",
+  "date": "2026-06-25",
+  "timezone": "America/Chicago",
+  "generatedAt": "2026-09-17T23:05:43.091981Z",
+  "sourceWindow": {
+    "start": "2026-06-25T05:00:00Z",
+    "end": "2026-06-26T04:59:59.999999Z"
+  },
+  "dailySummary": "1 submission(s); 0 scored. Best Not recorded. No public score recorded yet for this day. Submission concepts/description: ARC-AGI-3 research agent \u2014 2026-06-24 \u2014 intervention from strategy plan",
+  "submissions": [
+    {
+      "ref": "54016192",
+      "timestamp": "2026-06-24T15:50:31.580000Z",
+      "fileName": "submission.parquet",
+      "description": "ARC-AGI-3 research agent \u2014 2026-06-24 \u2014 intervention from strategy plan",
+      "status": "COMPLETE",
+      "publicScore": null,
+      "privateScore": null,
+      "strategy": "Linked hypothesis excerpt:"
+    }
+  ],
+  "scoreSummary": {
+    "firstScored": null,
+    "lastScored": null,
+    "bestScore": null,
+    "worstScore": null,
+    "dailyAbsoluteChange": null,
+    "dailyPercentageChange": null,
+    "changeFromPreviousSubmission": null,
+    "changeFromPreviousClose": null,
+    "changeFromPriorBest": null,
+    "newAllTimeBest": false,
+    "submissionCount": 1,
+    "scoredCount": 0,
+    "failedOrPendingCount": 1,
+    "meanScore": null,
+    "medianScore": null,
+    "scoreStdDev": null,
+    "cumulativeBest": 0.0,
+    "consecutiveImprovementCount": null,
+    "daysSincePreviousAllTimeBest": null
+  },
+  "scoreMovementReason": "No public score recorded yet for this day. Submission concepts/description: ARC-AGI-3 research agent \u2014 2026-06-24 \u2014 intervention from strategy plan",
+  "conceptsImplemented": [],
+  "research": [],
+  "hypotheses": [
+    {
+      "id": "H-2026-06-25",
+      "statement": "No failure recorded for this cycle.",
+      "motivation": "Derived from daily hypothesis.md",
+      "changeBeingTested": "See strategy / submission description",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [
+        "research/hypotheses/2026-06-25/hypothesis.md"
+      ],
+      "status": "untested",
+      "linkedExperimentIds": [
+        "EXP-20260625-01"
+      ],
+      "linkedSubmissions": [
+        "54016192"
+      ],
+      "confidence": "low",
+      "caveats": "Parsed from free-form hypothesis markdown; scores may still be pending."
+    }
+  ],
+  "experiments": [
+    {
+      "id": "EXP-20260625-01",
+      "strategy": "Linked hypothesis excerpt:",
+      "configSummary": "ARC-AGI-3 research agent \u2014 2026-06-24 \u2014 intervention from strategy plan",
+      "submissionRefs": [
+        "54016192"
+      ]
+    }
+  ],
+  "results": {
+    "facts": [
+      "failure-analysis.md: What happened?",
+      "failure-analysis.md: Why did it happen?",
+      "failure-analysis.md: What changed?",
+      "failure-analysis.md: What failed?",
+      "failure-analysis.md: What succeeded?",
+      "failure-analysis.md: What evidence supports this?",
+      "failure-analysis.md: What mechanism explains this?",
+      "success-analysis.md: What happened?"
+    ],
+    "whatWorked": [
+      "Not recorded"
+    ],
+    "whatDidNotWork": [
+      "Not recorded"
+    ]
+  },
+  "analysis": {
+    "facts": [
+      "failure-analysis.md: What happened?",
+      "failure-analysis.md: Why did it happen?",
+      "failure-analysis.md: What changed?",
+      "failure-analysis.md: What failed?",
+      "failure-analysis.md: What succeeded?",
+      "failure-analysis.md: What evidence supports this?",
+      "failure-analysis.md: What mechanism explains this?",
+      "success-analysis.md: What happened?"
+    ],
+    "interpretations": [
+      "Interpretations are limited to recorded artifacts; pending Kaggle scores are marked Not recorded."
+    ],
+    "limitations": [
+      "None recorded"
+    ],
+    "nextSteps": [
+      "Linked hypothesis excerpt:"
+    ]
+  },
+  "githubActivity": {
+    "commits": [],
+    "changedFiles": [],
+    "note": "See arc-agi-3-research/research/{submissions,analysis,hypotheses,strategies}/2026-06-25"
+  },
+  "provenance": [
+    {
+      "claim": "submissions",
+      "source": "research/submissions/2026-06-25/submission.json"
+    },
+    {
+      "claim": "concepts",
+      "source": "Parsed from submission description tokens"
+    },
+    {
+      "claim": "hypotheses",
+      "source": "research/hypotheses/2026-06-25/hypothesis.md"
+    }
+  ],
+  "warnings": []
+}

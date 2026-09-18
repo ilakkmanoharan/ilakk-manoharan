@@ -1,7 +1,7 @@
 ---
 slug: arc-agi-3-research
 title: ARC-AGI-3 Research Agent
-description: "Autonomous cloud research agent for ARC Prize 2026 (ARC-AGI-3): daily Kaggle submission loop, failure analysis, hypothesis generation, and ASRA-aligned scientific memory — running on GitHub Actions until November 2026."
+description: "Autonomous cloud research agent for ARC Prize 2026 (ARC-AGI-3): daily Kaggle submission loop, failure analysis, hypothesis generation, ASRA-NFM world-model concepts, score calendar, and ASRA-aligned scientific memory — running on GitHub Actions until November 2026."
 role: "Creator — agent architecture, research timeline, eval discipline, GitHub Actions orchestration, portfolio integration"
 status: Active
 featured: true

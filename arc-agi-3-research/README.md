@@ -19,8 +19,10 @@ Not leaderboard optimization alone — a persistent scientific record:
 arc-agi-3-research/
   agent/                 # Python orchestration
   scripts/               # CLI entrypoints
+  project_page_agent.py  # Daily score/concepts pages for the portfolio
   research/
     timeline.json        # Event log (all phases)
+    project-page/        # score-history + daily/YYYY-MM-DD.json (portfolio UI)
     submissions/         # Daily submission snapshots
     logs/                # Raw Kaggle logs (immutable)
     analysis/            # success/failure/causal/theory
@@ -31,9 +33,26 @@ arc-agi-3-research/
     adapters/            # HypothesisLoRA Kaggle cache (synced from ASRA-LoRA)
   docs/
     asra-lora-integration.md
+    asra-nfm-concepts.md # Concepts surfaced on /projects/arc-agi-3
   templates/
   notebooks/             # Next submission scaffold
 ```
+
+## Portfolio project page
+
+Public UI:
+
+- `/projects/arc-agi-3` — overview, score chart, calendar, ASRA-NFM concepts
+- `/projects/arc-agi-3/daily/YYYY-MM-DD` — submission score, concepts, hypotheses
+
+```bash
+# Rebuild one day / all days from research/submissions
+python project_page_agent.py generate --date 2026-09-12 --force
+python project_page_agent.py backfill-all
+python project_page_agent.py validate
+```
+
+GitHub Action `arc-agi3-project-page-agent.yml` runs near 11 PM America/Chicago (hourly gate).
 
 ## Local setup
 

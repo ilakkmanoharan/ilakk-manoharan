@@ -14,11 +14,18 @@ import {
   EVENT_LABELS,
   effectiveLatestSubmissionId,
   formatArcAgi3Score,
+  formatArcPageScore,
   githubResearchTreeUrl,
   githubResearchUrl,
   latestCycleStatus,
+  listArcAgi3DayDates,
+  loadArcAgi3Day,
+  loadArcAgi3ProjectPageConfig,
   loadArcAgi3Research,
+  loadArcAgi3ScoreHistory,
 } from "@/lib/arc-agi-3-research";
+import { ArcAgi3DayCalendar } from "@/components/arc-agi3-day-calendar";
+import { ArcAgi3ScoreChart } from "@/components/arc-agi3-score-chart";
 
 export const metadata: Metadata = {
   title: "ARC-AGI-3 Research",
@@ -41,6 +48,11 @@ function statusBadgeVariant(
 
 export default function ArcAgi3ResearchPage() {
   const data = loadArcAgi3Research();
+  const pageConfig = loadArcAgi3ProjectPageConfig();
+  const scoreHistory = loadArcAgi3ScoreHistory();
+  const dayDates = listArcAgi3DayDates().reverse();
+  const latestDayDate = dayDates[0];
+  const latestDay = latestDayDate ? loadArcAgi3Day(latestDayDate) : null;
   const status = data.status_summary;
   const events = [...data.events].reverse();
   const timelinePreview = events.slice(0, 8);
@@ -175,6 +187,195 @@ export default function ArcAgi3ResearchPage() {
             </Card>
           </div>
         </section>
+
+        <section className="mt-12" aria-labelledby="score-chart-heading">
+          <h2
+            id="score-chart-heading"
+            className="font-heading text-2xl font-semibold tracking-tight"
+          >
+            Score history
+          </h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Chronological public scores from scored submissions (America/Chicago).
+            Many gateway runs succeed with pending/null public scores until the
+            leaderboard records a metric.
+          </p>
+          <Card className="mt-6">
+            <CardContent className="pt-6">
+              <ArcAgi3ScoreChart history={scoreHistory} />
+            </CardContent>
+          </Card>
+          <div className="mt-4 grid gap-4 sm:grid-cols-3">
+            <Card>
+              <CardHeader className="pb-2">
+                <CardDescription>Best recorded public score</CardDescription>
+                <CardTitle className="font-heading text-2xl">
+                  {formatArcPageScore(scoreHistory.bestPublicScore)}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-xs text-muted-foreground">
+                {scoreHistory.bestScoreDate ?? "Not recorded"}
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardDescription>Scored submissions</CardDescription>
+                <CardTitle className="font-heading text-2xl">
+                  {scoreHistory.totalSubmissions}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-xs text-muted-foreground">
+                {scoreHistory.experimentDays} experiment day
+                {scoreHistory.experimentDays === 1 ? "" : "s"}
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-2">
+                <CardDescription>Latest daily page</CardDescription>
+                <CardTitle className="text-base leading-snug">
+                  {latestDayDate ? (
+                    <Link
+                      href={`/projects/arc-agi-3/daily/${latestDayDate}`}
+                      className="text-primary hover:underline"
+                    >
+                      {latestDayDate}
+                    </Link>
+                  ) : (
+                    "—"
+                  )}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-xs text-muted-foreground line-clamp-3">
+                {latestDay?.dailySummary ?? "Not recorded"}
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <section className="mt-12" aria-labelledby="calendar-heading">
+          <h2
+            id="calendar-heading"
+            className="font-heading text-2xl font-semibold tracking-tight"
+          >
+            Research calendar
+          </h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Click a date for that day&apos;s submission, score movement, concepts
+            used, hypotheses, and analysis.
+          </p>
+          <Card className="mt-6">
+            <CardContent className="pt-6">
+              <ArcAgi3DayCalendar dates={[...dayDates].reverse()} />
+            </CardContent>
+          </Card>
+        </section>
+
+        {pageConfig.asraNfmConcepts?.length ? (
+          <section className="mt-12" aria-labelledby="asra-nfm-heading">
+            <h2
+              id="asra-nfm-heading"
+              className="font-heading text-2xl font-semibold tracking-tight"
+            >
+              ASRA-NFM concepts
+            </h2>
+            <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
+              The agent implements an adaptive neuro-symbolic reasoning stack
+              (ASRA-NFM): learn world models from transitions, discover action
+              semantics through intervention, induce symbolic rules, and run
+              hypothesis-linked experiments. Summary of core concepts used on
+              this project:
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {pageConfig.asraNfmConcepts.slice(0, 8).map((c) => (
+                <Card key={c.name}>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-base font-heading">
+                      {c.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm text-muted-foreground">
+                    {c.why}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="mt-4 text-xs text-muted-foreground">
+              Source notes: ASRA-NFM paper concepts mirrored in{" "}
+              <code className="text-xs">arc-agi-3-research/docs/asra-nfm-concepts.md</code>
+              .
+            </p>
+          </section>
+        ) : null}
+
+        {pageConfig.activeResearchQuestions?.length ? (
+          <section className="mt-12" aria-labelledby="questions-heading">
+            <h2
+              id="questions-heading"
+              className="font-heading text-2xl font-semibold tracking-tight"
+            >
+              Active research questions
+            </h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+              {pageConfig.activeResearchQuestions.map((q) => (
+                <li key={q}>{q}</li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
+        {dayDates.length ? (
+          <section className="mt-12" aria-labelledby="recent-days-heading">
+            <h2
+              id="recent-days-heading"
+              className="font-heading text-2xl font-semibold tracking-tight"
+            >
+              Recent daily pages
+            </h2>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {dayDates.slice(0, 6).map((d) => {
+                const day = loadArcAgi3Day(d);
+                return (
+                  <Card key={d}>
+                    <CardHeader>
+                      <CardTitle className="font-heading text-lg">
+                        <Link
+                          href={`/projects/arc-agi-3/daily/${d}`}
+                          className="hover:underline"
+                        >
+                          {d}
+                        </Link>
+                      </CardTitle>
+                      <CardDescription>
+                        Best{" "}
+                        {formatArcPageScore(
+                          day?.scoreSummary?.bestScore ?? null,
+                        )}{" "}
+                        · {day?.scoreSummary?.submissionCount ?? 0} submission
+                        {(day?.scoreSummary?.submissionCount ?? 0) === 1
+                          ? ""
+                          : "s"}
+                        {day?.conceptsImplemented?.length
+                          ? ` · ${day.conceptsImplemented.length} concepts`
+                          : ""}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-2 text-sm text-muted-foreground">
+                      <p className="line-clamp-3">
+                        {day?.dailySummary ?? "Not recorded"}
+                      </p>
+                      {day?.conceptsImplemented?.length ? (
+                        <p className="line-clamp-2 text-xs">
+                          Concepts:{" "}
+                          {day.conceptsImplemented.map((c) => c.name).join(", ")}
+                        </p>
+                      ) : null}
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </section>
+        ) : null}
 
         {status?.current_hypothesis ? (
           <Card className="mt-6 border-primary/20 bg-primary/5">

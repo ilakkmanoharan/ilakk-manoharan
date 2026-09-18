@@ -188,3 +188,208 @@ export const EVENT_LABELS: Record<string, string> = {
   dataset_exported: "Dataset exported",
   lora_analysis_created: "LoRA analysis created",
 };
+
+
+/* ——— Project-page daily / score history (CASMI-style) ——— */
+
+const PROJECT_PAGE_DIR = path.join(RESEARCH_DIR, "project-page");
+
+export type ArcAgi3PageSubmission = {
+  ref: string;
+  timestamp: string;
+  fileName?: string;
+  description?: string;
+  status: string;
+  publicScore: number | null;
+  privateScore?: number | null;
+  strategy?: string;
+};
+
+export type ArcAgi3PageHypothesis = {
+  id: string;
+  statement: string;
+  motivation?: string;
+  changeBeingTested?: string;
+  expectedResult?: string;
+  observedResult?: string;
+  evidence?: string[];
+  status: string;
+  linkedExperimentIds?: string[];
+  linkedSubmissions?: string[];
+  confidence?: string;
+  caveats?: string;
+};
+
+export type ArcAgi3PageConcept = {
+  name: string;
+  why?: string;
+  how?: string;
+  source?: string;
+};
+
+export type ArcAgi3PageScoreSummary = {
+  firstScored: number | null;
+  lastScored: number | null;
+  bestScore: number | null;
+  worstScore: number | null;
+  dailyAbsoluteChange: number | null;
+  dailyPercentageChange: number | null;
+  changeFromPreviousSubmission: number | null;
+  changeFromPreviousClose: number | null;
+  changeFromPriorBest: number | null;
+  newAllTimeBest: boolean;
+  submissionCount: number;
+  scoredCount: number;
+  failedOrPendingCount: number;
+  meanScore: number | null;
+  medianScore: number | null;
+  scoreStdDev: number | null;
+  cumulativeBest: number | null;
+};
+
+export type ArcAgi3DailyRecord = {
+  schemaVersion: number;
+  project: string;
+  competition: string;
+  date: string;
+  timezone: string;
+  generatedAt: string;
+  dailySummary?: string;
+  submissions: ArcAgi3PageSubmission[];
+  scoreSummary: ArcAgi3PageScoreSummary;
+  scoreMovementReason?: string;
+  conceptsImplemented?: ArcAgi3PageConcept[];
+  hypotheses: ArcAgi3PageHypothesis[];
+  experiments?: {
+    id: string;
+    strategy?: string;
+    configSummary?: string;
+    submissionRefs?: string[];
+  }[];
+  results?: {
+    facts?: string[];
+    whatWorked?: string[];
+    whatDidNotWork?: string[];
+  };
+  analysis?: {
+    facts?: string[];
+    interpretations?: string[];
+    limitations?: string[];
+    nextSteps?: string[];
+  };
+  githubActivity?: {
+    commits?: { sha: string; message: string; timestamp?: string }[];
+    changedFiles?: string[];
+    note?: string;
+  };
+  warnings?: string[];
+};
+
+export type ArcAgi3ScorePoint = {
+  date: string;
+  timestamp: string;
+  submissionRef: string;
+  score: number;
+  status: string;
+  description?: string;
+  cumulativeBest: number;
+  isAllTimeBest?: boolean;
+};
+
+export type ArcAgi3ScoreHistory = {
+  schemaVersion: number;
+  points: ArcAgi3ScorePoint[];
+  bestPublicScore: number | null;
+  bestScoreDate: string | null;
+  latestPublicScore: number | null;
+  latestScoreDate: string | null;
+  totalSubmissions: number;
+  experimentDays: number;
+  updatedAt?: string;
+};
+
+export type ArcAgi3ProjectPageConfig = {
+  title: string;
+  description: string;
+  competitionUrl: string;
+  githubUrl: string;
+  activeResearchQuestions?: string[];
+  currentBestApproach?: string;
+  asraNfmConcepts?: ArcAgi3PageConcept[];
+};
+
+export function loadArcAgi3ProjectPageConfig(): ArcAgi3ProjectPageConfig {
+  const cfg = readJsonFile<ArcAgi3ProjectPageConfig>(
+    path.join(PROJECT_PAGE_DIR, "config.json"),
+  );
+  return (
+    cfg ?? {
+      title: "ARC-AGI-3 Research Agent",
+      description:
+        "Autonomous ASRA-aligned research loop for ARC Prize 2026.",
+      competitionUrl:
+        "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3",
+      githubUrl:
+        "https://github.com/ilakkmanoharan/ilakk-manoharan/tree/main/arc-agi-3-research",
+    }
+  );
+}
+
+export function loadArcAgi3ScoreHistory(): ArcAgi3ScoreHistory {
+  return (
+    readJsonFile<ArcAgi3ScoreHistory>(
+      path.join(PROJECT_PAGE_DIR, "score-history.json"),
+    ) ?? {
+      schemaVersion: 1,
+      points: [],
+      bestPublicScore: null,
+      bestScoreDate: null,
+      latestPublicScore: null,
+      latestScoreDate: null,
+      totalSubmissions: 0,
+      experimentDays: 0,
+    }
+  );
+}
+
+export function listArcAgi3DayDates(): string[] {
+  const dir = path.join(PROJECT_PAGE_DIR, "daily");
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir)
+    .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+    .map((f) => f.replace(/\.json$/, ""))
+    .sort();
+}
+
+export function loadArcAgi3Day(date: string): ArcAgi3DailyRecord | null {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+  return readJsonFile<ArcAgi3DailyRecord>(
+    path.join(PROJECT_PAGE_DIR, "daily", `${date}.json`),
+  );
+}
+
+export function formatArcPageScore(
+  score: number | null | undefined,
+  digits = 4,
+): string {
+  if (score === null || score === undefined || Number.isNaN(score)) {
+    return "Not recorded";
+  }
+  return score.toFixed(digits);
+}
+
+export function formatArcScoreDelta(
+  delta: number | null | undefined,
+  digits = 4,
+): string {
+  if (delta === null || delta === undefined || Number.isNaN(delta)) {
+    return "Not recorded";
+  }
+  const sign = delta > 0 ? "+" : "";
+  return `${sign}${delta.toFixed(digits)}`;
+}
+
+export function hypothesisStatusLabel(status: string): string {
+  return status.replace(/_/g, " ");
+}

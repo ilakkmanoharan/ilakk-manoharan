@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "project": "arc-agi-3-research",
+  "competition": "arc-prize-2026-arc-agi-3",
+  "date": "2026-07-16",
+  "timezone": "America/Chicago",
+  "generatedAt": "2026-09-17T23:05:43.143063Z",
+  "sourceWindow": {
+    "start": "2026-07-16T05:00:00Z",
+    "end": "2026-07-17T04:59:59.999999Z"
+  },
+  "dailySummary": "1 submission(s); 0 scored. Best Not recorded. No public score recorded yet for this day. Submission concepts/description: ARC-AGI-3 research agent \u2014 2026-07-15",
+  "submissions": [
+    {
+      "ref": "54730665",
+      "timestamp": "2026-07-15T15:18:34.807000Z",
+      "fileName": "submission.parquet",
+      "description": "ARC-AGI-3 research agent \u2014 2026-07-15",
+      "status": "COMPLETE",
+      "publicScore": null,
+      "privateScore": null,
+      "strategy": "Linked hypothesis excerpt:"
+    }
+  ],
+  "scoreSummary": {
+    "firstScored": null,
+    "lastScored": null,
+    "bestScore": null,
+    "worstScore": null,
+    "dailyAbsoluteChange": null,
+    "dailyPercentageChange": null,
+    "changeFromPreviousSubmission": null,
+    "changeFromPreviousClose": null,
+    "changeFromPriorBest": null,
+    "newAllTimeBest": false,
+    "submissionCount": 1,
+    "scoredCount": 0,
+    "failedOrPendingCount": 1,
+    "meanScore": null,
+    "medianScore": null,
+    "scoreStdDev": null,
+    "cumulativeBest": 0.0,
+    "consecutiveImprovementCount": null,
+    "daysSincePreviousAllTimeBest": null
+  },
+  "scoreMovementReason": "No public score recorded yet for this day. Submission concepts/description: ARC-AGI-3 research agent \u2014 2026-07-15",
+  "conceptsImplemented": [],
+  "research": [],
+  "hypotheses": [
+    {
+      "id": "H-2026-07-16",
+      "statement": "Transitions parsed: 0",
+      "motivation": "Derived from daily hypothesis.md",
+      "changeBeingTested": "See strategy / submission description",
+      "expectedResult": "Not recorded",
+      "observedResult": "Not recorded",
+      "evidence": [
+        "research/hypotheses/2026-07-16/hypothesis.md"
+      ],
+      "status": "untested",
+      "linkedExperimentIds": [
+        "EXP-20260716-01"
+      ],
+      "linkedSubmissions": [
+        "54730665"
+      ],
+      "confidence": "low",
+      "caveats": "Parsed from free-form hypothesis markdown; scores may still be pending."
+    }
+  ],
+  "experiments": [
+    {
+      "id": "EXP-20260716-01",
+      "strategy": "Linked hypothesis excerpt:",
+      "configSummary": "ARC-AGI-3 research agent \u2014 2026-07-15",
+      "submissionRefs": [
+        "54730665"
+      ]
+    }
+  ],
+  "results": {
+    "facts": [
+      "failure-analysis.md: \"errorDescription\": null,",
+      "failure-analysis.md: \u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.",
+      "failure-analysis.md: Classification mode: `empty+heuristic`",
+      "failure-analysis.md: HypothesisLoRA: heuristic only (ASRA-LoRA repo: /home/runner/work/ilakk-manoharan/ilakk-manoharan/ASRA-LoRA)",
+      "failure-analysis.md: Labels inferred: 0",
+      "failure-analysis.md: Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes",
+      "failure-analysis.md: Failure revision: Runtime errors detected \u2014 stabilize notebook imports and CausalSemanticsEngine before policy changes.",
+      "success-analysis.md: \"errorDescription\": null,"
+    ],
+    "whatWorked": [
+      "Not recorded"
+    ],
+    "whatDidNotWork": [
+      "Not recorded"
+    ]
+  },
+  "analysis": {
+    "facts": [
+      "failure-analysis.md: \"errorDescription\": null,",
+      "failure-analysis.md: \u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.",
+      "failure-analysis.md: Classification mode: `empty+heuristic`",
+      "failure-analysis.md: HypothesisLoRA: heuristic only (ASRA-LoRA repo: /home/runner/work/ilakk-manoharan/ilakk-manoharan/ASRA-LoRA)",
+      "failure-analysis.md: Labels inferred: 0",
+      "failure-analysis.md: Exploration plan: ACTION2, ACTION3, Log transition JSONL for LoRA cache refresh, Fix gateway/runtime errors before exploration policy changes",
+      "failure-analysis.md: Failure revision: Runtime errors detected \u2014 stabilize notebook imports and CausalSemanticsEngine before policy changes.",
+      "success-analysis.md: \"errorDescription\": null,"
+    ],
+    "interpretations": [
+      "Interpretations are limited to recorded artifacts; pending Kaggle scores are marked Not recorded."
+    ],
+    "limitations": [
+      "None recorded"
+    ],
+    "nextSteps": [
+      "Linked hypothesis excerpt:"
+    ]
+  },
+  "githubActivity": {
+    "commits": [],
+    "changedFiles": [],
+    "note": "See arc-agi-3-research/research/{submissions,analysis,hypotheses,strategies}/2026-07-16"
+  },
+  "provenance": [
+    {
+      "claim": "submissions",
+      "source": "research/submissions/2026-07-16/submission.json"
+    },
+    {
+      "claim": "concepts",
+      "source": "Parsed from submission description tokens"
+    },
+    {
+      "claim": "hypotheses",
+      "source": "research/hypotheses/2026-07-16/hypothesis.md"
+    }
+  ],
+  "warnings": []
+}

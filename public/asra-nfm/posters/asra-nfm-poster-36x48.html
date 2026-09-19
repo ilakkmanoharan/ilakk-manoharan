@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ASRA-NFM — Research Poster (36×48 in landscape)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/theme.css" />
+  <style>
+    /* 48 in wide × 36 in tall landscape research poster */
+    @page { size: 48in 36in; margin: 0; }
+    body { width: 48in; height: 36in; overflow: hidden; }
+    .poster {
+      width: 48in; height: 36in;
+      padding: 0.7in 0.75in 0.55in;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 0.28in;
+      background:
+        radial-gradient(ellipse at 10% 0%, rgba(34,211,238,0.09), transparent 42%),
+        radial-gradient(ellipse at 90% 100%, rgba(192,132,252,0.08), transparent 42%),
+        var(--bg);
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 4.2in;
+      gap: 0.4in;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.25in;
+    }
+    .brand { font-size: 96pt; color: var(--white); line-height: 0.95; }
+    .subtitle { font-size: 22pt; color: var(--neural); margin-top: 0.12in; max-width: 28in; line-height: 1.25; }
+    .meta { font-size: 14pt; color: var(--muted); margin-top: 0.15in; line-height: 1.4; }
+    .meta strong { color: var(--text); font-size: 16pt; }
+    .placeholders { display: grid; grid-template-columns: 1fr 1fr; gap: 0.08in; font-size: 11pt; }
+    .placeholders div {
+      background: rgba(15,23,42,0.65);
+      border: 1.5px dashed rgba(148,163,184,0.4);
+      border-radius: 10px;
+      padding: 0.08in 0.1in;
+      color: var(--muted);
+    }
+    .qr {
+      width: 1.35in; height: 1.35in; margin-top: 0.12in; margin-left: auto;
+      border: 1.5px dashed rgba(148,163,184,0.45);
+      border-radius: 10px;
+      display: grid; place-items: center;
+      color: var(--muted); font-size: 11pt; text-align: center;
+    }
+    .question {
+      background: var(--uncertainty-dim);
+      border: 2px solid rgba(192,132,252,0.4);
+      border-radius: 16px;
+      padding: 0.18in 0.28in;
+      font-size: 20pt;
+      color: #e9d5ff;
+      font-family: var(--font-display);
+      line-height: 1.35;
+    }
+    .cols { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 0.28in; min-height: 0; }
+    .col { display: flex; flex-direction: column; gap: 0.2in; }
+    .card { padding: 0.16in 0.2in; }
+    .card h3 { font-size: 18pt; margin-bottom: 0.08in; }
+    .card p, .card li { font-size: 12.5pt; line-height: 1.35; }
+    .eq { font-size: 13pt; padding: 0.1in 0.14in; }
+    .tag { font-size: 10pt; padding: 0.04in 0.1in; }
+    .caption { font-size: 10.5pt; }
+    .arch, .charts { width: 100%; border-radius: 14px; border: 1px solid var(--border); }
+    .agents { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.12in; }
+    .agents h4 { margin: 0 0 0.06in; font-size: 13pt; font-family: var(--font-display); }
+    .placeholder { font-size: 11.5pt; padding: 0.1in; }
+    .badge-prelim { font-size: 11pt; }
+    .claim { border-left: 4px solid var(--symbolic); padding-left: 0.12in; font-size: 12.5pt; color: var(--text); }
+    .footer {
+      display: flex; justify-content: space-between; gap: 0.3in;
+      font-size: 10.5pt; color: var(--muted);
+      border-top: 2px solid var(--border); padding-top: 0.12in;
+    }
+  </style>
+</head>
+<body>
+  <article class="poster">
+    <header class="header">
+      <div>
+        <h1 class="brand title">ASRA-NFM</h1>
+        <p class="subtitle">Learning World Dynamics Through Intervention, Explicit Mechanism Discovery, and Planning Under Uncertainty</p>
+        <p class="meta">
+          <strong>Ilakkuvaselvi “Ilak” Manoharan</strong><br />
+          Adaptive Scientific Reasoning Architecture · Nature Foundation Models<br />
+          [Affiliation] · [email] · [GitHub] · [Project URL] · [Venue] · [Date]
+        </p>
+      </div>
+      <div>
+        <div class="placeholders">
+          <div>Affiliation: [AFFILIATION]</div>
+          <div>Email: [EMAIL]</div>
+          <div>GitHub: [GITHUB_URL]</div>
+          <div>Project: [PROJECT_URL]</div>
+          <div>Venue: [CONFERENCE / COMPETITION]</div>
+          <div>Date: [PRESENTATION_DATE]</div>
+        </div>
+        <div class="qr">QR<br />[CODE]</div>
+      </div>
+    </header>
+
+    <div class="question">
+      <strong>Central research question.</strong>
+      Can an agent learn unfamiliar environments efficiently by treating actions as scientific interventions, maintaining competing explanations, and explicitly modeling the mechanisms that produce observed changes?
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <section class="card">
+          <h3>Motivation</h3>
+          <ul>
+            <li>Pattern recognition may predict outcomes without discovering mechanisms.</li>
+            <li>Purely symbolic systems can be brittle when perception is uncertain.</li>
+            <li>Passive learning cannot efficiently resolve ambiguity in novel interactive environments.</li>
+            <li>Agents must learn what actions mean, infer goals, distinguish correlation from mechanism, and plan with incomplete knowledge.</li>
+          </ul>
+          <p><span class="tag neural">neural reps</span><span class="tag symbolic">symbolic reasoning</span><span class="tag uncertainty">active experiment</span></p>
+        </section>
+
+        <section class="card">
+          <h3>Foundational transition — Before → Action → After</h3>
+          <div class="eq">T<sub>t</sub> = (s<sub>t</sub>, a<sub>t</sub>, s<sub>t+1</sub>) &nbsp;&nbsp; Δ<sub>t</sub> = Diff(s<sub>t</sub>, s<sub>t+1</sub>)</div>
+          <p><strong style="color:var(--text)">s<sub>t</sub></strong> structured state before · <strong style="color:var(--text)">a<sub>t</sub></strong> action/intervention · <strong style="color:var(--text)">s<sub>t+1</sub></strong> resulting state · <strong style="color:var(--text)">Δ<sub>t</sub></strong> observed effect.</p>
+          <p>Transitions provide evidence about action semantics, environmental rules, causal mechanisms, invariants, goals, and terminal conditions.</p>
+          <p class="caption">Fig. 1 — Transition evidence unit for mechanism learning.</p>
+        </section>
+
+        <section class="card">
+          <h3>Object-centric reasoning</h3>
+          <p>State as entities and relations — not only pixels or a global novelty vector.</p>
+          <div class="eq" style="font-size:11.5pt">Object: identity, type, color, shape, position, attributes, history<br />Relations: adjacent-to · inside · aligned-with · blocking · approaching · connected-to</div>
+          <div class="eq">Effect(a, o<sub>i</sub>, r<sub>ij</sub>, c<sub>t</sub>) → Δo<sub>i</sub></div>
+          <p>Detected objects and relations must influence hypothesis generation, transition prediction, experiment selection, action scoring, and planning.</p>
+          <p class="caption">Fig. 2 — Binding interventions to object–relation structure.</p>
+        </section>
+
+        <section class="card">
+          <h3>Memory</h3>
+          <p>Episodic (runs) · transition (before–action–after) · semantic (concepts/rules) · procedural (successful sequences) · failure (contradicted rules) · experiment (hypotheses, configs, results, conclusions).</p>
+        </section>
+      </div>
+
+      <div class="col">
+        <section class="card" style="padding:0.12in">
+          <h3 style="padding:0 0.08in 0.08in">Architecture</h3>
+          <img class="arch" src="../assets/architecture.svg" alt="ASRA-NFM architecture flowchart" />
+          <p class="caption" style="padding:0.08in">Fig. 3 — Observation → perception → state → intervention → transition analysis → hypotheses → hybrid world model → information gain → planning → next action, with feedback into memory and belief revision. Styling: neural (cyan), symbolic (amber), evidence (green), planning (violet).</p>
+        </section>
+
+        <div class="agents">
+          <div class="card">
+            <h4 class="neural">Tabby — Questions</h4>
+            <p>Identifies uncertainty about actions, mechanisms, goals, objects, relations; proposes discriminating questions and interventions. Functional reasoning module — not necessarily a separate language model.</p>
+          </div>
+          <div class="card">
+            <h4 class="evidence">Grubby — Evidence</h4>
+            <p>Answers from recorded observations and transitions: support, contradictions, invariants, and counterexamples.</p>
+          </div>
+          <div class="card">
+            <h4 class="uncertainty">Sam — Decisions</h4>
+            <p>Chooses whether to explore, test a hypothesis, or execute a goal-directed plan.</p>
+          </div>
+        </div>
+
+        <section class="card">
+          <h3>Hypothesis management</h3>
+          <div class="eq">H<sub>t</sub> = {h<sub>1</sub>, h<sub>2</sub>, …, h<sub>k</sub>}</div>
+          <div class="eq">Score(h) = Accuracy(h) + α Coverage(h) − β Complexity(h) − γ Contradictions(h)</div>
+          <p><strong style="color:var(--symbolic)">H1</strong> ACTION_2 moves every red object. &nbsp; <strong style="color:var(--symbolic)">H2</strong> moves the object adjacent to the agent. &nbsp; <strong style="color:var(--symbolic)">H3</strong> moves the selected object when the path is clear.</p>
+          <p>Prefer hypotheses that predict accurately, explain more evidence, remain simple, and survive attempted falsification. Interventions distinguish these possibilities.</p>
+          <p class="caption">Fig. 4 — Competing falsifiable mechanisms.</p>
+        </section>
+      </div>
+
+      <div class="col">
+        <section class="card">
+          <h3>Active experimentation</h3>
+          <div class="eq" style="font-size:11pt">a<sub>t</sub>* = argmax<sub>a</sub> [ IG(a; H<sub>t</sub>) + λ P(progress | a) − μ Risk(a) − ν Cost(a) ]</div>
+          <p>An action is valuable if it advances the inferred objective <em>or</em> reveals which world-model hypothesis is correct.</p>
+        </section>
+
+        <section class="card">
+          <h3>Applications &amp; methodology</h3>
+          <p><strong style="color:var(--text)">Testbed:</strong> interactive ARC-AGI-style environments. <strong style="color:var(--text)">Broader:</strong> novel envs, autonomous ML experimentation, scientific discovery, robotics, biological decision systems, physical AI. Adapters share one adaptive scientific-reasoning core.</p>
+          <p><strong style="color:var(--text)">Baselines:</strong> random · heuristic · neural-only · symbolic-only · hybrid · hybrid + active IG.</p>
+          <p><strong style="color:var(--text)">Ablations:</strong> −object relations · −hypothesis memory · −neural WM · −active experiment · −failure memory · −complexity penalty.</p>
+          <p><strong style="color:var(--text)">Metrics:</strong> success, score, action efficiency, prediction accuracy, mechanism recovery, goal inference, IG/action, calibration, compute, generalization.</p>
+        </section>
+
+        <section class="card">
+          <h3>Results <span class="badge-prelim">Preliminary result; controlled evaluation in progress</span></h3>
+          <div class="placeholder">
+            Current benchmark: [BENCHMARK] &nbsp;·&nbsp; Score: [SCORE] &nbsp;·&nbsp; Previous: [PREVIOUS_SCORE] &nbsp;·&nbsp; Δ: [DELTA]<br />
+            Environments N: [N] &nbsp;·&nbsp; Date: [DATE] &nbsp;·&nbsp; Version: [VERSION] &nbsp;·&nbsp; Hardware: [HARDWARE]
+          </div>
+          <img class="charts" src="../assets/placeholder-charts.svg" alt="Placeholder evaluation charts" />
+          <p class="caption">Fig. 5 — Editable SVG charts. Dashed bars mark missing measurements. Do not interpret as empirical claims.</p>
+        </section>
+
+        <section class="card">
+          <h3>Main research claim (hypothesis)</h3>
+          <p class="claim">An object-centric neuro-symbolic agent with explicit hypothesis management and active intervention can learn novel mechanisms more accurately and with fewer actions than passive, neural-only, and symbolic-only baselines.</p>
+        </section>
+
+        <section class="card">
+          <h3>Contributions</h3>
+          <ol style="margin:0;padding-left:1.1rem;color:var(--muted);font-size:12pt;line-height:1.35">
+            <li>Transition-centered learning from before–action–after evidence</li>
+            <li>Explicit separation of action semantics, mechanisms, and goals</li>
+            <li>Object-centric causal representation</li>
+            <li>Competing, falsifiable symbolic hypotheses</li>
+            <li>Hybrid neural + symbolic world modeling</li>
+            <li>Information-seeking intervention selection</li>
+            <li>Interpretable evidence and decision traces</li>
+            <li>Reusable architecture for interactive reasoning and scientific experimentation</li>
+          </ol>
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span>ASRA-NFM — Adaptive Scientific Reasoning Architecture for Nature Foundation Models</span>
+      <span>References [R1]–[R8] (see references.md) · No AGI claims · No unvalidated solve claims</span>
+      <span>Editable: HTML/CSS/SVG · PDF via Chrome print · Min body ~12.5 pt</span>
+    </footer>
+  </article>
+</body>
+</html>

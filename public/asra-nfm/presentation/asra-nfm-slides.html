@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASRA-NFM — Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/theme.css" />
+  <style>
+    html, body { height: 100%; overflow: hidden; }
+    .deck {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background:
+        radial-gradient(ellipse at 15% 10%, rgba(34,211,238,0.1), transparent 40%),
+        radial-gradient(ellipse at 85% 90%, rgba(192,132,252,0.08), transparent 40%),
+        var(--bg);
+    }
+    .slide {
+      display: none;
+      flex: 1;
+      padding: 4.5vh 6vw 10vh;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .slide.active { display: flex; }
+    .slide h1 { font-size: clamp(2rem, 5vw, 3.4rem); color: var(--white); margin-bottom: 0.6rem; }
+    .slide h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); color: var(--white); margin-bottom: 1rem; }
+    .slide .lead { font-size: clamp(1rem, 2vw, 1.35rem); color: var(--neural); max-width: 40rem; line-height: 1.4; }
+    .slide p, .slide li { font-size: clamp(0.95rem, 1.6vw, 1.15rem); color: var(--muted); line-height: 1.45; }
+    .slide ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+    .slide .eq {
+      font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+      margin: 1rem 0;
+    }
+    .slide img { width: 100%; max-height: 58vh; object-fit: contain; border-radius: 14px; border: 1px solid var(--border); margin-top: 0.8rem; }
+    .kicker { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--uncertainty); margin-bottom: 0.75rem; font-weight: 600; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.85rem; margin-top: 1rem; }
+    .nav {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.75rem 1.25rem;
+      background: rgba(11,18,32,0.92);
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--muted);
+      z-index: 10;
+    }
+    .nav button {
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.4rem 0.85rem;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+    .nav button:hover { border-color: var(--neural); color: var(--neural); }
+    .claim-box {
+      border-left: 3px solid var(--symbolic);
+      padding: 0.5rem 0 0.5rem 1rem;
+      margin-top: 1rem;
+      color: var(--text);
+      font-size: clamp(1rem, 1.7vw, 1.2rem);
+    }
+    .placeholder {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 800px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .nav { display: none; }
+      html, body, .deck { height: auto; overflow: visible; }
+      .slide {
+        display: flex !important;
+        page-break-after: always;
+        break-after: page;
+        height: 100vh;
+        min-height: 100vh;
+      }
+    }
+    body.print-all .nav { display: none; }
+    body.print-all, body.print-all .deck { height: auto; overflow: visible; }
+    body.print-all .slide {
+      display: flex !important;
+      min-height: 100vh;
+      border-bottom: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="deck">
+    <!-- 1 -->
+    <section class="slide active" data-title="Title">
+      <div class="kicker">Adaptive Scientific Reasoning · Nature Foundation Models</div>
+      <h1>ASRA-NFM</h1>
+      <p class="lead">Learning world dynamics through intervention, explicit mechanism discovery, and planning under uncertainty.</p>
+      <p style="margin-top:1.5rem">Ilakkuvaselvi “Ilak” Manoharan</p>
+      <p>[Affiliation] · [Venue] · [Date]</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="slide" data-title="What it is">
+      <div class="kicker">Definition</div>
+      <h2>Not a predictor wrapper — an adaptive reasoner</h2>
+      <p class="lead">A neuro-symbolic architecture that learns world dynamics through intervention, represents discovered mechanisms explicitly, and plans under uncertainty.</p>
+      <ul>
+        <li>Observes structured environments</li>
+        <li>Performs interventions and records before–action–after transitions</li>
+        <li>Maintains competing hypotheses</li>
+        <li>Selects actions that reduce uncertainty or advance an inferred goal</li>
+      </ul>
+    </section>
+
+    <!-- 3 -->
+    <section class="slide" data-title="Question">
+      <div class="kicker">Central research question</div>
+      <h2 style="font-size:clamp(1.35rem,3vw,2rem);line-height:1.35;color:#e9d5ff">
+        Can an agent learn unfamiliar environments efficiently by treating actions as scientific interventions, maintaining competing explanations, and explicitly modeling the mechanisms that produce observed changes?
+      </h2>
+    </section>
+
+    <!-- 4 -->
+    <section class="slide" data-title="Motivation">
+      <div class="kicker">Motivation</div>
+      <h2>Why hybrid active science?</h2>
+      <ul>
+        <li>Pattern recognition can predict without discovering mechanisms</li>
+        <li>Purely symbolic systems break under uncertain perception</li>
+        <li>Passive learning is inefficient in novel interactive worlds</li>
+        <li>Need: action meaning, goals, mechanisms, planning with incomplete knowledge</li>
+      </ul>
+      <p style="margin-top:1rem"><span class="tag neural">neural</span><span class="tag symbolic">symbolic</span><span class="tag uncertainty">intervention</span></p>
+    </section>
+
+    <!-- 5 -->
+    <section class="slide" data-title="Transition">
+      <div class="kicker">Foundational unit</div>
+      <h2>Before → Action → After</h2>
+      <div class="eq">T<sub>t</sub> = (s<sub>t</sub>, a<sub>t</sub>, s<sub>t+1</sub>) &nbsp;&nbsp; Δ<sub>t</sub> = Diff(s<sub>t</sub>, s<sub>t+1</sub>)</div>
+      <ul>
+        <li><strong style="color:var(--text)">s<sub>t</sub></strong> — structured state before the action</li>
+        <li><strong style="color:var(--text)">a<sub>t</sub></strong> — action / intervention</li>
+        <li><strong style="color:var(--text)">s<sub>t+1</sub></strong> — resulting structured state</li>
+        <li><strong style="color:var(--text)">Δ<sub>t</sub></strong> — observed effect of the intervention</li>
+      </ul>
+      <p>Evidence for action semantics, rules, mechanisms, invariants, goals, terminals.</p>
+    </section>
+
+    <!-- 6 -->
+    <section class="slide" data-title="Architecture">
+      <div class="kicker">Architecture</div>
+      <h2>Closed scientific loop</h2>
+      <img src="../assets/architecture.svg" alt="ASRA-NFM architecture" />
+      <p class="caption">Neural · symbolic · memory/evidence · planning — with feedback into hypothesis revision.</p>
+    </section>
+
+    <!-- 7 -->
+    <section class="slide" data-title="Agents">
+      <div class="kicker">Reasoning organization</div>
+      <h2>Three functional modules</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="neural">Tabby — Questions</h3>
+          <p>Identifies uncertainty; proposes discriminating interventions.</p>
+        </div>
+        <div class="card">
+          <h3 class="evidence">Grubby — Evidence</h3>
+          <p>Supports, contradictions, invariants, counterexamples from transitions.</p>
+        </div>
+        <div class="card">
+          <h3 class="uncertainty">Sam — Decisions</h3>
+          <p>Explore, test, or execute a goal-directed plan.</p>
+        </div>
+      </div>
+      <p style="margin-top:1rem">Modules — not a requirement for three separate language models.</p>
+    </section>
+
+    <!-- 8 -->
+    <section class="slide" data-title="Objects">
+      <div class="kicker">Representation</div>
+      <h2>Object-centric reasoning</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Objects</h3>
+          <p>identity · type · color · shape · position · attributes · history</p>
+        </div>
+        <div class="card">
+          <h3>Relations</h3>
+          <p>adjacent · inside · aligned · blocking · approaching · connected</p>
+        </div>
+      </div>
+      <div class="eq">Effect(a, o<sub>i</sub>, r<sub>ij</sub>, c<sub>t</sub>) → Δo<sub>i</sub></div>
+      <p>Must influence hypotheses, prediction, experiment selection, scoring, and planning.</p>
+    </section>
+
+    <!-- 9 -->
+    <section class="slide" data-title="Hypotheses">
+      <div class="kicker">Mechanisms</div>
+      <h2>Competing falsifiable hypotheses</h2>
+      <div class="eq">H<sub>t</sub> = {h<sub>1</sub> … h<sub>k</sub>}</div>
+      <div class="eq">Score(h) = Acc + α Cov − β Complexity − γ Contradictions</div>
+      <ul>
+        <li>H1: ACTION_2 moves every red object</li>
+        <li>H2: moves the object adjacent to the agent</li>
+        <li>H3: moves the selected object when the path is clear</li>
+      </ul>
+      <p>Interventions distinguish these possibilities.</p>
+    </section>
+
+    <!-- 10 -->
+    <section class="slide" data-title="Experiment">
+      <div class="kicker">Action selection</div>
+      <h2>Progress and information gain</h2>
+      <div class="eq" style="font-size:clamp(0.75rem,1.3vw,1rem)">
+        a* = argmax<sub>a</sub> [ IG(a; H<sub>t</sub>) + λ P(progress | a) − μ Risk(a) − ν Cost(a) ]
+      </div>
+      <ul>
+        <li>Advance the inferred objective</li>
+        <li>Reveal which world-model hypothesis is correct</li>
+      </ul>
+    </section>
+
+    <!-- 11 -->
+    <section class="slide" data-title="Memory">
+      <div class="kicker">Memory</div>
+      <h2>Evidence that accumulates</h2>
+      <div class="grid-2">
+        <div class="card"><h3>Episodic</h3><p>Complete runs</p></div>
+        <div class="card"><h3>Transition</h3><p>Before–action–after</p></div>
+        <div class="card"><h3>Semantic</h3><p>Concepts and rules</p></div>
+        <div class="card"><h3>Procedural</h3><p>Successful sequences</p></div>
+        <div class="card"><h3>Failure</h3><p>Contradicted rules</p></div>
+        <div class="card"><h3>Experiment</h3><p>Hypotheses, configs, conclusions</p></div>
+      </div>
+    </section>
+
+    <!-- 12 -->
+    <section class="slide" data-title="Applications">
+      <div class="kicker">Scope</div>
+      <h2>From interactive testbeds to science</h2>
+      <ul>
+        <li>Initial: ARC-AGI-style interactive environments</li>
+        <li>Novel interactive environments · autonomous ML experimentation</li>
+        <li>Scientific discovery · robotics · biological decision systems · physical AI</li>
+      </ul>
+      <p style="margin-top:1rem">Competition adapters share one adaptive scientific-reasoning core.</p>
+    </section>
+
+    <!-- 13 -->
+    <section class="slide" data-title="Eval">
+      <div class="kicker">Methodology</div>
+      <h2>Comparisons and ablations</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Baselines</h3>
+          <p>Random · heuristic · neural-only · symbolic-only · hybrid · hybrid + active IG</p>
+        </div>
+        <div class="card">
+          <h3>Ablations</h3>
+          <p>− relations · − hypothesis memory · − neural WM · − active experiment · − failure memory · − complexity penalty</p>
+        </div>
+      </div>
+      <p style="margin-top:1rem">Metrics: success, score, efficiency, prediction, mechanism recovery, goal inference, IG/action, calibration, compute, generalization.</p>
+    </section>
+
+    <!-- 14 -->
+    <section class="slide" data-title="Results">
+      <div class="kicker">Results</div>
+      <h2>Placeholders — no invented numbers</h2>
+      <div class="placeholder">
+        Benchmark [BENCHMARK] · Score [SCORE] · Previous [PREVIOUS_SCORE] · Δ [DELTA]<br />
+        N [N] · Date [DATE] · Version [VERSION] · Hardware [HARDWARE]
+      </div>
+      <img src="../assets/placeholder-charts.svg" alt="Placeholder charts" style="max-height:40vh" />
+      <p class="badge-prelim" style="align-self:flex-start">Preliminary result; further controlled evaluation and ablation studies are in progress.</p>
+    </section>
+
+    <!-- 15 -->
+    <section class="slide" data-title="Claim">
+      <div class="kicker">Hypothesis</div>
+      <h2>Main research claim</h2>
+      <p class="claim-box">
+        An object-centric neuro-symbolic agent with explicit hypothesis management and active intervention can learn novel mechanisms more accurately and with fewer actions than passive, neural-only, and symbolic-only baselines.
+      </p>
+      <p style="margin-top:1.25rem">Presented as a hypothesis until validated by controlled evaluation.</p>
+    </section>
+
+    <!-- 16 -->
+    <section class="slide" data-title="Contributions">
+      <div class="kicker">Contributions</div>
+      <h2>Intended contributions</h2>
+      <ol style="color:var(--muted);line-height:1.5;font-size:clamp(0.9rem,1.5vw,1.1rem)">
+        <li>Transition-centered learning</li>
+        <li>Separation of action semantics, mechanisms, and goals</li>
+        <li>Object-centric causal representation</li>
+        <li>Competing, falsifiable hypotheses</li>
+        <li>Hybrid neural + symbolic world models</li>
+        <li>Information-seeking interventions</li>
+        <li>Interpretable evidence and decision traces</li>
+        <li>Reusable core for interactive reasoning and scientific experimentation</li>
+      </ol>
+    </section>
+
+    <!-- 17 -->
+    <section class="slide" data-title="Close">
+      <div class="kicker">Next</div>
+      <h1>ASRA-NFM</h1>
+      <p class="lead">Intervene. Explain. Revise. Plan.</p>
+      <p style="margin-top:1.5rem">[Project URL] · [GitHub] · [Email]</p>
+      <p class="muted" style="margin-top:2rem;font-size:0.85rem">Poster pack: private/marketing/theory/posters · Editable HTML/SVG · No AGI claims</p>
+    </section>
+  </div>
+
+  <div class="nav">
+    <button type="button" id="prev" aria-label="Previous slide">← Prev</button>
+    <span id="status">1 / 17</span>
+    <button type="button" id="next" aria-label="Next slide">Next →</button>
+  </div>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    let i = 0;
+    const status = document.getElementById('status');
+    function show(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+      status.textContent = `${i + 1} / ${slides.length} · ${slides[i].dataset.title || ''}`;
+    }
+    document.getElementById('prev').onclick = () => show(i - 1);
+    document.getElementById('next').onclick = () => show(i + 1);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); show(i + 1); }
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(i - 1); }
+      if (e.key === 'Home') show(0);
+      if (e.key === 'End') show(slides.length - 1);
+    });
+    show(0);
+    if (new URLSearchParams(location.search).has('print')) {
+      document.body.classList.add('print-all');
+    }
+  </script>
+</body>
+</html>

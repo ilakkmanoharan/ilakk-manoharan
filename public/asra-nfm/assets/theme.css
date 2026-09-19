@@ -1,0 +1,126 @@
+/* ASRA-NFM marketing theme — scientific poster / slides */
+:root {
+  --bg: #0b1220;
+  --bg-card: #121a2b;
+  --bg-card-2: #182235;
+  --border: rgba(148, 163, 184, 0.22);
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --neural: #22d3ee;
+  --neural-dim: rgba(34, 211, 238, 0.15);
+  --symbolic: #fbbf24;
+  --symbolic-dim: rgba(251, 191, 36, 0.14);
+  --evidence: #34d399;
+  --evidence-dim: rgba(52, 211, 153, 0.14);
+  --uncertainty: #c084fc;
+  --uncertainty-dim: rgba(192, 132, 252, 0.14);
+  --white: #ffffff;
+  --radius: 14px;
+  --font-display: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+h1, h2, h3, .title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.muted { color: var(--muted); }
+.neural { color: var(--neural); }
+.symbolic { color: var(--symbolic); }
+.evidence { color: var(--evidence); }
+.uncertainty { color: var(--uncertainty); }
+
+.card {
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-card-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.45rem;
+  color: var(--white);
+}
+
+.card p, .card li {
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+
+.card ul {
+  margin: 0.2rem 0 0;
+  padding-left: 1rem;
+}
+
+.eq {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--neural);
+  background: var(--neural-dim);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  margin: 0.4rem 0;
+  overflow-wrap: anywhere;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.tag.neural { background: var(--neural-dim); color: var(--neural); }
+.tag.symbolic { background: var(--symbolic-dim); color: var(--symbolic); }
+.tag.evidence { background: var(--evidence-dim); color: var(--evidence); }
+.tag.uncertainty { background: var(--uncertainty-dim); color: var(--uncertainty); }
+
+.caption {
+  font-size: 0.58rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.35rem;
+}
+
+.placeholder {
+  border: 1px dashed rgba(148, 163, 184, 0.4);
+  border-radius: 10px;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.65rem;
+  color: var(--muted);
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.badge-prelim {
+  display: inline-block;
+  font-size: 0.6rem;
+  color: var(--symbolic);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  background: var(--symbolic-dim);
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.35rem;
+}

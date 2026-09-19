@@ -5,7 +5,7 @@ description: "Neuro-symbolic adaptive reasoning architecture that learns world d
 role: "Creator — ASRA-NFM architecture (Phases 1–5), symbolic+neural hybrid world models, Tabby/Grubby/Sam metacognitive loop, ARC-AGI-3 adapters, evaluation harness, and theory poster/presentation pack"
 status: Active
 featured: true
-githubUrl: "https://github.com/ilakkmanoharan/asra-nfm"
+githubUrl: ""
 websiteUrl: "/projects/asra-nfm"
 demoVideoUrl: ""
 caseStudyUrl: ""
@@ -17,7 +17,5 @@ techStack: '["Python","Neuro-symbolic reasoning","Object-centric states","Transi
 **ASRA-NFM** is an adaptive neuro-symbolic reasoning architecture for Nature Foundation Models: learn world dynamics through intervention, represent discovered mechanisms explicitly, and plan actions under uncertainty.
 
 It combines object-centric perception, before–action–after transition logs, competing symbolic hypotheses, neural + symbolic world models, and active experiment selection (Tabby / Grubby / Sam). Implementation through Phase 5 includes hardened synthetic envs and ARC-AGI-3 mock + Toolkit adapters.
-
-Open source: [github.com/ilakkmanoharan/asra-nfm](https://github.com/ilakkmanoharan/asra-nfm)
 
 **Project page:** [/projects/asra-nfm](/projects/asra-nfm)

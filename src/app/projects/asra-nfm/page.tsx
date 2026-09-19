@@ -17,8 +17,6 @@ export const metadata: Metadata = {
     "Neuro-symbolic adaptive reasoning: learn world dynamics through intervention, represent mechanisms explicitly, and plan under uncertainty.",
 };
 
-const GITHUB = "https://github.com/ilakkmanoharan/asra-nfm";
-
 const PILLARS = [
   {
     title: "Learn through intervention",
@@ -146,15 +144,6 @@ export default function AsraNfmProjectPage() {
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3 text-sm">
-          <a
-            href={GITHUB}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 text-primary hover:underline"
-          >
-            <ExternalLink className="size-4" aria-hidden />
-            GitHub
-          </a>
           <a
             href="/asra-nfm/paper/paper1.md"
             target="_blank"
@@ -373,17 +362,6 @@ export default function AsraNfmProjectPage() {
             Related
           </h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
-            <li>
-              Code:{" "}
-              <a
-                href={GITHUB}
-                target="_blank"
-                rel="noreferrer"
-                className="text-primary hover:underline"
-              >
-                github.com/ilakkmanoharan/asra-nfm
-              </a>
-            </li>
             <li>
               Parent architecture:{" "}
               <Link href="/asra" className="text-primary hover:underline">

@@ -3,7 +3,7 @@
   "project": "rsna-knee-mri-classifier",
   "competition": "rsna-knee-abnormality-detection",
   "timezone": "America/Chicago",
-  "updatedAt": "2026-09-28T04:04:51.985621Z",
+  "updatedAt": "2026-09-29T04:38:01.536889Z",
   "points": [
     {
       "date": "2026-09-15",
@@ -34,12 +34,22 @@
       "description": "agent1 2026-09-15 cycle 2 strategy=metadata_prior_blend | 2026-09-15_cycle02_20260915T115912-0500_hypotheses.md",
       "cumulativeBest": 0.498,
       "isAllTimeBest": false
+    },
+    {
+      "date": "2026-09-28",
+      "timestamp": "2026-09-28T06:01:13.950000Z",
+      "submissionRef": "56630878",
+      "score": 0.514,
+      "status": "COMPLETE",
+      "description": "agent1 2026-09-28 cycle 0 strategy=gold_meta_logit | 2026-09-28_cycle00_20260928T010006-0500_hypotheses.md",
+      "cumulativeBest": 0.514,
+      "isAllTimeBest": true
     }
   ],
-  "bestPublicScore": 0.498,
-  "bestScoreDate": "2026-09-15",
-  "latestPublicScore": 0.498,
-  "latestScoreDate": "2026-09-15",
-  "totalSubmissions": 3,
-  "experimentDays": 1
+  "bestPublicScore": 0.514,
+  "bestScoreDate": "2026-09-28",
+  "latestPublicScore": 0.514,
+  "latestScoreDate": "2026-09-28",
+  "totalSubmissions": 4,
+  "experimentDays": 2
 }

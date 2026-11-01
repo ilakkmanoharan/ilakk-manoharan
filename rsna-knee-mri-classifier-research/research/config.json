@@ -14,5 +14,5 @@
     "Do multilingual report soft labels improve ranking without using test reports?",
     "Which single ASRA ablation lifts score without collapsing rare targets?"
   ],
-  "currentBestApproach": "Best public score 0.514 on 2026-09-28. agent1 2026-09-28 cycle 0 strategy=gold_meta_logit | 2026-09-28_cycle00_20260928T010006-0500_hypotheses.md"
+  "currentBestApproach": "Best public score 0.534 on 2026-10-31. agent1 2026-10-31 cycle 3 strategy=weak_rank_bakers_frac_hyb_lm_eff_acl_gem_eff_gem_lm_gem_bak_gem | 2026-10-31_cycle03_20261031T053243-0500_hypotheses.md"
 }

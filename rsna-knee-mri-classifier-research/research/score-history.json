@@ -3,7 +3,7 @@
   "project": "rsna-knee-mri-classifier",
   "competition": "rsna-knee-abnormality-detection",
   "timezone": "America/Chicago",
-  "updatedAt": "2026-10-28T04:24:38.923099Z",
+  "updatedAt": "2026-11-01T04:46:06.173827Z",
   "points": [
     {
       "date": "2026-09-15",
@@ -44,12 +44,52 @@
       "description": "agent1 2026-09-28 cycle 0 strategy=gold_meta_logit | 2026-09-28_cycle00_20260928T010006-0500_hypotheses.md",
       "cumulativeBest": 0.514,
       "isAllTimeBest": true
+    },
+    {
+      "date": "2026-10-31",
+      "timestamp": "2026-10-31T06:07:21.900000Z",
+      "submissionRef": "57828760",
+      "score": 0.534,
+      "status": "COMPLETE",
+      "description": "agent1 2026-10-31 cycle 0 strategy=weak_rank_bakers_frac_hyb_lm_eff_acl_gem_eff_gem_lm_gem_w60 | 2026-10-31_cycle00_20261031T010602-0500_hypotheses.md",
+      "cumulativeBest": 0.534,
+      "isAllTimeBest": true
+    },
+    {
+      "date": "2026-10-31",
+      "timestamp": "2026-10-31T07:37:46.177000Z",
+      "submissionRef": "57831368",
+      "score": 0.534,
+      "status": "COMPLETE",
+      "description": "agent1 2026-10-31 cycle 1 strategy=weak_rank_bakers_frac_hyb_lm_eff_acl_gem_eff_gem_lm_gem_w40 | 2026-10-31_cycle01_20261031T023626-0500_hypotheses.md",
+      "cumulativeBest": 0.534,
+      "isAllTimeBest": false
+    },
+    {
+      "date": "2026-10-31",
+      "timestamp": "2026-10-31T09:04:11.210000Z",
+      "submissionRef": "57833621",
+      "score": 0.534,
+      "status": "COMPLETE",
+      "description": "agent1 2026-10-31 cycle 2 strategy=weak_rank_bakers_frac_hyb_lm_eff_acl_gem_eff_gem_lm_gem_mm_gem | 2026-10-31_cycle02_20261031T040244-0500_hypotheses.md",
+      "cumulativeBest": 0.534,
+      "isAllTimeBest": false
+    },
+    {
+      "date": "2026-10-31",
+      "timestamp": "2026-10-31T10:34:11.703000Z",
+      "submissionRef": "57835922",
+      "score": 0.531,
+      "status": "COMPLETE",
+      "description": "agent1 2026-10-31 cycle 3 strategy=weak_rank_bakers_frac_hyb_lm_eff_acl_gem_eff_gem_lm_gem_bak_gem | 2026-10-31_cycle03_20261031T053243-0500_hypotheses.md",
+      "cumulativeBest": 0.534,
+      "isAllTimeBest": false
     }
   ],
-  "bestPublicScore": 0.514,
-  "bestScoreDate": "2026-09-28",
-  "latestPublicScore": 0.514,
-  "latestScoreDate": "2026-09-28",
-  "totalSubmissions": 4,
-  "experimentDays": 2
+  "bestPublicScore": 0.534,
+  "bestScoreDate": "2026-10-31",
+  "latestPublicScore": 0.531,
+  "latestScoreDate": "2026-10-31",
+  "totalSubmissions": 8,
+  "experimentDays": 3
 }

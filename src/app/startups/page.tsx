@@ -113,7 +113,7 @@ export default async function StartupsPage() {
                         href={s.websiteUrl}
                         className="inline-flex items-center gap-1 text-primary hover:underline"
                       >
-                        Program page
+                        {s.slug === "tomo" ? "TOMO project page" : "Program page"}
                       </Link>
                     ) : (
                       <a
@@ -167,7 +167,7 @@ export default async function StartupsPage() {
                       rel="noreferrer"
                     >
                       <ExternalLink className="size-4" aria-hidden />
-                      Theory
+                      {s.slug === "tomo" ? "Paper (Zenodo)" : "Theory"}
                     </a>
                   ) : null}
                 </div>

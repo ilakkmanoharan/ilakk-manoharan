@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /memoir
+Disallow: /memoir/*
+Disallow: /api/memoir/*
+
+Sitemap: https://ilakk-manoharan.vercel.app/sitemap.xml

@@ -27,11 +27,12 @@ function render(){
  $('previous').disabled=current===1;$('next').disabled=current===41;
  $('progress-fill').style.width=`${current/41*100}%`;document.querySelector('.progress').setAttribute('aria-valuenow',current);
  document.querySelectorAll('a.chapter').forEach(a=>{if(Number(a.dataset.page)===active[1])a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+ if(typeof refreshNarrationLabel==='function')refreshNarrationLabel();
  document.querySelector('.canvas').scrollTo(0,0);try{localStorage.setItem('city-of-tomo-page',current);}catch{}
  // Keep the next illustration ready without loading the entire book.
  if(current<41){const preload=new Image();preload.src=`/tomo/book/assets/page-${current+1}.webp`;}
 }
-function go(page){current=Math.max(1,Math.min(41,page));history.replaceState(null,'',`#page-${current}`);render();}
+function go(page){if(typeof stopListening==='function')stopListening();current=Math.max(1,Math.min(41,page));history.replaceState(null,'',`#page-${current}`);render();}
 window.addEventListener('hashchange',()=>{const match=location.hash.match(/^#page-(\d+)$/);if(match)go(Number(match[1]));});
 $('previous').onclick=()=>go(current-1);$('next').onclick=()=>go(current+1);
 $('jump').onsubmit=e=>{e.preventDefault();if($('page-number').checkValidity())go(Number($('page-number').value));};

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import fs from "node:fs";
 import path from "node:path";
+import { OpenSourceContributions } from "@/components/open-source-contributions";
 import { ProjectGrid } from "@/components/project-grid";
 import { ProjectProposalWriteups } from "@/components/project-proposal-writeups";
 import { ViewTracker } from "@/components/view-tracker";
+import { loadOpenSourceContributions } from "@/lib/open-source-contributions";
 import { loadProjectsForPage } from "@/lib/projects-content";
 import { parseGrantProposals } from "@/lib/parse-grant-proposals";
 import { DEFAULT_APP_STORE_BY_PROJECT_SLUG } from "@/lib/project-default-links";
@@ -28,9 +30,10 @@ function loadGrantProposalsFromDisk() {
 }
 
 export default async function ProjectsPage() {
-  const [rows, grantProposals] = await Promise.all([
+  const [rows, grantProposals, openSource] = await Promise.all([
     Promise.resolve(loadProjectsForPage()),
     Promise.resolve(loadGrantProposalsFromDisk()),
+    Promise.resolve(loadOpenSourceContributions()),
   ]);
 
   const projects = rows.map((p) => ({
@@ -53,6 +56,7 @@ export default async function ProjectsPage() {
         <div className="mt-10">
           <ProjectGrid projects={projects} />
         </div>
+        <OpenSourceContributions orgs={openSource} />
         <ProjectProposalWriteups proposals={grantProposals} />
       </div>
     </>

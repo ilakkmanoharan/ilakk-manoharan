@@ -21,6 +21,7 @@ export type StartupSeed = {
 const DEFAULT_PITCH_DECK_BY_SLUG: Record<string, string> = {
   "nature-foundation-models": "/startup-catalog/Nature-Foundation-Models-v9.pdf",
   "nfm-restaurants": "/startup-catalog/NFM-Restaurants-YC-pitchdeck.pdf",
+  "open-local-ai-research-node": "/startup-catalog/Open-Local-AI-Research-Node.pdf",
   agentapply: "/startup-catalog/AgentApply.pdf",
   "finance-autopilot": "/startup-catalog/Finance-Autopilot-v2.pdf",
 };

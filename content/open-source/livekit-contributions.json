@@ -1,0 +1,48 @@
+{
+  "slug": "livekit",
+  "name": "LiveKit",
+  "repo": "livekit/agents",
+  "repoUrl": "https://github.com/livekit/agents",
+  "projectPageUrl": "/projects/livekit",
+  "blurb": "Contributions focused on test reliability and the developer experience in livekit/agents.",
+  "focus": "Improving hermetic unit tests, making optional plugin and environment side effects explicit, and documenting contributor workflows.",
+  "syncedAt": "2026-11-07T00:41:12.324Z",
+  "items": [
+    {
+      "number": 8433,
+      "kind": "pull",
+      "title": "tests: preserve shell environment when loading dotenv",
+      "state": "open",
+      "url": "https://github.com/livekit/agents/pull/8433",
+      "createdAt": "2026-11-07T00:24:24Z",
+      "updatedAt": "2026-11-07T00:24:55Z",
+      "mergedAt": null,
+      "contribution": "Preserve shell environment when loading dotenv in TTS and realtime tests",
+      "detail": "Removed override=True from load_dotenv() in test_tts.py and test_realtime.py so a discovered .env cannot overwrite variables already set in the shell. Aligns with the pattern already used in test_stt.py. Fixes discussion in issue #8230."
+    },
+    {
+      "number": 8230,
+      "kind": "issue",
+      "title": "tests: discuss removing dotenv environment mutation during TTS collection",
+      "state": "open",
+      "url": "https://github.com/livekit/agents/issues/8230",
+      "createdAt": "2026-10-29T00:52:00Z",
+      "updatedAt": "2026-11-05T22:54:16Z",
+      "mergedAt": null,
+      "contribution": "Discuss removing dotenv environment mutation during TTS test collection",
+      "detail": "Opened after auditing import-time side effects following #8134. Reports that test_tts.py called load_dotenv(override=True) at module scope, which can replace intentional process environment values during collection. Proposes making dotenv preparation explicit without changing production behavior."
+    },
+    {
+      "number": 8134,
+      "kind": "pull",
+      "title": "test: separate NLTK coverage from hermetic tokenizer unit tests",
+      "state": "open",
+      "url": "https://github.com/livekit/agents/pull/8134",
+      "createdAt": "2026-10-26T16:55:56Z",
+      "updatedAt": "2026-10-29T01:17:38Z",
+      "mergedAt": null,
+      "contribution": "Separate NLTK coverage from hermetic tokenizer unit tests",
+      "detail": "Core tokenizer unit tests imported the optional NLTK plugin and could trigger a Punkt model download during collection. Moved NLTK batch and streaming coverage into dedicated plugin tests, prepared model data in an explicit fixture, shared the corpus through a dependency-free module, and updated CI and contributor docs. Verified 63 core tokenizer tests with networking blocked and NLTK imports disabled; both NLTK plugin tests passed; formatting, lint, and type checks passed."
+    }
+  ]
+}

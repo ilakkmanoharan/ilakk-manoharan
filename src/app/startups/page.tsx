@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/card";
 import { loadStartupsForPage } from "@/lib/startups-content";
 import { cn } from "@/lib/utils";
-import { ExternalLink } from "lucide-react";
+import { BookOpen, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Startup Catalog",
@@ -107,6 +107,16 @@ export default async function StartupsPage() {
                   </div>
                 ) : null}
                 <div className="flex flex-wrap gap-3">
+                  {s.slug === "tomo" ? (
+                    <Link
+                      href="/projects/tomo/book"
+                      prefetch={false}
+                      className="inline-flex items-center gap-1 text-primary hover:underline"
+                    >
+                      <BookOpen className="size-4" aria-hidden />
+                      Read the book
+                    </Link>
+                  ) : null}
                   {s.websiteUrl ? (
                     s.websiteUrl.startsWith("/") ? (
                       <Link

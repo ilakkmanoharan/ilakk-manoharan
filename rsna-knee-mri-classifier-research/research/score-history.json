@@ -3,7 +3,7 @@
   "project": "rsna-knee-mri-classifier",
   "competition": "rsna-knee-abnormality-detection",
   "timezone": "America/Chicago",
-  "updatedAt": "2026-11-01T04:46:06.173827Z",
+  "updatedAt": "2026-11-13T05:26:41.332278Z",
   "points": [
     {
       "date": "2026-09-15",

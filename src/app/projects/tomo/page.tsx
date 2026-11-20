@@ -67,6 +67,7 @@ export default function TomoProjectPage() {
               <div className="mt-7 flex flex-wrap gap-3">
                 <a href={PAPER} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#163b32] px-5 py-3 text-sm font-medium text-white hover:bg-[#245c4e]">Read the paper<ArrowUpRight className="size-4" aria-hidden="true" /></a>
                 <a href="#scenario" className="rounded-full border border-[#163b32]/30 px-5 py-3 text-sm font-medium hover:bg-white/60">Explore the concept</a>
+                <Link href="/projects/tomo/planetary-nervous-system" className="rounded-full border border-[#163b32]/30 px-5 py-3 text-sm font-medium hover:bg-white/60">Planetary Nervous System</Link>
               </div>
             </div>
             <div className="rounded-2xl border border-emerald-950/15 bg-white/60 p-6">

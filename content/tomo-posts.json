@@ -1,12 +1,121 @@
 [
   {
+    "id": "2123820519526977853",
+    "date": "2026-11-20",
+    "createdAt": "2026-11-20T16:47:25.000Z",
+    "text": "Right-sized local nodes that serve one specific place are spreading fast. That's the architecture TOMO is built on, and I'm glad to see it adopted this widely.",
+    "summary": false,
+    "images": [],
+    "links": [],
+    "quotedUrl": "https://x.com/ilakkManoharan/status/2123818287221891139",
+    "replyTo": null
+  },
+  {
+    "id": "2123818287221891139",
+    "date": "2026-11-20",
+    "createdAt": "2026-11-20T16:38:32.000Z",
+    "text": "I’m glad to see the ideas behind TOMO gaining traction. This water gate in Japan is a great example of why I’m building TOMO and the Planetary Nervous System. Giving operators remote visibility and control can spare them a dangerous trip during a storm.\n\nStarlink solves the reach problem here. The technical question I’m exploring with TOMO is what intelligence belongs at the site itself.\n\nIf the satellite link goes down during a flood, could a local node interpret rising water levels, check sensor health, and decide whether to hold the gate or adjust it within operator-defined limits?\n\n@elonmusk",
+    "summary": false,
+    "images": [],
+    "links": [],
+    "quotedUrl": "https://x.com/XFreeze/status/2123707452915065128",
+    "replyTo": null
+  },
+  {
+    "id": "2123584446842495431",
+    "date": "2026-11-19",
+    "createdAt": "2026-11-20T01:09:21.000Z",
+    "text": "https://youtu.be/9agru2V33pw?si=hY5rimmRzxUICig5",
+    "summary": false,
+    "images": [],
+    "links": [
+      "https://youtu.be/9agru2V33pw?si=hY5rimmRzxUICig5"
+    ],
+    "quotedUrl": null,
+    "replyTo": "https://x.com/ilakkManoharan/status/2123584153895727107"
+  },
+  {
+    "id": "2123584153895727107",
+    "date": "2026-11-19",
+    "createdAt": "2026-11-20T01:08:11.000Z",
+    "text": "https://ilakk-manoharan.vercel.app/projects/tomo/planetary-nervous-system",
+    "summary": false,
+    "images": [],
+    "links": [
+      "https://ilakk-manoharan.vercel.app/projects/tomo/planetary-nervous-system"
+    ],
+    "quotedUrl": null,
+    "replyTo": null
+  },
+  {
+    "id": "2123409111681237357",
+    "date": "2026-11-19",
+    "createdAt": "2026-11-19T13:32:37.000Z",
+    "text": "@elonmusk \n\nLocal-first bandwidth: What if bandwidth were managed by intelligent local nodes?\n\nAs part of my TOMO and Planetary Nervous System architecture, I have been exploring a different approach to connectivity.\n\nEvery geographical area could have an intelligent node responsible for managing its local bandwidth, caching frequently needed information, scheduling communication, and coordinating connected devices.\n\nFiber and satellite networks provide high-capacity backhaul between geographically distributed nodes.\nLocal wireless networks handle communication within each geographic area.\nNodes process information locally and transmit only what is necessary.\nPrivate nodes retain control over their data, bandwidth and access permissions.\nPublic nodes provide connectivity and selectively relay relevant information across neighboring regions.\n\nImagine a robot entering a neighborhood. Instead of continuously communicating with a distant cloud, it requests the relevant information from the nearest authorized node and receives compact, actionable instructions.\n\nThe robot does not even need continuous wireless connectivity with the node. It can physically approach and dock with a nearby node, synchronize observations, download updated maps and instructions, recharge if needed, and resume its assigned tasks autonomously.\n\nConnectivity becomes an on-demand resource rather than a continuous dependency.\n\nThe fundamental idea is not about building more towers. It is about moving the intelligence that determines what, when, where and how much to transmit closer to the source.\n\nPerhaps the future of connectivity is about building distributed intelligence that reduces how much bandwidth we need.\n\n@elonmusk",
+    "summary": false,
+    "images": [],
+    "links": [],
+    "quotedUrl": null,
+    "replyTo": null
+  },
+  {
+    "id": "2123394855665611042",
+    "date": "2026-11-19",
+    "createdAt": "2026-11-19T12:35:59.000Z",
+    "text": "Watching @elonmusk talk about Starlink micro cell towers that sit on rooftops like dishes and create dense local coverage instead of relying only on big towers.\n\nThe pattern feels familiar: right-sized local nodes that own their physical area, handle the immediate need first, and only coordinate outward when required. I’ve been exploring the same architecture for local inference + local intelligence (garden nodes, spatial world models, private/public boundaries, satellites as intelligent nodes).\n\nBandwidth layer and intelligence layer are different, but the distributed, edge-first philosophy is close.\n\nhttp://youtube.com/live/zWeT91uH7… via @YouTube",
+    "summary": false,
+    "images": [],
+    "links": [
+      "http://youtube.com/live/zWeT91uH7"
+    ],
+    "quotedUrl": null,
+    "replyTo": null
+  },
+  {
+    "id": "2121611048058847426",
+    "date": "2026-11-14",
+    "createdAt": "2026-11-14T14:27:46.000Z",
+    "text": "**TOMO’s garden node could grow into a privately owned home AI server.** The garden would be its first application. The same device could run models for the household and give family members access from their phones, laptops, and other devices.\n\n### What could run on it?\n\n- **Personal AI assistant** that searches family documents, summarizes PDFs, or helps draft messages.\n- **Voice assistant** that transcribes speech, answers questions, and controls authorized smart-home devices.\n- **Camera intelligence** that detects events and lets you search footage with questions like “When did the package arrive?”\n- **Physical AI** that keeps track of plants, interprets sensor readings, and coordinates TOMO’s garden work.\n\nYou could start with **one home server running several specialized models**. A vision model could serve TOMO and the home cameras. A language model could answer questions about documents or explain why TOMO skipped watering. Each application would have its own permissions and data. For example, the garden service needs access to plant history and sensor readings. The personal assistant needs access only to the documents you’ve chosen to share with it.\n\n### What stays on the robot?\n\nTOMO should handle immediate safety decisions, such as stopping for an obstacle, on the robot itself. The home server can handle work that benefits from more compute and memory, such as comparing plant images over time or planning tomorrow’s route. That division lets TOMO stop safely even if the connection to the home server drops.\n\n### Could it serve *all* the home’s AI?\n\nIt could serve **many everyday AI tasks locally**. What fits depends on the hardware, the models, and how many people or devices use them at the same time. You could choose to have larger jobs use a cloud model, with control over what data leaves the home. The bigger idea is that **the household owns the compute, the data, and the rules for who can use them**.\n\nXFRA places shared AI compute at a home. TOMO could give the household its own AI compute, with the garden as the first place where it learns, remembers, and acts.",
+    "summary": false,
+    "images": [],
+    "links": [],
+    "quotedUrl": null,
+    "replyTo": "https://x.com/ilakkManoharan/status/2121610499984937064"
+  },
+  {
+    "id": "2119438282819821814",
+    "date": "2026-11-08",
+    "createdAt": "2026-11-08T14:33:58.000Z",
+    "text": "Local inference: Running an AI model on the robot or garden node to turn inputs into predictions—for example, identifying potentially wilted tomato leaves from a photo.\n\nLocal intelligence: Combining observations with local context, memory, reasoning, goals, rules, planning, and historical data to decide what to do.\n\nContextual decisions: For plant T‑023, the node considers soil moisture, watering history, temperature, and previous outcomes before deciding: “Hold watering, inspect again this evening, and alert the owner if symptoms persist.”\n\nIntelligence loop: Observe → Remember → Interpret → Decide → Act → Check the outcome. Inference supports this loop; a prediction alone does not establish a cause or justify an action.\n\nSpatial intelligence: Each node understands a defined physical area—a square garden patch—including plant locations, boundaries, robot positions, and spatial relationships. The square defines its area of responsibility.\n\nGarden node: The “brain on the ground” maintains plant identities, histories, maps, schedules, task priorities, goals, and permissions. It owns the local what and when.\n\nRobot intelligence: TOMO handles movement, immediate perception, navigation, obstacle avoidance, safe execution, and tactical adjustments. It owns the how, within authorized limits.\n\nNode hardware: A complete small computer needs a CPU, RAM, storage, connectivity, power, cooling, and an enclosure, with an optional GPU or AI accelerator. A GPU alone is not a complete node.\n\nFlexible computing: Hardware can range from a microcontroller for simple sensing and rules to a Jetson-style computer or server for richer workloads. A Jetson integrates CPU and GPU with shared memory. Not every node needs a GPU; nearby nodes can share an accelerator.\n\nDistributed Architecture: Nodes manage their own areas while coordinating with neighboring nodes. This connects TOMO’s garden-scale system to the broader Planetary Nervous System vision.\n\nArchitectural responsibility: Local inference describes model execution; local intelligence describes contextual decision making. Neither automatically guarantees learning or independence from cloud services—those require explicit design choices.\n\n“Local inference helps TOMO interpret what it senses. Local intelligence uses that interpretation, the garden’s history, and its goals to decide what should happen next.”",
+    "summary": false,
+    "images": [
+      {
+        "src": "/tomo/x/2119438282819821814-HWnB2reXAAEt7bA.jpg",
+        "alt": "Illustration attached to this TOMO post"
+      },
+      {
+        "src": "/tomo/x/2119438282819821814-HWnB2rrXcAAZbYq.jpg",
+        "alt": "Illustration attached to this TOMO post"
+      }
+    ],
+    "links": [],
+    "quotedUrl": null,
+    "replyTo": null
+  },
+  {
     "id": "2117256931920257499",
     "date": "2026-11-02",
     "text": "The concept illustrations connect the world-as-graph idea to distributed robotic intelligence. Specialized robots can draw on task-relevant shared knowledge and infrastructure. The linked TOMO preprint develops this broad vision into a bounded tomato-growing scenario and an evaluation agenda.",
     "summary": true,
     "images": [
-      {"src": "/tomo/world-graph-original.jpg", "alt": "World-as-graph concept illustration"},
-      {"src": "/tomo/distributed-robotics-original.jpg", "alt": "Specialized robots and shared infrastructure"}
+      {
+        "src": "/tomo/world-graph-original.jpg",
+        "alt": "World-as-graph concept illustration"
+      },
+      {
+        "src": "/tomo/distributed-robotics-original.jpg",
+        "alt": "Specialized robots and shared infrastructure"
+      }
     ]
   },
   {
@@ -15,7 +124,10 @@
     "text": "The original vision describes the world as a graph database, connecting relationships across physical, biological, environmental, and urban scales.",
     "summary": true,
     "images": [
-      {"src": "/tomo/world-graph-original.jpg", "alt": "World-as-graph concept illustration"}
+      {
+        "src": "/tomo/world-graph-original.jpg",
+        "alt": "World-as-graph concept illustration"
+      }
     ]
   }
 ]

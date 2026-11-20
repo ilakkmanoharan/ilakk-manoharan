@@ -36,3 +36,35 @@ does not deploy pushes made by the default Actions token, set the optional
 `TOMO_GITHUB_TOKEN` Actions secret to a fine-grained token with repository
 contents write access for that member. Verify the first deployment from an
 automated archive commit.
+
+## Public URL import and daily Codex sync
+
+The eight requested posts were backfilled with their complete public text. The
+archive contains 10 entries including the two original, explicitly labeled
+summaries. Post dates use America/Chicago, so an evening post may appear under
+the preceding date compared with X's UTC embed date.
+
+Import explicitly selected public posts without an API key:
+
+```sh
+node scripts/import-tomo-x-urls.mjs https://x.com/ilakkManoharan/status/POST_ID
+```
+
+The importer validates the post ID, author, publication timestamp and text prefix
+against X's public syndication endpoint. It uses api.fxtwitter.com for full long
+post text, saves original photos from pbs.twimg.com, retains reference links,
+and deduplicates by post ID. Public endpoints may become unavailable; failures
+stop the import rather than silently storing truncated text. This importer does
+not discover new posts by itself.
+
+A Codex automation, “Sync TOMO posts to blog and GitHub”, checks daily at 9 a.m.
+America/Chicago. It discovers public posts, imports new TOMO URLs, commits and
+pushes the archive, and checks the production deployment. It runs locally and
+requires Codex/the computer to be available, network access and GitHub access;
+X browsing can require a signed-in session. It reports access/import failures.
+This is scheduled polling, not instant synchronization.
+
+The separate GitHub Actions workflow remains the unattended server-side option.
+It still requires the `X_BEARER_TOKEN` repository secret. It now fails visibly
+when the credential is absent rather than reporting a successful no-op. The
+Codex automation does not require that secret when public post discovery works.

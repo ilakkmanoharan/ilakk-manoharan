@@ -7,7 +7,7 @@ const cursorPath = "content/tomo-x-cursor.json";
 const mediaPath = "public/tomo/x";
 const archive = JSON.parse(await readFile(archivePath, "utf8"));
 const posts = new Map(archive.map((post) => [post.id, post]));
-const terms = /\bTOMO\b|world as a graph database|23873426|\/projects\/tomo\b/i;
+const terms = /\bTOMO\b|world[ -]as[ -]a[ -]graph(?: database)?|planetary nervous system|23873426|\/projects\/tomo\b/i;
 const dateParts = new Intl.DateTimeFormat("en-US", {
   timeZone: "America/Chicago", year: "numeric", month: "2-digit", day: "2-digit",
 });
@@ -96,12 +96,12 @@ async function syncTimeline() {
   let newestId;
   do {
     const result = await api(`users/${user.id}/tweets`, params);
-    newestId ??= result.meta.newest_id;
+    newestId ??= result.meta?.newest_id;
     for (const post of result.data ?? []) {
       rows.push({ post, media: result.includes?.media ?? [] });
     }
-    if (!result.meta.next_token) break;
-    params.pagination_token = result.meta.next_token;
+    if (!result.meta?.next_token) break;
+    params.pagination_token = result.meta?.next_token;
   } while (true);
   if (cursor.sinceId && rows.length >= 3200) {
     throw new Error("Timeline window may have been exceeded. Backfill from an X export.");
@@ -109,12 +109,12 @@ async function syncTimeline() {
 
   for (const { post, media } of rows.reverse()) {
     const text = post.note_tweet?.text ?? post.text;
-    const links = (post.entities?.urls ?? []).map((link) => link.expanded_url).join(" ");
+    const links = (post.note_tweet?.entities?.urls ?? post.entities?.urls ?? []).map((link) => link.expanded_url).join(" ");
     if (!matches(post.id, `${text} ${links}`, [post.conversation_id, ...(
       post.referenced_tweets ?? []
     ).map((reference) => reference.id)])) continue;
     const images = [];
-    for (const item of media.filter((item) => post.attachments?.media_keys.includes(item.media_key))) {
+    for (const item of media.filter((item) => post.attachments?.media_keys?.includes(item.media_key))) {
       const image = new URL(item.url ?? item.preview_image_url);
       if (image.protocol !== "https:" || image.hostname !== "pbs.twimg.com") throw new Error("Unexpected X media host");
       images.push(await storeImage(post.id, basename(image.pathname), item.alt_text, async (path) => {

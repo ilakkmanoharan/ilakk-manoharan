@@ -9,11 +9,30 @@ export const metadata: Metadata = {
   alternates: { canonical: "/projects/tomo/blog" },
 };
 
+type ArchivedPost = {
+  id: string;
+  date: string;
+  text: string;
+  summary?: boolean;
+  images: { src: string; alt: string }[];
+  links?: string[];
+  quotedUrl?: string | null;
+  replyTo?: string | null;
+};
+
+function PostText({ text }: { text: string }) {
+  return text.split(/(https?:\/\/[^\s]+)/g).map((part, index) =>
+    /^https?:\/\//.test(part) ? (
+      <a key={index} href={part} className="underline underline-offset-4" target="_blank" rel="noreferrer">{part}</a>
+    ) : part,
+  );
+}
+
 const monthFormat = new Intl.DateTimeFormat("en-US", { month: "long", timeZone: "UTC" });
 const dateFormat = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" });
 
 export default function TomoBlogPage() {
-  const years = Map.groupBy(archive, (post) => post.date.slice(0, 4));
+  const years = Map.groupBy(archive as ArchivedPost[], (post) => post.date.slice(0, 4));
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-10 md:px-6 md:py-16">
@@ -35,7 +54,16 @@ export default function TomoBlogPage() {
                     <a href={`https://x.com/ilakkManoharan/status/${post.id}`} className="underline underline-offset-4">View original on X</a>
                   </div>
                   {post.summary && <p className="mt-4 text-sm text-muted-foreground">Summary from the TOMO project page</p>}
-                  <p className="mt-3 whitespace-pre-wrap break-words leading-relaxed">{post.text}</p>
+                  <p className="mt-3 whitespace-pre-wrap break-words leading-relaxed">{<PostText text={post.text} />}</p>
+                  {(post.links?.length || post.quotedUrl || post.replyTo) ? (
+                    <nav aria-label="Post references" className="mt-4 flex flex-wrap gap-3 text-sm">
+                      {post.links?.filter((url) => !post.text.includes(url)).map((url) => (
+                        <a key={url} href={url} target="_blank" rel="noreferrer" className="break-all underline underline-offset-4">{url}</a>
+                      ))}
+                      {post.quotedUrl && <a href={post.quotedUrl} className="underline underline-offset-4" target="_blank" rel="noreferrer">View quoted post</a>}
+                      {post.replyTo && <a href={post.replyTo} className="underline underline-offset-4" target="_blank" rel="noreferrer">View parent post</a>}
+                    </nav>
+                  ) : null}
                   {post.images.length > 0 && (
                     <div className="mt-4 grid gap-4 sm:grid-cols-2">
                       {post.images.map(({ src, alt }) => (

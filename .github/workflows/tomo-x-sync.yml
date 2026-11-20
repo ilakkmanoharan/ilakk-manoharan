@@ -29,8 +29,8 @@ jobs:
           TOMO_COMMIT_EMAIL: ${{ vars.TOMO_COMMIT_EMAIL }}
         run: |
           if [ -z "$X_BEARER_TOKEN" ]; then
-            echo "::notice::Set the X_BEARER_TOKEN repository secret to enable TOMO sync."
-            exit 0
+            echo "::error::X_BEARER_TOKEN is missing; no posts were synced. Use the Codex daily sync or configure the X API credential."
+            exit 1
           fi
           node scripts/sync-tomo-x.mjs
           git add -- content/tomo-posts.json

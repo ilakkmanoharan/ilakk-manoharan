@@ -1,0 +1,21 @@
+[
+  {
+    "id": "2117256931920257499",
+    "date": "2026-11-02",
+    "text": "The concept illustrations connect the world-as-graph idea to distributed robotic intelligence. Specialized robots can draw on task-relevant shared knowledge and infrastructure. The linked TOMO preprint develops this broad vision into a bounded tomato-growing scenario and an evaluation agenda.",
+    "summary": true,
+    "images": [
+      {"src": "/tomo/world-graph-original.jpg", "alt": "World-as-graph concept illustration"},
+      {"src": "/tomo/distributed-robotics-original.jpg", "alt": "Specialized robots and shared infrastructure"}
+    ]
+  },
+  {
+    "id": "2116951780634624098",
+    "date": "2026-11-01",
+    "text": "The original vision describes the world as a graph database, connecting relationships across physical, biological, environmental, and urban scales.",
+    "summary": true,
+    "images": [
+      {"src": "/tomo/world-graph-original.jpg", "alt": "World-as-graph concept illustration"}
+    ]
+  }
+]

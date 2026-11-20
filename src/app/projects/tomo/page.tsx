@@ -69,6 +69,7 @@ export default function TomoProjectPage() {
                 <a href="#scenario" className="rounded-full border border-[#163b32]/30 px-5 py-3 text-sm font-medium hover:bg-white/60">Explore the concept</a>
                 <Link href="/projects/tomo/planetary-nervous-system" className="rounded-full border border-[#163b32]/30 px-5 py-3 text-sm font-medium hover:bg-white/60">Planetary Nervous System</Link>
                 <Link href="/projects/tomo/local-intelligence" className="rounded-full border border-[#163b32]/30 px-5 py-3 text-sm font-medium hover:bg-white/60">Local Intelligence</Link>
+                <Link href="/projects/tomo/blog" className="rounded-full border border-[#163b32]/30 px-5 py-3 text-sm font-medium hover:bg-white/60">TOMO Blog</Link>
               </div>
             </div>
             <div className="rounded-2xl border border-emerald-950/15 bg-white/60 p-6">

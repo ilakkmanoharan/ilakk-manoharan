@@ -106,16 +106,26 @@ export default async function StartupsPage() {
                     </a>
                   </div>
                 ) : null}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap items-start gap-3">
                   {s.slug === "tomo" ? (
-                    <Link
-                      href="/projects/tomo/book"
-                      prefetch={false}
-                      className="inline-flex items-center gap-1 text-primary hover:underline"
-                    >
-                      <BookOpen className="size-4" aria-hidden />
-                      Read the book
-                    </Link>
+                    <details>
+                      <summary className="flex cursor-pointer list-none items-center gap-1 text-primary hover:underline [&::-webkit-details-marker]:hidden">
+                        <BookOpen className="size-4" aria-hidden />
+                        Books
+                      </summary>
+                      <ul className="mt-2 min-w-32 rounded-md border bg-popover p-1 text-popover-foreground shadow-md">
+                        <li>
+                          <a href="/projects/tomo/book" className="block rounded px-3 py-2 hover:bg-accent">
+                            Book 1
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/projects/tomo/book-2" className="block rounded px-3 py-2 hover:bg-accent">
+                            Book 2
+                          </a>
+                        </li>
+                      </ul>
+                    </details>
                   ) : null}
                   {s.websiteUrl ? (
                     s.websiteUrl.startsWith("/") ? (
